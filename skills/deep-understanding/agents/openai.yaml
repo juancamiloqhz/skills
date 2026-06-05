@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Understanding"
+  short_description: "Make understanding a first-class deliverable"
+  default_prompt: "Help me deeply understand this. Explain incrementally, keep a checklist of what I should understand, ask me to restate my understanding at milestones, and fill gaps as we go."
