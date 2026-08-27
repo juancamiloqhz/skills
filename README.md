@@ -1,5 +1,7 @@
 # Skills
 
+[![skills.sh](https://skills.sh/b/juancamiloqhz/skills)](https://skills.sh/juancamiloqhz/skills)
+
 Reusable agent skills for Codex and other tools that support the open Agent Skills format.
 
 This repository is the canonical source for skills I have developed and validated through real project work. Each skill is self-contained under [`skills/`](./skills) and includes a `SKILL.md` entrypoint plus only the resources its workflow needs.
@@ -12,14 +14,26 @@ This repository is the canonical source for skills I have developed and validate
 
 ## Install
 
-Ask Codex to install an individual skill from this repository with `$skill-installer`. For example:
+Use the Skills CLI to discover the available skills and choose where to install them:
+
+```sh
+npx skills add juancamiloqhz/skills
+```
+
+Install `deep-understanding` directly:
+
+```sh
+npx skills add juancamiloqhz/skills --skill deep-understanding
+```
+
+Codex users can alternatively ask `$skill-installer` to install an individual skill from this repository:
 
 ```text
 Use $skill-installer to install deep-understanding from
 https://github.com/juancamiloqhz/skills/tree/main/skills/deep-understanding
 ```
 
-For local authoring, clone this repository and symlink the skill directory into `~/.agents/skills`:
+For local authoring with Codex, clone this repository and symlink the skill directory into `~/.agents/skills`:
 
 ```sh
 mkdir -p "$HOME/.agents/skills"
