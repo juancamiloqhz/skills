@@ -1,62 +1,62 @@
-# AI Agent Kit
+# Skills
 
-This is my broader personal operating system for AI agents.
+Reusable agent skills for Codex and other tools that support the open Agent Skills format.
 
-The goal is to keep reusable agent behavior in one durable place: skills, prompts, instructions, templates, scripts, and examples that make AI agents work more like long-term collaborators instead of one-off chat sessions.
+This repository is the canonical source for skills I have developed and validated through real project work. Each skill is self-contained under [`skills/`](./skills) and includes a `SKILL.md` entrypoint plus only the resources its workflow needs.
 
-The first artifact in this kit is the `deep-understanding` skill, adapted from Suzanne's teaching-mode prompt shared by Thariq. Its core idea is simple: the human's understanding should be a first-class deliverable.
+## Catalog
+
+| Skill | Purpose | Status |
+| --- | --- | --- |
+| [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
+
+## Install
+
+Ask Codex to install an individual skill from this repository with `$skill-installer`. For example:
+
+```text
+Use $skill-installer to install deep-understanding from
+https://github.com/juancamiloqhz/skills/tree/main/skills/deep-understanding
+```
+
+For local authoring, clone this repository and symlink the skill directory into `~/.agents/skills`:
+
+```sh
+mkdir -p "$HOME/.agents/skills"
+ln -s "/path/to/skills/skills/deep-understanding" "$HOME/.agents/skills/deep-understanding"
+```
+
+Codex discovers user-level skills from `~/.agents/skills`. Repository-specific skills should instead live in that repository's `.agents/skills` directory.
 
 ## Repository Structure
 
-This repo is intentionally broader than a skills-only library. A useful long-term shape could look like this:
-
 ```text
-ai-agent-kit/
-  skills/
-    deep-understanding/
-      SKILL.md
-      agents/
-        openai.yaml
-  instructions/
-    AGENTS.md
-    CLAUDE.md
-  prompts/
-    research.md
-    planning.md
-    debugging.md
-  templates/
-    project-brief.md
-    prd.md
-    status-update.md
-  scripts/
-    install-skills.sh
-  examples/
-    deep-understanding-session.md
+skills/
+  deep-understanding/
+    SKILL.md
+    agents/
+      openai.yaml
 ```
 
-## Current Contents
-
-- `skills/deep-understanding`: A multipurpose teaching skill for code, research, strategy, systems, documents, workflows, and other complex topics.
-- `scripts/install-skills.sh`: Copies skills from this repo into `~/.codex/skills` so Codex can discover them.
-
-## Install Skills
-
-From the repo root:
-
-```sh
-./scripts/install-skills.sh
-```
-
-This copies every folder in `skills/` into:
-
-```text
-~/.codex/skills/
-```
+Skills may also contain `references/`, `scripts/`, or `assets/` when those resources directly support the workflow. Empty scaffolding is intentionally avoided.
 
 ## Design Principles
 
-- Keep reusable agent behavior versioned.
-- Prefer skills for procedures that are useful sometimes, but should not load into every session.
-- Prefer `AGENTS.md` or `CLAUDE.md` for small default preferences and pointers to skills.
-- Keep prompts and instructions portable across tools when possible.
-- Let the kit grow slowly from real usage, not from speculative organization.
+- Build skills from workflows proven in real projects.
+- Keep each skill focused on one job with clear activation boundaries.
+- Prefer concise instructions over speculative rules or unnecessary scripts.
+- Keep repository-specific knowledge in the repository that owns it.
+- Preserve approval boundaries for external or destructive actions.
+- Validate skills before publishing releases.
+
+## Attribution
+
+`deep-understanding` was inspired by Suzanne's original “Learn Quiz” teaching concept, shared publicly by [Thariq Shambaugh](https://x.com/trq212/status/2061545633560010826). It generalizes the teaching loop into a reusable skill for understanding codebases, systems, decisions, documents, research, workflows, and other complex topics.
+
+## Maturity
+
+The repository is currently experimental. Skill behavior and packaging may evolve as the skills are tested across different projects.
+
+## License
+
+Released under the [MIT License](./LICENSE).
