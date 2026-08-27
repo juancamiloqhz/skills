@@ -10,6 +10,7 @@ This repository is the canonical source for skills I have developed and validate
 
 | Skill | Purpose | Status |
 | --- | --- | --- |
+| [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
 
 ## Install
@@ -20,10 +21,10 @@ Use the Skills CLI to discover the available skills and choose where to install 
 npx skills add juancamiloqhz/skills
 ```
 
-Install `deep-understanding` directly:
+Install a specific skill directly:
 
 ```sh
-npx skills add juancamiloqhz/skills --skill deep-understanding
+npx skills add juancamiloqhz/skills --skill agent-workflow-readiness
 ```
 
 Codex users can alternatively ask `$skill-installer` to install an individual skill from this repository:
@@ -46,6 +47,14 @@ Codex discovers user-level skills from `~/.agents/skills`. Repository-specific s
 
 ```text
 skills/
+  agent-workflow-readiness/
+    SKILL.md
+    agents/
+      openai.yaml
+    references/
+      readiness-report.md
+      repository-audit.md
+      tracker-audit.md
   deep-understanding/
     SKILL.md
     agents/
@@ -64,6 +73,8 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 - Validate skills before publishing releases.
 
 ## Attribution
+
+`agent-workflow-readiness` is an independent readiness audit designed for compatibility with [Matt Pocock's engineering skills](https://github.com/mattpocock/skills) and their setup workflow. It is not an official Matt Pocock skill.
 
 `deep-understanding` was inspired by Suzanne's original “Learn Quiz” teaching concept, shared publicly by [Thariq Shambaugh](https://x.com/trq212/status/2061545633560010826). It generalizes the teaching loop into a reusable skill for understanding codebases, systems, decisions, documents, research, workflows, and other complex topics.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Workflow Readiness"
+  short_description: "Audit repositories before agent workflow setup"
+  default_prompt: "Use $agent-workflow-readiness to audit this repository before configuring its agent development workflow."
