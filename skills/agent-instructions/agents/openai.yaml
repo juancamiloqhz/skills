@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Instructions"
+  short_description: "Audit and repair persistent agent instructions"
+  default_prompt: "Use $agent-instructions to audit this repository’s AGENTS.md and CLAUDE.md files and propose evidence-backed improvements."
