@@ -10,6 +10,7 @@ This repository is the canonical source for skills I have developed and validate
 
 | Skill | Purpose | Status |
 | --- | --- | --- |
+| [`agent-instructions`](./skills/agent-instructions) | Audits, proposes, creates, and repairs repository `AGENTS.md` and `CLAUDE.md` files using repository evidence and harness-aware loading rules. | Experimental |
 | [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
 
@@ -24,14 +25,14 @@ npx skills add juancamiloqhz/skills
 Install a specific skill directly:
 
 ```sh
-npx skills add juancamiloqhz/skills --skill agent-workflow-readiness
+npx skills add juancamiloqhz/skills --skill agent-instructions
 ```
 
 Codex users can alternatively ask `$skill-installer` to install an individual skill from this repository:
 
 ```text
-Use $skill-installer to install deep-understanding from
-https://github.com/juancamiloqhz/skills/tree/main/skills/deep-understanding
+Use $skill-installer to install agent-instructions from
+https://github.com/juancamiloqhz/skills/tree/main/skills/agent-instructions
 ```
 
 For local authoring with Codex, clone this repository and symlink the skill directory into `~/.agents/skills`:
@@ -47,6 +48,17 @@ Codex discovers user-level skills from `~/.agents/skills`. Repository-specific s
 
 ```text
 skills/
+  agent-instructions/
+    SKILL.md
+    agents/
+      openai.yaml
+    references/
+      audit-rubric.md
+      change-workflow.md
+      harness-loading.md
+    scripts/
+      inventory_agent_instructions.py
+      test_inventory_agent_instructions.py
   agent-workflow-readiness/
     SKILL.md
     agents/
@@ -73,6 +85,8 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 - Validate skills before publishing releases.
 
 ## Attribution
+
+`agent-instructions` is an independently written synthesis inspired by Matt Pocock's [AGENTS.md guide](https://www.aihero.dev/a-complete-guide-to-agents-md) and [`writing-for-agents`](https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents), with harness semantics grounded in the official [Codex](https://learn.chatgpt.com/docs/agent-configuration/agents-md) and [Claude Code](https://code.claude.com/docs/en/memory) documentation. The [research landscape](./research/agents-md-audit-skill-landscape.md) records comparable skills, differentiators, evidence, and licensing cautions.
 
 `agent-workflow-readiness` is an independent readiness audit designed for compatibility with [Matt Pocock's engineering skills](https://github.com/mattpocock/skills) and their setup workflow. It is not an official Matt Pocock skill.
 
