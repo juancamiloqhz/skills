@@ -15,7 +15,13 @@ Resolve paths relative to the installed skill directory. The catalog file contai
 
 ## Data shape
 
-Top-level fields are `schemaVersion`, `preset` and `roles`. Presets are `small`, `medium`, `large` and `unlimited`. They record the requested effort policy; effective provider-specific options in each concrete seat are authoritative. The validator checks those options against the live catalog, not whether every seat matches the preset, because explicit overrides and disclosed downgrades are valid.
+Top-level fields remain `schemaVersion`, `preset` and `roles` in schema version 1. The UI calls `preset` the reasoning budget. Retain the field and `--preset` flag for compatibility with existing jstack configurations.
+
+The budget labels follow pstack: `unlimited` targets `max`, `large` targets `xhigh`, `medium` targets `high`, and `small` targets `medium`. They express a setup preference for reasoning expenditure, not monetary limits. Setup maps the target to each selected model's advertised effort options and discloses unsupported levels or downgrades.
+
+Each concrete seat's `options` is authoritative. The validator checks those options against the live catalog, not whether every seat matches the recorded budget. The resolver ignores `preset`: changing that field alone changes no delegation target. For example, `preset: "unlimited"` may coexist with a max-effort seat, a seat limited to xhigh by its model, and a deliberately retained medium-effort override. An inherited seat preserves the executing parent's model and effort.
+
+On a rerun, setup can update one role, several roles, or all roles. Applying a budget materializes the chosen effort into the affected concrete seats, including list entries, before validation and saving. It preserves model choices, unrelated options, and list structure unless requested otherwise. Keep inherited seats unchanged unless explicitly replaced. Resolve which existing effort overrides to retain; the file does not record why a particular option was chosen. There is no automatic runtime budget enforcement or separate per-role preset.
 
 An inherited seat is exactly:
 

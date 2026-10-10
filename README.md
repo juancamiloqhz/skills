@@ -13,7 +13,7 @@ This repository is the canonical source for skills I have developed and validate
 | [`agent-instructions`](./skills/agent-instructions) | Audits, proposes, creates, and repairs repository `AGENTS.md` and `CLAUDE.md` files using repository evidence and harness-aware loading rules. | Experimental |
 | [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
-| [`setup-jstack`](./skills/setup-jstack) | Configures jstack workflow roles using T3's live provider/model catalog, reasoning presets and validated user-local settings. | Experimental; configuration helper tested |
+| [`setup-jstack`](./skills/setup-jstack) | Configures jstack workflow roles using T3's live provider/model catalog, reasoning budgets and validated user-local settings. | Experimental; configuration helper tested |
 
 ## Install
 
