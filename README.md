@@ -103,9 +103,9 @@ Install just the setup skill and select providers interactively:
 npx skills add juancamiloqhz/skills --skill setup-jstack
 ```
 
-## Jstack research and experiments
+## Jstack research
 
-The [research index](./research/jstack.md) preserves the pinned pstack dependency audit, implementation plan, and dated T3 snapshot. It also links the archived [review-panel prototype](./experiments/pstack-t3-review/README.md) and its manual and fresh-parent evaluations. The prototype is outside the installable skill catalog; its evidence informs a possible future Arena workflow. `juan-mode` remains unimplemented.
+[Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `setup-jstack` is released; `juan-mode` remains unimplemented. Research into the next workflow is deferred until requested.
 
 ## Maturity
 
