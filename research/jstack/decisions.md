@@ -8,7 +8,7 @@ The bundle is named `jstack`. Its first skill is `setup-jstack`. The planned wor
 
 ## Delivery
 
-Develop in small, focused pull requests. Merge a completed skill before installing it from `juancamiloqhz/skills` with the Skills CLI. The selected installation providers are Codex, Claude Code, Cursor, and OpenCode. This selection is not a claim that every future workflow has been tested on all four providers.
+Develop in small, focused pull requests. Merge a completed skill before installation from `juancamiloqhz/skills` with the Skills CLI. The user performs all skill installations and updates manually; agents provide commands but do not run them. The selected installation providers are Codex, Claude Code, Cursor, and OpenCode. This selection is not a claim that every future workflow has been tested on all four providers.
 
 Portable skills are the current distribution format. A broader plugin or generated adapter system has not been committed to.
 
