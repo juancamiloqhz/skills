@@ -103,6 +103,10 @@ Install just the setup skill and select providers interactively:
 npx skills add juancamiloqhz/skills --skill setup-jstack
 ```
 
+## Jstack research
+
+[Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `setup-jstack` is released; `juan-mode` remains unimplemented. Research into the next workflow is deferred until requested.
+
 ## Maturity
 
 The repository is currently experimental. Skill behavior and packaging may evolve as the skills are tested across different projects.
