@@ -1,6 +1,6 @@
 ---
 name: setup-jstack
-description: Configure jstack model assignments and reasoning presets for T3 Code workflow roles. Use when setting up jstack or changing its model routing.
+description: Configure jstack model assignments and reasoning budgets for T3 Code workflow roles. Use when setting up jstack or changing its model routing.
 ---
 
 # Setup jstack
@@ -17,11 +17,11 @@ Resolve the configuration path from `JSTACK_CONFIG` when explicitly supplied, ot
 
 ## Choose routing
 
-Ask for a reasoning preset unless the request already specifies it. Offer small = medium effort, medium = high, large = xhigh, unlimited = max. These names are effort presets, not spending caps. For an existing configuration, show the current preset.
+Ask for a reasoning budget unless the request already specifies it. Keep pstack's labels and show their target effort: `unlimited = max`, `large = xhigh`, `medium = high`, `small = medium`. This is a setup convenience for adjusting reasoning across roles, not a dollar limit or spending cap. Unlimited targets max where supported; it does not promise unbounded reasoning. For an existing configuration, show the budget recorded in `preset` and any effective effort exceptions. Keep the schema field and CLI flag named `preset` for compatibility.
 
-For a first setup, propose `inherit-parent` for every role until the user selects concrete models. Do not assume pstack's Grok/Opus preferences are Juan's choices. Group related roles for a readable selection, then show all 17 assignments before writing. On repeat setup, retain existing assignments and options unless the user requests a change. When changing the preset, show which concrete seats would change and resolve whether their existing effort values should follow the new preset or remain pinned. The configuration records effective options, not the history of how they were chosen. Report unknown roles or unsupported versions instead of silently dropping them.
+For a first setup, propose `inherit-parent` for every role until the user selects concrete models. Do not assume pstack's Grok/Opus preferences are Juan's choices. Group related roles for a readable selection, then show all 17 assignments before writing. On repeat setup, retain existing assignments and options unless the user requests a change. A rerun can update selected roles or every role, including model and effort. When applying a budget, show which concrete seats would change and resolve the scope and any effort overrides to retain. An explicit request to apply a budget to all concrete seats includes panel entries and judge alternatives; preserve model identities, other options, list order and list sizes unless the user requests those changes. Inherited seats stay inherited unless the user explicitly replaces them. Do not change existing options merely because a saved budget is present. The configuration records effective options, not the history of how they were chosen. Report unknown roles or unsupported versions instead of silently dropping them.
 
-Concrete assignments specify a provider instance, model ID and provider-specific options. Keep reasoning separate from model IDs. Apply the requested preset to advertised effort options, such as `reasoningEffort`, `effort`, `reasoning_effort` or `variant`; inspect their values rather than assuming equivalent semantics. Preserve explicitly requested per-role effort overrides. If the provider lacks the target level, propose its highest advertised level at or below the target and disclose the downgrade. If the option's meaning is ambiguous, ask for a choice. Do not write unavailable model or option values.
+Concrete assignments specify a provider instance, model ID and provider-specific options. Keep reasoning separate from model IDs. Apply the requested reasoning budget to the selected seats' advertised effort options, such as `reasoningEffort`, `effort`, `reasoning_effort` or `variant`; inspect their values rather than assuming equivalent semantics. Preserve explicitly requested per-role effort overrides. If the provider lacks the target level, propose its highest advertised level at or below the target and disclose the downgrade. If the option's meaning is ambiguous, ask for a choice. Do not write unavailable model or option values.
 
 Distinguish `inherit-parent` from provider Auto. Inheritance omits the delegation target and preserves the executing parent's selection. Auto is a concrete provider/model from the live catalog, such as Cursor's advertised Auto model; it is not a portable alias.
 
@@ -31,9 +31,9 @@ Panel roles hold ordered seat lists, with one agent per seat, including repeated
 
 Prepare the proposed JSON and a temporary JSON copy of the full capabilities payload. Run the helper with Python 3 from the installed skill directory. Use `python3 scripts/models.py validate DRAFT --catalog CATALOG` to check the complete configuration, including every provider, model and option. Unavailable existing seats need an explicit replacement or inheritance choice; never silently substitute another paid model.
 
-Present the concrete file path, preset, assignments, effort exceptions and changed roles. Resolve user choices before writing; when the request already specifies the full mapping, proceed without asking again. Save with `python3 scripts/models.py write DRAFT --catalog CATALOG --output CONFIG`, which validates and replaces the file atomically. Read the saved file back and report exactly what changed. Remove temporary catalog/draft files when finished.
+Present the concrete file path, reasoning budget and target effort, assignments, effort exceptions and changed roles. Resolve user choices before writing; when the request already specifies the full mapping, proceed without asking again. Save with `python3 scripts/models.py write DRAFT --catalog CATALOG --output CONFIG`, which validates and replaces the file atomically. Read the saved file back and report exactly what changed. Remove temporary catalog/draft files when finished.
 
-Explain that consumers must read the configuration at invocation time and revalidate against the current catalog. It is not a T3-managed rule or an automatically loaded mode. Installation and slash-command discovery depend on the coordinating provider; source authoring alone does not register `/setup-jstack`.
+Explain that the saved `preset` records the setup choice; the resolver uses each seat's effective options and never reapplies the budget. Editing only `preset` does not change any role's effort. Consumers must read the configuration at invocation time and revalidate against the current catalog. It is not a T3-managed rule or an automatically loaded mode. Installation and slash-command discovery depend on the coordinating provider; source authoring alone does not register `/setup-jstack`.
 
 ## Scope and provenance
 

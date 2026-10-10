@@ -14,7 +14,9 @@ Portable skills are the current distribution format. A broader plugin or generat
 
 ## Shipped configuration
 
-`setup-jstack` uses T3's live capability catalog and saves validated model assignments outside the repository. The [configuration contract](../../skills/setup-jstack/references/configuration.md) defines the schema, 17 roles, inheritance, reasoning presets, and consumer requirements.
+`setup-jstack` uses T3's live capability catalog and saves validated model assignments outside the repository. The [configuration contract](../../skills/setup-jstack/references/configuration.md) defines the schema, 17 roles, inheritance, reasoning budgets, and consumer requirements.
+
+Retain pstack's reasoning-budget labels with their target effort shown: unlimited/max, large/xhigh, medium/high, small/medium. This gives setup a bulk effort choice without implying a spending cap. Keep schema version 1 and the `preset` field; effective per-seat options remain authoritative at resolution time. See the [upstream rationale](../../skills/setup-jstack/references/upstream.md).
 
 Setup configures routing only. A configured role does not enable a workflow or grant execution permissions. Future consumers must load and revalidate the configuration when invoked.
 
