@@ -1,0 +1,21 @@
+{
+  "brief": "Use the skill at /home/ubuntu/Dev/skills/skills/pstack-t3-review/SKILL.md to answer the design request below. You are the coordinating parent for this evaluation, not a candidate or judge. Use Astra medium and Opus 5.5 medium for the candidate seats; choose a fresh judge as the skill directs. The evaluation authorizes those panel delegations. Keep filesystem and external services read-only, and return your full result plus provider/model/options and task/thread receipts in the task summary. Do not inspect previous evaluation results or browse the website repository. Use only the skill, its relevant references, and this self-contained problem. Do not install or publish anything.\n\nDesign request:\nA small service receives signed webhooks. The same event ID may arrive concurrently or be delivered again days later; events for one account can arrive out of order. Receiving an event should durably enqueue processing before returning success. Processing updates account state in PostgreSQL and sends a notification through an API that accepts idempotency keys but cannot join the database transaction. Workers may crash at any point. Propose the smallest durable design that prevents repeated account mutations, avoids stale events overwriting newer state, recovers failed processing, and handles a crash after notification delivery but before recording success. State necessary assumptions, data ownership, retention rules, and failure scenarios. No implementation is requested.",
+  "launch": {
+    "taskId": "node:delegated-task:command%3Amcp%3Acc3e1b4a-a97e-49fc-a18c-752701455c76%3Adelegate-task%3Apstack-review-20261006-parent-eval-1",
+    "childThreadId": "thread:delegated-task:command%3Amcp%3Acc3e1b4a-a97e-49fc-a18c-752701455c76%3Adelegate-task%3Apstack-review-20261006-parent-eval-1",
+    "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Acc3e1b4a-a97e-49fc-a18c-752701455c76%253Adelegate-task%253Apstack-review-20261006-parent-eval-1:ordinal:1",
+    "childNodeId": "node:delegated-task:command%3Amcp%3Acc3e1b4a-a97e-49fc-a18c-752701455c76%3Adelegate-task%3Apstack-review-20261006-parent-eval-1",
+    "status": "running",
+    "workState": "working",
+    "hasPendingChildRuns": false,
+    "latestTerminalRunId": null,
+    "latestTerminalStatus": null,
+    "latestTerminalSummary": null,
+    "latestTerminalResultContextTransferId": null,
+    "providerInstanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "summary": null,
+    "resultContextTransferId": null,
+    "waitTimedOut": false
+  }
+}

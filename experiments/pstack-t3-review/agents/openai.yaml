@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pstack T3 Review"
+  short_description: "Independent model reviews through T3 delegation"
+  default_prompt: "Use $pstack-t3-review to compare independent model analyses and synthesize a verified recommendation."
