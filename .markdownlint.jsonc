@@ -1,0 +1,4 @@
+{
+  // Keep prose paragraphs on one source line; editors handle visual wrapping.
+  "MD013": false
+}

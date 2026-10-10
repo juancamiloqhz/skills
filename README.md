@@ -95,14 +95,7 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 
 ## jstack
 
-jstack is the bundle name. Its configuration skill,
-[`setup-jstack`](./skills/setup-jstack/SKILL.md), adapts pstack's model setup
-concept for T3. The planned workflow entrypoint is `juan-mode`, corresponding
-to pstack's `poteto-mode`: it will select playbooks, apply the configured model
-roles, and coordinate supporting skills. `juan-mode` is not implemented yet.
-The [upstream reference](./skills/setup-jstack/references/upstream.md) records
-the inspected revision and MIT attribution. Setup configures routing;
-consumer workflows and automatic rule loading are not implemented yet.
+jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3. The planned workflow entrypoint is `juan-mode`, corresponding to pstack's `poteto-mode`: it will select playbooks, apply the configured model roles, and coordinate supporting skills. `juan-mode` is not implemented yet. The [upstream reference](./skills/setup-jstack/references/upstream.md) records the inspected revision and MIT attribution. Setup configures routing; consumer workflows and automatic rule loading are not implemented yet.
 
 Install just the setup skill and select providers interactively:
 
