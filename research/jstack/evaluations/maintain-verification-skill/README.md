@@ -1,6 +1,6 @@
 # Verification maintenance evaluation
 
-Executed on 2026-10-11 against [maintain-verification-skill](../../../../skills/maintain-verification-skill/SKILL.md). Three fresh Codex subagents independently applied the skill to separate Pocket worktrees. Each received the maintenance skill, the target repository, a realistic upkeep request and execution boundaries. They did not receive the expected outcome or inspect sibling cases. The [results record](results.json) contains hashes, observed outcomes and inspected proof locations.
+Executed on 2026-10-11 against [maintain-verification-skill](../../../../skills/jstack/maintain-verification-skill/SKILL.md). Three fresh Codex subagents independently applied the skill to separate Pocket worktrees. Each received the maintenance skill, the target repository, a realistic upkeep request and execution boundaries. They did not receive the expected outcome or inspect sibling cases. The [results record](results.json) contains hashes, observed outcomes and inspected proof locations. Its source paths preserve the evaluation-time layout, before the skills moved under `skills/jstack/`.
 
 ## Cases and observations
 

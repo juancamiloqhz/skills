@@ -1,6 +1,6 @@
 # Verification generator evaluation
 
-Executed on 2026-10-10 against the [generator](../../../../skills/create-verification-skill/SKILL.md). The [results record](results.json) contains source/output hashes and observed outcomes. The [Pocket fixture](fixture/README.md) is a Python-standard-library CLI with creation, reads and validation errors; it has no services or credentials.
+Executed on 2026-10-10 against the [generator](../../../../skills/jstack/create-verification-skill/SKILL.md). The [results record](results.json) contains source/output hashes and observed outcomes. The [Pocket fixture](fixture/README.md) is a Python-standard-library CLI with creation, reads and validation errors; it has no services or credentials.
 
 ## Cases and observations
 

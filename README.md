@@ -13,9 +13,9 @@ This repository is the canonical source for skills I have developed and validate
 | [`agent-instructions`](./skills/agent-instructions) | Audits, proposes, creates, and repairs repository `AGENTS.md` and `CLAUDE.md` files using repository evidence and harness-aware loading rules. | Experimental |
 | [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
-| [`setup-jstack`](./skills/setup-jstack) | Configures jstack workflow roles using T3's live provider/model catalog, reasoning budgets and validated user-local settings. | Experimental; configuration helper tested |
-| [`create-verification-skill`](./skills/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
-| [`maintain-verification-skill`](./skills/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
+| [`setup-jstack`](./skills/jstack/setup-jstack) | Configures jstack workflow roles using T3's live provider/model catalog, reasoning budgets and validated user-local settings. | Experimental; configuration helper tested |
+| [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
+| [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
 ## Install
 
@@ -67,6 +67,13 @@ skills/
     SKILL.md
     agents/
       openai.yaml
+  jstack/
+    setup-jstack/
+      SKILL.md
+    create-verification-skill/
+      SKILL.md
+    maintain-verification-skill/
+      SKILL.md
 ```
 
 Skills may also contain `references/`, `scripts/`, or `assets/` when those resources directly support the workflow. Empty scaffolding is intentionally avoided.
@@ -90,7 +97,9 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 
 ## jstack
 
-jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3. The planned workflow entrypoint is `juan-mode`, corresponding to pstack's `poteto-mode`: it will select playbooks, apply the configured model roles, and coordinate supporting skills. `juan-mode` is not implemented yet. The [upstream reference](./skills/setup-jstack/references/upstream.md) records the inspected revision and MIT attribution. Setup configures routing; consumer workflows and automatic rule loading are not implemented yet.
+jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/jstack/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3. The planned workflow entrypoint is `juan-mode`, corresponding to pstack's `poteto-mode`: it will select playbooks, apply the configured model roles, and coordinate supporting skills. `juan-mode` is not implemented yet. The [upstream reference](./skills/jstack/setup-jstack/references/upstream.md) records the inspected revision and MIT attribution. Setup configures routing; consumer workflows and automatic rule loading are not implemented yet.
+
+The bundle's source skills live under [`skills/jstack/`](./skills/jstack/). This directory groups independent skills and has no `SKILL.md` of its own. Keep each skill's existing name for installation and invocation. The Skills CLI supports this category layout; moving the source does not add a plugin namespace.
 
 Install just the setup skill and select providers interactively:
 

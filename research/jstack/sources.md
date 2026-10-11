@@ -8,13 +8,13 @@ The setup adaptation uses `cursor/plugins` revision `ccb5507cec1546dc88135c1139c
 
 - [setup-pstack](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/setup-pstack/SKILL.md): source for the setup concept and role registry.
 - [poteto-mode](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/poteto-mode/SKILL.md): previously inspected consumer context, not an implemented jstack workflow.
-- [Local attribution](../../skills/setup-jstack/references/upstream.md) and [retained MIT notice](../../skills/setup-jstack/LICENSE): adaptation scope and Lauren Tan's upstream copyright notice.
+- [Local attribution](../../skills/jstack/setup-jstack/references/upstream.md) and [retained MIT notice](../../skills/jstack/setup-jstack/LICENSE): adaptation scope and Lauren Tan's upstream copyright notice.
 
 ## Local implementation references
 
-- [Setup skill](../../skills/setup-jstack/SKILL.md): setup behavior and limits.
-- [Configuration contract](../../skills/setup-jstack/references/configuration.md): schema and consumer requirements.
-- [T3 integration reference](../../skills/setup-jstack/references/t3.md): integration guidance shipped with setup. Recheck callable tools and injected runtime instructions before execution.
+- [Setup skill](../../skills/jstack/setup-jstack/SKILL.md): setup behavior and limits.
+- [Configuration contract](../../skills/jstack/setup-jstack/references/configuration.md): schema and consumer requirements.
+- [T3 integration reference](../../skills/jstack/setup-jstack/references/t3.md): integration guidance shipped with setup. Recheck callable tools and injected runtime instructions before execution.
 
 ## Historical material
 
@@ -24,8 +24,8 @@ The panel experiments tested selected delegation mechanics. They did not validat
 
 ## Verification generator
 
-The generator adaptation uses the same `ccb5507cec1546dc88135c1139c811e6c59115ba` pin. Its [upstream reference](../../skills/create-verification-skill/references/upstream.md) identifies the generator and feature-map sources, retained license, and T3-specific changes. Its [evaluation](evaluations/create-verification-skill/README.md) records what was actually executed. The optional offer is implemented in `setup-jstack`.
+The generator adaptation uses the same `ccb5507cec1546dc88135c1139c811e6c59115ba` pin. Its [upstream reference](../../skills/jstack/create-verification-skill/references/upstream.md) identifies the generator and feature-map sources, retained license, and T3-specific changes. Its [evaluation](evaluations/create-verification-skill/README.md) records what was actually executed. The optional offer is implemented in `setup-jstack`.
 
 ## Verification maintenance
 
-The maintenance adaptation uses `ccb5507cec1546dc88135c1139c811e6c59115ba`, inspected on 2026-10-11. Its [upstream reference](../../skills/maintain-verification-skill/references/upstream.md) records source and differences, including optional publication, executing-agent source review, and blocked coverage for unmet prerequisites. Its [evaluation](evaluations/maintain-verification-skill/README.md) records the tested cases and limits.
+The maintenance adaptation uses `ccb5507cec1546dc88135c1139c811e6c59115ba`, inspected on 2026-10-11. Its [upstream reference](../../skills/jstack/maintain-verification-skill/references/upstream.md) records source and differences, including optional publication, executing-agent source review, and blocked coverage for unmet prerequisites. Its [evaluation](evaluations/maintain-verification-skill/README.md) records the tested cases and limits.
