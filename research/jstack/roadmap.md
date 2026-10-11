@@ -42,6 +42,8 @@ The [entrypoint](../../skills/jstack/juan-mode/SKILL.md), complete route registr
 
 The preflight uses the separately discovered `setup-jstack` resolver and preserves the saved 17-role map. Tests cover inherited and concrete selections, ordered panels, stale settings, capability failures and configuration reloads. Live evaluation checks the current inherited Codex selection and assigned-path shell execution. Full persistence after compaction or provider restart, other coordinating providers and other editing tools still require execution evidence before completing this foundation group.
 
+Optional project configuration extends this foundation. Setup and juan-mode share one lookup with explicit file, environment, project and global precedence. Project setup seeds a complete map from global settings, and children retain the selected absolute path across worktrees. The [project configuration evaluation](evaluations/project-model-config/README.md) records CLI coverage and compatibility with the older installed helper. It does not change the remaining workflow persistence requirements.
+
 ## Then: implement the complete set in groups
 
 Follow the [implementation groups](juan-mode-spec.md#implementation-groups): shared procedures; engineering and experiments; delivery and recovery; autonomous coordination; then full release verification. Each group can span several focused PRs. The target includes advanced autopilot, stacked-PR shipping and multi-day coordination; they are later implementation groups, not automatically deferred product scope.

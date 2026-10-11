@@ -8,6 +8,7 @@ Supply the following in every child brief because T3 Code delegation does not co
 
 - Original goal, later constraints, relevant findings and selected procedure.
 - Absolute checkout path, base revision, owned paths and read-only or write scope.
+- The parent's selected absolute model-config path, passed explicitly to preflight in the child.
 - Permitted commands or actions where the task needs a narrow boundary.
 - Output location, observable acceptance checks and the evidence to return.
 - Review findings and unresolved objections when this is a new review round.

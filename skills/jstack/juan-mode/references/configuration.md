@@ -9,11 +9,14 @@ Run the preflight from any working directory using absolute paths:
 ```sh
 python3 /path/to/juan-mode/scripts/preflight.py \
   --setup-skill /discovered/path/to/setup-jstack \
+  --project-root /path/to/target-project \
   --catalog /task-owned/path/catalog.json \
   --role 'how explorer'
 ```
 
-Configuration comes from an explicit `--config`, then `JSTACK_CONFIG`, then `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`. The helper uses setup-jstack's `models.py resolve` command, which validates all 17 roles before resolving the selected role. It does not initialize, repair or save configuration. An error in another role still prevents execution. On error, report the role or dependency and let setup-jstack handle a user-requested repair.
+Setup-jstack's configuration contract owns lookup. The preflight passes `--config` and `--project-root` to its canonical `models.py resolve --with-source` command, then reports the selected absolute `config` path and `configSource`. Precedence is explicit file, `JSTACK_CONFIG`, an existing project `.jstack/models.json`, then global defaults. The selected file supplies all 17 roles; malformed or incomplete project settings produce an error. The preflight does not initialize, repair or save configuration. An error in another role still prevents execution. On error, report the file and role or dependency, and let setup-jstack handle a user-requested repair.
+
+Pass the task's known project root explicitly when the current directory belongs to another checkout or the installed skill. Without `--project-root`, the canonical helper discovers the caller's Git checkout root. Before dispatch or a checkout change, retain the returned absolute `config` path and supply it as `--config` for children and later phases of that task. Re-read and validate that file; do not rediscover from a child's worktree, where an untracked project configuration may be absent. A new task repeats project lookup. An installed setup-jstack that lacks the shared lookup CLI requires a manual update; do not fall back to a second lookup implementation.
 
 Each returned `targets` entry is either a concrete T3 Code target or JSON `null`. Pass concrete targets unchanged, including their options. For `null`, omit `target` to preserve the current parent's provider, model and effort. The helper reports the effective inherited identity only for capability checks; that identity is not a replacement target and does not establish model-family diversity. Read current thread configuration when effective options matter to evidence.
 

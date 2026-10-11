@@ -8,7 +8,7 @@ jstack is a portable adaptation of pstack's model setup concept and 17-role regi
 - Consumer context: [poteto-mode](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/poteto-mode/SKILL.md).
 - License: MIT, Copyright 2026 Lauren Tan. The upstream notice is retained in this skill's `LICENSE`.
 
-Adaptations replace Cursor's always-applied rule, Task model slugs and Auto alias with a user-local JSON contract, T3 Code live model/option discovery, explicit provider identity and parent inheritance. No upstream playbooks or autonomous shipping rules are enabled. The repository's earlier pstack research and review evaluations retain their own separate source pins.
+Adaptations replace Cursor's always-applied rule, Task model slugs and Auto alias with a JSON contract for global defaults and optional project configuration, T3 Code live model/option discovery, explicit provider identity and parent inheritance. Project files replace the full global role map, and explicit file selections remain highest priority. No upstream playbooks or autonomous shipping rules are enabled. The repository's earlier pstack research and review evaluations retain their own separate source pins.
 
 ## Reasoning-budget rationale
 

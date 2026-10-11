@@ -5,6 +5,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import subprocess
 import tempfile
 
 
@@ -21,6 +22,60 @@ LIST_ROLES = frozenset((
     "interrogate reviewers",
 ))
 PRESETS = {"small": "medium", "medium": "high", "large": "xhigh", "unlimited": "max"}
+
+
+def absolute_path(path):
+    # Keep symlink/.. traversal in the order the filesystem will interpret it.
+    return Path(path).expanduser().absolute()
+
+
+def path_present(path):
+    try:
+        path.lstat()
+        return True
+    except FileNotFoundError:
+        return False
+
+
+def project_directory(explicit=None):
+    if explicit is not None:
+        root = absolute_path(explicit)
+        require(root.is_dir(), f"project root is not a directory: {root}")
+        return root
+    try:
+        result = subprocess.run(["git", "rev-parse", "--show-toplevel"],
+                                capture_output=True, text=True, check=False,
+                                env=dict(os.environ, LC_ALL="C"))
+    except FileNotFoundError:
+        return None
+    if result.returncode == 0:
+        return absolute_path(result.stdout.rstrip("\n"))
+    if "not a git repository" in result.stderr:
+        return None
+    raise ValueError(f"cannot discover project root: {result.stderr.strip()}")
+
+
+def locate_config(explicit=None, project_root=None, scope=None):
+    require(scope in (None, "global", "project"), "unknown configuration scope")
+    require(not (scope and explicit is not None), "scope and explicit config are mutually exclusive")
+    global_path = absolute_path(Path(os.environ.get("XDG_CONFIG_HOME")
+                                     or Path.home() / ".config") / "jstack" / "models.json")
+    if scope == "global":
+        path, source = global_path, "global"
+    elif explicit is not None:
+        path, source = absolute_path(explicit), "explicit"
+    elif scope is None and os.environ.get("JSTACK_CONFIG"):
+        path, source = absolute_path(os.environ["JSTACK_CONFIG"]), "environment"
+    else:
+        root = project_directory(project_root)
+        require(scope != "project" or root is not None,
+                "project scope requires --project-root or a Git checkout")
+        project_path = root / ".jstack" / "models.json" if root else None
+        if project_path is not None and (scope == "project" or path_present(project_path)):
+            path, source = project_path, "project"
+        else:
+            path, source = global_path, "global"
+    return {"path": str(path), "source": source, "exists": path_present(path)}
 
 
 def template(preset):
@@ -134,25 +189,42 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     draft = commands.add_parser("template")
     draft.add_argument("--preset", choices=PRESETS, default="medium")
+    locator = commands.add_parser("locate")
+    selection = locator.add_mutually_exclusive_group()
+    selection.add_argument("--config")
+    selection.add_argument("--scope", choices=("global", "project"))
+    locator.add_argument("--project-root")
     for name in ("validate", "write", "resolve"):
         sub = commands.add_parser(name)
-        sub.add_argument("config")
+        sub.add_argument("config", nargs="?" if name == "resolve" else None)
         sub.add_argument("--catalog", required=True)
         if name == "write":
             sub.add_argument("--output", required=True)
         if name == "resolve":
             sub.add_argument("--role", required=True, choices=ROLES)
+            sub.add_argument("--project-root")
+            sub.add_argument("--with-source", action="store_true")
     args = parser.parse_args()
     try:
         if args.command == "template":
             result = template(args.preset)
+        elif args.command == "locate":
+            result = locate_config(args.config, args.project_root, args.scope)
         else:
-            config = validate(read_json(args.config), read_json(args.catalog))
+            location = (locate_config(args.config, args.project_root)
+                        if args.command == "resolve" else {"path": args.config})
+            try:
+                config = validate(read_json(location["path"]), read_json(args.catalog))
+            except (ValueError, OSError, KeyError, TypeError) as error:
+                raise ValueError(f"configuration {location['path']}: {error}") from error
             if args.command == "write":
                 atomic_write(args.output, config)
                 result = {"written": str(Path(args.output).expanduser())}
             elif args.command == "resolve":
                 result = resolve(config, args.role)
+                if args.with_source:
+                    result = {"config": location["path"], "configSource": location["source"],
+                              "targets": result}
             else:
                 result = {"valid": True, "roles": len(ROLES)}
         print(json.dumps(result, indent=2))

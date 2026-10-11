@@ -19,7 +19,7 @@ For each new task while active, read the [route registry](references/routes.md),
 
 Before a routed task dispatches any child, read [configuration discovery](references/configuration.md). Discover the installed `setup-jstack` entrypoint from the current skill catalog, then use this package's [preflight helper](scripts/preflight.py) with a fresh T3 Code catalog. It calls the canonical resolver, validates the entire saved map, preserves ordered seats and options, and checks effective child capability. It reads configuration without changing it or launching agents.
 
-Resolve each needed role. Configuration validity does not satisfy a workflow's required panel size or judge diversity. Read the role semantics in the configuration reference before fan-out. A missing dependency, stale selection or unavailable provider produces a precise limitation; preserve the user's saved settings.
+Retain the selected absolute configuration path for the task and pass it explicitly to children, including writers in other worktrees. Resolve each needed role from that file. Configuration validity does not satisfy a workflow's required panel size or judge diversity. Read the role semantics in the configuration reference before fan-out. A missing dependency, stale selection or unavailable provider produces a precise limitation; preserve the user's saved settings.
 
 Before delegation, read the [execution contract](references/execution.md). Give each child an explicit brief and bounded ownership, retain its task ID, and verify its artifacts. The parent owns shared plan state, PR watches and final synthesis. Use serial writes until the selected provider and tools have demonstrated assigned-checkout behavior.
 

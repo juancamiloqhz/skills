@@ -4,7 +4,7 @@ Adapted from [poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4ad
 
 This foundation implements the entrypoint, complete route registry, dependency discovery, model preflight and execution instructions. The 23 playbook procedures and shared helper/principle adaptations remain planned. A registry entry does not imply that its procedure was ported or evaluated.
 
-T3 Code uses the user's saved jstack roles and live provider catalog instead of upstream model defaults and Cursor wrappers. The preflight calls the separately discovered setup-jstack resolver without copying it. Inherited selections preserve the parent. Child briefs contain explicit context, fresh review rounds retain distinct task IDs, and the parent owns PR watches.
+T3 Code uses the user's saved jstack roles and live provider catalog instead of upstream model defaults and Cursor wrappers. The preflight calls the separately discovered setup-jstack resolver without copying it. That resolver selects a complete global or project configuration, with explicit selections taking precedence. Children receive the selected absolute path so their checkout cannot change routing. Inherited selections preserve the parent. Child briefs contain explicit context, fresh review rounds retain distinct task IDs, and the parent owns PR watches.
 
 Activation until opt-out is a conversation instruction. Cursor mode frontmatter is not used as a portability or persistence mechanism. Resume and compaction remain separate evaluation requirements. T3 Code path-directed children do not acquire an app workspace binding from their prompt.
 

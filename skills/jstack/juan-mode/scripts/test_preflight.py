@@ -50,13 +50,15 @@ class PreflightTest(unittest.TestCase):
         self.config.write_text(json.dumps(self.mapping))
         self.catalog.write_text(json.dumps(self.live))
 
-    def run_cli(self, role="how explorer", explicit=True, env=None, setup=None):
+    def run_cli(self, role="how explorer", explicit=True, env=None, setup=None, cwd=None, project_root=None):
         command = [sys.executable, str(SCRIPT), "--setup-skill", str(setup or self.setup),
                    "--catalog", str(self.catalog), "--role", role]
         if explicit:
             command.extend(["--config", str(self.config)])
+        if project_root is not None:
+            command.extend(["--project-root", str(project_root)])
         original = self.config.read_bytes()
-        result = subprocess.run(command, cwd=self.root, text=True, capture_output=True,
+        result = subprocess.run(command, cwd=cwd or self.root, text=True, capture_output=True,
                                 env=dict(os.environ, **(env or {})))
         self.assertEqual(self.config.read_bytes(), original)
         return result
@@ -164,6 +166,59 @@ class PreflightTest(unittest.TestCase):
         self.live["providers"][1]["canRunCrossProviderChildTask"] = False
         self.save()
         self.rejected("no executable judge alternative", role="arena cross-judge pool")
+
+    def test_shared_project_lookup_and_explicit_override(self):
+        project = self.root / "target project"
+        project_config = project / ".jstack/models.json"
+        project_config.parent.mkdir(parents=True)
+        mapping = copy.deepcopy(self.mapping)
+        mapping["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        project_config.write_text(json.dumps(mapping))
+        global_config = self.root / "xdg/jstack/models.json"
+        global_config.parent.mkdir(parents=True)
+        global_config.write_text(json.dumps(self.mapping))
+        env = {"JSTACK_CONFIG": "", "XDG_CONFIG_HOME": str(self.root / "xdg")}
+        result = self.resolved(explicit=False, env=env, project_root=project)
+        location = json.loads(subprocess.check_output([
+            sys.executable, str(self.setup / "scripts/models.py"), "locate",
+            "--project-root", str(project),
+        ], cwd=self.root, env=dict(os.environ, **env), text=True))
+        self.assertEqual(result["config"], location["path"])
+        self.assertEqual(result["configSource"], "project")
+        self.assertEqual(result["targets"], [SEAT])
+        self.assertEqual(global_config.read_text(), json.dumps(self.mapping))
+        overridden = self.resolved(env=env, project_root=project)
+        self.assertEqual(overridden["configSource"], "explicit")
+        self.assertEqual(overridden["targets"], [None])
+        environmental = self.resolved(explicit=False, project_root=project,
+                                      env=dict(env, JSTACK_CONFIG=str(self.config)))
+        self.assertEqual(environmental["configSource"], "environment")
+        self.assertEqual(environmental["targets"], [None])
+
+    def test_invalid_project_stops_before_valid_global(self):
+        project = self.root / "repo"
+        project_config = project / ".jstack/models.json"
+        project_config.parent.mkdir(parents=True)
+        project_config.write_text('{"roles": {}}')
+        global_config = self.root / "xdg/jstack/models.json"
+        global_config.parent.mkdir(parents=True)
+        global_config.write_text(json.dumps(self.mapping))
+        env = {"JSTACK_CONFIG": "", "XDG_CONFIG_HOME": str(self.root / "xdg")}
+        self.rejected(str(project_config), explicit=False, project_root=project, env=env)
+        self.assertEqual(project_config.read_text(), '{"roles": {}}')
+        self.assertEqual(global_config.read_text(), json.dumps(self.mapping))
+
+    def test_pinned_config_survives_different_child_project(self):
+        selected = self.resolved()["config"]
+        child = self.root / "child"
+        child_config = child / ".jstack/models.json"
+        child_config.parent.mkdir(parents=True)
+        child_config.write_text('invalid unrelated child configuration')
+        self.assertEqual(selected, str(self.config))
+        result = self.resolved(cwd=child, project_root=child,
+                               env={"JSTACK_CONFIG": str(child_config)})
+        self.assertEqual(result["config"], selected)
+        self.assertEqual(result["targets"], [None])
 
 
 if __name__ == "__main__":
