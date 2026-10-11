@@ -50,6 +50,8 @@ The later [installed runtime evaluation](evaluations/juan-mode-runtime/README.md
 
 Follow the [implementation groups](juan-mode-spec.md#implementation-groups): shared procedures; engineering and experiments; delivery and recovery; autonomous coordination; then full release verification. Each group can span several focused PRs. The target includes advanced autopilot, stacked-PR shipping and multi-day coordination; they are later implementation groups, not automatically deferred product scope.
 
+The shared-procedure group starts with bundled [how](../../skills/jstack/juan-mode/references/workflows/how.md), [why](../../skills/jstack/juan-mode/references/workflows/why.md) and their [evidence contract](../../skills/jstack/juan-mode/references/workflows/evidence.md). These internal procedures explain behavior and investigate rationale using configured roles. Their [evaluation](evaluations/shared-investigation/README.md) records read-only fixture coverage. Architect, arena, swarm, interrogate, reflect, custom planning and principle mapping remain in this group; no playbook is marked implemented by the helper work. The unresolved foundation persistence gates remain release requirements while shared-procedure work proceeds.
+
 Use T3 Code's child-task and parent-owned PR-watch lifecycle. Adapt upstream support scripts to actual requirements rather than copying fixed cloud-lane, Graphite, scheduler or cleanup assumptions. Preserve each playbook's purpose and record intentional behavior differences. Reducing the release scope requires a separate decision.
 
 ## Release checks: evaluate observable behavior

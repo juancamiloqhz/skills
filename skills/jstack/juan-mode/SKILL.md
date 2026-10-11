@@ -7,7 +7,7 @@ description: Apply jstack's task routing and configured delegation when the user
 
 Use the user's requested outcome to select a playbook, resolve the current jstack model assignments and coordinate verified work in T3 Code. Explicit invocation activates the mode in this conversation until the user turns it off. Reading this file for authoring or review does not activate it.
 
-This package currently implements the execution foundation. All 23 playbooks are registered but awaiting implementation. Report a selected route as unavailable rather than improvising its missing procedure or claiming its workflow passed. Full release requires executed acceptance evidence for every route and the supported providers.
+This package currently implements the execution foundation and the shared how/why investigation procedures. All 23 playbooks are registered but awaiting implementation. Report a selected route as unavailable rather than improvising its missing procedure or claiming its workflow passed. Full release requires executed acceptance evidence for every route and the supported providers.
 
 ## Activation and task selection
 
@@ -23,8 +23,12 @@ Retain the selected absolute configuration path for the task and pass it explici
 
 Before delegation, read the [execution contract](references/execution.md). Give each child an explicit brief and bounded ownership, retain its task ID, and verify its artifacts. The parent owns shared plan state, PR watches and final synthesis. Use serial writes until the selected provider and tools have demonstrated assigned-checkout behavior.
 
+## Shared investigation procedures
+
+When a caller explicitly selects a shared investigation procedure, read [how](references/workflows/how.md) for runtime flow and ownership, or [why](references/workflows/why.md) for historical rationale. Both use the [evidence contract](references/workflows/evidence.md), resolve their configured roles and return read-only findings to the caller. They are internal procedures, not standalone skills. Their availability does not make the planned Investigation playbook executable. Other shared helpers remain planned.
+
 ## Completion
 
 Report the requested outcome, actual verification and any remaining limitation. Distinguish completed, incomplete, blocked, paused and cancelled work. Task completion leaves mode activation intact. PR publication follows the requested delivery; merging, recurring scheduling and installation require their own applicable authorization. Skill installation remains manual.
 
-The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Detailed helper workflows, principles and playbooks arrive in the later implementation groups; their upstream names are not dependencies on unrelated global skills.
+The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Remaining helper workflows, principles and playbooks arrive in later implementation groups; their upstream names are not dependencies on unrelated global skills.
