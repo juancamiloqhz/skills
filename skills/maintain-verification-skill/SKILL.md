@@ -9,7 +9,11 @@ Keep an existing verification skill usable by another agent. Review every mapped
 
 ## Locate and bound the work
 
-Establish the target repository and read its applicable instructions. Use the explicitly selected verification skill, otherwise inspect project-local skills for launch/drive instructions and a feature map. Honor the existing location and format. If several candidates remain, ask which to maintain. If none exists, report that initial generation needs `create-verification-skill`; do not invent a target or install a skill. If the selected skill lacks a feature map, report the missing structure and propose a scoped repair before claiming a complete audit.
+Establish the target repository and read its applicable instructions. Use the explicitly selected verification skill, otherwise inspect project-local skills for launch/drive instructions and a feature map. Honor the existing location and format.
+
+Resolve symlinked skill directories before counting candidates or editing. Paths such as `.claude/skills/verify-myapp` and `.agents/skills/verify-myapp` that resolve to the same directory identify one skill. Maintain its canonical files within the authorized repository and preserve the link. Report dangling links or targets outside that repository instead of silently expanding the edit scope; do not create a duplicate copy or repair provider links as part of maintenance.
+
+If several candidates remain, ask which to maintain. If none exists, report that initial generation needs `create-verification-skill`; do not invent a target or install a skill. If the selected skill lacks a feature map, report the missing structure and propose a scoped repair before claiming a complete audit.
 
 Inspect the working tree before editing. Durable edits belong only inside the selected verification skill's directory, including helpers it owns. Preserve unrelated edits and historical proof. Keep new run notes and evidence in a separate scratch/report location unless the repository requires another location. Do not modify the application, shared test infrastructure, global installations, provider settings or `models.json`. A defect outside the allowed directory is a finding for a separate change.
 
