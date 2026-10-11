@@ -4,20 +4,21 @@ Jstack is a skills bundle being developed for T3 Code, informed by pstack. This 
 
 ## Current status
 
-As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/jstack/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer and [`maintain-verification-skill`](../../skills/jstack/maintain-verification-skill/SKILL.md) are released; maintenance has a separate [evaluation](evaluations/maintain-verification-skill/README.md). The current work adds upstream change detection and review. `juan-mode` is the agreed name for the future workflow entrypoint; it is not implemented.
+As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/jstack/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer and [`maintain-verification-skill`](../../skills/jstack/maintain-verification-skill/SKILL.md) are released; maintenance has a separate [evaluation](evaluations/maintain-verification-skill/README.md). Upstream maintenance is released and its weekly review delivers to the skills project conversation.
 
-The roadmap separates verification-tooling work from the proposed `juan-mode` investigation workflow. Research into that first investigation workflow remains deferred until requested.
+The next work is specifying `juan-mode` as an adaptation of poteto-mode's working approach and task router. The [roadmap](roadmap.md) records the first-release playbooks, implementation sequence and release checks. The skill is not implemented.
 
 ## Read by purpose
 
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.
 - [Roadmap](roadmap.md): completed work and proposed next steps, with completion checks.
 - [Sources](sources.md): pinned references and attribution carried forward from existing work.
-- [Upstream maintenance](upstream-maintenance.md): run a pstack change check, review its impact, or implement an approved recommendation. The [first review](upstream-reviews/2026-10-11.md) records the live trial; scheduling remains disabled.
+- [Juan-mode adaptation](juan-mode-adaptation.md): source assessment, T3 Code integration constraints and design proposals.
+- [Upstream maintenance](upstream-maintenance.md): run a pstack change check, review its impact, or implement an approved recommendation. The [first review](upstream-reviews/2026-10-11.md) records the live trial; the roadmap records the completed scheduling handoff.
 
 ## Open questions
 
-The first proposed workflow is a read-only codebase investigation. Its exact scope, prompts, delegation behavior, and evaluation criteria remain to be researched. Packaging beyond the existing portable skills and support for later workflows remain undecided.
+The adaptation specification must settle activation behavior, helper-skill packaging, shared configuration access, publication defaults and provider coverage. The roadmap distinguishes the agreed first-release scope from later workflow candidates.
 
 ## Earlier experiment
 

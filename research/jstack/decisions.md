@@ -1,10 +1,12 @@
 # Jstack decisions
 
-Recorded on 2026-10-10 from the existing project discussion and shipped setup implementation. These decisions do not settle the deferred workflow research.
+Initially recorded on 2026-10-10 from the project discussion and shipped setup implementation. Updated on 2026-10-11 with the agreed juan-mode direction; detailed workflow design remains the next specification task.
 
 ## Names and scope
 
 The bundle is named `jstack`. Its first skill is `setup-jstack`. The planned workflow entrypoint is `juan-mode`, corresponding to pstack's `poteto-mode` concept. Jstack will select useful ideas from pstack; no commitment has been made to implement all upstream skills.
+
+On 2026-10-11, the user confirmed the direction of adapting poteto-mode's broader working approach, including task routing, delegation, review and verification. Investigation is one route, not the definition of juan-mode. The [roadmap](roadmap.md) owns the agreed first-release scope and delivery sequence; the [source assessment](juan-mode-adaptation.md) supports the upcoming specification.
 
 ## Delivery
 
