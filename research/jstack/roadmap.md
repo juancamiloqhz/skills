@@ -1,6 +1,6 @@
 # Jstack roadmap
 
-Status as of 2026-10-11. Model setup, verification tooling and upstream maintenance are released. All 23 poteto-mode playbooks have been assessed for `juan-mode`, and the [adaptation specification](juan-mode-spec.md) defines the complete target and staged implementation. Workflow implementation and runtime evaluations have not started.
+Status as of 2026-10-11. Model setup, verification tooling and upstream maintenance are released. All 23 poteto-mode playbooks have been assessed for `juan-mode`, and the [adaptation specification](juan-mode-spec.md) defines the complete target and staged implementation. The execution foundation now has source and bounded evaluation evidence. The 23 playbook procedures remain planned.
 
 ## Completed: setup-jstack
 
@@ -36,11 +36,11 @@ The [specification](juan-mode-spec.md) links all three inventories, maps shared 
 
 The user selected explicit activation that stays in effect for subsequent tasks in the same conversation until turned off. That preference is settled. How each supported provider preserves or reloads the instruction across compaction and session resume must be demonstrated; Cursor's mode metadata alone does not establish it in T3 Code.
 
-## Next: implement and prove the execution foundation
+## In progress: implement and prove the execution foundation
 
-Begin with the entrypoint, complete route registry, installed-dependency discovery, model resolution and explicit delegation contract. Prove activation and opt-out across turns and resume, configured model selection, and the workspace behavior of delegated writers. This focused first implementation establishes the common behavior used by every playbook. A registry entry is not a claim that its route already works.
+The [entrypoint](../../skills/jstack/juan-mode/SKILL.md), complete route registry, installed-dependency discovery, model preflight and explicit delegation contract are implemented. The [evaluation record](evaluations/juan-mode-foundation/README.md) distinguishes executed checks from remaining gaps. A registry entry is not a claim that its route already works.
 
-Keep `setup-jstack` as the proposed explicit dependency for the canonical resolver and discover its installed directory. Preserve the saved 17-role map. One-seat defaults, unavailable child providers and insufficient judge diversity require precise capability handling, not silent model substitution or increased fan-out.
+The preflight uses the separately discovered `setup-jstack` resolver and preserves the saved 17-role map. Tests cover inherited and concrete selections, ordered panels, stale settings, capability failures and configuration reloads. Live evaluation checks the current inherited Codex selection and assigned-path shell execution. Full persistence after compaction or provider restart, other coordinating providers and other editing tools still require execution evidence before completing this foundation group.
 
 ## Then: implement the complete set in groups
 

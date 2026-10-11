@@ -15,6 +15,17 @@
   ],
   "skills": [
     {
+      "name": "juan-mode",
+      "localPath": "skills/jstack/juan-mode",
+      "upstreamPath": "pstack/skills/poteto-mode",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/docs/guide/02-poteto-mode.md",
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/juan-mode/references/upstream.md"
+    },
+    {
       "name": "setup-jstack",
       "localPath": "skills/jstack/setup-jstack",
       "upstreamPath": "pstack/skills/setup-pstack",
