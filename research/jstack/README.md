@@ -8,6 +8,8 @@ As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) pr
 
 All 23 poteto-mode playbooks have been assessed for `juan-mode`, the working-style entrypoint and task router. The [specification](juan-mode-spec.md) defines the complete target, shared dependencies and acceptance scenarios. The [foundation implementation](../../skills/jstack/juan-mode/SKILL.md) provides activation instructions, the route registry and configuration preflight, with [bounded evaluation evidence](evaluations/juan-mode-foundation/README.md). The playbook procedures remain planned; the [roadmap](roadmap.md) records the remaining execution proof and implementation groups.
 
+Setup and juan-mode also share optional project model configuration, with [evaluation evidence](evaluations/project-model-config/README.md). A project file replaces the complete global map for that project, while explicit selections remain highest priority.
+
 ## Read by purpose
 
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.

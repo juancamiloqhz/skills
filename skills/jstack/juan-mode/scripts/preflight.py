@@ -3,23 +3,13 @@
 
 import argparse
 import json
-import os
 from pathlib import Path
 import re
 import subprocess
 import sys
 
 
-def config_path(explicit=None):
-    if explicit:
-        return Path(explicit).expanduser()
-    if os.environ.get("JSTACK_CONFIG"):
-        return Path(os.environ["JSTACK_CONFIG"]).expanduser()
-    root = Path(os.environ.get("XDG_CONFIG_HOME") or Path.home() / ".config")
-    return root / "jstack" / "models.json"
-
-
-def preflight(setup_skill, config, catalog_path, role):
+def preflight(setup_skill, config, catalog_path, role, project_root=None):
     setup = Path(setup_skill).expanduser().resolve()
     entry = (setup / "SKILL.md").read_text(encoding="utf-8")
     frontmatter = entry.split("---", 2)
@@ -30,13 +20,20 @@ def preflight(setup_skill, config, catalog_path, role):
     resolver = setup / "scripts" / "models.py"
     if not resolver.is_file():
         raise ValueError(f"missing setup-jstack resolver: {resolver}")
-    result = subprocess.run([
-        sys.executable, str(resolver), "resolve", str(config),
-        "--catalog", str(catalog_path), "--role", role,
-    ], capture_output=True, text=True, check=False)
+    command = [sys.executable, str(resolver), "resolve"]
+    if config is not None:
+        command.append(str(config))
+    command.extend(["--catalog", str(catalog_path), "--role", role, "--with-source"])
+    if project_root is not None:
+        command.extend(["--project-root", str(project_root)])
+    result = subprocess.run(command, capture_output=True, text=True, check=False)
     if result.returncode:
+        if result.returncode == 2:
+            raise ValueError("setup-jstack rejected the CLI arguments; check the role and manually "
+                             "update setup-jstack if it lacks shared lookup:\n" + result.stderr.strip())
         raise ValueError(result.stderr.strip() or "setup-jstack resolution failed")
-    targets = json.loads(result.stdout)
+    resolved = json.loads(result.stdout)
+    targets = resolved["targets"]
     if not isinstance(targets, list) or not targets:
         raise ValueError("setup-jstack returned no ordered targets")
     catalog = json.loads(Path(catalog_path).expanduser().read_text(encoding="utf-8"))
@@ -67,7 +64,7 @@ def preflight(setup_skill, config, catalog_path, role):
     return {"role": role, "selectionKind": kind, "targets": targets,
             "effectiveIdentities": identities, "availability": availability,
             "resolver": str(resolver),
-            "config": str(Path(config).expanduser().resolve())}
+            "config": resolved["config"], "configSource": resolved["configSource"]}
 
 
 def main():
@@ -76,9 +73,10 @@ def main():
     parser.add_argument("--catalog", required=True)
     parser.add_argument("--role", required=True)
     parser.add_argument("--config")
+    parser.add_argument("--project-root")
     args = parser.parse_args()
     try:
-        result = preflight(args.setup_skill, config_path(args.config), args.catalog, args.role)
+        result = preflight(args.setup_skill, args.config, args.catalog, args.role, args.project_root)
         print(json.dumps(result, indent=2))
     except (ValueError, OSError, KeyError, TypeError) as error:
         parser.exit(1, f"juan-mode: {error}\n")

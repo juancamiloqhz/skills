@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-11",
+  "kind": "Optional project model configuration; focused CLI and compatibility checks",
+  "baseCommit": "b14ebc42ae1b119346c2bb169bb0a65743af36d2",
+  "sourceSha256": {
+    "skills/jstack/juan-mode/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/juan-mode/SKILL.md": "7d46ec853b0f369aedc0c0515f26a5b721424167342c7457b69c181e52691ee5",
+    "skills/jstack/juan-mode/references/activation.md": "f182ec4ad5d04c9814695f944fdcf360bb34d3fa9ff376cf36eb23b5d448dd1e",
+    "skills/jstack/juan-mode/references/configuration.md": "adadf30abaead0f12ba11664c9aa0f13ccb3d873c6916eaeeefd44a30b968504",
+    "skills/jstack/juan-mode/references/execution.md": "1eaa54bd3e08f51c9ff7d19a21d3da6c9f40d88a5960c0089d5a328a5782a977",
+    "skills/jstack/juan-mode/references/routes.md": "1407a8f3e75c7c5b1e143444e3e123283fc1bc23f7adf5e96cdd278ec5712a4c",
+    "skills/jstack/juan-mode/references/upstream.md": "70b724ee8e94f62aecb771ee550be1c3de6ebdfe35791800458ea793c7b5a71d",
+    "skills/jstack/juan-mode/scripts/preflight.py": "25c4051dfcf85a23afd10df7db535319b1aadfd64912da4529c8ce1478da7cbd",
+    "skills/jstack/juan-mode/scripts/test_preflight.py": "4caae5ab2660b50ffe5e922c8fb1d802ff554ed68b1070ccb80ea58cc6bc1298",
+    "skills/jstack/setup-jstack/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/setup-jstack/SKILL.md": "a6039f3d1cd6479e3d577bd042bb37796749e6e52ccd5f7b2f98ed4a3bbb14d0",
+    "skills/jstack/setup-jstack/agents/openai.yaml": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d",
+    "skills/jstack/setup-jstack/references/configuration.md": "20e076ea37422235aa2b6cab3f33aaae583704a575920d8cb50e889369c68ccc",
+    "skills/jstack/setup-jstack/references/t3-code.md": "46a3a2fdc7be6e84eccb58c456e2f60b0996ed7a8e5aba2bb5931e8f8bae2615",
+    "skills/jstack/setup-jstack/references/upstream.md": "dffaaed52949e3bc9fad96eba94d56b39522af558bfe8f478b8993be7c3c0560",
+    "skills/jstack/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+    "skills/jstack/setup-jstack/scripts/test_models.py": "2fcaa3f924e19df44797131fad0164b31b7306c4894b7318806b545ea817d650"
+  },
+  "unitTests": {
+    "canonicalResolverPassed": 14,
+    "consumerPassed": 15,
+    "newTests": 11,
+    "priorTestsPassing": 18
+  },
+  "coverage": [
+    "Explicit, environment, project and global file precedence; selected missing paths fail resolution",
+    "Nested Git checkout and linked worktree discovery, explicit non-Git roots and paths with spaces",
+    "Symlink followed by parent traversal preserves file choice for explicit paths, environment and project roots",
+    "Complete schema-v1 map selection; malformed JSON, duplicates, incomplete maps, directories and dangling symlinks fail without fallback",
+    "Read-only global/project scope lookup and complete 17-role global seed saved to project through the actual write command",
+    "Saving either scope preserves the other file byte for byte",
+    "Canonical lookup shared by setup and juan-mode; selected absolute path survives child checkout and environment changes",
+    "Legacy explicit resolve output retained; current file reread on each invocation"
+  ],
+  "review": {
+    "method": "Independent read-only native agent review",
+    "finding": "Lexical path normalization could select a different valid file when a symlink preceded ..",
+    "resolution": "Make paths absolute without collapsing ..; added test_symlink_parent_paths_preserve_filesystem_meaning",
+    "regressionBefore": "Failed: selected inherited target from the wrong file instead of the requested concrete seat",
+    "regressionAfter": "Passed for explicit path, environment selection and explicit project root; all 29 tests passed"
+  },
+  "livePreflight": {
+    "catalog": "Fresh T3 Code orchestrator_capabilities payload",
+    "installedSetup": {
+      "path": "/home/ubuntu/.agents/skills/setup-jstack",
+      "exitCode": 1,
+      "result": "Older CLI rejected shared lookup; consumer returned manual-update guidance"
+    },
+    "sourceSetup": {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack",
+      "exitCode": 0,
+      "result": {
+        "role": "how explorer",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ],
+        "resolver": "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/scripts/models.py",
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "global"
+      }
+    },
+    "savedConfigUnchanged": true,
+    "projectConfigCreated": false,
+    "installationsChanged": false
+  },
+  "limits": [
+    "Setup conversation documented; underlying CLI sequence executed in fixtures, not an independent end-to-end setup conversation on every provider",
+    "Worktree handoff exercised through real local Git and CLI invocations, without a new paid-model child task",
+    "Existing foundation limits for compaction, restart, cross-provider execution and playbook implementation remain",
+    "Both skills require manual updates after merge"
+  ],
+  "localEvidence": "/tmp/jstack-project-config-20261011"
+}

@@ -5,7 +5,7 @@ description: Configure jstack model assignments and reasoning budgets for T3 Cod
 
 # Setup jstack
 
-Configure jstack's model routing through T3 Code's live catalog. This skill writes a user-local configuration for future jstack workflows. It does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
+Configure jstack's model routing through T3 Code's live catalog. Save global defaults or an optional project configuration. This skill does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
 
 The bundle is named `jstack`. Its workflow entrypoint is `juan-mode`, the counterpart to pstack's `poteto-mode`. Juan-mode currently provides an execution foundation; its playbook procedures remain unavailable.
 
@@ -13,7 +13,11 @@ The bundle is named `jstack`. Its workflow entrypoint is `juan-mode`, the counte
 
 Call `orchestrator_capabilities` through the available T3 Code MCP tool. Use its current provider instances, models and option schemas, including custom models. If the tool is absent from discovery, make one direct attempt. For ACP's documented transport fallback and tool semantics, read [T3 Code integration](references/t3-code.md). If discovery remains unavailable, report that setup cannot validate concrete assignments; preserve the existing configuration.
 
-Resolve the configuration path from `JSTACK_CONFIG` when explicitly supplied, otherwise `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`. Read existing state before proposing changes. Read the [configuration contract](references/configuration.md), which defines roles, aliases and consumer behavior. Keep credentials and host-specific selections outside the skills repository.
+Read the [configuration contract](references/configuration.md) for shared lookup, scope selection, roles and consumer behavior. Run the installed helper's `locate` command to report the effective file. Use the task's project root with `--project-root` when known; the installed skill directory is not the target project. Honor an explicit configuration path or `JSTACK_CONFIG` unless the user requests a different scope.
+
+When scope is not already specified, offer global defaults or this project. Show the effective file and suggest its current scope. Use `locate --scope global` or `locate --scope project --project-root PROJECT` to obtain the chosen write target. These explicit scope queries ignore other overrides. Read that target before proposing changes. Project setup is optional; an ordinary workflow does not create `.jstack/models.json`.
+
+For a new project configuration, seed a temporary draft from the complete global configuration when it exists. Obtain that seed with `locate --scope global`, so an environment override cannot accidentally become the global seed. Preserve all 17 roles, options, list entries and budget, then apply only the requested edits. If no global file exists, start with the inherited template. Report invalid existing or seed configuration for repair instead of silently replacing it. Keep credentials out of model configuration; provider identities still need validation on each machine.
 
 ## Choose routing
 
@@ -31,7 +35,7 @@ Panel roles hold ordered seat lists, with one agent per seat, including repeated
 
 Prepare the proposed JSON and a temporary JSON copy of the full capabilities payload. Run the helper with Python 3 from the installed skill directory. Use `python3 scripts/models.py validate DRAFT --catalog CATALOG` to check the complete configuration, including every provider, model and option. Unavailable existing seats need an explicit replacement or inheritance choice; never silently substitute another paid model.
 
-Present the concrete file path, reasoning budget and target effort, assignments, effort exceptions and changed roles. Resolve user choices before writing; when the request already specifies the full mapping, proceed without asking again. Save with `python3 scripts/models.py write DRAFT --catalog CATALOG --output CONFIG`, which validates and replaces the file atomically. Read the saved file back and report exactly what changed. Remove temporary catalog/draft files when finished.
+Present the chosen scope and concrete file path, reasoning budget and target effort, assignments, effort exceptions and changed roles. Resolve user choices before writing; when the request already specifies the scope and mapping, proceed without asking again. Save with `python3 scripts/models.py write DRAFT --catalog CATALOG --output CONFIG` using the chosen target, which validates and replaces that file atomically. Read the saved file back and report exactly what changed. Run `locate` again to show the effective lookup result; explain when an environment, explicit or project override still takes precedence over the file just saved. Preserve files in the other scope and remove temporary catalog/draft files when finished.
 
 Explain that the saved `preset` records the setup choice; the resolver uses each seat's effective options and never reapplies the budget. Editing only `preset` does not change any role's effort. Consumers must read the configuration at invocation time and revalidate against the current catalog. It is not a rule managed by T3 Code or an automatically loaded mode. Installation and slash-command discovery depend on the coordinating provider; source authoring alone does not register `/setup-jstack`.
 

@@ -11,7 +11,33 @@ python3 scripts/models.py resolve /tmp/jstack-test/models.json \
   --catalog /tmp/t3-catalog.json --role 'how explorer'
 ```
 
-Resolve paths relative to the installed skill directory. The catalog file contains the unwrapped `orchestrator_capabilities` payload, not an MCP content wrapper or a permanent allowlist.
+Locate bundled scripts relative to the installed skill directory. Relative configuration and catalog paths use the caller's working directory. The catalog file contains the unwrapped `orchestrator_capabilities` payload, not an MCP content wrapper or a permanent allowlist.
+
+## Configuration location and setup scope
+
+`scripts/models.py` owns lookup for setup and consumers. Select the first applicable file in this order:
+
+1. An explicit file, supplied to `locate --config PATH` or as `resolve PATH`.
+2. A nonempty `JSTACK_CONFIG` environment variable.
+3. `<project_root>/.jstack/models.json`, when present.
+4. `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`.
+
+Use `--project-root` for the task's known root, including a project without Git. Otherwise the helper discovers the current Git checkout root from the caller's working directory, including nested directories and linked worktrees. Outside a Git checkout it uses global defaults. It does not search parent repositories for additional `.jstack` files or infer the project from the installed skill path. An invalid explicit project root is an error when project lookup is needed.
+
+```sh
+python3 /installed/setup-jstack/scripts/models.py locate --project-root /path/to/project
+python3 /installed/setup-jstack/scripts/models.py resolve \
+  --project-root /path/to/project --catalog /tmp/t3-catalog.json \
+  --role 'how explorer' --with-source
+```
+
+`locate` returns an absolute `path`, its `source` and whether an entry `exists`. It selects without creating files or validating their contents. `resolve --with-source` returns `config`, `configSource` and `targets` after validating the selected complete configuration. Without `--with-source`, `resolve` retains its ordered-list output. Explicit and environment selections remain selected when missing. A present project file that is malformed, partial, unreadable, a directory or a dangling symlink fails resolution; it does not fall back to global settings.
+
+Each file contains the complete schema-version-1 configuration. Project selection replaces the global map as a whole; there is no role or option merge. `inherit-parent` retains the executing conversation's provider, model and effort, and does not refer to the global role assignment.
+
+For setup, `locate --scope global` and `locate --scope project --project-root PROJECT` return the intended save path even before it exists. They ignore `JSTACK_CONFIG` and effective-file precedence because the user has selected a destination. `--scope` and `--config` are mutually exclusive. A new project draft starts from the complete global file when available, otherwise from `template`. Keep this draft in an owned temporary file until edits and validation are complete, then pass the chosen absolute destination to `write --output`. Updating one scope leaves the other untouched. A higher-priority override may still shadow a newly saved global file; show the effective selection after saving.
+
+Before changing checkout or delegating, retain the selected absolute `config` path. Pass it as the child's explicit configuration path and revalidate the current file there. Git does not copy an untracked project configuration into a new worktree; rediscovering from the child checkout could otherwise select a different file. The selected path fixes file choice, not contents or model choices across future invocations. New top-level tasks repeat lookup in their own project context.
 
 ## Data shape
 
@@ -49,4 +75,4 @@ Every invocation reads and validates current configuration before dispatch. Vali
 
 Resolving a role does not authorize or launch it. A future consumer must declare which routes it implements, preserve permission boundaries, and pass explicit task context. Follow T3 Code's child-task lifecycle and new-thread rules in [T3 Code integration](t3-code.md). This release implements no Investigation, Arena, shipping or issue workflow.
 
-Configuration is loaded by consumers, not by T3 Code itself. Re-running setup updates the same file; consumers see changes on their next invocation. Repository instructions or installation can make the skill discoverable, but do not turn the configuration into a persistent system rule.
+Configuration is loaded by consumers, not by T3 Code itself. Re-running setup updates the selected scope; consumers see changes on their next invocation when that file is effective. Repository instructions or installation can make the skill discoverable, but do not turn the configuration into a persistent system rule.
