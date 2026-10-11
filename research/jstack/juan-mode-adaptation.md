@@ -3,7 +3,7 @@
 Reviewed on 2026-10-11 against cached upstream commit `11713c683fe4add4fd403ea880580abbc9e0875f`. This note assesses the source and proposes implementation boundaries. It does not implement or activate a workflow.
 Source: [watched repository](upstream.json), [upstream poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md).
 
-Following this assessment, the user accepted the plan. The [roadmap](roadmap.md) records the agreed first-release scope and next specification task. Proposals below remain design input where the roadmap leaves a choice open.
+This initial assessment led to the user's request to assess the complete 23-playbook set. The [specification](juan-mode-spec.md) and [roadmap](roadmap.md) now record that accepted target and replace the three-playbook first-release proposal below. The user also chose conversation activation until explicit opt-out. Other initial proposals remain historical design input where the specification resolves them differently.
 
 ## Observed upstream behavior
 
@@ -36,7 +36,7 @@ Source: [upstream mode guide](https://github.com/cursor/plugins/blob/11713c683fe
 The shipped jstack bundle contains setup and the two verification-skill tools. Verification generation and maintenance are separate operations from running an existing verifier. Their contracts already cover real public interfaces, retained evidence, owned-state cleanup and T3 preview selection. A workflow can reuse that behavior without inventing another verifier or generating one on every task.
 Source: [setup](../../skills/jstack/setup-jstack/SKILL.md), [generator](../../skills/jstack/create-verification-skill/SKILL.md), [maintenance](../../skills/jstack/maintain-verification-skill/SKILL.md), [release history](roadmap.md).
 
-## Proposed implementation
+## Initial implementation proposal
 
 Preserve juan-mode as the entrypoint for the whole working style. Build a compact router and common execution rules, with separate files for each implemented playbook. State supported routes and unresolved dependencies explicitly. Investigation can be an early evaluation case without redefining the skill as an investigation-only product.
 Basis: proposed adaptation of the [upstream router](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md) and [local naming decision](decisions.md).
@@ -53,14 +53,13 @@ Basis: proposed delivery sequence informed by [upstream playbooks](https://githu
 Evaluate observable behavior, not just frontmatter validity. Cases should cover correct routing, a read-only boundary, concrete and inherited model seats, stale configuration rejection, fresh review rounds, unavailable dependencies, a failing-then-passing bug reproduction, blocked verification and an unsupported route. Report the actual coordinating and child providers exercised. Test persistence only if the implementation promises it.
 Basis: proposed checks derived from the [consumer contract](../../skills/jstack/setup-jstack/references/configuration.md), [upstream investigation boundary](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/investigation.md), [bug proof](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/bug-fix.md) and [verification outcome contract](../../skills/jstack/maintain-verification-skill/SKILL.md).
 
-## Choices still open
+## Initial choices and current resolution
 
-- In what order should the first-release routes be implemented and evaluated?
-- Should activation apply to the current request only, or should a supported client keep it active across later tasks?
-- Which upstream helper workflows deserve separate jstack skills, and which can be expressed inside a playbook?
-- How should a standalone installation obtain the shared configuration resolver?
-- Should ordinary implementation requests include opening a PR by default, or should publication follow the user's requested delivery?
-- Which providers must pass live workflow evaluations before the first release?
+- The target now covers all 23 playbooks, with shared foundations and grouped implementation described in the specification.
+- The user chose activation that remains in effect until turned off; persistence requires runtime evidence.
+- The specification proposes bundled helper procedures and an explicitly discovered `setup-jstack` resolver dependency.
+- Publication follows the user's requested delivery, while merge and installation retain the established boundaries.
+- The specification proposes a provider coverage target and names the execution questions that remain unverified.
 
-These are proposed design choices. The existing roadmap, saved role map and successful setup tests do not settle them.
+The accepted scope and activation preference are decisions. Proposed packaging and execution mechanisms still need implementation and evaluation; the saved role map and successful setup tests do not establish runtime support.
 Source: [roadmap](roadmap.md), [decisions](decisions.md), [configuration contract](../../skills/jstack/setup-jstack/references/configuration.md).
