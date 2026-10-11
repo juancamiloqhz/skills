@@ -37,6 +37,6 @@ Inspect evidence rather than accepting only agent summaries. Generation is nonde
 
 ## Limits
 
-These are focused functional evaluations, not a comparative benchmark. No without-skill baseline was run. They demonstrate a generated CLI recipe, independent reuse, one injected output regression and a no-app boundary. They do not establish browser, API, library, desktop, mobile, interactive terminal, cross-provider or automatic-discovery behavior. T3 browser execution was not part of this trial.
+These are focused functional evaluations, not a comparative benchmark. No without-skill baseline was run. They demonstrate a generated CLI recipe, independent reuse, one injected output regression and a no-app boundary. They do not establish browser, API, library, desktop, mobile, interactive terminal, cross-provider or automatic-discovery behavior. T3 Code browser execution was not part of this trial.
 
 The generated Pocket recipe does not cover corrupt storage, concurrent writers, filesystem faults, forced process termination, or the complete argument-error matrix. The failure injection tested an already-generated verifier; generator behavior against a broken starting application remains untested. Raw proof was inspected locally; this repository retains the small outcome/hash record and fixture instead of full agent transcripts or generated skills in the installable tree.

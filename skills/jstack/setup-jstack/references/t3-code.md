@@ -1,6 +1,6 @@
-# T3 integration
+# T3 Code integration
 
-Use the actual callable tool schemas and injected T3 instructions as authority. Tool names may have a harness prefix such as `mcp__t3_code__`.
+Use the actual callable tool schemas and injected T3 Code instructions as authority. Tool names may have a harness prefix such as `mcp__t3_code__`.
 
 - `orchestrator_capabilities` discovers provider instances, model IDs, options and inheritance. It is the validation source, not a model list copied into this skill.
 - `delegate_task` creates parent-owned work. Concrete seats become `target` with `providerInstanceId`, `model` and `options`. Inherited seats omit `target`. Retain returned task IDs; use fresh delegated tasks for new review rounds with consolidated briefs and distinct retry-stable request IDs. Prefer asynchronous completion delivery over polling.

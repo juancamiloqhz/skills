@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate, save and resolve jstack selections using a live T3 catalog."""
+"""Validate, save and resolve jstack selections using a live T3 Code catalog."""
 
 import argparse
 import json
