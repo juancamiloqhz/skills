@@ -7,6 +7,8 @@ Use the actual callable tool schemas and injected T3 Code instructions as author
 - `t3_thread_launch` creates independent conversations only when requested. Its `modelSelection` differs from a delegation target. Bind writing threads to separate worktrees using the tool's workspace strategy, rather than asking an agent to change its binding with shell commands.
 - `t3_thread_configure` changes a conversation's selection. Setup does not call it: storing routing preferences should not switch the user's current model.
 
+Save the unwrapped capabilities payload through a file-writing tool or streamed standard input. Embedding a large catalog in a shell command, including a heredoc passed as command text, can exceed the operating system's argument limit. If the transport only supports command strings, write bounded chunks. Preserve the full payload and parse the saved JSON before validation; do not shorten the catalog to make it fit.
+
 For ACP when MCP tools are absent and `T3_ACP_MCP_NODE` is present, the supported discovery transport is:
 
 ```sh
