@@ -1,6 +1,6 @@
 # Jstack roadmap
 
-Status as of 2026-10-11. Model setup, verification tooling and upstream maintenance are released. The next work is the `juan-mode` adaptation specification. The sequence below records the agreed direction; implementation details and release checks remain to be specified.
+Status as of 2026-10-11. Model setup, verification tooling and upstream maintenance are released. All 23 poteto-mode playbooks have been assessed for `juan-mode`, and the [adaptation specification](juan-mode-spec.md) defines the complete target and staged implementation. Workflow implementation and runtime evaluations have not started.
 
 ## Completed: setup-jstack
 
@@ -28,26 +28,32 @@ Released in [PR #8](https://github.com/juancamiloqhz/skills/pull/8). Maintain an
 
 Released in [PR #12](https://github.com/juancamiloqhz/skills/pull/12). The [upstream maintenance procedure](upstream-maintenance.md) and manifest support source change detection, complete impact reviews and retained decisions. The [first review](upstream-reviews/2026-10-11.md) covers the manual trial. The weekly review is enabled in the skills project and bound to the [jstack conversation](t3-thread://v1/5f7384b2-cbbe-431f-942d-929f327635a1). Its report delivery and fresh completion receipt were verified on 2026-10-11 before the old lifeOS schedule was deleted. Implementation recommendations require approval, merges remain separate, and installation stays manual.
 
-## Next: specify the juan-mode adaptation
+## Completed: assess the complete playbook set
 
-Adapt poteto-mode's working approach through the `juan-mode` entrypoint: shared engineering principles, task routing, scoped delegation, review and verification. The [source assessment](juan-mode-adaptation.md) records upstream behavior and T3 Code integration constraints. Investigation is one playbook within this scope. The earlier investigation-first proposal described a delivery slice, not the whole product.
+Adapt poteto-mode's working approach through the `juan-mode` entrypoint: shared engineering principles, task routing, scoped delegation, review and verification. The [initial source assessment](juan-mode-adaptation.md) led to a broader review of all 23 playbooks. The user accepted the full-set target and grouped implementation, superseding the earlier three-playbook first-release plan.
 
-Write the adaptation specification before implementing the skill. Define the entrypoint and common rules, playbook contracts, configuration loading and role resolution, explicit child context, permission boundaries, verification outcomes and unsupported-route behavior. Reuse the shipped configuration and verification contracts. Map every required upstream dependency to an adapted skill, bundled reference, existing capability or explicitly deferred behavior.
+The [specification](juan-mode-spec.md) links all three inventories, maps shared dependencies, records T3 Code substitutions and defines acceptance scenarios. Playbooks stay inside `juan-mode`; the proposed packaging also bundles shared helper procedures rather than requiring a separate installation for every upstream helper. Existing configuration and verification contracts remain the starting point.
 
-Settle activation for a single request versus later tasks in the conversation, helper-skill packaging, standalone access to the configuration resolver, PR publication defaults and required provider coverage. Cursor's mode metadata alone does not establish persistence in T3 Code. Completion means the specification accounts for these choices and defines observable acceptance checks for the first release.
+The user selected explicit activation that stays in effect for subsequent tasks in the same conversation until turned off. That preference is settled. How each supported provider preserves or reloads the instruction across compaction and session resume must be demonstrated; Cursor's mode metadata alone does not establish it in T3 Code.
 
-## Then: implement the entrypoint and first playbooks
+## Next: implement and prove the execution foundation
 
-The agreed first usable release targets Investigation, Feature and Bug fix. Build in focused PRs: the router and shared configuration/delegation behavior, then complete playbook paths with their required dependencies. Choose the implementation and evaluation order in the specification. A route is supported only when its dependencies and completion checks work.
+Begin with the entrypoint, complete route registry, installed-dependency discovery, model resolution and explicit delegation contract. Prove activation and opt-out across turns and resume, configured model selection, and the workspace behavior of delegated writers. This focused first implementation establishes the common behavior used by every playbook. A registry entry is not a claim that its route already works.
 
-Investigation produces a cited explanation or recommendation within a read-only scope. Feature covers understanding, design, delegated implementation, review and verification. Bug fix covers reproduction, evidence of the cause, implementation and verification against the original failure. Reuse existing project verification when it covers the task; generation and maintenance remain separate operations.
+Keep `setup-jstack` as the proposed explicit dependency for the canonical resolver and discover its installed directory. Preserve the saved 17-role map. One-seat defaults, unavailable child providers and insufficient judge diversity require precise capability handling, not silent model substitution or increased fan-out.
+
+## Then: implement the complete set in groups
+
+Follow the [implementation groups](juan-mode-spec.md#implementation-groups): shared procedures; engineering and experiments; delivery and recovery; autonomous coordination; then full release verification. Each group can span several focused PRs. The target includes advanced autopilot, stacked-PR shipping and multi-day coordination; they are later implementation groups, not automatically deferred product scope.
+
+Use T3 Code's child-task and parent-owned PR-watch lifecycle. Adapt upstream support scripts to actual requirements rather than copying fixed cloud-lane, Graphite, scheduler or cleanup assumptions. Preserve each playbook's purpose and record intentional behavior differences. Reducing the release scope requires a separate decision.
 
 ## Release checks: evaluate observable behavior
 
-Evaluate correct routing, concrete and inherited model assignments, stale configuration rejection, explicit delegation context, fresh review rounds, unavailable dependencies and unsupported routes. Demonstrate that Investigation preserves its read-only scope, Feature verifies the requested behavior, and Bug fix produces failing-then-passing evidence. Incomplete or blocked verification must remain visible in the result.
+Run a representative case for each of the 23 routes, plus common-contract and failure-path evaluations. Demonstrate correct routing, concrete and inherited model assignments, stale configuration rejection, explicit child context, fresh review rounds, unavailable dependencies, protected user work and accurate completion reporting. Each inventory entry supplies a concrete acceptance scenario. Files, static validation and child self-reports alone do not establish support.
 
-Record which coordinating and child providers were actually exercised, and test persistence if the specification promises it. Source review and successful setup tests do not prove workflow execution. Merge completed work before installation; the user installs and updates skills manually.
+Verify the accepted conversation-persistence behavior and publish the coordinating-provider, child-provider and platform coverage actually exercised. The specification identifies resume, delegated-workspace isolation, merge continuation and trace visibility as engineering investigations. Missing capability must remain visible instead of becoming a false pass. Merge completed work before installation; the user installs and updates skills manually.
 
-## Later: extend the supported workflows
+## Beyond the initial upstream set
 
-Assess advanced autopilot, stacked-PR shipping and multi-day project coordination after the everyday playbooks work. Additional upstream workflows and reusable helper skills can follow demonstrated needs. The broad working-style scope does not commit jstack to porting all 23 playbooks or all pstack skills.
+Assess newly added upstream playbooks, extra platform support and standalone helper packaging through the existing maintenance process. The full 23-playbook target does not require porting unrelated pstack skills or installing all referenced capabilities on every host.

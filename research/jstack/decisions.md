@@ -1,12 +1,14 @@
 # Jstack decisions
 
-Initially recorded on 2026-10-10 from the project discussion and shipped setup implementation. Updated on 2026-10-11 with the agreed juan-mode direction; detailed workflow design remains the next specification task.
+Initially recorded on 2026-10-10 from the project discussion and shipped setup implementation. Updated on 2026-10-11 with the complete juan-mode playbook target and activation preference. The specification records design choices that still require implementation evidence.
 
 ## Names and scope
 
 The bundle is named `jstack`. Its first skill is `setup-jstack`. The planned workflow entrypoint is `juan-mode`, corresponding to pstack's `poteto-mode` concept. Jstack will select useful ideas from pstack; no commitment has been made to implement all upstream skills.
 
-On 2026-10-11, the user confirmed the direction of adapting poteto-mode's broader working approach, including task routing, delegation, review and verification. Investigation is one route, not the definition of juan-mode. The [roadmap](roadmap.md) owns the agreed first-release scope and delivery sequence; the [source assessment](juan-mode-adaptation.md) supports the upcoming specification.
+On 2026-10-11, the user confirmed the direction of adapting poteto-mode's broader working approach, including task routing, delegation, review and verification. After discussing staged delivery, the user accepted assessing and designing for all 23 upstream playbooks, then implementing and verifying them in manageable groups. This supersedes the earlier three-playbook first-release plan. The [roadmap](roadmap.md) owns the scope and sequence; the [specification](juan-mode-spec.md) records the complete adaptation design.
+
+Explicit invocation activates juan-mode for later tasks in the same conversation until the user turns it off. Task completion does not deactivate it. This is the intended behavior; provider persistence across compaction and resume must be demonstrated before claiming support. Activation does not itself authorize new external actions, merging or installation.
 
 ## Delivery
 
