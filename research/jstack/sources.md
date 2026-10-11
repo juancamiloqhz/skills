@@ -24,4 +24,4 @@ The panel experiments tested selected delegation mechanics. They did not validat
 
 ## Verification generator
 
-The generator adaptation uses the same `ccb5507cec1546dc88135c1139c811e6c59115ba` pin. Its [upstream reference](../../skills/create-verification-skill/references/upstream.md) identifies the generator and feature-map sources, retained license, and T3-specific changes. Its [evaluation](evaluations/create-verification-skill/README.md) records what was actually executed. Setup's optional offer and the upstream maintenance skill remain separate work.
+The generator adaptation uses the same `ccb5507cec1546dc88135c1139c811e6c59115ba` pin. Its [upstream reference](../../skills/create-verification-skill/references/upstream.md) identifies the generator and feature-map sources, retained license, and T3-specific changes. Its [evaluation](evaluations/create-verification-skill/README.md) records what was actually executed. The optional offer is implemented in `setup-jstack`; the upstream maintenance skill remains future work.

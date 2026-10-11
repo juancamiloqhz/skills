@@ -1,6 +1,6 @@
 # Jstack roadmap
 
-Status as of 2026-10-10. Only setup is implemented. The remaining steps describe a proposed sequence, not authorization to start new research or implementation.
+Status as of 2026-10-11. Model setup and the verification generator are released. The remaining steps describe a proposed sequence, not authorization to start new research or implementation.
 
 ## Completed: setup-jstack
 
@@ -12,9 +12,17 @@ Those checks cover setup. They do not establish the behavior of a future workflo
 
 [PR #4](https://github.com/juancamiloqhz/skills/pull/4) established this research directory and excluded the old experiment archive from the current tree.
 
-## Current: create-verification-skill
+## Completed: create-verification-skill
 
-Adapt the generator to author a project-local verification skill and prove one real feature with retained evidence and cleanup. Evaluate generation and a fresh invocation of its output on an isolated runnable fixture. Publish only the interfaces actually tested. The optional offer in `setup-jstack` follows in a separate change after this generator is proven. Installation and updates are manual.
+[PR #6](https://github.com/juancamiloqhz/skills/pull/6) added the generator. [Evaluation](evaluations/create-verification-skill/README.md) covered a CLI fixture, independent reuse, failure detection and a documentation-only boundary. Browser and cross-provider execution remain untested. Installation and updates are manual.
+
+## Current: optional verification offer
+
+After model configuration, `setup-jstack` inspects the target repository for a real application and existing verification support, then offers generation when needed. Acceptance hands off to the separately available generator. A missing generator produces manual installation instructions; declining or a failed generation leaves the saved model configuration intact.
+
+## Next: maintain-verification-skill
+
+Build maintenance in its own PR after the setup offer. Evaluate it against deliberate changes to an application with an existing verification skill: identify stale recipes, update affected features, and rerun the relevant proof. No maintenance implementation is included in the current change.
 
 ## Deferred: define the first workflow
 
