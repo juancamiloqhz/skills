@@ -47,7 +47,7 @@ On acceptance, resolve `create-verification-skill` from the current skill catalo
 npx skills add juancamiloqhz/skills --skill create-verification-skill --global
 ```
 
-Never execute installation or updates on the user's behalf. Keep the saved model configuration intact whether the offer is declined, the generator is missing, or generation fails. Report the generator's outcome separately, including draft status or untested behavior; do not offer the unimplemented `maintain-verification-skill` command.
+Never execute installation or updates on the user's behalf. Keep the saved model configuration intact whether the offer is declined, the generator is missing, or generation fails. Report the generator's outcome separately, including draft status or untested behavior. Maintenance of existing verification support is a separate task.
 
 ## Scope and provenance
 
