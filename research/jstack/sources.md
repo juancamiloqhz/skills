@@ -2,6 +2,8 @@
 
 Setup and historical references were carried forward on 2026-10-10. Later entries record the inspection dates for verification tooling. A pinned source identifies what was previously inspected; it does not establish compatibility with a current runtime.
 
+For newer upstream changes, use the [maintenance procedure](upstream-maintenance.md) and [manifest](upstream.json). Review checkpoints do not replace the historical adaptation pins below.
+
 ## Shipped setup
 
 The setup adaptation uses `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`.

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/cursor/plugins.git",
+  "branch": "main",
+  "initialRevision": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+  "reviewedThrough": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+  "watchPaths": [
+    "pstack",
+    ".cursor-plugin/marketplace.json",
+    "README.md",
+    "schemas/plugin.schema.json",
+    "schemas/marketplace.schema.json",
+    "scripts/validate-plugins.mjs",
+    ".github/workflows/validate-plugins.yml"
+  ],
+  "skills": [
+    {
+      "name": "setup-jstack",
+      "localPath": "skills/jstack/setup-jstack",
+      "upstreamPath": "pstack/skills/setup-pstack",
+      "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "contextPaths": [
+        "pstack/skills/poteto-mode"
+      ],
+      "differences": "skills/jstack/setup-jstack/references/upstream.md"
+    },
+    {
+      "name": "create-verification-skill",
+      "localPath": "skills/jstack/create-verification-skill",
+      "upstreamPath": "pstack/skills/create-verification-skill",
+      "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "contextPaths": [],
+      "differences": "skills/jstack/create-verification-skill/references/upstream.md"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "localPath": "skills/jstack/maintain-verification-skill",
+      "upstreamPath": "pstack/skills/maintain-verification-skill",
+      "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "contextPaths": [],
+      "differences": "skills/jstack/maintain-verification-skill/references/upstream.md"
+    }
+  ],
+  "decisions": [
+    {
+      "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "id": "2026-10-11-plugin-metadata",
+      "disposition": "keep",
+      "paths": [
+        ".cursor-plugin/marketplace.json",
+        "README.md",
+        "pstack/.cursor-plugin/plugin.json",
+        "pstack/README.md",
+        "pstack/skills/poteto-help"
+      ],
+      "reason": "Shared entries concern other plugins; pstack version and discovery changes do not require a portable jstack update."
+    },
+    {
+      "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "id": "2026-10-11-poteto-mode",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/poteto-mode"
+      ],
+      "reason": "Review the revised context when the user requests the juan-mode investigation; no shipped workflow consumer exists."
+    },
+    {
+      "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "id": "2026-10-11-ketchup",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/ketchup"
+      ],
+      "reason": "Optional new skill. Reopen if the user selects conversation recap for exploration; inspect its bro dependency then."
+    },
+    {
+      "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "id": "2026-10-11-unported-prompts",
+      "disposition": "keep",
+      "paths": [
+        "pstack/skills/architect",
+        "pstack/skills/arena",
+        "pstack/skills/benchmark-checklist",
+        "pstack/skills/figure-it-out",
+        "pstack/skills/how",
+        "pstack/skills/interrogate",
+        "pstack/skills/reflect",
+        "pstack/skills/technical-writing",
+        "pstack/skills/unslop",
+        "pstack/skills/why",
+        "pstack/skills/principle-build-the-lever",
+        "pstack/skills/principle-encode-lessons-in-structure",
+        "pstack/skills/principle-explain-the-number",
+        "pstack/skills/principle-minimize-reader-load",
+        "pstack/skills/principle-model-the-domain",
+        "pstack/skills/principle-never-block-on-the-human",
+        "pstack/skills/principle-redesign-from-first-principles",
+        "pstack/skills/principle-subtract-before-you-add",
+        "pstack/skills/principle-test-behavior-not-implementation",
+        "pstack/skills/principle-type-system-discipline"
+      ],
+      "reason": "These skills have no shipped jstack counterpart. Preserve scope and inspect fresh sources if a future adaptation is chosen."
+    }
+  ]
+}

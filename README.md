@@ -111,6 +111,8 @@ npx skills add juancamiloqhz/skills --skill setup-jstack
 
 [Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `setup-jstack` is released; `juan-mode` remains unimplemented. Research into the next workflow is deferred until requested.
 
+For pstack updates, use the [upstream maintenance procedure](./research/jstack/upstream-maintenance.md). Its checker detects changes and preserves evidence; a review decides which changes belong in jstack. Scheduled checks are not enabled yet.
+
 ## Maturity
 
 The repository is currently experimental. Skill behavior and packaging may evolve as the skills are tested across different projects.
