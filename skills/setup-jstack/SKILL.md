@@ -5,7 +5,7 @@ description: Configure jstack model assignments and reasoning budgets for T3 Cod
 
 # Setup jstack
 
-Configure jstack's model routing through T3's live catalog. This skill writes a user-local configuration for future jstack workflows; it does not install providers, launch agents, change the current model, or enable other workflows.
+Configure jstack's model routing through T3's live catalog. This skill writes a user-local configuration for future jstack workflows. It does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
 
 The bundle is named `jstack`. Its planned workflow entrypoint is `juan-mode`, the counterpart to pstack's `poteto-mode`; that consumer is not implemented yet.
 
@@ -35,8 +35,22 @@ Present the concrete file path, reasoning budget and target effort, assignments,
 
 Explain that the saved `preset` records the setup choice; the resolver uses each seat's effective options and never reapplies the budget. Editing only `preset` does not change any role's effort. Consumers must read the configuration at invocation time and revalidate against the current catalog. It is not a T3-managed rule or an automatically loaded mode. Installation and slash-command discovery depend on the coordinating provider; source authoring alone does not register `/setup-jstack`.
 
+## Offer project verification, optionally
+
+After saving and reporting the model configuration, inspect the known target project's instructions, documented user interface, existing `verify-*` skills and verification tooling. This inspection is read-only; do not launch the app or run its tests merely to decide whether to offer generation. If no target project is known, the repository has no executable product, or an existing skill or harness already covers real user paths, skip the offer and briefly say why. Unit tests alone do not necessarily cover those paths, and an existing harness need not have a `verify-*` name.
+
+If verification support is missing, offer once to generate a project-local skill that exercises the app, retains proof and cleans up its test state. A decline or unanswered offer leaves model setup complete; do not generate files or repeatedly ask in the same setup run. If the user has already requested generation for this project, proceed without asking again. Their acceptance authorizes the generator task under the existing repository and user permissions; it does not grant additional external-action permission.
+
+On acceptance, resolve `create-verification-skill` from the current skill catalog or an explicitly supplied source path, read its `SKILL.md`, and follow it for the target repository with the known constraints. Do not assume a sibling directory exists when setup was installed on its own, invent a slash-command tool, or substitute another generator. If it is unavailable, report that model setup succeeded and provide this command for the user to run manually, then resume generation only once the skill is available:
+
+```sh
+npx skills add juancamiloqhz/skills --skill create-verification-skill --global
+```
+
+Never execute installation or updates on the user's behalf. Keep the saved model configuration intact whether the offer is declined, the generator is missing, or generation fails. Report the generator's outcome separately, including draft status or untested behavior; do not offer the unimplemented `maintain-verification-skill` command.
+
 ## Scope and provenance
 
-The first release provides setup and configuration validation/resolution only. User and repository instructions govern execution permissions; model routing grants none. No live delegation is needed to configure roles.
+Model routing provides configuration validation/resolution; it does not execute the configured workflow roles. The optional verification task is handled by the separately available generator. User and repository instructions govern execution permissions; model routing grants none. No live delegation is needed to configure roles.
 
 This adapts pstack's setup concept and role registry. See [upstream attribution](references/upstream.md) for the pinned source and license. It is not an official Cursor or T3 integration.
