@@ -5,13 +5,13 @@ description: Configure jstack model assignments and reasoning budgets for T3 Cod
 
 # Setup jstack
 
-Configure jstack's model routing through T3's live catalog. This skill writes a user-local configuration for future jstack workflows. It does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
+Configure jstack's model routing through T3 Code's live catalog. This skill writes a user-local configuration for future jstack workflows. It does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
 
 The bundle is named `jstack`. Its planned workflow entrypoint is `juan-mode`, the counterpart to pstack's `poteto-mode`; that consumer is not implemented yet.
 
 ## Discover and load
 
-Call `orchestrator_capabilities` through the available T3 MCP tool. Use its current provider instances, models and option schemas, including custom models. If the tool is absent from discovery, make one direct attempt. For ACP's documented transport fallback and tool semantics, read [T3 integration](references/t3.md). If discovery remains unavailable, report that setup cannot validate concrete assignments; preserve the existing configuration.
+Call `orchestrator_capabilities` through the available T3 Code MCP tool. Use its current provider instances, models and option schemas, including custom models. If the tool is absent from discovery, make one direct attempt. For ACP's documented transport fallback and tool semantics, read [T3 Code integration](references/t3-code.md). If discovery remains unavailable, report that setup cannot validate concrete assignments; preserve the existing configuration.
 
 Resolve the configuration path from `JSTACK_CONFIG` when explicitly supplied, otherwise `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`. Read existing state before proposing changes. Read the [configuration contract](references/configuration.md), which defines roles, aliases and consumer behavior. Keep credentials and host-specific selections outside the skills repository.
 
@@ -33,7 +33,7 @@ Prepare the proposed JSON and a temporary JSON copy of the full capabilities pay
 
 Present the concrete file path, reasoning budget and target effort, assignments, effort exceptions and changed roles. Resolve user choices before writing; when the request already specifies the full mapping, proceed without asking again. Save with `python3 scripts/models.py write DRAFT --catalog CATALOG --output CONFIG`, which validates and replaces the file atomically. Read the saved file back and report exactly what changed. Remove temporary catalog/draft files when finished.
 
-Explain that the saved `preset` records the setup choice; the resolver uses each seat's effective options and never reapplies the budget. Editing only `preset` does not change any role's effort. Consumers must read the configuration at invocation time and revalidate against the current catalog. It is not a T3-managed rule or an automatically loaded mode. Installation and slash-command discovery depend on the coordinating provider; source authoring alone does not register `/setup-jstack`.
+Explain that the saved `preset` records the setup choice; the resolver uses each seat's effective options and never reapplies the budget. Editing only `preset` does not change any role's effort. Consumers must read the configuration at invocation time and revalidate against the current catalog. It is not a rule managed by T3 Code or an automatically loaded mode. Installation and slash-command discovery depend on the coordinating provider; source authoring alone does not register `/setup-jstack`.
 
 ## Offer project verification, optionally
 
@@ -53,4 +53,4 @@ Never execute installation or updates on the user's behalf. Keep the saved model
 
 Model routing provides configuration validation/resolution; it does not execute the configured workflow roles. The optional verification task is handled by the separately available generator. User and repository instructions govern execution permissions; model routing grants none. No live delegation is needed to configure roles.
 
-This adapts pstack's setup concept and role registry. See [upstream attribution](references/upstream.md) for the pinned source and license. It is not an official Cursor or T3 integration.
+This adapts pstack's setup concept and role registry. See [upstream attribution](references/upstream.md) for the pinned source and license. It is not an official Cursor or T3 Code integration.

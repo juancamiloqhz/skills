@@ -14,7 +14,7 @@ The setup adaptation uses `cursor/plugins` revision `ccb5507cec1546dc88135c1139c
 
 - [Setup skill](../../skills/jstack/setup-jstack/SKILL.md): setup behavior and limits.
 - [Configuration contract](../../skills/jstack/setup-jstack/references/configuration.md): schema and consumer requirements.
-- [T3 integration reference](../../skills/jstack/setup-jstack/references/t3.md): integration guidance shipped with setup. Recheck callable tools and injected runtime instructions before execution.
+- [T3 Code integration reference](../../skills/jstack/setup-jstack/references/t3-code.md): integration guidance shipped with setup. Recheck callable tools and injected runtime instructions before execution.
 
 ## Historical material
 
@@ -24,7 +24,7 @@ The panel experiments tested selected delegation mechanics. They did not validat
 
 ## Verification generator
 
-The generator adaptation uses the same `ccb5507cec1546dc88135c1139c811e6c59115ba` pin. Its [upstream reference](../../skills/jstack/create-verification-skill/references/upstream.md) identifies the generator and feature-map sources, retained license, and T3-specific changes. Its [evaluation](evaluations/create-verification-skill/README.md) records what was actually executed. The optional offer is implemented in `setup-jstack`.
+The generator adaptation uses the same `ccb5507cec1546dc88135c1139c811e6c59115ba` pin. Its [upstream reference](../../skills/jstack/create-verification-skill/references/upstream.md) identifies the generator and feature-map sources, retained license, and changes for T3 Code. Its [evaluation](evaluations/create-verification-skill/README.md) records what was actually executed. The optional offer is implemented in `setup-jstack`.
 
 ## Verification maintenance
 

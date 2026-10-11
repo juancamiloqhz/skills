@@ -1,6 +1,6 @@
 # Jstack configuration contract
 
-Schema version 1 is owned by jstack, not T3. The canonical role registry is `ROLES` in `scripts/models.py`; `template` generates all 17 roles with inherited selections. Grouped labels preserve pstack's role names. Missing, extra or misspelled roles are errors, so setup cannot silently discard a user's mapping.
+Schema version 1 is owned by jstack, not T3 Code. The canonical role registry is `ROLES` in `scripts/models.py`; `template` generates all 17 roles with inherited selections. Grouped labels preserve pstack's role names. Missing, extra or misspelled roles are errors, so setup cannot silently discard a user's mapping.
 
 ```sh
 python3 scripts/models.py template --preset medium > /tmp/jstack-draft.json
@@ -45,8 +45,8 @@ Scalar roles have one seat. `arena runners`, `architect runners` and `interrogat
 
 ## Consumer contract
 
-Every invocation reads and validates current configuration before dispatch. Validation covers the entire map; stale seats produce a configuration error before execution, even when they belong to another role. Setup can repair those seats. The helper's `resolve` command emits an ordered list of T3 delegation targets; JSON `null` means omit `target` to inherit the parent. For top-level launches, translate a concrete target into `modelSelection` using the current tool schema; omission inherits the caller's selection.
+Every invocation reads and validates current configuration before dispatch. Validation covers the entire map; stale seats produce a configuration error before execution, even when they belong to another role. Setup can repair those seats. The helper's `resolve` command emits an ordered list of T3 Code delegation targets; JSON `null` means omit `target` to inherit the parent. For top-level launches, translate a concrete target into `modelSelection` using the current tool schema; omission inherits the caller's selection.
 
-Resolving a role does not authorize or launch it. A future consumer must declare which routes it implements, preserve permission boundaries, and pass explicit task context. Follow T3's child-task lifecycle and new-thread rules in [T3 integration](t3.md). This release implements no Investigation, Arena, shipping or issue workflow.
+Resolving a role does not authorize or launch it. A future consumer must declare which routes it implements, preserve permission boundaries, and pass explicit task context. Follow T3 Code's child-task lifecycle and new-thread rules in [T3 Code integration](t3-code.md). This release implements no Investigation, Arena, shipping or issue workflow.
 
-Configuration is loaded by consumers, not by T3 itself. Re-running setup updates the same file; consumers see changes on their next invocation. Repository instructions or installation can make the skill discoverable, but do not turn the configuration into a persistent system rule.
+Configuration is loaded by consumers, not by T3 Code itself. Re-running setup updates the same file; consumers see changes on their next invocation. Repository instructions or installation can make the skill discoverable, but do not turn the configuration into a persistent system rule.

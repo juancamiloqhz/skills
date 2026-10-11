@@ -19,7 +19,7 @@ Check that the documented baseline actually runs before claiming verified output
 
 ## Select tools and output location
 
-For browser interaction in T3, start with `preview_status`, then `preview_open` if no automation-capable preview is attached. Use current callable schemas and observed snapshot locators. Respect human-owned tabs and current T3 fallback rules. An existing repository harness remains useful for its documented tests. A failed T3 preview is not permission to install system libraries or silently switch browser systems. Record the blocker if the required route cannot run. Outside T3, use the available project harness and state its prerequisites.
+For browser interaction in T3 Code, start with `preview_status`, then `preview_open` if no automation-capable preview is attached. Use current callable schemas and observed snapshot locators. Respect human-owned tabs and current T3 Code fallback rules. An existing repository harness remains useful for its documented tests. A failed T3 Code preview is not permission to install system libraries or silently switch browser systems. Record the blocker if the required route cannot run. Outside T3 Code, use the available project harness and state its prerequisites.
 
 Write one canonical project-local skill. Honor an explicit output path or repository convention; otherwise author `.agents/skills/verify-<app>/`. Use a stable lowercase app name. Check the destination before writing and preserve unrelated content. The project-local Claude Code link below is part of generation. Global skill installations, updates and provider settings remain user-managed.
 
