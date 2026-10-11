@@ -15,6 +15,7 @@ This repository is the canonical source for skills I have developed and validate
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
 | [`setup-jstack`](./skills/setup-jstack) | Configures jstack workflow roles using T3's live provider/model catalog, reasoning budgets and validated user-local settings. | Experimental; configuration helper tested |
 | [`create-verification-skill`](./skills/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
+| [`maintain-verification-skill`](./skills/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
 ## Install
 

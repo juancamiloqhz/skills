@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-11",
+  "kind": "focused functional evaluation; no without-skill comparison",
+  "source_sha256": {
+    "skills/maintain-verification-skill/SKILL.md": "1ea3fe40a160e0ea4b8cf39c5f83bef7c253a6a40841db51494ae29bf41d7f05",
+    "skills/maintain-verification-skill/agents/openai.yaml": "533eb8b8c62db90d985bedc8779ec9827491f3db557214eefa9be6f2ef9e7ecb",
+    "skills/maintain-verification-skill/references/upstream.md": "a56f179c11027517c468550a5484a8b4a5f15430aaa5bc31ac488d673a61309a",
+    "research/jstack/evaluations/maintain-verification-skill/prepare.py": "da65c34755a3d25245b2ad4f1bda514f51ff0e29e7421d28c4e241d192c7d60a"
+  },
+  "baseline_generator_evaluation": "../create-verification-skill/README.md",
+  "baseline_verify_skill_files_sha256": "00a73bc5ba91420f67fe8c5b8ab71fe6c947fa38528e01b3175171afc4bb25c0",
+  "fixture_reproduction": "prepare.py produced identical input file hashes in an independent setup run",
+  "cases": {
+    "drift": {
+      "execution": "independent fresh Codex subagent",
+      "outcome": "changed",
+      "app_sha256": "8b2a8a65c222ecdc19d045cc5b3832f5063b25c6e6ba861bfb37c71e11ea1631",
+      "input_files_sha256": "9b1111c516e823fcb4dd3eef8cf6391cba923fafa084f023ccc0c8c9801cde23",
+      "output_files_sha256": "11a39e1e0239d3a22272de1f326aaad588792480926dc1f8951ca4e1787ed5ee",
+      "changed_files": [
+        ".agents/skills/verify-pocket/SKILL.md",
+        ".agents/skills/verify-pocket/features/README.md",
+        ".agents/skills/verify-pocket/features/errors.md",
+        ".agents/skills/verify-pocket/features/reads.md",
+        ".agents/skills/verify-pocket/features/search.md",
+        ".agents/skills/verify-pocket/scripts/verify.py"
+      ],
+      "application_and_readme_unchanged": true,
+      "historical_evidence_unchanged": true,
+      "proof": [
+        {
+          "local_report": "/tmp/pocket-proof-1b_6chj5/report.json",
+          "sha256": "7b5baff775ca1d983def595816e443530a72d0bf85225ba13a9145a531b1838e",
+          "status": "failed",
+          "command_count": 1,
+          "verified": [],
+          "scratch_absent": true,
+          "evidence_retained": true
+        },
+        {
+          "local_report": "/tmp/pocket-proof-arlb2fny/report.json",
+          "sha256": "30d2a017556c626d2e2efbff93e4384e013d96a64a1ac66b9fccc6ad4aa4731d",
+          "status": "passed",
+          "command_count": 2,
+          "verified": [
+            "doctor: version and help"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        },
+        {
+          "local_report": "/tmp/pocket-proof-c865dzso/report.json",
+          "sha256": "39ea062e9abd78ab714f8bbafb4155e26f657193d753ed0ed451e3dac2ee4abe",
+          "status": "passed",
+          "command_count": 15,
+          "verified": [
+            "doctor: version and help",
+            "creation: trim, body, default body, sequential IDs, persistence",
+            "reads: empty list without writes, get, populated list",
+            "search: absent storage, case-insensitive substring, no match, title-only, no writes",
+            "errors: missing ID and blank title on fresh/populated data"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        }
+      ]
+    },
+    "regression": {
+      "execution": "independent fresh Codex subagent",
+      "outcome": "blocked",
+      "app_sha256": "e23b8456fbb91c8b4a1acc25a07bcaab6f10347d6025ebfc7a4363c4f6691c6b",
+      "input_files_sha256": "f20620f4d8e0eb33e41a5fbf6efde66fe19ecc481ef1c0763e267e3cd591d3f9",
+      "output_files_sha256": "f20620f4d8e0eb33e41a5fbf6efde66fe19ecc481ef1c0763e267e3cd591d3f9",
+      "changed_files": [],
+      "application_and_readme_unchanged": true,
+      "historical_evidence_unchanged": true,
+      "proof": [
+        {
+          "local_report": "/tmp/pocket-proof-wuy_asj9/report.json",
+          "sha256": "6b307d5c334717bd5a51a6364f3c90bb6f7a313f6f727d19cb7124e68708dffa",
+          "status": "failed",
+          "command_count": 8,
+          "verified": [
+            "doctor: version and help",
+            "creation: trim, body, default body, sequential IDs, persistence"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        },
+        {
+          "local_report": "/tmp/pocket-proof-167wt809/report.json",
+          "sha256": "f894d32e68e1bf779f5bfc8cee712ef1ea03d647878741c1a57624796f49992a",
+          "status": "passed",
+          "command_count": 2,
+          "verified": [
+            "doctor: version and help"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        },
+        {
+          "local_report": "/tmp/pocket-maintenance-regression-dzb_so6u/remaining.json",
+          "sha256": "e897be56088393c9598bd54d4664fa56b8c7ee564d4fe7d025ea244b13d7b272",
+          "status": "passed",
+          "command_count": 7,
+          "verified": [
+            "read.list: both complete notes in insertion order, no mutation",
+            "errors: populated missing-ID and blank-title errors, no mutation after each"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        }
+      ]
+    },
+    "clean": {
+      "execution": "independent fresh Codex subagent",
+      "outcome": "clean",
+      "app_sha256": "3b9a74d274cb0862b9f6a51ef4c425b9008a155190c363b9e1b3bc0d8045172a",
+      "input_files_sha256": "13c1531b2fc12f59153f9e4d69cee0c425a866f8a2f1aaacf4b1e93e91095917",
+      "output_files_sha256": "13c1531b2fc12f59153f9e4d69cee0c425a866f8a2f1aaacf4b1e93e91095917",
+      "changed_files": [],
+      "application_and_readme_unchanged": true,
+      "historical_evidence_unchanged": true,
+      "proof": [
+        {
+          "local_report": "/tmp/pocket-proof-uvh_rvym/report.json",
+          "sha256": "726c0fe77fe64c5b1e49c1ca57e7958bb0a0d833c8ba1510b7679fb6fe9408d3",
+          "status": "passed",
+          "command_count": 2,
+          "verified": [
+            "doctor: version and help"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        },
+        {
+          "local_report": "/tmp/pocket-proof-ceau7ei9/report.json",
+          "sha256": "a8300c329c4fa81d8c19d4314877ad697cbfe01b42c067b00aff49e7e54fcf98",
+          "status": "passed",
+          "command_count": 11,
+          "verified": [
+            "doctor: version and help",
+            "creation: trim, body, default body, sequential IDs, persistence",
+            "reads: empty list without writes, show, populated list",
+            "errors: missing ID and blank title on fresh/populated data"
+          ],
+          "scratch_absent": true,
+          "evidence_retained": true
+        }
+      ]
+    },
+    "missing": {
+      "execution": "parent locator smoke check",
+      "outcome": "no target; no files generated",
+      "app_sha256": "3b9a74d274cb0862b9f6a51ef4c425b9008a155190c363b9e1b3bc0d8045172a",
+      "input_files_sha256": "22b4e7569c6a85b2f6bc1f48217efc257007e334a425e282c8061df0d6eb051f",
+      "output_files_sha256": "22b4e7569c6a85b2f6bc1f48217efc257007e334a425e282c8061df0d6eb051f",
+      "changed_files": [],
+      "application_and_readme_unchanged": true,
+      "historical_evidence_unchanged": true
+    }
+  },
+  "limits": [
+    "CLI only; no browser, API, library, TUI or cross-provider evaluation",
+    "No automatic discovery, global installation or live publication tested",
+    "Missing-target case was a parent smoke check, not independent behavioral evidence",
+    "Missing credentials, ambiguous intent, partial edits and cleanup failure not behaviorally evaluated",
+    "Raw proof inspected locally; temporary paths may expire; source/output hashes identify this run"
+  ]
+}

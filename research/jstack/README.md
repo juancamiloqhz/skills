@@ -4,7 +4,7 @@ Jstack is a skills bundle being developed for T3 Code, informed by pstack. This 
 
 ## Current status
 
-As of 2026-10-11, [`setup-jstack`](../../skills/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer is the current change. `juan-mode` is the agreed name for the future workflow entrypoint; it is not implemented.
+As of 2026-10-11, [`setup-jstack`](../../skills/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer is released. [`maintain-verification-skill`](../../skills/maintain-verification-skill/SKILL.md) is the current change, with a separate [evaluation](evaluations/maintain-verification-skill/README.md). `juan-mode` is the agreed name for the future workflow entrypoint; it is not implemented.
 
 The roadmap separates verification-tooling work from the proposed `juan-mode` investigation workflow. Research into that first investigation workflow remains deferred until requested.
 

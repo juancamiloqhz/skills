@@ -16,17 +16,17 @@ Those checks cover setup. They do not establish the behavior of a future workflo
 
 [PR #6](https://github.com/juancamiloqhz/skills/pull/6) added the generator. [Evaluation](evaluations/create-verification-skill/README.md) covered a CLI fixture, independent reuse, failure detection and a documentation-only boundary. Browser and cross-provider execution remain untested. Installation and updates are manual.
 
-## Current: optional verification offer
+## Completed: optional verification offer
 
-After model configuration, `setup-jstack` inspects the target repository for a real application and existing verification support, then offers generation when needed. Acceptance hands off to the separately available generator. A missing generator produces manual installation instructions; declining or a failed generation leaves the saved model configuration intact.
+[PR #7](https://github.com/juancamiloqhz/skills/pull/7) added the optional offer. After model configuration, `setup-jstack` inspects the target repository for a real application and existing verification support, then offers generation when needed. Acceptance hands off to the separately available generator. A missing generator produces manual installation instructions; declining or a failed generation leaves the saved model configuration intact.
 
-## Next: maintain-verification-skill
+## Current: maintain-verification-skill
 
-Build maintenance in its own PR after the setup offer. Evaluate it against deliberate changes to an application with an existing verification skill: identify stale recipes, update affected features, and rerun the relevant proof. No maintenance implementation is included in the current change.
+Maintain an existing project-local verification skill in place. Review every mapped feature against source, exercise it through the public interface, repair evidenced drift within the skill directory, and report product regressions without weakening expectations. Delivery follows the requested task; invoking maintenance alone does not create a PR. The [evaluation](evaluations/maintain-verification-skill/README.md) records deliberate application changes, a regression, and an unchanged baseline. Installation remains manual.
 
 ## Deferred: define the first workflow
 
-When requested, research a read-only codebase investigation for `juan-mode`. Define its scope, required evidence, relationship to the saved configuration, and how successful behavior will be verified. Record unresolved choices before implementation. No investigation, prompt design, or live delegation is part of the current reorganization.
+When requested, research a read-only codebase investigation for `juan-mode`. Define its scope, required evidence, relationship to the saved configuration, and how successful behavior will be verified. Record unresolved choices before implementation. That investigation remains outside the current verification-tooling work.
 
 ## Later: implement and evaluate one workflow
 
