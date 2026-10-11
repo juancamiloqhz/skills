@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-11",
+  "kind": "focused foundation checks; no baseline comparison",
+  "baseCommit": "06e73c9982da136d066f8f3a8a0081946bdfecb9",
+  "upstreamRevision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "sourceSha256": {
+    "skills/jstack/juan-mode/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/juan-mode/SKILL.md": "2836da088a1922dd4955be9faaa4f5d5ee3f608753332d11b8e05138666d4832",
+    "skills/jstack/juan-mode/references/activation.md": "f182ec4ad5d04c9814695f944fdcf360bb34d3fa9ff376cf36eb23b5d448dd1e",
+    "skills/jstack/juan-mode/references/configuration.md": "ec468c85a9fde380169eaf66edca39095163e87a0843640cd76f518e231d3e33",
+    "skills/jstack/juan-mode/references/execution.md": "fe8c54b41351c97c03a52e44ee7a78761536bec23740470952ada25704544497",
+    "skills/jstack/juan-mode/references/routes.md": "1407a8f3e75c7c5b1e143444e3e123283fc1bc23f7adf5e96cdd278ec5712a4c",
+    "skills/jstack/juan-mode/references/upstream.md": "ce1dbab090b40cd818f930f2ed5efc77986e213b52aeae32a60c439e42b6dde4",
+    "skills/jstack/juan-mode/scripts/preflight.py": "099659396678d0b3a0cdf4224025a79e3c9dc6c7a96c5f55de1bff114295574f",
+    "skills/jstack/juan-mode/scripts/test_preflight.py": "8f1a5ab1480168e43985d5ce9c529d2288a6a4385f50d70de7f57b9830f749b4"
+  },
+  "unitTests": {
+    "consumerPassed": 12,
+    "canonicalResolverPassed": 6,
+    "reviewRegression": "Two newly added pool cases failed before the fix and passed afterward."
+  },
+  "routeCoverage": {
+    "registered": 23,
+    "implementedPlaybooks": 0,
+    "matchesPinnedUpstream": true
+  },
+  "livePreflight": {
+    "setupSkill": "/home/ubuntu/.agents/skills/setup-jstack",
+    "role": "how explorer",
+    "targets": [
+      null
+    ],
+    "effectiveProvider": "codex",
+    "effectiveModel": "gpt-6-astra",
+    "savedConfigUnchanged": true
+  },
+  "workspace": {
+    "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-workspace-probe-20261011-r1",
+    "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-workspace-probe-20261011-r1",
+    "status": "completed",
+    "hasPendingChildRuns": false,
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "options": {
+      "reasoningEffort": "xhigh",
+      "serviceTier": "default"
+    },
+    "tool": "functions.exec -> tools.exec_command",
+    "defaultCwd": "/home/ubuntu/Dev/skills",
+    "assignedCwd": "/tmp/juan-foundation-20261011/workspace-probe/assigned",
+    "fixtureHead": "609982fac7bf2829507bdb13550fbc9acc067a19",
+    "observedDiff": "diff --git a/value.txt b/value.txt\nindex 4b48dee..12b897c 100644\n--- a/value.txt\n+++ b/value.txt\n@@ -1 +1 @@\n-original\n+written in assigned checkout\n",
+    "baseAndUntrackedSentinelPreserved": true,
+    "projectStatusPreserved": true,
+    "temporaryWorktreeRemoved": true,
+    "scope": "Explicit-path shell execution only; no app binding or other editor tools tested"
+  },
+  "activation": {
+    "method": "One T3 Code child, four turns, source skill explicitly read, handoff requested each turn",
+    "turns": [
+      {
+        "turn": 1,
+        "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-activation-20261011-r1",
+        "status": "completed",
+        "hasPendingChildRuns": false,
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "summary": "Juan-mode is active until you explicitly turn it off. No files were edited or agents launched.\n\n```json\n{\n  \"juanMode\": {\n    \"active\": true,\n    \"threadId\": \"thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-activation-20261011-r1\",\n    \"skillPath\": \"/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md\"\n  }\n}\n```\n\nActivation is complete. Persistence across resume is intended but remains unverified."
+      },
+      {
+        "turn": 2,
+        "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Athread-send%3Ajuan-foundation-activation-20261011-turn2",
+        "status": "completed",
+        "hasPendingChildRuns": false,
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "summary": "Asking for a plan authorizes planning, not implementation. Implementation needs separate authorization, which may already exist in the conversation.\n\n```json\n{\n  \"juanMode\": {\n    \"active\": true,\n    \"threadId\": \"thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-activation-20261011-r1\",\n    \"skillPath\": \"/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md\"\n  }\n}\n```"
+      },
+      {
+        "turn": 3,
+        "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Athread-send%3Ajuan-foundation-activation-20261011-turn3",
+        "status": "completed",
+        "hasPendingChildRuns": false,
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "summary": "A JSON array is an ordered list of values, while a JSON object is a collection of key-value pairs with string keys.\n\n```json\n{\n  \"juanMode\": {\n    \"active\": false,\n    \"threadId\": \"thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-activation-20261011-r1\",\n    \"skillPath\": \"/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md\"\n  }\n}\n```"
+      },
+      {
+        "turn": 4,
+        "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Athread-send%3Ajuan-foundation-activation-20261011-turn4",
+        "status": "completed",
+        "hasPendingChildRuns": false,
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "summary": "7 \u00d7 8 = 56.\n\n```json\n{\n  \"juanMode\": {\n    \"active\": false,\n    \"threadId\": \"thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-foundation-activation-20261011-r1\",\n    \"skillPath\": \"/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md\"\n  }\n}\n```"
+      }
+    ],
+    "observedStates": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "compactionTested": false,
+    "processRestartTested": false
+  },
+  "limits": [
+    "No installed-skill automatic discovery tested",
+    "No cross-provider runtime dispatch tested",
+    "No full playbook, helper or principle implementation evaluated",
+    "No concurrent writer or cancellation recovery tested",
+    "Activation probes explicitly requested handoffs; ordinary long-conversation reliability remains unknown"
+  ],
+  "localEvidence": "/tmp/juan-foundation-20261011",
+  "review": {
+    "initialFinding": "Judge pool treated alternatives as mandatory executable seats",
+    "resolution": "Added per-index availability, retained strict panel checks and whole-map validation, and added two regression tests",
+    "finalResult": "Independent re-review found no remaining concrete defects; 12 tests and two additional isolated cases passed"
+  }
+}

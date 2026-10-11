@@ -6,7 +6,7 @@ Jstack is a skills bundle being developed for T3 Code, informed by pstack. This 
 
 As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/jstack/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer and [`maintain-verification-skill`](../../skills/jstack/maintain-verification-skill/SKILL.md) are released; maintenance has a separate [evaluation](evaluations/maintain-verification-skill/README.md). Upstream maintenance is released and its weekly review delivers to the skills project conversation.
 
-All 23 poteto-mode playbooks have been assessed for `juan-mode`, the planned working-style entrypoint and task router. The [specification](juan-mode-spec.md) defines the complete target, shared dependencies and acceptance scenarios. The [roadmap](roadmap.md) starts implementation with the common execution foundation, then adds the full set in groups. The skill is not implemented.
+All 23 poteto-mode playbooks have been assessed for `juan-mode`, the working-style entrypoint and task router. The [specification](juan-mode-spec.md) defines the complete target, shared dependencies and acceptance scenarios. The [foundation implementation](../../skills/jstack/juan-mode/SKILL.md) provides activation instructions, the route registry and configuration preflight, with [bounded evaluation evidence](evaluations/juan-mode-foundation/README.md). The playbook procedures remain planned; the [roadmap](roadmap.md) records the remaining execution proof and implementation groups.
 
 ## Read by purpose
 
