@@ -44,6 +44,8 @@ The preflight uses the separately discovered `setup-jstack` resolver and preserv
 
 Optional project configuration extends this foundation. Setup and juan-mode share one lookup with explicit file, environment, project and global precedence. Project setup seeds a complete map from global settings, and children retain the selected absolute path across worktrees. The [project configuration evaluation](evaluations/project-model-config/README.md) records CLI coverage and compatibility with the older installed helper. It does not change the remaining workflow persistence requirements.
 
+The later [installed runtime evaluation](evaluations/juan-mode-runtime/README.md) verifies both updated installations, inherited Codex model and effort, and absolute-path `apply_patch` edits confined to an assigned worktree. Six synthetic activation histories match the written recovery rules. The available T3 tools expose no compaction or provider-process restart operation, so those runtime gates remain unverified. A live catalog capture exceeded the shell argument limit; the shared integration guidance now covers file-tool, streamed or bounded-chunk capture.
+
 ## Then: implement the complete set in groups
 
 Follow the [implementation groups](juan-mode-spec.md#implementation-groups): shared procedures; engineering and experiments; delivery and recovery; autonomous coordination; then full release verification. Each group can span several focused PRs. The target includes advanced autopilot, stacked-PR shipping and multi-day coordination; they are later implementation groups, not automatically deferred product scope.

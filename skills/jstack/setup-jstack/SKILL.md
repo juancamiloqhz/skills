@@ -11,7 +11,7 @@ The bundle is named `jstack`. Its workflow entrypoint is `juan-mode`, the counte
 
 ## Discover and load
 
-Call `orchestrator_capabilities` through the available T3 Code MCP tool. Use its current provider instances, models and option schemas, including custom models. If the tool is absent from discovery, make one direct attempt. For ACP's documented transport fallback and tool semantics, read [T3 Code integration](references/t3-code.md). If discovery remains unavailable, report that setup cannot validate concrete assignments; preserve the existing configuration.
+Call `orchestrator_capabilities` through the available T3 Code MCP tool. Use its current provider instances, models and option schemas, including custom models. If the tool is absent from discovery, make one direct attempt. For catalog capture, ACP's documented transport fallback and tool semantics, read [T3 Code integration](references/t3-code.md). If discovery remains unavailable, report that setup cannot validate concrete assignments; preserve the existing configuration.
 
 Read the [configuration contract](references/configuration.md) for shared lookup, scope selection, roles and consumer behavior. Run the installed helper's `locate` command to report the effective file. Use the task's project root with `--project-root` when known; the installed skill directory is not the target project. Honor an explicit configuration path or `JSTACK_CONFIG` unless the user requests a different scope.
 

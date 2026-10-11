@@ -10,6 +10,8 @@ All 23 poteto-mode playbooks have been assessed for `juan-mode`, the working-sty
 
 Setup and juan-mode also share optional project model configuration, with [evaluation evidence](evaluations/project-model-config/README.md). A project file replaces the complete global map for that project, while explicit selections remain highest priority.
 
+The [installed runtime evaluation](evaluations/juan-mode-runtime/README.md) adds inherited Codex dispatch, explicit-path editor isolation and synthetic activation recovery cases. Actual compaction, provider restart and other coordinating providers remain unverified.
+
 ## Read by purpose
 
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.

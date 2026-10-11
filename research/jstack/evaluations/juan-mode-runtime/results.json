@@ -1,0 +1,408 @@
+{
+  "date": "2026-10-11",
+  "kind": "Installed Codex runtime checks and synthetic activation decisions; not a persistence certification",
+  "evaluatedCommit": "c9c64ce474369db3efa607cf28c9cd80877bf842",
+  "evaluatedSourceSha256": {
+    "skills/jstack/juan-mode/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/juan-mode/SKILL.md": "7d46ec853b0f369aedc0c0515f26a5b721424167342c7457b69c181e52691ee5",
+    "skills/jstack/juan-mode/references/activation.md": "f182ec4ad5d04c9814695f944fdcf360bb34d3fa9ff376cf36eb23b5d448dd1e",
+    "skills/jstack/juan-mode/references/configuration.md": "adadf30abaead0f12ba11664c9aa0f13ccb3d873c6916eaeeefd44a30b968504",
+    "skills/jstack/juan-mode/references/execution.md": "1eaa54bd3e08f51c9ff7d19a21d3da6c9f40d88a5960c0089d5a328a5782a977",
+    "skills/jstack/juan-mode/references/routes.md": "1407a8f3e75c7c5b1e143444e3e123283fc1bc23f7adf5e96cdd278ec5712a4c",
+    "skills/jstack/juan-mode/references/upstream.md": "70b724ee8e94f62aecb771ee550be1c3de6ebdfe35791800458ea793c7b5a71d",
+    "skills/jstack/juan-mode/scripts/preflight.py": "25c4051dfcf85a23afd10df7db535319b1aadfd64912da4529c8ce1478da7cbd",
+    "skills/jstack/juan-mode/scripts/test_preflight.py": "4caae5ab2660b50ffe5e922c8fb1d802ff554ed68b1070ccb80ea58cc6bc1298",
+    "skills/jstack/setup-jstack/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/setup-jstack/SKILL.md": "a6039f3d1cd6479e3d577bd042bb37796749e6e52ccd5f7b2f98ed4a3bbb14d0",
+    "skills/jstack/setup-jstack/agents/openai.yaml": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d",
+    "skills/jstack/setup-jstack/references/configuration.md": "20e076ea37422235aa2b6cab3f33aaae583704a575920d8cb50e889369c68ccc",
+    "skills/jstack/setup-jstack/references/t3-code.md": "46a3a2fdc7be6e84eccb58c456e2f60b0996ed7a8e5aba2bb5931e8f8bae2615",
+    "skills/jstack/setup-jstack/references/upstream.md": "dffaaed52949e3bc9fad96eba94d56b39522af558bfe8f478b8993be7c3c0560",
+    "skills/jstack/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+    "skills/jstack/setup-jstack/scripts/test_models.py": "2fcaa3f924e19df44797131fad0164b31b7306c4894b7318806b545ea817d650"
+  },
+  "correctedInstructionSha256": {
+    "skills/jstack/setup-jstack/SKILL.md": "197032f8109dcb0c1548ddc12d310b835e107553cdbeeac56ae58168a7a4f27c",
+    "skills/jstack/setup-jstack/references/t3-code.md": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+    "skills/jstack/juan-mode/references/configuration.md": "dbc2936a18e56d8a69f7c04dee07e8859f1d0ee8ab629daa8c2fb68522ffc1af"
+  },
+  "installedPreflight": {
+    "observedAt": "2026-10-11T23:05:45.550178+00:00",
+    "allTrackedFilesMatchSource": true,
+    "matchedFileCount": 17,
+    "roles": {
+      "how explorer": {
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "global",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ]
+      },
+      "feature, refactoring": {
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "global",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ]
+      },
+      "architect runners": {
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "global",
+        "selectionKind": "panel",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ]
+      },
+      "arena cross-judge pool": {
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "global",
+        "selectionKind": "pool",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ]
+      }
+    },
+    "configSha256Before": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "configSha256After": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+  },
+  "parentThreadConfiguration": {
+    "threadId": "5f7384b2-cbbe-431f-942d-929f327635a1",
+    "modelSelection": {
+      "instanceId": "codex",
+      "model": "gpt-6-astra",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        },
+        {
+          "id": "serviceTier",
+          "value": "default"
+        }
+      ]
+    },
+    "runtimeMode": "full-access",
+    "interactionMode": "default"
+  },
+  "childTasks": [
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-editor-20261011-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-editor-20261011-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-runtime-editor-20261011-r1:ordinal:1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-activation-cases-20261011-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-activation-cases-20261011-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-runtime-activation-cases-20261011-r1:ordinal:1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    }
+  ],
+  "editorProbe": {
+    "threadConfigurationReadByParent": {
+      "threadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-editor-20261011-r1",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "gpt-6-astra",
+        "options": [
+          {
+            "id": "reasoningEffort",
+            "value": "medium"
+          },
+          {
+            "id": "serviceTier",
+            "value": "default"
+          }
+        ]
+      },
+      "runtimeMode": "full-access",
+      "interactionMode": "default"
+    },
+    "defaultCwd": "/home/ubuntu/Dev/skills",
+    "assignedCheckout": "/tmp/juan-runtime.GO18U60v/assigned",
+    "assignedBranch": "probe/edit",
+    "fixtureHead": "904502db0f774f3fc5e16589f3d7f2c6cb8022d6",
+    "hostWorktreePath": null,
+    "hostRelationshipToParent": "subagent",
+    "tool": "functions.exec \u2192 tools.apply_patch",
+    "fileChangeEvent": {
+      "position": 21,
+      "visibility": "local",
+      "sourceThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-editor-20261011-r1",
+      "itemId": "turn-item:provider:codex:native-item:exec-88687999-a9f5-4ed2-bcdf-f4cac1e46def",
+      "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-runtime-editor-20261011-r1:ordinal:1",
+      "messageId": null,
+      "createdBy": null,
+      "creationSource": null,
+      "type": "file_change",
+      "status": "completed",
+      "title": null,
+      "text": "/tmp/juan-runtime.GO18U60v/assigned/value.txt\n@@ -1 +1 @@\n-original\n+edited with apply_patch\n",
+      "textTruncated": false,
+      "nextTextOffset": null,
+      "updatedAt": "2026-10-11T23:06:53.727Z"
+    },
+    "verifiedDiff": "diff --git a/value.txt b/value.txt\nindex 4b48dee..f465f27 100644\n--- a/value.txt\n+++ b/value.txt\n@@ -1 +1 @@\n-original\n+edited with apply_patch\n",
+    "pinnedConfigPreflight": {
+      "role": "feature, refactoring",
+      "selectionKind": "scalar",
+      "targets": [
+        null
+      ],
+      "effectiveIdentities": [
+        {
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "inherited": true
+        }
+      ],
+      "availability": [
+        {
+          "canDispatch": true,
+          "reason": null
+        }
+      ],
+      "resolver": "/home/ubuntu/.agents/skills/setup-jstack/scripts/models.py",
+      "config": "/home/ubuntu/.config/jstack/models.json",
+      "configSource": "explicit"
+    },
+    "parentVerification": {
+      "exactAssignedDiff": true,
+      "protectedBaseFilesUnchanged": true,
+      "parentTrackedFilesUnchanged": true,
+      "parentStatusUnchanged": true,
+      "configUnchanged": true,
+      "sixSyntheticDecisionsMatchContract": true
+    },
+    "temporaryWorktreeRemoved": true,
+    "temporaryChildCatalogRemoved": true
+  },
+  "activationDecisions": {
+    "method": "Independent synthetic history decision exercise",
+    "actualEvaluatorThread": {
+      "threadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-activation-cases-20261011-r1",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "gpt-6-astra",
+        "options": [
+          {
+            "id": "reasoningEffort",
+            "value": "medium"
+          },
+          {
+            "id": "serviceTier",
+            "value": "default"
+          }
+        ]
+      },
+      "runtimeMode": "full-access",
+      "interactionMode": "default"
+    },
+    "cases": {
+      "A": {
+        "history": [
+          {
+            "juanMode": {
+              "active": true,
+              "threadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-activation-cases-20261011-r1",
+              "skillPath": "/home/ubuntu/.agents/skills/juan-mode/SKILL.md"
+            }
+          },
+          {
+            "user": "What is 7 times 8?"
+          }
+        ],
+        "active": true,
+        "reloadSkill": "conditional",
+        "reloadCondition": "Reload the supplied installed entrypoint if active instructions are no longer in context; otherwise no reload is needed.",
+        "startPlaybook": false,
+        "reason": "The handoff belongs to the current thread and records active=true. No later opt-out appears. The simple arithmetic question is casual conversation, which does not start a playbook."
+      },
+      "B": {
+        "history": [
+          {
+            "juanMode": {
+              "active": true,
+              "threadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-activation-cases-20261011-r1",
+              "skillPath": "/home/ubuntu/.agents/skills/juan-mode/SKILL.md"
+            }
+          },
+          {
+            "user": "Turn juan-mode off. What is 7 times 8?"
+          }
+        ],
+        "active": false,
+        "reloadSkill": false,
+        "startPlaybook": false,
+        "reason": "The later explicit opt-out overrides the same-thread active handoff. Record active=false; no active-mode reload or routing is needed."
+      },
+      "C": {
+        "history": [
+          {
+            "juanMode": {
+              "active": true,
+              "threadId": "unrelated-thread",
+              "skillPath": "/home/ubuntu/.agents/skills/juan-mode/SKILL.md"
+            }
+          },
+          {
+            "newConversation": true,
+            "user": "What is 7 times 8?"
+          }
+        ],
+        "active": false,
+        "reloadSkill": false,
+        "startPlaybook": false,
+        "reason": "A record for another thread cannot activate this conversation. This is a new conversation with no invocation, so it starts inactive even though the installed skill path matches."
+      },
+      "D": {
+        "history": [
+          {
+            "juanMode": {
+              "active": false,
+              "threadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-runtime-activation-cases-20261011-r1",
+              "skillPath": "/home/ubuntu/.agents/skills/juan-mode/SKILL.md"
+            }
+          },
+          {
+            "user": "$juan-mode. What is 7 times 8?"
+          }
+        ],
+        "active": true,
+        "reloadSkill": "conditional",
+        "reloadCondition": "Load or re-read the supplied installed entrypoint if active instructions are no longer in context; otherwise no redundant reload is needed.",
+        "startPlaybook": false,
+        "reason": "The later explicit invocation overrides the earlier inactive record. The arithmetic question is casual conversation and does not start a playbook."
+      },
+      "E": {
+        "history": [
+          {
+            "resumedConversation": true,
+            "activationHistoryAvailable": false,
+            "activationRecordAvailable": false
+          },
+          {
+            "user": "Continue our previous task."
+          }
+        ],
+        "active": "unknown",
+        "reloadSkill": false,
+        "startPlaybook": false,
+        "reason": "Neither activation history nor a record is available. 'Continue our previous task' is not an explicit invocation. Report uncertainty rather than assuming active state. Do not start a juan-mode playbook on this evidence; the previous task is also unspecified."
+      },
+      "F": {
+        "history": [
+          {
+            "newConversation": true
+          },
+          {
+            "user": "Review the juan-mode skill and explain its activation design."
+          }
+        ],
+        "active": false,
+        "reloadSkill": false,
+        "startPlaybook": false,
+        "reason": "A new conversation starts inactive. A request to review or explain juan-mode is explicitly not invocation. Reading the skill as review material is appropriate but is not an activation recovery reload or a juan-mode playbook."
+      }
+    },
+    "parentCheckedStateSequence": [
+      true,
+      false,
+      false,
+      true,
+      "unknown",
+      false
+    ],
+    "realHostCompactionTested": false,
+    "providerProcessRestartTested": false
+  },
+  "catalogCapture": {
+    "childFailure": "Argument list too long (os error 7) when embedding full catalog in command text; reported by evaluator",
+    "childRecovery": "Bounded chunks; JSON parsed and preflight passed",
+    "parentFileToolCheck": {
+      "tool": "functions.exec -> tools.apply_patch",
+      "bytes": 189657,
+      "completePayloadPreserved": true,
+      "jsonParsed": true,
+      "validation": {
+        "valid": true,
+        "roles": 17
+      }
+    }
+  },
+  "lifecycleToolInspection": {
+    "source": "Current callable T3 MCP tool inventory",
+    "toolCount": 83,
+    "compactionOperationExposed": false,
+    "providerProcessRestartOperationExposed": false,
+    "limit": "This is an observation of the exposed tool interface, not a claim that the host cannot compact or resume."
+  },
+  "limits": [
+    "Only Codex gpt-6-astra with inherited medium effort and standard service tier exercised",
+    "No real compaction, provider restart, other coordinating providers or cross-provider dispatch",
+    "One explicit-path editor write; no app workspace binding, concurrency or cancellation recovery",
+    "Synthetic histories test rule interpretation only",
+    "No full playbook procedure executed"
+  ],
+  "localEvidence": "/tmp/juan-runtime.GO18U60v"
+}

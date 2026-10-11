@@ -2,7 +2,7 @@
 
 Find `setup-jstack` in the executing provider's available skill catalog and expand its advertised `SKILL.md` path. Read its configuration contract relative to that installation. Pass the entrypoint's parent directory to `--setup-skill`; its directory need not share a parent with `juan-mode`. Do not search arbitrary repositories for a convenient resolver or copy `models.py`. A missing installation is a dependency error with manual installation as the remedy.
 
-Call live `orchestrator_capabilities` and write the unwrapped payload to a task-owned temporary JSON file. Follow the installed setup skill's T3 Code integration reference for lazy discovery and the supported ACP transport. Record its observation time with task evidence, refresh it for each new routed task, and refresh again after a dispatch rejection that might indicate catalog drift. Remove temporary catalog files when no longer needed.
+Call live `orchestrator_capabilities` and write the unwrapped payload to a task-owned temporary JSON file. Read the installed setup skill's T3 Code integration reference for catalog capture, lazy discovery and the supported ACP transport. Record its observation time with task evidence, refresh it for each new routed task, and refresh again after a dispatch rejection that might indicate catalog drift. Remove temporary catalog files when no longer needed.
 
 Run the preflight from any working directory using absolute paths:
 
