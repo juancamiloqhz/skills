@@ -1,6 +1,6 @@
 # Claude Code discovery
 
-Use this guidance when handing off a generated verification skill for a project that uses Claude Code. Provide commands for the user to run manually; generation does not create provider links or install skills.
+Use this guidance for every generated verification skill's handoff, regardless of the executing provider or the project's current use of Claude Code. Provide commands for the user to run manually; generation does not create provider links or install skills.
 
 Claude Code's project location is `<repo>/.claude/skills/<skill-name>/SKILL.md`. Its personal location, `~/.claude/skills/`, applies across projects and is unsuitable for this project-specific recipe. The [official skill documentation](https://code.claude.com/docs/en/skills#choose-where-skills-load), checked on 2026-10-11, supports individual skill directories that are symlinks.
 
