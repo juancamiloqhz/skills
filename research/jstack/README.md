@@ -4,7 +4,7 @@ Jstack is a skills bundle being developed for T3 Code, informed by pstack. This 
 
 ## Current status
 
-As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/jstack/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer is released. [`maintain-verification-skill`](../../skills/jstack/maintain-verification-skill/SKILL.md) is the current change, with a separate [evaluation](evaluations/maintain-verification-skill/README.md). `juan-mode` is the agreed name for the future workflow entrypoint; it is not implemented.
+As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/jstack/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer and [`maintain-verification-skill`](../../skills/jstack/maintain-verification-skill/SKILL.md) are released; maintenance has a separate [evaluation](evaluations/maintain-verification-skill/README.md). The current work adds upstream change detection and review. `juan-mode` is the agreed name for the future workflow entrypoint; it is not implemented.
 
 The roadmap separates verification-tooling work from the proposed `juan-mode` investigation workflow. Research into that first investigation workflow remains deferred until requested.
 
@@ -13,6 +13,7 @@ The roadmap separates verification-tooling work from the proposed `juan-mode` in
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.
 - [Roadmap](roadmap.md): completed work and proposed next steps, with completion checks.
 - [Sources](sources.md): pinned references and attribution carried forward from existing work.
+- [Upstream maintenance](upstream-maintenance.md): run a pstack change check, review its impact, or implement an approved recommendation. The [first review](upstream-reviews/2026-10-11.md) records the live trial; scheduling remains disabled.
 
 ## Open questions
 

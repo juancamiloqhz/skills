@@ -20,9 +20,13 @@ Those checks cover setup. They do not establish the behavior of a future workflo
 
 [PR #7](https://github.com/juancamiloqhz/skills/pull/7) added the optional offer. After model configuration, `setup-jstack` inspects the target repository for a real application and existing verification support, then offers generation when needed. Acceptance hands off to the separately available generator. A missing generator produces manual installation instructions; declining or a failed generation leaves the saved model configuration intact.
 
-## Current: maintain-verification-skill
+## Completed: maintain-verification-skill
 
-Maintain an existing project-local verification skill in place. Review every mapped feature against source, exercise it through the public interface, repair evidenced drift within the skill directory, and report product regressions without weakening expectations. Delivery follows the requested task; invoking maintenance alone does not create a PR. The [evaluation](evaluations/maintain-verification-skill/README.md) records deliberate application changes, a regression, and an unchanged baseline. Installation remains manual.
+Released in [PR #8](https://github.com/juancamiloqhz/skills/pull/8). Maintain an existing project-local verification skill in place. Review every mapped feature against source, exercise it through the public interface, repair evidenced drift within the skill directory, and report product regressions without weakening expectations. Delivery follows the requested task; invoking maintenance alone does not create a PR. The [evaluation](evaluations/maintain-verification-skill/README.md) records deliberate application changes, a regression, and an unchanged baseline. Installation remains manual.
+
+## Current: upstream maintenance
+
+Track pstack revisions, detect complete source changes and review their impact through the [upstream maintenance procedure](upstream-maintenance.md). The manifest preserves original adaptation pins, reviewed ranges and deferred decisions. The [first review](upstream-reviews/2026-10-11.md) covers the manual trial. Merge the tooling before enabling a weekly T3 Code task; verify actual report delivery after scheduling. Implementation recommendations require approval, merges remain separate, and installation stays manual.
 
 ## Deferred: define the first workflow
 
