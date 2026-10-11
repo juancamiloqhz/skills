@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-10",
+  "python": "3.14.4",
+  "execution": "Independent native Codex agents for generation, reuse, and documentation-only scope; parent injected regression into a separate fixture worktree. No provider installation.",
+  "generatorSha256": {
+    "LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "SKILL.md": "0f9bd7ee1b7596a3ad354c530f68abff11a854fee3c00f5809167d983ca999d9",
+    "agents/openai.yaml": "f1b49f83366a5c5290117e2f5bf8db4deca581b3c704268b9e560e312de44fd5",
+    "references/output-contract.md": "cffa86e32676fb181f5b9cb0afae189d4bf8e99c9604c3fbbc15e863c7efa6e3",
+    "references/upstream.md": "8453880d9ff6eb72f7ae61c100fa5073d37f83df5dfc21b34a909853e29cb1c7"
+  },
+  "fixtureSha256": "3b9a74d274cb0862b9f6a51ef4c425b9008a155190c363b9e1b3bc0d8045172a",
+  "generatedFilesSha256": {
+    "SKILL.md": "17c11595806a48f708bb211fbb5d3d572418ebb03287373831eacd6f64743d8d",
+    "features/README.md": "ff46fcf011ba05a0271a328e1d4e10edef8b0dee40ab72e9c6f4c3a42001854f",
+    "features/creation.md": "d83fa0444d5e6b478abb885b461da653234abeda1c467bebf495646b1a9ece05",
+    "features/errors.md": "2b0eaeecfb4093999b28e85643d9f7553ada04bedb83cad7662e77add2d366a4",
+    "features/reads.md": "3865b52163c19553b79043a8780f7a95dfc68021d6d465e510352d7928e5c3c0",
+    "scripts/verify.py": "70d34af9763c2fe2731397d450885b6608084ba8e365dd381dc5ea64951ee011"
+  },
+  "generation": {
+    "status": "passed",
+    "commandCount": 11,
+    "cleanup": true,
+    "evidenceRetained": true,
+    "reportSha256": "1edc06f2d921d41388ed4d8f508e96d1446c51c3ccbf3316ca8835f811091300",
+    "verified": [
+      "doctor: version and help",
+      "creation: trim, body, default body, sequential IDs, persistence",
+      "reads: empty list without writes, show, populated list",
+      "errors: missing ID and blank title on fresh/populated data"
+    ],
+    "failure": []
+  },
+  "reuse": {
+    "status": "passed",
+    "commandCount": 11,
+    "cleanup": true,
+    "evidenceRetained": true,
+    "reportSha256": "dbe508fb936076345bfb3d1e1d590b071e44066ef628cf08a5114e8aa8fa4825",
+    "verified": [
+      "doctor: version and help",
+      "creation: trim, body, default body, sequential IDs, persistence",
+      "reads: empty list without writes, show, populated list",
+      "errors: missing ID and blank title on fresh/populated data"
+    ],
+    "failure": []
+  },
+  "injectedFailure": {
+    "status": "failed",
+    "commandCount": 8,
+    "cleanup": true,
+    "evidenceRetained": true,
+    "reportSha256": "0f310f6008aa43b2d63442d19f6d9064a079c6f272d35a42eaced6c47f8a7d27",
+    "verified": [
+      "doctor: version and help",
+      "creation: trim, body, default body, sequential IDs, persistence"
+    ],
+    "failure": [
+      "AssertionError: Show mismatch across processes"
+    ]
+  },
+  "documentationOnly": {
+    "generatedFiles": 0,
+    "cleanWorkingTree": true
+  },
+  "limits": [
+    "One synthetic CLI fixture and one documentation-only fixture",
+    "No browser, API, library, interactive terminal, or cross-provider execution",
+    "No autonomous skill discovery or installation tested",
+    "Failure injection tested the generated verifier, not regeneration on a broken baseline"
+  ]
+}

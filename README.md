@@ -14,10 +14,11 @@ This repository is the canonical source for skills I have developed and validate
 | [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
 | [`setup-jstack`](./skills/setup-jstack) | Configures jstack workflow roles using T3's live provider/model catalog, reasoning budgets and validated user-local settings. | Experimental; configuration helper tested |
+| [`create-verification-skill`](./skills/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
 
 ## Install
 
-Use the Skills CLI to discover the available skills and choose where to install them:
+Run the Skills CLI yourself to discover the available skills and choose where to install them. Agents should provide installation and update commands without executing them:
 
 ```sh
 npx skills add juancamiloqhz/skills
@@ -27,13 +28,6 @@ Install a specific skill directly:
 
 ```sh
 npx skills add juancamiloqhz/skills --skill agent-instructions
-```
-
-Codex users can alternatively ask `$skill-installer` to install an individual skill from this repository:
-
-```text
-Use $skill-installer to install agent-instructions from
-https://github.com/juancamiloqhz/skills/tree/main/skills/agent-instructions
 ```
 
 For local authoring with Codex, clone this repository and symlink the skill directory into `~/.agents/skills`:

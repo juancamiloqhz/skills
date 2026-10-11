@@ -8,9 +8,13 @@ Model configuration and validation shipped in [PR #2](https://github.com/juancam
 
 Those checks cover setup. They do not establish the behavior of a future workflow consumer.
 
-## Current: organize research
+## Completed: organize research
 
-Replace the old experiment archive with the four documents in this directory. Completion requires coherent status and source references, valid local links, passing Markdown checks, and no prototype in the installable skill catalog.
+[PR #4](https://github.com/juancamiloqhz/skills/pull/4) established this research directory and excluded the old experiment archive from the current tree.
+
+## Current: create-verification-skill
+
+Adapt the generator to author a project-local verification skill and prove one real feature with retained evidence and cleanup. Evaluate generation and a fresh invocation of its output on an isolated runnable fixture. Publish only the interfaces actually tested. The optional offer in `setup-jstack` follows in a separate change after this generator is proven. Installation and updates are manual.
 
 ## Deferred: define the first workflow
 
