@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "root": "/tmp/jstack-interrogate-tzccn3tn/design",
+    "writableRoot": "/tmp/jstack-interrogate-tzccn3tn/design/reports",
+    "skill": "/home/ubuntu/Dev/skills/skills/jstack/interrogate/SKILL.md",
+    "setupSource": "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/SKILL.md",
+    "selectedConfig": "/tmp/jstack-interrogate-tzccn3tn/design/models.json"
+  },
+  "hashes": {
+    "before": {
+      "design": "199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d",
+      "config": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+    },
+    "afterCase1": {
+      "design": "199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d",
+      "config": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+    },
+    "afterCase2": {
+      "design": "199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d",
+      "config": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+    }
+  },
+  "case1": {
+    "userRequest": "Challenge this design against its stated requirements; report only, don't implement.",
+    "brief": "You are reviewer A, the sole assigned reviewer for this request. User: \"Challenge this design against its stated requirements; report only, don't implement.\"\nIntent: Assess the proposed pure Python overlaps(a_start, a_end, b_start, b_end) -> bool against its stated contract for valid nonempty integer half-open intervals, negative endpoints, and ValueError on invalid intervals before any result. This is an unimplemented design. Review only.\nRead-only source: /tmp/jstack-interrogate-tzccn3tn/design/design.md\nPinned SHA256: 199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d\nSelected config, read-only: /tmp/jstack-interrogate-tzccn3tn/design/models.json\nConfig SHA256: a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b\nExplicit setup source: /home/ubuntu/Dev/skills/skills/jstack/setup-jstack/SKILL.md\nInterrogate source: /home/ubuntu/Dev/skills/skills/jstack/interrogate/SKILL.md\nYou are the reviewer, not a coordinator. Do not dispatch children or resolve and dispatch another panel. Do not read sibling code evaluation, prior results, or other reports. You may read the specified design, selected config, and these skill sources/references. No other surrounding implementation is in scope or supplied.\nOnly writable directory: /tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A\nWrite your complete report to /tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A/report.md. All writes must use absolute assigned paths. No repo writes, global config, settings changes, installs, PRs, commits, shared plans, implementations or external communications. Do not run product tests or manufacture an implementation to test. Static reasoning must not be called runtime verification.\nApply relevant review criteria: correctness at boundaries and errors; root cause only against actual contracts; simple structure and ownership; meaningful verification coverage; complexity with concrete cost; security only for a reachable applicable input boundary. Concurrency/persistence/network/type validation beyond integer preconditions are explicitly excluded.\nFor each finding provide critical, warning or nit severity, precise design location, violated constraint or missing contract, concrete failure/cost, supporting evidence and optional scoped remedy. Unsupported speculation and preferences are not defects; no findings is valid.\nCheck hashes before and after. Include complete findings or explicit no-findings verdict, evidence and static checks, verification gaps, limitations and hash results in your assigned report. Report only, no fixes.\nCompletion: assigned report exists and has been read back, read-only sources remain unchanged, no child work exists; return report path and concise outcome.",
+    "briefInspectedBeforeDispatch": true,
+    "roleResolution": {
+      "config": "/tmp/jstack-interrogate-tzccn3tn/design/models.json",
+      "configSource": "explicit",
+      "targets": [
+        null
+      ],
+      "wholeMapValidated": true,
+      "exitCode": 0
+    },
+    "prerequisites": {
+      "providerCanRunChildTask": true,
+      "modelListed": true,
+      "crossProvider": false,
+      "diversityRequired": false
+    },
+    "dispatch": {
+      "task": "You are reviewer A, the sole assigned reviewer for this request. User: \"Challenge this design against its stated requirements; report only, don't implement.\"\nIntent: Assess the proposed pure Python overlaps(a_start, a_end, b_start, b_end) -> bool against its stated contract for valid nonempty integer half-open intervals, negative endpoints, and ValueError on invalid intervals before any result. This is an unimplemented design. Review only.\nRead-only source: /tmp/jstack-interrogate-tzccn3tn/design/design.md\nPinned SHA256: 199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d\nSelected config, read-only: /tmp/jstack-interrogate-tzccn3tn/design/models.json\nConfig SHA256: a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b\nExplicit setup source: /home/ubuntu/Dev/skills/skills/jstack/setup-jstack/SKILL.md\nInterrogate source: /home/ubuntu/Dev/skills/skills/jstack/interrogate/SKILL.md\nYou are the reviewer, not a coordinator. Do not dispatch children or resolve and dispatch another panel. Do not read sibling code evaluation, prior results, or other reports. You may read the specified design, selected config, and these skill sources/references. No other surrounding implementation is in scope or supplied.\nOnly writable directory: /tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A\nWrite your complete report to /tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A/report.md. All writes must use absolute assigned paths. No repo writes, global config, settings changes, installs, PRs, commits, shared plans, implementations or external communications. Do not run product tests or manufacture an implementation to test. Static reasoning must not be called runtime verification.\nApply relevant review criteria: correctness at boundaries and errors; root cause only against actual contracts; simple structure and ownership; meaningful verification coverage; complexity with concrete cost; security only for a reachable applicable input boundary. Concurrency/persistence/network/type validation beyond integer preconditions are explicitly excluded.\nFor each finding provide critical, warning or nit severity, precise design location, violated constraint or missing contract, concrete failure/cost, supporting evidence and optional scoped remedy. Unsupported speculation and preferences are not defects; no findings is valid.\nCheck hashes before and after. Include complete findings or explicit no-findings verdict, evidence and static checks, verification gaps, limitations and hash results in your assigned report. Report only, no fixes.\nCompletion: assigned report exists and has been read back, read-only sources remain unchanged, no child work exists; return report path and concise outcome.",
+      "role": "review",
+      "title": "Case 1 design reviewer A",
+      "mode": "wait",
+      "timeoutMs": 1000,
+      "clientRequestId": "interrogate-design-tzccn3tn-case1-A"
+    },
+    "dispatchResult": {
+      "taskId": "node:delegated-task:command%3Amcp%3A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%3Adelegate-task%3Ainterrogate-design-tzccn3tn-case1-A",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%3Adelegate-task%3Ainterrogate-design-tzccn3tn-case1-A",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%253Adelegate-task%253Ainterrogate-design-tzccn3tn-case1-A:ordinal:1",
+      "childNodeId": "node:delegated-task:command%3Amcp%3A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%3Adelegate-task%3Ainterrogate-design-tzccn3tn-case1-A",
+      "status": "running",
+      "workState": "working",
+      "hasPendingChildRuns": false,
+      "latestTerminalRunId": null,
+      "latestTerminalStatus": null,
+      "latestTerminalSummary": null,
+      "latestTerminalResultContextTransferId": null,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra",
+      "summary": null,
+      "resultContextTransferId": null,
+      "waitTimedOut": true
+    },
+    "terminalResult": {
+      "taskId": "node:delegated-task:command%3Amcp%3A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%3Adelegate-task%3Ainterrogate-design-tzccn3tn-case1-A",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%3Adelegate-task%3Ainterrogate-design-tzccn3tn-case1-A",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%253Adelegate-task%253Ainterrogate-design-tzccn3tn-case1-A:ordinal:1",
+      "childNodeId": "node:delegated-task:command%3Amcp%3A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%3Adelegate-task%3Ainterrogate-design-tzccn3tn-case1-A",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "latestTerminalRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%253Adelegate-task%253Ainterrogate-design-tzccn3tn-case1-A:ordinal:1",
+      "latestTerminalStatus": "completed",
+      "latestTerminalSummary": "[Report completed and read back](/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A/report.md).\n\nNo findings. Static reasoning supports the design\u2019s contract; runtime behavior remains unverified. Before/after hashes match, sources are unchanged, and no child work was created.",
+      "latestTerminalResultContextTransferId": "context-transfer:type:subagent_result:source-thread:thread%3Adelegated-task%3Acommand%253Amcp%253A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%253Adelegate-task%253Ainterrogate-design-tzccn3tn-case1-A:target-thread:thread%3Adelegated-task%3Acommand%253Amcp%253A4500671a-31eb-4792-aa02-63b403cdfa87%253Adelegate-task%253Ainterrogate-design-20261012-r1:8742c4d5-236d-4814-a05f-facea9e0a58a",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra",
+      "summary": "[Report completed and read back](/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A/report.md).\n\nNo findings. Static reasoning supports the design\u2019s contract; runtime behavior remains unverified. Before/after hashes match, sources are unchanged, and no child work was created.",
+      "resultContextTransferId": "context-transfer:type:subagent_result:source-thread:thread%3Adelegated-task%3Acommand%253Amcp%253A0fa9bde9-ca9e-49e1-b2e1-adaccf00cd2c%253Adelegate-task%253Ainterrogate-design-tzccn3tn-case1-A:target-thread:thread%3Adelegated-task%3Acommand%253Amcp%253A4500671a-31eb-4792-aa02-63b403cdfa87%253Adelegate-task%253Ainterrogate-design-20261012-r1:8742c4d5-236d-4814-a05f-facea9e0a58a",
+      "waitTimedOut": false
+    },
+    "transportReason": "T3 fresh-context delegation preserves omitted-target inheritance and provides explicit actual identity and pending-child lifecycle evidence.",
+    "leadChecks": {
+      "intent": "Challenge the pure half-open integer interval design against its stated requirements without implementation.",
+      "checks": [
+        {
+          "kind": "static design reasoning",
+          "location": "design.md:5",
+          "result": "For valid nonempty intervals, non-overlap is a_end <= b_start or b_end <= a_start. Negating it gives precisely a_start < b_end and b_start < a_end."
+        },
+        {
+          "kind": "static design reasoning",
+          "location": "design.md:3,5",
+          "result": "Validating both lengths before predicate evaluation satisfies the invalid-interval exception even for disjoint inputs."
+        },
+        {
+          "kind": "static design reasoning",
+          "location": "design.md:7",
+          "result": "Touching endpoints fail a strict inequality; containment and equal intervals pass both; exchanging intervals swaps conjuncts; negative endpoints do not alter ordering."
+        }
+      ],
+      "limitations": [
+        "No implementation exists or was created.",
+        "No product runtime behavior or tests were executed.",
+        "One configured reviewer cannot establish cross-reviewer agreement or model-family diversity."
+      ]
+    },
+    "categorizedVerdict": {
+      "status": "complete",
+      "verdict": "No actionable design defect established.",
+      "coverage": {
+        "configured": 1,
+        "completed": 1,
+        "reviewers": [
+          {
+            "label": "A",
+            "provider": "codex",
+            "model": "gpt-6-astra"
+          }
+        ]
+      },
+      "categories": {
+        "Act on": [],
+        "Consider": [],
+        "Noted": [
+          {
+            "attribution": "A and coordinator",
+            "reason": "Implementation and planned tests do not exist in scope; runtime behavior remains unverified. This is a limitation, not a defect."
+          }
+        ],
+        "Dismissed": []
+      },
+      "agreementMap": {
+        "crossReviewerAgreement": "Not applicable: one reviewer.",
+        "disagreements": [],
+        "leadAssessment": "Reviewer claims checked against design lines 3, 5 and 7; no unsupported defect raised."
+      }
+    },
+    "fullReviewerReport": "# Reviewer A report\n\nVerdict: no findings. The proposed design satisfies the stated contract by static reasoning. There are no supported critical, warning or nit defects.\n\nThe review assesses the unimplemented pure Python `overlaps(a_start, a_end, b_start, b_end) -> bool` for nonempty integer half-open intervals, including negative endpoints and `ValueError` for invalid intervals before any result. Only the supplied design and configuration were reviewed as task artifacts. No surrounding implementation, sibling evaluations or other reports were inspected.\n\n## Evidence and static checks\n\n- `design.md:3` defines integer endpoints, nonempty half-open intervals and rejection when `end <= start`. `design.md:5` places validation of both intervals before the overlap expression. Consequently, an invalid second interval cannot escape validation when the first overlap comparison would be false. Raising on the first invalid interval also satisfies the contract when both are invalid; no error ordering or message is required.\n- `design.md:5` proposes `a_start < b_end and b_start < a_end`. For valid intervals, overlap is equivalent to `max(a_start, b_start) < min(a_end, b_end)`. The two proposed cross-comparisons together with each interval's validated ordering establish precisely that condition. If it holds, the integer maximum of the starts belongs to both intervals. The expression returns a Boolean for the stated integer inputs.\n- Boundary reasoning gives false for `[0,2)` versus `[2,4)` and for the reversed ordering. Strictly separated intervals also yield false. Identical valid intervals, containment and partial overlap yield true. Swapping the intervals swaps the two conjuncts, preserving symmetry.\n- Negative endpoints do not alter ordering logic. `[-2,2)` versus `[1,3)` yields true; `[-4,-2)` versus `[-2,-1)` yields false; `[-5,-1)` versus `[-3,-2)` yields true. These are hand-derived outcomes, not executed tests.\n- Empty and reversed intervals in either argument position must raise under the explicit validation requirement. For example, `[0,1)` versus `[2,2)` requires rejection before the overlap expression, despite its first comparison permitting subsequent evaluation; `[3,4)` versus `[1,1)` requires rejection even though the first comparison would already be false. The proposal's validation order covers both.\n- `design.md:5` assigns validation and the predicate to one function with no shared state or dependencies. No unnecessary ownership boundary or abstraction is proposed. It requires a fixed number of integer operations. Python integer comparison cost can grow with endpoint bit length; nothing in the design promises bit-length-independent runtime. There is no contract-grounded complexity defect.\n- No applicable security defect is evidenced within this pure integer-input contract. Network, concurrency, persistence and validation beyond integer preconditions are excluded from this review.\n\n## Verification gaps and limitations\n\n`design.md:7` plans boundary, symmetry, containment, negative endpoint and invalid interval tests. These are relevant behavioral categories. Concrete tests and an implementation do not exist in the supplied scope, so runtime behavior and test coverage remain unverified. Future invalid-input coverage should exercise empty and reversed intervals in both positions, both invalid together, and disjoint counterparts that would otherwise return false. This is coverage guidance, not a finding that the plan violates its contract.\n\nNo product tests were run, and no implementation was manufactured. No error-message format, validation ordering between two invalid intervals, noninteger handling or integrations were assumed. The phrase \"validate both interval lengths\" is interpreted using the explicit `end <= start` rejection rule on line 3.\n\n## Integrity and completion\n\nThe selected configuration contains one `interrogate reviewers` seat using `inherit-parent`. Reviewer A is the sole assigned reviewer. No children were dispatched and no cross-reviewer agreement is claimed. Setup and Interrogate sources were read for guidance; no configuration resolution, setup changes or panel dispatch was performed.\n\nBefore and after SHA256 checks matched the supplied pins exactly:\n\n- `/tmp/jstack-interrogate-tzccn3tn/design/design.md`: `199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d`\n- `/tmp/jstack-interrogate-tzccn3tn/design/models.json`: `a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b`\n\nGuidance source hashes also remained unchanged across the recorded checks:\n\n- Setup `SKILL.md`: `2200d6528ba6f97e987fe569bdc05d355b14c121749fa1bb36b19b2f899ef13e`\n- Interrogate `SKILL.md`: `2d6353a4b5a1bd0c2c58fd689aa36651e7e6d72577351aacdbda77eb04c02c66`\n- Interrogate `references/review-criteria.md`: `4f5703e9cbf449bbf2c0a282681a1a3c74255231a212f37d1f8271baaf51254e`\n- Unslop `SKILL.md`: `c6d2572294d933a428211921069e9a248490e9b466ca59437cb4d9de248600ca`\n\nAll writes were confined to the assigned report directory. No fixes, repository changes, installations, external communications or child work were performed. The completed report was read back.\n",
+    "terminalChecked": true,
+    "capabilitySummary": {
+      "inheritedProviderInstanceId": "codex",
+      "inheritedModel": "gpt-6-astra",
+      "canRunChildTask": true,
+      "modelListed": true,
+      "note": "Full catalogs omitted from committed record; raw evaluation retains them."
+    }
+  },
+  "case2": {
+    "userRequest": "Review the same design, requiring at least two different model families.",
+    "beganAfterCase1TerminalAndVerdict": true,
+    "resolutionCommandResult": {
+      "chunk_id": "49f565",
+      "wall_time_seconds": 0.075634744,
+      "exit_code": 0,
+      "original_token_count": 119,
+      "output": "{\n  \"path\": \"/tmp/jstack-interrogate-tzccn3tn/design/models.json\",\n  \"source\": \"explicit\",\n  \"exists\": true\n}\n{\n  \"config\": \"/tmp/jstack-interrogate-tzccn3tn/design/models.json\",\n  \"configSource\": \"explicit\",\n  \"targets\": [\n    null\n  ]\n}\n199ff3b9414ee721468b4131e129cbcc5a8cfb37bb01f646a6242a7371027d4d  /tmp/jstack-interrogate-tzccn3tn/design/design.md\na9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b  /tmp/jstack-interrogate-tzccn3tn/design/models.json\n"
+    },
+    "roleResolution": {
+      "config": "/tmp/jstack-interrogate-tzccn3tn/design/models.json",
+      "configSource": "explicit",
+      "targets": [
+        null
+      ],
+      "wholeMapValidated": true
+    },
+    "effectiveSeats": [
+      {
+        "label": "A",
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra",
+        "family": "GPT",
+        "targetOmitted": true
+      }
+    ],
+    "requiredModelFamilies": 2,
+    "configuredSeatCount": 1,
+    "maximumPossibleDistinctFamilies": 1,
+    "verdict": "incomplete",
+    "category": "prerequisite_unsatisfied",
+    "reason": "One configured inherited seat cannot provide two different model families. No seats added, models substituted or settings changed. Review stopped before dispatch.",
+    "reviewerBriefs": [],
+    "dispatches": [],
+    "categorizedFindings": {
+      "Act on": [],
+      "Consider": [],
+      "Noted": [
+        {
+          "reason": "Required model-family diversity is unavailable in the configured panel."
+        }
+      ],
+      "Dismissed": []
+    },
+    "agreementMap": "Not applicable; no reviewers dispatched.",
+    "userSettingsQuestionAsked": false,
+    "capabilitySummary": {
+      "inheritedProviderInstanceId": "codex",
+      "inheritedModel": "gpt-6-astra",
+      "canRunChildTask": true,
+      "modelListed": true,
+      "note": "Full catalogs omitted from committed record; raw evaluation retains them."
+    }
+  },
+  "checks": {
+    "productRuntimeTests": 0,
+    "implementationCreated": false,
+    "configurationChanged": false,
+    "sourceChanged": false,
+    "siblingResultsRead": false,
+    "reportReadBack": true,
+    "nestedWorkComplete": true
+  },
+  "limitations": [
+    "Static design review does not verify an implementation or runtime behavior.",
+    "Single-reviewer coverage cannot establish cross-reviewer agreement.",
+    "Capability catalog is discovery evidence; only case1 actual reviewer execution was tested.",
+    "Assigned paths were instructions, not a filesystem sandbox. Source hashes and report paths were checked; no system-wide mutation audit was performed."
+  ],
+  "artifactHashes": {
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/case2-catalog.json": "530b6506053ac0feaa6982cb70180221400440200ecbcb227339b6a8e141eea5",
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-verdict.json": "d8133d4622e8d3e00827e6a769281c8ab764e541839dd7cd817e28da418bc008",
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/lead-static-checks.json": "11558b38bce3d7182d289eca5455ab299c9749d1d6a09bec974dd8de5df350e8",
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-dispatch.json": "96ef29ea0ed8043c4f8cbb8ebb6279f7aef794ff90dbad596e3731fd9e61a338",
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-brief-A.txt": "46334a7b2038d94992247f28a48862c10f6b223cf8ca6d2d6eeceaeace31201c",
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-catalog.json": "530b6506053ac0feaa6982cb70180221400440200ecbcb227339b6a8e141eea5",
+    "/tmp/jstack-interrogate-tzccn3tn/design/reports/case1-reviewer-A/report.md": "25e4d0c18fa8388997a5eb06f49c01bedd08e9e1dc745b92f96a2a70da3dbbad"
+  },
+  "catalogCleanup": {
+    "removedTemporaryFiles": [
+      "case1-catalog.json",
+      "case2-catalog.json"
+    ],
+    "fullUnwrappedPayloadsRetained": "case1.capabilities and case2.capabilities",
+    "artifactHashNote": "Catalog hashes were captured before removing temporary copies."
+  },
+  "reviewedDesign": "# Pure interval predicate\n\nRequested scope: a pure Python function overlaps(a_start, a_end, b_start, b_end) -> bool for valid nonempty half-open intervals. All endpoints are integers. Invalid intervals with end <= start raise ValueError before returning a result. Negative endpoints are allowed. No persistence, mutation, network, concurrency or other validation is required.\n\nProposed shape: one function in intervals.py. Validate both interval lengths, then return a_start < b_end and b_start < a_end. No shared state, classes, caching or external dependencies.\n\nExamples: [0,2) and [2,4) return false; [-2,2) and [1,3) return true; [0,1) and [0,1) return true. Invalid [1,1) raises ValueError even when the other interval is disjoint. Verification planned: boundary, symmetry, containment, negative endpoint and invalid interval tests. This is an unimplemented design, not executed behavior.\n",
+  "parentCheckedHashes": true
+}

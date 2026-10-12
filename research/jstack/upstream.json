@@ -98,6 +98,17 @@
         "pstack/skills/setup-pstack"
       ],
       "differences": "skills/jstack/architect/references/upstream.md"
+    },
+    {
+      "name": "interrogate",
+      "localPath": "skills/jstack/interrogate",
+      "upstreamPath": "pstack/skills/interrogate",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/architect",
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/interrogate/references/upstream.md"
     }
   ],
   "decisions": [
