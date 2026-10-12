@@ -1,0 +1,105 @@
+{
+  "test": "Preparation only; no child or model execution",
+  "instruction": "/home/ubuntu/Dev/skills/skills/jstack/arena/references/execution.md",
+  "pending_text": "undefined Candidate ID: B. Owned directory: /tmp/jstack-architect-fvgg725q/dispatch-check/b.",
+  "pending_decision": "STOP: incomplete brief. Candidate ID and owned path cannot supply the missing original request, source/revision, config, permitted actions, artifacts, or completion condition. Do not dispatch this text.",
+  "reconstruction": {
+    "durable_original": "/tmp/jstack-architect-fvgg725q/success/candidate-common-prompt.txt",
+    "method": "Reloaded durable common brief verbatim except trailing whitespace, then appended candidate B ownership, absolute output, command working directory, and completion condition. Did not execute the candidate task or read its grounding documents.",
+    "task_file": "/tmp/jstack-architect-fvgg725q/dispatch-check/reconstructed-task.txt",
+    "preserved_scope": "Design only; all original restrictions retained."
+  },
+  "configuration": {
+    "path": "/tmp/jstack-architect-fvgg725q/models.json",
+    "resolver": "/home/ubuntu/.agents/skills/setup-jstack/scripts/models.py",
+    "role": "architect runners",
+    "command": [
+      "python3",
+      "/home/ubuntu/.agents/skills/setup-jstack/scripts/models.py",
+      "resolve",
+      "/tmp/jstack-architect-fvgg725q/models.json",
+      "--project-root",
+      "/tmp/jstack-architect-fvgg725q/fixture",
+      "--catalog",
+      "/tmp/jstack-architect-fvgg725q/dispatch-check/catalog.json",
+      "--role",
+      "architect runners",
+      "--with-source"
+    ],
+    "exit_code": 0,
+    "result": {
+      "config": "/tmp/jstack-architect-fvgg725q/models.json",
+      "configSource": "explicit",
+      "targets": [
+        null,
+        null
+      ]
+    },
+    "candidate_index_zero_based": 1,
+    "target_omitted": true,
+    "reason": "Candidate B is the second Architect seat. Canonical whole-map validation passed; null inherits provider/model/effort. No Arena judge or other role is needed for this bounded Architect preparation."
+  },
+  "capability": {
+    "catalog": "/tmp/jstack-architect-fvgg725q/dispatch-check/catalog.json",
+    "fresh_live_capture": true,
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "canRunChildTask": true,
+    "selected_model_listed": true,
+    "cross_provider": false,
+    "transport": "T3 delegate_task arguments only; callable schema inspected. Native child creation cannot explicitly select inherited gpt-6-astra with fresh context and preserve inherited effort; T3 inheritance can."
+  },
+  "reconstructed_decision": "PASS preparation checks: reconstructed text is dispatchable with saved arguments. Actual dispatch is withheld because this test explicitly prohibits child execution.",
+  "dispatch_arguments": "/tmp/jstack-architect-fvgg725q/dispatch-check/dispatch-arguments.json",
+  "source_revision": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+  "verification": {
+    "source_status_before_artifact_writes": "?? untracked.txt\n",
+    "source_status_after_artifact_writes": "?? untracked.txt\n",
+    "source_and_config_hashes_before_artifact_writes": {
+      "/tmp/jstack-architect-fvgg725q/fixture/README.md": "79af74b0bd7cf4a6df1559334cb1c42da50c4462fcaa6ebfe6f2b5525d1f4d0d",
+      "/tmp/jstack-architect-fvgg725q/fixture/gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+      "/tmp/jstack-architect-fvgg725q/fixture/untracked.txt": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+      "/tmp/jstack-architect-fvgg725q/fixture/docs/decision.md": "e7eb7f65640d794d22c8e508437724aa9b92463b908f3d0adf089aaf3ce342ad",
+      "/tmp/jstack-architect-fvgg725q/models.json": "6de9bd8c01133c9a1fbc0dab1dc829bb001c5e27279f73db74b6b7a14f4aefc7"
+    },
+    "source_and_config_hashes_after_artifact_writes": {
+      "/tmp/jstack-architect-fvgg725q/fixture/README.md": "79af74b0bd7cf4a6df1559334cb1c42da50c4462fcaa6ebfe6f2b5525d1f4d0d",
+      "/tmp/jstack-architect-fvgg725q/fixture/gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+      "/tmp/jstack-architect-fvgg725q/fixture/untracked.txt": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+      "/tmp/jstack-architect-fvgg725q/fixture/docs/decision.md": "e7eb7f65640d794d22c8e508437724aa9b92463b908f3d0adf089aaf3ce342ad",
+      "/tmp/jstack-architect-fvgg725q/models.json": "6de9bd8c01133c9a1fbc0dab1dc829bb001c5e27279f73db74b6b7a14f4aefc7"
+    },
+    "unchanged": true,
+    "limitation": "Hashes bracket artifact writes, not the earlier read-only preparation commands. No behavior was tested."
+  },
+  "actions_not_taken": [
+    "delegate_task",
+    "child launch",
+    "model execution",
+    "source/config/repo edits",
+    "shared plan writes",
+    "tests",
+    "installs",
+    "external services",
+    "commits",
+    "PRs",
+    "checkpoint",
+    "reading prior evaluator evidence/results"
+  ],
+  "additional_instructions_read": [
+    "/home/ubuntu/.agents/skills/setup-jstack/references/configuration.md",
+    "/home/ubuntu/.agents/skills/setup-jstack/references/t3-code.md",
+    "/home/ubuntu/.agents/skills/unslop/SKILL.md"
+  ],
+  "limitations": [
+    "Preparation establishes brief completeness and current catalog eligibility only. No actual model execution or successful candidate output is claimed.",
+    "Candidate source/grounding analysis remains for the hypothetical design child."
+  ],
+  "savedDispatchArguments": {
+    "task": "Original request: Design a replacement ownership shape for delivery/retry so callers inspect batch outcomes and resume after failure without unknowingly resending acknowledged batches. Preserve existing deliver callers and partner constraints. Design only. Source /tmp/jstack-architect-fvgg725q/fixture at 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d is read-only including untracked.txt. Explicit configuration /tmp/jstack-architect-fvgg725q/models.json applies throughout. No source/settings/repo edits, tests, installs, external services, commits, PRs or checkpoint. No subdelegation or update_plan. Write only assigned absolute output. Read /home/ubuntu/Dev/skills/skills/jstack/setup-jstack/references/investigation.md and its configuration.md and t3-code.md dependencies. Role already canonically resolved with explicit config by coordinator; do not resolve another role or change settings. Give source citations, inspected revision, queries/files actually read, limitations and distinguish static inspection from execution. Return artifact path when finished. You are one configured Architect candidate. Read /home/ubuntu/Dev/skills/skills/jstack/architect/references/runner-prompt.md and rationale-template.md. Read only fixture source/history, those instructions, supplied grounding /tmp/jstack-architect-fvgg725q/success/how.md and /tmp/jstack-architect-fvgg725q/success/why-synthesis.md, and your owned directory. Do not read other success artifacts, comparison rubric, other candidates or identity mapping. Produce design.md in your owned directory. Start with 2-3 caller examples including failure/resume, then types/signatures, state ownership, invariants, rationale, structural alternatives considered/rejected, source-level scenario traces and limitations. Choose your best cohesive ownership shape independently; no implementation or runnable placeholders in fixture. Requirements: inspect every batch's outcomes; resume cannot silently resend recorded acknowledgements; stable membership/identity; honest timeout ambiguity, crash lifetime and concurrency; exactly-once impossible for ambiguous timeout absent partner idempotency. Preserve existing deliver(records, send) contract including integer count, empty input, ignored callback return, sequential max-two batches, exactly three total timeout-only attempts per batch, other exceptions immediately propagated, and incidental mutation semantics or explicitly bounded compatibility. New API may specify a safer explicit policy but distinguish it from unchanged compatibility. Keep cumulative attempts and explicit resume budget clear. Grounding: history e896cb90 imposes hard maximum two records, keeps retry count unchanged; docs/decision.md latency-only claim is unmeasured and contradicted, not grounds to enlarge batches. Normal callback return is only observable success, not proven durable partner ACK. No actual callers or partner implementation in fixture. Prefer small usable interface; compare genuinely different ownership alternatives, do not merely rename classes. Artifacts must say static design traces only, no behavior tested. Do not include provider/model identity in design.\n\nCandidate ID: B. Owned directory: /tmp/jstack-architect-fvgg725q/dispatch-check/b.\nAssigned absolute output: /tmp/jstack-architect-fvgg725q/dispatch-check/b/design.md. Use /tmp/jstack-architect-fvgg725q/fixture as the explicit working directory for source/history inspection commands. The source checkout remains read-only, including untracked.txt. Write only /tmp/jstack-architect-fvgg725q/dispatch-check/b/design.md. Completion condition: save the complete design-only artifact at that path and return its absolute path. No subdelegation or shared plan writes.\n",
+    "title": "Architect candidate B",
+    "role": "design",
+    "mode": "async",
+    "clientRequestId": "jstack-architect-fvgg725q-dispatch-check-candidate-b-round-1"
+  }
+}
