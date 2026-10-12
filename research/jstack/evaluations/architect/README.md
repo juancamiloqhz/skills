@@ -16,6 +16,10 @@ The observed prompt failure prompted a narrow change to Arena's execution refere
 
 All recorded nested work is terminal. The coordinator independently rechecked source, untracked-file, selected-config and candidate hashes against their baselines. The real user model configuration remains unchanged. Stale setup text that described Arena execution as unavailable was corrected after the boundary evaluation.
 
+## Later implementation and checkpoint coverage
+
+The [runtime evaluation](runtime/README.md) on merged revision `17c11694` exercised authorized implementation and an explicit checkpoint in separate greenfield fixtures. Product behavior passed independent checks, and the checkpoint left source untouched. The record preserves procedural deviations and distinguishes these results from the earlier design run.
+
 ## Limits
 
-All executed model seats inherited Codex `gpt-6-astra`; this establishes no model-family or cross-provider diversity. The final design supports recovery within an intact process, not after process loss, and does not promise exactly-once remote effects after ambiguous timeouts. No implementation, explicit-checkpoint continuation, architectural scrap loop, manual installation or provider discovery was exercised. The 23 juan-mode playbooks remain planned.
+All executed model seats inherited Codex `gpt-6-astra`; this establishes no model-family or cross-provider diversity. The final design supports recovery within an intact process, not after process loss, and does not promise exactly-once remote effects after ambiguous timeouts. The initial run exercised no implementation. The later runtime evaluation adds implementation and checkpoint-stop coverage; explicit-checkpoint continuation, architectural scrap loop, manual installation and provider discovery remain untested. The 23 juan-mode playbooks remain planned.
