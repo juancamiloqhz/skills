@@ -20,6 +20,7 @@ This repository is the canonical source for skills I have developed and validate
 | [`arena`](./skills/jstack/arena) | Compares configured candidates, selects one cross-judge and synthesizes a verified artifact. | Experimental; see [evaluation](./research/jstack/evaluations/arena/README.md) |
 | [`architect`](./skills/jstack/architect) | Grounds competing design sketches and returns a design or continues with authorized implementation. | Experimental; see [evaluation](./research/jstack/evaluations/architect/README.md) |
 | [`interrogate`](./skills/jstack/interrogate) | Challenges code or designs with configured reviewers and a checked, report-only verdict. | Experimental; see [evaluation](./research/jstack/evaluations/interrogate/README.md) |
+| [`swarm`](./skills/jstack/swarm) | Coordinates configured workers for coverage or races and verifies one consolidated result. | Experimental; see [evaluation](./research/jstack/evaluations/swarm/README.md) |
 | [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
 | [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
@@ -85,6 +86,7 @@ skills/
     arena/
     architect/
     interrogate/
+    swarm/
       SKILL.md
     create-verification-skill/
       SKILL.md

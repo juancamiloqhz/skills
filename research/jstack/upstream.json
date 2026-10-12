@@ -109,6 +109,16 @@
         "pstack/skills/setup-pstack"
       ],
       "differences": "skills/jstack/interrogate/references/upstream.md"
+    },
+    {
+      "name": "swarm",
+      "localPath": "skills/jstack/swarm",
+      "upstreamPath": "pstack/skills/swarm",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/swarm/references/upstream.md"
     }
   ],
   "decisions": [
