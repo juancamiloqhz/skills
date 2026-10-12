@@ -29,7 +29,7 @@ Concrete assignments specify a provider instance, model ID and provider-specific
 
 Distinguish `inherit-parent` from provider Auto. Inheritance omits the delegation target and preserves the executing parent's selection. Auto is a concrete provider/model from the live catalog, such as Cursor's advertised Auto model; it is not a portable alias.
 
-Panel roles hold ordered seat lists, with one agent per seat, including repeated or inherited seats. The cross-judge pool holds alternatives from which a workflow selects one judge. Show list sizes and explain that setup itself launches none. All execution routes remain unavailable until a consumer skill implements them.
+Panel roles hold ordered seat lists, with one agent per seat, including repeated or inherited seats. The cross-judge pool holds alternatives from which a workflow selects one judge. Show list sizes and explain that setup itself launches none. Execution is supplied by installed consumer skills such as how, why, Arena and Architect. The default one-seat panels are valid configuration but insufficient for Arena or Architect comparison, which requires at least two configured candidates; setup adds seats only when requested.
 
 ## Validate and save
 

@@ -18,6 +18,7 @@ This repository is the canonical source for skills I have developed and validate
 | [`how`](./skills/jstack/how) | Explains runtime flow, component ownership and failure behavior using configured investigation roles. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
 | [`why`](./skills/jstack/why) | Investigates historical rationale, contradictions and unknowns using relevant evidence sources. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
 | [`arena`](./skills/jstack/arena) | Compares configured candidates, selects one cross-judge and synthesizes a verified artifact. | Experimental; see [evaluation](./research/jstack/evaluations/arena/README.md) |
+| [`architect`](./skills/jstack/architect) | Grounds competing design sketches and returns a design or continues with authorized implementation. | Experimental; see [evaluation](./research/jstack/evaluations/architect/README.md) |
 | [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
 | [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
@@ -81,6 +82,7 @@ skills/
     why/
       SKILL.md
     arena/
+    architect/
       SKILL.md
     create-verification-skill/
       SKILL.md
