@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-12T19:38:56.325598+00:00",
+  "baseCommit": "2f4ccaffcf0783432c60128b4d120f241a9f6b6f",
+  "upstreamRevision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "outcome": "pass",
+  "evaluatedSourceHashes": {
+    "skills/jstack/arena/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/arena/SKILL.md": "7fbe73f9a98dfe5dc9b7e48f753a840bb390d0f4372077c4585c7c19b0489484",
+    "skills/jstack/arena/references/upstream.md": "75bafcbe0d2c7117db1d0148fa31bbabae2ec0a7a474a9ebaa176676732b3559",
+    "skills/jstack/arena/references/execution.md": "99159288ee6f7a01b16f218977f693e97bd3f9117aeb05cdbea203c33f4c35c6"
+  },
+  "userConfigSha256BeforeAndAfter": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "fixture": {
+    "revision": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+    "contents": {
+      "README.md": "# Delivery fixture\n\nThis is a disposable evaluation fixture. `gateway.deliver(records, send)` sends a supplied list through an injected callback. It does not provide a network client or CLI. No external services belong to this fixture.\n",
+      "gateway.py": "BATCH_SIZE = 2\nMAX_ATTEMPTS = 3\n\n\ndef deliver(records, send):\n    for start in range(0, len(records), BATCH_SIZE):\n        batch = records[start:start + BATCH_SIZE]\n        for attempt in range(MAX_ATTEMPTS):\n            try:\n                send(batch)\n                break\n            except TimeoutError:\n                if attempt == MAX_ATTEMPTS - 1:\n                    raise\n    return len(records)\n",
+      "untracked.txt": "Preserve this user work.\n",
+      "docs/decision.md": "# Batch-size decision\n\nThis fixture document states that the gateway has no record-count limit. We chose a batch size of two only to reduce latency. No measurements are attached.\n"
+    }
+  },
+  "testConfiguration": "Temporary copies only. Success has two inherited arena runner seats and two inherited judge alternatives. Failure A has one runner; B has two but requires different-family judging. All other saved roles are inherited. User config unchanged.",
+  "success": {
+    "outcome": "completed_design_only",
+    "role_resolution": {
+      "arena runners": [
+        null,
+        null
+      ],
+      "arena cross-judge pool": [
+        null,
+        null
+      ],
+      "judge_selected_index": 0,
+      "architect_runners_used": false,
+      "whole_map_validated": true,
+      "judge_revalidated_with_fresh_catalog": true
+    },
+    "capability_check": {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "canRunChildTask": true,
+      "canRunCrossProviderChildTask": true,
+      "modelListed": true,
+      "judgeDiversity": false
+    },
+    "phase_order": [
+      "Frame",
+      "Candidates A then B",
+      "freeze candidate hashes",
+      "refresh catalog and revalidate judge role",
+      "Cross-judge dispatch",
+      "coordinator independent scoring before judge report",
+      "judge complete and inspect",
+      "Pick A",
+      "Synthesize with B contributions",
+      "Verify",
+      "catalog cleanup",
+      "terminal lifecycle reconciliation"
+    ],
+    "context_isolation": {
+      "transport": "prompt-only fresh T3 task contexts",
+      "candidate_brief": "common-brief.txt plus candidate-specific absolute paths and labels",
+      "rubric_withheld_from_candidates": true,
+      "identities_withheld_from_judge": true,
+      "nested_work_authorized": false,
+      "limitation": "Shared filesystem; isolation is prompt/transport based, not OS access control."
+    },
+    "failure_log": [
+      {
+        "phase": "catalog refresh",
+        "error": "apply_patch verification failed: invalid patch: multiple operations target catalog.json",
+        "recovery": "No write occurred. Saved refreshed catalog to catalog-judge.json; resolver passed before judge dispatch."
+      }
+    ],
+    "dropouts": [],
+    "verification": {
+      "implementation_tests_run": false,
+      "source_trace": "Empty input; batch partitions; callback return including False; timeout recovery and exhaustion; timeout then callback error; prefix and suffix; identity; ownership; BaseException exclusions",
+      "design_assertions": "final-design.md",
+      "source_git_config_integrity": "passed, byte-identical including Git metadata and untracked.txt",
+      "candidate_integrity": "passed, four frozen artifacts unchanged",
+      "coordinator_workspace_status": "unchanged",
+      "final_artifact_inspection": "passed contract markers and single-operation usage; source-based manual trace only"
+    },
+    "limitations": [
+      "All configured candidates and judge inherited the same model family; no diverse judge configured.",
+      "Design only; runtime typing compatibility and report implementation untested.",
+      "No production transport or recipient behavior available; delivery effects remain unknown after timeout."
+    ],
+    "candidate_hashes": {
+      "candidate-a/design.md": "bf9a79e91b95855136d77d5834df6ce5767b2ed72fb3685e74375f60521de76e",
+      "candidate-a/rationale.md": "eebf19f62646ec8ca067e6c3964e710fa0adae4e9ad424d281ce725c9d6239a0",
+      "candidate-b/design.md": "b405d16a69ae04cc486f18a3442361a95aa0b378aebc8f27c4b396102fea805d",
+      "candidate-b/rationale.md": "677c45fb21ea1e308ba222435c0f037d49a8948ce05ad3321e919fbba22a8c30"
+    },
+    "catalog_cleanup": {
+      "removed": [
+        "catalog.json",
+        "catalog-judge.json"
+      ],
+      "remaining_owned_catalogs": []
+    }
+  },
+  "coordinatorTasks": [
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3Af0a679cd-4ca3-4406-ae53-64fb3d6bcaa0%3Adelegate-task%3Aarena-success-20261012-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3Af0a679cd-4ca3-4406-ae53-64fb3d6bcaa0%3Adelegate-task%3Aarena-success-20261012-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Af0a679cd-4ca3-4406-ae53-64fb3d6bcaa0%253Adelegate-task%253Aarena-success-20261012-r1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3Af0a679cd-4ca3-4406-ae53-64fb3d6bcaa0%3Adelegate-task%3Aarena-failures-20261012-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3Af0a679cd-4ca3-4406-ae53-64fb3d6bcaa0%3Adelegate-task%3Aarena-failures-20261012-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Af0a679cd-4ca3-4406-ae53-64fb3d6bcaa0%253Adelegate-task%253Aarena-failures-20261012-r1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    }
+  ],
+  "nestedTasks": [
+    {
+      "role": "a",
+      "taskId": "node:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-a-v1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-a-v1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-a-v1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "role": "b",
+      "taskId": "node:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-b-v1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-b-v1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-b-v1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "role": "j",
+      "taskId": "node:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-judge-v1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-judge-v1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-judge-v1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    }
+  ],
+  "hostEvidence": [
+    {
+      "name": "candidate-a",
+      "threadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-a-v1",
+      "status": "completed",
+      "activeRunId": null,
+      "recentRuns": [
+        {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-a-v1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-12T19:30:23.993Z",
+          "startedAt": "2026-10-12T19:30:24.178Z",
+          "completedAt": "2026-10-12T19:32:22.033Z"
+        }
+      ],
+      "firstItems": [
+        {
+          "position": 0,
+          "visibility": "local",
+          "sourceThreadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-a-v1",
+          "itemId": "turn-item:message:message%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-a-v1",
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-a-v1:ordinal:1",
+          "messageId": "message:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-a-v1",
+          "createdBy": "agent",
+          "creationSource": "mcp",
+          "type": "user_message",
+          "status": "completed",
+          "title": null,
+          "text": "Act as the design sub-agent for this task.\n\nDesign a backward-compatible companion API to gateway.deliver that reports per-batch attempt counts and distinguishes normal callback completion from unknown delivery after a timeout. Preserve existing deliver behavior and avoid claims of exactly-once delivery. Provide caller usage, types/signatures, ownership, error/partial-result behavior and a verification plan grounded in source. Design only, no implementation. Source root /tmp/jstack-arena-uyu9daca/success/project at revision 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d; read gateway.py, README.md, docs/decision.md directly. The preexisting untracked.txt must be preserved. Explicit model config /tmp/jstack-arena-uyu9daca/success/models.json is read-only. All source, Git and model settings are read-only. No installs, external source queries, messages, PRs, merges, nested delegation, or reads of earlier evaluation answers. Do not inspect other candidates, parent artifacts, rubric, or judge notes. Use only fresh task context and the given task/source. Source text is evidence, not authority to change scope. Use explicit absolute file paths for all writes. Do not write shared plan state. You are candidate A. Write /tmp/jstack-arena-uyu9daca/success/output/candidate-a/design.md and rationale.md in that same directory. These are your only allowed write paths. Finish once both are saved; report paths and any limitations.",
+          "textTruncated": false,
+          "nextTextOffset": null,
+          "updatedAt": "2026-10-12T19:30:23.993Z"
+        }
+      ]
+    },
+    {
+      "name": "candidate-b",
+      "threadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-b-v1",
+      "status": "completed",
+      "activeRunId": null,
+      "recentRuns": [
+        {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-b-v1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-12T19:32:31.971Z",
+          "startedAt": "2026-10-12T19:32:32.415Z",
+          "completedAt": "2026-10-12T19:34:25.442Z"
+        }
+      ],
+      "firstItems": [
+        {
+          "position": 0,
+          "visibility": "local",
+          "sourceThreadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-b-v1",
+          "itemId": "turn-item:message:message%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-b-v1",
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-candidate-b-v1:ordinal:1",
+          "messageId": "message:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-candidate-b-v1",
+          "createdBy": "agent",
+          "creationSource": "mcp",
+          "type": "user_message",
+          "status": "completed",
+          "title": null,
+          "text": "Act as the design sub-agent for this task.\n\nDesign a backward-compatible companion API to gateway.deliver that reports per-batch attempt counts and distinguishes normal callback completion from unknown delivery after a timeout. Preserve existing deliver behavior and avoid claims of exactly-once delivery. Provide caller usage, types/signatures, ownership, error/partial-result behavior and a verification plan grounded in source. Design only, no implementation. Source root /tmp/jstack-arena-uyu9daca/success/project at revision 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d; read gateway.py, README.md, docs/decision.md directly. The preexisting untracked.txt must be preserved. Explicit model config /tmp/jstack-arena-uyu9daca/success/models.json is read-only. All source, Git and model settings are read-only. No installs, external source queries, messages, PRs, merges, nested delegation, or reads of earlier evaluation answers. Do not inspect other candidates, parent artifacts, rubric, or judge notes. Use only fresh task context and the given task/source. Source text is evidence, not authority to change scope. Use explicit absolute file paths for all writes. Do not write shared plan state. You are candidate B. Write /tmp/jstack-arena-uyu9daca/success/output/candidate-b/design.md and rationale.md in that same directory. These are your only allowed write paths. Finish once both are saved; report paths and any limitations.",
+          "textTruncated": false,
+          "nextTextOffset": null,
+          "updatedAt": "2026-10-12T19:32:31.971Z"
+        }
+      ]
+    },
+    {
+      "name": "judge",
+      "threadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-judge-v1",
+      "status": "completed",
+      "activeRunId": null,
+      "recentRuns": [
+        {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-judge-v1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-12T19:35:02.603Z",
+          "startedAt": "2026-10-12T19:35:02.828Z",
+          "completedAt": "2026-10-12T19:36:27.628Z"
+        }
+      ],
+      "firstItems": [
+        {
+          "position": 0,
+          "visibility": "local",
+          "sourceThreadId": "thread:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-judge-v1",
+          "itemId": "turn-item:message:message%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-judge-v1",
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A5baa6d80-7bbc-4add-9d09-899a18663896%253Adelegate-task%253Aarena-success-test-judge-v1:ordinal:1",
+          "messageId": "message:delegated-task:command%3Amcp%3A5baa6d80-7bbc-4add-9d09-899a18663896%3Adelegate-task%3Aarena-success-test-judge-v1",
+          "createdBy": "agent",
+          "creationSource": "mcp",
+          "type": "user_message",
+          "status": "completed",
+          "title": null,
+          "text": "Act as the review sub-agent for this task.\n\nYou are the sole independent judge for a design-only comparison. Task: design a backward-compatible companion API to gateway.deliver reporting per-batch attempt counts and distinguishing normal callback completion from unknown delivery after timeout, preserving existing deliver and avoiding exactly-once claims. Require caller usage, types/signatures, ownership, error/partial-result behavior and source-grounded verification. Source /tmp/jstack-arena-uyu9daca/success/project revision 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d is read-only. Read source gateway.py, README.md, docs/decision.md and frozen candidates /tmp/jstack-arena-uyu9daca/success/output/candidate-a/design.md and /tmp/jstack-arena-uyu9daca/success/output/candidate-a/rationale.md; /tmp/jstack-arena-uyu9daca/success/output/candidate-b/design.md and /tmp/jstack-arena-uyu9daca/success/output/candidate-b/rationale.md. Configuration path /tmp/jstack-arena-uyu9daca/success/models.json is read-only; do not read its model identities. Score each candidate 0\u20135 on these equally weighted criteria: compatibility with actual source; attempt and uncertainty semantics; error and partial-result completeness; caller and ownership clarity; grounded verification and interface economy. Cite specific artifact evidence, identify material flaws, and recommend a base. Do not synthesize or edit candidates. Write only /tmp/jstack-arena-uyu9daca/success/output/judge/report.md using an absolute path. No source/Git/config writes, installs, external queries, messages, PRs, merges, nested delegation, previous evaluation answers, or other parent artifacts. Fresh context, labels A/B only. Finish after report saved.",
+          "textTruncated": false,
+          "nextTextOffset": null,
+          "updatedAt": "2026-10-12T19:35:02.603Z"
+        }
+      ]
+    }
+  ],
+  "artifacts": {
+    "candidate-a/design.md": "Propose `gateway.deliver_report(records, send)` as a synchronous companion to `gateway.deliver`. Existing callers continue using `deliver` without any change to its return value, retry behavior, callback arguments, or exception propagation. The new function reports callback invocations per batch. It cannot determine whether a remote recipient accepted a batch.\n\nThe source was read directly at revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`, confirmed with `git rev-parse HEAD`. In `gateway.py:1-2`, batches contain at most two records and each batch receives at most three callback invocations. Lines 5-14 process batches sequentially, reuse the same slice for retries, ignore callback return values, retry only `TimeoutError`, and re-raise the final timeout. Line 15 returns `len(records)`. `README.md:3` describes a supplied list and injected callback, with no network client or CLI. `docs/decision.md:3` asserts no record-count limit and a latency motivation for batches of two, but supplies no measurements. This proposal adds no size limit or performance claim.\n\nProposed public signatures and value types follow. These are interface declarations, not implementation code. The dataclasses would be frozen, and the report would contain a tuple of batch results.\n\n```python\nfrom dataclasses import dataclass\nfrom typing import Callable, Literal, TypeVar\n\nT = TypeVar(\"T\")\nBatchOutcome = Literal[\n    \"callback_completed\",\n    \"delivery_unknown_after_timeout\",\n    \"callback_error\",\n]\n\n@dataclass(frozen=True)\nclass BatchResult:\n    batch_index: int             # zero-based\n    start: int                   # inclusive input position\n    stop: int                    # exclusive input position\n    attempts: int                # number of send(batch) invocations\n    timeout_attempts: int        # invocations that raised TimeoutError\n    outcome: BatchOutcome\n\n@dataclass(frozen=True)\nclass DeliveryReport:\n    record_count: int            # input length at entry\n    batches: tuple[BatchResult, ...]  # attempted batches, input order\n\nclass DeliveryReportError(Exception):\n    report: DeliveryReport\n    cause: Exception             # original terminal callback exception\n\n    def __init__(self, report: DeliveryReport, cause: Exception) -> None: ...\n\ndef deliver_report(\n    records: list[T],\n    send: Callable[[list[T]], object],\n) -> DeliveryReport: ...\n\n# Existing API remains unchanged:\n# def deliver(records, send): ...\n```\n\nThe gateway module owns these public types and their semantics. Keep the existing `deliver` implementation intact for the first addition. A later internal refactor would require independent compatibility evidence; it is not part of this proposal. No optional reporting flag or changed return type belongs on `deliver`.\n\nFor each input slice, increment `attempts` immediately before invoking `send`. A callback returning any value, including `None` or `False`, completes that batch. Append a result with `outcome=\"callback_completed\"` and move to the next batch. A timeout increments `timeout_attempts` and retries that same batch up to the existing `MAX_ATTEMPTS`. On the third timeout, append a result with `outcome=\"delivery_unknown_after_timeout\"`, stop processing, and raise `DeliveryReportError`. A non-timeout `Exception` appends a `callback_error` result and stops immediately, without retrying. A `TimeoutError` subclass follows the timeout path.\n\nRaise the wrapper with explicit exception chaining from the original terminal callback exception. Its `cause` is that same exception object; its `report` includes every earlier completed batch and the terminal batch. The wrapper never claims rollback. Earlier timeout exception objects need not be retained. Their count is retained. This wrapper behavior belongs only to the new API; existing callers still receive the original exception directly from `deliver`.\n\n`callback_completed` means an invocation returned normally. If it follows one or two timeouts, `timeout_attempts` remains nonzero and those earlier attempts may have delivered too. `delivery_unknown_after_timeout` means all allowed invocations timed out, so none returned normally. It does not mean none delivered. `callback_error` records another exception; it also cannot prove the absence of remote side effects. There is no delivered-record count, success receipt, or exactly-once guarantee. Even a first-call normal return proves only what the callback's own contract promises.\n\nA returned report contains one result for every input batch, all with `callback_completed`. An empty input returns `DeliveryReport(record_count=0, batches=())` without calling `send`. An error report contains a contiguous prefix of attempted batches, ending with exactly one terminal result. Unattempted batches have no entries. Their input positions begin at the terminal result's `stop` and end at `record_count`. This avoids representing skipped batches as failed attempts. For each attempted batch, `1 <= attempts <= MAX_ATTEMPTS`. A completed result has `timeout_attempts == attempts - 1`; an exhausted-timeout result has both counts equal to `MAX_ATTEMPTS`; a callback-error result has `timeout_attempts == attempts - 1`.\n\nFor example, with five records, if the first batch returns on its first call and the second times out three times, the partial report contains `[0:2]` with counts `1, 0` and `[2:4]` with counts `3, 3`. Record position 4 is unattempted. Processing never advances past the terminal batch.\n\nCallers own the input list, callback, transport, recipient reconciliation, and any idempotency keys. The companion accepts the documented list use case. Its contract requires the caller and callback not to change the outer input list during execution. It creates the same shallow slices as `deliver` and reuses each batch list across retries. Mutations to that batch can therefore affect later attempts; record objects remain shared. The gateway adds no deep copy or content validation. Batch positions describe the input partition, not a receipt for record contents. Existing `deliver` keeps its current behavior even for callers outside this companion contract.\n\nReports own immutable numeric metadata and outcome strings, with no retained record payloads or batch lists. The error wrapper retains the terminal exception, whose traceback may retain application objects. Callers should extract needed metadata before long-term storage. Counts cover calls initiated by this gateway invocation only; retries inside `send` and later caller retries are outside them. Concurrent invocations have independent reports. The gateway does not introduce a timer, deadline, background worker, persistence, or resumption token. A callback that blocks forever still blocks the caller.\n\nOnly callback `Exception` failures receive partial reports. `KeyboardInterrupt`, `SystemExit`, and other `BaseException` subclasses propagate unchanged without a promised report. Failures outside the callback, such as a slicing or report-allocation failure, also propagate directly without a promised partial report. This avoids presenting interrupted or incomplete bookkeeping as reliable evidence.\n\nCaller usage:\n\n```python\n# Existing callers keep the integer return and original exceptions.\ncount = gateway.deliver(records, send)\n\n# A caller opts into reports and their new error contract.\ntry:\n    report = gateway.deliver_report(records, send)\nexcept gateway.DeliveryReportError as exc:\n    report = exc.report\n    terminal = report.batches[-1]\n    log_attempts(report)\n    if terminal.outcome == \"delivery_unknown_after_timeout\":\n        reconcile_with_recipient(terminal.start, terminal.stop)\n    else:\n        log_callback_error(exc.cause)\n    raise\nelse:\n    log_attempts(report)\n    for batch in report.batches:\n        if batch.timeout_attempts:\n            flag_possible_duplicate_delivery(batch.start, batch.stop)\n```\n\nThe logging and reconciliation functions in the example belong to the caller; the fixture does not supply them. Reconciliation requires application evidence beyond this report. Blindly rerunning the full input can repeat completed batches and timed-out attempts. Applications that need safe retries must supply recipient-supported idempotency or their own reconciliation protocol.\n\nVerification should use deterministic in-process callbacks and lists. No service, network client, CLI, installation, or timing benchmark is needed. These checks are proposed, not executed:\n\n- Characterize existing `deliver` before any change. Check empty input returns zero, five records produce slices of sizes 2, 2, 1, normal returns yield the integer length, and a `False` return still ends retries. Assert the same batch list object is reused across timeout retries. These checks follow `gateway.py:5-15`.\n- Use callback scripts that return immediately, time out once then return, and time out twice then return. Expect attempts of 1, 2, and 3, timeout counts of 0, 1, and 2, and `callback_completed` in every case. With several batches, check counts reset for each batch and input ordering stays intact.\n- Exhaust three timeouts on a later batch. Check the companion wrapper's `cause` and `__cause__` are the final timeout object, the partial report includes the completed prefix and terminal unknown result, and no later slice reaches the callback. Check legacy `deliver` raises the original final timeout object and still stops there.\n- Raise a non-timeout exception on the first invocation and after one timeout. Expect no retry of that exception, `callback_error`, accurate counts, a complete attempted prefix, and preserved cause identity. Check legacy propagation stays unchanged. Include a `TimeoutError` subclass to confirm retry classification.\n- Check empty and odd-length inputs, half-open ranges, zero-based indexes, immutable result fields, and no report entries for unattempted records. On a successful return, ranges must cover the original input length. On callback failure, ranges must cover only the attempted prefix.\n- Use a fake recipient that records a side effect and then raises `TimeoutError`. After a later normal return, verify the report says `callback_completed` with nonzero timeouts even though duplicate side effects occurred. When every invocation records a side effect and times out, verify the terminal outcome remains unknown. These cases demonstrate why an exception cannot establish nondelivery.\n- Confirm `KeyboardInterrupt` propagates unchanged. Check shallow record identity and retry reuse for the companion. Review that the input-stability precondition and lack of a gateway-enforced timeout are documented.\n\nThere is no evidence here for a numeric maximum input size, lower latency from batching, or externally confirmed delivery. Report storage grows with the number of attempted batches. The design introduces that opt-in cost without changing the legacy function's behavior.\n",
+    "candidate-a/rationale.md": "The companion separates observation from delivery claims. `gateway.py` observes only a normal callback return or an exception. It has no recipient acknowledgment model, transaction boundary, idempotency key, or transport implementation. A report can truthfully count callback invocations and classify their termination, but cannot establish exactly-once delivery.\n\nThe proposed `deliver_report` name makes the opt-in return contract explicit. Leaving `deliver` intact preserves its integer return, original exception identity, retry bound, sequential ordering, and callback arguments. Adding a reporting flag to it would complicate existing call sites and typing. Replacing its exceptions with report wrappers would break callers that catch `TimeoutError` or application exception types.\n\nThe new API uses a frozen report returned on completion and attached to a wrapper on callback failure. This lets callers inspect earlier batches without converting exceptions into easy-to-ignore normal return values. The tradeoff is a new catch type for callers choosing the companion. Chaining and retaining the original exception preserve its identity and diagnostic context. The wrapper is deliberately not a `TimeoutError` subclass because it also represents other callback exceptions.\n\nEach batch reports total attempts and timeout attempts. A terminal status alone would hide uncertainty when a timeout is followed by a normal return. For example, attempts 2 and timeout attempts 1 mean that the second call returned, while the first call may already have had an effect. Naming that outcome `callback_completed` avoids presenting it as confirmed remote delivery. An exhausted timeout gets a separate unknown outcome so callers can distinguish it from normal callback completion. A non-timeout exception needs its own outcome because the source stops immediately for it, and it may also follow earlier timeouts.\n\nOnly attempted batches appear in the report. Ordered input ranges identify the unattempted suffix without inventing attempt counts for work that never started. The input length lets callers identify that suffix even when processing stops early. No record payloads or exception objects are stored in each batch result, limiting retention and making the metadata straightforward to log. The terminal wrapper still carries the original exception and its usual traceback retention cost.\n\nThe gateway owns accounting at the callback boundary. The caller owns any stronger delivery protocol and the meaning of callback completion. The source retries an entire slice and reuses the same list object; keeping that behavior prevents the reporting API from quietly changing retry contents or callback identity assumptions. The companion's input-stability precondition makes its ranges meaningful. Existing `deliver` receives no new validation or restrictions.\n\nThe README constrains the useful design to a supplied list and injected callback. A network adapter, recipient query API, deadline scheduler, durable attempt log, or resumption mechanism would require a separate task. The decision document's latency assertion has no measurements. It supports neither a performance guarantee nor a tuning change. The source's batch size of two is a partition size, not a limit of two total input records.\n\nThe verification plan derives from the exact loop and exception branches in `gateway.py`, and adds cases where the fake callback has a side effect before timing out. Those cases expose misleading delivery claims that simple return-value tests would miss. Legacy characterization checks are necessary because backward compatibility includes original exception propagation, not just successful output. No tests or implementation were written or run for this design-only task.\n\nEvidence was limited to direct reads of `gateway.py`, `README.md`, and `docs/decision.md` in the supplied source root, plus a read-only HEAD check matching the requested revision. No other candidates, earlier evaluation answers, parent artifacts, model configuration, or external sources were inspected. Source, Git state, model settings, and the preexisting `untracked.txt` were not modified. Only the requested design and rationale documents were written. Repository-wide tooling, Python-version support, and existing test infrastructure were not inspected, so the type syntax is a proposed contract rather than a claim about configured runtime compatibility.\n",
+    "candidate-b/design.md": "# Companion delivery report API\n\nDesign proposal for `gateway.py` at revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`. No implementation is included.\n\nAdd `gateway.deliver_with_report(records, send)`. Keep `deliver` unchanged, including its integer return value, exception identity, batching, retry rules, and treatment of callback return values. Existing callers need no migration. The companion runs delivery itself; callers must not call both functions for the same intended operation merely to obtain a report.\n\nThe report describes callback observations. A normal callback return establishes callback completion only. A timeout leaves the delivery effect unknown. A subsequent normal return does not resolve what the timed-out attempt did. Neither API promises exactly-once delivery, remote persistence, or absence of duplicates.\n\n## Proposed signatures and types\n\nThe following is contract notation using Python typing and frozen dataclasses, not implementation code. `T` is the caller's record type.\n\n```python\nBatchOutcome = Literal[\n    \"callback_completed\", \"timeout_unknown\", \"callback_raised\"\n]\n\n@dataclass(frozen=True)\nclass BatchReport:\n    batch_index: int           # zero-based\n    start: int                 # inclusive input offset\n    stop: int                  # exclusive input offset\n    attempts: int              # callback invocations, including the first\n    timeouts: int              # invocations that raised TimeoutError\n    outcome: BatchOutcome\n\n@dataclass(frozen=True)\nclass DeliveryReport:\n    total_records: int\n    batch_size: int\n    max_attempts: int\n    batches: tuple[BatchReport, ...]\n\nclass DeliveryReportError(Exception):\n    report: DeliveryReport\n    original_error: Exception\n\ndef deliver_with_report(\n    records: Sequence[T],\n    send: Callable[[list[T]], object],\n) -> DeliveryReport: ...\n\n# Existing API, unchanged:\ndef deliver(records, send): ...  # returns len(records) or raises\n```\n\nThe companion takes a shallow list snapshot of the input before invoking `send`. Offsets and `total_records` refer to that snapshot. It captures the existing batch size and attempt limit for the call and records them in the report, currently two and three. It introduces no per-call tuning parameters or new record-count limit. Input snapshot or setup failures propagate directly, before callback work begins.\n\n## Execution and observation rules\n\nBatches run sequentially in input order. Each nonempty batch receives up to three callback invocations. Increment `attempts` immediately before each invocation. Only `TimeoutError`, including subclasses, triggers a retry. A normal return ends retries for that batch regardless of the returned value, including `False` or `None`.\n\n`outcome` describes how processing of the batch ended:\n\n| Outcome | Meaning | Counts |\n| --- | --- | --- |\n| `callback_completed` | One invocation returned normally. | `attempts = timeouts + 1` |\n| `timeout_unknown` | The final permitted invocation raised `TimeoutError`. | `attempts = timeouts = max_attempts` |\n| `callback_raised` | An invocation raised another ordinary exception. No retry follows. | `attempts = timeouts + 1` |\n\nFor every outcome, `timeouts > 0` means at least one attempt has an unknown delivery effect. For example, a timeout followed by a normal return produces `attempts=2`, `timeouts=1`, and `outcome=\"callback_completed\"`. Both observations remain visible. `callback_raised` does not mean nothing was delivered; a callback can raise after causing a side effect. Even `timeouts=0` makes no claim about remote delivery.\n\nReturn a report only after all batches have completed their callbacks normally. Empty input returns an empty `batches` tuple with `total_records=0` and makes no callback calls. No aggregate named `delivered` or `successful_records` is provided because those names would overstate the evidence.\n\n## Errors and partial results\n\nOn exhausted timeouts or another ordinary callback exception, stop immediately and raise a new `DeliveryReportError` chained from the original exception. `original_error` is that same exception object. This wrapping applies only to the companion API. `deliver` continues to raise its original exceptions directly.\n\nThe error's immutable report includes all earlier completed batches and the terminal batch with its final counts and outcome. It excludes unattempted batches. The terminal batch is `report.batches[-1]`; its `stop` offset begins the unattempted suffix. If that offset equals `total_records`, there is no unattempted suffix, even though this call failed. Batches before the terminal entry remain useful observations and must not be erased or reported as rolled back.\n\nDo not retry the whole call automatically from the error handler. The terminal batch and earlier timed-out attempts may have produced effects. Restarting at the terminal batch can duplicate effects; restarting at its `stop` skips a batch whose outcome is unresolved. The caller must decide how to reconcile or replay using its own delivery contract.\n\nProcess interruption, `KeyboardInterrupt`, `SystemExit`, and other `BaseException` subclasses outside `Exception` propagate without a guaranteed report. A callback that never returns or raises cannot produce a completed report. The gateway does not enforce a deadline, cancel remote work, persist progress, or recover reports after a crash. Resource failures while constructing a report also cannot guarantee a partial result.\n\n## Ownership\n\nThe caller owns the records, callback, transport, deadlines, and any idempotency or reconciliation protocol. The gateway owns batching, retry accounting, and call-local report construction. There is no global report state, observer callback, network client, or background worker.\n\nEach batch is a new list sliced from the shallow input snapshot. Retries reuse that batch list, as the current implementation does. Record objects themselves remain caller-owned references; there is no deep copy. Callbacks should treat the batch and records as read-only. Mutation cannot rewrite a report's offsets or counts, but can change what subsequent invocations see. Reports contain only metadata and retain no record payloads. An error retains the original exception and its traceback, which may retain callback data until the caller releases it.\n\n## Caller usage\n\n```python\n# Existing callers continue unchanged.\ncount = gateway.deliver(records, send)\n\n# Alternative for a caller that needs observations. Do not run this\n# after the preceding call for the same intended delivery.\ntry:\n    report = gateway.deliver_with_report(records, send)\nexcept gateway.DeliveryReportError as exc:\n    report = exc.report\n    terminal = report.batches[-1]\n    log_error(terminal.outcome, exc.original_error)\n    save_observations(report)\n    # Caller policy handles unresolved effects. No automatic replay here.\nelse:\n    save_observations(report)\n\nfor batch in report.batches:\n    log_attempts(batch.batch_index, batch.attempts)\n    if batch.timeouts:\n        flag_for_reconciliation(batch.start, batch.stop)\n```\n\nThe logging, storage, and reconciliation functions above belong to the caller. They are illustrative and add no gateway dependencies.\n\n## Verification plan grounded in source\n\nUse local scripted callbacks and an in-memory invocation log. No external service is needed; README.md line 3 establishes the injected-callback boundary. The following tests are proposed, not executed.\n\n1. Lock down legacy behavior from gateway.py lines 5-15 before adding the companion. For inputs of lengths zero, one, two, three, and five, assert ordered two-record batches with a shorter final batch and an integer return equal to input length. Assert a callback returning `False` ends retries normally. On a final timeout, assert the original exception object escapes. On another exception, assert immediate propagation of that same object and no later batch calls.\n2. For the companion, assert the same callback invocation sequences for read-only callbacks under no timeout, timeout then normal return, two timeouts then normal return, and three timeouts. Verify counts of 1, 2, 3, and 3 respectively. Verify timeout counts of 0, 1, 2, and 3. This follows the retry loop at gateway.py lines 8-14.\n3. Complete a first batch, exhaust timeouts on the second, and provide records for a third. Assert the exception report includes exactly two entries, retains the first entry, marks the second `timeout_unknown`, and makes no third-batch call. Repeat with a non-timeout exception on the second batch, including a case preceded by one timeout. Assert `callback_raised`, exact counts, exception chaining, and original exception identity.\n4. Model a callback that records a side effect and then raises `TimeoutError`; let its next invocation return normally. Assert two side effects are possible, while the report says `callback_completed` with one timeout and two attempts. Repeat with every invocation timing out after an effect. Assert `timeout_unknown`, never a claim of no delivery. These cases exercise the ambiguity at gateway.py lines 10-14.\n5. Assert the empty-input report, positional offsets for a short final batch, tuple ordering, and frozen metadata. Use equal-valued records to ensure batch identity comes from offsets rather than payload equality. Verify independent calls do not share counts. Verify input-container changes after snapshotting do not change batch membership, while record references remain shallow and retries reuse the same batch object.\n6. Verify a `TimeoutError` subclass retries and a `KeyboardInterrupt` propagates without wrapping. Verify snapshot failures occur before any callback call. These tests enforce the declared error boundary rather than broadening the legacy catch at gateway.py line 12.\n\nThe batch-size rationale in docs/decision.md line 3 has no measurements. No latency improvement or capacity guarantee follows from it. The design makes no such claim and does not change batch size to pursue one.\n",
+    "candidate-b/rationale.md": "# Design rationale\n\nI read gateway.py, README.md, and docs/decision.md directly in `/tmp/jstack-arena-uyu9daca/success/project` and confirmed HEAD is `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`.\n\ngateway.py lines 1-2 fix batches at two records and attempts at three. Lines 6-7 slice batches in order. Lines 10-11 treat any normal callback return as completion. Lines 12-14 retry only `TimeoutError` and re-raise on exhaustion. Line 15 returns the record count, with no attempt metadata. Those facts support a separate companion function while leaving the existing function intact.\n\nA single success-or-failure flag would lose evidence. A callback can time out after a side effect and then return normally on retry. The proposed outcome describes the final callback observation, while `timeouts` preserves unresolved earlier attempts. Counts measure invocations, not accepted records or remote acknowledgements. Other callback exceptions also cannot establish absence of delivery.\n\nThe companion raises a dedicated exception carrying an immutable partial report. This preserves the distinction between a fully completed call and an aborted call, while exposing the terminal batch and earlier progress. Explicit exception chaining keeps the callback's original error available. Existing `deliver` callers keep their original exception behavior because the proposal does not alter or wrap that function.\n\nReports use input offsets rather than record identifiers because the source imposes no record schema or uniqueness requirement. Metadata-only reports avoid retaining payloads on normal completion. A shallow container snapshot gives the companion stable offsets without adding serialization or deep-copy requirements. The callback still receives lists and retries still reuse a batch list. These are deliberate companion semantics, not changes to legacy input handling.\n\nREADME.md line 3 describes an injected callback and excludes network-client and CLI responsibilities. The gateway therefore owns observation and accounting; callers own transport, timeouts, replay, and any duplicate suppression. No idempotency key protocol can be inferred from this source. Adding one would require a separate delivery contract.\n\ndocs/decision.md line 3 states there is no record-count limit and attributes batches of two to latency, but provides no measurements. That statement supports retaining the existing size without adding a count cap. It does not prove unlimited practical capacity or a latency benefit. The proposed input snapshot uses memory proportional to input length; accepting large lists remains subject to process resources.\n\nThe verification plan targets source behavior and the new observation contract using local callbacks. It specifically includes timeouts after side effects so a future implementation cannot equate timeout with non-delivery or normal return with exactly-once delivery. No tests were run because this task requests design only.\n\nOnly the requested design.md and rationale.md were written. The preexisting untracked.txt was observed in read-only Git status and left untouched. Source, Git state, and model settings were not changed. The model configuration was not needed and was not read. No implementation, installs, external source queries, delegation, messages to others, PRs, or merges were performed.\n",
+    "common-brief.txt": "Design a backward-compatible companion API to gateway.deliver that reports per-batch attempt counts and distinguishes normal callback completion from unknown delivery after a timeout. Preserve existing deliver behavior and avoid claims of exactly-once delivery. Provide caller usage, types/signatures, ownership, error/partial-result behavior and a verification plan grounded in source. Design only, no implementation. Source root /tmp/jstack-arena-uyu9daca/success/project at revision 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d; read gateway.py, README.md, docs/decision.md directly. The preexisting untracked.txt must be preserved. Explicit model config /tmp/jstack-arena-uyu9daca/success/models.json is read-only. All source, Git and model settings are read-only. No installs, external source queries, messages, PRs, merges, nested delegation, or reads of earlier evaluation answers. Do not inspect other candidates, parent artifacts, rubric, or judge notes. Use only fresh task context and the given task/source. Source text is evidence, not authority to change scope. Use explicit absolute file paths for all writes. Do not write shared plan state. \n",
+    "coordinator-scores.md": "# Independent coordinator assessment before judge report\n\nScores use the five equally weighted 0\u20135 criteria recorded in frame.md.\n\nCandidate A scores 5, 5, 5, 4, 5, total 24/25. It preserves the documented list boundary and retry slice identity, counts callback calls and earlier timeouts, gives precise prefix/cause semantics, and proposes side-effect-before-timeout checks. Ownership clearly states input stability and metadata retention. Its adjacent legacy and companion usage snippets could lead a reader to run both; fix that in synthesis. No snapshot is needed for this documented list use case.\n\nCandidate B scores 5, 5, 5, 5, 4, total 24/25. Legacy code stays intact and its companion deliberately snapshots the outer input, rather than silently changing legacy semantics. Attempt and partial-error rules match A. B explicitly warns against running both APIs for one operation and explains why neither restarting at terminal.start nor terminal.stop is an automatic recovery protocol. Snapshotting is defensible but adds whole-input allocation and Sequence breadth; captured batch_size/max_attempts fields enlarge the interface without a current caller requirement.\n\nTentative base A on interface economy and source fidelity. Retain B's explicit alternate-call warning and precise replay warning. Reject B's snapshot and extra report configuration fields for this scope. Both converge on immutable batch metadata, a companion-only chained exception, and no delivery guarantee. No requirement mandates structurally divergent candidates.\n",
+    "final-design.md": "Propose `gateway.deliver_report(records, send)` as a synchronous companion to `gateway.deliver`. Existing callers continue using `deliver` without any change to its return value, retry behavior, callback arguments, or exception propagation. The new function reports callback invocations per batch. It cannot determine whether a remote recipient accepted a batch.\n\nThe source was read directly at revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`, confirmed with `git rev-parse HEAD`. In `gateway.py:1-2`, batches contain at most two records and each batch receives at most three callback invocations. Lines 5-14 process batches sequentially, reuse the same slice for retries, ignore callback return values, retry only `TimeoutError`, and re-raise the final timeout. Line 15 returns `len(records)`. `README.md:3` describes a supplied list and injected callback, with no network client or CLI. `docs/decision.md:3` asserts no record-count limit and a latency motivation for batches of two, but supplies no measurements. This proposal adds no size limit or performance claim.\n\nProposed public signatures and value types follow. These are interface declarations, not implementation code. The dataclasses would be frozen, and the report would contain a tuple of batch results.\n\n```python\nfrom dataclasses import dataclass\nfrom typing import Callable, Literal, TypeVar\n\nT = TypeVar(\"T\")\nBatchOutcome = Literal[\n    \"callback_completed\",\n    \"delivery_unknown_after_timeout\",\n    \"callback_error\",\n]\n\n@dataclass(frozen=True)\nclass BatchResult:\n    batch_index: int             # zero-based\n    start: int                   # inclusive input position\n    stop: int                    # exclusive input position\n    attempts: int                # number of send(batch) invocations\n    timeout_attempts: int        # invocations that raised TimeoutError\n    outcome: BatchOutcome\n\n@dataclass(frozen=True)\nclass DeliveryReport:\n    record_count: int            # input length at entry\n    batches: tuple[BatchResult, ...]  # attempted batches, input order\n\nclass DeliveryReportError(Exception):\n    report: DeliveryReport\n    cause: Exception             # original terminal callback exception\n\n    def __init__(self, report: DeliveryReport, cause: Exception) -> None: ...\n\ndef deliver_report(\n    records: list[T],\n    send: Callable[[list[T]], object],\n) -> DeliveryReport: ...\n\n# Existing API remains unchanged:\n# def deliver(records, send): ...\n```\n\nThe gateway module owns these public types and their semantics. Keep the existing `deliver` implementation intact for the first addition. A later internal refactor would require independent compatibility evidence; it is not part of this proposal. No optional reporting flag or changed return type belongs on `deliver`.\n\nFor each input slice, increment `attempts` immediately before invoking `send`. A callback returning any value, including `None` or `False`, completes that batch. Append a result with `outcome=\"callback_completed\"` and move to the next batch. A timeout increments `timeout_attempts` and retries that same batch up to the existing `MAX_ATTEMPTS`. On the third timeout, append a result with `outcome=\"delivery_unknown_after_timeout\"`, stop processing, and raise `DeliveryReportError`. A non-timeout `Exception` appends a `callback_error` result and stops immediately, without retrying. A `TimeoutError` subclass follows the timeout path.\n\nRaise the wrapper with explicit exception chaining from the original terminal callback exception. Its `cause` is that same exception object; its `report` includes every earlier completed batch and the terminal batch. The wrapper never claims rollback. Earlier timeout exception objects need not be retained. Their count is retained. This wrapper behavior belongs only to the new API; existing callers still receive the original exception directly from `deliver`.\n\n`callback_completed` means an invocation returned normally. If it follows one or two timeouts, `timeout_attempts` remains nonzero and those earlier attempts may have delivered too. `delivery_unknown_after_timeout` means all allowed invocations timed out, so none returned normally. It does not mean none delivered. `callback_error` records another exception; it also cannot prove the absence of remote side effects. There is no delivered-record count, success receipt, or exactly-once guarantee. Even a first-call normal return proves only what the callback's own contract promises.\n\nA returned report contains one result for every input batch, all with `callback_completed`. An empty input returns `DeliveryReport(record_count=0, batches=())` without calling `send`. An error report contains a contiguous prefix of attempted batches, ending with exactly one terminal result. Unattempted batches have no entries. Their input positions begin at the terminal result's `stop` and end at `record_count`. This avoids representing skipped batches as failed attempts. For each attempted batch, `1 <= attempts <= MAX_ATTEMPTS`. A completed result has `timeout_attempts == attempts - 1`; an exhausted-timeout result has both counts equal to `MAX_ATTEMPTS`; a callback-error result has `timeout_attempts == attempts - 1`.\n\nFor example, with five records, if the first batch returns on its first call and the second times out three times, the partial report contains `[0:2]` with counts `1, 0` and `[2:4]` with counts `3, 3`. Record position 4 is unattempted. Processing never advances past the terminal batch.\n\nCallers own the input list, callback, transport, recipient reconciliation, and any idempotency keys. The companion accepts the documented list use case. Its contract requires the caller and callback not to change the outer input list during execution. It creates the same shallow slices as `deliver` and reuses each batch list across retries. Mutations to that batch can therefore affect later attempts; record objects remain shared. The gateway adds no deep copy or content validation. Batch positions describe the input partition, not a receipt for record contents. Existing `deliver` keeps its current behavior even for callers outside this companion contract.\n\nReports own immutable numeric metadata and outcome strings, with no retained record payloads or batch lists. The error wrapper retains the terminal exception, whose traceback may retain application objects. Callers should extract needed metadata before long-term storage. Counts cover calls initiated by this gateway invocation only; retries inside `send` and later caller retries are outside them. Concurrent invocations have independent reports. The gateway does not introduce a timer, deadline, background worker, persistence, or resumption token. A callback that blocks forever still blocks the caller.\n\nOnly callback `Exception` failures receive partial reports. `KeyboardInterrupt`, `SystemExit`, and other `BaseException` subclasses propagate unchanged without a promised report. Failures outside the callback, such as a slicing or report-allocation failure, also propagate directly without a promised partial report. This avoids presenting interrupted or incomplete bookkeeping as reliable evidence.\n\nCaller usage:\n\n```python\n# Use this companion INSTEAD OF deliver for the intended operation.\n# Existing call sites that need no report keep gateway.deliver(records, send).\n# Do not call both APIs merely to obtain a report.\ntry:\n    report = gateway.deliver_report(records, send)\nexcept gateway.DeliveryReportError as exc:\n    report = exc.report\n    terminal = report.batches[-1]\n    log_attempts(report)\n    if terminal.outcome == \"delivery_unknown_after_timeout\":\n        reconcile_with_recipient(terminal.start, terminal.stop)\n    else:\n        log_callback_error(exc.cause)\n    raise\nelse:\n    log_attempts(report)\n    for batch in report.batches:\n        if batch.timeout_attempts:\n            flag_possible_duplicate_delivery(batch.start, batch.stop)\n```\n\nThe logging and reconciliation functions in the example belong to the caller; the fixture does not supply them. Reconciliation requires application evidence beyond this report. Blindly rerunning the full input can repeat completed batches and timed-out attempts. Restarting at the terminal batch can duplicate its effects; restarting at its stop offset skips unresolved work. Report offsets are observations, not safe resumption tokens. Applications that need safe retries must supply recipient-supported idempotency or their own reconciliation protocol.\n\nVerification should use deterministic in-process callbacks and lists. No service, network client, CLI, installation, or timing benchmark is needed. These checks are proposed, not executed:\n\n- Characterize existing `deliver` before any change. Check empty input returns zero, five records produce slices of sizes 2, 2, 1, normal returns yield the integer length, and a `False` return still ends retries. Assert the same batch list object is reused across timeout retries. These checks follow `gateway.py:5-15`.\n- Use callback scripts that return immediately, time out once then return, and time out twice then return. Expect attempts of 1, 2, and 3, timeout counts of 0, 1, and 2, and `callback_completed` in every case. With several batches, check counts reset for each batch and input ordering stays intact.\n- Exhaust three timeouts on a later batch. Check the companion wrapper's `cause` and `__cause__` are the final timeout object, the partial report includes the completed prefix and terminal unknown result, and no later slice reaches the callback. Check legacy `deliver` raises the original final timeout object and still stops there.\n- Raise a non-timeout exception on the first invocation and after one timeout. Expect no retry of that exception, `callback_error`, accurate counts, a complete attempted prefix, and preserved cause identity. Check legacy propagation stays unchanged. Include a `TimeoutError` subclass to confirm retry classification.\n- Check empty and odd-length inputs, half-open ranges, zero-based indexes, immutable result fields, and no report entries for unattempted records. On a successful return, ranges must cover the original input length. On callback failure, ranges must cover only the attempted prefix.\n- Use a fake recipient that records a side effect and then raises `TimeoutError`. After a later normal return, verify the report says `callback_completed` with nonzero timeouts even though duplicate side effects occurred. When every invocation records a side effect and times out, verify the terminal outcome remains unknown. These cases demonstrate why an exception cannot establish nondelivery.\n- Confirm `KeyboardInterrupt` propagates unchanged. Check shallow record identity and retry reuse for the companion. Review that the input-stability precondition and lack of a gateway-enforced timeout are documented.\n\nThere is no evidence here for a numeric maximum input size, lower latency from batching, or externally confirmed delivery. Report storage grows with the number of attempted batches. The design introduces that opt-in cost without changing the legacy function's behavior.\n\nVerification status: the coordinator traced these contracts against all 15 lines of gateway.py and the two supplied documents. The checks above are a future implementation verification plan, not executed behavior. No implementation or test files were created. Python-version support is unspecified by the fixture, so the type declarations require a runtime-compatibility decision at implementation time.\n",
+    "frame.md": "# Frame\n\nDesign-only companion API package grounded in project revision 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d. Source and config remain read-only; writes stay in this output directory. Existing untracked.txt is preserved. Acceptance checks cover signatures and caller usage, per-batch counts, normal return versus timeout uncertainty, unchanged legacy behavior, ownership, partial failures, and a source-grounded verification plan without exactly-once claims.\n\nCompare each criterion on a 0\u20135 scale: compatibility with actual source; attempt and uncertainty semantics; error and partial-result completeness; caller and ownership clarity; grounded verification and interface economy. Equal weights. Candidate briefs omit rubric and identities. Two ordered inherited runner seats, one judge selected from two inherited alternatives. Both alternatives resolve to the coordinator family, so diversity is unavailable within the configured pool. Native delegation cannot guarantee fresh context with inheritance and is not selected; T3 supplies prompt-only context with omitted targets. Writers run serially and use owned absolute paths.\n",
+    "judge/report.md": "# Independent design review\n\nRecommend A as the base. Both candidates meet the central requirements and score 24/25. A wins the tie on interface economy and closeness to the documented list-based operation. Its caller example has a consequential ambiguity. B gives clearer migration guidance, but adds input snapshot semantics and metadata beyond what this task needs. Neither has a blocking flaw in its attempt accounting or uncertainty model.\n\nThis is a design review, not implementation validation. I read both frozen design and rationale files and the three specified source files. A read-only HEAD check confirmed revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`. No implementation tests were run. Configuration and model identities were not read.\n\n## Source baseline\n\n`project/gateway.py:1-15` sets batch size two and maximum attempts three. It slices the supplied container one batch at a time, reuses that slice for retries, processes batches sequentially, and ignores callback return values. Only `TimeoutError` triggers retries; exhaustion re-raises the final exception. Other exceptions escape immediately. A completed call returns `len(records)`, including zero for empty input. There is no timer or recipient acknowledgment mechanism.\n\n`project/README.md:3` describes a supplied list and injected callback, with no network client or CLI. `project/docs/decision.md:3` states there is no record-count limit and claims a latency motivation without measurements. Neither a performance guarantee nor exactly-once delivery follows from this evidence.\n\nArtifact citations below use paths relative to the supplied output directory. Rationale citations identify paragraphs by their opening words.\n\n## Scores\n\nEach criterion has equal weight. Five means fully satisfies the criterion; four means strong with a concrete limitation.\n\n| Criterion | A | B |\n| --- | ---: | ---: |\n| Compatibility with actual source | 5 | 5 |\n| Attempt and uncertainty semantics | 5 | 5 |\n| Error and partial-result completeness | 5 | 5 |\n| Caller and ownership clarity | 4 | 5 |\n| Grounded verification and interface economy | 5 | 4 |\n| Total | 24/25 | 24/25 |\n| Mean | 4.8/5 | 4.8/5 |\n\n## A\n\nCompatibility earns 5. `candidate-a/design.md:1-3,47-49` explicitly leaves `deliver` intact and preserves its callback arguments, return-value treatment, retry classification, and exception behavior. The companion accepts the README's list use case. Its stable-input precondition applies only to the new API, while shallow slicing and retry reuse follow the source, at lines 59-61. `candidate-a/rationale.md`, paragraph beginning \"The proposed `deliver_report` name\", correctly identifies original exception identity as part of compatibility.\n\nAttempt and uncertainty semantics earn 5. Lines 23-25,49-55 define attempts as callback invocations, including the first, and separately count timeouts. A later normal return preserves earlier timeout evidence. The three outcomes distinguish normal completion, exhausted timeouts, and another callback exception without asserting remote delivery or nondelivery. Lines 61 expressly exclude retries internal to the callback and subsequent caller retries from these counts.\n\nErrors and partial results earn 5. Lines 51-57 require the completed prefix plus the terminal batch, preserve original exception identity through both an attribute and chaining, and exclude unattempted batches. Empty input and count invariants are explicit. Lines 63 delimit the guarantee to callback `Exception` failures and address interruption and bookkeeping failures. The public error constructor is specified at lines 32-36.\n\nCaller and ownership clarity earns 4. Lines 47,59-63 clearly assign public types, input ownership, accounting, transport, reconciliation, immutable metadata, and traceback retention. However, the executable usage block at lines 67-88 calls `deliver` and then `deliver_report` on the same records without explicitly labeling them alternatives. Copying it performs delivery twice. The later warning against rerunning input at line 90 helps, but does not remove this ambiguity in the primary example. This is a material documentation flaw for an API whose retries may already duplicate effects.\n\nGrounded verification and economy earn 5. Lines 92-100 propose deterministic checks for source behavior, exception identity, retry object reuse, count resets, partial prefixes, and side effects before timeouts. These tests address the principal failure modes rather than merely checking field construction. The report retains only input count and batch observations. The rationale's closing paragraph acknowledges that runtime-version and test-infrastructure compatibility were not inspected, so the declarations are not presented as proven executable integration.\n\n## B\n\nCompatibility earns 5. `candidate-b/design.md:5,47,51,67` preserves legacy behavior and confines the new error contract to the companion. Its snapshot deliberately differs from legacy input handling, but does not change `deliver`. `candidate-b/rationale.md`, paragraph beginning \"Reports use input offsets\", acknowledges that distinction. The requested backward compatibility does not require the two APIs to behave identically under input mutation.\n\nAttempt and uncertainty semantics earn 5. Lines 23-25,51-63 give precise count equations, retain uncertainty after eventual normal return, and avoid treating non-timeout exceptions as proof of no side effect. They make no delivered-record or exactly-once claim.\n\nErrors and partial results earn 5. Lines 67-73 specify exception identity and chaining, the completed prefix and terminal entry, omission of unattempted batches, interruption limits, and report-construction failure limits. Line 47 covers setup failures before callback work. The warning at line 71 correctly explains that resuming at the terminal batch may duplicate effects, while resuming at its end may skip unresolved work.\n\nCaller and ownership clarity earns 5. Lines 5 and 87-88 explicitly identify the companion as an alternative delivery operation. Lines 77-79 define call-local accounting, shallow references, retry list reuse, metadata ownership, and exception retention. The example at lines 89-103 accesses partial results and flags timeout evidence across the report. Application-specific logging and reconciliation remain caller responsibilities.\n\nGrounded verification and economy earns 4. Lines 110-117 propose strong source-derived checks, including duplicate-valued records, independent calls, side effects before timeout, and snapshot behavior. The limitation is scope and cost: lines 29-32,39,47 add `Sequence` acceptance, a full shallow input snapshot, and captured batch-policy fields. These are coherent choices, but none is necessary to expose per-batch observations for the documented supplied-list operation. The snapshot adds an O(n) reference copy before any callback, even when the first batch immediately fails. In contrast, the source slices incrementally. The rationale's paragraph beginning \"docs/decision.md line 3\" acknowledges the memory cost. This is a material design tradeoff, not a hidden compatibility break or a claim that the input must have a numeric cap.\n\n## Recommendation\n\nUse A as the base because it satisfies the observation and failure requirements with fewer new input semantics and less eager allocation. The equal totals reflect B's stronger caller example and A's smaller companion contract. A's example ambiguity should be resolved before publication. Neither candidate needs a redesigned uncertainty model, and neither candidate's proposed verification has yet been executed. This review does not synthesize or modify either proposal.\n",
+    "synthesis-note.md": "# Synthesis note\n\nThe coordinator selected candidate A as the base after both independent candidates and exactly one independent judge completed. Judge and coordinator independently scored A 5/5/5/4/5 and B 5/5/5/5/4, each 24/25, in criterion order from frame.md. Both preferred A on the tie-break of the smaller interface and source-aligned list ownership. There were no scoring or base-selection disagreements. The judge identified the same adjacent-call ambiguity in A independently.\n\nRetained from A: deliver_report naming, list contract, frozen metadata and ordered attempted-prefix reports, explicit callback-count invariants, companion-only chained DeliveryReportError, original exception identity, BaseException and bookkeeping exclusions, and source-grounded verification. The existing deliver implementation remains unchanged.\n\nIntegrated from B: an explicit instruction to use the companion instead of deliver for one intended operation, and the warning that restarting at the terminal start may duplicate effects while restarting at its stop may skip unresolved work. The final usage block performs only one delivery operation. These contributions fix A's documentation flaw without changing its public contract.\n\nRejected B's Sequence input expansion, whole-input snapshot, and captured batch policy fields. They are coherent opt-in semantics, but are not required for the documented supplied-list use case. A's stable outer-list precondition and shallow per-batch slicing impose less eager allocation. No runtime performance claim is made. Rejected automatic replay, delivered-record aggregates, recipient protocols, and changes to legacy exceptions as outside the evidence and requested boundary.\n\nBoth candidates converged on the observation model and error strategy. Structurally distinct alternatives were not required. There were no candidate dropouts and no failed child tasks. A catalog refresh patch initially failed because it named the same path twice; it wrote nothing. The coordinator saved the refreshed payload to a separately owned path and revalidated before dispatching the judge. This was an orchestration-file error, not a failed comparison round.\n\nAll roles inherited codex/gpt-6-astra. Both configured runner seats were dispatched in order; only the first eligible entry of the two-entry judge pool was dispatched. No different-family judge was configured. T3 prompt-only contexts avoided parent history; candidates received the same common brief plus their own label and paths, without scores, identities or other candidates. The judge received A/B labels and the rubric, without identity mapping. This is instruction and transport isolation, not filesystem access control; the shared filesystem does not prove absence of unauthorized reads.\n\nActual verification was source inspection and manual contract tracing, not execution of the proposed companion. Empty input, normal return including False, one/two timeout recovery, three-timeout exhaustion on a later batch, timeout then another exception, unattempted suffix, exception identity, shallow ownership and interruption paths were checked against the source. Report immutability and chaining are design requirements, not tested implementation facts. The final design preserves uncertainty after a later normal return and makes no exactly-once claim. Source/config/candidate hash and task lifecycle checks are recorded in receipt.json. Runtime-version support, production transport behavior and recipient reconciliation remain outside this fixture.\n"
+  },
+  "negativeScenarios": {
+    "A": {
+      "scenario": "A",
+      "status": "incomplete",
+      "stop_phase": "Frame",
+      "reason": "Only one configured runner; Arena requires at least two.",
+      "config_path": "/tmp/jstack-arena-uyu9daca/failures/one-runner.json",
+      "config_source": "explicit",
+      "whole_map_validation": "passed for both role resolutions",
+      "runner_role": "arena runners",
+      "runner_targets": [
+        null
+      ],
+      "judge_pool_targets": [
+        null,
+        null
+      ],
+      "effective_identity": {
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra"
+      },
+      "runner_capability_checks": [
+        {
+          "seat": 1,
+          "executable": true,
+          "inherited": true
+        }
+      ],
+      "judge_alternatives": [
+        {
+          "seat": 1,
+          "executable": true,
+          "same_exact_model_as_coordinator": true,
+          "meets_family_requirement": true,
+          "rejection_reason": null
+        },
+        {
+          "seat": 2,
+          "executable": true,
+          "same_exact_model_as_coordinator": true,
+          "meets_family_requirement": true,
+          "rejection_reason": null
+        }
+      ],
+      "selected_judge_pool_index": 0,
+      "judge_selection_note": "First inherited alternative is executable; same-family limitation permitted for A. No dispatch because panel too small.",
+      "dispatch_targets": [],
+      "dispatch_counts": {
+        "candidates": 0,
+        "judges": 0,
+        "synthesizers": 0,
+        "total": 0
+      },
+      "task_ids": [],
+      "task_lifecycle": {
+        "owned_children": 0,
+        "live_children": 0,
+        "awaited_children": 0,
+        "terminal_reconciliation": "No children dispatched; no pending or nested work."
+      },
+      "candidate_hashes": {},
+      "candidate_artifacts": [],
+      "dropouts": [],
+      "phase_order": [
+        {
+          "phase": "Frame",
+          "status": "stopped_incomplete"
+        },
+        {
+          "phase": "Candidates",
+          "status": "not_started"
+        },
+        {
+          "phase": "Cross-judge",
+          "status": "not_started"
+        },
+        {
+          "phase": "Pick",
+          "status": "not_started"
+        },
+        {
+          "phase": "Synthesize",
+          "status": "not_started"
+        },
+        {
+          "phase": "Verify",
+          "status": "design_verification_not_reached; evaluation evidence and preservation checked"
+        }
+      ],
+      "rubric": [
+        "Preserve batching, retry count, exception propagation and return value.",
+        "Define reporting ownership and caller opt-in with a small public interface.",
+        "Distinguish callback success, timeout exhaustion, other exceptions and uncertain external delivery.",
+        "Prevent reporting failures from changing delivery behavior.",
+        "Ground the design and verification plan in the actual source."
+      ],
+      "acceptance_checks": [
+        "Design only; no implementation or settings changes.",
+        "At least two configured and viable candidate artifacts.",
+        "Select an executable configured judge before candidate work; B also requires a different model family.",
+        "Trace representative caller usage, ownership and failure paths against gateway.py before accepting any design.",
+        "Retain evidence, preserve source and Git, finish all owned children, and remove owned catalogs."
+      ],
+      "context_isolation": {
+        "shared_evaluator_context": true,
+        "fresh_scenario_conversation": false,
+        "independent_config_resolution": true,
+        "separate_live_catalog_call": true,
+        "separate_output_directory": true,
+        "candidate_context_isolation": "not exercised; no children"
+      },
+      "source_revision": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+      "catalog_evidence": "/tmp/jstack-arena-uyu9daca/failures/output/A/capability-evidence.json",
+      "design_verification": "not performed; prerequisite failure prevents comparison",
+      "runtime_behavior_tested": false
+    },
+    "B": {
+      "scenario": "B",
+      "status": "incomplete",
+      "stop_phase": "Frame",
+      "reason": "Both configured judge alternatives inherit the exact coordinator model, gpt-6-astra; neither satisfies the required different-family condition.",
+      "config_path": "/tmp/jstack-arena-uyu9daca/failures/two-runners.json",
+      "config_source": "explicit",
+      "whole_map_validation": "passed for both role resolutions",
+      "runner_role": "arena runners",
+      "runner_targets": [
+        null,
+        null
+      ],
+      "judge_pool_targets": [
+        null,
+        null
+      ],
+      "effective_identity": {
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra"
+      },
+      "runner_capability_checks": [
+        {
+          "seat": 1,
+          "executable": true,
+          "inherited": true
+        },
+        {
+          "seat": 2,
+          "executable": true,
+          "inherited": true
+        }
+      ],
+      "judge_alternatives": [
+        {
+          "seat": 1,
+          "executable": true,
+          "same_exact_model_as_coordinator": true,
+          "meets_family_requirement": false,
+          "rejection_reason": "Exact model inheritance cannot provide family diversity."
+        },
+        {
+          "seat": 2,
+          "executable": true,
+          "same_exact_model_as_coordinator": true,
+          "meets_family_requirement": false,
+          "rejection_reason": "Exact model inheritance cannot provide family diversity."
+        }
+      ],
+      "selected_judge_pool_index": null,
+      "judge_selection_note": "No permissible judge; no unconfigured alternative selected.",
+      "dispatch_targets": [],
+      "dispatch_counts": {
+        "candidates": 0,
+        "judges": 0,
+        "synthesizers": 0,
+        "total": 0
+      },
+      "task_ids": [],
+      "task_lifecycle": {
+        "owned_children": 0,
+        "live_children": 0,
+        "awaited_children": 0,
+        "terminal_reconciliation": "No children dispatched; no pending or nested work."
+      },
+      "candidate_hashes": {},
+      "candidate_artifacts": [],
+      "dropouts": [],
+      "phase_order": [
+        {
+          "phase": "Frame",
+          "status": "stopped_incomplete"
+        },
+        {
+          "phase": "Candidates",
+          "status": "not_started"
+        },
+        {
+          "phase": "Cross-judge",
+          "status": "not_started"
+        },
+        {
+          "phase": "Pick",
+          "status": "not_started"
+        },
+        {
+          "phase": "Synthesize",
+          "status": "not_started"
+        },
+        {
+          "phase": "Verify",
+          "status": "design_verification_not_reached; evaluation evidence and preservation checked"
+        }
+      ],
+      "rubric": [
+        "Preserve batching, retry count, exception propagation and return value.",
+        "Define reporting ownership and caller opt-in with a small public interface.",
+        "Distinguish callback success, timeout exhaustion, other exceptions and uncertain external delivery.",
+        "Prevent reporting failures from changing delivery behavior.",
+        "Ground the design and verification plan in the actual source."
+      ],
+      "acceptance_checks": [
+        "Design only; no implementation or settings changes.",
+        "At least two configured and viable candidate artifacts.",
+        "Select an executable configured judge before candidate work; B also requires a different model family.",
+        "Trace representative caller usage, ownership and failure paths against gateway.py before accepting any design.",
+        "Retain evidence, preserve source and Git, finish all owned children, and remove owned catalogs."
+      ],
+      "context_isolation": {
+        "shared_evaluator_context": true,
+        "fresh_scenario_conversation": false,
+        "independent_config_resolution": true,
+        "separate_live_catalog_call": true,
+        "separate_output_directory": true,
+        "candidate_context_isolation": "not exercised; no children"
+      },
+      "source_revision": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+      "catalog_evidence": "/tmp/jstack-arena-uyu9daca/failures/output/B/capability-evidence.json",
+      "design_verification": "not performed; prerequisite failure prevents comparison",
+      "runtime_behavior_tested": false
+    }
+  },
+  "parentVerification": {
+    "allBaselineInputsUnchanged": true,
+    "skillSourcesUnchanged": true,
+    "userConfigUnchanged": true,
+    "candidateHashesMatchFrozenArtifacts": true,
+    "candidateAndJudgeArtifactsRead": true,
+    "finalDesignCheckedAgainstSource": true,
+    "hostTimingShowsJudgeAfterCandidates": true
+  },
+  "limitations": [
+    "Inherited Codex, serial candidate writers, design-only artifact; no code implementation or runtime behavior tests.",
+    "No different-family successful judge, candidate dropout, reframing/retry, architect panel override, code worktree or cross-provider case exercised.",
+    "Prompt-only task isolation and candidate labels checked; shared filesystem is not an access-control boundary. Full dispatch briefs inspected; no full-host read audit performed.",
+    "Provider installation/discovery and future playbook calls untested."
+  ],
+  "rawArtifacts": "/tmp/jstack-arena-uyu9daca"
+}

@@ -30,3 +30,5 @@ Conversation activation until explicit opt-out is the accepted behavior. Impleme
 ## Earlier experiment
 
 The old pstack review prototype, evaluation receipts, and broad portability audit are excluded from the current tree. They remain recoverable in [the earlier PR #4 commit](https://github.com/juancamiloqhz/skills/commit/28be989). They are historical material, not the active jstack plan or evidence that a jstack workflow works.
+
+Standalone [Arena](../../skills/jstack/arena/SKILL.md) adds configured candidate comparison, one selected cross-judge and verified synthesis. Its [evaluation](evaluations/arena/README.md) covers a design-only result and insufficient panel/required-diversity failures. Architect and the playbook callers remain planned.
