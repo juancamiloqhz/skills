@@ -74,6 +74,17 @@
         "pstack/skills/setup-pstack"
       ],
       "differences": "skills/jstack/why/references/upstream.md"
+    },
+    {
+      "name": "arena",
+      "localPath": "skills/jstack/arena",
+      "upstreamPath": "pstack/skills/arena",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/architect",
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/arena/references/upstream.md"
     }
   ],
   "decisions": [
