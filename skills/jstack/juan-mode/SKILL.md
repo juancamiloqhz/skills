@@ -7,7 +7,7 @@ description: Apply jstack's task routing and configured delegation when the user
 
 Use the user's requested outcome to select a playbook, resolve the current jstack model assignments and coordinate verified work in T3 Code. Explicit invocation activates the mode in this conversation until the user turns it off. Reading this file for authoring or review does not activate it.
 
-This package currently implements the execution foundation and the shared how/why investigation procedures. All 23 playbooks are registered but awaiting implementation. Report a selected route as unavailable rather than improvising its missing procedure or claiming its workflow passed. Full release requires executed acceptance evidence for every route and the supported providers.
+This package currently implements the execution foundation. The separately installed how and why skills provide shared investigation procedures. All 23 playbooks are registered but awaiting implementation. Report a selected route as unavailable rather than improvising its missing procedure or claiming its workflow passed. Full release requires executed acceptance evidence for every route and the supported providers.
 
 ## Activation and task selection
 
@@ -25,7 +25,7 @@ Before delegation, read the [execution contract](references/execution.md). Give 
 
 ## Shared investigation procedures
 
-When a caller explicitly selects a shared investigation procedure, read [how](references/workflows/how.md) for runtime flow and ownership, or [why](references/workflows/why.md) for historical rationale. Both use the [evidence contract](references/workflows/evidence.md), resolve their configured roles and return read-only findings to the caller. They are internal procedures, not standalone skills. Their availability does not make the planned Investigation playbook executable. Other shared helpers remain planned.
+When a caller or implemented playbook selects investigation, discover `how` for runtime flow and ownership or `why` for historical rationale in the current skill catalog. Read that skill's advertised `SKILL.md`, pass the original question, source scope and selected absolute configuration path, and follow its procedure. Do not assume a sibling installation or substitute an unrelated skill with the same name; verify that it uses the jstack setup contract. If missing, report the dependency and provide `npx skills add juancamiloqhz/skills --skill how` or `--skill why` for manual installation. These standalone skills return checked findings without activating juan-mode themselves. Their availability does not make the planned Investigation playbook executable. Other shared helpers remain planned.
 
 ## Completion
 

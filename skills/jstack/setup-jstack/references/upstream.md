@@ -15,3 +15,7 @@ Adaptations replace Cursor's always-applied rule, Task model slugs and Auto alia
 [Pstack PR #366](https://github.com/cursor/plugins/pull/366), introduced in [commit 5bf2b1544db739998121a306340631963c2ff3de](https://github.com/cursor/plugins/commit/5bf2b1544db739998121a306340631963c2ff3de), explains that reducing reasoning spend previously required changing each role by hand. The budget choice applies an effort target across the working assignments before per-role confirmation.
 
 Jstack keeps the four labels and target levels for conceptual compatibility. It adapts model slugs to provider-specific options and explicitly resolves the scope of rerun changes and retained overrides. This does not reproduce Cursor's rule-loading mechanism or make the budget a runtime spending limit. The source pin for the shipped setup adaptation above is unchanged.
+
+## Investigation consumer contract
+
+The shared [investigation contract](investigation.md) supports the standalone how/why consumers without activating a workflow during setup. Its evidence categories and confidence guidance derive from [pstack why](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/why) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The existing MIT notice covers this attribution. T3 Code capability checks, explicit configuration handoff and artifact ownership adapt that guidance to jstack. This additional source pin does not change the setup implementation's pin above.

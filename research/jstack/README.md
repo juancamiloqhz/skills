@@ -12,7 +12,7 @@ Setup and juan-mode also share optional project model configuration, with [evalu
 
 The [installed runtime evaluation](evaluations/juan-mode-runtime/README.md) adds inherited Codex dispatch, explicit-path editor isolation and synthetic activation recovery cases. Actual compaction, provider restart and other coordinating providers remain unverified.
 
-The shared-procedure group now includes bundled how/why investigation helpers and an evidence contract, with [fixture evaluation](evaluations/shared-investigation/README.md). They are internal references inside juan-mode; the 23 playbooks and remaining helper/principle work stay planned.
+The shared-procedure group now includes standalone how/why investigation skills and a shared setup-jstack evidence contract, with [fixture evaluation](evaluations/shared-investigation/README.md). Users can invoke them directly, and juan-mode discovers them through the skill catalog; the 23 playbooks and remaining helper/principle work stay planned.
 
 ## Read by purpose
 

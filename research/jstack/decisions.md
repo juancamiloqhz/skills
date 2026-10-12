@@ -33,3 +33,7 @@ Keep active research in `research/jstack/`. Record sources and dates, distinguis
 The old review prototype and raw evaluations are removed from the proposed merge. Their earlier commit remains available for retrieval. Do not carry forward the old implementation plan as an approved architecture.
 
 Use one source line per prose paragraph, with separate paragraph, list, and code-block boundaries.
+
+## Standalone investigation skills, 2026-10-12
+
+Package how and why as separate skills, as pstack does, with direct invocation and catalog-discovered use by juan-mode playbooks. This supersedes the initial plan to bundle these two procedures as references inside juan-mode. Their configured roles and investigation algorithms remain. Setup-jstack owns their shared configuration and evidence contract; they do not require a juan-mode installation or activate its persistent mode. Other planned helpers retain their existing packaging until assessed. Installation and updates remain manual.

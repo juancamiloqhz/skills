@@ -1,6 +1,6 @@
 # Shared investigation evaluation
 
-This evaluation covers the bundled how/why procedures and shared evidence contract. It uses isolated local Git fixtures, inherited Codex selections and the installed setup-jstack resolver. The procedures are internal references inside juan-mode. They do not implement the planned Investigation playbook or complete the shared-procedure group.
+The original evaluation covers the bundled how/why procedures and shared evidence contract at commit `f30c74d`. It uses isolated local Git fixtures, inherited Codex selections and the installed setup-jstack resolver. Those procedures were internal references inside juan-mode. The later standalone packaging assessment is recorded separately below. Neither form implements the planned Investigation playbook or completes the shared-procedure group.
 
 ## Cases and acceptance criteria
 
@@ -32,3 +32,13 @@ The parent verified four completed coordinator tasks and seven completed nested 
 These cases use Codex and inherited selections. They do not establish other-provider behavior, live external connector searches, browser execution, actual compaction/restart, adversarial retrieved instructions or full playbook support. The how complex branch is tested with two explorers, not every permitted task count. Why's seven-category coverage includes explicit external-source exclusions; it does not claim those services were searched.
 
 The shared-procedure group still needs architect, arena, swarm, interrogate, reflect, custom planning, principle mappings and their acceptance evidence. The existing foundation persistence requirements remain open.
+
+## Standalone packaging
+
+On 2026-10-12 the user selected standalone how/why skills, matching upstream packaging. The procedure bodies move to their own skill entrypoints, while setup-jstack owns the shared investigation contract. Direct invocation leaves juan-mode activation unchanged and requires no juan-mode installation. The source hashes in the original results remain historical evidence for the bundled version, not the final packaging.
+
+Standalone validation uses isolated copies of each skill and setup-jstack at non-sibling paths. It exercises the public skill entrypoints with explicitly supplied source locations rather than registering or installing them. Provider UI discovery and manual installation remain untested.
+
+Both standalone cases passed. How used one configured explainer and returned the correct four-call trace and return-value limits. Why used two investigators followed by a synthesizer, retained the conflicting rationale and left the attempt-count origin unknown. Its coordinator corrected an investigator's mistaken attempt-count contradiction and source-category labels against the actual source and required taxonomy before synthesis. These findings support the existing coordinator verification step; they do not establish error-free investigator output.
+
+[Standalone results](standalone-results.json) retain source and copied-dependency hashes, answers, commands, role resolution, capability checks, task identities and host lifecycle evidence. The parent checked both answers, all four nested host runs, fixture contents/history/status and the unchanged global configuration. Temporary catalogs were removed. The complex how and unavailable-provider cases retain only their earlier bundled-version evidence; they were not rerun through the standalone entrypoints.

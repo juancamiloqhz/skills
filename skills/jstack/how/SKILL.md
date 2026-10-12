@@ -1,6 +1,15 @@
+---
+name: how
+description: Explain how code works, including runtime flow, component ownership and failure behavior. Use for code walkthroughs and placement or layering questions; use why for historical rationale.
+---
+
 # How a subsystem works
 
-Use this bundled procedure to explain runtime flow, component ownership or where behavior belongs. Use [why](why.md) for historical motivation. Follow [investigation evidence](evidence.md); source and external systems stay read-only. This helper returns an explanation to its caller and does not implement a change.
+Run directly for the user's question or as a procedure called by a juan-mode playbook. Direct invocation is task-scoped and does not activate juan-mode. Return checked findings to the user or calling playbook; investigation does not authorize implementation.
+
+Find `setup-jstack` in the executing provider's skill catalog, or use its explicitly supplied source path during authoring. Resolve all resources relative to that skill's advertised installation; it need not be a sibling of this skill. Read its `references/investigation.md` before executing the procedure. That shared contract defines configuration lookup, capability checks, child lifecycle, evidence and read-only scope. If setup-jstack or that contract is missing, report the dependency and provide `npx skills add juancamiloqhz/skills --skill setup-jstack` for manual installation or update. Keep model configuration unchanged. This skill does not require juan-mode or the companion investigation skill to be installed.
+
+Use `why` for historical motivation when that skill is available; this skill explains runtime mechanics. See [upstream attribution](references/upstream.md) for the source and adaptations.
 
 ## Select the exploration scope
 

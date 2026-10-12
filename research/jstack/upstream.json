@@ -31,7 +31,9 @@
       "upstreamPath": "pstack/skills/setup-pstack",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [
-        "pstack/skills/poteto-mode"
+        "pstack/skills/poteto-mode",
+        "pstack/skills/how",
+        "pstack/skills/why"
       ],
       "differences": "skills/jstack/setup-jstack/references/upstream.md"
     },
@@ -50,6 +52,28 @@
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [],
       "differences": "skills/jstack/maintain-verification-skill/references/upstream.md"
+    },
+    {
+      "name": "how",
+      "localPath": "skills/jstack/how",
+      "upstreamPath": "pstack/skills/how",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/poteto-mode",
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/how/references/upstream.md"
+    },
+    {
+      "name": "why",
+      "localPath": "skills/jstack/why",
+      "upstreamPath": "pstack/skills/why",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/poteto-mode",
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/why/references/upstream.md"
     }
   ],
   "decisions": [

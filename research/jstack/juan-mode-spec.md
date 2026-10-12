@@ -24,7 +24,7 @@ The authoritative upstream set is the [pinned playbook directory](https://github
 
 Use one installable `juan-mode` skill containing the entrypoint, all 23 playbook files, shared workflow references, principle references, prompt templates and the small scripts that its behavior requires. Playbooks remain internal procedures, not separately installed skills. Keep the entrypoint focused on activation, routing, shared rules and completion requirements; read detailed material only when its route needs it.
 
-Initially bundle the reusable procedures behind `how`, `why`, `architect`, `arena`, `swarm`, `interrogate`, `reflect` and `figure-it-out` as reference files. Preserve their roles and algorithms without depending on global skills with matching names. They can serve several playbooks inside the package. Standalone wrappers can be considered later when independent invocation earns the additional installation and discovery contract.
+Package `how` and `why` as standalone jstack skills, matching pstack's independent invocation boundary. This replaces the initial bundled-reference choice by user decision on 2026-10-12. Users can invoke either directly without activating or installing juan-mode; implemented playbooks discover them through the current skill catalog and pass their task scope and absolute model-config path. Both depend on setup-jstack for the canonical resolver and shared investigation contract. Keep `architect`, `arena`, `swarm`, `interrogate`, `reflect` and `figure-it-out` planned as internal references until their own packaging is assessed. Preserve each procedure's roles and algorithms.
 
 Keep `setup-jstack` as an explicit runtime dependency for its canonical configuration validator and resolver. Resolve its actual installation directory through the provider's skill catalog. Do not assume it is a filesystem sibling of `juan-mode` or copy `models.py` into another independent implementation. If the dependency cannot be found, explain the missing installation and retain the existing model configuration. Installations remain manual. The first implementation group must prove discovery with separately installed skill directories.
 
@@ -36,7 +36,7 @@ Suggested internal layout, to be populated as implementation groups land:
 skills/jstack/juan-mode/
   SKILL.md
   playbooks/                 # the 23 supported task procedures
-  references/workflows/      # shared investigation, design and review procedures
+  references/workflows/      # remaining shared design and review procedures
   references/principles/     # scoped engineering guidance
   references/t3-code.md      # execution and lifecycle requirements
   references/upstream.md     # source pin and intentional differences
@@ -82,7 +82,7 @@ The following dispositions cover the common entrypoint dependencies as well as t
 
 | Upstream dependency | Proposed juan-mode disposition |
 | --- | --- |
-| `how`, `why` | Bundle exploration and evidence-based explanation procedures with configured role resolution and explicit child prompts. |
+| `how`, `why` | Separate skills for direct invocation and catalog-discovered playbook use, with configured role resolution and explicit child prompts. |
 | `architect`, `arena`, `swarm`, `interrogate` | Bundle distinct design, candidate comparison, work partitioning and adversarial review procedures. Preserve their differences, judge independence and configuration prerequisites. |
 | `reflect`, `figure-it-out`, `show-me-your-work` | Bundle bounded improvement, custom-plan and decision-record procedures. Use task-scoped T3 Code evidence instead of Cursor transcript paths or a global personal-memory store. |
 | `benchmark-checklist`, `tdd` | Bundle the relevant measurement and failing-then-passing proof procedures; preserve real workloads, repeatability and measurement limits. |
