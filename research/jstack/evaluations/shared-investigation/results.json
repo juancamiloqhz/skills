@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-11T23:37:25.590861+00:00",
+  "baseCommit": "3f25674363778dab8347572b15e6ce8823262e62",
+  "upstreamRevision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "outcome": "pass",
+  "scope": "Bundled how/why procedures; not Investigation playbook or full shared-helper group.",
+  "evaluatedSourceHashes": {
+    "skills/jstack/juan-mode/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/juan-mode/SKILL.md": "0d6892894f69420ee74f9a8ee33ca7d348a897da9395be4ca5928aea454ea1ae",
+    "skills/jstack/juan-mode/scripts/test_preflight.py": "4caae5ab2660b50ffe5e922c8fb1d802ff554ed68b1070ccb80ea58cc6bc1298",
+    "skills/jstack/juan-mode/scripts/preflight.py": "25c4051dfcf85a23afd10df7db535319b1aadfd64912da4529c8ce1478da7cbd",
+    "skills/jstack/juan-mode/references/activation.md": "f182ec4ad5d04c9814695f944fdcf360bb34d3fa9ff376cf36eb23b5d448dd1e",
+    "skills/jstack/juan-mode/references/upstream.md": "bb8d914a4bbd72abc69ee8ed5beaf5a8d20e4351090a7f3bd91a4db5d9149dd4",
+    "skills/jstack/juan-mode/references/routes.md": "1407a8f3e75c7c5b1e143444e3e123283fc1bc23f7adf5e96cdd278ec5712a4c",
+    "skills/jstack/juan-mode/references/execution.md": "1eaa54bd3e08f51c9ff7d19a21d3da6c9f40d88a5960c0089d5a328a5782a977",
+    "skills/jstack/juan-mode/references/configuration.md": "dbc2936a18e56d8a69f7c04dee07e8859f1d0ee8ab629daa8c2fb68522ffc1af",
+    "skills/jstack/juan-mode/references/workflows/why.md": "7a0f5a8e77147260ab9b1170cad6fd5d5a81ac42130384b0f910ae996fbfb9a2",
+    "skills/jstack/juan-mode/references/workflows/evidence.md": "5a8399de928e51cac4199cb5d49752a2e3ab953760ab72706185a6c14f9e709e",
+    "skills/jstack/juan-mode/references/workflows/how.md": "5f6d3dab6be8e13154525ad0350c472cc84b3b91328854018c382b5dc66fed27"
+  },
+  "configuration": {
+    "path": "/home/ubuntu/.config/jstack/models.json",
+    "sha256Before": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "sha256After": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "unchanged": true,
+    "selection": "inherit-parent for all roles"
+  },
+  "fixtures": [
+    {
+      "path": "/tmp/juan-investigation.anXUVCv7/fixture",
+      "synthetic": true,
+      "baseline": {
+        "head": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+        "rationaleCommit": "e896cb90d9dcd61420426088f58d4429abbb86cc",
+        "status": "?? untracked.txt\n",
+        "files": {
+          "untracked.txt": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+          "gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+          "README.md": "79af74b0bd7cf4a6df1559334cb1c42da50c4462fcaa6ebfe6f2b5525d1f4d0d",
+          "docs/decision.md": "e7eb7f65640d794d22c8e508437724aa9b92463b908f3d0adf089aaf3ce342ad"
+        }
+      },
+      "unchanged": true,
+      "contents": {
+        "README.md": "# Delivery fixture\n\nThis is a disposable evaluation fixture. `gateway.deliver(records, send)` sends a supplied list through an injected callback. It does not provide a network client or CLI. No external services belong to this fixture.\n",
+        "docs/decision.md": "# Batch-size decision\n\nThis fixture document states that the gateway has no record-count limit. We chose a batch size of two only to reduce latency. No measurements are attached.\n",
+        "gateway.py": "BATCH_SIZE = 2\nMAX_ATTEMPTS = 3\n\n\ndef deliver(records, send):\n    for start in range(0, len(records), BATCH_SIZE):\n        batch = records[start:start + BATCH_SIZE]\n        for attempt in range(MAX_ATTEMPTS):\n            try:\n                send(batch)\n                break\n            except TimeoutError:\n                if attempt == MAX_ATTEMPTS - 1:\n                    raise\n    return len(records)\n",
+        "untracked.txt": "Preserve this user work.\n"
+      },
+      "history": "commit 5dfd6b0e22169c7107175e592cc0cd9279fe42c6\nAuthor:     Evaluation Fixture <fixture@example.invalid>\nAuthorDate: Sun Oct 11 23:24:45 2026 +0000\nCommit:     Evaluation Fixture <fixture@example.invalid>\nCommitDate: Sun Oct 11 23:24:45 2026 +0000\n\n    Introduce batched delivery\n---\n README.md        |  3 +++\n docs/decision.md |  3 +++\n send.py          | 15 +++++++++++++++\n 3 files changed, 21 insertions(+)\n\ndiff --git a/README.md b/README.md\nnew file mode 100644\nindex 0000000..a896a22\n--- /dev/null\n+++ b/README.md\n@@ -0,0 +1,3 @@\n+# Delivery fixture\n+\n+This is a disposable evaluation fixture. `gateway.deliver(records, send)` sends a supplied list through an injected callback. It does not provide a network client or CLI. No external services belong to this fixture.\ndiff --git a/docs/decision.md b/docs/decision.md\nnew file mode 100644\nindex 0000000..a4dea28\n--- /dev/null\n+++ b/docs/decision.md\n@@ -0,0 +1,3 @@\n+# Batch-size decision\n+\n+This fixture document states that the gateway has no record-count limit. We chose a batch size of two only to reduce latency. No measurements are attached.\ndiff --git a/send.py b/send.py\nnew file mode 100644\nindex 0000000..de02c31\n--- /dev/null\n+++ b/send.py\n@@ -0,0 +1,15 @@\n+BATCH_SIZE = 3\n+MAX_ATTEMPTS = 3\n+\n+\n+def deliver(records, send):\n+    for start in range(0, len(records), BATCH_SIZE):\n+        batch = records[start:start + BATCH_SIZE]\n+        for attempt in range(MAX_ATTEMPTS):\n+            try:\n+                send(batch)\n+                break\n+            except TimeoutError:\n+                if attempt == MAX_ATTEMPTS - 1:\n+                    raise\n+    return len(records)\n\ncommit e896cb90d9dcd61420426088f58d4429abbb86cc\nAuthor:     Evaluation Fixture <fixture@example.invalid>\nAuthorDate: Sun Oct 11 23:24:45 2026 +0000\nCommit:     Evaluation Fixture <fixture@example.invalid>\nCommitDate: Sun Oct 11 23:24:45 2026 +0000\n\n    Limit gateway batches to two records\n    \n    The partner gateway accepts at most two records per request. This change follows that hard limit, not a throughput benchmark. Keep the retry count unchanged.\n---\n send.py | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)\n\ndiff --git a/send.py b/send.py\nindex de02c31..d6fdd14 100644\n--- a/send.py\n+++ b/send.py\n@@ -1,4 +1,4 @@\n-BATCH_SIZE = 3\n+BATCH_SIZE = 2\n MAX_ATTEMPTS = 3\n \n \n\ncommit 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d\nAuthor:     Evaluation Fixture <fixture@example.invalid>\nAuthorDate: Sun Oct 11 23:24:45 2026 +0000\nCommit:     Evaluation Fixture <fixture@example.invalid>\nCommitDate: Sun Oct 11 23:24:45 2026 +0000\n\n    Rename gateway module\n---\n send.py => gateway.py | 0\n 1 file changed, 0 insertions(+), 0 deletions(-)\n\ndiff --git a/send.py b/gateway.py\nsimilarity index 100%\nrename from send.py\nrename to gateway.py\n"
+    },
+    {
+      "path": "/tmp/juan-investigation.anXUVCv7/complex-fixture",
+      "synthetic": true,
+      "baseline": {
+        "head": "3cb07a52f64c522015351c703f416c99cbb5b0ac",
+        "files": {
+          "README.md": "d45298d15483b131885e9c6c3006fbc1c6e2dfc38f2478b5ba7888b12f51b245",
+          "gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+          "validation.py": "fb75003aee0f7257a171894b5184fb15cac67bffac035af22848de69bb315c58",
+          "api.py": "f375853a5928aae945807d7fb81e2430d7f7cee9bddb17cc46ea80e9f7f54655"
+        },
+        "status": ""
+      },
+      "unchanged": true,
+      "contents": {
+        "README.md": "# API fixture\n\napi.handle validates a list of strings and delegates to an injected sender through gateway.deliver. There is no durable receipt store or network adapter.\n",
+        "api.py": "from validation import validate\nfrom gateway import deliver\n\n\ndef handle(records, send):\n    validate(records)\n    accepted = deliver(records, send)\n    return {\"accepted\": accepted}\n",
+        "gateway.py": "BATCH_SIZE = 2\nMAX_ATTEMPTS = 3\n\n\ndef deliver(records, send):\n    for start in range(0, len(records), BATCH_SIZE):\n        batch = records[start:start + BATCH_SIZE]\n        for attempt in range(MAX_ATTEMPTS):\n            try:\n                send(batch)\n                break\n            except TimeoutError:\n                if attempt == MAX_ATTEMPTS - 1:\n                    raise\n    return len(records)\n",
+        "validation.py": "def validate(records):\n    if not isinstance(records, list):\n        raise TypeError(\"records must be a list\")\n    if any(not isinstance(record, str) for record in records):\n        raise ValueError(\"records must contain strings\")\n"
+      },
+      "history": "commit 3cb07a52f64c522015351c703f416c99cbb5b0ac\nAuthor:     Fixture <fixture@example.invalid>\nAuthorDate: Sun Oct 11 23:27:27 2026 +0000\nCommit:     Fixture <fixture@example.invalid>\nCommitDate: Sun Oct 11 23:27:27 2026 +0000\n\n    Introduce API fixture\n---\n README.md     |  3 +++\n api.py        |  8 ++++++++\n gateway.py    | 15 +++++++++++++++\n validation.py |  5 +++++\n 4 files changed, 31 insertions(+)\n\ndiff --git a/README.md b/README.md\nnew file mode 100644\nindex 0000000..1cd7d8c\n--- /dev/null\n+++ b/README.md\n@@ -0,0 +1,3 @@\n+# API fixture\n+\n+api.handle validates a list of strings and delegates to an injected sender through gateway.deliver. There is no durable receipt store or network adapter.\ndiff --git a/api.py b/api.py\nnew file mode 100644\nindex 0000000..a1e9666\n--- /dev/null\n+++ b/api.py\n@@ -0,0 +1,8 @@\n+from validation import validate\n+from gateway import deliver\n+\n+\n+def handle(records, send):\n+    validate(records)\n+    accepted = deliver(records, send)\n+    return {\"accepted\": accepted}\ndiff --git a/gateway.py b/gateway.py\nnew file mode 100644\nindex 0000000..d6fdd14\n--- /dev/null\n+++ b/gateway.py\n@@ -0,0 +1,15 @@\n+BATCH_SIZE = 2\n+MAX_ATTEMPTS = 3\n+\n+\n+def deliver(records, send):\n+    for start in range(0, len(records), BATCH_SIZE):\n+        batch = records[start:start + BATCH_SIZE]\n+        for attempt in range(MAX_ATTEMPTS):\n+            try:\n+                send(batch)\n+                break\n+            except TimeoutError:\n+                if attempt == MAX_ATTEMPTS - 1:\n+                    raise\n+    return len(records)\ndiff --git a/validation.py b/validation.py\nnew file mode 100644\nindex 0000000..98203d6\n--- /dev/null\n+++ b/validation.py\n@@ -0,0 +1,5 @@\n+def validate(records):\n+    if not isinstance(records, list):\n+        raise TypeError(\"records must be a list\")\n+    if any(not isinstance(record, str) for record in records):\n+        raise ValueError(\"records must contain strings\")\n"
+    }
+  ],
+  "coordinatorTasks": [
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-helper-20261011-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-helper-20261011-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-how-helper-20261011-r1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-why-helper-20261011-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-why-helper-20261011-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-why-helper-20261011-r1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-unavailable-20261011-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-unavailable-20261011-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-how-unavailable-20261011-r1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    },
+    {
+      "taskId": "node:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-complex-20261011-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-complex-20261011-r1",
+      "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A664985a4-934d-410c-9230-6cff81087ada%253Adelegate-task%253Ajuan-how-complex-20261011-r1:ordinal:1",
+      "status": "completed",
+      "workState": "result_available",
+      "hasPendingChildRuns": false,
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra"
+    }
+  ],
+  "nestedTasks": [
+    {
+      "case": "how",
+      "role": "how explainer",
+      "taskId": "node:delegated-task:command%3Amcp%3A9858367f-ad42-48e8-aed0-a2b153758424%3Adelegate-task%3Ajuan-how-anXUVCv7-explainer-1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A9858367f-ad42-48e8-aed0-a2b153758424%3Adelegate-task%3Ajuan-how-anXUVCv7-explainer-1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-helper-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A9858367f-ad42-48e8-aed0-a2b153758424%253Adelegate-task%253Ajuan-how-anXUVCv7-explainer-1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:25:23.150Z",
+          "startedAt": "2026-10-11T23:25:23.360Z",
+          "completedAt": "2026-10-11T23:25:57.694Z"
+        }
+      }
+    },
+    {
+      "case": "why",
+      "role": "gitTask",
+      "taskId": "node:delegated-task:command%3Amcp%3A1418d082-209b-4989-a5aa-27a00fd1d87c%3Adelegate-task%3Awhy-fixture-git-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A1418d082-209b-4989-a5aa-27a00fd1d87c%3Adelegate-task%3Awhy-fixture-git-r1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-why-helper-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A1418d082-209b-4989-a5aa-27a00fd1d87c%253Adelegate-task%253Awhy-fixture-git-r1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:25:54.700Z",
+          "startedAt": "2026-10-11T23:25:54.902Z",
+          "completedAt": "2026-10-11T23:27:27.394Z"
+        }
+      }
+    },
+    {
+      "case": "why",
+      "role": "docsTask",
+      "taskId": "node:delegated-task:command%3Amcp%3A1418d082-209b-4989-a5aa-27a00fd1d87c%3Adelegate-task%3Awhy-fixture-docs-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A1418d082-209b-4989-a5aa-27a00fd1d87c%3Adelegate-task%3Awhy-fixture-docs-r1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-why-helper-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A1418d082-209b-4989-a5aa-27a00fd1d87c%253Adelegate-task%253Awhy-fixture-docs-r1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:25:55.524Z",
+          "startedAt": "2026-10-11T23:25:55.757Z",
+          "completedAt": "2026-10-11T23:27:54.019Z"
+        }
+      }
+    },
+    {
+      "case": "why",
+      "role": "synthesisTask",
+      "taskId": "node:delegated-task:command%3Amcp%3A1418d082-209b-4989-a5aa-27a00fd1d87c%3Adelegate-task%3Awhy-fixture-synthesis-r1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3A1418d082-209b-4989-a5aa-27a00fd1d87c%3Adelegate-task%3Awhy-fixture-synthesis-r1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-why-helper-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A1418d082-209b-4989-a5aa-27a00fd1d87c%253Adelegate-task%253Awhy-fixture-synthesis-r1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:28:23.012Z",
+          "startedAt": "2026-10-11T23:28:23.233Z",
+          "completedAt": "2026-10-11T23:29:48.643Z"
+        }
+      }
+    },
+    {
+      "case": "complex-how",
+      "role": "how explorer",
+      "taskId": "node:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-api-20261011-1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-api-20261011-1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-complex-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Af17bfba5-42d7-40ef-8bfd-5f57daad1326%253Adelegate-task%253Acomplex-how-api-20261011-1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:28:17.293Z",
+          "startedAt": "2026-10-11T23:28:17.545Z",
+          "completedAt": "2026-10-11T23:29:32.539Z"
+        }
+      }
+    },
+    {
+      "case": "complex-how",
+      "role": "how explorer",
+      "taskId": "node:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-gateway-20261011-1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-gateway-20261011-1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-complex-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Af17bfba5-42d7-40ef-8bfd-5f57daad1326%253Adelegate-task%253Acomplex-how-gateway-20261011-1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:29:41.551Z",
+          "startedAt": "2026-10-11T23:29:41.846Z",
+          "completedAt": "2026-10-11T23:31:00.991Z"
+        }
+      }
+    },
+    {
+      "case": "complex-how",
+      "role": "how explainer",
+      "taskId": "node:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-explainer-20261011-1",
+      "childThreadId": "thread:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-explainer-20261011-1",
+      "status": "completed",
+      "hasPendingChildRuns": false,
+      "host": {
+        "status": "completed",
+        "activeRunId": null,
+        "parentThreadId": "thread:delegated-task:command%3Amcp%3A664985a4-934d-410c-9230-6cff81087ada%3Adelegate-task%3Ajuan-how-complex-20261011-r1",
+        "recentRun": {
+          "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Af17bfba5-42d7-40ef-8bfd-5f57daad1326%253Adelegate-task%253Acomplex-how-explainer-20261011-1:ordinal:1",
+          "ordinal": 1,
+          "status": "completed",
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra",
+          "requestedAt": "2026-10-11T23:31:16.753Z",
+          "startedAt": "2026-10-11T23:31:17.014Z",
+          "completedAt": "2026-10-11T23:33:14.360Z"
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "narrow-how",
+      "result": "pass",
+      "assessment": "Correctly explains four callback invocations after one initial timeout, three total attempts, terminal failure and no exactly-once guarantee; source-only limits retained.",
+      "roles": [
+        {
+          "role": "how explainer",
+          "selectionKind": "scalar",
+          "targets": [
+            null
+          ],
+          "effective_provider": "codex",
+          "effective_model": "gpt-6-astra",
+          "inherited": true,
+          "dispatch_available": true,
+          "preflight_exit_code": 0
+        }
+      ],
+      "answer": "At revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`, `gateway.deliver` sends consecutive batches of at most two records. Each batch gets three total attempts. A normal callback return counts as success regardless of its value; only `TimeoutError` triggers an immediate retry. The gateway sets no timeout deadline and provides no backoff. See [gateway.py:1](/tmp/juan-investigation.anXUVCv7/fixture/gateway.py:1) and [gateway.py:5](/tmp/juan-investigation.anXUVCv7/fixture/gateway.py:5).\n\nFor five records `[A, B, C, D, E]`, assuming the callback does not mutate the input or batches:\n\n1. `send([A, B])` times out.\n2. `send([A, B])` succeeds.\n3. `send([C, D])` succeeds.\n4. `send([E])` succeeds.\n\nThe function returns `5`, the input length. This is four callback calls; the return value is not an independently verified delivery count. Each batch has a fresh attempt budget. See [gateway.py:6](/tmp/juan-investigation.anXUVCv7/fixture/gateway.py:6).\n\nIf timeouts persist, the third timeout for a batch is re-raised and processing stops. If that happens on the first batch, there are three attempts on `[A, B]` and no sends for the remaining records. If a later batch fails, earlier callback successes are not rolled back. No partial-progress result is returned. Other exception types propagate immediately. See [gateway.py:8](/tmp/juan-investigation.anXUVCv7/fixture/gateway.py:8).\n\nThe code does not guarantee exactly-once delivery. A receiver might process a batch before the callback raises a timeout, so retrying could duplicate effects. The gateway has no deduplication, idempotency key, acknowledgement tracking or transaction mechanism. It owns batching and retries; the injected callback owns actual sending and timeout behavior. No concrete sender or receiver is supplied in this fixture. See [gateway.py:5](/tmp/juan-investigation.anXUVCv7/fixture/gateway.py:5) and [README.md:3](/tmp/juan-investigation.anXUVCv7/fixture/README.md:3).\n\nThis explanation comes from source inspection only. No fixture code, imports, tests or applications were executed. Actual receiver behavior and delivery outcomes remain unverified. The delegated explainer searched the fixture and read `gateway.py`, `README.md` and `docs/decision.md`; the coordinator checked the decisive implementation and README references. The fixture, including its existing untracked file, is unchanged.\n"
+    },
+    {
+      "name": "multi-component-how",
+      "result": "pass",
+      "assessment": "Both component explorations finished before synthesis. Answer correctly separates validation, batching, sender ownership, failure propagation and unverified delivery guarantees. Decisive citations checked against fixture source.",
+      "roles": {
+        "explorers": {
+          "role": "how explorer",
+          "count": 2,
+          "selectionKind": "scalar",
+          "resolvedTargets": [
+            null
+          ],
+          "preflightArtifact": "preflight-explorer.json"
+        },
+        "explainer": {
+          "role": "how explainer",
+          "count": 1,
+          "selectionKind": "scalar",
+          "resolvedTargets": [
+            null
+          ],
+          "preflightArtifact": "preflight-explainer.json"
+        }
+      },
+      "serialExplorerDispatch": true,
+      "serialReason": "Keep temporary artifact writers serial until explicit-path behavior is demonstrated; how complex branch requires two angles before explainer, not concurrent dispatch.",
+      "phaseOrder": [
+        {
+          "phase": "read_procedure_and_contracts"
+        },
+        {
+          "phase": "fresh_catalog_observed",
+          "at": "2026-10-11T23:27:49.654Z"
+        },
+        {
+          "phase": "both_roles_preflight_passed"
+        },
+        {
+          "phase": "explorer_api_dispatched",
+          "taskId": "node:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-api-20261011-1"
+        },
+        {
+          "phase": "explorer_api_terminal_and_artifact_checked",
+          "at": "2026-10-11T23:29:41.649Z"
+        },
+        {
+          "phase": "explorer_gateway_dispatched",
+          "at": "2026-10-11T23:29:41.649Z",
+          "taskId": "node:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-gateway-20261011-1"
+        },
+        {
+          "phase": "explorer_gateway_terminal_and_artifact_checked",
+          "at": "2026-10-11T23:31:06.613Z"
+        },
+        {
+          "phase": "explainer_role_revalidated",
+          "at": "2026-10-11T23:31:06.613Z"
+        },
+        {
+          "phase": "explainer_dispatched_after_both_explorers",
+          "at": "2026-10-11T23:31:16.849Z",
+          "taskId": "node:delegated-task:command%3Amcp%3Af17bfba5-42d7-40ef-8bfd-5f57daad1326%3Adelegate-task%3Acomplex-how-explainer-20261011-1"
+        },
+        {
+          "phase": "explainer_terminal_and_all_children_reconciled",
+          "at": "2026-10-11T23:33:55.743Z"
+        },
+        {
+          "phase": "coordinator_checked_all_decisive_source_citations",
+          "at": "2026-10-11T23:33:55.743Z"
+        },
+        {
+          "phase": "answer_saved",
+          "at": "2026-10-11T23:33:55.901069+00:00"
+        },
+        {
+          "phase": "source_integrity_checked_and_catalog_removed",
+          "at": "2026-10-11T23:33:55.901126+00:00"
+        }
+      ],
+      "hostPhaseOrderingVerified": true,
+      "answer": "Static inspection at revision `3cb07a52f64c522015351c703f416c99cbb5b0ac`; no fixture code or tests were executed.\n\n`api.handle` owns sequencing and response wrapping. It validates the entire input before calling the gateway. `validation.validate` requires a list containing only strings: a non-list raises `TypeError`, and a non-string member raises `ValueError`. Either exception escapes the API before any sender call. An empty list is valid and returns `{\"accepted\": 0}` without calling the sender. [API](/tmp/juan-investigation.anXUVCv7/complex-fixture/api.py:5), [validation](/tmp/juan-investigation.anXUVCv7/complex-fixture/validation.py:1), [empty delivery](/tmp/juan-investigation.anXUVCv7/complex-fixture/gateway.py:5).\n\n`gateway.deliver` owns ordered, sequential batches of at most two records and up to three total sender attempts per batch. It retries only `TimeoutError`, with no backoff or timeout enforcement of its own. A third timeout propagates through the API, skips later batches, and produces no accepted result. Other exceptions escape immediately. Earlier batches may already have caused effects; a timed-out call may also have caused effects, so retries could duplicate them if the sender lacks deduplication. These are conditional risks, not observed outcomes. [Batching and retries](/tmp/juan-investigation.anXUVCv7/complex-fixture/gateway.py:1), [API propagation](/tmp/juan-investigation.anXUVCv7/complex-fixture/api.py:7).\n\nThe injected `send(batch)` owns actual send behavior. The gateway treats any normal return as success and ignores its value, including `False` or `None`. After all batches finish, it returns `len(records)`, which the API wraps as `{\"accepted\": n}`. For an ordinary list that remains unchanged, this establishes that validation passed and every batch obtained a non-raising sender call within its attempt budget. The count is computed at return time; it is not a count of verified receipts. [Sender boundary and count](/tmp/juan-investigation.anXUVCv7/complex-fixture/gateway.py:10), [result wrapping](/tmp/juan-investigation.anXUVCv7/complex-fixture/api.py:8).\n\nThe concrete sender and outer caller are untraced. These files establish neither remote acknowledgement, durable storage, downstream processing, exactly-once delivery, nor an HTTP status. The README explicitly states that the fixture has no network adapter or durable receipt store. [Fixture boundary](/tmp/juan-investigation.anXUVCv7/complex-fixture/README.md:3).\n"
+    },
+    {
+      "name": "historical-why",
+      "result": "pass",
+      "assessment": "Cites actual change commit, retains conflicting document and unknown attempt rationale; all seven categories reported with authorized-source exclusions; recommendations distinct from intent.",
+      "roles": [
+        {
+          "label": "git",
+          "observedAt": "2026-10-11T23:25:54.665Z",
+          "role": "why investigators",
+          "result": {
+            "role": "why investigators",
+            "selectionKind": "scalar",
+            "targets": [
+              null
+            ],
+            "effectiveIdentities": [
+              {
+                "providerInstanceId": "codex",
+                "model": "gpt-6-astra",
+                "inherited": true
+              }
+            ],
+            "availability": [
+              {
+                "canDispatch": true,
+                "reason": null
+              }
+            ],
+            "resolver": "/home/ubuntu/.agents/skills/setup-jstack/scripts/models.py",
+            "config": "/home/ubuntu/.config/jstack/models.json",
+            "configSource": "explicit"
+          },
+          "catalogPath": "/tmp/juan-investigation.anXUVCv7/why/catalog-git.json"
+        },
+        {
+          "label": "docs",
+          "observedAt": "2026-10-11T23:25:55.470Z",
+          "role": "why investigators",
+          "result": {
+            "role": "why investigators",
+            "selectionKind": "scalar",
+            "targets": [
+              null
+            ],
+            "effectiveIdentities": [
+              {
+                "providerInstanceId": "codex",
+                "model": "gpt-6-astra",
+                "inherited": true
+              }
+            ],
+            "availability": [
+              {
+                "canDispatch": true,
+                "reason": null
+              }
+            ],
+            "resolver": "/home/ubuntu/.agents/skills/setup-jstack/scripts/models.py",
+            "config": "/home/ubuntu/.config/jstack/models.json",
+            "configSource": "explicit"
+          },
+          "catalogPath": "/tmp/juan-investigation.anXUVCv7/why/catalog-docs.json"
+        },
+        {
+          "label": "synthesis",
+          "observedAt": "2026-10-11T23:28:22.952Z",
+          "role": "why synthesizer",
+          "result": {
+            "role": "why synthesizer",
+            "selectionKind": "scalar",
+            "targets": [
+              null
+            ],
+            "effectiveIdentities": [
+              {
+                "providerInstanceId": "codex",
+                "model": "gpt-6-astra",
+                "inherited": true
+              }
+            ],
+            "availability": [
+              {
+                "canDispatch": true,
+                "reason": null
+              }
+            ],
+            "resolver": "/home/ubuntu/.agents/skills/setup-jstack/scripts/models.py",
+            "config": "/home/ubuntu/.config/jstack/models.json",
+            "configSource": "explicit"
+          },
+          "catalogPath": "/tmp/juan-investigation.anXUVCv7/why/catalog-synthesis.json"
+        }
+      ],
+      "coverage": [
+        {
+          "category": "Source control",
+          "status": "searched",
+          "sources": [
+            "local Git history and tracked source"
+          ],
+          "reason": "Searched all three commits, full patches/messages, rename-following log, blame, pickaxe, regex, refs and reflog; no incident/postmortem rationale or retry tuning evidence."
+        },
+        {
+          "category": "Issues and tickets",
+          "status": "outside authorized scope",
+          "sources": [],
+          "reason": "External issue systems outside scope; local document/history searches found no issue references or records."
+        },
+        {
+          "category": "Long-form documents",
+          "status": "searched",
+          "sources": [
+            "README.md",
+            "docs/decision.md"
+          ],
+          "reason": "Read all current documents and untracked text; no incident/postmortem/retry rationale or measurements; conflicting batch-size assertion retained."
+        },
+        {
+          "category": "Team chat",
+          "status": "outside authorized scope",
+          "sources": [],
+          "reason": "Only fixture Git and in-repository documents authorized; no connected application belongs to fixture."
+        },
+        {
+          "category": "Infrastructure observability",
+          "status": "outside authorized scope",
+          "sources": [],
+          "reason": "Only fixture Git and in-repository documents authorized; no connected application belongs to fixture."
+        },
+        {
+          "category": "Error tracking",
+          "status": "outside authorized scope",
+          "sources": [],
+          "reason": "Only fixture Git and in-repository documents authorized; no connected application belongs to fixture."
+        },
+        {
+          "category": "Product analytics",
+          "status": "outside authorized scope",
+          "sources": [],
+          "reason": "Only fixture Git and in-repository documents authorized; no connected application belongs to fixture."
+        }
+      ],
+      "answer": "The evidence does not support treating both numbers as throughput optimizations. The commit that changed the batch size cites a hard partner limit; a conflicting document cites latency. Why the attempt budget is exactly three remains unknown. It means three total attempts per batch, at most two retries.\n\nInspected revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d` in `/tmp/juan-investigation.anXUVCv7/fixture`, branch `main`. All current path-and-line citations below refer to that revision.\n\n- Direct, documented rationale: Evaluation Fixture's commit `e896cb90d9dcd61420426088f58d4429abbb86cc` says the partner accepts at most two records per request, explicitly rejects a throughput benchmark as the reason, and says to keep the retry count unchanged. Its patch changes `send.py:1` from three to two while retaining `MAX_ATTEMPTS = 3`. This directly establishes the change's stated reason, not the actual partner contract.\n- Direct, unresolved competing statement: `docs/decision.md:3` says there is no record-count limit, that two was chosen only to reduce latency, and that no measurements are attached. Root commit `5dfd6b0e22169c7107175e592cc0cd9279fe42c6` already contains this text despite setting `send.py:1` to three. The document has never changed in the inspected history. The later change-specific commit is closer evidence of the actual switch to two, but does not explicitly supersede the document or resolve the contradictory contract claims.\n- Unknown, exact numerical retry intent: Root commit `5dfd6b0e22169c7107175e592cc0cd9279fe42c6` introduces three attempts without explaining the number. Full local history and document searches, including incident/postmortem and retry terms, found no tuning data, deadline, or rationale for three. The final commit `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d` only renames `send.py` to `gateway.py` with 100% similarity.\n- Direct, static mechanics: `gateway.py:1-15` sends sequential contiguous slices of at most two records, including a shorter final slice. Lines 8-14 allow three total calls per batch, retry only `TimeoutError`, stop after success, and re-raise the third timeout. Other exceptions propagate immediately. Line 15 returns `len(records)` only after all batches complete. No backoff or elapsed deadline appears here. This was read, not executed.\n- Inferred: Retrying a timed-out batch can recover from a transient failure. That follows from the control flow, not an author's explanation. Speculative: three could reflect a recovery/latency tradeoff or simply an initial default; the available record cannot choose between them. No independent corroboration warrants a Supported historical explanation for the exact number.\n\nRecommendations for a later change, not implementation authorization:\n\n- Preserve: Keep requests at most two records until the contradictory partner-limit evidence is resolved. Preserve three total attempts for compatibility pending an explicit policy decision, without claiming three is optimal. These are precautionary recommendations based on the batch-change commit and `gateway.py:1-14`.\n- Preserve: Unless deliberately changing the interface, retain ordered sequential batches, timeout-only retries, stopping retries on success, terminal error propagation, and completion-only return behavior. These are inferred compatibility constraints from `gateway.py:6-15`, not documented requirements.\n- Change: Evaluate batch size and attempt budget separately. Confirm the partner contract before increasing batch size; establish timeout duration, latency budget, and recovery measurements before choosing another attempt count. Latency is a documented concern, but no benefit is measured here.\n- Avoid: Do not describe this as three retries, optimize either number on an assumed throughput rationale, suppress exhausted failures, or claim exactly-once delivery.\n- Risk: Earlier batches may already have succeeded when a later batch fails. A timeout may also occur after the callback has delivered records, so replay may duplicate delivery. These are inferred risks from `gateway.py:6-14`; actual duplicate handling, idempotency, and partner acceptance semantics are Unknown. `README.md:3` describes only an injected callback, with no network client or external service implementation to resolve them.\n\nSpecific unanswered questions are which partner contract applies and why the document contradicts it; why the root document claims two while root code uses three; what justified exactly three attempts; what timeout/deadline and backoff policy the callback uses; and whether a timed-out request can succeed remotely, with what deduplication or partial-delivery guarantees.\n\nCoverage retained from the complete coordinator map:\n\n- Source control: searched local Git history and tracked source. All three commits, full messages/patches, rename-following history, blame, pickaxe, regex searches, refs and reflog were covered by the investigator. No incident/postmortem rationale or retry tuning evidence was found. Synthesis independently re-read all three patches/messages and current source.\n- Issues and tickets: outside authorized scope for external systems. Local document/history searches found no issue references or records; no external source was queried.\n- Long-form documents: searched `README.md` and `docs/decision.md`; the documents investigator also read untracked text without changing it. No incident/postmortem/retry rationale or measurements were found. The conflicting batch statement remains unresolved.\n- Team chat: outside authorized scope. Only fixture Git and in-repository documents were authorized; no connected application belongs to this fixture.\n- Infrastructure observability: outside authorized scope for the same concrete restriction; no fixture service or connected application was identified.\n- Error tracking: outside authorized scope for the same restriction; no fixture error-tracking source was identified.\n- Product analytics: outside authorized scope for the same restriction; no fixture analytics source was identified.\n\nThe bundled why procedure completed within the authorized local evidence scope. Two investigators and one synthesizer finished with no pending child runs. The coordinator checked the decisive citations and confidence language. Historical intent remains partly unknown; empty searches do not prove absent concerns outside the fixture. Role resolution used fresh capabilities, the installed setup-jstack and juan-mode preflight, and pinned `/home/ubuntu/.config/jstack/models.json`; inherited model and effort were preserved. Source was read, never executed. Fixture files including untracked work were unchanged, and temporary catalogs were removed. Full searches, role resolutions, task IDs and terminal lifecycle evidence are in `receipt.json`. No juan-mode activation or implementation occurred. This does not establish that the Investigation playbook is implemented.\n"
+    },
+    {
+      "name": "unavailable-model",
+      "result": "pass",
+      "explanationOutcome": "incomplete",
+      "assessment": "Preflight rejects configured fixture provider; no child dispatched, no substitute answer or repair.",
+      "preflight": {
+        "command": "PYTHONDONTWRITEBYTECODE=1 python3 /home/ubuntu/.agents/skills/juan-mode/scripts/preflight.py --setup-skill /home/ubuntu/.agents/skills/setup-jstack --project-root /tmp/juan-investigation.anXUVCv7/fixture --catalog /tmp/juan-investigation.anXUVCv7/unavailable/catalog.json --role 'how explainer' --config /tmp/juan-investigation.anXUVCv7/unavailable-model.json",
+        "chunk_id": "7b9a31",
+        "wall_time_seconds": 0.046646853,
+        "exit_code": 1,
+        "original_token_count": 40,
+        "output": "juan-mode: jstack: configuration /tmp/juan-investigation.anXUVCv7/unavailable-model.json: how explainer: unavailable provider 'unavailable-fixture-provider'\n"
+      },
+      "childIds": [],
+      "dispatchAttempted": false,
+      "modelOverrides": false,
+      "configurationRepairs": false,
+      "limitation": "Explanation phase stopped at unavailable provider. No replacement model or parent-authored answer."
+    }
+  ],
+  "parentVerification": {
+    "answersCheckedAgainstSourceAndHistory": true,
+    "allNestedHostRunsChecked": true,
+    "allTasksTerminalWithoutPendingRuns": true,
+    "fixtureContentsHeadsAndStatusUnchanged": true,
+    "evaluatedSourcesUnchanged": true,
+    "globalConfigUnchanged": true,
+    "rootTemporaryCatalogRemoved": true,
+    "fixtureCodeExecuted": false
+  },
+  "limitations": [
+    "Source-based explanations, not execution tests of fixture behavior.",
+    "Inherited Codex selections only; other providers not evaluated.",
+    "Complex explorers ran serially; concurrent execution not established.",
+    "Two complex exploration angles tested; not every supported task count.",
+    "External connectors excluded from authorized fixture scope, not searched.",
+    "Compaction/restart, adversarial retrieved instructions and full playbooks not evaluated."
+  ],
+  "rawArtifacts": "/tmp/juan-investigation.anXUVCv7"
+}

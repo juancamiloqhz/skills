@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-12T01:09:01.920599+00:00",
+  "baseCommit": "f30c74d6507ff9cdeace20c921fb71a7adfda5cf",
+  "outcome": "pass",
+  "scope": "Direct standalone skill entrypoints using isolated non-sibling source copies; no installation or provider UI discovery.",
+  "sourceHashes": {
+    "skills/jstack/how/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/how/SKILL.md": "e1a56f1452b3bb3e7267902cb7f028cc612ff82d37c4903ffb0f27212e2c25f5",
+    "skills/jstack/how/references/upstream.md": "c89c0ca0bc71111d680f0f2f8f29d528a57d6de1d2ac4e35ca23485cf5b67be8",
+    "skills/jstack/why/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/why/SKILL.md": "8c264f31e89c36be97ae65b437de46ab3fed4d91d25782e3937f3a9689b32d1b",
+    "skills/jstack/why/references/upstream.md": "a5a6652afa48fd5502a51eebdb8563f9719e2420f81b1f233f596e022167aac3",
+    "skills/jstack/setup-jstack/references/investigation.md": "54fdd282d283bad660cebb254dbbe6514de8a6b6447723431bba13ca16f27464",
+    "skills/jstack/setup-jstack/references/configuration.md": "002ff425f69f9d401dd41b445ac7f5b6c1099941705c5f17b5ee420e055201c6"
+  },
+  "configSha256BeforeAndAfter": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "fixtures": {
+    "how": {
+      "head": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+      "status": "?? untracked.txt\n",
+      "files": {
+        "README.md": "79af74b0bd7cf4a6df1559334cb1c42da50c4462fcaa6ebfe6f2b5525d1f4d0d",
+        "gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+        "untracked.txt": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+        "docs/decision.md": "e7eb7f65640d794d22c8e508437724aa9b92463b908f3d0adf089aaf3ce342ad"
+      }
+    },
+    "why": {
+      "head": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+      "status": "?? untracked.txt\n",
+      "files": {
+        "README.md": "79af74b0bd7cf4a6df1559334cb1c42da50c4462fcaa6ebfe6f2b5525d1f4d0d",
+        "gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+        "untracked.txt": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+        "docs/decision.md": "e7eb7f65640d794d22c8e508437724aa9b92463b908f3d0adf089aaf3ce342ad"
+      }
+    }
+  },
+  "fixtureContentsAndHistory": "results.json contains the same synthetic fixture contents and three-commit history; hashes and revisions above identify the preserved copies.",
+  "cases": [
+    {
+      "name": "how",
+      "outcome": "pass",
+      "assessment": "pass: four callback calls and return semantics verified against fixture; direct entrypoint uses non-sibling setup resolver without juan-mode; no pending child runs.",
+      "coordinator": {
+        "taskId": "node:delegated-task:command%3Amcp%3Ae67e7b81-79a7-4f90-b63d-a1a410e5b871%3Adelegate-task%3Ajuan-standalone-how-20261012-r1",
+        "childThreadId": "thread:delegated-task:command%3Amcp%3Ae67e7b81-79a7-4f90-b63d-a1a410e5b871%3Adelegate-task%3Ajuan-standalone-how-20261012-r1",
+        "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Ae67e7b81-79a7-4f90-b63d-a1a410e5b871%253Adelegate-task%253Ajuan-standalone-how-20261012-r1:ordinal:1",
+        "status": "completed",
+        "workState": "result_available",
+        "hasPendingChildRuns": false,
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra"
+      },
+      "nestedTasks": [
+        {
+          "taskId": "node:delegated-task:command%3Amcp%3A89ee4164-f4db-4506-821b-27575b8214ed%3Adelegate-task%3Astandalone-how-explainer-1893x9jy-1",
+          "childThreadId": "thread:delegated-task:command%3Amcp%3A89ee4164-f4db-4506-821b-27575b8214ed%3Adelegate-task%3Astandalone-how-explainer-1893x9jy-1",
+          "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A89ee4164-f4db-4506-821b-27575b8214ed%253Adelegate-task%253Astandalone-how-explainer-1893x9jy-1:ordinal:1",
+          "status": "completed",
+          "workState": "result_available",
+          "hasPendingChildRuns": false,
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra"
+        }
+      ],
+      "hostRuns": [
+        {
+          "threadId": "thread:delegated-task:command%3Amcp%3A89ee4164-f4db-4506-821b-27575b8214ed%3Adelegate-task%3Astandalone-how-explainer-1893x9jy-1",
+          "status": "completed",
+          "activeRunId": null,
+          "recentRuns": [
+            {
+              "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A89ee4164-f4db-4506-821b-27575b8214ed%253Adelegate-task%253Astandalone-how-explainer-1893x9jy-1:ordinal:1",
+              "ordinal": 1,
+              "status": "completed",
+              "providerInstanceId": "codex",
+              "model": "gpt-6-astra",
+              "requestedAt": "2026-10-12T01:02:47.196Z",
+              "startedAt": "2026-10-12T01:02:47.442Z",
+              "completedAt": "2026-10-12T01:04:13.367Z"
+            }
+          ]
+        }
+      ],
+      "activation": {
+        "skill": "/tmp/juan-standalone-1893x9jy/how/consumer/SKILL.md",
+        "mode": "direct task-scoped",
+        "juanModeActivated": false,
+        "outcome": "completed"
+      },
+      "selectedConfig": {
+        "path": "/home/ubuntu/.config/jstack/models.json",
+        "source": "global",
+        "preset": "medium",
+        "readOnly": true,
+        "sha256BeforeAndAfter": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+      },
+      "roleResolution": {
+        "role": "how explainer",
+        "targets": [
+          null
+        ],
+        "validatedAll17Roles": true,
+        "taskCount": 1,
+        "resolver": "/tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/scripts/models.py",
+        "exitCode": 0
+      },
+      "capabilityCheck": {
+        "inheritedProviderInstanceId": "codex",
+        "inheritedModel": "gpt-6-astra",
+        "canRunChildTask": true,
+        "modelListed": true,
+        "crossProvider": false,
+        "canRunCrossProviderChildTask": true
+      },
+      "dependencyFilesUsed": [
+        "/tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/SKILL.md",
+        "/tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/references/investigation.md",
+        "/tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/references/configuration.md",
+        "/tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/references/t3-code.md",
+        "/tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/scripts/models.py"
+      ],
+      "copiedFileHashes": {
+        "consumer/SKILL.md": "e1a56f1452b3bb3e7267902cb7f028cc612ff82d37c4903ffb0f27212e2c25f5",
+        "consumer/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+        "dependency/setup-jstack/SKILL.md": "197032f8109dcb0c1548ddc12d310b835e107553cdbeeac56ae58168a7a4f27c",
+        "dependency/setup-jstack/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+        "dependency/setup-jstack/references/configuration.md": "002ff425f69f9d401dd41b445ac7f5b6c1099941705c5f17b5ee420e055201c6",
+        "dependency/setup-jstack/references/t3-code.md": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+        "dependency/setup-jstack/references/investigation.md": "54fdd282d283bad660cebb254dbbe6514de8a6b6447723431bba13ca16f27464",
+        "dependency/setup-jstack/scripts/test_models.py": "2fcaa3f924e19df44797131fad0164b31b7306c4894b7318806b545ea817d650",
+        "dependency/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+        "dependency/setup-jstack/agents/openai.yaml": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d"
+      },
+      "answer": "At revision `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`, assuming the records and batches remain unchanged and the timeout raises `TimeoutError`, `gateway.deliver` makes four calls:\n\n1. Send records 1 and 2. The call times out.\n2. Retry the same batch of records 1 and 2. It returns normally.\n3. Send records 3 and 4. It returns normally.\n4. Send record 5. It returns normally.\n\nThe batch size is two, each batch permits up to three attempts, and a normal callback return ends that batch's retry loop. The retry has no delay or backoff. See [gateway.py:1](/tmp/juan-standalone-1893x9jy/how/fixture/gateway.py:1) and [gateway.py:6](/tmp/juan-standalone-1893x9jy/how/fixture/gateway.py:6), lines 6 through 14.\n\nIt then returns **5**, the value of `len(records)` at return time. This establishes that every batch reached a callback call that returned normally. The callback's return value is ignored. It does not establish remote receipt, persistence, or exactly-once delivery. The first timed-out call might already have taken effect, so retrying it could duplicate effects. The fixture provides no callback implementation to resolve that uncertainty. See [gateway.py:10](/tmp/juan-standalone-1893x9jy/how/fixture/gateway.py:10), [gateway.py:15](/tmp/juan-standalone-1893x9jy/how/fixture/gateway.py:15), and [README.md:3](/tmp/juan-standalone-1893x9jy/how/fixture/README.md:3).\n\nA third consecutive timeout for any batch would propagate and stop delivery before later batches; other exceptions propagate immediately. This answer comes from static source inspection. No fixture code or tests were executed.\n\nThe direct `how` invocation completed using one configured explainer. It did not activate juan-mode.\n",
+      "commands": [
+        "cat /tmp/juan-standalone-1893x9jy/how/consumer/SKILL.md",
+        "cat /tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/SKILL.md",
+        "cat /tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/references/investigation.md /tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/references/configuration.md /tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/references/t3-code.md",
+        "python3 /tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/scripts/models.py locate --project-root /tmp/juan-standalone-1893x9jy/how/fixture",
+        "python3 /tmp/juan-standalone-1893x9jy/how/dependency/setup-jstack/scripts/models.py resolve --project-root /tmp/juan-standalone-1893x9jy/how/fixture --catalog /tmp/juan-standalone-1893x9jy/how/output/catalog-owned.json --role 'how explainer' --with-source",
+        "git -C /tmp/juan-standalone-1893x9jy/how/fixture status --short",
+        "git -C /tmp/juan-standalone-1893x9jy/how/fixture rev-parse HEAD",
+        "rg --files --hidden /tmp/juan-standalone-1893x9jy/how/fixture -g '!.git'",
+        "cat /home/ubuntu/.config/jstack/models.json",
+        "nl -ba /tmp/juan-standalone-1893x9jy/how/fixture/gateway.py",
+        "nl -ba /tmp/juan-standalone-1893x9jy/how/fixture/README.md",
+        "nl -ba /tmp/juan-standalone-1893x9jy/how/fixture/docs/decision.md",
+        "sha256sum /tmp/juan-standalone-1893x9jy/how/fixture/untracked.txt /home/ubuntu/.config/jstack/models.json",
+        "git -C /tmp/juan-standalone-1893x9jy/how/fixture diff --exit-code",
+        "rg -n 'deliver|send|TimeoutError|return|BATCH_SIZE|MAX_ATTEMPTS' /tmp/juan-standalone-1893x9jy/how/fixture/gateway.py /tmp/juan-standalone-1893x9jy/how/fixture/README.md /tmp/juan-standalone-1893x9jy/how/fixture/docs/decision.md",
+        "rg --files /tmp/juan-standalone-1893x9jy/how/output",
+        "cat /tmp/juan-standalone-1893x9jy/how/output/explainer/findings.md",
+        "git -C /tmp/juan-standalone-1893x9jy/how/fixture status --short",
+        "git -C /tmp/juan-standalone-1893x9jy/how/fixture log --follow --format=fuller -p -- gateway.py",
+        "git -C /tmp/juan-standalone-1893x9jy/how/fixture grep -n -E 'deliver|send|Timeout|batch|gateway' HEAD",
+        "cat /home/ubuntu/.agents/skills/unslop/SKILL.md"
+      ],
+      "cleanup": {
+        "ownedCatalog": "/tmp/juan-standalone-1893x9jy/how/output/catalog-owned.json",
+        "removed": true,
+        "childrenTerminal": true,
+        "pendingChildren": false,
+        "sourceDiffEmpty": true,
+        "gitStatusBeforeAndAfter": "?? untracked.txt",
+        "untrackedSha256BeforeAndAfter": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+        "configUnchanged": true
+      }
+    },
+    {
+      "name": "why",
+      "outcome": "pass",
+      "assessment": "pass: commit rationale and contradictory document verified; unknown three-attempt rationale retained; coordinator corrected mistaken child assertion against actual history.",
+      "coordinator": {
+        "taskId": "node:delegated-task:command%3Amcp%3Ae67e7b81-79a7-4f90-b63d-a1a410e5b871%3Adelegate-task%3Ajuan-standalone-why-20261012-r1",
+        "childThreadId": "thread:delegated-task:command%3Amcp%3Ae67e7b81-79a7-4f90-b63d-a1a410e5b871%3Adelegate-task%3Ajuan-standalone-why-20261012-r1",
+        "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253Ae67e7b81-79a7-4f90-b63d-a1a410e5b871%253Adelegate-task%253Ajuan-standalone-why-20261012-r1:ordinal:1",
+        "status": "completed",
+        "workState": "result_available",
+        "hasPendingChildRuns": false,
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra"
+      },
+      "nestedTasks": [
+        {
+          "taskId": "node:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-history-20261012-a",
+          "childThreadId": "thread:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-history-20261012-a",
+          "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A88fdc26e-3571-4cf1-a845-68e71d945e2f%253Adelegate-task%253Awhy-fixture-history-20261012-a:ordinal:1",
+          "status": "completed",
+          "workState": "result_available",
+          "hasPendingChildRuns": false,
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra"
+        },
+        {
+          "taskId": "node:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-docs-20261012-a",
+          "childThreadId": "thread:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-docs-20261012-a",
+          "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A88fdc26e-3571-4cf1-a845-68e71d945e2f%253Adelegate-task%253Awhy-fixture-docs-20261012-a:ordinal:1",
+          "status": "completed",
+          "workState": "result_available",
+          "hasPendingChildRuns": false,
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra"
+        },
+        {
+          "taskId": "node:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-synthesis-20261012-a",
+          "childThreadId": "thread:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-synthesis-20261012-a",
+          "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A88fdc26e-3571-4cf1-a845-68e71d945e2f%253Adelegate-task%253Awhy-fixture-synthesis-20261012-a:ordinal:1",
+          "status": "completed",
+          "workState": "result_available",
+          "hasPendingChildRuns": false,
+          "providerInstanceId": "codex",
+          "model": "gpt-6-astra"
+        }
+      ],
+      "hostRuns": [
+        {
+          "name": "history",
+          "threadId": "thread:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-history-20261012-a",
+          "status": "completed",
+          "activeRunId": null,
+          "recentRuns": [
+            {
+              "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A88fdc26e-3571-4cf1-a845-68e71d945e2f%253Adelegate-task%253Awhy-fixture-history-20261012-a:ordinal:1",
+              "ordinal": 1,
+              "status": "completed",
+              "providerInstanceId": "codex",
+              "model": "gpt-6-astra",
+              "requestedAt": "2026-10-12T01:02:56.057Z",
+              "startedAt": "2026-10-12T01:02:56.282Z",
+              "completedAt": "2026-10-12T01:03:56.816Z"
+            }
+          ]
+        },
+        {
+          "name": "docs",
+          "threadId": "thread:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-docs-20261012-a",
+          "status": "completed",
+          "activeRunId": null,
+          "recentRuns": [
+            {
+              "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A88fdc26e-3571-4cf1-a845-68e71d945e2f%253Adelegate-task%253Awhy-fixture-docs-20261012-a:ordinal:1",
+              "ordinal": 1,
+              "status": "completed",
+              "providerInstanceId": "codex",
+              "model": "gpt-6-astra",
+              "requestedAt": "2026-10-12T01:04:16.131Z",
+              "startedAt": "2026-10-12T01:04:16.337Z",
+              "completedAt": "2026-10-12T01:05:30.236Z"
+            }
+          ]
+        },
+        {
+          "name": "synthesis",
+          "threadId": "thread:delegated-task:command%3Amcp%3A88fdc26e-3571-4cf1-a845-68e71d945e2f%3Adelegate-task%3Awhy-fixture-synthesis-20261012-a",
+          "status": "completed",
+          "activeRunId": null,
+          "recentRuns": [
+            {
+              "runId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A88fdc26e-3571-4cf1-a845-68e71d945e2f%253Adelegate-task%253Awhy-fixture-synthesis-20261012-a:ordinal:1",
+              "ordinal": 1,
+              "status": "completed",
+              "providerInstanceId": "codex",
+              "model": "gpt-6-astra",
+              "requestedAt": "2026-10-12T01:05:54.547Z",
+              "startedAt": "2026-10-12T01:05:54.739Z",
+              "completedAt": "2026-10-12T01:07:18.267Z"
+            }
+          ]
+        }
+      ],
+      "activation": {
+        "skill": "/tmp/juan-standalone-1893x9jy/why/consumer/SKILL.md",
+        "outcome": "direct task-scoped activation; no juan-mode",
+        "dependency": "explicit source installation only",
+        "installedSkills": false
+      },
+      "selectedConfig": {
+        "path": "/home/ubuntu/.config/jstack/models.json",
+        "locatedSource": "global",
+        "resolvedSource": "explicit",
+        "schemaVersion": 1,
+        "preset": "medium",
+        "sha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+        "readOnly": true
+      },
+      "roleResolution": {
+        "why investigators": {
+          "targets": [
+            null
+          ],
+          "effectiveProvider": "codex",
+          "effectiveModel": "gpt-6-astra",
+          "targetOmitted": true
+        },
+        "why synthesizer": {
+          "targets": [
+            null
+          ],
+          "effectiveProvider": "codex",
+          "effectiveModel": "gpt-6-astra",
+          "targetOmitted": true
+        }
+      },
+      "capabilityCheck": {
+        "inheritedProviderInstanceId": "codex",
+        "inheritedModel": "gpt-6-astra",
+        "canRunChildTask": true,
+        "modelListed": true,
+        "crossProviderRequired": false,
+        "catalogSha256": "603e0450ef3bf96980d4480d3d203eb97b67f5c26bbd238fda5441f9931bbc03",
+        "capture": "Full unwrapped payload saved in bounded shell-quoted chunks; parsed and validated by canonical helper",
+        "route": "T3-owned delegate_task; inherited targets omitted to preserve options and tracked lifecycle"
+      },
+      "dependencyFilesUsed": [
+        "/tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/SKILL.md",
+        "/tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/references/investigation.md",
+        "/tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/references/configuration.md",
+        "/tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/references/t3-code.md",
+        "/tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/scripts/models.py"
+      ],
+      "copiedFileHashes": {
+        "consumer/SKILL.md": "8c264f31e89c36be97ae65b437de46ab3fed4d91d25782e3937f3a9689b32d1b",
+        "consumer/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+        "dependency/setup-jstack/SKILL.md": "197032f8109dcb0c1548ddc12d310b835e107553cdbeeac56ae58168a7a4f27c",
+        "dependency/setup-jstack/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+        "dependency/setup-jstack/references/configuration.md": "002ff425f69f9d401dd41b445ac7f5b6c1099941705c5f17b5ee420e055201c6",
+        "dependency/setup-jstack/references/t3-code.md": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+        "dependency/setup-jstack/references/investigation.md": "54fdd282d283bad660cebb254dbbe6514de8a6b6447723431bba13ca16f27464",
+        "dependency/setup-jstack/scripts/test_models.py": "2fcaa3f924e19df44797131fad0164b31b7306c4894b7318806b545ea817d650",
+        "dependency/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+        "dependency/setup-jstack/agents/openai.yaml": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d"
+      },
+      "answer": "The strongest record says the change to **two records was for a claimed partner request limit, not a throughput benchmark**. Commit `e896cb90d9dcd61420426088f58d4429abbb86cc` changes only `BATCH_SIZE = 3` to `2` and explicitly says to keep the retry count unchanged. This is **direct evidence of the stated rationale**, not independent proof of the partner contract.\n\nThere is an unresolved contradiction: [docs/decision.md:3](/tmp/juan-standalone-1893x9jy/why/fixture/docs/decision.md:3) says there is no record-count limit and attributes two-record batches only to latency reduction, with no measurements. That document already existed when the initial code used a batch size of three. The change-specific commit is stronger evidence for why the edit happened, but the local records do not settle the actual limit. Neither record establishes a measured throughput optimization.\n\n**Why exactly three attempts is unknown.** The initial commit `5dfd6b0e22169c7107175e592cc0cd9279fe42c6` introduced that number without explanation. The later instruction explains why it was preserved during the batching change, not why it was originally selected. [gateway.py:8](/tmp/juan-standalone-1893x9jy/why/fixture/gateway.py:8) allows three total calls per batch\u2014one initial attempt and at most two retries\u2014only after `TimeoutError`. Success stops retrying; the third timeout and other exceptions propagate. This behavior was read, not executed.\n\nRecommendations before changing it:\n\n- **Preserve:** provisionally retain the two-record maximum until the conflicting contract claims are reconciled. Keep three total attempts separate from batching changes. Preserve or explicitly revise ordered sequential batches, the short final batch, timeout-only retries, stop-on-success, error propagation, stopping after a failed batch, and the successful return count ([gateway.py:5](/tmp/juan-standalone-1893x9jy/why/fixture/gateway.py:5)).\n- **Establish before changing:** the authoritative request-size contract, caller expectations, timeout semantics and idempotency. Obtain measurements before making a performance claim, then align code and documentation.\n- **Avoid:** treating three attempts as three retries, presenting throughput as the established motivation, or silently dismissing the contradictory document.\n- **Inferred risks:** exceeding two could violate the recorded cap if accurate; replaying a batch after a timeout could duplicate an already-performed side effect. Neither exactly-once delivery nor safe retries are established.\n\nCoverage of the authorized sources:\n\n- **Source control \u2014 searched:** all three commits, full bodies/patches, rename-following, blame, and introduction/incident searches. `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d` is a pure rename from `send.py` to `gateway.py`. Incident/postmortem message searches found no records.\n- **Issues and tickets \u2014 unavailable:** no local records or references found; external systems outside scope.\n- **Long-form documents \u2014 searched:** both tracked documents, README and decision, read fully; no retry rationale or measurements found.\n- **Team chat \u2014 outside authorized scope:** no local archive; no external chat queried.\n- **Infrastructure observability \u2014 unavailable:** no local incident, trace or metric records; [README.md:3](/tmp/juan-standalone-1893x9jy/why/fixture/README.md:3) says no external services belong to the fixture.\n- **Error tracking \u2014 unavailable:** no local event records; external services outside scope.\n- **Product analytics \u2014 unavailable:** no local experiment or measurement records; decision explicitly supplies none.\n\nInspected revision: `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`. All three commits carry 2026-10-11 23:24:45 UTC; ancestry establishes their order. Investigation completed within local scope using two configured investigators and one configured synthesizer, all terminal with no pending child runs. Coordinator independently checked the evidence and corrected a child report's mistaken attempt-count contradiction: the mismatch concerns batch size. No code/tests executed and no source, configuration, history or untracked work changed. Detailed commands and execution evidence are in [receipt.json](/tmp/juan-standalone-1893x9jy/why/output/receipt.json).\n",
+      "commands": [
+        "cat /tmp/juan-standalone-1893x9jy/why/consumer/SKILL.md",
+        "cat /tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/SKILL.md",
+        "cat /tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/references/{investigation,configuration,t3-code}.md (individual absolute paths supplied in actual command)",
+        "rg --files -g AGENTS.md -g CLAUDE.md /tmp/juan-standalone-1893x9jy/why/fixture /tmp/juan-standalone-1893x9jy/why/output (no matches)",
+        "rg --files /tmp/juan-standalone-1893x9jy/why/fixture",
+        "python3 /tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/scripts/models.py locate --project-root /tmp/juan-standalone-1893x9jy/why/fixture",
+        "cat /home/ubuntu/.config/jstack/models.json",
+        "python3 /tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/scripts/models.py resolve /home/ubuntu/.config/jstack/models.json --project-root /tmp/juan-standalone-1893x9jy/why/fixture --catalog /tmp/juan-standalone-1893x9jy/why/output/catalog.tmp.json --role 'why investigators' --with-source",
+        "python3 /tmp/juan-standalone-1893x9jy/why/dependency/setup-jstack/scripts/models.py resolve /home/ubuntu/.config/jstack/models.json --project-root /tmp/juan-standalone-1893x9jy/why/fixture --catalog /tmp/juan-standalone-1893x9jy/why/output/catalog.tmp.json --role 'why synthesizer' --with-source (also repeated before synthesis)",
+        "Initial combined resolve used repeated --role; it returned one target, so both roles were then resolved separately",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture status --short",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture rev-parse HEAD",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture diff; git -C /tmp/juan-standalone-1893x9jy/why/fixture diff --cached",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture log --oneline --all",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture log --all --format=fuller --stat",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture log --follow -p -- gateway.py",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture blame -L 1,15 HEAD -- gateway.py",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture show 5dfd6b0e22169c7107175e592cc0cd9279fe42c6:docs/decision.md",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture log --all -G 'retry|attempt|incident|postmortem|throughput|latency' --format=fuller -p",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture log --all -S 'MAX_ATTEMPTS' --format=fuller -p -- send.py gateway.py",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture log --all -S 'BATCH_SIZE = 2' --format=fuller -p -- send.py gateway.py",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture show --format=fuller --stat --patch e896cb90d9dcd61420426088f58d4429abbb86cc",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture show --format=fuller --stat --patch 6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+        "git -C /tmp/juan-standalone-1893x9jy/why/fixture ls-files",
+        "nl -ba /tmp/juan-standalone-1893x9jy/why/fixture/gateway.py",
+        "nl -ba /tmp/juan-standalone-1893x9jy/why/fixture/docs/decision.md",
+        "cat /tmp/juan-standalone-1893x9jy/why/fixture/README.md",
+        "rg -n -i 'incident|postmortem|ticket|issue|retry|attempt|throughput|latency|limit|benchmark' /tmp/juan-standalone-1893x9jy/why/fixture/README.md /tmp/juan-standalone-1893x9jy/why/fixture/docs /tmp/juan-standalone-1893x9jy/why/fixture/gateway.py",
+        "sha256sum config, untracked file, supplied skill/dependency files and temporary catalog (absolute paths)",
+        "cat investigator and synthesizer artifacts at absolute output paths; child command transcripts retained in each artifact",
+        "rm /tmp/juan-standalone-1893x9jy/why/output/catalog.tmp.json",
+        "Final sha256sum config/untracked, git status, rev-parse HEAD, diff --exit-code, diff --cached --exit-code",
+        "apply_patch wrote answer.md, verification-notes.md and receipt.json only under explicit output directory"
+      ],
+      "cleanup": {
+        "catalog": "Removed /tmp/juan-standalone-1893x9jy/why/output/catalog.tmp.json",
+        "source": "No edits",
+        "config": "No edits",
+        "untracked": "Preserved; initial SHA256 367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+        "prs": "None",
+        "installs": "None",
+        "finalVerification": "Config and untracked SHA256 unchanged; HEAD unchanged; working and staged diffs empty; status remains ?? untracked.txt"
+      },
+      "coverage": [
+        {
+          "category": "Source control",
+          "status": "searched",
+          "sources": "All three local commits, rename send.py to gateway.py, patches, blame, pickaxe; completed investigator and coordinator verification"
+        },
+        {
+          "category": "Issues and tickets",
+          "status": "unavailable",
+          "sources": "No local issue/ticket records or references identified; external systems outside authorized scope"
+        },
+        {
+          "category": "Long-form documents",
+          "status": "searched",
+          "sources": "README.md and docs/decision.md fully read; completed dedicated investigator"
+        },
+        {
+          "category": "Team chat",
+          "status": "outside authorized scope",
+          "sources": "No local chat archive; external chat not authorized"
+        },
+        {
+          "category": "Infrastructure observability",
+          "status": "unavailable",
+          "sources": "No local incident/trace/metric records; README states no external services belong to fixture"
+        },
+        {
+          "category": "Error tracking",
+          "status": "unavailable",
+          "sources": "No local error-event records; external services outside scope"
+        },
+        {
+          "category": "Product analytics",
+          "status": "unavailable",
+          "sources": "No local measurements or experiment records; decision explicitly attaches no measurements"
+        }
+      ],
+      "coordinatorCorrections": "Coordinator verification: docs-findings.md incorrectly describes original code three versus document two as an ATTEMPT-count contradiction. It concerns BATCH SIZE: original send.py BATCH_SIZE=3, document says batch size two; MAX_ATTEMPTS=3 is not contradicted by the document. Reject the erroneous attempt-count claim and related leads/recommendations. The docs investigator also invented seven categories because its shared contract lacked the taxonomy; use the consumer SKILL.md taxonomy and coordinator coverage supplied here. Decisive source and Git citations independently verified by coordinator.\n"
+    }
+  ],
+  "parentVerification": {
+    "answersCheckedAgainstActualSourceAndHistory": true,
+    "allFourNestedHostRunsCompleted": true,
+    "allTasksTerminalWithoutPendingRuns": true,
+    "fixtureHashesHeadsStatusesUnchanged": true,
+    "sourceCopiesMatchEvaluatedFiles": true,
+    "modelConfigUnchanged": true,
+    "temporaryCatalogsRemoved": true
+  },
+  "limitations": [
+    "Inherited Codex only; no other provider or external connector evaluation.",
+    "Explicit source paths simulate separately installed packages; provider UI discovery and installation not exercised.",
+    "Direct narrow how and historical why exercised after packaging; complex how and unavailable-provider behavior retain earlier bundled evaluation only.",
+    "No fixture program or tests executed; these runs evaluate investigation workflows.",
+    "No implemented playbook caller; all 23 playbooks remain planned."
+  ],
+  "rawArtifacts": "/tmp/juan-standalone-1893x9jy"
+}

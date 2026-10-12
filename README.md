@@ -15,6 +15,8 @@ This repository is the canonical source for skills I have developed and validate
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
 | [`setup-jstack`](./skills/jstack/setup-jstack) | Configures jstack workflow roles using T3 Code's live provider/model catalog, reasoning budgets, global defaults and optional project settings. | Experimental; configuration helper tested |
 | [`juan-mode`](./skills/jstack/juan-mode) | Provides conversation activation, a 23-route registry and configured delegation preflight. | Foundation only; playbooks pending; see [evaluation](./research/jstack/evaluations/juan-mode-foundation/README.md) |
+| [`how`](./skills/jstack/how) | Explains runtime flow, component ownership and failure behavior using configured investigation roles. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
+| [`why`](./skills/jstack/why) | Investigates historical rationale, contradictions and unknowns using relevant evidence sources. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
 | [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
 | [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
@@ -73,6 +75,10 @@ skills/
       SKILL.md
     juan-mode/
       SKILL.md
+    how/
+      SKILL.md
+    why/
+      SKILL.md
     create-verification-skill/
       SKILL.md
     maintain-verification-skill/
@@ -101,6 +107,12 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 ## jstack
 
 jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/jstack/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3 Code. [`juan-mode`](./skills/jstack/juan-mode/SKILL.md), corresponding to pstack's `poteto-mode`, now provides the execution foundation: activation instructions, the complete route registry, dependency discovery and model preflight. Its 23 playbook procedures remain planned. The [upstream reference](./skills/jstack/juan-mode/references/upstream.md) records the inspected revision and MIT attribution. Source availability does not establish automatic rule loading or persistence after restart.
+
+The standalone [`how`](./skills/jstack/how/SKILL.md) and [`why`](./skills/jstack/why/SKILL.md) skills explain runtime behavior and investigate historical rationale. Invoke either directly without activating juan-mode. Each requires an available, current setup-jstack installation for model resolution and the shared investigation contract; neither requires the other or juan-mode. Future playbooks will discover these skills through the provider's catalog. Install or update the dependencies manually, for example:
+
+```sh
+npx skills add juancamiloqhz/skills --skill setup-jstack --skill how --skill why
+```
 
 Model configuration can use global defaults or an optional `<project_root>/.jstack/models.json`. Lookup selects an explicit file first, then `JSTACK_CONFIG`, the project file, and finally `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`. Each selected file supplies all 17 roles. Setup offers global or project scope; the [configuration contract](./skills/jstack/setup-jstack/references/configuration.md) defines initialization, validation and worktree handoffs.
 

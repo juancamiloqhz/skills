@@ -7,7 +7,7 @@ description: Apply jstack's task routing and configured delegation when the user
 
 Use the user's requested outcome to select a playbook, resolve the current jstack model assignments and coordinate verified work in T3 Code. Explicit invocation activates the mode in this conversation until the user turns it off. Reading this file for authoring or review does not activate it.
 
-This package currently implements the execution foundation. All 23 playbooks are registered but awaiting implementation. Report a selected route as unavailable rather than improvising its missing procedure or claiming its workflow passed. Full release requires executed acceptance evidence for every route and the supported providers.
+This package currently implements the execution foundation. The separately installed how and why skills provide shared investigation procedures. All 23 playbooks are registered but awaiting implementation. Report a selected route as unavailable rather than improvising its missing procedure or claiming its workflow passed. Full release requires executed acceptance evidence for every route and the supported providers.
 
 ## Activation and task selection
 
@@ -23,8 +23,12 @@ Retain the selected absolute configuration path for the task and pass it explici
 
 Before delegation, read the [execution contract](references/execution.md). Give each child an explicit brief and bounded ownership, retain its task ID, and verify its artifacts. The parent owns shared plan state, PR watches and final synthesis. Use serial writes until the selected provider and tools have demonstrated assigned-checkout behavior.
 
+## Shared investigation procedures
+
+When a caller or implemented playbook selects investigation, discover `how` for runtime flow and ownership or `why` for historical rationale in the current skill catalog. Read that skill's advertised `SKILL.md`, pass the original question, source scope and selected absolute configuration path, and follow its procedure. Do not assume a sibling installation or substitute an unrelated skill with the same name; verify that it uses the jstack setup contract. If missing, report the dependency and provide `npx skills add juancamiloqhz/skills --skill how` or `--skill why` for manual installation. These standalone skills return checked findings without activating juan-mode themselves. Their availability does not make the planned Investigation playbook executable. Other shared helpers remain planned.
+
 ## Completion
 
 Report the requested outcome, actual verification and any remaining limitation. Distinguish completed, incomplete, blocked, paused and cancelled work. Task completion leaves mode activation intact. PR publication follows the requested delivery; merging, recurring scheduling and installation require their own applicable authorization. Skill installation remains manual.
 
-The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Detailed helper workflows, principles and playbooks arrive in the later implementation groups; their upstream names are not dependencies on unrelated global skills.
+The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Remaining helper workflows, principles and playbooks arrive in later implementation groups; their upstream names are not dependencies on unrelated global skills.

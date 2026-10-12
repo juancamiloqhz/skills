@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-12T18:27:01.450802+00:00",
+  "baseCommit": "0037b423d3a62019b284146f77ab476854b04d47",
+  "outcome": "pass",
+  "sourceHashes": {
+    "skills/jstack/how/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/how/SKILL.md": "e1a56f1452b3bb3e7267902cb7f028cc612ff82d37c4903ffb0f27212e2c25f5",
+    "skills/jstack/how/references/upstream.md": "c89c0ca0bc71111d680f0f2f8f29d528a57d6de1d2ac4e35ca23485cf5b67be8",
+    "skills/jstack/why/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/why/SKILL.md": "8c264f31e89c36be97ae65b437de46ab3fed4d91d25782e3937f3a9689b32d1b",
+    "skills/jstack/why/references/upstream.md": "a5a6652afa48fd5502a51eebdb8563f9719e2420f81b1f233f596e022167aac3",
+    "skills/jstack/setup-jstack/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/setup-jstack/SKILL.md": "197032f8109dcb0c1548ddc12d310b835e107553cdbeeac56ae58168a7a4f27c",
+    "skills/jstack/setup-jstack/agents/openai.yaml": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d",
+    "skills/jstack/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+    "skills/jstack/setup-jstack/scripts/test_models.py": "2fcaa3f924e19df44797131fad0164b31b7306c4894b7318806b545ea817d650",
+    "skills/jstack/setup-jstack/references/investigation.md": "54fdd282d283bad660cebb254dbbe6514de8a6b6447723431bba13ca16f27464",
+    "skills/jstack/setup-jstack/references/upstream.md": "6e9f406f1a0e14616b0023cb276b79508f5138b20c494a530544430111b9f1c6",
+    "skills/jstack/setup-jstack/references/t3-code.md": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+    "skills/jstack/setup-jstack/references/configuration.md": "002ff425f69f9d401dd41b445ac7f5b6c1099941705c5f17b5ee420e055201c6"
+  },
+  "globalConfigSha256BeforeAndAfter": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "fixtureGitState": {
+    "complex/project": {
+      "head": "3cb07a52f64c522015351c703f416c99cbb5b0ac",
+      "status": "?? .jstack/\n"
+    },
+    "complex/child-checkout": {
+      "head": "3cb07a52f64c522015351c703f416c99cbb5b0ac",
+      "status": ""
+    },
+    "failures/project": {
+      "head": "6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d",
+      "status": "?? untracked.txt\n"
+    }
+  },
+  "fixtureFiles": {
+    "failures/unavailable.json": "2b0605cf0643484e8e9e3532721acd5f2e5159d2af8dd2b2c81a2acc4f85ee93",
+    "complex/child-checkout/api.py": "f375853a5928aae945807d7fb81e2430d7f7cee9bddb17cc46ea80e9f7f54655",
+    "complex/child-checkout/validation.py": "fb75003aee0f7257a171894b5184fb15cac67bffac035af22848de69bb315c58",
+    "complex/child-checkout/gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+    "complex/child-checkout/README.md": "d45298d15483b131885e9c6c3006fbc1c6e2dfc38f2478b5ba7888b12f51b245",
+    "complex/project/api.py": "f375853a5928aae945807d7fb81e2430d7f7cee9bddb17cc46ea80e9f7f54655",
+    "complex/project/validation.py": "fb75003aee0f7257a171894b5184fb15cac67bffac035af22848de69bb315c58",
+    "complex/project/gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+    "complex/project/README.md": "d45298d15483b131885e9c6c3006fbc1c6e2dfc38f2478b5ba7888b12f51b245",
+    "complex/project/.jstack/models.json": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "complex/global/jstack/models.json": "2b0605cf0643484e8e9e3532721acd5f2e5159d2af8dd2b2c81a2acc4f85ee93",
+    "failures/project/README.md": "79af74b0bd7cf4a6df1559334cb1c42da50c4462fcaa6ebfe6f2b5525d1f4d0d",
+    "failures/project/gateway.py": "1d51100ad05ef0a04b8661270a5abf395d601b13e819fd71ef82ca8730e52590",
+    "failures/project/untracked.txt": "367961ea51906f334e8dd9736287826ed644ab69780f5168890e9a58132c8c17",
+    "failures/project/docs/decision.md": "e7eb7f65640d794d22c8e508437724aa9b92463b908f3d0adf089aaf3ce342ad"
+  },
+  "fixtureDefinition": "Copies of the synthetic simple and complex fixtures preserved in results.json. Project config duplicates the all-inherit test mapping. The synthetic global and unavailable config replace only how explainer with unavailable-fixture-provider/missing-model. The outdated dependency is a source copy with references/investigation.md removed.",
+  "coordinatorChecks": [
+    {
+      "task": {
+        "taskId": "node:delegated-task:command%3Amcp%3A3ad527f6-ea33-42f4-9cbc-657c3f4530a1%3Adelegate-task%3Ajuan-final-complex-20261012-r1",
+        "childThreadId": "thread:delegated-task:command%3Amcp%3A3ad527f6-ea33-42f4-9cbc-657c3f4530a1%3Adelegate-task%3Ajuan-final-complex-20261012-r1",
+        "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A3ad527f6-ea33-42f4-9cbc-657c3f4530a1%253Adelegate-task%253Ajuan-final-complex-20261012-r1:ordinal:1",
+        "status": "completed",
+        "workState": "result_available",
+        "hasPendingChildRuns": false,
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra"
+      },
+      "assessment": "pass: answer checked against actual source; three native child receipts show explicit project-config revalidation in alternate checkout. Native lifecycle/phase ordering recorded by evaluator; parent T3 task completed with no pending child runs, no separate T3 host run IDs for native children."
+    },
+    {
+      "task": {
+        "taskId": "node:delegated-task:command%3Amcp%3A3ad527f6-ea33-42f4-9cbc-657c3f4530a1%3Adelegate-task%3Ajuan-final-failures-20261012-r1",
+        "childThreadId": "thread:delegated-task:command%3Amcp%3A3ad527f6-ea33-42f4-9cbc-657c3f4530a1%3Adelegate-task%3Ajuan-final-failures-20261012-r1",
+        "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A3ad527f6-ea33-42f4-9cbc-657c3f4530a1%253Adelegate-task%253Ajuan-final-failures-20261012-r1:ordinal:1",
+        "status": "completed",
+        "workState": "result_available",
+        "hasPendingChildRuns": false,
+        "providerInstanceId": "codex",
+        "model": "gpt-6-astra"
+      },
+      "assessment": "pass: A actual resolver rejects unavailable provider; B declared catalog simulation stops discovery; C actual missing contract stops. No child/answer/config repair; parent verified hashes and cleanup."
+    }
+  ],
+  "complex": {
+    "status": "complete",
+    "invocation": {
+      "skill": "/tmp/juan-final-cases-ionu5tp4/complex/skill/SKILL.md",
+      "setupDependency": "/tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/SKILL.md",
+      "mode": "standalone how complex branch",
+      "activationOutcome": "how task-scoped; juan-mode not activated",
+      "taskCount": {
+        "explorers": 2,
+        "explainers": 1
+      }
+    },
+    "configuration": {
+      "initialExplicitConfig": null,
+      "environment": {
+        "JSTACK_CONFIG": "unset",
+        "XDG_CONFIG_HOME": "/tmp/juan-final-cases-ionu5tp4/complex/global"
+      },
+      "locate": {
+        "path": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+        "source": "project",
+        "exists": true
+      },
+      "explorer": {
+        "config": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+        "configSource": "project",
+        "targets": [
+          null
+        ]
+      },
+      "explainer": {
+        "config": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+        "configSource": "explicit",
+        "targets": [
+          null
+        ]
+      },
+      "allLaterResolutionsExplicit": true,
+      "childCheckoutHasProjectConfig": false,
+      "configMutations": false
+    },
+    "capabilities": {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "canRunChildTask": true,
+      "modelListed": true,
+      "crossProvider": false,
+      "targetOmitted": true
+    },
+    "dispatch": {
+      "mechanism": "collaboration.spawn_agent",
+      "reason": "Native same-provider children support inherited gpt-6-astra selection/options and terminal lifecycle; contract prefers native when supported",
+      "targets": [
+        null,
+        null,
+        null
+      ],
+      "targetArgument": "omitted",
+      "modelOverrides": "none",
+      "inheritance": "parent history/model/effort retained",
+      "returnedTaskIdentifiers": [
+        "/root/validation_explorer",
+        "/root/delivery_explorer",
+        "/root/synthesis_explainer"
+      ]
+    },
+    "resolverCommands": [
+      "env -u JSTACK_CONFIG XDG_CONFIG_HOME=/tmp/juan-final-cases-ionu5tp4/complex/global python3 /tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py locate --project-root /tmp/juan-final-cases-ionu5tp4/complex/project",
+      "env -u JSTACK_CONFIG XDG_CONFIG_HOME=/tmp/juan-final-cases-ionu5tp4/complex/global python3 /tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py resolve --project-root /tmp/juan-final-cases-ionu5tp4/complex/project --catalog /tmp/juan-final-cases-ionu5tp4/complex/output/catalog.json --role 'how explorer' --with-source",
+      "env -u JSTACK_CONFIG XDG_CONFIG_HOME=/tmp/juan-final-cases-ionu5tp4/complex/global python3 /tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py resolve /tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json --project-root /tmp/juan-final-cases-ionu5tp4/complex/project --catalog /tmp/juan-final-cases-ionu5tp4/complex/output/catalog.json --role 'how explainer' --with-source",
+      "env -u JSTACK_CONFIG XDG_CONFIG_HOME=/tmp/juan-final-cases-ionu5tp4/complex/global python3 /tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py resolve /tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json --project-root /tmp/juan-final-cases-ionu5tp4/complex/project --catalog /tmp/juan-final-cases-ionu5tp4/complex/output/catalog.json --role 'how explainer' --with-source"
+    ],
+    "phaseOrdering": [
+      "read how/setup/investigation/configuration/t3 contracts",
+      "live capability discovery",
+      "locate project config with synthetic global environment",
+      "resolve explorer and explainer; both null; check inherited provider/model capability",
+      "dispatch validation explorer with omitted target via native same-provider child",
+      "validation explorer terminal; verified assigned-path artifacts before next writer",
+      "dispatch delivery explorer with omitted target via native same-provider child",
+      "delivery explorer terminal; read and verified findings and child revalidation; both explorations complete",
+      "re-resolve explainer with explicit selected config; null unchanged",
+      "dispatch synthesis only after both explorer terminal results/artifacts",
+      "synthesis terminal; read findings and receipt; checked decisive source citations",
+      "list_agents confirms all three child tasks completed; receipts report no nested or pending work",
+      "remove owned catalog and save final answer and receipt",
+      "validate saved artifacts and unchanged source/config hashes"
+    ],
+    "lifecycle": {
+      "checkedWith": "collaboration.list_agents",
+      "allChildrenTerminal": true,
+      "pendingWork": false,
+      "nestedTasks": [],
+      "tasks": [
+        {
+          "taskId": "/root/validation_explorer",
+          "idKind": "native canonical task_name",
+          "role": "how explorer",
+          "status": "completed",
+          "pendingWork": false,
+          "targetOmitted": true
+        },
+        {
+          "taskId": "/root/delivery_explorer",
+          "idKind": "native canonical task_name",
+          "role": "how explorer",
+          "status": "completed",
+          "pendingWork": false,
+          "targetOmitted": true
+        },
+        {
+          "taskId": "/root/synthesis_explainer",
+          "idKind": "native canonical task_name",
+          "role": "how explainer",
+          "status": "completed",
+          "pendingWork": false,
+          "targetOmitted": true
+        }
+      ]
+    },
+    "failures": [
+      {
+        "phase": "synthesis artifact write",
+        "error": "FileNotFoundError: assigned synthesis directory absent",
+        "recovered": true,
+        "recovery": "Child apply_patch created explicit assigned findings path, then wrote receipt."
+      }
+    ],
+    "limitations": [
+      "Static source reading only; fixture code and tests were not executed.",
+      "Injected sender implementation and downstream effects are unavailable.",
+      "Catalog capability and role validation do not establish behavior of uninvoked concrete providers."
+    ]
+  },
+  "childRevalidation": {
+    "validation": {
+      "role": "how explorer",
+      "status": "complete",
+      "sourceRoot": "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+      "revision": "3cb07a52f64c522015351c703f416c99cbb5b0ac",
+      "selectedConfig": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+      "revalidation": {
+        "cwd": "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+        "command": "env -u JSTACK_CONFIG XDG_CONFIG_HOME=/tmp/juan-final-cases-ionu5tp4/complex/global python3 /tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py resolve /tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json --project-root /tmp/juan-final-cases-ionu5tp4/complex/child-checkout --catalog /tmp/juan-final-cases-ionu5tp4/complex/output/catalog.json --role 'how explorer' --with-source",
+        "exitCode": 0,
+        "result": {
+          "config": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+          "configSource": "explicit",
+          "targets": [
+            null
+          ]
+        }
+      },
+      "targetPreservation": "Revalidated target null; inherited child selection was retained by parent dispatch with target omitted.",
+      "nestedTasks": [],
+      "pendingWork": false,
+      "failures": []
+    },
+    "delivery": {
+      "role": "how explorer",
+      "status": "complete",
+      "cwd": "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+      "revision": "3cb07a52f64c522015351c703f416c99cbb5b0ac",
+      "config": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+      "revalidation": {
+        "actually_executed": true,
+        "exit_code": 0,
+        "configSource": "explicit",
+        "targets": [
+          null
+        ],
+        "environment": {
+          "JSTACK_CONFIG": "unset",
+          "XDG_CONFIG_HOME": "/tmp/juan-final-cases-ionu5tp4/complex/global"
+        }
+      },
+      "nested_tasks": [],
+      "pending_work": false,
+      "failures": []
+    },
+    "synthesis": {
+      "role": "how explainer",
+      "status": "complete",
+      "revision": "3cb07a52f64c522015351c703f416c99cbb5b0ac",
+      "source_root": "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+      "selected_config": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+      "child_revalidation": {
+        "command": "env -u JSTACK_CONFIG XDG_CONFIG_HOME=/tmp/juan-final-cases-ionu5tp4/complex/global python3 /tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py resolve /tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json --project-root /tmp/juan-final-cases-ionu5tp4/complex/child-checkout --catalog /tmp/juan-final-cases-ionu5tp4/complex/output/catalog.json --role 'how explainer' --with-source",
+        "cwd": "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+        "exit_code": 0,
+        "result": {
+          "config": "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+          "configSource": "explicit",
+          "targets": [
+            null
+          ]
+        }
+      },
+      "target_preservation": "Inherited null preserved; no further delegation.",
+      "nested_tasks": [],
+      "pending_work": false,
+      "failures": [
+        {
+          "action": "Initial Python findings writer",
+          "exit_code": 1,
+          "error": "FileNotFoundError: synthesis directory absent",
+          "recovery": "apply_patch created explicitly assigned findings path and containing directory; receipt written afterward."
+        }
+      ]
+    }
+  },
+  "complexAnswer": "At revision `3cb07a52f64c522015351c703f416c99cbb5b0ac`, `api.handle` validates the input before passing the original list and injected sender to `gateway.deliver`. Validation accepts lists of strings, including empty lists and empty strings, without transforming them. [api.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/api.py:5), [validation.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/validation.py:1)\n\nA non-list raises `TypeError(\"records must be a list\")`; any non-string element raises `ValueError(\"records must contain strings\")`. An invalid element anywhere prevents all sender calls through `handle`. Exceptions propagate without an accepted response. [validation.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/validation.py:2), [api.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/api.py:6)\n\n`deliver` sends ordered batches of at most two records sequentially. It permits three total attempts per batch, retrying only `TimeoutError`. The third timeout is re-raised; other exceptions propagate immediately. Failure prevents later batches and an accepted response. Any normal sender return ends the retry loop, even a false return value. [gateway.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/gateway.py:1), [gateway.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/gateway.py:6), [api.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/api.py:7)\n\nEarlier batches may have had effects before a later failure. There is no rollback. A sender that performs an action before timing out may repeat that action on retry. This is a possibility implied by the control flow, not observed sender behavior. No sender implementation or network adapter is provided. [gateway.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/gateway.py:8), [README.md](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/README.md:3)\n\n`accepted` is the final `len(records)`, returned only after delivery completes. For an unchanged input list, the response establishes that validation passed and every batch eventually had a sender call return without an exception. Empty input returns zero without a sender call. It does not establish durable receipt, remote delivery, or exactly-once processing. Sender return values are ignored and no durable receipt store exists. The code does not guard against external mutation of the original list, so this is not an independent receipt count. [gateway.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/gateway.py:6), [gateway.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/gateway.py:10), [gateway.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/gateway.py:15), [api.py](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/api.py:8), [README.md](/tmp/juan-final-cases-ionu5tp4/complex/child-checkout/README.md:3)\n\nBoth explorer reports agree with these checked sources. This is source tracing only; no fixture code or tests ran. Sender internals and external effects remain unknown.\n\nConfiguration selected by initial project lookup: `/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json`. Both roles resolved to `null`, preserving the parent selection. All three children revalidated that explicit path from the child checkout with the synthetic global environment. Two distinct explorations completed before synthesis. All children are terminal with no pending work; the temporary catalog was removed. This standalone invocation did not activate juan-mode.\n",
+  "negativeScenarios": [
+    {
+      "question": "How does gateway.deliver retry a batch?",
+      "invocation": "direct $how",
+      "juan_mode_activated": false,
+      "planned_scope": "one function; one how explainer if preflight succeeds",
+      "child_dispatch_happened": false,
+      "child_task_ids": [],
+      "runtime_answer_generated": false,
+      "failure_report_generated": true,
+      "project_code_executed": false,
+      "id": "A",
+      "kind": "actual live catalog and resolver CLI check",
+      "setup_dependency": "/tmp/juan-final-cases-ionu5tp4/failures/deps/setup-jstack/SKILL.md",
+      "explicit_config": "/tmp/juan-final-cases-ionu5tp4/failures/unavailable.json",
+      "result": {
+        "command": [
+          "python3",
+          "/tmp/juan-final-cases-ionu5tp4/failures/deps/setup-jstack/scripts/models.py",
+          "resolve",
+          "/tmp/juan-final-cases-ionu5tp4/failures/unavailable.json",
+          "--project-root",
+          "/tmp/juan-final-cases-ionu5tp4/failures/project",
+          "--catalog",
+          "/tmp/juan-final-cases-ionu5tp4/failures/output/catalog-A.json",
+          "--role",
+          "how explainer",
+          "--with-source"
+        ],
+        "cwd": "/tmp/juan-final-cases-ionu5tp4/failures/project",
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "jstack: configuration /tmp/juan-final-cases-ionu5tp4/failures/unavailable.json: how explainer: unavailable provider 'unavailable-fixture-provider'\n",
+        "catalog_sha256": "6e2a28c0978d499db403fb7e0d32002533d9af2dd2e70595670b6c96c84d746a",
+        "catalog_bytes": 189745,
+        "catalog_captured_at_utc": "2026-10-12T18:20:28.213119+00:00",
+        "provider_ids": [
+          "codex",
+          "claudeAgent",
+          "cursor",
+          "grok",
+          "opencode",
+          "antigravity",
+          "muse",
+          "pi"
+        ],
+        "inherited_provider": "codex",
+        "inherited_model": "gpt-6-astra"
+      },
+      "outcome": "incomplete: configuration validation failed before dispatch",
+      "manual_guidance": "Request a setup task to repair the explicit unavailable provider/model assignment; no substitution or configuration edit performed.",
+      "limitations": [
+        "No execution-capability or child-provider runtime test occurred because resolution failed."
+      ]
+    },
+    {
+      "question": "How does gateway.deliver retry a batch?",
+      "invocation": "direct $how",
+      "juan_mode_activated": false,
+      "planned_scope": "one function; one how explainer if preflight succeeds",
+      "child_dispatch_happened": false,
+      "child_task_ids": [],
+      "runtime_answer_generated": false,
+      "failure_report_generated": true,
+      "project_code_executed": false,
+      "id": "B",
+      "kind": "declared isolated missing-skill-catalog simulation",
+      "simulated_skill_catalog": [],
+      "explicit_setup_source": null,
+      "actual_host_catalog_absence_claimed": false,
+      "resolver_executed": false,
+      "capabilities_called": false,
+      "outcome": "incomplete: setup-jstack unavailable in simulated discovery context",
+      "manual_guidance": "npx skills add juancamiloqhz/skills --skill setup-jstack",
+      "limitations": [
+        "This tests the instruction-level missing-dependency branch, not host installation discovery.",
+        "Session-installed setup-jstack and scenario A/C dependencies were not used for this invocation."
+      ]
+    },
+    {
+      "question": "How does gateway.deliver retry a batch?",
+      "invocation": "direct $how",
+      "juan_mode_activated": false,
+      "planned_scope": "one function; one how explainer if preflight succeeds",
+      "child_dispatch_happened": false,
+      "child_task_ids": [],
+      "runtime_answer_generated": false,
+      "failure_report_generated": true,
+      "project_code_executed": false,
+      "id": "C",
+      "kind": "actual filesystem missing-contract check",
+      "setup_dependency": "/tmp/juan-final-cases-ionu5tp4/failures/outdated/setup-jstack/SKILL.md",
+      "explicit_config": null,
+      "result": {
+        "path": "/tmp/juan-final-cases-ionu5tp4/failures/outdated/setup-jstack/references/investigation.md",
+        "error_type": "FileNotFoundError",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/tmp/juan-final-cases-ionu5tp4/failures/outdated/setup-jstack/references/investigation.md'",
+        "cli_executed": false,
+        "stop_reason": "Required investigation contract missing"
+      },
+      "capabilities_called": false,
+      "outcome": "incomplete: required investigation contract absent in sole permitted package",
+      "manual_guidance": "npx skills add juancamiloqhz/skills --skill setup-jstack",
+      "limitations": [
+        "The package was read at its actual path; no alternative resolver or installation was used.",
+        "CLI compatibility was not tested: the mandatory contract check stops the invocation before CLI execution.",
+        "The outdated-version designation comes from the supplied scenario; missing contract was verified directly."
+      ]
+    }
+  ],
+  "failureAnswer": "Evaluated three independent direct `$how` invocations for \"How does gateway.deliver retry a batch?\" using `/tmp/juan-final-cases-ionu5tp4/failures/skill/SKILL.md`. Each stopped before child dispatch and runtime explanation. Juan-mode was not activated.\n\n- Scenario A, actual CLI and live T3 check. Read the available setup dependency and its investigation, configuration and integration contracts. The narrow question selects `how explainer`. Captured a fresh, complete, unwrapped capabilities payload and ran that installation's real resolver with the explicit `/tmp/juan-final-cases-ionu5tp4/failures/unavailable.json`, project root, catalog, role and `--with-source`. Exit code 1, empty stdout. Stderr was exactly:\n\n  ```text\n  jstack: configuration /tmp/juan-final-cases-ionu5tp4/failures/unavailable.json: how explainer: unavailable provider 'unavailable-fixture-provider'\n  ```\n\n  The catalog did not list that provider. No fallback model or repair was attempted. A user-requested setup task must repair the assignment before retrying. The exact command, catalog digest and provider identities are in `receipt.json`.\n\n- Scenario B, declared missing-catalog simulation. For this invocation only, the simulated skill catalog has no setup-jstack entry and there is no explicit dependency source. Dependency discovery therefore stops. No resolver, live capability call, child or runtime answer was attempted for B. This does not claim the actual host lacks setup-jstack. The session's installed dependency and the other scenarios' paths were not substituted. Manual installation guidance, not executed:\n\n  ```sh\n  npx skills add juancamiloqhz/skills --skill setup-jstack\n  ```\n\n- Scenario C, actual filesystem check. Read the sole permitted older package at `/tmp/juan-final-cases-ionu5tp4/failures/outdated/setup-jstack/SKILL.md`. Opening its required `references/investigation.md` returned `FileNotFoundError`, errno 2. The skill requires stopping at this missing contract. Its resolver was not executed, so this run makes no claim about that CLI's compatibility. No other installation or resolver was used. Manual update guidance, not executed:\n\n  ```sh\n  npx skills add juancamiloqhz/skills --skill setup-jstack\n  ```\n\nThe source revision was `6d34e3e130e6e0b25299d524f5a04f7fd2f83f1d`. SHA-256 checks before and after cover all project files including Git metadata, both dependency packages, the how skill and the explicit configuration. All 59 files remained unchanged. Existing `untracked.txt` remained untracked. Full per-file hashes and raw error records are in `receipt.json`.\n\nNo fixture code, application or tests ran. No configuration or source changed, and nothing was installed or published. No owned children were created, so none required cancellation. The temporary live catalog was removed. Writes were confined to `/tmp/juan-final-cases-ionu5tp4/failures/output`.\n\nThe evaluation completed; the three requested runtime investigations remain incomplete at their respective required stop conditions. B is an instruction-level simulation. A and C use actual checks. These are separate scenario evaluations within this test-agent session, not separate provider processes. No prior evaluation answers were used.\n",
+  "parentResolverControls": [
+    {
+      "case": "project-wins",
+      "command": [
+        "python3",
+        "/tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py",
+        "resolve",
+        "--project-root",
+        "/tmp/juan-final-cases-ionu5tp4/complex/project",
+        "--catalog",
+        "/tmp/juan-final-cases-ionu5tp4/parent-catalog.json",
+        "--role",
+        "how explainer",
+        "--with-source"
+      ],
+      "environment": {
+        "XDG_CONFIG_HOME": "/tmp/juan-final-cases-ionu5tp4/complex/global",
+        "JSTACK_CONFIG": "unset"
+      },
+      "exitCode": 0,
+      "stdout": "{\n  \"config\": \"/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json\",\n  \"configSource\": \"project\",\n  \"targets\": [\n    null\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "child-explicit-handoff",
+      "command": [
+        "python3",
+        "/tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py",
+        "resolve",
+        "/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json",
+        "--project-root",
+        "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+        "--catalog",
+        "/tmp/juan-final-cases-ionu5tp4/parent-catalog.json",
+        "--role",
+        "how explainer",
+        "--with-source"
+      ],
+      "environment": {
+        "XDG_CONFIG_HOME": "/tmp/juan-final-cases-ionu5tp4/complex/global",
+        "JSTACK_CONFIG": "unset"
+      },
+      "exitCode": 0,
+      "stdout": "{\n  \"config\": \"/tmp/juan-final-cases-ionu5tp4/complex/project/.jstack/models.json\",\n  \"configSource\": \"explicit\",\n  \"targets\": [\n    null\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "child-without-handoff",
+      "command": [
+        "python3",
+        "/tmp/juan-final-cases-ionu5tp4/complex/deps/setup-jstack/scripts/models.py",
+        "resolve",
+        "--project-root",
+        "/tmp/juan-final-cases-ionu5tp4/complex/child-checkout",
+        "--catalog",
+        "/tmp/juan-final-cases-ionu5tp4/parent-catalog.json",
+        "--role",
+        "how explainer",
+        "--with-source"
+      ],
+      "environment": {
+        "XDG_CONFIG_HOME": "/tmp/juan-final-cases-ionu5tp4/complex/global",
+        "JSTACK_CONFIG": "unset"
+      },
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "jstack: configuration /tmp/juan-final-cases-ionu5tp4/complex/global/jstack/models.json: how explainer: unavailable provider 'unavailable-fixture-provider'\n"
+    }
+  ],
+  "parentVerification": {
+    "decisiveSourceClaimsChecked": true,
+    "allBaselineFilesUnchanged": true,
+    "fixtureGitStateUnchanged": true,
+    "skillSourcesUnchanged": true,
+    "userModelConfigUnchanged": true,
+    "catalogsRemoved": true
+  },
+  "limitations": [
+    "Source tracing only; fixture programs not executed.",
+    "Native complex children used inherited Codex and serial exploration. Their lifecycle was checked by the evaluator; the parent verified receipts and terminal T3 coordinator state, not separate nested T3 host runs.",
+    "Missing setup discovery was a declared instruction-level simulation. Unavailable-provider and missing-contract cases used actual CLI/filesystem checks.",
+    "Provider UI discovery, manual installation, other providers, external sources and future playbook callers remain untested."
+  ],
+  "rawArtifacts": "/tmp/juan-final-cases-ionu5tp4"
+}
