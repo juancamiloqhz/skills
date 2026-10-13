@@ -49,7 +49,7 @@ Map each available MCP to one evidence category:
 
 Use available Git history and forge read tools for source control; record either missing capability as a gap. For the other six, classify using the MCP name, server instructions, tool names, and resource descriptors. If an MCP could fit more than one category, choose the one matching its primary evidence. Record ambiguous cases in the coverage map.
 
-Assign one investigator to each available relevant evidence category and one source/MCP per investigator. If a category needs multiple sources, create separately scoped tasks within it and merge their coverage in the final category entry. Source control may use local Git plus its forge client as one history source. State the bounded task count; dispatch independent readers concurrently only as the shared contract permits. Resolve `why investigators` before dispatch.
+Spawn one investigator per category that has a matching MCP, each owning exactly one tool or MCP. Don't ask one agent to cover multiple MCPs. Dispatch independent readers concurrently only as the shared contract permits. Resolve `why investigators` before dispatch.
 
 Each investigator's prompt is `references/investigator-prompt.md` filled in, plus:
 

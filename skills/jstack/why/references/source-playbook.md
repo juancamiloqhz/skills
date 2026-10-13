@@ -1,6 +1,6 @@
 # Source playbooks
 
-The why skill covers every available relevant evidence category, with one source/MCP owned per investigator; a category with multiple sources has separately scoped tasks. Each investigator reads its source-specific playbook below. The playbooks are concrete examples for common MCPs. Adapt them for a different MCP in the same category. Tool names, schema names and column conventions are examples: verify actual read capabilities and schemas before use, while preserving the investigation steps and source-specific pitfalls. Only read operations within the assigned scope are authorized. A missing operation or inaccessible source is a coverage gap, not an invitation to install tools or mutate external state.
+The why skill spawns one investigator per available evidence category, each reading a single source-specific playbook below. The playbooks are concrete examples for common MCPs. Adapt them for a different MCP in the same category. Tool names, schema names and column conventions are examples: verify actual read capabilities and schemas before use, while preserving the investigation steps and source-specific pitfalls. Only read operations within the assigned scope are authorized. A missing operation or inaccessible source is a coverage gap, not an invitation to install tools or mutate external state.
 
 | Category | Playbook | Example MCP it documents |
 | --- | --- | --- |

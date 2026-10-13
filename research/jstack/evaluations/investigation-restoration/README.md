@@ -1,17 +1,17 @@
 # How and Why restoration evaluation
 
-This correction restores How and Why from their exact manifest pin, `11713c683fe4add4fd403ea880580abbc9e0875f`: both entrypoints, two How prompts and all 12 Why references. The [How](../../adaptations/how.md) and [Why](../../adaptations/why.md) records explain each remaining adaptation. Configured delegation and the existing shared investigation contract are preserved. Provider invocation metadata remains a separate unresolved question.
+This evaluation records the initial PR #30 snapshot at `d7eb9dbdeb7dae3911da1cacf68fdc0d7589f368`, restoring How and Why from `11713c683fe4add4fd403ea880580abbc9e0875f`: both entrypoints, two How prompts and all 12 Why references. The [alignment follow-up](alignment-review/README.md) narrows two later differences and establishes the invocation-metadata compatibility exception. The [How](../../adaptations/how.md) and [Why](../../adaptations/why.md) records describe the current files. Configured delegation and the existing shared investigation contract are preserved.
 
 ## Source and package checks
 
-[compare.py](compare.py) reads the pinned files from the shared bare Git cache and emits source/local hashes and complete unified differences. [source-comparison.json](source-comparison.json) covers all 16 mapped files and confirms both package licenses match the pin. The parent read the full difference set. Epistemics and the incident/postmortem reference are byte-identical to upstream; other references retain the source procedures with the recorded runtime, authorization and formatting substitutions.
+[compare.py](compare.py) reads the pinned files from the shared bare Git cache and emits source/local hashes and complete unified differences. [source-comparison.json](source-comparison.json) retains all 16 mapped files at the initial snapshot and confirms both package licenses match the pin. The parent read the full difference set. Epistemics and the incident/postmortem reference are byte-identical to upstream; other references retain the source procedures with the recorded runtime, authorization and formatting substitutions. The command below compares against the current follow-up record.
 
 ```bash
 python3 -B research/jstack/evaluations/investigation-restoration/compare.py > /tmp/jstack-investigation-source-comparison.json
-cmp research/jstack/evaluations/investigation-restoration/source-comparison.json /tmp/jstack-investigation-source-comparison.json
+cmp research/jstack/evaluations/investigation-restoration/alignment-review/source-comparison.json /tmp/jstack-investigation-source-comparison.json
 ```
 
-Both skill validations, manifest validation and Markdown lint checks passed. Local Markdown file targets were checked, excluding the source template's literal `(url)` placeholder. [Parent checks](parent-checks.json) also record final hash checks and unchanged protected paths. Source pins, the reviewed checkpoint, shared setup contracts and historical evaluations are unchanged. These checks establish package integrity and the recorded differences; they do not prove behavioral equivalence.
+Both skill validations, manifest validation and Markdown lint checks passed for the initial snapshot. Local Markdown file targets were checked, excluding the source template's literal `(url)` placeholder. [Parent checks](parent-checks.json) retain its hash checks and unchanged protected paths. Source pins, the reviewed checkpoint, shared setup contracts and historical evaluation outputs are unchanged. These checks establish package integrity and the recorded differences; they do not prove behavioral equivalence.
 
 ## Agent exercises
 

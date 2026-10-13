@@ -1,0 +1,77 @@
+{
+  "baseCommit": "d7eb9dbdeb7dae3911da1cacf68fdc0d7589f368",
+  "comparedFiles": 16,
+  "changedSkillFiles": [
+    "skills/jstack/how/references/explainer-prompt.md",
+    "skills/jstack/why/SKILL.md",
+    "skills/jstack/why/references/investigator-prompt.md",
+    "skills/jstack/why/references/source-playbook.md"
+  ],
+  "unchangedComparedFiles": 12,
+  "licensesMatchPin": true,
+  "skillValidation": [
+    "how: passed",
+    "why: passed"
+  ],
+  "manifestValidation": "passed",
+  "markdownLint": {
+    "files": 27,
+    "issues": 0
+  },
+  "localMarkdownFileTargets": {
+    "files": 20,
+    "passed": true,
+    "excludedPlaceholder": "url"
+  },
+  "protectedPathsUnchanged": [
+    "research/jstack/upstream.json",
+    "skills/jstack/setup-jstack",
+    "skills/jstack/juan-mode",
+    "research/jstack/evaluations/investigation-restoration/how-outputs.json",
+    "research/jstack/evaluations/investigation-restoration/how-evaluation.json",
+    "research/jstack/evaluations/investigation-restoration/source-comparison.json",
+    "research/jstack/evaluations/investigation-restoration/why-outputs.json",
+    "research/jstack/evaluations/investigation-restoration/parent-checks.json",
+    "research/jstack/evaluations/investigation-restoration/cases.json",
+    "research/jstack/evaluations/investigation-restoration/why-evaluation.json",
+    "research/jstack/evaluations/investigation-restoration/fixture-hashes.json",
+    "research/jstack/evaluations/investigation-restoration/fixtures/how/worker.py",
+    "research/jstack/evaluations/investigation-restoration/fixtures/how/queueing.py",
+    "research/jstack/evaluations/investigation-restoration/fixtures/how/api.py",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/observability.md",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/tickets.md",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/documents.md",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/chat.md",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/limiter.py",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/source-control.md",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/errors.md",
+    "research/jstack/evaluations/investigation-restoration/fixtures/why/analytics.md"
+  ],
+  "modelConfigurationHashUnchanged": true,
+  "claudeGuardCases": 4,
+  "claudeGuardRerunMatches": true,
+  "freshAgentWorkflowRuns": 0,
+  "finalSkillHashes": {
+    "skills/jstack/how/SKILL.md": "da05917d2fd678d9156aadda2c3c4069acff44a5f100393daade4eb59b2bafd4",
+    "skills/jstack/how/references/explainer-prompt.md": "edcb9257334f6e9e5a31e3508848d1c0c82e3d32b40928b14e1fd451c77f32b0",
+    "skills/jstack/how/references/explorer-prompt.md": "6c7e2063c228d50682628888fe4c97c7bde390b87bcf844b9aa1526ad4e8ff62",
+    "skills/jstack/why/SKILL.md": "5f3088bd57c33072217db30d5585f642d11360d072df66530565c7b68b81f223",
+    "skills/jstack/why/references/epistemics.md": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+    "skills/jstack/why/references/investigator-prompt.md": "cac7c382828051b27a270c71d0c32d174bec55502d8213939e6f7fba58862580",
+    "skills/jstack/why/references/source-playbook.md": "337039b0dbd9ceaf86c05c150bf9834f2c0e78febf0e14a6c88f2df4d66954d7",
+    "skills/jstack/why/references/sources/code-archaeology.md": "80facefff92e1d4d30c5fc120b904f893329bc35568f0eb25827d7214e99c7db",
+    "skills/jstack/why/references/sources/databricks.md": "17e6852b343a345d0db787f06ab6810298825b79f56320c1691ec0f1548a6e66",
+    "skills/jstack/why/references/sources/datadog.md": "1b519b602d32b8f4910e5198c46716cb6bc6ee9ae596313eb7f0ced9f4adb811",
+    "skills/jstack/why/references/sources/incident-postmortem.md": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+    "skills/jstack/why/references/sources/linear.md": "0f37aa78de430d160d0b773e3c800c3baab1fbc5de7809af850070d81965dc2f",
+    "skills/jstack/why/references/sources/notion.md": "426a50cc6b32023e947306cb94aaba22aa4d13dda1689c55eaae9aee8e36239e",
+    "skills/jstack/why/references/sources/sentry.md": "6ff8928acf50816c233075a4cbdd950958897db2a05fcda7a01f830e0c92c7be",
+    "skills/jstack/why/references/sources/slack.md": "2f00220622ddb5d9c2e0e5858effd8ff82001b8e3a10f124023fe7d5d0f70fe9",
+    "skills/jstack/why/references/synthesizer-prompt.md": "5610740621dd8ef26c380d24c0c7cc1035b85c5269212ab2011f908379532268"
+  },
+  "limits": [
+    "Provider documentation and extracted Claude guard logic, not complete provider invocation.",
+    "Rendering and category corrections compared to pinned source; no fresh model exercise.",
+    "Earlier agent outputs remain tied to d7eb9db."
+  ]
+}
