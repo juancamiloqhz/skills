@@ -1,0 +1,554 @@
+{
+  "evaluation": "skill-creator independent standalone principle packaging/discovery evaluation",
+  "completed_at_utc": "2026-10-13T01:09:34.815828+00:00",
+  "root": "/home/ubuntu/Dev/skills",
+  "status": "pass",
+  "concrete_defects": [],
+  "pending_child_status": {
+    "spawned_by_this_evaluator": 0,
+    "pending_children": 0,
+    "parent_or_other_tasks": "not inspected; outside this evaluator ownership"
+  },
+  "coverage": {
+    "principle_count": 24,
+    "index_count": 24,
+    "unique_index_count": 24,
+    "index_exactly_matches_entrypoints": true,
+    "baseline_24_name_set_matches": true,
+    "figure_it_out_names": [
+      "principle-prove-it-works",
+      "principle-never-block-on-the-human",
+      "principle-foundational-thinking",
+      "principle-laziness-protocol",
+      "principle-separate-before-serializing-shared-state",
+      "principle-sequence-verifiable-units",
+      "principle-encode-lessons-in-structure"
+    ],
+    "figure_it_out_all_resolve": true
+  },
+  "principle_checks": [
+    {
+      "name": "principle-attack-the-premise",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-attack-the-premise/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply attack the premise guidance. Use after multiple fixes sharing an assumption fail the same gate.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-attack-the-premise/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-boundary-discipline",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-boundary-discipline/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply boundary discipline guidance. Use when wiring validation, adapters or error handling.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-boundary-discipline/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    },
+    {
+      "name": "principle-build-the-lever",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-build-the-lever/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply build the lever guidance. Use when tooling would make nontrivial work repeatable or reviewable.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-build-the-lever/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-encode-lessons-in-structure",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-encode-lessons-in-structure/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply encode lessons in structure guidance. Use when a mechanical correction recurs.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-encode-lessons-in-structure/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-exhaust-the-design-space",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-exhaust-the-design-space/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply exhaust the design space guidance. Use when a consequential novel decision has multiple viable shapes.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-exhaust-the-design-space/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    },
+    {
+      "name": "principle-experience-first",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-experience-first/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply experience first guidance. Use when user experience and implementation convenience conflict.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-experience-first/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    },
+    {
+      "name": "principle-explain-the-number",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-explain-the-number/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply explain the number guidance. Use before reporting or acting on a measured performance or evaluation result.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-explain-the-number/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-fix-root-causes",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-fix-root-causes/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply fix root causes guidance. Use when diagnosing a failure.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-fix-root-causes/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-foundational-thinking",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-foundational-thinking/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply foundational thinking guidance. Use before choosing structures or sequencing features.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-foundational-thinking/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    },
+    {
+      "name": "principle-guard-the-context-window",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-guard-the-context-window/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply guard the context window guidance. Use when large evidence or a long run strains context.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-guard-the-context-window/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/coordination.md"
+    },
+    {
+      "name": "principle-laziness-protocol",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-laziness-protocol/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply laziness protocol guidance. Use when tempted to add layers or widen a refactor.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-laziness-protocol/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-make-operations-idempotent",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-make-operations-idempotent/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply make operations idempotent guidance. Use for commands or loops subject to retries and partial failure.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-make-operations-idempotent/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/coordination.md"
+    },
+    {
+      "name": "principle-migrate-callers-then-delete-legacy-apis",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply migrate callers then delete legacy apis guidance. Use when replacing an internal API.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-migrate-callers-then-delete-legacy-apis/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-minimize-reader-load",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-minimize-reader-load/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply minimize reader load guidance. Use when code is hard to trace.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-minimize-reader-load/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-model-the-domain",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-model-the-domain/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply model the domain guidance. Use when state or domain rules spread across branches.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-model-the-domain/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    },
+    {
+      "name": "principle-never-block-on-the-human",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-never-block-on-the-human/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply never block on the human guidance. Use when a reversible scoped action is already authorized.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-never-block-on-the-human/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-outcome-oriented-execution",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-outcome-oriented-execution/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply outcome oriented execution guidance. Use during an explicitly planned rewrite or migration.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-outcome-oriented-execution/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-prove-it-works",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-prove-it-works/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply prove it works guidance. Use before declaring an outcome complete.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-prove-it-works/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-redesign-from-first-principles",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-redesign-from-first-principles/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply redesign from first principles guidance. Use when a new requirement challenges the existing design.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-redesign-from-first-principles/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    },
+    {
+      "name": "principle-separate-before-serializing-shared-state",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-separate-before-serializing-shared-state/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply separate before serializing shared state guidance. Use when multiple actors might mutate the same object.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-separate-before-serializing-shared-state/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/coordination.md"
+    },
+    {
+      "name": "principle-sequence-verifiable-units",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-sequence-verifiable-units/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply sequence verifiable units guidance. Use for multi-step edits or dependent delivery.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-sequence-verifiable-units/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-subtract-before-you-add",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-subtract-before-you-add/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply subtract before you add guidance. Use when sequencing a refactor or addition.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-subtract-before-you-add/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/change.md"
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-test-behavior-not-implementation/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply test behavior not implementation guidance. Use when adding or reviewing tests.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-test-behavior-not-implementation/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/evidence.md"
+    },
+    {
+      "name": "principle-type-system-discipline",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-type-system-discipline/SKILL.md",
+      "name_matches_directory": true,
+      "description": "\"Apply type system discipline guidance. Use when designing types or handling untyped inputs.\"",
+      "scoped_standalone": true,
+      "pinned_attribution": true,
+      "license_path": "/home/ubuntu/Dev/skills/skills/jstack/principle-type-system-discipline/LICENSE",
+      "license_has_mit_notice_permission_and_warranty": true,
+      "body_matches_19222e0": true,
+      "baseline_source": "19222e0:skills/jstack/juan-mode/references/principles/design.md"
+    }
+  ],
+  "caller_checks": {
+    "duplicate_complete_bodies": [],
+    "scanned_paths": [
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/activation.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/upstream.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/routes.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/execution.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/configuration.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/index.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/SKILL.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/principles.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/upstream.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/decision-trail.md",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/execution.md"
+    ],
+    "retired_internal_body_files_present": [],
+    "decision": "Discovery references contain routing and absence behavior, not retained principle bodies. Caller entrypoints retain workflow-specific sequencing and verification, which is legitimate operational guidance, not a copied principle fallback. Both discovery references explicitly reject sibling installation assumptions."
+  },
+  "tabletop_cases": [
+    {
+      "id": 1,
+      "scenario": "Direct request for principle-test-behavior-not-implementation to review a valid empty-result test",
+      "prompt": "Use principle-test-behavior-not-implementation. A public search API queried for an absent SKU returns []. The same seeded fixture returns the known item for its present SKU. Is the empty-result assertion valid? Review only.",
+      "discovery_references": [],
+      "selected_paths": [
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-test-behavior-not-implementation/SKILL.md"
+      ],
+      "decision": "Retain the exact [] assertion. It proves the public no-match contract. Retain the present-SKU positive control so an implementation that always returns [] fails. Use literal fixture expectations independent of the subject. Do not reject the test merely because the result is empty.",
+      "result": "pass",
+      "mode_activated": false,
+      "model_setup_required": false
+    },
+    {
+      "id": 2,
+      "scenario": "Juan-mode planning a retry of an uncertain external billing request",
+      "prompt": "In juan-mode, plan what to do after a billing request timed out and the charge outcome is unknown. Planning only.",
+      "discovery_references": [
+        "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/index.md"
+      ],
+      "selected_paths": [
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-make-operations-idempotent/SKILL.md"
+      ],
+      "decision": "Inspect the original durable request identity and read-only provider outcome evidence before proposing a retry. Preserve the existing idempotency identity and verify its scope and retention before reuse. If the charge succeeded, reconcile owned state and do not charge again. If it is definitively absent and a retry is authorized and covered by provider guarantees, plan that retry. If uncertain, keep the outcome unresolved and avoid a blind external effect. No billing request is sent. This principle does not make a planned juan-mode playbook available.",
+      "result": "pass",
+      "model_setup_required_for_principle": false
+    },
+    {
+      "id": 3,
+      "scenario": "Figure-it-out needs structural-learning guidance",
+      "prompt": "Figure-it-out planning repeatedly sees an internal mechanical state error. Select structural-learning guidance and propose prevention within scope; no implementation.",
+      "discovery_references": [
+        "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/principles.md"
+      ],
+      "selected_paths": [
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-encode-lessons-in-structure/SKILL.md"
+      ],
+      "decision": "Prefer the strongest suitable in-scope mechanism: make invalid states unrepresentable, then CI lint or a banned API, then a canonical helper, then a runtime check. Verify the chosen mechanism catches the recurring failure. External data still needs runtime validation. Keep judgment-dependent prose and record an out-of-scope follow-up without filing issues or writing private memory. Do not load all seven principles indiscriminately.",
+      "result": "pass",
+      "mode_activated": false,
+      "model_setup_required_for_principle": false
+    },
+    {
+      "id": 4,
+      "scenario": "Selected principle missing from a simulated catalog",
+      "prompt": "Use the same uncertain billing planning scenario, but omit principle-make-operations-idempotent from the simulated catalog.",
+      "discovery_references": [
+        "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/index.md"
+      ],
+      "catalog_removed_name": "principle-make-operations-idempotent",
+      "simulated_catalog_paths": [
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-attack-the-premise/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-boundary-discipline/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-build-the-lever/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-encode-lessons-in-structure/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-exhaust-the-design-space/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-experience-first/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-explain-the-number/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-fix-root-causes/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-foundational-thinking/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-guard-the-context-window/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-laziness-protocol/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-minimize-reader-load/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-model-the-domain/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-never-block-on-the-human/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-outcome-oriented-execution/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-prove-it-works/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-redesign-from-first-principles/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-separate-before-serializing-shared-state/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-sequence-verifiable-units/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-subtract-before-you-add/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-test-behavior-not-implementation/SKILL.md",
+        "/home/ubuntu/Dev/skills/skills/jstack/principle-type-system-discipline/SKILL.md"
+      ],
+      "selected_name": "principle-make-operations-idempotent",
+      "selected_paths": [],
+      "loaded": false,
+      "decision": "Report principle-make-operations-idempotent unavailable. Supply npx skills add juancamiloqhz/skills --skill principle-make-operations-idempotent for manual installation. Continue independent authorized evidence gathering, but mark the affected principle guidance unavailable. Do not read its known authoring path behind the simulated catalog, substitute an unrelated same-name skill, run installation, or copy a fallback body.",
+      "manual_install_command": "npx skills add juancamiloqhz/skills --skill principle-make-operations-idempotent",
+      "result": "pass"
+    }
+  ],
+  "tested_hashes": [
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-attack-the-premise/SKILL.md",
+      "sha256": "f22093c71162dc62c9b5539052660dddbbf4606bf133717b05ae6634e982d550"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-boundary-discipline/SKILL.md",
+      "sha256": "6cadda03263cf17f302b7e927fa3588b243da14ecd2a4fc86964c521caff6742"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-build-the-lever/SKILL.md",
+      "sha256": "b69a60fc68acc235309a7284c3ca0e698c9d4ec9042910bf2263e166ae990b6c"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-encode-lessons-in-structure/SKILL.md",
+      "sha256": "8170e2f0dd923be6a38f7031262210011e5f7fceda4a151a0a8c32ed0c6ea718"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-exhaust-the-design-space/SKILL.md",
+      "sha256": "5f2e62b4c2d9355ec59dbd28c0ec9d8a412df885b8b6f10c774be8db51f8c050"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-experience-first/SKILL.md",
+      "sha256": "0dd9caa8a837c436f5db57a2d97a61e076712312dc2b7c4627a728582c9a6371"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-explain-the-number/SKILL.md",
+      "sha256": "20b4407d6c0b48152efe28e0ee26891c677de803873224d8b9664b9fe7c06314"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-fix-root-causes/SKILL.md",
+      "sha256": "7ea72b038ade7509bffabb55c58452e78935ea59932c62fc8f3c4551831be951"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-foundational-thinking/SKILL.md",
+      "sha256": "bc23380f264c3ab7afde8bf7939319f78db7c3c692c07a8cb5d8dfd7b39c76d6"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-guard-the-context-window/SKILL.md",
+      "sha256": "812886ea7ef944969d087cbcc2ac7fef97777a0ec786ed0bbb26dee009346b4d"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-laziness-protocol/SKILL.md",
+      "sha256": "51f7ae4509752bdd91a160b478d9c9ea696150f3651e27fbe02d7852b6194ddf"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-make-operations-idempotent/SKILL.md",
+      "sha256": "eda00c4396b8e3faad5ea666e12d8eaada4765eb01da129ff113a589d1a93d38"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "sha256": "455fbba5077cb0a4f9738ff3b69cd3ac308c8bcad7c0acbb63d6b28b7b74192e"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-minimize-reader-load/SKILL.md",
+      "sha256": "cad3da9a74ac5b8382047a257d67f2563e3c889d2f2548a56484c7e7acb701cb"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-model-the-domain/SKILL.md",
+      "sha256": "3c0c71f330721c42366cc4d12ac132a64f4245e5203394a836dc16b66ace6794"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-never-block-on-the-human/SKILL.md",
+      "sha256": "89237b67c7d9d14af8d490ccfba270f30266f8be990b8d2e45bee8a46aa4847c"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-outcome-oriented-execution/SKILL.md",
+      "sha256": "dbb8879fd37f5e99d9cb53bebad8be189f882ced4a04e207e46feda927f4647e"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-prove-it-works/SKILL.md",
+      "sha256": "15ee2a24308b8e75dc97350a8d750d807092e3bfbab8dfb730466529d95fecb6"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-redesign-from-first-principles/SKILL.md",
+      "sha256": "709a888d618e06da4e8eb727f843cd8b443e45976690873ac1aae5f5dfb38fd1"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-separate-before-serializing-shared-state/SKILL.md",
+      "sha256": "4ac73b95a7fa62e5810d987ca90ce729cc47c96d266f9563ca682fe94abb8f95"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-sequence-verifiable-units/SKILL.md",
+      "sha256": "65b3a8bf732bf71778ca4a2786a6816809b3a90f74585ea54c4eaf9e52f321ec"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-subtract-before-you-add/SKILL.md",
+      "sha256": "ff16d9f0869ea992167e306c81266f2bd6f4ef3f0a145713678b43f46e789107"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-test-behavior-not-implementation/SKILL.md",
+      "sha256": "fbc24f6a4c86acb5296b7b77e445510c0c55a66315502f29d61a3cb6f846497d"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/principle-type-system-discipline/SKILL.md",
+      "sha256": "da632c8683f63bcf6b35b48260ba913bfd1693743c5f3635efa4bc5470bf012e"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md",
+      "sha256": "2b9099c519c230b48ec38e2723d0fac0489488466fc7d9eda3be0883addc9d0a"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/index.md",
+      "sha256": "3c83670c223a979932b83629fdf8d5db0bada152be9fab802d5054275631bcf0"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/SKILL.md",
+      "sha256": "7131b85c4772d77384ec812595d99671cea47f5acf980c50392138b32eee26cf"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/principles.md",
+      "sha256": "f9c5b1d2189288103b1aeb1ad790479a2481dd3f032d96ae4410f15ad50a6817"
+    }
+  ],
+  "tested_files_changed_since_snapshot": [],
+  "limitations": [
+    "Authoring paths are the only catalog in this evaluation. No installed discovery, installer behavior, automatic trigger frequency, or runtime execution was tested.",
+    "Four tabletop cases were evaluated inline by this independent evaluator after reading the package. This is not a blind randomized model trial, runtime proof, or a reliability estimate.",
+    "The missing-catalog test is a policy simulation. The evaluator had already read the omitted file during the required all-24 inspection.",
+    "No billing provider, model configuration, delegation workflow, or unavailable playbook was executed.",
+    "Attribution links were checked for pinned local packaging form; upstream URL availability and upstream source identity were not independently fetched.",
+    "Only the 24 principle entrypoints, two caller entrypoints, and two discovery references are hashed. License files were inspected; additional caller Markdown was scanned for complete duplicate bodies without hashing concurrent documentation."
+  ],
+  "artifact_paths": {
+    "results": "/tmp/jstack-standalone-principles-_kfbqfse/results.json",
+    "report": "/tmp/jstack-standalone-principles-_kfbqfse/report.md",
+    "tested_snapshot": "/tmp/jstack-standalone-principles-_kfbqfse/tested-snapshot.json"
+  },
+  "execution_note": "Initial python command was unavailable and made no artifacts; all checks used python3 successfully."
+}

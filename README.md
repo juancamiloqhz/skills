@@ -26,6 +26,37 @@ This repository is the canonical source for skills I have developed and validate
 | [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
 | [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
+## Engineering principles
+
+These 24 jstack skills are independently installable and discoverable. Juan-mode and Figure-it-out load relevant principles through the skill catalog.
+
+| Skill | When to use |
+| --- | --- |
+| [`principle-attack-the-premise`](./skills/jstack/principle-attack-the-premise) | After multiple fixes sharing an assumption fail the same gate. |
+| [`principle-boundary-discipline`](./skills/jstack/principle-boundary-discipline) | When wiring validation, adapters or error handling. |
+| [`principle-build-the-lever`](./skills/jstack/principle-build-the-lever) | When tooling would make nontrivial work repeatable or reviewable. |
+| [`principle-encode-lessons-in-structure`](./skills/jstack/principle-encode-lessons-in-structure) | When a mechanical correction recurs. |
+| [`principle-exhaust-the-design-space`](./skills/jstack/principle-exhaust-the-design-space) | When a consequential novel decision has multiple viable shapes. |
+| [`principle-experience-first`](./skills/jstack/principle-experience-first) | When user experience and implementation convenience conflict. |
+| [`principle-explain-the-number`](./skills/jstack/principle-explain-the-number) | Before reporting or acting on a measured performance or evaluation result. |
+| [`principle-fix-root-causes`](./skills/jstack/principle-fix-root-causes) | When diagnosing a failure. |
+| [`principle-foundational-thinking`](./skills/jstack/principle-foundational-thinking) | Before choosing structures or sequencing features. |
+| [`principle-guard-the-context-window`](./skills/jstack/principle-guard-the-context-window) | When large evidence or a long run strains context. |
+| [`principle-laziness-protocol`](./skills/jstack/principle-laziness-protocol) | When tempted to add layers or widen a refactor. |
+| [`principle-make-operations-idempotent`](./skills/jstack/principle-make-operations-idempotent) | For commands or loops subject to retries and partial failure. |
+| [`principle-migrate-callers-then-delete-legacy-apis`](./skills/jstack/principle-migrate-callers-then-delete-legacy-apis) | When replacing an internal API. |
+| [`principle-minimize-reader-load`](./skills/jstack/principle-minimize-reader-load) | When code is hard to trace. |
+| [`principle-model-the-domain`](./skills/jstack/principle-model-the-domain) | When state or domain rules spread across branches. |
+| [`principle-never-block-on-the-human`](./skills/jstack/principle-never-block-on-the-human) | When a reversible scoped action is already authorized. |
+| [`principle-outcome-oriented-execution`](./skills/jstack/principle-outcome-oriented-execution) | During an explicitly planned rewrite or migration. |
+| [`principle-prove-it-works`](./skills/jstack/principle-prove-it-works) | Before declaring an outcome complete. |
+| [`principle-redesign-from-first-principles`](./skills/jstack/principle-redesign-from-first-principles) | When a new requirement challenges the existing design. |
+| [`principle-separate-before-serializing-shared-state`](./skills/jstack/principle-separate-before-serializing-shared-state) | When multiple actors might mutate the same object. |
+| [`principle-sequence-verifiable-units`](./skills/jstack/principle-sequence-verifiable-units) | For multi-step edits or dependent delivery. |
+| [`principle-subtract-before-you-add`](./skills/jstack/principle-subtract-before-you-add) | When sequencing a refactor or addition. |
+| [`principle-test-behavior-not-implementation`](./skills/jstack/principle-test-behavior-not-implementation) | When adding or reviewing tests. |
+| [`principle-type-system-discipline`](./skills/jstack/principle-type-system-discipline) | When designing types or handling untyped inputs. |
+
 ## Install
 
 Run the Skills CLI yourself to discover the available skills and choose where to install them. Agents should provide installation and update commands without executing them:

@@ -1,0 +1,511 @@
+{
+  "evaluation": "independent forward tabletop evaluation plus pinned source audit",
+  "created_at": "2026-10-13T00:57:26.718492+00:00",
+  "output_directory": "/tmp/jstack-principles-cf2up7hq",
+  "verdict": "One low-severity substantive omission; no broken leaf reachability, concrete task-expansion defect or unresolved local rule conflict found.",
+  "source_root": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode",
+  "upstream_git_dir": "/home/ubuntu/.cache/jstack/upstream/upstream.git",
+  "upstream_revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "checks": {
+    "mapped_leaves": 24,
+    "unique_names": 24,
+    "reachable_unique_anchors": 24,
+    "scenario_count": 8,
+    "entrypoint_pointer_present": true,
+    "attribution_anchor_present": true,
+    "source_hashes_unchanged": true
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "low",
+      "category": "missing substantive selection rule",
+      "principle": "encode-lessons-in-structure",
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/evidence.md",
+      "line": 31,
+      "title": "Preserve the preference for the strongest suitable enforcement mechanism",
+      "evidence": "Upstream explicitly ranks an unrepresentable compile-time state ahead of CI lint/banned API, canonical helper and runtime check when multiple mechanisms work. Local text lists type constraint, lint, helper or runtime check as alternatives suited to the boundary without retaining that preference.",
+      "impact": "For a recurring error that both a type constraint and a runtime guard can prevent within scope, the adapted rule permits the weaker runtime-only choice without prompting comparison. That loses upstream guidance intended to prevent the weaker pattern from becoming the template.",
+      "adaptation_assessment": "Scope, authority and useful-prose exceptions are intentional. references/upstream.md does not identify removal of the mechanism-strength preference, and retaining a scoped preference would not conflict with those exceptions.",
+      "suggested_change": "Add a short conditional preference for the strongest suitable mechanism within scope when multiple mechanisms work. Do not require type-level enforcement where the boundary genuinely requires runtime validation.",
+      "confidence": "medium",
+      "runtime_reproduction": false
+    }
+  ],
+  "scenario_answers": [
+    {
+      "id": 1,
+      "scenario": "Replace an internal API while one independently deployed service still uses it",
+      "selected_references": [
+        "references/principles/change.md#migrate-callers-then-delete-legacy-apis"
+      ],
+      "decision": "Inventory consumers and retain the old contract or a temporary adapter until the independently deployed service migrates under its deployment contract. Assign the adapter an owner, removal condition and verification.",
+      "why": "Coordinated deletion requires controlled consumers and acceptable coordinated breakage, which this scenario does not establish.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 2,
+      "scenario": "Retry a timed-out billing request with unknown outcome",
+      "selected_references": [
+        "references/principles/coordination.md#make-operations-idempotent"
+      ],
+      "decision": "Inspect and reconcile the original outcome before retrying. Reuse durable identity and an applicable idempotency key within its scope and retention contract. If the outcome remains unknown, do not blindly repeat the charge.",
+      "why": "Timeout does not prove absence of a side effect. No provider lookup or idempotency capability is supplied.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 3,
+      "scenario": "Two workers update different fields of one JSON file",
+      "selected_references": [
+        "references/principles/coordination.md#separate-before-serializing-shared-state"
+      ],
+      "decision": "Use separate worker artifacts combined by one writer, or serialize the entire shared-object mutation with real synchronization.",
+      "why": "Different fields still share a file and can suffer lost updates; prompt ownership is not a lock.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 4,
+      "scenario": "Test asserts an empty result for valid input",
+      "selected_references": [
+        "references/principles/evidence.md#test-behavior-not-implementation"
+      ],
+      "decision": "Check the consumer contract. Retain the empty assertion if correct, using a positive control where appropriate. Repair it if the contract requires a result.",
+      "why": "Valid input does not imply nonempty output; syntax alone cannot determine test quality.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 5,
+      "scenario": "Two imbalance fixes failed and census now looks even",
+      "selected_references": [
+        "references/principles/evidence.md#attack-the-premise",
+        "references/principles/evidence.md#fix-root-causes"
+      ],
+      "decision": "Write the shared premise before another similar fix. Retain a rerunnable per-actor census, examine persistent skew and role assignment, and use a discriminating assignment experiment when relevant.",
+      "why": "Even counts weaken the particular imbalance hypothesis but do not prove the premise irrelevant. No causal explanation is established.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 6,
+      "scenario": "One-trial performance result looks twice as fast without profiling",
+      "selected_references": [
+        "references/principles/evidence.md#explain-the-number",
+        "references/principles/evidence.md#prove-it-works"
+      ],
+      "decision": "Qualify the single-trial observation. Retain workload and method if available; obtain repeat measurements and spread plus profiles or counters before claiming reliability or an explained bottleneck. Check skipped, cached, failed or untuned work and end-to-end relevance.",
+      "why": "No raw timing, workload or profile is supplied. A single trial cannot establish repeatability or a measured limiter.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 7,
+      "scenario": "Migration allows temporary isolated-branch failure but production must remain available",
+      "selected_references": [
+        "references/principles/change.md#outcome-oriented-execution",
+        "references/principles/change.md#sequence-verifiable-units",
+        "references/principles/change.md#migrate-callers-then-delete-legacy-apis"
+      ],
+      "decision": "Declare an isolated recoverable migration unit and final gate. Allow intermediate failure only there; retain focused checks and verify the combined unit before dependent work or delivery. Preserve production availability and required compatibility.",
+      "why": "Intermediate failure in a unit does not authorize production breakage or a failing delivery commit.",
+      "status": "tabletop decision only"
+    },
+    {
+      "id": 8,
+      "scenario": "Small scoped rename with sufficient existing codemod",
+      "selected_references": [
+        "references/principles/evidence.md#build-the-lever",
+        "references/principles/change.md#laziness-protocol"
+      ],
+      "decision": "Reuse the adequate codemod, inspect its output and perform proportionate verification. Do not build a new framework or widen the rename.",
+      "why": "Tool reuse satisfies repeatability; no new script is required for every small change.",
+      "status": "tabletop decision only"
+    }
+  ],
+  "leaf_audit": [
+    {
+      "principle": "attack-the-premise",
+      "local_target": "evidence.md#attack-the-premise",
+      "classification": "adapted",
+      "assessment": "Retains written premise, rerunnable census, persistent skew, role assignment and discriminating change. Even census no longer conclusively refutes causality; upstream.md explicitly records this correction. Generalizing beyond actor imbalance is bounded by a discriminating experiment.",
+      "upstream_sha256": "c87bd7536f772f8a403ad8155535ee17a1bbec9a353156693eb3bb1520c87ae3"
+    },
+    {
+      "principle": "boundary-discipline",
+      "local_target": "design.md#boundary-discipline",
+      "classification": "adapted",
+      "assessment": "Retains boundary parsing, domain-facing interfaces and framework-independent domain logic. Replaces unconditional internal trust with established invariants and explicit concurrency/authorization exceptions, as documented. Pure-function examples and mechanism/policy wording are compressed; no concrete wrong planning decision demonstrated.",
+      "upstream_sha256": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28"
+    },
+    {
+      "principle": "build-the-lever",
+      "local_target": "evidence.md#build-the-lever",
+      "classification": "adapted",
+      "assessment": "Retains representative-unit comparison, safe reruns, deterministic processing over duplicate delegate edits, and read-only shared recipe. Existing adequate tooling and cost-sensitive construction deliberately replace a mandatory new file in every nontrivial diff. Explicit commit-the-tool wording is absent; no automatic publication is required by this internal reference.",
+      "upstream_sha256": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff"
+    },
+    {
+      "principle": "encode-lessons-in-structure",
+      "local_target": "evidence.md#encode-lessons-in-structure",
+      "classification": "omission",
+      "assessment": "Retains mechanisms, tested enforcement, judgment-dependent prose and concrete follow-up. Automatic memory/issue writes and deletion of useful explanations are deliberately removed. The strongest-suitable-mechanism preference is lost, reported as F1.",
+      "upstream_sha256": "ad12c26209770c52f632d9480c048ac5334ce8e5d6297f83ade59652a56cb3ef"
+    },
+    {
+      "principle": "exhaust-the-design-space",
+      "local_target": "design.md#exhaust-the-design-space",
+      "classification": "preserved",
+      "assessment": "Retains two or three structurally distinct alternatives, comparison before commitment, and mechanical/single-target exemptions. Adds explicit constraints and respect for configured panel contracts without authorizing delegation.",
+      "upstream_sha256": "8583310d7297b7823d75494faa57b003564d436807febecdecbd8321abe5cf6e"
+    },
+    {
+      "principle": "experience-first",
+      "local_target": "design.md#experience-first",
+      "classification": "adapted",
+      "assessment": "Retains users including consumers and maintainers, polished core flow, feedback/errors, prototyping and sequence-versus-target distinction. Scope reduction must be explicit instead of silently discarding requested features. Detailed UI examples are compressed.",
+      "upstream_sha256": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b"
+    },
+    {
+      "principle": "explain-the-number",
+      "local_target": "evidence.md#explain-the-number",
+      "classification": "adapted",
+      "assessment": "Retains measured limiters, counters/profiles mapped to source, confounders, run count/spread, end-to-end relevance and cross-trial/model limits. Allows qualified unknowns. No mandatory external benchmark-checklist dependency is carried over; upstream.md identifies remaining helpers as planned and disallows assuming global helper availability.",
+      "upstream_sha256": "cd5a25f9e7cf023627ccb470dc5faa97542f29b4319496a32b839a8e1e988047"
+    },
+    {
+      "principle": "fix-root-causes",
+      "local_target": "evidence.md#fix-root-causes",
+      "classification": "adapted",
+      "assessment": "Retains reproduction, causal tracing, instrumentation, restart state and related instances. Scoped inspection and safe state experiments replace unconditional all-instance fixes. Justified containment and useful rationale are allowed, explicitly documented.",
+      "upstream_sha256": "ba4cd38da1dcc8fe5432feb64457cba95594736a9b21b2ebf8f8c52aee068707"
+    },
+    {
+      "principle": "foundational-thinking",
+      "local_target": "design.md#foundational-thinking",
+      "classification": "preserved",
+      "assessment": "Retains access-pattern-driven structures, prerequisites for dependent work, shared-state review and subtraction. Examples of scaffold and commit ordering are compressed; sequence-verifiable-units and model-the-domain retain the associated ideas. No speculative infrastructure mandate remains.",
+      "upstream_sha256": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2"
+    },
+    {
+      "principle": "guard-the-context-window",
+      "local_target": "coordination.md#guard-the-context-window",
+      "classification": "adapted",
+      "assessment": "Retains bounded handling of bulk evidence and scope. Artifacts and recoverable handoffs replace unconditional fan-out and non-renewable-context claims. No requirement to inline every frequently used reference, consistent with conditional disclosure. Explicitly documented adaptation.",
+      "upstream_sha256": "d2cef147862576e3d709b7afc149d85196245e8338b9c7eef337c95fba412b3e"
+    },
+    {
+      "principle": "laziness-protocol",
+      "local_target": "change.md#laziness-protocol",
+      "classification": "adapted",
+      "assessment": "Retains smallest coherent change, deletion opportunities, consolidated decisions and questioning signal threading. Fixed three-layer and line-count preferences become comprehension criteria, explicitly documented.",
+      "upstream_sha256": "9006579e9e3f33955d17569733db688ae65f22577dc3b21803d219a5a8445aff"
+    },
+    {
+      "principle": "make-operations-idempotent",
+      "local_target": "coordination.md#make-operations-idempotent",
+      "classification": "adapted",
+      "assessment": "Retains repeated-run/crash reasoning and reconciliation. Adds durable identities, uncertain-effect inspection, key retention, ownership and liveness. Avoids relying on reused PIDs or blind cleanup. Startup/scheduling examples are compressed; no authority to recreate external effects is implied.",
+      "upstream_sha256": "540738217c3da7bf513b9886924ad6a2bc77e58be867f5bd2e1831c74bf2ce70"
+    },
+    {
+      "principle": "migrate-callers-then-delete-legacy-apis",
+      "local_target": "change.md#migrate-callers-then-delete-legacy-apis",
+      "classification": "adapted",
+      "assessment": "Retains inventory, coordinated migration/deletion and temporary adapter lifecycle. Public compatibility and independently deployed callers now explicitly constrain deletion. Test-contract examples are omitted here but general verification and behavior-test guidance remain available; no concrete contradiction found.",
+      "upstream_sha256": "09978915a4a11990cf0a9a02d9c08cc59e0b7a04c5c24b83aa560fbe4146f75b"
+    },
+    {
+      "principle": "minimize-reader-load",
+      "local_target": "change.md#minimize-reader-load",
+      "classification": "adapted",
+      "assessment": "Retains independent indirection/state costs, meaningful abstraction, local/derived state and source/mutation questions. Removes automatic one-caller adapter deletion and 30-second quota in favor of justified boundaries. Consistent with documented non-quota adaptation.",
+      "upstream_sha256": "1ea2b7fef2391cae5844c4efdbd59031f775e8a52d06b7495d707229a200dcca"
+    },
+    {
+      "principle": "model-the-domain",
+      "local_target": "design.md#model-the-domain",
+      "classification": "preserved",
+      "assessment": "Retains real states/ownership, suitable state machine/model/registry/module, removal of invalid combinations and duplicate rules, and clear-local-code exception. Upstream catalogue of reducers, collections and temporal decomposition examples is compressed, not a demand for those structures in every task.",
+      "upstream_sha256": "52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f"
+    },
+    {
+      "principle": "never-block-on-the-human",
+      "local_target": "change.md#never-block-on-the-human",
+      "classification": "adapted",
+      "assessment": "Retains authorized progress and human product direction. Explicit checkpoints, authority and external-action scope govern autonomy. Silence is not approval. No automatic expansion to fix newly noticed unrelated work, consistent with upstream.md.",
+      "upstream_sha256": "05030a7a083c337676f793881b4e93cd218e8f1dd676529f56e6ac1d3efb8d1f"
+    },
+    {
+      "principle": "outcome-oriented-execution",
+      "local_target": "change.md#outcome-oriented-execution",
+      "classification": "adapted",
+      "assessment": "Retains target, declared temporary failure, focused checks and final combined verification. Isolated recoverable unit and live-service exclusions clarify scope. Reading with sequence-verifiable-units resolves intermediate-failure versus final-gate tension. Static/runtime checks are not spelled out separately, but prove-it-works requires direct interface evidence.",
+      "upstream_sha256": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d"
+    },
+    {
+      "principle": "prove-it-works",
+      "local_target": "evidence.md#prove-it-works",
+      "classification": "preserved",
+      "assessment": "Retains direct artifact evidence, rejection of proxies/worker summaries, scrutiny of observation method and rerunnable checks. Explicit verified/failed/inconclusive states improve claim precision. Upstream examples and show-me-your-work dependency are not copied; no runtime proof is claimed by mere mapping.",
+      "upstream_sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2"
+    },
+    {
+      "principle": "redesign-from-first-principles",
+      "local_target": "design.md#redesign-from-first-principles",
+      "classification": "adapted",
+      "assessment": "Retains affected-code inspection, new requirement as foundational assumption, propagation to affected contracts/tests/docs and incremental delivery. Explicit smallest coherent adaptation comparison prevents whole-system rewrite expansion.",
+      "upstream_sha256": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034"
+    },
+    {
+      "principle": "separate-before-serializing-shared-state",
+      "local_target": "coordination.md#separate-before-serializing-shared-state",
+      "classification": "preserved",
+      "assessment": "Retains inventory, separation first, controlled combination and structural serialization only for genuinely shared objects. Explicit same-JSON-fields warning survives. Adds clarification that prompt ownership is not a sandbox or lock.",
+      "upstream_sha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb"
+    },
+    {
+      "principle": "sequence-verifiable-units",
+      "local_target": "change.md#sequence-verifiable-units",
+      "classification": "adapted",
+      "assessment": "Retains baseline/change/check units and reviewer-visible ordering. Limits dependency advancement, protects dirty work and avoids automatic rebase. Distinguishes red-test evidence from a ready delivery commit, resolving upstream tension between all-green units and failing-test-first delivery.",
+      "upstream_sha256": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187"
+    },
+    {
+      "principle": "subtract-before-you-add",
+      "local_target": "change.md#subtract-before-you-add",
+      "classification": "adapted",
+      "assessment": "Retains demonstrated dead/redundant removal and observed requirements. Consumer verification, compatibility and scope qualify deletion-first wording; no unrelated removal or speculative validation purge is authorized.",
+      "upstream_sha256": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f"
+    },
+    {
+      "principle": "test-behavior-not-implementation",
+      "local_target": "evidence.md#test-behavior-not-implementation",
+      "classification": "adapted",
+      "assessment": "Retains consumer calls, observable results, anti-tautology and behavior sensitivity. Absence controls, schema relationships and type tests survive. Syntax-only bans are deliberately replaced with actual-contract evaluation as documented.",
+      "upstream_sha256": "b2b73ba42920f9c3174ecdf808ec6e4591b3a9266ada9a05814f386004266d3a"
+    },
+    {
+      "principle": "type-system-discipline",
+      "local_target": "design.md#type-system-discipline",
+      "classification": "preserved",
+      "assessment": "Retains boundary parsing, semantic types, exhaustive variants, schema-derived shapes, validation over casts and strengthening only at partial operations. Illegal-state modeling is also explicit in model-the-domain. Language-specific examples and unrelated TypeScript skill dependency are compressed; empty sum remains total.",
+      "upstream_sha256": "2e492cef34bb25a20b9115df61f9ef3a9837e3fda144ffda8079e5f45a1b72e8"
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md",
+      "sha256": "46159f1d2d820d0367b62549645eeba0e250c7eb1dc6b92650f813495e8a4a1f"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/change.md",
+      "sha256": "4b413ca1196d96d0888d5a65b0f1676ced502edb7e13d8db03764cbaa3236e96"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/coordination.md",
+      "sha256": "5fdcf4602817f4a13a7c868340fd33ff4ba197154c25fadf9e5bff8c3def84c3"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/design.md",
+      "sha256": "8f64767458e8276f748add2cead4e2a898c422617b53ea59d7115ccc8b352281"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/evidence.md",
+      "sha256": "72a809335107635ad25a0a9733b288378ed9407b26faeb223d62ef59a3dfb6ab"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/principles/index.md",
+      "sha256": "2370c930fb24e31b373760d194da2e84646fffe6fc1b77529b45076d2317e3e5"
+    },
+    {
+      "path": "/home/ubuntu/Dev/skills/skills/jstack/juan-mode/references/upstream.md",
+      "sha256": "4e59c575c672726443fa31baa0e292169160dd870c1fbd766b24591e5bbb184d"
+    }
+  ],
+  "upstream_sources": [
+    {
+      "principle": "attack-the-premise",
+      "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "c87bd7536f772f8a403ad8155535ee17a1bbec9a353156693eb3bb1520c87ae3",
+      "local_target": "evidence.md#attack-the-premise"
+    },
+    {
+      "principle": "boundary-discipline",
+      "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
+      "local_target": "design.md#boundary-discipline"
+    },
+    {
+      "principle": "build-the-lever",
+      "path": "pstack/skills/principle-build-the-lever/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff",
+      "local_target": "evidence.md#build-the-lever"
+    },
+    {
+      "principle": "encode-lessons-in-structure",
+      "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "ad12c26209770c52f632d9480c048ac5334ce8e5d6297f83ade59652a56cb3ef",
+      "local_target": "evidence.md#encode-lessons-in-structure"
+    },
+    {
+      "principle": "exhaust-the-design-space",
+      "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "8583310d7297b7823d75494faa57b003564d436807febecdecbd8321abe5cf6e",
+      "local_target": "design.md#exhaust-the-design-space"
+    },
+    {
+      "principle": "experience-first",
+      "path": "pstack/skills/principle-experience-first/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
+      "local_target": "design.md#experience-first"
+    },
+    {
+      "principle": "explain-the-number",
+      "path": "pstack/skills/principle-explain-the-number/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "cd5a25f9e7cf023627ccb470dc5faa97542f29b4319496a32b839a8e1e988047",
+      "local_target": "evidence.md#explain-the-number"
+    },
+    {
+      "principle": "fix-root-causes",
+      "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "ba4cd38da1dcc8fe5432feb64457cba95594736a9b21b2ebf8f8c52aee068707",
+      "local_target": "evidence.md#fix-root-causes"
+    },
+    {
+      "principle": "foundational-thinking",
+      "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
+      "local_target": "design.md#foundational-thinking"
+    },
+    {
+      "principle": "guard-the-context-window",
+      "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "d2cef147862576e3d709b7afc149d85196245e8338b9c7eef337c95fba412b3e",
+      "local_target": "coordination.md#guard-the-context-window"
+    },
+    {
+      "principle": "laziness-protocol",
+      "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "9006579e9e3f33955d17569733db688ae65f22577dc3b21803d219a5a8445aff",
+      "local_target": "change.md#laziness-protocol"
+    },
+    {
+      "principle": "make-operations-idempotent",
+      "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "540738217c3da7bf513b9886924ad6a2bc77e58be867f5bd2e1831c74bf2ce70",
+      "local_target": "coordination.md#make-operations-idempotent"
+    },
+    {
+      "principle": "migrate-callers-then-delete-legacy-apis",
+      "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "09978915a4a11990cf0a9a02d9c08cc59e0b7a04c5c24b83aa560fbe4146f75b",
+      "local_target": "change.md#migrate-callers-then-delete-legacy-apis"
+    },
+    {
+      "principle": "minimize-reader-load",
+      "path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "1ea2b7fef2391cae5844c4efdbd59031f775e8a52d06b7495d707229a200dcca",
+      "local_target": "change.md#minimize-reader-load"
+    },
+    {
+      "principle": "model-the-domain",
+      "path": "pstack/skills/principle-model-the-domain/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f",
+      "local_target": "design.md#model-the-domain"
+    },
+    {
+      "principle": "never-block-on-the-human",
+      "path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "05030a7a083c337676f793881b4e93cd218e8f1dd676529f56e6ac1d3efb8d1f",
+      "local_target": "change.md#never-block-on-the-human"
+    },
+    {
+      "principle": "outcome-oriented-execution",
+      "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d",
+      "local_target": "change.md#outcome-oriented-execution"
+    },
+    {
+      "principle": "prove-it-works",
+      "path": "pstack/skills/principle-prove-it-works/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
+      "local_target": "evidence.md#prove-it-works"
+    },
+    {
+      "principle": "redesign-from-first-principles",
+      "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034",
+      "local_target": "design.md#redesign-from-first-principles"
+    },
+    {
+      "principle": "separate-before-serializing-shared-state",
+      "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb",
+      "local_target": "coordination.md#separate-before-serializing-shared-state"
+    },
+    {
+      "principle": "sequence-verifiable-units",
+      "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187",
+      "local_target": "change.md#sequence-verifiable-units"
+    },
+    {
+      "principle": "subtract-before-you-add",
+      "path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f",
+      "local_target": "change.md#subtract-before-you-add"
+    },
+    {
+      "principle": "test-behavior-not-implementation",
+      "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "b2b73ba42920f9c3174ecdf808ec6e4591b3a9266ada9a05814f386004266d3a",
+      "local_target": "evidence.md#test-behavior-not-implementation"
+    },
+    {
+      "principle": "type-system-discipline",
+      "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sha256": "2e492cef34bb25a20b9115df61f9ef3a9837e3fda144ffda8079e5f45a1b72e8",
+      "local_target": "design.md#type-system-discipline"
+    }
+  ],
+  "limitations": [
+    "Tabletop decisions and source comparison only; no scenario implementation, billing request, concurrency execution, migration or performance measurement occurred.",
+    "This is one independent forward reading, with scenario answers saved before the pinned upstream comparison. No baseline agent, repeated trials or model comparison was run.",
+    "All 24 mapped upstream files were read, but the eight scenarios are not behavioral coverage of every leaf.",
+    "No complete playbook/provider/runtime readiness claim follows from source or link coverage.",
+    "Audited and hashed only the entrypoint, principle files, attribution record and pinned upstream leaves. Concurrent roadmap changes were outside scope.",
+    "Skill-creator guidance was adapted to the explicit test-sub-agent brief: no further delegation, viewer, installation or repository mutation. Unslop guidance was used for prose.",
+    "The initial report-writing attempt used unavailable python; it failed before writing. All completed report generation used python3."
+  ],
+  "actual_paths": {
+    "results.json": "/tmp/jstack-principles-cf2up7hq/results.json",
+    "report.md": "/tmp/jstack-principles-cf2up7hq/report.md",
+    "scenario-answers.json": "/tmp/jstack-principles-cf2up7hq/scenario-answers.json",
+    "source-manifest.json": "/tmp/jstack-principles-cf2up7hq/source-manifest.json",
+    "upstream-manifest.json": "/tmp/jstack-principles-cf2up7hq/upstream-manifest.json",
+    "upstream-sources.txt": "/tmp/jstack-principles-cf2up7hq/upstream-sources.txt",
+    "reachability.json": "/tmp/jstack-principles-cf2up7hq/reachability.json",
+    "write_report.py": "/tmp/jstack-principles-cf2up7hq/write_report.py"
+  }
+}
