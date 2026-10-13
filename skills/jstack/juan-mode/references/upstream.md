@@ -2,7 +2,7 @@
 
 Adapted from [poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md) and its [playbook directory](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`, inspected on 2026-10-11. The bundled [MIT license](../LICENSE) retains Lauren Tan's attribution.
 
-This foundation implements the entrypoint, complete route registry, dependency discovery, model preflight and execution instructions. The separate how/why skills begin the shared-helper group. The 24 principle leaves are mapped into scoped references. The 23 playbook procedures and remaining helpers remain planned. A registry entry does not imply that its procedure was ported or evaluated.
+This foundation implements the entrypoint, complete route registry, dependency discovery, model preflight and execution instructions. The separate how/why skills begin the shared-helper group. The 24 principle leaves are packaged as standalone skills. The 23 playbook procedures and remaining helpers remain planned. A registry entry does not imply that its procedure was ported or evaluated.
 
 T3 Code uses the user's saved jstack roles and live provider catalog instead of upstream model defaults and Cursor wrappers. The preflight calls the separately discovered setup-jstack resolver without copying it. That resolver selects a complete global or project configuration, with explicit selections taking precedence. Children receive the selected absolute path so their checkout cannot change routing. Inherited selections preserve the parent. Child briefs contain explicit context, fresh review rounds retain distinct task IDs, and the parent owns PR watches.
 
@@ -16,8 +16,6 @@ Pstack packages how and why as separate skills. Jstack preserves that boundary t
 
 ## Engineering principles
 
-The [index](principles/index.md) maps all 24 `principle-*` leaves from the same pinned pstack revision into four conditionally loaded references. The bundled MIT license covers these adaptations. Names retain traceability; no external principle-skill installation is required.
+The [discovery index](principles/index.md) routes to 24 standalone `principle-*` skills, each with its own entrypoint, pinned upstream attribution and MIT license. This replaces the initial internal-reference packaging by user decision. Juan-mode and Figure-it-out discover relevant skills through the catalog; the principle bodies have one authoritative home and no caller assumes sibling installation.
 
-Absolute upstream rules are narrowed where evidence or task scope requires it: established internal invariants do not eliminate concurrency or authorization checks; absence assertions can prove behavior; public compatibility and independently deployed consumers constrain API removal; temporary breakage stays inside declared isolated units. Existing tools can satisfy repeatability, and layer counts are not deletion quotas. Root-cause work may include justified containment, while balanced actor counts do not conclusively disprove a premise.
-
-Authorization governs autonomous actions, cleanup and external retries. Context management uses bounded artifacts and recoverable handoffs. Verification claims retain unknowns and measurement limits. Figure-it-out keeps its own seven-rule subset to remain independently installable; the full index belongs to juan-mode.
+The scoped adaptations retain compatibility obligations, authorization, evidence limits and useful containment. They avoid unconditional internal trust, syntax-only test deletion, blind external retries and automatic cleanup. Normal discovery permits direct invocation and workflow callers; no principle requires juan-mode activation, setup-jstack or delegation. Missing selected principles produce manual installation guidance and an explicit limitation.

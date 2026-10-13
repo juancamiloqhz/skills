@@ -17,7 +17,7 @@ For each new task while active, read the [route registry](references/routes.md),
 
 ## Engineering principles
 
-When framing, implementing or reviewing scoped engineering work, use the [principle index](references/principles/index.md) to load relevant guidance. Apply it within the requested scope, compatibility obligations and existing authorization. A principle is not a substitute for an unavailable playbook.
+When framing, implementing or reviewing scoped engineering work, use the [principle index](references/principles/index.md) to discover and read relevant standalone jstack principle skills. Apply it within the requested scope, compatibility obligations and existing authorization. A principle is not a substitute for an unavailable playbook.
 
 ## Prepare execution
 

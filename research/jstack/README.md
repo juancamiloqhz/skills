@@ -41,4 +41,4 @@ Standalone [Reflect](../../skills/jstack/reflect/SKILL.md) reviews bounded conve
 
 Standalone [Figure it out](../../skills/jstack/figure-it-out/SKILL.md) designs custom workflows, returns at planning-only boundaries and verifies authorized execution with a reviewed decision trail. Its [evaluation](evaluations/figure-it-out/README.md) records planning-only return, real CLI checks and a corrected audit-reporting failure.
 
-The [engineering principle index](../../skills/jstack/juan-mode/references/principles/index.md) maps all 24 upstream leaves into four scoped references within juan-mode. The [evaluation](evaluations/principles/README.md) records eight tabletop scenarios and a full source audit; the playbook procedures remain planned.
+The [engineering principle index](../../skills/jstack/juan-mode/references/principles/index.md) routes to all 24 standalone principle skills through catalog discovery. The [evaluation](evaluations/principles/README.md) records eight tabletop scenarios and a full source audit; the playbook procedures remain planned.
