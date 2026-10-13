@@ -119,6 +119,16 @@
         "pstack/skills/setup-pstack"
       ],
       "differences": "skills/jstack/swarm/references/upstream.md"
+    },
+    {
+      "name": "reflect",
+      "localPath": "skills/jstack/reflect",
+      "upstreamPath": "pstack/skills/reflect",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "skills/jstack/reflect/references/upstream.md"
     }
   ],
   "decisions": [

@@ -36,3 +36,5 @@ Standalone [Arena](../../skills/jstack/arena/SKILL.md) adds configured candidate
 Standalone [Interrogate](../../skills/jstack/interrogate/SKILL.md) provides configured code and design review with checked lead judgment and no automatic fixes. Its [evaluation](evaluations/interrogate/README.md) covers seeded defects, a valid design and an unmet model-diversity requirement.
 
 Standalone [Swarm](../../skills/jstack/swarm/SKILL.md) coordinates partitioned coverage and declared races with configured workers. Its [evaluation](evaluations/swarm/README.md) records completed source/history slices, a ranked design tie and scope-discovery limitations.
+
+Standalone [Reflect](../../skills/jstack/reflect/SKILL.md) reviews bounded conversation evidence through judgment, tooling and divergent lenses, then checks recommendations against existing guidance. Its [evaluation](evaluations/reflect/README.md) records three review lenses, separate synthesis, rejected duplicate guidance and preserved assessment boundaries.
