@@ -1,0 +1,1542 @@
+{
+  "localCommit": "d57d3407626f741900c9574b9ecd47421a8de96f",
+  "reviewedThroughUnchanged": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+  "scope": "All 36 manifest components; inventory evidence only, not semantic audit completion",
+  "components": [
+    {
+      "name": "juan-mode",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/poteto-mode",
+      "localPath": "skills/jstack/juan-mode",
+      "contextPaths": [
+        "pstack/docs/guide/02-poteto-mode.md",
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/juan-mode/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/juan-mode/SKILL.md",
+          "sha256": "e253fc593ffaae269c567b9b8cad068724b3653c1a8febf2fe209dc70a75dc02",
+          "bytes": 12290
+        },
+        {
+          "path": "skills/jstack/juan-mode/references/activation.md",
+          "sha256": "f182ec4ad5d04c9814695f944fdcf360bb34d3fa9ff376cf36eb23b5d448dd1e",
+          "bytes": 2117
+        },
+        {
+          "path": "skills/jstack/juan-mode/references/configuration.md",
+          "sha256": "dbc2936a18e56d8a69f7c04dee07e8859f1d0ee8ab629daa8c2fb68522ffc1af",
+          "bytes": 4851
+        },
+        {
+          "path": "skills/jstack/juan-mode/references/execution.md",
+          "sha256": "1eaa54bd3e08f51c9ff7d19a21d3da6c9f40d88a5960c0089d5a328a5782a977",
+          "bytes": 3844
+        },
+        {
+          "path": "skills/jstack/juan-mode/references/routes.md",
+          "sha256": "1407a8f3e75c7c5b1e143444e3e123283fc1bc23f7adf5e96cdd278ec5712a4c",
+          "bytes": 3862
+        },
+        {
+          "path": "skills/jstack/juan-mode/references/upstream.md",
+          "sha256": "c25f0324aa0eb0b5d79843584ef6d2d2e681250fa81c0cb545ecbbe2a3fc71e5",
+          "bytes": 3713
+        },
+        {
+          "path": "skills/jstack/juan-mode/scripts/preflight.py",
+          "sha256": "25c4051dfcf85a23afd10df7db535319b1aadfd64912da4529c8ce1478da7cbd",
+          "bytes": 4330
+        },
+        {
+          "path": "skills/jstack/juan-mode/scripts/test_preflight.py",
+          "sha256": "4caae5ab2660b50ffe5e922c8fb1d802ff554ed68b1070ccb80ea58cc6bc1298",
+          "bytes": 11022
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/poteto-mode/SKILL.md",
+          "sha256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+          "bytes": 19341
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/authoring-a-skill.md",
+          "sha256": "f6a13a445c360b48d6cd72780ac01955f45b82826476efe0e67c7559329407aa",
+          "bytes": 831
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/autonomous-run.md",
+          "sha256": "15e54ad3ac92565613980772d8708de6e19cc4690bfd4bb3fb8836522407377b",
+          "bytes": 1878
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+          "sha256": "05ca30a16242c19d0c78ba1e88cca66f858d75252cb154fd740099fe292de802",
+          "bytes": 9431
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+          "sha256": "007c0a3b12011954a224f54773ef4ad7b75918be0a311914c1b51ad4e794c1e5",
+          "bytes": 5031
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/babysit.md",
+          "sha256": "a0346c37c2313f36a863b80f66ee7b98059c2242adf74fc7b3e48abdb9ec6f5a",
+          "bytes": 8289
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/bug-fix.md",
+          "sha256": "018bbc146ae19145caa6c7e70591fee081b64447dda1c1c4b681c9974d928b13",
+          "bytes": 2255
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/eval.md",
+          "sha256": "b862bfa2fae2399abf047a8e80d3e3dddb64003af96fb1cebb625216131e36bb",
+          "bytes": 2524
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/feature.md",
+          "sha256": "3a62cc4a8cbcf144bb9dd05f05420a15be0d38b784d3b141bb730a5852f50a62",
+          "bytes": 2766
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+          "sha256": "244f289898fe67a458065e90fe8217c916c5acf61cdee8975ade3f9831a12e91",
+          "bytes": 4403
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/investigation.md",
+          "sha256": "dc66bcf6af3a074fc7f67aa5e12b93ef571a4fb4d8e17f2f1af5ae5359f42e46",
+          "bytes": 928
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+          "sha256": "27d310e3fc3937a60b8fcbe1318f9d249a7477a722907bf85b3e4eb3dc436b11",
+          "bytes": 12977
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+          "sha256": "931070f5674e81a191277253d4e02b1c45d091b223f93bf506d3896a428a5967",
+          "bytes": 5587
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+          "sha256": "d42b4375f1bd4ce23da0b575a198571a2117df7eea10c3c9fc6d92ae1053f7be",
+          "bytes": 16779
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/pause-safely.md",
+          "sha256": "77968cfe5f4a71a8cd33e0ae8ffcdbd88dd693a212c240457773e6c40c96c21d",
+          "bytes": 1135
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+          "sha256": "2b88ad0f880e4d4d755ac19fe52414d6631d6baa816d060f53cf0a7429d7e14a",
+          "bytes": 1446
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/prototype.md",
+          "sha256": "7aa1f52c691c3d46d5afc527b23f90977fce869ce33573c73c81a4c7f0cde962",
+          "bytes": 2161
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/refactoring.md",
+          "sha256": "50f4f7d3d301551f8b8a57c3303c99958c5ca630ae0d0051823b6987c0eb5b96",
+          "bytes": 3211
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/runtime-forensics.md",
+          "sha256": "594f02c40c243a346e1f57b688ecf2ed5e882f21b3d24ed2204d1ac6f1c24a8a",
+          "bytes": 1210
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/session-pickup.md",
+          "sha256": "1604fb463f7c7410d43fa024ca76c1c1824c166a01fd69d61f073d06fdca2a47",
+          "bytes": 1678
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/shipping.md",
+          "sha256": "19f3f6803a7bbe9ff04f624b03e3b55f07ac0a05e991aa00d5fe51239b920b2a",
+          "bytes": 5439
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/trace-forensics.md",
+          "sha256": "e8a671fd5511a894f90c933bca75815e7a1d730cb53333075a80b0927e81acfc",
+          "bytes": 1763
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/visual-parity.md",
+          "sha256": "950ca51999a6454c98eee6bcbc3d1bbe501a4e3a5d5439b6f6ddc378991b256c",
+          "bytes": 1197
+        },
+        {
+          "path": "pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+          "sha256": "fc464dc4121926df1704f483c5feca83717c0a40b4651d3e11bd3aedd89441b6",
+          "bytes": 2932
+        },
+        {
+          "path": "pstack/skills/poteto-mode/references/bugbot-triage.md",
+          "sha256": "b2d146c770d8d3593e1ef3d77b668039b8e1f78093ea1a86f1d45d7f99614309",
+          "bytes": 9629
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/bootstrap.ts",
+          "sha256": "ccd2ed08fd9da9d0d942e5f2491cfc74bb92d8a08fa51755e0da1ac8de287361",
+          "bytes": 1737
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/bun.lock",
+          "sha256": "667d9cf7222e9aae3fa42a4be383e657784216e9df115da02227fbc5ac7bbe46",
+          "bytes": 6679
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/check-plan.mjs",
+          "sha256": "4f9432d9989880b6afc2bdda503d5b12a9d07d357ecf31936b7ab5e83bc80523",
+          "bytes": 7594
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/orch/orch.test.ts",
+          "sha256": "773153ac74de6eb15f58d2682f487f5f30672d7efe3ef1d24a131aa9129d279b",
+          "bytes": 18425
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/orch/orch.ts",
+          "sha256": "f091687df627a0b75fabd54af58945a9cd6c7039ef0622012ac9ed60cd8ec434",
+          "bytes": 15511
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/orch/store.ts",
+          "sha256": "0eae7cf69282e827b1227166f2e32cee3560f2f3e65b3f1f2faf6fb83d3b4c5b",
+          "bytes": 42927
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/package.json",
+          "sha256": "d1f815091209d49763775cc188e8e06ff32d5fec648bffd2272bc25a165e87c3",
+          "bytes": 352
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts",
+          "sha256": "a35592b4c6da96caf8d47987e9cd503fab6c7774ab87d11a43f24b4b5df2a9d1",
+          "bytes": 6161
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/cli.ts",
+          "sha256": "89c08863089181a232be782c4b2ed90a1552f44aeecb0dcb7aac2c623620e680",
+          "bytes": 6983
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts",
+          "sha256": "e53e31b7f03068063f53a99a3591b052aaed66e4e2b196b3a364980f60324ab1",
+          "bytes": 2944
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/github.test.ts",
+          "sha256": "0cbce011050522938523e36bb42a260e92b812dcd2076930fa681672ad316b24",
+          "bytes": 9059
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/github.ts",
+          "sha256": "d1bbbafbe8e2c703c84da2029de7f2c4011412512f8cf65a42100f46bcb92c8a",
+          "bytes": 24072
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts",
+          "sha256": "a9fedb25feefd1f57ef6a662f80c99018690170a3a8070773a08eaf694d1d3d9",
+          "bytes": 12397
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/policy.ts",
+          "sha256": "68d240505852cf23c9b2dea463342e9e61243f486b3cc86c735d140f9ee7be49",
+          "bytes": 25132
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/render.ts",
+          "sha256": "2b709e86628d5b8fdb61f860e60ababc342b0626c67576305442cf548283a604",
+          "bytes": 7083
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/tsconfig.json",
+          "sha256": "1ecccc72320b086c63ce3f73c959896fd747363e63553b3b1136296ea4069e45",
+          "bytes": 270
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/types.compile.ts",
+          "sha256": "621af4c9a664fbf699a9737efccdc248abb416df8819c9dc5f824beae2b9b1d6",
+          "bytes": 2258
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/types.ts",
+          "sha256": "64ba6221e3bfe61bbb292337d199cdec6309455477280efb060203dba34e0e91",
+          "bytes": 12359
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/watch-pr/watch-pr",
+          "sha256": "d955603be6cc0e8b8ffcec722f635192b2261410b1f2929abea94480e47eb5d4",
+          "bytes": 211
+        },
+        {
+          "path": "pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+          "sha256": "95b8530f3c0ccada8cabc4b0727c052fbc85c141531375aaace65c427af8aecc",
+          "bytes": 3984
+        }
+      ]
+    },
+    {
+      "name": "setup-jstack",
+      "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "upstreamPath": "pstack/skills/setup-pstack",
+      "localPath": "skills/jstack/setup-jstack",
+      "contextPaths": [
+        "pstack/skills/poteto-mode",
+        "pstack/skills/how",
+        "pstack/skills/why"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/setup-jstack/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/setup-jstack/SKILL.md",
+          "sha256": "2200d6528ba6f97e987fe569bdc05d355b14c121749fa1bb36b19b2f899ef13e",
+          "bytes": 10013
+        },
+        {
+          "path": "skills/jstack/setup-jstack/agents/openai.yaml",
+          "sha256": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d",
+          "bytes": 232
+        },
+        {
+          "path": "skills/jstack/setup-jstack/references/configuration.md",
+          "sha256": "daafdd7daf00df237c0d6d974f8282e9231a4345ca6085d57a373b0102b3f08b",
+          "bytes": 8204
+        },
+        {
+          "path": "skills/jstack/setup-jstack/references/investigation.md",
+          "sha256": "54fdd282d283bad660cebb254dbbe6514de8a6b6447723431bba13ca16f27464",
+          "bytes": 6188
+        },
+        {
+          "path": "skills/jstack/setup-jstack/references/t3-code.md",
+          "sha256": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+          "bytes": 2111
+        },
+        {
+          "path": "skills/jstack/setup-jstack/references/upstream.md",
+          "sha256": "6e9f406f1a0e14616b0023cb276b79508f5138b20c494a530544430111b9f1c6",
+          "bytes": 2737
+        },
+        {
+          "path": "skills/jstack/setup-jstack/scripts/models.py",
+          "sha256": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+          "bytes": 9942
+        },
+        {
+          "path": "skills/jstack/setup-jstack/scripts/test_models.py",
+          "sha256": "2fcaa3f924e19df44797131fad0164b31b7306c4894b7318806b545ea817d650",
+          "bytes": 13438
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/setup-pstack/SKILL.md",
+          "sha256": "d61b47256a18155a81c8e5ef95e3cc6569ce8c18317c35c4dd9c8015cf68cb59",
+          "bytes": 5716
+        }
+      ]
+    },
+    {
+      "name": "create-verification-skill",
+      "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "upstreamPath": "pstack/skills/create-verification-skill",
+      "localPath": "skills/jstack/create-verification-skill",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/create-verification-skill/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/create-verification-skill/SKILL.md",
+          "sha256": "cb4324d66001dddad0fd09e0df2f856be8771e36600a3d09cb94641c833cc292",
+          "bytes": 7215
+        },
+        {
+          "path": "skills/jstack/create-verification-skill/agents/openai.yaml",
+          "sha256": "f1b49f83366a5c5290117e2f5bf8db4deca581b3c704268b9e560e312de44fd5",
+          "bytes": 247
+        },
+        {
+          "path": "skills/jstack/create-verification-skill/references/output-contract.md",
+          "sha256": "cffa86e32676fb181f5b9cb0afae189d4bf8e99c9604c3fbbc15e863c7efa6e3",
+          "bytes": 4570
+        },
+        {
+          "path": "skills/jstack/create-verification-skill/references/upstream.md",
+          "sha256": "8c2a5e15b1552efa9fcf70da4426418a3cf7203ec74fc1256c9009c7f3806ba1",
+          "bytes": 2025
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/create-verification-skill/SKILL.md",
+          "sha256": "644f2551403c1bca01a2855b34611b6e7be0ce0dc5b204514c376c0f6a6e6ac4",
+          "bytes": 5879
+        },
+        {
+          "path": "pstack/skills/create-verification-skill/references/feature-map-example/README.md",
+          "sha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+          "bytes": 2601
+        },
+        {
+          "path": "pstack/skills/create-verification-skill/references/feature-map-example/create-note.md",
+          "sha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+          "bytes": 2926
+        },
+        {
+          "path": "pstack/skills/create-verification-skill/references/feature-map-example/search.md",
+          "sha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
+          "bytes": 3478
+        }
+      ]
+    },
+    {
+      "name": "maintain-verification-skill",
+      "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "upstreamPath": "pstack/skills/maintain-verification-skill",
+      "localPath": "skills/jstack/maintain-verification-skill",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/maintain-verification-skill/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/maintain-verification-skill/SKILL.md",
+          "sha256": "00b29186737ce054235fc1dc9fc9ce4e8d853e320d7cea04b8a9d9acf7cb1e68",
+          "bytes": 9164
+        },
+        {
+          "path": "skills/jstack/maintain-verification-skill/agents/openai.yaml",
+          "sha256": "533eb8b8c62db90d985bedc8779ec9827491f3db557214eefa9be6f2ef9e7ecb",
+          "bytes": 310
+        },
+        {
+          "path": "skills/jstack/maintain-verification-skill/references/upstream.md",
+          "sha256": "6ad632a4c99560726b304ffdb9174ab91b9b755e36dc0b8c30c22a768d185de1",
+          "bytes": 1450
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/maintain-verification-skill/SKILL.md",
+          "sha256": "515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8",
+          "bytes": 4922
+        }
+      ]
+    },
+    {
+      "name": "how",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/how",
+      "localPath": "skills/jstack/how",
+      "contextPaths": [
+        "pstack/skills/poteto-mode",
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/how/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/how/SKILL.md",
+          "sha256": "e1a56f1452b3bb3e7267902cb7f028cc612ff82d37c4903ffb0f27212e2c25f5",
+          "bytes": 3631
+        },
+        {
+          "path": "skills/jstack/how/references/upstream.md",
+          "sha256": "c89c0ca0bc71111d680f0f2f8f29d528a57d6de1d2ac4e35ca23485cf5b67be8",
+          "bytes": 1127
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/how/SKILL.md",
+          "sha256": "47cfe3e6fe55c49c3bdf8ad1b645dcd5fece8f0c36fd22d2e7221f9faa71f648",
+          "bytes": 2518
+        },
+        {
+          "path": "pstack/skills/how/references/explainer-prompt.md",
+          "sha256": "ddb89cebefc24e2b54517a331aedfe045b6971e101f45c71b8cef4cccff45bff",
+          "bytes": 3085
+        },
+        {
+          "path": "pstack/skills/how/references/explorer-prompt.md",
+          "sha256": "a3b44a6e5bb16a6d4d1cac19db8ed5322ffd5f5f5d45baca4e73990ca096f8be",
+          "bytes": 2684
+        }
+      ]
+    },
+    {
+      "name": "why",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/why",
+      "localPath": "skills/jstack/why",
+      "contextPaths": [
+        "pstack/skills/poteto-mode",
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/why/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/why/SKILL.md",
+          "sha256": "8c264f31e89c36be97ae65b437de46ab3fed4d91d25782e3937f3a9689b32d1b",
+          "bytes": 5610
+        },
+        {
+          "path": "skills/jstack/why/references/upstream.md",
+          "sha256": "a5a6652afa48fd5502a51eebdb8563f9719e2420f81b1f233f596e022167aac3",
+          "bytes": 1215
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/why/SKILL.md",
+          "sha256": "fa1d1e9dec14b15381c1ccccad74044d6b6ea3b4af56821f59ba2d8e59b07545",
+          "bytes": 8770
+        },
+        {
+          "path": "pstack/skills/why/references/epistemics.md",
+          "sha256": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+          "bytes": 6736
+        },
+        {
+          "path": "pstack/skills/why/references/investigator-prompt.md",
+          "sha256": "c44afba186f899094f3694e6c9d6de5d14ff7c4ce28b787a9f50fc789c9a7fc3",
+          "bytes": 5554
+        },
+        {
+          "path": "pstack/skills/why/references/source-playbook.md",
+          "sha256": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a",
+          "bytes": 1363
+        },
+        {
+          "path": "pstack/skills/why/references/sources/code-archaeology.md",
+          "sha256": "f6b5c4c3dd4ddc31da446bbbe4d88806e2201f15a76b97b3e44ce25c5862e321",
+          "bytes": 3332
+        },
+        {
+          "path": "pstack/skills/why/references/sources/databricks.md",
+          "sha256": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6",
+          "bytes": 6994
+        },
+        {
+          "path": "pstack/skills/why/references/sources/datadog.md",
+          "sha256": "b139faac5dc11b8f26c8255dce6033c1a6ac143b038d3dd103f2034c5dbec9cd",
+          "bytes": 4971
+        },
+        {
+          "path": "pstack/skills/why/references/sources/incident-postmortem.md",
+          "sha256": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+          "bytes": 1973
+        },
+        {
+          "path": "pstack/skills/why/references/sources/linear.md",
+          "sha256": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c",
+          "bytes": 2996
+        },
+        {
+          "path": "pstack/skills/why/references/sources/notion.md",
+          "sha256": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997",
+          "bytes": 2853
+        },
+        {
+          "path": "pstack/skills/why/references/sources/sentry.md",
+          "sha256": "e0ed11e474c3d248bc5ac16d37ca1439b2db0253a3413252194556643cf8328a",
+          "bytes": 4730
+        },
+        {
+          "path": "pstack/skills/why/references/sources/slack.md",
+          "sha256": "58fee61d024b3700b407e7acbed367944720ff05adfddb6954d36c88368f3ba7",
+          "bytes": 3105
+        },
+        {
+          "path": "pstack/skills/why/references/synthesizer-prompt.md",
+          "sha256": "11c62671aa7b7a6e3d36929ffe2b59bf95e6ca664eee4d93e6ee527dd3390ddb",
+          "bytes": 7146
+        }
+      ]
+    },
+    {
+      "name": "arena",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/arena",
+      "localPath": "skills/jstack/arena",
+      "contextPaths": [
+        "pstack/skills/architect",
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/arena/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/arena/SKILL.md",
+          "sha256": "7fbe73f9a98dfe5dc9b7e48f753a840bb390d0f4372077c4585c7c19b0489484",
+          "bytes": 7160
+        },
+        {
+          "path": "skills/jstack/arena/references/execution.md",
+          "sha256": "56d6e1311ff58874292d31177d46279e98aa8796d1caab2e69e18a8f6dfbc2be",
+          "bytes": 3955
+        },
+        {
+          "path": "skills/jstack/arena/references/upstream.md",
+          "sha256": "75bafcbe0d2c7117db1d0148fa31bbabae2ec0a7a474a9ebaa176676732b3559",
+          "bytes": 1548
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/arena/SKILL.md",
+          "sha256": "f15524f216c1c63804b89edb4ff8e53bb21a7b8ed367368dedeb9468eeec6a92",
+          "bytes": 4279
+        }
+      ]
+    },
+    {
+      "name": "architect",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/architect",
+      "localPath": "skills/jstack/architect",
+      "contextPaths": [
+        "pstack/skills/how",
+        "pstack/skills/why",
+        "pstack/skills/arena",
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/architect/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/architect/SKILL.md",
+          "sha256": "2e4677225a61122fd0876d7bf7b95edcaafb981ecf2c9d333b94e51286569cd4",
+          "bytes": 5717
+        },
+        {
+          "path": "skills/jstack/architect/references/design-red-flags.md",
+          "sha256": "27c829f6dd4fcecc142749cf644f7e04c3478ab068363df801854483d79d6f1f",
+          "bytes": 1340
+        },
+        {
+          "path": "skills/jstack/architect/references/rationale-template.md",
+          "sha256": "8b501c1f2801ac5ac9840764abe3a06d07c4c0a85f5706eab21b545c2776a2f5",
+          "bytes": 918
+        },
+        {
+          "path": "skills/jstack/architect/references/runner-prompt.md",
+          "sha256": "92bf5ae6da16f3271f3e255f52ae3f0d6b34b8db09550793b30017423ca8a1d9",
+          "bytes": 1973
+        },
+        {
+          "path": "skills/jstack/architect/references/upstream.md",
+          "sha256": "d040d5765f6f74d256c5d5c5c850095fb4d9282a5a26f749274511dd48efb7e9",
+          "bytes": 1507
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/architect/SKILL.md",
+          "sha256": "31f8e97a52bfa5432edd61f68ade2a8632ef0bacbc2d2a6802d7a0e6821944ac",
+          "bytes": 5469
+        },
+        {
+          "path": "pstack/skills/architect/references/design-red-flags.md",
+          "sha256": "d0e639e4cc588ec865f930d3a4111faad60987ae36925917e319d7ceca7c69ce",
+          "bytes": 3009
+        },
+        {
+          "path": "pstack/skills/architect/references/rationale-template.md",
+          "sha256": "0cedfccdc7b47fc881febd5a8293eecbc542c20f8df825639904a8102d2eb5d3",
+          "bytes": 3050
+        },
+        {
+          "path": "pstack/skills/architect/references/runner-prompt.md",
+          "sha256": "21dd5314aab778c5007228027a4591d97693fbec6ab86524037772b63f40948e",
+          "bytes": 3092
+        }
+      ]
+    },
+    {
+      "name": "interrogate",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/interrogate",
+      "localPath": "skills/jstack/interrogate",
+      "contextPaths": [
+        "pstack/skills/architect",
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/interrogate/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/interrogate/SKILL.md",
+          "sha256": "2d6353a4b5a1bd0c2c58fd689aa36651e7e6d72577351aacdbda77eb04c02c66",
+          "bytes": 4677
+        },
+        {
+          "path": "skills/jstack/interrogate/references/execution.md",
+          "sha256": "ec0b80aa64037d86c9501ebfa49134f1593eb17e5057f9ef4704cd5aae621002",
+          "bytes": 2625
+        },
+        {
+          "path": "skills/jstack/interrogate/references/lead-judgment.md",
+          "sha256": "b8d7619519b6a4b73fadf55571074883261edd6b1b4cd7b53eae53171f284893",
+          "bytes": 1221
+        },
+        {
+          "path": "skills/jstack/interrogate/references/review-criteria.md",
+          "sha256": "4f5703e9cbf449bbf2c0a282681a1a3c74255231a212f37d1f8271baaf51254e",
+          "bytes": 1713
+        },
+        {
+          "path": "skills/jstack/interrogate/references/upstream.md",
+          "sha256": "ac132980f093998835651937aa104ff8729db1d9a170aa2a2b78163b9cc55f20",
+          "bytes": 1387
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/interrogate/SKILL.md",
+          "sha256": "25341c393f515c1e1fa9bce668b7551e9f98c195113a460ff524d3c1f7f50cd9",
+          "bytes": 4317
+        },
+        {
+          "path": "pstack/skills/interrogate/references/code-quality-review.md",
+          "sha256": "79162fda183eafd40d51661fbb5e151c7ba250f89e506ba17f5bd135dcbd50a8",
+          "bytes": 5217
+        },
+        {
+          "path": "pstack/skills/interrogate/references/lead-judgment.md",
+          "sha256": "6e5bdf5670eb34017692e9b6c546f36ac7552e6bb9f3f2f3429164fcc46a9361",
+          "bytes": 3465
+        },
+        {
+          "path": "pstack/skills/interrogate/references/reviewer-prompt.md",
+          "sha256": "f6005cc2b535006fca97a96c5bfda49df57312eedf1ffd8d1aaaf3eb33817c25",
+          "bytes": 2275
+        },
+        {
+          "path": "pstack/skills/interrogate/references/rubric.md",
+          "sha256": "0f9c6bdb0b96e26dbde5f6407f417e0c02f54080e7a1268d8994f3c3ec6c5ac0",
+          "bytes": 4772
+        }
+      ]
+    },
+    {
+      "name": "swarm",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/swarm",
+      "localPath": "skills/jstack/swarm",
+      "contextPaths": [
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/swarm/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/swarm/SKILL.md",
+          "sha256": "6ae00c84d3332802936f095119c92f35d636d8e8ea905d3563052a5574599030",
+          "bytes": 5765
+        },
+        {
+          "path": "skills/jstack/swarm/references/execution.md",
+          "sha256": "d03e0223118c5a9e43138b5b1f754dc8ebdcf422d87de4f1f0f146995321e28d",
+          "bytes": 2749
+        },
+        {
+          "path": "skills/jstack/swarm/references/upstream.md",
+          "sha256": "4c4d77a5839a15d630d02fe55aac8bcb8fef7541741d3b91690e6d30016c59db",
+          "bytes": 1325
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/swarm/SKILL.md",
+          "sha256": "bdcee4168e22428036e93d7cdeec3f391dbc4132f927f6db2540328c22db0273",
+          "bytes": 2949
+        }
+      ]
+    },
+    {
+      "name": "reflect",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/reflect",
+      "localPath": "skills/jstack/reflect",
+      "contextPaths": [
+        "pstack/skills/setup-pstack"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/reflect/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/reflect/SKILL.md",
+          "sha256": "ada5dff013da358cf79eb830a97f3e6fe651d7ddec973b5c4112b649ade94deb",
+          "bytes": 5868
+        },
+        {
+          "path": "skills/jstack/reflect/references/assessment.md",
+          "sha256": "03665a1995fd98c4c12269def74a472f16c6c35b9f6e10b66ac55052f57a335d",
+          "bytes": 2847
+        },
+        {
+          "path": "skills/jstack/reflect/references/execution.md",
+          "sha256": "5bf89e30a1da1e6cb1c1d7c9528ac50b7cc0a263ff6fb72d4b3dff2edc8f3a01",
+          "bytes": 2463
+        },
+        {
+          "path": "skills/jstack/reflect/references/upstream.md",
+          "sha256": "83bbfac2e3f8e9a054d0d155ab73f0d0b6e3f79a542e0792d94ad3822bf755c8",
+          "bytes": 1490
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/reflect/SKILL.md",
+          "sha256": "f5e9200f37e2a4567c0eeb0ba244fde66c1b3f35e3b7a883de2f85b3bda7365a",
+          "bytes": 4633
+        },
+        {
+          "path": "pstack/skills/reflect/references/divergent-reviewer.md",
+          "sha256": "f6030d88e20e906ef5e2d9ba44cb013ce610c49c2fe2ef74c377d32e0dc9e939",
+          "bytes": 3668
+        },
+        {
+          "path": "pstack/skills/reflect/references/judgment-reviewer.md",
+          "sha256": "38f917619fbf346062d643e0ad6b12fc952d58678dfcbbf42ffcf6d8b9c08307",
+          "bytes": 3107
+        },
+        {
+          "path": "pstack/skills/reflect/references/synthesizer.md",
+          "sha256": "6af816963de74d1a1aef4070273c1ff533d2072732e488e159ddc0b299fec3cd",
+          "bytes": 4141
+        },
+        {
+          "path": "pstack/skills/reflect/references/tooling-reviewer.md",
+          "sha256": "f81b8697e7366fbbc18feba52c6e3253a101f751091364ebc4396a1d9b5753b4",
+          "bytes": 4448
+        }
+      ]
+    },
+    {
+      "name": "figure-it-out",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/figure-it-out",
+      "localPath": "skills/jstack/figure-it-out",
+      "contextPaths": [
+        "pstack/skills/setup-pstack",
+        "pstack/skills/architect",
+        "pstack/skills/show-me-your-work",
+        "pstack/skills/principle-prove-it-works",
+        "pstack/skills/principle-never-block-on-the-human",
+        "pstack/skills/principle-foundational-thinking",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-separate-before-serializing-shared-state",
+        "pstack/skills/principle-sequence-verifiable-units",
+        "pstack/skills/principle-encode-lessons-in-structure"
+      ],
+      "localFiles": [
+        {
+          "path": "skills/jstack/figure-it-out/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/figure-it-out/SKILL.md",
+          "sha256": "7131b85c4772d77384ec812595d99671cea47f5acf980c50392138b32eee26cf",
+          "bytes": 5390
+        },
+        {
+          "path": "skills/jstack/figure-it-out/references/decision-trail.md",
+          "sha256": "838e5fa074349b19b76121bdfb39d8b6de7df7ee013c5c725d205e2cf845ed86",
+          "bytes": 3124
+        },
+        {
+          "path": "skills/jstack/figure-it-out/references/execution.md",
+          "sha256": "ac2e5d49c7f4c5f7f3a29ade4a51b7c053bd7e8d85bfe8305504c66665748064",
+          "bytes": 2493
+        },
+        {
+          "path": "skills/jstack/figure-it-out/references/principles.md",
+          "sha256": "07613762b7e3b03453e411fd2512ddec53e073a024722b2273ce0df544944aa7",
+          "bytes": 1216
+        },
+        {
+          "path": "skills/jstack/figure-it-out/references/upstream.md",
+          "sha256": "eaaacfd04e3a881713e24dbdb0f63bade5401f6c3e6f85c55f96d359891cb687",
+          "bytes": 1621
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/figure-it-out/SKILL.md",
+          "sha256": "d9574cc24929773d5c23f40626ae1e09660afddd7de48e08dd6494d9fff9bbf0",
+          "bytes": 3978
+        }
+      ]
+    },
+    {
+      "name": "principle-attack-the-premise",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-attack-the-premise",
+      "localPath": "skills/jstack/principle-attack-the-premise",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-attack-the-premise/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-attack-the-premise/SKILL.md",
+          "sha256": "1bfdeb0e9925c8199d3d27de5526ee1a849c601be352ecaea76baf6e73eb7d47",
+          "bytes": 806
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
+          "sha256": "c87bd7536f772f8a403ad8155535ee17a1bbec9a353156693eb3bb1520c87ae3",
+          "bytes": 1941
+        }
+      ]
+    },
+    {
+      "name": "principle-boundary-discipline",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-boundary-discipline",
+      "localPath": "skills/jstack/principle-boundary-discipline",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-boundary-discipline/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-boundary-discipline/SKILL.md",
+          "sha256": "c4f261d75d0f49edf0cc1acbaf9a9aa7a1b12e7a9e076074a8ed4a15a06f84a5",
+          "bytes": 675
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
+          "sha256": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
+          "bytes": 1883
+        }
+      ]
+    },
+    {
+      "name": "principle-build-the-lever",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-build-the-lever",
+      "localPath": "skills/jstack/principle-build-the-lever",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-build-the-lever/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-build-the-lever/SKILL.md",
+          "sha256": "f803de241640f453548aaad1ca70bc930098b70cd300ebe16277b672d1efc98f",
+          "bytes": 767
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-build-the-lever/SKILL.md",
+          "sha256": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff",
+          "bytes": 2386
+        }
+      ]
+    },
+    {
+      "name": "principle-encode-lessons-in-structure",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-encode-lessons-in-structure",
+      "localPath": "skills/jstack/principle-encode-lessons-in-structure",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-encode-lessons-in-structure/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-encode-lessons-in-structure/SKILL.md",
+          "sha256": "a02c7c08b35ef82c219a5b3da47aa6bb8aac008c4be1574be3e78b69b5d16656",
+          "bytes": 918
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+          "sha256": "ad12c26209770c52f632d9480c048ac5334ce8e5d6297f83ade59652a56cb3ef",
+          "bytes": 2001
+        }
+      ]
+    },
+    {
+      "name": "principle-exhaust-the-design-space",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-exhaust-the-design-space",
+      "localPath": "skills/jstack/principle-exhaust-the-design-space",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-exhaust-the-design-space/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-exhaust-the-design-space/SKILL.md",
+          "sha256": "b9ee09ac31c32984f9ac883bf3e39c2c8fb3b50a699ccd9bef39a83b386d8340",
+          "bytes": 668
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+          "sha256": "8583310d7297b7823d75494faa57b003564d436807febecdecbd8321abe5cf6e",
+          "bytes": 1152
+        }
+      ]
+    },
+    {
+      "name": "principle-experience-first",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-experience-first",
+      "localPath": "skills/jstack/principle-experience-first",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-experience-first/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-experience-first/SKILL.md",
+          "sha256": "98a7f00806a7ad5d5752ccbab038b52afbc48a69bae1cd0f66830e114ccca5c3",
+          "bytes": 672
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-experience-first/SKILL.md",
+          "sha256": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
+          "bytes": 1184
+        }
+      ]
+    },
+    {
+      "name": "principle-explain-the-number",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-explain-the-number",
+      "localPath": "skills/jstack/principle-explain-the-number",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-explain-the-number/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-explain-the-number/SKILL.md",
+          "sha256": "b799f77b2e0ad4892f701070db82c6b5f3b582c05797d71124f0d2eacf749eae",
+          "bytes": 811
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-explain-the-number/SKILL.md",
+          "sha256": "cd5a25f9e7cf023627ccb470dc5faa97542f29b4319496a32b839a8e1e988047",
+          "bytes": 1663
+        }
+      ]
+    },
+    {
+      "name": "principle-fix-root-causes",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-fix-root-causes",
+      "localPath": "skills/jstack/principle-fix-root-causes",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-fix-root-causes/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-fix-root-causes/SKILL.md",
+          "sha256": "f9ba4b7fdc8aa8ec1c181157dc77cf753720732cc08b495e0a28c9d2a628f698",
+          "bytes": 718
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
+          "sha256": "ba4cd38da1dcc8fe5432feb64457cba95594736a9b21b2ebf8f8c52aee068707",
+          "bytes": 1246
+        }
+      ]
+    },
+    {
+      "name": "principle-foundational-thinking",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-foundational-thinking",
+      "localPath": "skills/jstack/principle-foundational-thinking",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-foundational-thinking/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-foundational-thinking/SKILL.md",
+          "sha256": "159ed076b5a7dc01177245da206c44bd9b8bc08500d89423091290ac2998c5d9",
+          "bytes": 629
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
+          "sha256": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
+          "bytes": 1530
+        }
+      ]
+    },
+    {
+      "name": "principle-guard-the-context-window",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-guard-the-context-window",
+      "localPath": "skills/jstack/principle-guard-the-context-window",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-guard-the-context-window/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-guard-the-context-window/SKILL.md",
+          "sha256": "a0e22e27a7c14989ac37790116b015ba3499b027cd4d067620e69f82684b485a",
+          "bytes": 760
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+          "sha256": "d2cef147862576e3d709b7afc149d85196245e8338b9c7eef337c95fba412b3e",
+          "bytes": 939
+        }
+      ]
+    },
+    {
+      "name": "principle-laziness-protocol",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-laziness-protocol",
+      "localPath": "skills/jstack/principle-laziness-protocol",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-laziness-protocol/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-laziness-protocol/SKILL.md",
+          "sha256": "ffce6b882e2cfd00c0370fa4ec18291b9e2b568e2cb73c01138fb5ad6f92e5bb",
+          "bytes": 636
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+          "sha256": "9006579e9e3f33955d17569733db688ae65f22577dc3b21803d219a5a8445aff",
+          "bytes": 1371
+        }
+      ]
+    },
+    {
+      "name": "principle-make-operations-idempotent",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-make-operations-idempotent",
+      "localPath": "skills/jstack/principle-make-operations-idempotent",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-make-operations-idempotent/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-make-operations-idempotent/SKILL.md",
+          "sha256": "51c0d039b7d9bdb31ad25065135730b3156fb33cc8b0043e6a4d01654d5a0957",
+          "bytes": 791
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+          "sha256": "540738217c3da7bf513b9886924ad6a2bc77e58be867f5bd2e1831c74bf2ce70",
+          "bytes": 1390
+        }
+      ]
+    },
+    {
+      "name": "principle-migrate-callers-then-delete-legacy-apis",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
+      "localPath": "skills/jstack/principle-migrate-callers-then-delete-legacy-apis",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-migrate-callers-then-delete-legacy-apis/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+          "sha256": "07cb0da3293203acecdad9764b9d7a1eb606ff7e8716adfcb16f75ffe5c99ed4",
+          "bytes": 762
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+          "sha256": "09978915a4a11990cf0a9a02d9c08cc59e0b7a04c5c24b83aa560fbe4146f75b",
+          "bytes": 1146
+        }
+      ]
+    },
+    {
+      "name": "principle-minimize-reader-load",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-minimize-reader-load",
+      "localPath": "skills/jstack/principle-minimize-reader-load",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-minimize-reader-load/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-minimize-reader-load/SKILL.md",
+          "sha256": "8150e9ee28ff89ac8d016510502a5296196445440617a22a194027a099bb9817",
+          "bytes": 671
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+          "sha256": "1ea2b7fef2391cae5844c4efdbd59031f775e8a52d06b7495d707229a200dcca",
+          "bytes": 1996
+        }
+      ]
+    },
+    {
+      "name": "principle-model-the-domain",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-model-the-domain",
+      "localPath": "skills/jstack/principle-model-the-domain",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-model-the-domain/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-model-the-domain/SKILL.md",
+          "sha256": "64666f3473b376691a2a847413ba72c1fba54c3b6dc701e59ba2bba4c6c9dca5",
+          "bytes": 573
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-model-the-domain/SKILL.md",
+          "sha256": "52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f",
+          "bytes": 1858
+        }
+      ]
+    },
+    {
+      "name": "principle-never-block-on-the-human",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-never-block-on-the-human",
+      "localPath": "skills/jstack/principle-never-block-on-the-human",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-never-block-on-the-human/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-never-block-on-the-human/SKILL.md",
+          "sha256": "81fff5562be084bdbf140af2231cb5eb37cc205a7bc50a26271f2e4cbb1ee466",
+          "bytes": 698
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+          "sha256": "05030a7a083c337676f793881b4e93cd218e8f1dd676529f56e6ac1d3efb8d1f",
+          "bytes": 910
+        }
+      ]
+    },
+    {
+      "name": "principle-outcome-oriented-execution",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-outcome-oriented-execution",
+      "localPath": "skills/jstack/principle-outcome-oriented-execution",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-outcome-oriented-execution/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-outcome-oriented-execution/SKILL.md",
+          "sha256": "f55dfd0b56128886a6ba4218b99d0635a208d3059cf1703c6f560f1779e6214a",
+          "bytes": 721
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+          "sha256": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d",
+          "bytes": 1078
+        }
+      ]
+    },
+    {
+      "name": "principle-prove-it-works",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-prove-it-works",
+      "localPath": "skills/jstack/principle-prove-it-works",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-prove-it-works/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-prove-it-works/SKILL.md",
+          "sha256": "b1e483b15fd49882c95f04428a121197661eda6837b3ecb9962dc34ff525e14e",
+          "bytes": 638
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-prove-it-works/SKILL.md",
+          "sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
+          "bytes": 1371
+        }
+      ]
+    },
+    {
+      "name": "principle-redesign-from-first-principles",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-redesign-from-first-principles",
+      "localPath": "skills/jstack/principle-redesign-from-first-principles",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-redesign-from-first-principles/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-redesign-from-first-principles/SKILL.md",
+          "sha256": "b3bbfdbc192916d01cd7c7ae1d1aba75022dfba244b3361ad15a219fd7981c09",
+          "bytes": 680
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+          "sha256": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034",
+          "bytes": 758
+        }
+      ]
+    },
+    {
+      "name": "principle-separate-before-serializing-shared-state",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-separate-before-serializing-shared-state",
+      "localPath": "skills/jstack/principle-separate-before-serializing-shared-state",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-separate-before-serializing-shared-state/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-separate-before-serializing-shared-state/SKILL.md",
+          "sha256": "84dd8902aafc6b25ad9afeeb892dd1651cf6acfc17e7149f3bac3f17600051df",
+          "bytes": 760
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+          "sha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb",
+          "bytes": 1565
+        }
+      ]
+    },
+    {
+      "name": "principle-sequence-verifiable-units",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-sequence-verifiable-units",
+      "localPath": "skills/jstack/principle-sequence-verifiable-units",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-sequence-verifiable-units/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-sequence-verifiable-units/SKILL.md",
+          "sha256": "e2690980ff217b2ca1d269f6227d1e22de4e7ad2e248440da5cbb661f24169f4",
+          "bytes": 690
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+          "sha256": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187",
+          "bytes": 1705
+        }
+      ]
+    },
+    {
+      "name": "principle-subtract-before-you-add",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-subtract-before-you-add",
+      "localPath": "skills/jstack/principle-subtract-before-you-add",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-subtract-before-you-add/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-subtract-before-you-add/SKILL.md",
+          "sha256": "f732d74a7c5a26df14595e0bc312e1c21dda31e23622dbfc47066896b65792f2",
+          "bytes": 594
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+          "sha256": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f",
+          "bytes": 909
+        }
+      ]
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-test-behavior-not-implementation",
+      "localPath": "skills/jstack/principle-test-behavior-not-implementation",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-test-behavior-not-implementation/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-test-behavior-not-implementation/SKILL.md",
+          "sha256": "c1e1970136ab8f4becc956cebee6c813d05f3ef547e734a471ec3f1b5a6f8ee9",
+          "bytes": 756
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+          "sha256": "b2b73ba42920f9c3174ecdf808ec6e4591b3a9266ada9a05814f386004266d3a",
+          "bytes": 1386
+        }
+      ]
+    },
+    {
+      "name": "principle-type-system-discipline",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamPath": "pstack/skills/principle-type-system-discipline",
+      "localPath": "skills/jstack/principle-type-system-discipline",
+      "contextPaths": [],
+      "localFiles": [
+        {
+          "path": "skills/jstack/principle-type-system-discipline/LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "bytes": 1067
+        },
+        {
+          "path": "skills/jstack/principle-type-system-discipline/SKILL.md",
+          "sha256": "630e43b1b5084c9543bc0b617a9516c2cb16967805356158b2b941aabb82cac9",
+          "bytes": 726
+        }
+      ],
+      "upstreamFiles": [
+        {
+          "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+          "sha256": "2e492cef34bb25a20b9115df61f9ef3a9837e3fda144ffda8079e5f45a1b72e8",
+          "bytes": 3661
+        }
+      ]
+    }
+  ]
+}

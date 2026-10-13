@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "groups": [
+    {
+      "group": "foundation",
+      "taskId": "node:delegated-task:command%3Amcp%3A523b1be7-e0a0-44a0-986c-df4cef02232f%3Adelegate-task%3Afidelity-audit-foundation-20261013-r1",
+      "report": "foundation.md",
+      "status": "completed",
+      "parentVerification": "Confirmed removed per-feature source-reader delegation, mandatory helper triggers, broader Figure-it-out routing and missing generator example files against exact component pins. Full consolidation pending."
+    },
+    {
+      "group": "helpers",
+      "taskId": "node:delegated-task:command%3Amcp%3A523b1be7-e0a0-44a0-986c-df4cef02232f%3Adelegate-task%3Afidelity-audit-helpers-20261013-r1",
+      "report": "helpers.md",
+      "status": "completed",
+      "parentVerification": "Confirmed twelve absent Why references, standalone trail-helper composition rule and missing logger/template against the exact pin; inspected compressed local review criteria. Reconciled shared evidence-contract ownership with the recorded 2026-10-12 decision."
+    },
+    {
+      "group": "principles",
+      "taskId": "node:delegated-task:command%3Amcp%3A523b1be7-e0a0-44a0-986c-df4cef02232f%3Adelegate-task%3Afidelity-audit-principles-20261013-r1",
+      "report": "principles.md",
+      "status": "completed",
+      "parentVerification": "Spot-checked explain-the-number, prove-it-works and type-system-discipline against the exact pin; confirmed removed helper references, evidence procedure and constructive type examples. Full consolidation pending."
+    }
+  ]
+}

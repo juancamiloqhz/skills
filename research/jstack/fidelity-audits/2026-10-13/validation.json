@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-13T17:07:31.294658+00:00",
+  "checks": {
+    "markdownlint": "pass, 5 Markdown files",
+    "inventory": "pass, 36 components, 112 local and 108 exact-pin upstream hashes and sizes",
+    "manifest": "pass, checker load_manifest",
+    "relativeLinks": "pass, audit Markdown and roadmap file targets",
+    "preservation": "pass, skills and upstream manifest unchanged from baseline; saved model configuration hash unchanged"
+  },
+  "limits": "Static documentation and preservation checks only; proposed behavioral correction cases were not run."
+}
