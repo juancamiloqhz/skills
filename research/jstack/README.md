@@ -38,3 +38,5 @@ Standalone [Interrogate](../../skills/jstack/interrogate/SKILL.md) provides conf
 Standalone [Swarm](../../skills/jstack/swarm/SKILL.md) coordinates partitioned coverage and declared races with configured workers. Its [evaluation](evaluations/swarm/README.md) records completed source/history slices, a ranked design tie and scope-discovery limitations.
 
 Standalone [Reflect](../../skills/jstack/reflect/SKILL.md) reviews bounded conversation evidence through judgment, tooling and divergent lenses, then checks recommendations against existing guidance. Its [evaluation](evaluations/reflect/README.md) records three review lenses, separate synthesis, rejected duplicate guidance and preserved assessment boundaries.
+
+Standalone [Figure it out](../../skills/jstack/figure-it-out/SKILL.md) designs custom workflows, returns at planning-only boundaries and verifies authorized execution with a reviewed decision trail. Its [evaluation](evaluations/figure-it-out/README.md) records planning-only return, real CLI checks and a corrected audit-reporting failure.
