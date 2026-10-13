@@ -1,36 +1,88 @@
 ---
 name: architect
-description: Design types, interfaces and module ownership through grounded, competing sketches. Use for architecture design requests or when a workflow needs a design before implementation; continue into implementation only within the requested scope.
+description: "Sketch types, signatures, and module structure before code, then stay in the loop while implementation fills in. Use for /architect, 'architect this', 'design this', or non-trivial work where jumping to code would lock in the wrong shape."
 ---
 
 # Architect
 
-Return a grounded design with caller examples, types, ownership and a synthesis rationale. Direct invocation is task-scoped and leaves juan-mode activation unchanged. Track Ground, Sketch, Return or agree, Implement and Reconsider in the task plan, marking phases outside the requested scope as not applicable.
+Sketch types, function signatures, class shapes, and module boundaries with `not implemented` bodies and pseudocode. Synthesize across multiple model perspectives, then fill in code against the chosen sketch.
 
-Establish the source root and revision, owned artifact location, acceptance checks and return boundary from the user's task or calling playbook. A design-only request returns after synthesis without writing implementation or executable placeholders into the target project. An explicit checkpoint pauses there for sign-off. A task authorizing design and implementation proceeds after synthesis without an extra approval. An ambiguous design request grants design scope only. Commits, PRs, merges and installation follow the original task's separate authority.
+Direct invocation is task-scoped and leaves juan-mode activation unchanged. Establish the source root/revision, owned artifact location, acceptance checks and return boundary from the request. A design-only or ambiguous design request returns a design without implementation or executable placeholders in the target project. An explicit checkpoint pauses for sign-off. Already authorized implementation continues without another approval; commits, PRs, merges and installation follow the original task's authority.
 
-Discover jstack `arena`, `setup-jstack` and the grounding skills needed below through the current skill catalog, or explicitly supplied authoring paths. Read their advertised entrypoints and verify their jstack configuration contract; installations need not be siblings. If a required dependency is missing, return incomplete and name the manual command `npx skills add juancamiloqhz/skills --skill NAME` with the missing name substituted. Do not install or replace it with an unrelated same-name skill.
+Discover **how**, **why**, **arena**, **setup-jstack** and any needed **interrogate** or **principle-*** skill through the current catalog, or use explicitly supplied authoring paths. Read their actual entrypoints and resolve resources relative to their advertised directories, not assumed sibling installations. If a required dependency is unavailable, return incomplete and provide `npx skills add juancamiloqhz/skills --skill NAME` for manual installation. Preserve saved settings. Pass the selected absolute configuration path through every helper; let the first helper's canonical resolver select it when none was supplied.
 
-## Ground
+## Start
 
-Use `how` to explain the touched subsystems, their callers, ownership and failure behavior. When redefining existing ownership or layering, also use `why` to recover the reasons for that shape. Check decisive citations and carry uncertain or contradictory evidence into the design constraints. Skip grounding only for genuinely greenfield work with no surrounding integration. Pass the same selected absolute model configuration through every helper; let the first helper's canonical resolver select it when the caller supplied none. Keep real settings unchanged.
+Open a task plan with one entry per phase before starting. Mark phases outside the authorized scope as not applicable.
 
-## Sketch
+1. Ground
+2. Sketch
+3. Agree
+4. Implement
+5. Scrap
 
-Read [candidate instructions](references/runner-prompt.md), [design red flags](references/design-red-flags.md) and [rationale shape](references/rationale-template.md). Run Arena with the design task, checked grounding, acceptance checks, an owned design-output directory and an explicit design-only return. Select `architect runners` instead of `arena runners`; retain Arena's `arena cross-judge pool`. Arena owns canonical resolution, execution checks, isolated candidate contexts, one selected judge and child lifecycle. At least two configured and viable seats are required; no defaults or extra seats are invented.
+## Phase A: Ground the problem
 
-Require at least two structurally distinct viable designs before accepting synthesis. Different names or parameter choices within one ownership shape do not qualify. Inherited or repeated models are allowed but do not prove diversity. Give each candidate the common requirements and candidate instructions, keeping Arena's private rubric and other candidate artifacts out of its context. Screen every candidate against the red flags before synthesis and pass concrete findings to the comparison. Prefer the design that hides the required complexity behind the smaller usable interface.
+Build a real mental model of every system the new code touches. Run the **how** skill over the relevant subsystems. Naming a file isn't grounding. Produce the architectural explanation `how` prescribes. If the design redefines ownership or layering, also run the **why** skill on the existing shape so the rationale becomes a constraint, not a guess.
 
-If candidates converge on one structure, retain them and explain the unmet exploration requirement. A justified reframing may assign distinct structural hypotheses in fresh tasks while preserving common requirements and the configured panel. Do not invent differences in the report or repeat an unchanged brief indefinitely. Return incomplete if no grounded alternative is viable.
+Skip Phase A only when the work is genuinely greenfield with no surrounding system to integrate.
 
-## Return or agree
+## Phase B: Sketch
 
-Inspect Arena's actual synthesis and verification. Return caller usage first, then the type sketch or module map and the rationale with its base, grafts, rejected alternatives, red-flag findings, checks and unresolved risks. Distinguish source-level design checks from executed behavior. A failed prerequisite or unverified acceptance condition remains incomplete.
+Run the **arena** skill with the design-sketch task and the Phase A grounding artifacts. Pass `references/runner-prompt.md` as each runner's prompt.
 
-At the design-only boundary return this package to the caller, which owns any later implementation. At an explicit checkpoint present it and wait. Otherwise continue only when implementation was already authorized. User feedback on the shape becomes new grounding evidence before revising the sketch. An explicitly requested adversarial review requires the actual `interrogate` dependency; report it unavailable if missing rather than claiming that Arena supplied that procedure.
+Use the configured `architect runners` panel in place of `arena runners`, retaining `arena cross-judge pool`. Arena owns canonical resolution, capability checks, independent candidate contexts, owned outputs, judging and terminal child checks. Preserve configured seats, including inheritance and duplicates; never add default seats or substitute models. At least two viable configured candidates are required by the current Arena contract. Inherited or repeated models do not establish model diversity. Pass an explicit design-only return to Arena; Architect owns any later implementation.
 
-## Implement and reconsider
+Design it twice. Require at least two structurally distinct candidates before synthesis, even when the first looks sufficient. This is the **principle-exhaust-the-design-space** principle skill made concrete. Whole-shape alternatives, not point fixes inside one shape.
 
-For authorized implementation, replace the chosen sketch's placeholders with working behavior and run the task's relevant checks. Track deviations against the design. Decide whether each reflects a missing requirement, a wrong sketch or work beyond scope; update the rationale when the design changes.
+Screen every candidate against [`references/design-red-flags.md`](references/design-red-flags.md) before synthesis. Assume the next contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repo.
 
-Reconsider the architecture when friction forms a pattern across independent sites: repeated workarounds, escape-hatch types, unexpected shared-state locking, or callers learning internal rules. A single edge case is not enough. Re-run `how` over what exists, incorporate the new constraints and return to Sketch with fresh Arena tasks. Prefer removing unnecessary structure before adding it. Preserve unrelated user work and useful prior artifacts; discarding a design is not permission to destructively reset the checkout. If progress needs new information or authority, return the concrete blocker instead of cycling.
+Compare viable candidates on interface depth. Prefer the design that hides more complexity behind a smaller, simpler public surface. A rich interface can keep call chains short by concentrating capability instead of scattering it across layers.
+
+If candidates converge on one structure, preserve them and report that the required exploration is incomplete. A grounded reframing can assign distinct structural hypotheses in fresh tasks using the same configured panel; do not fabricate differences or repeat unchanged briefs indefinitely.
+
+Arena returns one synthesized design package. Its synthesis decision fills the rationale's "Synthesis decision" section.
+
+## Phase C: Agree (opt-in)
+
+For an implementation task, proceed directly with the synthesized design within existing authorization. For a design-only request, return the package here. An ambiguous design request grants design scope only.
+
+Opt in to a checkpoint when the invoker explicitly asks: "/architect with checkpoint," "stop and show me before implementing," or similar. Then surface the synthesized design and pause for sign-off.
+
+When commits are authorized, the synthesis can ship as its own commit either way, as the "scaffold first" mode of the **principle-foundational-thinking** principle skill. Planned and scoped breakage during fill-in is fine, per the **principle-outcome-oriented-execution** principle skill. For adversarial pressure on the design before implementing, run the **interrogate** skill on the synthesized sketch when the task and host permit delegated review. Report an unavailable dependency instead of treating Arena as a substitute.
+
+If the human pushes back on the shape (in a checkpoint or after the fact), treat that as Phase A evidence. Re-ground and re-run Phase B before writing more code.
+
+## Phase D: Implement against the sketch
+
+Replace `not implemented` bodies with code, pseudocode with logic. The synthesized sketch is the contract. Deviations from it are signal to surface, not friction to absorb silently. If a function needs a parameter the sketch didn't anticipate, ask whether the sketch was wrong, the requirement was missed, or the implementation is overreaching.
+
+## Phase E: Scrap when the architecture is wrong
+
+If implementation keeps producing friction the sketch can't absorb, throw the sketch out. Don't bolt fixes onto a wrong design, per the **principle-redesign-from-first-principles** and **principle-fix-root-causes** principle skills.
+
+The signal is a *pattern*, not single instances. Tells:
+
+- The same shape of workaround appearing repeatedly across unrelated code.
+- Multiple unrelated edge cases that all need special-case branches.
+- Types that need escape hatches (`any`, casts, optional fields always set in practice) to compile.
+- The "we need a lock" reflex when the sketch said the state wasn't shared.
+- Callers having to know the abstraction's internal rules to use it.
+- Two or more independent Phase D deviations of the same shape across the implementation.
+
+Use judgment. A few edge cases don't condemn an architecture. Some problems are legitimately complex. Complexity in the data is not complexity in the design.
+
+Preserve unrelated work and useful prior artifacts. Discarding a sketch does not authorize a destructive checkout reset. If progress needs new information or authority, report that blocker instead of cycling.
+
+When you scrap:
+
+1. Re-run the **how** skill over what's been built.
+2. Redesign as if the new constraints had been day-one assumptions, per redesign-from-first-principles.
+3. Subtract before adding, per the **principle-subtract-before-you-add** principle skill. The new sketch should be smaller than the old one before it grows.
+4. Return to Phase B and re-run arena.
+
+## Outputs
+
+The caller's usage is written first and the type sketch derived from it. One file with new types and signatures for small changes. Module map plus type definitions for larger work. The rationale ships alongside, shaped per `references/rationale-template.md`, including the usage sketch and the synthesis decision.
+
+Check decisive source citations and the final design against the task's acceptance criteria. Distinguish static design tracing from executed behavior. A missing prerequisite or failed check remains incomplete.

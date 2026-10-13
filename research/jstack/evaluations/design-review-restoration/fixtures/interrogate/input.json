@@ -1,0 +1,31 @@
+{
+  "request": "Review the attached change for an internal invoice portal. Return a lead verdict using Interrogate. Do a source review first, then reconcile the supplied synthetic reviewer packet. Do not dispatch reviewers, fix code, or claim this is a real panel run.",
+  "intent": "Invoice actions must enforce tenant ownership, payment retry must not charge twice, and signed invoice links must remain valid only through expiry. Existing mobile clients need /v1/invoices during a documented 90-day upgrade window. The route to /v2/invoices is deliberately shared. Negative page indexes and unbounded limits are invalid. Secrets must not appear in logs.",
+  "source_path": "/tmp/jstack-design-review-eval/interrogate/invoices.py",
+  "context": "Every shown handler is directly reachable from the authenticated router with the arguments shown; router supplies actor but performs no validation or ownership checks. DB IDs are globally unique across tenants. gateway.charge always charges anew; queue processing retries on exception. Generated status_table.py contains 1,100 generated enum mapping rows from one schema, zero handwritten control flow, and is kept in sync by a generator check. The JSON handler alone calls validate_payload before accessing body.",
+  "synthetic_reviewers": {
+    "A": {
+      "findings": [
+        "delete_invoice lacks tenant ownership check",
+        "pay has no idempotency handling",
+        "get_invoice ignores actor tenant",
+        "expired_token_is_valid reverses the expiry comparison",
+        "debug_login logs raw token",
+        "page accepts a negative start",
+        "search allows arbitrary unbounded limit",
+        "generated status_table.py exceeds 1,000 lines so must be split",
+        "/v1/invoices must be deleted now",
+        "json_handler crashes for missing invoice_id"
+      ]
+    },
+    "B": {
+      "findings": [
+        "delete_invoice lacks ownership check",
+        "pay repeats the gateway charge on retries",
+        "routing invoice_status through five pass-through class wrappers makes future changes expensive"
+      ],
+      "notes": "No claim about token expiry or get_invoice; silence does not mean checked safe."
+    }
+  },
+  "authority": "Only /tmp/jstack-design-review-eval/interrogate/result.md is writable; do not execute side-effecting code."
+}

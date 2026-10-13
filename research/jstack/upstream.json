@@ -95,7 +95,20 @@
         "pstack/skills/how",
         "pstack/skills/why",
         "pstack/skills/arena",
-        "pstack/skills/setup-pstack"
+        "pstack/skills/setup-pstack",
+        "pstack/skills/interrogate",
+        "pstack/skills/principle-boundary-discipline",
+        "pstack/skills/principle-encode-lessons-in-structure",
+        "pstack/skills/principle-exhaust-the-design-space",
+        "pstack/skills/principle-fix-root-causes",
+        "pstack/skills/principle-foundational-thinking",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-make-operations-idempotent",
+        "pstack/skills/principle-minimize-reader-load",
+        "pstack/skills/principle-outcome-oriented-execution",
+        "pstack/skills/principle-redesign-from-first-principles",
+        "pstack/skills/principle-separate-before-serializing-shared-state",
+        "pstack/skills/principle-subtract-before-you-add"
       ],
       "differences": "research/jstack/adaptations/architect.md"
     },
@@ -126,7 +139,8 @@
       "upstreamPath": "pstack/skills/reflect",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/setup-pstack"
+        "pstack/skills/setup-pstack",
+        "pstack/skills/principle-encode-lessons-in-structure"
       ],
       "differences": "research/jstack/adaptations/reflect.md"
     },

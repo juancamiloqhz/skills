@@ -1,0 +1,111 @@
+{
+  "validate architect": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/architect"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  "validate interrogate": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/interrogate"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  "validate reflect": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/reflect"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  "manifest": "valid",
+  "manifestOnlyChanges": "Architect and Reflect contextPaths; pins and checkpoint unchanged",
+  "protectedPathsUnchanged": [
+    "skills/jstack/setup-jstack",
+    "skills/jstack/arena",
+    "skills/jstack/swarm",
+    "skills/jstack/juan-mode",
+    "skills/jstack/interrogate/references/execution.md",
+    "skills/jstack/reflect/references/execution.md"
+  ],
+  "historicalEvaluationFilesUnchanged": 93,
+  "unchangedConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "skillHashes": {
+    "skills/jstack/architect/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/architect/SKILL.md": "2404781ce7fb0d941f7001d7bcd992bacbf80c6af148ad60e5557730f1d7afb4",
+    "skills/jstack/architect/references/design-red-flags.md": "06ebbe6d2ccc4d09caeed917c8a4146820d2210c983ad2284a083cc6e54bb830",
+    "skills/jstack/architect/references/rationale-template.md": "fdb5b1a107fe75d88712494c9b5787794463ad95e1c0ac8b2c0e3c84ea6691ec",
+    "skills/jstack/architect/references/runner-prompt.md": "14c135af04e5e2aa55b3fc1f6e991f76f815e389b184fed3fb2f3f6469793fe8",
+    "skills/jstack/interrogate/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/interrogate/SKILL.md": "eae4a5c2b30730353e881c66e995f3e4b009c96fa2ec064fa50789c5d057fc65",
+    "skills/jstack/interrogate/references/code-quality-review.md": "ed701db0e31d706dc472711afffc40b8f1afa722c4eed582b24eee2f84711905",
+    "skills/jstack/interrogate/references/execution.md": "ec0b80aa64037d86c9501ebfa49134f1593eb17e5057f9ef4704cd5aae621002",
+    "skills/jstack/interrogate/references/lead-judgment.md": "5534877dffc2d6685588c5b405d2ea29966968c8b48f27128b85e8de760edccc",
+    "skills/jstack/interrogate/references/reviewer-prompt.md": "d8448ccdddfc09697fdcec277e7c617ed0ddc79aeee099bbb3ab59a7e6f682ea",
+    "skills/jstack/interrogate/references/rubric.md": "e2a452cf56c26c9645fc4c9b8edfcd8d887e10d1e4341b4ad2a337413c6caf02",
+    "skills/jstack/reflect/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/reflect/SKILL.md": "f94340274278bcb72d7fb73b779ee9efd9f163756048fcb948394b53b63b47a6",
+    "skills/jstack/reflect/references/divergent-reviewer.md": "341cde30b35e25f87ef5e6360ec129540c2caeb2b800344578b3cbd965ce1db3",
+    "skills/jstack/reflect/references/execution.md": "5bf89e30a1da1e6cb1c1d7c9528ac50b7cc0a263ff6fb72d4b3dff2edc8f3a01",
+    "skills/jstack/reflect/references/judgment-reviewer.md": "51d0e74b3cfb02166916ed3cdbe4991102c7137305a4ce418ef1785217f354ef",
+    "skills/jstack/reflect/references/synthesizer.md": "9e08f4437bc8d85d03f20ea7a789553bdb6295d08151e9fb3f1cf64eb8a702e6",
+    "skills/jstack/reflect/references/tooling-reviewer.md": "333d4b813ba6447ea7e5543f23399758a5745f4339c75c4bd708529d9753d7c0"
+  },
+  "localMarkdownFileTargetsChecked": 66,
+  "markdownlint": {
+    "command": [
+      "npx",
+      "--no-install",
+      "markdownlint-cli2",
+      "skills/jstack/architect/SKILL.md",
+      "skills/jstack/architect/references/rationale-template.md",
+      "skills/jstack/architect/references/design-red-flags.md",
+      "skills/jstack/architect/references/runner-prompt.md",
+      "skills/jstack/interrogate/SKILL.md",
+      "skills/jstack/interrogate/references/rubric.md",
+      "skills/jstack/interrogate/references/lead-judgment.md",
+      "skills/jstack/interrogate/references/execution.md",
+      "skills/jstack/interrogate/references/code-quality-review.md",
+      "skills/jstack/interrogate/references/reviewer-prompt.md",
+      "skills/jstack/reflect/SKILL.md",
+      "skills/jstack/reflect/references/tooling-reviewer.md",
+      "skills/jstack/reflect/references/judgment-reviewer.md",
+      "skills/jstack/reflect/references/synthesizer.md",
+      "skills/jstack/reflect/references/execution.md",
+      "skills/jstack/reflect/references/divergent-reviewer.md",
+      "research/jstack/adaptations/architect.md",
+      "research/jstack/adaptations/interrogate.md",
+      "research/jstack/adaptations/reflect.md",
+      "research/jstack/evaluations/design-review-restoration/README.md",
+      "research/jstack/roadmap.md"
+    ],
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.3 (markdownlint v0.41.1)\nFinding: skills/jstack/architect/SKILL.md skills/jstack/architect/references/rationale-template.md skills/jstack/architect/references/design-red-flags.md skills/jstack/architect/references/runner-prompt.md skills/jstack/interrogate/SKILL.md skills/jstack/interrogate/references/rubric.md skills/jstack/interrogate/references/lead-judgment.md skills/jstack/interrogate/references/execution.md skills/jstack/interrogate/references/code-quality-review.md skills/jstack/interrogate/references/reviewer-prompt.md skills/jstack/reflect/SKILL.md skills/jstack/reflect/references/tooling-reviewer.md skills/jstack/reflect/references/judgment-reviewer.md skills/jstack/reflect/references/synthesizer.md skills/jstack/reflect/references/execution.md skills/jstack/reflect/references/divergent-reviewer.md research/jstack/adaptations/architect.md research/jstack/adaptations/interrogate.md research/jstack/adaptations/reflect.md research/jstack/evaluations/design-review-restoration/README.md research/jstack/roadmap.md\nLinting: 21 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  "whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "sourceComparisonReproduced": true
+}

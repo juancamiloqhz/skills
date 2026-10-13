@@ -1,0 +1,6 @@
+{
+  "fixtures/interrogate/input.json": "0d14866232bef90e0ff5749a14773ba0bf0e9aced96b8f4386abf5d264e1b693",
+  "fixtures/interrogate/invoices.py": "49ce73df1c849811c4d383decc99734bdf1b88b0c97e7263ccd7fb646f26414b",
+  "fixtures/architect/input.json": "b35a7fd51797cae456ddb3276d29a6bdca28e7ec3a9eb5ed62468c231fc88045",
+  "fixtures/reflect/input.json": "04a4b17bf6eda8195bd364cc16ea200584b7d4b619cb4c01cc0f23a68007eb84"
+}
