@@ -40,10 +40,11 @@ skills/jstack/juan-mode/
   playbooks/                 # the 23 supported task procedures
   references/workflows/      # remaining shared design and review procedures
   references/t3-code.md      # execution and lifecycle requirements
-  references/upstream.md     # source pin and intentional differences
   scripts/                   # demonstrated validation or state-management needs
   LICENSE
 ```
+
+Source pins and adaptation records live in `research/jstack/adaptations/` and the upstream manifest. Each installed package retains its license.
 
 ## Activation and routing
 

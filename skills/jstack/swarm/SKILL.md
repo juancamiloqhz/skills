@@ -5,7 +5,7 @@ description: Divide a task into worker slices or race independent approaches, ve
 
 # Swarm
 
-Coordinate workers and return one checked result. Direct invocation is task-scoped and leaves juan-mode activation unchanged. The user's task or calling playbook defines permitted writes and delivery; invoking Swarm alone does not authorize implementation, installation, publication or merge. Read [execution](references/execution.md) before dispatch. See [upstream attribution](references/upstream.md).
+Coordinate workers and return one checked result. Direct invocation is task-scoped and leaves juan-mode activation unchanged. The user's task or calling playbook defines permitted writes and delivery; invoking Swarm alone does not authorize implementation, installation, publication or merge. Read [execution](references/execution.md) before dispatch.
 
 ## Frame
 

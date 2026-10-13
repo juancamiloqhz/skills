@@ -5,7 +5,7 @@ description: Review the current conversation for durable lessons, check existing
 
 # Reflect
 
-Turn evidenced session lessons into concrete proposals, not automatic edits. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A request to reflect authorizes assessment; apply changes or file external backlog items only within the user's actual authorization. Read [execution](references/execution.md) before delegation and [upstream attribution](references/upstream.md) for adaptations.
+Turn evidenced session lessons into concrete proposals, not automatic edits. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A request to reflect authorizes assessment; apply changes or file external backlog items only within the user's actual authorization. Read [execution](references/execution.md) before delegation.
 
 ## Bound the evidence
 

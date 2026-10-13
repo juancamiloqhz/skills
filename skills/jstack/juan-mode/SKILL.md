@@ -81,4 +81,4 @@ When a caller or implemented playbook selects investigation, discover `how` for 
 
 Report the requested outcome, actual verification and any remaining limitation. Distinguish completed, incomplete, blocked, paused and cancelled work. Task completion leaves mode activation intact. PR publication follows the requested delivery; merging, recurring scheduling and installation require their own applicable authorization. Skill installation remains manual.
 
-The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Remaining helper workflows and playbooks arrive in later implementation groups; their upstream names are not dependencies on unrelated global skills.
+Remaining helper workflows and playbooks arrive in later implementation groups; their upstream names are not dependencies on unrelated global skills.

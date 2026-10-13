@@ -5,7 +5,7 @@ description: Design types, interfaces and module ownership through grounded, com
 
 # Architect
 
-Return a grounded design with caller examples, types, ownership and a synthesis rationale. Direct invocation is task-scoped and leaves juan-mode activation unchanged. Track Ground, Sketch, Return or agree, Implement and Reconsider in the task plan, marking phases outside the requested scope as not applicable. See [upstream attribution](references/upstream.md).
+Return a grounded design with caller examples, types, ownership and a synthesis rationale. Direct invocation is task-scoped and leaves juan-mode activation unchanged. Track Ground, Sketch, Return or agree, Implement and Reconsider in the task plan, marking phases outside the requested scope as not applicable.
 
 Establish the source root and revision, owned artifact location, acceptance checks and return boundary from the user's task or calling playbook. A design-only request returns after synthesis without writing implementation or executable placeholders into the target project. An explicit checkpoint pauses there for sign-off. A task authorizing design and implementation proceeds after synthesis without an extra approval. An ambiguous design request grants design scope only. Commits, PRs, merges and installation follow the original task's separate authority.
 

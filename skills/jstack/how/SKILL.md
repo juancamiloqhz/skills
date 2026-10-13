@@ -9,7 +9,7 @@ Run directly for the user's question or as a procedure called by a juan-mode pla
 
 Find `setup-jstack` in the executing provider's skill catalog, or use its explicitly supplied source path during authoring. Resolve all resources relative to that skill's advertised installation; it need not be a sibling of this skill. Read its `references/investigation.md` before executing the procedure. That shared contract defines configuration lookup, capability checks, child lifecycle, evidence and read-only scope. If setup-jstack or that contract is missing, report the dependency and provide `npx skills add juancamiloqhz/skills --skill setup-jstack` for manual installation or update. Keep model configuration unchanged. This skill does not require juan-mode or the companion investigation skill to be installed.
 
-Use `why` for historical motivation when that skill is available; this skill explains runtime mechanics. See [upstream attribution](references/upstream.md) for the source and adaptations.
+Use `why` for historical motivation when that skill is available; this skill explains runtime mechanics.
 
 ## Select the exploration scope
 

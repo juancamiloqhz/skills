@@ -5,7 +5,7 @@ description: Audit and repair an existing project-local verification skill after
 
 # Maintain a verification skill
 
-Keep an existing verification skill usable by another agent. Review every mapped feature against the application and exercise each feature through its public interface. Repair the verification instructions and their owned helpers; leave application changes to a separate task. This adapts pstack's maintenance loop; [upstream attribution](references/upstream.md) records the source and differences.
+Keep an existing verification skill usable by another agent. Review every mapped feature against the application and exercise each feature through its public interface. Repair the verification instructions and their owned helpers; leave application changes to a separate task.
 
 ## Locate and bound the work
 

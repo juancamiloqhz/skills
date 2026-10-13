@@ -5,7 +5,7 @@ description: Compare independently produced candidates for the same task, cross-
 
 # Arena
 
-Produce one synthesized artifact from independently generated candidates. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A calling playbook supplies the artifact, source scope, selected configuration and return boundary. Design-only callers receive a design package; this skill does not advance them into implementation. Read [configuration and execution](references/execution.md) before dispatch. See [upstream attribution](references/upstream.md) for adaptations.
+Produce one synthesized artifact from independently generated candidates. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A calling playbook supplies the artifact, source scope, selected configuration and return boundary. Design-only callers receive a design package; this skill does not advance them into implementation. Read [configuration and execution](references/execution.md) before dispatch.
 
 ## Frame
 

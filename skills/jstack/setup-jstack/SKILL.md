@@ -53,8 +53,6 @@ npx skills add juancamiloqhz/skills --skill create-verification-skill --global
 
 Never execute installation or updates on the user's behalf. Keep the saved model configuration intact whether the offer is declined, the generator is missing, or generation fails. Report the generator's outcome separately, including draft status or untested behavior. Maintenance of existing verification support is a separate task.
 
-## Scope and provenance
+## Scope
 
 Model routing provides configuration validation/resolution; it does not execute the configured workflow roles. The optional verification task is handled by the separately available generator. User and repository instructions govern execution permissions; model routing grants none. No live delegation is needed to configure roles.
-
-This adapts pstack's setup concept and role registry. See [upstream attribution](references/upstream.md) for the pinned source and license. It is not an official Cursor or T3 Code integration.

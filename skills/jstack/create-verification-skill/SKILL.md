@@ -5,7 +5,7 @@ description: Generate and exercise a project-local verification skill for real U
 
 # Create a verification skill
 
-Build instructions another agent can follow without this conversation: start the real application, exercise a user-visible behavior, preserve evidence, and clean up owned state. This is jstack's adaptation of pstack's generator. Read [the output contract](references/output-contract.md) before writing; [upstream attribution](references/upstream.md) records the source and adaptations.
+Build instructions another agent can follow without this conversation: start the real application, exercise a user-visible behavior, preserve evidence, and clean up owned state. Read [the output contract](references/output-contract.md) before writing.
 
 ## Inspect the project
 

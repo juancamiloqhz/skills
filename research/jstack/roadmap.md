@@ -8,6 +8,8 @@ Status as of 2026-10-11. Model setup, verification tooling and upstream maintena
 
 The [2026-10-13 audit](fidelity-audits/2026-10-13/README.md) compared all 36 mapped components with their exact source pins. It found material drift in shipped instructions and missing supporting references. The comparison is complete; corrections and fresh behavioral checks remain pending. Follow its focused correction order before adding the 23 playbooks. Existing bounded evaluation records remain historical evidence, not proof of upstream equivalence.
 
+The first correction moves the 12 foundation/helper attribution records into [research-owned adaptation records](adaptations/README.md), preserving licenses and operational instructions. Principle-body and procedure restorations remain next; this packaging change does not close behavioral findings.
+
 ## Completed: setup-jstack
 
 Model configuration and validation shipped in [PR #2](https://github.com/juancamiloqhz/skills/pull/2), with prose formatting corrected in [PR #3](https://github.com/juancamiloqhz/skills/pull/3). Release checks included six helper tests, skill validation, and Markdown linting. Setup was installed for the four selected providers and invoked successfully in a T3 Code session.

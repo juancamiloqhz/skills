@@ -5,7 +5,7 @@ description: Challenge code changes or a design with configured independent revi
 
 # Interrogate
 
-Produce a checked review verdict without applying fixes. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A caller supplies the review scope, selected configuration and return boundary. Review authority does not authorize implementation, publication, installation or merge. Read [execution](references/execution.md) before dispatch and [upstream attribution](references/upstream.md) for adaptations.
+Produce a checked review verdict without applying fixes. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A caller supplies the review scope, selected configuration and return boundary. Review authority does not authorize implementation, publication, installation or merge. Read [execution](references/execution.md) before dispatch.
 
 ## Establish scope and intent
 

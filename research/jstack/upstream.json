@@ -23,7 +23,7 @@
         "pstack/docs/guide/02-poteto-mode.md",
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/juan-mode/references/upstream.md"
+      "differences": "research/jstack/adaptations/juan-mode.md"
     },
     {
       "name": "setup-jstack",
@@ -35,7 +35,7 @@
         "pstack/skills/how",
         "pstack/skills/why"
       ],
-      "differences": "skills/jstack/setup-jstack/references/upstream.md"
+      "differences": "research/jstack/adaptations/setup-jstack.md"
     },
     {
       "name": "create-verification-skill",
@@ -43,7 +43,7 @@
       "upstreamPath": "pstack/skills/create-verification-skill",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [],
-      "differences": "skills/jstack/create-verification-skill/references/upstream.md"
+      "differences": "research/jstack/adaptations/create-verification-skill.md"
     },
     {
       "name": "maintain-verification-skill",
@@ -51,7 +51,7 @@
       "upstreamPath": "pstack/skills/maintain-verification-skill",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [],
-      "differences": "skills/jstack/maintain-verification-skill/references/upstream.md"
+      "differences": "research/jstack/adaptations/maintain-verification-skill.md"
     },
     {
       "name": "how",
@@ -62,7 +62,7 @@
         "pstack/skills/poteto-mode",
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/how/references/upstream.md"
+      "differences": "research/jstack/adaptations/how.md"
     },
     {
       "name": "why",
@@ -73,7 +73,7 @@
         "pstack/skills/poteto-mode",
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/why/references/upstream.md"
+      "differences": "research/jstack/adaptations/why.md"
     },
     {
       "name": "arena",
@@ -84,7 +84,7 @@
         "pstack/skills/architect",
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/arena/references/upstream.md"
+      "differences": "research/jstack/adaptations/arena.md"
     },
     {
       "name": "architect",
@@ -97,7 +97,7 @@
         "pstack/skills/arena",
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/architect/references/upstream.md"
+      "differences": "research/jstack/adaptations/architect.md"
     },
     {
       "name": "interrogate",
@@ -108,7 +108,7 @@
         "pstack/skills/architect",
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/interrogate/references/upstream.md"
+      "differences": "research/jstack/adaptations/interrogate.md"
     },
     {
       "name": "swarm",
@@ -118,7 +118,7 @@
       "contextPaths": [
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/swarm/references/upstream.md"
+      "differences": "research/jstack/adaptations/swarm.md"
     },
     {
       "name": "reflect",
@@ -128,7 +128,7 @@
       "contextPaths": [
         "pstack/skills/setup-pstack"
       ],
-      "differences": "skills/jstack/reflect/references/upstream.md"
+      "differences": "research/jstack/adaptations/reflect.md"
     },
     {
       "name": "figure-it-out",
@@ -147,7 +147,7 @@
         "pstack/skills/principle-sequence-verifiable-units",
         "pstack/skills/principle-encode-lessons-in-structure"
       ],
-      "differences": "skills/jstack/figure-it-out/references/upstream.md"
+      "differences": "research/jstack/adaptations/figure-it-out.md"
     },
     {
       "name": "principle-attack-the-premise",
