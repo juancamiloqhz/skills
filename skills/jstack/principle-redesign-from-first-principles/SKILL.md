@@ -1,10 +1,17 @@
 ---
 name: principle-redesign-from-first-principles
-description: "Apply redesign from first principles guidance. Use when a new requirement challenges the existing design."
+description: "Apply when integrating a new requirement into an existing design."
 ---
 
-# Redesign from first principles
+# Redesign From First Principles
 
-Read affected code and ask what design would include the requirement from the start. Compare that target with the smallest coherent adaptation, then deliver justified changes incrementally. Update affected types, callers, tests and documentation. This reasoning step does not authorize a whole-system rewrite.
+When integrating a change, don't bolt it onto the existing design. Redesign as if the requirement had been a foundational assumption from the start.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+- Read all affected files and understand the current design
+- Ask: "if we were writing this from scratch with this new requirement, what would we build?"
+- Propagate the change through every reference: types, docs, examples, rationale sections
+- Think about the whole redesign, then deliver it incrementally
+
+This is the method for preserving option value when integrating changes into an existing design.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

@@ -1,10 +1,24 @@
 ---
 name: principle-outcome-oriented-execution
-description: "Apply outcome oriented execution guidance. Use during an explicitly planned rewrite or migration."
+description: "Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code."
 ---
 
-# Outcome oriented execution
+# Outcome-Oriented Execution
 
-Define the target and verification boundaries. Temporary breakage is acceptable only inside a declared, isolated and recoverable unit, not in a live service or shared integration state by assumption. Keep focused checks while migrating and verify the combined result before delivery. A unit may contain intermediate failing states; dependent units wait for its gate.
+Optimize for the intended, verifiable end state rather than preserving smooth intermediate states.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**Why:** Keeping every intermediate step fully stable often creates temporary compatibility code that becomes long-lived debt. Converge on the target architecture and prove correctness at explicit verification boundaries.
+
+**Core rule:**
+
+- Prioritize end-state integrity over transitional stability
+- Intermediate breakage is acceptable when it is planned, scoped, and reversible
+
+**Guardrails:**
+
+- Use this for planned rewrites and migrations with explicit phase boundaries
+- Declare where temporary breakage is acceptable
+- Keep high-signal checks for actively touched areas while migrating
+- Require full static and runtime verification at plan completion
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

@@ -1,10 +1,18 @@
 ---
 name: principle-guard-the-context-window
-description: "Apply guard the context window guidance. Use when large evidence or a long run strains context."
+description: "Apply when context is filling up: large outputs, long files, repeated reads, fan-out planning. Route bulk to subagents; keep summaries in the main thread, not raw payloads."
 ---
 
-# Guard the context window
+# Guard the Context Window
 
-Store bulk output in owned artifacts and read focused sections with source pointers. Preserve decisive evidence, task IDs, configuration path, scope and outstanding work in handoffs. Use bounded delegated analysis when authorized and useful; do not spawn agents solely to hide unread evidence. Compaction and resume require state recovery, not a claim that context is permanently lost or automatically retained.
+The context window is finite. Compaction can recover space but may lose detail; preserve evidence paths and continuation state. Every token should be worth its cost.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**Why:** Context overflow degrades reasoning quality, creates compression artifacts, and halts progress.
+
+**Pattern:**
+
+- **Isolate large payloads.** Route verbose outputs, screenshots, and large documents to subagents. The main context gets summaries, not raw data.
+- **Keep frequently used content inline.** Templates and references used on every invocation belong in the skill file, not in separate files that cost a read each time.
+- **Size phases and cap scope.** Limit files per phase, set turn budgets, account for mechanism costs.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

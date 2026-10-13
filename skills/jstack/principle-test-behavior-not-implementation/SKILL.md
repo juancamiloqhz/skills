@@ -1,10 +1,22 @@
 ---
 name: principle-test-behavior-not-implementation
-description: "Apply test behavior not implementation guidance. Use when adding or reviewing tests."
+description: "Apply when you write, change, or keep a test. Call the code as its users do and assert the exact result they see. Rewrite or delete a test that would pass if every imported function returned undefined."
 ---
 
-# Test behavior not implementation
+# Test Behavior, Not Implementation
 
-Exercise the subject as a consumer does and assert concrete observable results. Avoid tautologies, expected values computed by the subject, or tests that pass when behavior is broken. Use positive controls for absence checks where appropriate. Empty results, no-call assertions, schema relationships and type-level tests are valid when they prove an actual contract; do not delete them by syntax alone.
+A test calls the code as its users do and asserts the exact result they see. Rewrite or delete any test that would still pass if every imported function returned `undefined` or a wrong value.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+These shapes fail that check:
+
+- Loose or no assertion: `toBeDefined`, `toBeTruthy`, `not.toThrow`, `toBeGreaterThan(0)`.
+- Call or absence only: `toHaveBeenCalled`, `not.toHaveBeenCalled`, `toBeUndefined`, `toEqual([])`.
+- Expected value computed by the code under test: `expect(f(a)).toBe(f(a))`.
+- Restated constant, config default, table row, or prompt string.
+- Assertions on data the test built, with no call to the subject.
+
+Fix: call the subject in the test body with one concrete input and assert the literal output or effect. For a mock, assert the payload it received. For an absence, also assert the presence on another input. For a constant, test the mechanism that reads it with one input instead of restating the value.
+
+Keep relation checks across table rows (a key in two tables, a parent that exists) and `*.test-d.ts` type checks.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

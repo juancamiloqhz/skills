@@ -1,10 +1,39 @@
 ---
 name: principle-boundary-discipline
-description: "Apply boundary discipline guidance. Use when wiring validation, adapters or error handling."
+description: "Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions."
 ---
 
-# Boundary discipline
+# Boundary Discipline
 
-Validate and narrow external data at CLI, config, network and storage boundaries. Keep domain logic testable without framework wiring and expose domain concepts rather than transport types. Avoid redundant checks only when invariants are established and maintained; internal mutation, concurrency and authorization can still require checks.
+Place validation, type narrowing, and error handling at system boundaries. Trust internal types where boundary validation and maintained invariants establish their guarantees. Business logic lives in pure functions. The shell is thin and mechanical.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**Why:** Scattered validation is noisy, redundant, and gives a false sense of safety. Keep logic out of framework wiring so it can be tested without the framework.
+
+**The pattern:**
+
+- **At boundaries** (CLI args, config files, external APIs, network protocols): validate, return errors, handle defensively.
+- **Inside the system:** typed data, error propagation, no re-validation. Trust the types.
+- **Across the boundary.** Expose domain concepts, not the boundary's private representation. Keep general-purpose mechanism inside and special-purpose policy at the edge.
+
+**Applications:**
+
+Validation and error handling:
+
+- Validate config at parse time (the boundary), not inside business logic
+- Parse raw data into domain types at the boundary
+- Do not re-export transport, storage, framework, or wire types through the public surface
+- No redundant nil checks deep in call chains if the boundary already validated
+
+Code organization:
+
+- Business logic in pure functions with no framework dependencies
+- Parse functions: pure transforms from raw bytes to typed state
+- Prompt construction: structured state in, string out
+- Scoring and assessment: pure transforms from state to results
+
+**The tests:**
+
+- "Is this data crossing a system boundary right now?" If not, avoid repeating an already established check. A new authorization decision, concurrent mutation, or stale external state can require a fresh check even inside the process.
+- "Can this be a pure function that the shell just calls?" If yes, extract it.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

@@ -1,10 +1,26 @@
 ---
 name: principle-prove-it-works
-description: "Apply prove it works guidance. Use before declaring an outcome complete."
+description: "Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'"
 ---
 
-# Prove it works
+# Prove It Works
 
-Observe the requested artifact through its real interface and inspect decisive evidence. Compilation, timestamps or worker summaries alone do not establish product behavior. Investigate the observation method when a result is suspicious. Keep rerunnable checks where useful and distinguish verified, failed and inconclusive results.
+Verify every task output by checking the real thing directly. Do not infer from proxies, self-reports, or "it compiles."
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**Why:** Unverified work has unknown correctness. Indirect verification (file mtimes, output freshness, agent self-reports, cached screenshots) feels cheaper than direct observation. Acting on a wrong inference costs far more than checking the source.
+
+Check the real thing, not a proxy:
+
+- Check process liveness directly, not indirectly through derived state
+- Read the actual value, not a cached or derived representation
+- When verification fails, suspect the observation method before suspecting the system
+
+## Script the check when you can
+
+The strongest proof is a deterministic script that re-runs the same comparison, not a one-time eyeball. Write the script, run it, and keep its output as an artifact a reviewer can re-run instead of trusting your word.
+
+Keep the artifact visible for the human. Commit it only for large or complex work where the trail has to be auditable later, like a big port or migration (the **show-me-your-work** skill).
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.
+
+Discover referenced skills through the current catalog and read their advertised paths; independently installed packages need not be siblings. Verify jstack identity when available and report ambiguity. If a required helper is unavailable, report the missing dependency and incomplete procedure, continue independent authorized work, and leave installation to the user.

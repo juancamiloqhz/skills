@@ -1,10 +1,24 @@
 ---
 name: principle-exhaust-the-design-space
-description: "Apply exhaust the design space guidance. Use when a consequential novel decision has multiple viable shapes."
+description: "Apply when facing a novel UI interaction or architectural decision with no precedent in the codebase. Build 2-3 competing prototypes and compare side by side before committing."
 ---
 
-# Exhaust the design space
+# Exhaust the Design Space
 
-Compare two or three structurally distinct sketches or prototypes against explicit constraints before committing. Mechanical work with an established target needs no tournament. If delegating to Architect or Arena, use its configured panel contract; this principle does not authorize extra seats or models.
+When a novel interaction or architectural decision has no established precedent, explore several concrete alternatives before implementation. Building the wrong thing costs more than exploring three options.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**The rule.** When the right answer is not obvious, build 2-3 competing prototypes or sketches. Compare them side by side. Only then commit. Design it twice is this rule by another name. A second flavor of the first shape does not count.
+
+**When it applies:**
+
+- Novel UI interactions (no prior art in the codebase)
+- Architectural choices with multiple viable approaches
+- Product design decisions where user experience depends on feel, not logic
+
+**When it doesn't:**
+
+- Mechanical implementation where the pattern is established
+- Bug fixes or refactors with a clear target state
+- Changes where constraints dictate a single viable approach
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

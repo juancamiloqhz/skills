@@ -1,0 +1,22 @@
+
+running 5 tests
+test concurrent_independent_publishers ... ok
+test legacy_boundary_and_state_machine ... ok
+test revoke_after_parsing_then_reauthorize ... ok
+test search_absence_and_presence ... ok
+test total_and_partial_result_operations ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+PASS: invalid_ids rejected
+PASS: invalid_done rejected
+PASS: invalid_head rejected
+PASS: invalid_match rejected
+invalid_head.log:error[E0308]: mismatched types
+invalid_head.log:For more information about this error, try `rustc --explain E0308`.
+invalid_ids.log:error[E0308]: arguments to this function are incorrect
+invalid_ids.log:For more information about this error, try `rustc --explain E0308`.
+error[E0063]: missing field `at` in initializer of `Status`
+For more information about this error, try `rustc --explain E0063`.
+error[E0004]: non-exhaustive patterns: `Status::Done { .. }` not covered
+For more information about this error, try `rustc --explain E0004`.

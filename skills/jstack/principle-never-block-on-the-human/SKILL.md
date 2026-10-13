@@ -1,10 +1,16 @@
 ---
 name: principle-never-block-on-the-human
-description: "Apply never block on the human guidance. Use when a reversible scoped action is already authorized."
+description: "Apply when tempted to ask 'should I do X?' on reversible work."
 ---
 
-# Never block on the human
+# Never Block on the Human
 
-Proceed with concrete reviewable work and explain consequential assumptions. Clarify material product choices, missing authority or explicit checkpoints while continuing independent work. Silence and elapsed time are not approval. Reversibility does not expand task scope or authorize external communications, publication or destructive actions.
+The human supervises asynchronously. Agents must stay unblocked. Within the authorized task, make reasonable decisions, proceed, and let the human course-correct after the fact. Since code changes are reversible and reviewable, a wrong decision usually costs less than blocking.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+- Proceed, then present. Do the work, show the result. Don't ask "should I do X?" Do X, explain why.
+- Make the system self-healing. When you notice an in-scope problem, log it and fix it in the next round. Record unrelated repairs as follow-up work.
+- Irreversible actions require applicable authorization. Merging, installation, recurring schedules and external messages keep their separate authorization boundaries. Honor explicit checkpoints; silence is not approval.
+- Reversible actions (write code, edit notes, split tasks) should proceed without blocking.
+- Product direction comes from the human. Execution should not block.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.
