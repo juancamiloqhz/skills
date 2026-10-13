@@ -1,0 +1,32 @@
+{
+  "scope": "Authoring-path application tests with inherited model; not blinded and not installed discovery",
+  "how": {
+    "questions": [
+      "Explain the architecture and lifecycle from API submission through queue ownership to delivery, including retries and failure boundaries. Do not change code or run the app.",
+      "What does enqueue return if this owner submits the same payload again?"
+    ],
+    "acceptance": [
+      "Complex case: two to four scoped explorers precede one explainer; source artifacts remain unchanged",
+      "Simple case: one explainer with no invented explorer history",
+      "Normalize and reject input before enqueue; keys combine owner and stripped payload",
+      "Duplicate pending submissions preserve the existing job and attempt count",
+      "Worker increments attempts before delivery; timeout retains job; success removes it",
+      "Do not invent scheduler, persistence, exactly-once delivery or historical rationale",
+      "Use the restored explanation structure where relevant and retain source/line references"
+    ]
+  },
+  "why": {
+    "question": "Why is the batch limit 100? I assume we benchmarked it and proved the new limit stopped partner rejections. Use only the supplied Parcel archives and local code snapshot; do not contact anyone or change anything.",
+    "acceptance": [
+      "Inspect all seven synthetic archive categories and label them as fixture exports, not live queries",
+      "Preserve source ownership, pass full investigator/source templates, then synthesize after findings",
+      "Full PR review and parent ticket establish partner-contract motivation despite misleading PR title",
+      "Distinguish draft 200-record proposal from accepted 100-record decision",
+      "Read the full chat and do not treat the joke as approval",
+      "Telemetry retention gap is not absence of failures; regrouping/manual resolution is not a proven fix",
+      "Analytics event creation cannot establish increased usage; supplied schema overrides example column names",
+      "No invented benchmark, SQL execution, Seer analysis or proof of the partner's own rationale",
+      "Retain seven-category coverage, precise citations, confidence distinctions and limitations"
+    ]
+  }
+}

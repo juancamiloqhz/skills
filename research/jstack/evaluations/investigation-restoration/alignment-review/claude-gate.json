@@ -1,0 +1,29 @@
+{
+  "provider": "Claude Code",
+  "version": "2.1.296",
+  "binarySha256": "24972e3bc859fab2b46ed4c1e51f7d6130f06d3bd550811a114640de3370d0de",
+  "extractedGuardSha256": "6ad7d88553f47ef6e94510e588d0a6ea042d4d0a958ab3dd1d5d25207cde1f04",
+  "cases": [
+    {
+      "disableModelInvocation": false,
+      "userTypedThisTurn": false,
+      "result": "passed_this_guard"
+    },
+    {
+      "disableModelInvocation": false,
+      "userTypedThisTurn": true,
+      "result": "passed_this_guard"
+    },
+    {
+      "disableModelInvocation": true,
+      "userTypedThisTurn": false,
+      "result": "disable_model_invocation"
+    },
+    {
+      "disableModelInvocation": true,
+      "userTypedThisTurn": true,
+      "result": "passed_this_guard"
+    }
+  ],
+  "scope": "Executed the installed invocation guard only, with stubs for error wording and an early success sentinel before other permission checks. No provider session, model call, skill installation or complete invocation."
+}

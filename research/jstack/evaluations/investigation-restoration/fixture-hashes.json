@@ -1,0 +1,13 @@
+{
+  "fixtures/how/api.py": "64fc3af615a4217d2c975667f9c55ba125e7ef04e62253fe93b49f1158aa7f3b",
+  "fixtures/how/queueing.py": "8fd3173faefb3340fb269a149b420b50c54a3bce84be852c9d8570392d46676d",
+  "fixtures/how/worker.py": "854edfb3e5f87c0eda6c88185781ffe861cab61d58878bb369edaeff3ad9f4cd",
+  "fixtures/why/analytics.md": "c33ba45c9b947f72ac9d4a862bb0e4db51a13fd57c63dc42ed4cc3064fae131f",
+  "fixtures/why/chat.md": "015ffaca3e7de45e2891711a2a2c2f1c775d99b682882ce1076259165cb3cd36",
+  "fixtures/why/documents.md": "b59180956d64895ffca571914aa4d76f7411832953e31c5200416606fcdec4d7",
+  "fixtures/why/errors.md": "d02c4e7243dac5c39c80644e36998e5a068098d4a954bb28b14cf32277c4f5e1",
+  "fixtures/why/observability.md": "487892f16391b2beade9abb301f2e277aea2ccfbd0686d24ae0550c8ad44225b",
+  "fixtures/why/source-control.md": "3351a37144ec5cf7ea352af5aba6fb4bb3fe25765e828e0a0a96e8850bc3465e",
+  "fixtures/why/tickets.md": "a92feaa25f6067ee27c98f35dbc2e90843fc1ecc5d0372eef5165cb6be660f3a",
+  "fixtures/why/limiter.py": "e6365f50db94de84f44df86989def7d1e2991bfedb13b53c4b4fb1b9190d863a"
+}

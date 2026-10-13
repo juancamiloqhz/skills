@@ -1,0 +1,228 @@
+{
+  "outcome": "complete",
+  "completedAt": "2026-10-13T22:10:41.289507+00:00",
+  "scope": "One-pass authoring-path agent workflow over seven synthetic archive exports. Not blinded, installed discovery, live connector, Git/forge integration, or application execution testing.",
+  "question": "Why is the batch limit 100? I assume we benchmarked it and proved the new limit stopped partner rejections. Use only the supplied Parcel archives and local code snapshot; do not contact anyone or change anything.",
+  "capabilities": {
+    "freshFullCatalogCaptured": true,
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "canRunChildTask": true,
+    "inheritedModelListed": true,
+    "temporaryCatalogRemovedAfterValidation": true
+  },
+  "configuration": {
+    "path": "/home/ubuntu/.config/jstack/models.json",
+    "source": "explicit",
+    "why investigators": [
+      null
+    ],
+    "why synthesizer": [
+      null
+    ],
+    "resolver": "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/scripts/models.py resolve PATH --project-root /tmp/jstack-why-restoration-eval --catalog /tmp/jstack-why-restoration-eval/catalog.json --role ROLE --with-source",
+    "targetsOmitted": true
+  },
+  "dispatchOrder": [
+    {
+      "order": 1,
+      "taskId": "/root/why_restoration_runtime/source_control",
+      "role": "why investigators",
+      "source": "archives/source-control.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/code-archaeology.md",
+      "status": "completed",
+      "output": "findings/source-control.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 2,
+      "taskId": "/root/why_restoration_runtime/tickets",
+      "role": "why investigators",
+      "source": "archives/tickets.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/linear.md",
+      "status": "completed",
+      "output": "findings/tickets.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 3,
+      "taskId": "/root/why_restoration_runtime/documents",
+      "role": "why investigators",
+      "source": "archives/documents.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/notion.md",
+      "status": "completed",
+      "output": "findings/documents.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 4,
+      "taskId": "/root/why_restoration_runtime/chat",
+      "role": "why investigators",
+      "source": "archives/chat.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/slack.md",
+      "status": "completed",
+      "output": "findings/chat.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 5,
+      "taskId": "/root/why_restoration_runtime/observability",
+      "role": "why investigators",
+      "source": "archives/observability.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/datadog.md",
+      "status": "completed",
+      "output": "findings/observability.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 6,
+      "taskId": "/root/why_restoration_runtime/errors",
+      "role": "why investigators",
+      "source": "archives/errors.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/sentry.md",
+      "status": "completed",
+      "output": "findings/errors.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 7,
+      "taskId": "/root/why_restoration_runtime/analytics",
+      "role": "why investigators",
+      "source": "archives/analytics.md",
+      "sourcePlaybook": "/home/ubuntu/Dev/skills/skills/jstack/why/references/sources/databricks.md",
+      "status": "completed",
+      "output": "findings/analytics.md",
+      "brief": "brief.md",
+      "actualReadsAndQueries": "Recorded in raw output What I Searched section."
+    },
+    {
+      "order": 8,
+      "taskId": "/root/why_restoration_runtime/synthesizer",
+      "role": "why synthesizer",
+      "status": "completed",
+      "output": "synthesis.md",
+      "actualReads": "All seven findings, all seven source archives, code anchor and baseline, synthesizer/epistemics and shared contracts; no SQL or live queries."
+    }
+  ],
+  "maxSimultaneousChildren": 2,
+  "writerSequencing": "source_control completed and assigned artifact checked before tickets/documents concurrency; replenished available slot per terminal notification; synthesis after all seven terminal.",
+  "hashesBefore": {
+    "/tmp/jstack-why-restoration-eval/limiter.py": "e6365f50db94de84f44df86989def7d1e2991bfedb13b53c4b4fb1b9190d863a",
+    "/tmp/jstack-why-restoration-eval/archives/analytics.md": "c33ba45c9b947f72ac9d4a862bb0e4db51a13fd57c63dc42ed4cc3064fae131f",
+    "/tmp/jstack-why-restoration-eval/archives/chat.md": "015ffaca3e7de45e2891711a2a2c2f1c775d99b682882ce1076259165cb3cd36",
+    "/tmp/jstack-why-restoration-eval/archives/documents.md": "b59180956d64895ffca571914aa4d76f7411832953e31c5200416606fcdec4d7",
+    "/tmp/jstack-why-restoration-eval/archives/errors.md": "d02c4e7243dac5c39c80644e36998e5a068098d4a954bb28b14cf32277c4f5e1",
+    "/tmp/jstack-why-restoration-eval/archives/observability.md": "487892f16391b2beade9abb301f2e277aea2ccfbd0686d24ae0550c8ad44225b",
+    "/tmp/jstack-why-restoration-eval/archives/source-control.md": "3351a37144ec5cf7ea352af5aba6fb4bb3fe25765e828e0a0a96e8850bc3465e",
+    "/tmp/jstack-why-restoration-eval/archives/tickets.md": "a92feaa25f6067ee27c98f35dbc2e90843fc1ecc5d0372eef5165cb6be660f3a",
+    "/home/ubuntu/.config/jstack/models.json": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "/home/ubuntu/Dev/skills/skills/jstack/why/SKILL.md": "25e04013fef39b7288719f828db26fb80b1c62ad6cf3337c0d42213eddf804c5"
+  },
+  "hashesAfter": {
+    "/tmp/jstack-why-restoration-eval/limiter.py": "e6365f50db94de84f44df86989def7d1e2991bfedb13b53c4b4fb1b9190d863a",
+    "/tmp/jstack-why-restoration-eval/archives/analytics.md": "c33ba45c9b947f72ac9d4a862bb0e4db51a13fd57c63dc42ed4cc3064fae131f",
+    "/tmp/jstack-why-restoration-eval/archives/chat.md": "015ffaca3e7de45e2891711a2a2c2f1c775d99b682882ce1076259165cb3cd36",
+    "/tmp/jstack-why-restoration-eval/archives/documents.md": "b59180956d64895ffca571914aa4d76f7411832953e31c5200416606fcdec4d7",
+    "/tmp/jstack-why-restoration-eval/archives/errors.md": "d02c4e7243dac5c39c80644e36998e5a068098d4a954bb28b14cf32277c4f5e1",
+    "/tmp/jstack-why-restoration-eval/archives/observability.md": "487892f16391b2beade9abb301f2e277aea2ccfbd0686d24ae0550c8ad44225b",
+    "/tmp/jstack-why-restoration-eval/archives/source-control.md": "3351a37144ec5cf7ea352af5aba6fb4bb3fe25765e828e0a0a96e8850bc3465e",
+    "/tmp/jstack-why-restoration-eval/archives/tickets.md": "a92feaa25f6067ee27c98f35dbc2e90843fc1ecc5d0372eef5165cb6be660f3a",
+    "/home/ubuntu/.config/jstack/models.json": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "/home/ubuntu/Dev/skills/skills/jstack/why/SKILL.md": "25e04013fef39b7288719f828db26fb80b1c62ad6cf3337c0d42213eddf804c5"
+  },
+  "checks": [
+    {
+      "name": "seven_archive_categories",
+      "passed": true,
+      "evidence": "All seven full investigator artifacts and coverage lines inspected; archive-only wording explicit."
+    },
+    {
+      "name": "source_ownership",
+      "passed": true,
+      "evidence": "Each investigator reported only owned archive plus shared code/baseline reads; disjoint artifact paths. First completed writer checked before concurrency."
+    },
+    {
+      "name": "templates",
+      "passed": true,
+      "evidence": "Each brief required full investigator, epistemics, assigned source and incident templates plus all three setup contracts; artifact records report these reads."
+    },
+    {
+      "name": "review_and_parent",
+      "passed": true,
+      "evidence": "Full PR review corrects title, denies measurements and identifies partner maximum; parent PAR-1 records untuned partner contract requirement."
+    },
+    {
+      "name": "supersession",
+      "passed": true,
+      "evidence": "Draft ADR-2 at 200 distinguished from accepted ADR-3 at 100."
+    },
+    {
+      "name": "chat_context",
+      "passed": true,
+      "evidence": "Full thread correction prevents casual joke being treated as approval."
+    },
+    {
+      "name": "telemetry",
+      "passed": true,
+      "evidence": "Retention remains a gap; monitor/dashboard are not independent corroboration; wrong-unit threshold not conflated."
+    },
+    {
+      "name": "errors",
+      "passed": true,
+      "evidence": "Manual resolution and fingerprint regrouping retained; unknown sampling, missing deployment causality and symbol mapping retained."
+    },
+    {
+      "name": "analytics",
+      "passed": true,
+      "evidence": "Supplied schema overrides examples; counts reflect event introduction; no SQL, usage increase or causal effect invented."
+    },
+    {
+      "name": "confidence",
+      "passed": true,
+      "evidence": "Archived direct rationale separated from independent contract verification, missing measurements, unknown partner rationale and unknown production effect."
+    },
+    {
+      "name": "lifecycle",
+      "passed": true,
+      "evidence": "Seven terminal source tasks preceded one terminal synthesizer; no nested children. Every result read before synthesis."
+    },
+    {
+      "name": "immutable_inputs",
+      "passed": true,
+      "evidence": "All eight fixture files, selected configuration and Why entrypoint match baseline hashes."
+    }
+  ],
+  "coordinatorReads": [
+    "Why entrypoint and all twelve references",
+    "setup investigation/configuration/T3 contracts",
+    "cases.json",
+    "all seven archives with line numbers and limiter.py",
+    "each of seven raw findings in full",
+    "synthesis.md in full"
+  ],
+  "gitProbe": "git -C /tmp/jstack-why-restoration-eval rev-parse --show-toplevel returned not a git repository; no live forge call attempted under archive-only authorization.",
+  "limitations": [
+    "Tool traces beyond child-reported command inventories are not captured in these files; reported source ownership and prohibited-action absence are supported by scoped briefs, outputs and unchanged hashes, not sandbox enforcement.",
+    "Fresh catalog validates availability and role resolution; this is same-provider inherited runtime testing only.",
+    "Complete coverage means all supplied fixture categories, not complete real historical evidence.",
+    "No independent signed-contract verification, live queries, SQL, Seer, application execution, network contact or real source discovery tested."
+  ],
+  "rawArtifactHashes": {
+    "brief.md": "c224f72cc8044c22d79712c7df4b8c33acaefadb70b13b7e3c3e30ad5f5a2bfe",
+    "findings/analytics.md": "542ade0c530256ec93ee57696c22e77eadf78d4901e23e1754b0b0978eb9d6d1",
+    "findings/chat.md": "c9698e27805bb43792a13e3510a7b35c769ddc43b10550d8a8c1c248d968a5a5",
+    "findings/documents.md": "ad81e1691c6df631f552a724da94eec71d3ba1aaeb39e0fe551a9deac97a0d0d",
+    "findings/errors.md": "affb0ebf0fb0f05e155981e016c6038e40044e37b220cfcf92a4455ee8c9565f",
+    "findings/observability.md": "22bc9ea023102871673ae707e5123580030d220cbd7fdd9915de88bf1b69305e",
+    "findings/source-control.md": "3859db895fd136a9e5c730a917efb50c53a0cc19f875dbe12dc32056e687841e",
+    "findings/tickets.md": "a53e1968bf2b651a4a9224257d4bf16b0cd369e8046f6a56f5a39de4d935fb60",
+    "synthesis.md": "a70f01a31b77d3aba59f3964ad239cb0b29c0cc37e2798cba39547556cf84036"
+  },
+  "rawArtifactPolicy": "Raw agent findings and synthesis preserved unchanged."
+}

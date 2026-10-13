@@ -1,0 +1,37 @@
+{
+  "sourceComparisonReproduced": true,
+  "mappedFiles": 16,
+  "restoredReferences": 14,
+  "licensesMatchPin": true,
+  "packageValidations": [
+    "how",
+    "why"
+  ],
+  "manifestValidation": "passed",
+  "markdownLint": {
+    "files": 27,
+    "issues": 0
+  },
+  "localFileTargetChecks": {
+    "files": 19,
+    "passed": true,
+    "excludedPlaceholder": "url"
+  },
+  "rawOutputsPreserved": true,
+  "fixtureAndConfigHashesUnchanged": true,
+  "skillHashesMatchEvaluation": true,
+  "protectedPathsUnchanged": [
+    "research/jstack/upstream.json",
+    "skills/jstack/setup-jstack",
+    "research/jstack/evaluations/principle-restoration"
+  ],
+  "parentInspected": [
+    "all 16 pinned source diffs",
+    "four How child outputs against three source files",
+    "seven Why findings and synthesis against all seven archives and code snapshot"
+  ],
+  "limits": [
+    "Source ownership supported by briefs, child reports and unchanged hashes, not enforced read isolation.",
+    "Context-aware synthetic authoring exercises; no installed discovery, live connector or cross-provider proof."
+  ]
+}
