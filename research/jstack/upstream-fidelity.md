@@ -10,6 +10,10 @@ Runtime adaptations may replace Cursor-specific tools and metadata with supporte
 
 Optional structural or behavioral redesign requires an explicit user decision before implementation. Existing authorization for a specific adaptation remains valid and needs no repeated confirmation. When uncertain, preserve upstream and report the proposed alternative rather than silently adopting it.
 
+## Provenance location
+
+Keep upstream source paths, revision pins and adaptation rationale in `research/jstack/` and the upstream manifest. Do not add provenance-only sections to operational SKILL.md files. Preserve required license and copyright notices in each distributed package. Discovery must not depend on a prose Attribution section. Existing helper provenance should be assessed during the broader fidelity audit rather than silently changed in an unrelated task.
+
 ## Before delivery
 
 Compare the pinned upstream source with the final jstack files, not only the previous local version. Account for each structural and substantive difference in the skill's attribution/difference record or a linked assessment. Record the upstream path and revision, local location, exact difference, concrete runtime or user requirement, and verification or remaining limitation. Do not treat an old difference as approved merely because it exists.

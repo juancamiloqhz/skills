@@ -1,6 +1,6 @@
 # Principles used by custom planning
 
-Discover the relevant standalone jstack principles through the current skill catalog and read their advertised `SKILL.md`. Verify jstack attribution; do not assume sibling installation paths. Explicit authoring paths are valid in development. These skills require neither juan-mode nor model setup and do not activate a mode.
+Discover the relevant standalone jstack principles through the current skill catalog and read their advertised `SKILL.md`. Use available catalog package/source metadata to distinguish same-name skills; report ambiguous identity rather than guessing. Do not assume sibling installation paths. Explicit authoring paths are valid in development. These skills require neither juan-mode nor model setup and do not activate a mode.
 
 - `principle-prove-it-works`.
 - `principle-never-block-on-the-human`.

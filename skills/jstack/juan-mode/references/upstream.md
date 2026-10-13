@@ -16,7 +16,7 @@ Pstack packages how and why as separate skills. Jstack preserves that boundary t
 
 ## Engineering principles
 
-The [Principles section](../SKILL.md#principles) routes to 24 standalone `principle-*` skills, each with its own entrypoint, pinned upstream attribution and MIT license. This replaces the initial internal-reference packaging by user decision. Juan-mode and Figure-it-out discover relevant skills through the catalog; the principle bodies have one authoritative home and no caller assumes sibling installation.
+The [Principles section](../SKILL.md#principles) routes to 24 standalone `principle-*` skills, each with its own entrypoint and MIT license; provenance and adaptation records are maintained in research. This replaces the initial internal-reference packaging by user decision. Juan-mode and Figure-it-out discover relevant skills through the catalog; the principle bodies have one authoritative home and no caller assumes sibling installation.
 
 The scoped adaptations retain compatibility obligations, authorization, evidence limits and useful containment. They avoid unconditional internal trust, syntax-only test deletion, blind external retries and automatic cleanup. Normal discovery permits direct invocation and workflow callers; no principle requires juan-mode activation, setup-jstack or delegation. Missing selected principles produce manual installation guidance and an explicit limitation.
 

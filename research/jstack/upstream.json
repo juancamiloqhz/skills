@@ -155,7 +155,7 @@
       "upstreamPath": "pstack/skills/principle-attack-the-premise",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-attack-the-premise/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-boundary-discipline",
@@ -163,7 +163,7 @@
       "upstreamPath": "pstack/skills/principle-boundary-discipline",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-boundary-discipline/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-build-the-lever",
@@ -171,7 +171,7 @@
       "upstreamPath": "pstack/skills/principle-build-the-lever",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-build-the-lever/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-encode-lessons-in-structure",
@@ -179,7 +179,7 @@
       "upstreamPath": "pstack/skills/principle-encode-lessons-in-structure",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-encode-lessons-in-structure/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-exhaust-the-design-space",
@@ -187,7 +187,7 @@
       "upstreamPath": "pstack/skills/principle-exhaust-the-design-space",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-exhaust-the-design-space/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-experience-first",
@@ -195,7 +195,7 @@
       "upstreamPath": "pstack/skills/principle-experience-first",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-experience-first/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-explain-the-number",
@@ -203,7 +203,7 @@
       "upstreamPath": "pstack/skills/principle-explain-the-number",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-explain-the-number/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-fix-root-causes",
@@ -211,7 +211,7 @@
       "upstreamPath": "pstack/skills/principle-fix-root-causes",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-fix-root-causes/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-foundational-thinking",
@@ -219,7 +219,7 @@
       "upstreamPath": "pstack/skills/principle-foundational-thinking",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-foundational-thinking/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-guard-the-context-window",
@@ -227,7 +227,7 @@
       "upstreamPath": "pstack/skills/principle-guard-the-context-window",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-guard-the-context-window/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-laziness-protocol",
@@ -235,7 +235,7 @@
       "upstreamPath": "pstack/skills/principle-laziness-protocol",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-laziness-protocol/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-make-operations-idempotent",
@@ -243,7 +243,7 @@
       "upstreamPath": "pstack/skills/principle-make-operations-idempotent",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-make-operations-idempotent/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-migrate-callers-then-delete-legacy-apis",
@@ -251,7 +251,7 @@
       "upstreamPath": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-migrate-callers-then-delete-legacy-apis/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-minimize-reader-load",
@@ -259,7 +259,7 @@
       "upstreamPath": "pstack/skills/principle-minimize-reader-load",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-minimize-reader-load/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-model-the-domain",
@@ -267,7 +267,7 @@
       "upstreamPath": "pstack/skills/principle-model-the-domain",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-model-the-domain/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-never-block-on-the-human",
@@ -275,7 +275,7 @@
       "upstreamPath": "pstack/skills/principle-never-block-on-the-human",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-never-block-on-the-human/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-outcome-oriented-execution",
@@ -283,7 +283,7 @@
       "upstreamPath": "pstack/skills/principle-outcome-oriented-execution",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-outcome-oriented-execution/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-prove-it-works",
@@ -291,7 +291,7 @@
       "upstreamPath": "pstack/skills/principle-prove-it-works",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-prove-it-works/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-redesign-from-first-principles",
@@ -299,7 +299,7 @@
       "upstreamPath": "pstack/skills/principle-redesign-from-first-principles",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-redesign-from-first-principles/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-separate-before-serializing-shared-state",
@@ -307,7 +307,7 @@
       "upstreamPath": "pstack/skills/principle-separate-before-serializing-shared-state",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-separate-before-serializing-shared-state/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-sequence-verifiable-units",
@@ -315,7 +315,7 @@
       "upstreamPath": "pstack/skills/principle-sequence-verifiable-units",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-sequence-verifiable-units/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-subtract-before-you-add",
@@ -323,7 +323,7 @@
       "upstreamPath": "pstack/skills/principle-subtract-before-you-add",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-subtract-before-you-add/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-test-behavior-not-implementation",
@@ -331,7 +331,7 @@
       "upstreamPath": "pstack/skills/principle-test-behavior-not-implementation",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-test-behavior-not-implementation/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     },
     {
       "name": "principle-type-system-discipline",
@@ -339,7 +339,7 @@
       "upstreamPath": "pstack/skills/principle-type-system-discipline",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
-      "differences": "skills/jstack/principle-type-system-discipline/SKILL.md"
+      "differences": "research/jstack/principle-adaptations.md"
     }
   ],
   "decisions": [
