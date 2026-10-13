@@ -10,6 +10,8 @@ The [2026-10-13 audit](fidelity-audits/2026-10-13/README.md) compared all 36 map
 
 The first correction moves the 12 foundation/helper attribution records into [research-owned adaptation records](adaptations/README.md), preserving licenses and operational instructions. Principle-body and procedure restorations remain next; this packaging change does not close behavioral findings.
 
+The next correction restores all 24 principle bodies from their exact pin, with [recorded narrow differences](principle-adaptations.md) and [source comparison plus bounded runtime evidence](evaluations/principle-restoration/README.md). Missing helper dependencies and provider invocation policy remain open; the helper procedure restorations follow this work.
+
 ## Completed: setup-jstack
 
 Model configuration and validation shipped in [PR #2](https://github.com/juancamiloqhz/skills/pull/2), with prose formatting corrected in [PR #3](https://github.com/juancamiloqhz/skills/pull/3). Release checks included six helper tests, skill validation, and Markdown linting. Setup was installed for the four selected providers and invoked successfully in a T3 Code session.

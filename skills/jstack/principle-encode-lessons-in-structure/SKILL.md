@@ -1,10 +1,31 @@
 ---
 name: principle-encode-lessons-in-structure
-description: "Apply encode lessons in structure guidance. Use when a mechanical correction recurs."
+description: "Apply when you catch yourself writing the same instruction a second time, or notice a recurring correction. Encode the rule as a lint, metadata flag, runtime check, or script instead of more text."
 ---
 
-# Encode lessons in structure
+# Encode Lessons in Structure
 
-When several mechanisms can prevent the failure, prefer the strongest suitable enforcement within scope: an unrepresentable state, then CI lint or a banned API, then a canonical helper, then a runtime check. External data still requires runtime validation where static guarantees cannot apply. Verify the mechanism catches the failure, then remove redundant reminders while keeping useful explanations. Judgment-dependent guidance can remain prose with a concrete example. Apply within scope or record a concrete follow-up; no automatic issue filing or private-memory write.
+Encode recurring fixes in mechanisms (tools, code, metadata, automation) instead of textual instructions. Every error, human correction, and unexpected outcome is a learning signal. Capture it, route it, and close the loop.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+Textual instructions are easy to miss. Structural mechanisms enforce the rule without cooperation.
+
+**Pattern:**
+When you catch yourself writing the same instruction a second time:
+
+1. Ask: can this be a lint rule, a metadata flag, a runtime check, or a script?
+2. If yes, encode it. Delete the instruction
+3. If no (requires judgment), make the instruction more prominent and add an example of the failure mode
+
+**Pick the strongest mechanism.** When more than one mechanism would work, choose the strongest the situation allows (an unrepresentable state that cannot compile, then a lint or banned API that fails CI, then a canonical helper, then a runtime check), because agents copy whatever the surrounding code already does and a weaker guard becomes the next template.
+
+**Corollary:** If the fix is structural, only use the structural fix. The instruction is the symptom.
+
+When the human intervenes or tests fail, decide if it's a one-off or a pattern. Route it: one-off -> brain note, recurring fix -> skill or lint rule, systemic issue -> principle. Close the loop: don't just record; apply now or create a concrete todo.
+
+**Anti-patterns:**
+
+- Acknowledging without recording ("I'll keep that in mind" does not persist)
+- Recording without routing (a brain note about a lint rule that should exist is wasted unless the lint rule gets implemented)
+- Fixing without generalizing (fixing one instance while leaving the recurring pattern intact)
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.

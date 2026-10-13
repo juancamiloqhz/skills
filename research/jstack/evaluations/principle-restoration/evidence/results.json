@@ -1,0 +1,52 @@
+[
+  {
+    "test": "heartbeat live process direct poll",
+    "running": true
+  },
+  {
+    "test": "fresh heartbeat survives stopped process",
+    "heartbeatAgeSeconds": 0.0073,
+    "returncode": -15,
+    "running": false
+  },
+  {
+    "test": "rerunnable supplied-scenario census",
+    "counts": {
+      "A": 100,
+      "B": 100
+    },
+    "conclusion": "Observed count skew absent; causal effect not established."
+  },
+  {
+    "test": "export crash and two retries",
+    "crashStage": "before_write",
+    "crashExitCode": 75,
+    "completeOutputPreserved": true,
+    "retryCount": 2,
+    "passed": true
+  },
+  {
+    "test": "export crash and two retries",
+    "crashStage": "partial_write",
+    "crashExitCode": 75,
+    "completeOutputPreserved": true,
+    "retryCount": 2,
+    "passed": true
+  },
+  {
+    "test": "export crash and two retries",
+    "crashStage": "before_publish",
+    "crashExitCode": 75,
+    "completeOutputPreserved": true,
+    "retryCount": 2,
+    "passed": true
+  },
+  {
+    "test": "export crash and two retries",
+    "crashStage": "after_publish",
+    "crashExitCode": 75,
+    "completeOutputPreserved": true,
+    "retryCount": 2,
+    "passed": true
+  }
+]

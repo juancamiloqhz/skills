@@ -1,0 +1,22 @@
+error[E0308]: arguments to this function are incorrect
+  --> invalid_ids.rs:3:13
+   |
+ 3 | fn main() { Job::new(OrderId::parse("ord_1").unwrap(),UserId::parse("usr_1").unwrap(),"bad".into()); }
+   |             ^^^^^^^^ -------------------------------- ------------------------------- expected `tracker::OrderId`, found `tracker::UserId`
+   |                      |
+   |                      expected `tracker::UserId`, found `tracker::OrderId`
+   |
+note: associated function defined here
+  --> tracker.rs:11:9
+   |
+11 |  pub fn new(owner: UserId, order: OrderId, title: String) -> Self { Self { owner, order, title, status: Status::Open, result: 0 } }
+   |         ^^^
+help: swap these arguments
+   |
+ 3 - fn main() { Job::new(OrderId::parse("ord_1").unwrap(),UserId::parse("usr_1").unwrap(),"bad".into()); }
+ 3 + fn main() { Job::new(UserId::parse("usr_1").unwrap(), OrderId::parse("ord_1").unwrap(), "bad".into()); }
+   |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0308`.

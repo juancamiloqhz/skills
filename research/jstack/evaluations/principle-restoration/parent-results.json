@@ -1,0 +1,88 @@
+{
+  "evaluators": [
+    "/root/principle_evidence_eval",
+    "/root/principle_design_eval"
+  ],
+  "evaluationType": "Independent inherited-context execution; not blinded",
+  "parentEvidence": [
+    {
+      "test": "heartbeat live process direct poll",
+      "running": true
+    },
+    {
+      "test": "fresh heartbeat survives stopped process",
+      "heartbeatAgeSeconds": 0.0066,
+      "returncode": -15,
+      "running": false
+    },
+    {
+      "test": "rerunnable supplied-scenario census",
+      "counts": {
+        "A": 100,
+        "B": 100
+      },
+      "conclusion": "Observed count skew absent; causal effect not established."
+    },
+    {
+      "test": "export crash and two retries",
+      "crashStage": "before_write",
+      "crashExitCode": 75,
+      "completeOutputPreserved": true,
+      "retryCount": 2,
+      "passed": true
+    },
+    {
+      "test": "export crash and two retries",
+      "crashStage": "partial_write",
+      "crashExitCode": 75,
+      "completeOutputPreserved": true,
+      "retryCount": 2,
+      "passed": true
+    },
+    {
+      "test": "export crash and two retries",
+      "crashStage": "before_publish",
+      "crashExitCode": 75,
+      "completeOutputPreserved": true,
+      "retryCount": 2,
+      "passed": true
+    },
+    {
+      "test": "export crash and two retries",
+      "crashStage": "after_publish",
+      "crashExitCode": 75,
+      "completeOutputPreserved": true,
+      "retryCount": 2,
+      "passed": true
+    }
+  ],
+  "parentDesignOutput": "\nrunning 5 tests\ntest concurrent_independent_publishers ... ok\ntest legacy_boundary_and_state_machine ... ok\ntest revoke_after_parsing_then_reauthorize ... ok\ntest search_absence_and_presence ... ok\ntest total_and_partial_result_operations ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\nerror[E0308]: arguments to this function are incorrect\nFor more information about this error, try `rustc --explain E0308`.\nPASS: invalid_ids rejected with E0308\nerror[E0063]: missing field `at` in initializer of `Status`\nFor more information about this error, try `rustc --explain E0063`.\nPASS: invalid_done rejected with E0063\nerror[E0308]: mismatched types\nFor more information about this error, try `rustc --explain E0308`.\nPASS: invalid_head rejected with E0308\nerror[E0004]: non-exhaustive patterns: `Status::Done { .. }` not covered\nFor more information about this error, try `rustc --explain E0004`.\nPASS: invalid_match rejected with E0004\n",
+  "skillHashes": {
+    "skills/jstack/principle-attack-the-premise/SKILL.md": "0c53a3be8bb300663309f89633cdb5f5b31c09522ae8db6a8d837e8ae9465582",
+    "skills/jstack/principle-boundary-discipline/SKILL.md": "868dcb3d9164b0ca7cad31f2087f4d880219a2968e355639c41ea9ed4ed23fea",
+    "skills/jstack/principle-build-the-lever/SKILL.md": "3eb7111418eee1e9fe832ee5eda41a6a1bd54d8875fb6dd59057c11f20f382a6",
+    "skills/jstack/principle-encode-lessons-in-structure/SKILL.md": "f37337fd45a374a85a45b4b3218f54f0a29377d142bdb5ee633fba1f108240c3",
+    "skills/jstack/principle-exhaust-the-design-space/SKILL.md": "1920628e1dd495b7acc05aea044a6d21196d8f6cfee82888c31d7363e2a6fee5",
+    "skills/jstack/principle-experience-first/SKILL.md": "9ee8c05282de7d53524c9245fb2d34398adad2951eac2e6c02b8e299d80a2b57",
+    "skills/jstack/principle-explain-the-number/SKILL.md": "822be1d3da9d50df5c859ebc9ca32ee74deeac0203c2ec64a0d9ebcfd330fccf",
+    "skills/jstack/principle-fix-root-causes/SKILL.md": "f996689fcc2a7dae36dbcd6abef93e74232ce73e89522aea5ef2d8182cd9daa9",
+    "skills/jstack/principle-foundational-thinking/SKILL.md": "f57e579f9860481fcbe0f21dc3dbdb50278c56bcdc0d621016a7c4ddc167b785",
+    "skills/jstack/principle-guard-the-context-window/SKILL.md": "a545b666c6ef17e69c6054a91c393beab872da24273db0504fef3fa7a47f8215",
+    "skills/jstack/principle-laziness-protocol/SKILL.md": "f6726f2d836905fd0d0bff478807ade1cfaa54a887fd5f12eaa9b82cfd4b7b1e",
+    "skills/jstack/principle-make-operations-idempotent/SKILL.md": "999c9bfbd26f026d3861e2f55a3e83b398cd619e0b22777cbc44ea3b26e06ad1",
+    "skills/jstack/principle-migrate-callers-then-delete-legacy-apis/SKILL.md": "4995efba98a7fa1db3c81bbee1268a3ce9f43b0a6c921552b4818e027f244336",
+    "skills/jstack/principle-minimize-reader-load/SKILL.md": "55de08fcd5d631e87391d1765eeea6825471eb4fa9a1a1be50c19034e157a1a6",
+    "skills/jstack/principle-model-the-domain/SKILL.md": "a4fdfdc40fba6bed744ef9d23180cb0f9c764a8976436cd90e9a3f75a9724dd0",
+    "skills/jstack/principle-never-block-on-the-human/SKILL.md": "0dabe8af5881d2a1d819ea03b69930134f91fe5cf165c245d54b162ea6e64ac6",
+    "skills/jstack/principle-outcome-oriented-execution/SKILL.md": "4d4c8e0904d71a2fc962ce28082f76a0d416d2eb365b1d0f228a200a1e2c476f",
+    "skills/jstack/principle-prove-it-works/SKILL.md": "76d2d6b4e095f316214c5e8d0e092161dbabd7f8c3d455c0131be42da4135962",
+    "skills/jstack/principle-redesign-from-first-principles/SKILL.md": "e16eb2309c81b91dcebab71222daef922a178315bfc51f5ad181524e5732545e",
+    "skills/jstack/principle-separate-before-serializing-shared-state/SKILL.md": "67435a9a535bdbd865a98e047487b26ccf9e5f4ddb14e6fefbac593d2710dab5",
+    "skills/jstack/principle-sequence-verifiable-units/SKILL.md": "5e33269f388e817710dda6e9bf4a5f6a3d912e58d3fd849bfbb0e548e0153eb5",
+    "skills/jstack/principle-subtract-before-you-add/SKILL.md": "4a93bd110b95c867fd68a91bef76d4fdb4cbb0120d9024137e59e3e2fb6fc987",
+    "skills/jstack/principle-test-behavior-not-implementation/SKILL.md": "788b6a641bd769482649c493e2a5e093cd5bb1c521dadf8f624b0ba234b5edb3",
+    "skills/jstack/principle-type-system-discipline/SKILL.md": "b164c82b2ff1ffc7542d9b56c4006c10f4f1362e312c6bd097ba18e189a3704f"
+  },
+  "preservedModelConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "limits": "See README; nine selected principles exercised, all 24 source-compared. Missing helpers and invocation policy remain open."
+}

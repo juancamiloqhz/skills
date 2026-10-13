@@ -1,10 +1,28 @@
 ---
 name: principle-attack-the-premise
-description: "Apply attack the premise guidance. Use after multiple fixes sharing an assumption fail the same gate."
+description: "Apply when two or more fixes that share one premise have failed the same gate. Take a census of which actors hold the imbalance before the next fix, then question the premise instead of writing another fix that assumes it."
 ---
 
-# Attack the premise
+# Attack the Premise
 
-Write the shared premise before trying another similar fix. For an actor imbalance, capture a rerunnable per-actor census and inspect persistent skew and role assignment. Test whether changing the assignment removes the asymmetry instead of adding compensating work. Even counts weaken that particular hypothesis but do not prove the premise irrelevant. For other failure classes, choose an analogous discriminating experiment rather than forcing an actor census.
+When two or more fixes that share one premise have failed the same gate, suspect the premise, not the fixes.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**Why:** Each failure under a shared premise is evidence about the premise.
+
+**Pattern:**
+
+- **Write the premise down.** The premise is the one sentence that every failed fix assumed.
+- **Take a census before the next fix.** Count the imbalance per actor. The census shows which actors hold the imbalance, not how large it is. Write the census as a rerunnable script per **Build the Lever** (`principle-build-the-lever`).
+- **Read the skew.** If the same few actors hold most of the imbalance on every run, something assigns them that role. Find what assigns the role. That assignment is the next "why" per **Fix Root Causes** (`principle-fix-root-causes`).
+- **Remove the asymmetry instead of compensating for it**, per the **Laziness Protocol** (`principle-laziness-protocol`). Rotate the role between actors, randomize the assignment, or move the role, so that no actor holds it on every run. A return path, a shared pool, a batched hand-off, or a periodic rebalance leaves the assignment in place and adds work on every run.
+
+**Stop:**
+
+- Do not start the next fix before the premise is written down and the census exists.
+- If the census is even across actors, the predicted actor skew is absent. Keep the census as evidence and test another explanation; even counts alone do not establish that the premise has no causal effect.
+
+This principle is distinct from **Redesign from First Principles** (`principle-redesign-from-first-principles`), which rebuilds a design around a new requirement. It questions a fact the current design assumes.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.
+
+Discover referenced skills through the current catalog and read their advertised paths; independently installed packages need not be siblings. Verify jstack identity when available and report ambiguity. If a required helper is unavailable, report the missing dependency and incomplete procedure, continue independent authorized work, and leave installation to the user.

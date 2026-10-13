@@ -154,7 +154,12 @@
       "localPath": "skills/jstack/principle-attack-the-premise",
       "upstreamPath": "pstack/skills/principle-attack-the-premise",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/principle-build-the-lever",
+        "pstack/skills/principle-fix-root-causes",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-redesign-from-first-principles"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -170,7 +175,11 @@
       "localPath": "skills/jstack/principle-build-the-lever",
       "upstreamPath": "pstack/skills/principle-build-the-lever",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/principle-encode-lessons-in-structure",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-prove-it-works"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -202,7 +211,10 @@
       "localPath": "skills/jstack/principle-explain-the-number",
       "upstreamPath": "pstack/skills/principle-explain-the-number",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/benchmark-checklist",
+        "pstack/skills/principle-prove-it-works"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -258,7 +270,9 @@
       "localPath": "skills/jstack/principle-minimize-reader-load",
       "upstreamPath": "pstack/skills/principle-minimize-reader-load",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/principle-guard-the-context-window"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -290,7 +304,9 @@
       "localPath": "skills/jstack/principle-prove-it-works",
       "upstreamPath": "pstack/skills/principle-prove-it-works",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/show-me-your-work"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -314,7 +330,10 @@
       "localPath": "skills/jstack/principle-sequence-verifiable-units",
       "upstreamPath": "pstack/skills/principle-sequence-verifiable-units",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/principle-build-the-lever",
+        "pstack/skills/principle-prove-it-works"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -338,7 +357,11 @@
       "localPath": "skills/jstack/principle-type-system-discipline",
       "upstreamPath": "pstack/skills/principle-type-system-discipline",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/principle-boundary-discipline",
+        "pstack/skills/principle-encode-lessons-in-structure",
+        "pstack/skills/typescript-best-practices"
+      ],
       "differences": "research/jstack/principle-adaptations.md"
     }
   ],

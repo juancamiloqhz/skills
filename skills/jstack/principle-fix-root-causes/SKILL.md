@@ -1,10 +1,27 @@
 ---
 name: principle-fix-root-causes
-description: "Apply fix root causes guidance. Use when diagnosing a failure."
+description: "Apply when debugging. Trace each symptom to its root cause and fix it there; reproduce first, ask why until you reach it, resist nil-check guards that silence crashes."
 ---
 
-# Fix root causes
+# Fix Root Causes
 
-Reproduce and trace evidence through the causal chain; instrument unknowns rather than guessing. Investigate persistent state for restart-only failures using safe copies or reversible experiments. Inspect related instances within scope. A containment guard can be justified while the cause remains unresolved; label that limitation and preserve useful rationale rather than treating every guard or long comment as wrong.
+When debugging, do not fix symptoms. Trace every problem to its root cause and fix it there.
 
-Apply within the requested scope and existing authorization. Direct invocation does not activate juan-mode and requires no model configuration or delegation.
+**Why:** Symptom fixes accumulate. Each workaround makes the system harder to reason about, and the real bug remains. Root-cause fixes are slower upfront but reduce total debugging time.
+
+**Pattern:**
+
+- Reproduce first
+- Ask "why" until you hit the root cause
+- Do not add guards (adding a nil check to silence a crash is a symptom fix)
+- If a workaround needs a paragraph-long comment to justify it, the code is wrong (fix the code, not the comment)
+- Check for the pattern, not just the instance (grep for the same pattern, fix all instances)
+- When stuck, instrument. Don't guess (add logging, read the actual error)
+
+<!-- markdownlint-disable MD036 -->
+**Restart bugs: suspect state before code**
+<!-- markdownlint-enable MD036 -->
+
+When something "fails after restart," suspect stale persistent state first: config files, caches, lock files, serialized state. If clearing a state file restores behavior, prioritize state validation as the fix.
+
+Apply within the requested scope and existing authorization, preserving unrelated work and repository constraints. Direct invocation does not activate juan-mode or change model configuration.
