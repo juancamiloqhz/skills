@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "kind": "live inherited-agent application of restored How to static synthetic source",
+  "sourceRoot": "/tmp/jstack-how-restoration-eval",
+  "sourceRevision": null,
+  "sourceSha256": {
+    "api.py": "64fc3af615a4217d2c975667f9c55ba125e7ef04e62253fe93b49f1158aa7f3b",
+    "queueing.py": "8fd3173faefb3340fb269a149b420b50c54a3bce84be852c9d8570392d46676d",
+    "worker.py": "854edfb3e5f87c0eda6c88185781ffe861cab61d58878bb369edaeff3ad9f4cd"
+  },
+  "entrypoint": "/home/ubuntu/Dev/skills/skills/jstack/how/SKILL.md",
+  "entrypointSha256": "da05917d2fd678d9156aadda2c3c4069acff44a5f100393daade4eb59b2bafd4",
+  "config": "/home/ubuntu/.config/jstack/models.json",
+  "configSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "capability": {
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "canRunChildTask": true,
+    "catalogCaptured": true,
+    "temporaryCatalogRemoved": true,
+    "roles": {
+      "how explorer": [
+        null
+      ],
+      "how explainer": [
+        null
+      ]
+    },
+    "dispatch": "native collaboration.spawn_agent with no model or effort override"
+  },
+  "cases": [
+    {
+      "id": "complex",
+      "question": "Explain the architecture and lifecycle from API submission through queue ownership to delivery, including retries and failure boundaries. Do not change code or run the app.",
+      "phaseOrder": [
+        "assess complex",
+        "api explorer terminal and artifact checked",
+        "delivery explorer terminal and artifact checked",
+        "resolve explainer",
+        "complex explainer terminal and artifact checked",
+        "check decisive citations"
+      ],
+      "explorers": 2,
+      "explainers": 1,
+      "outputs": [
+        "api-explorer/findings.md",
+        "delivery-explorer/findings.md",
+        "complex-explainer/output.md"
+      ],
+      "checks": {
+        "sourceCitations": true,
+        "ownershipKey": true,
+        "normalization": true,
+        "pendingDeduplication": true,
+        "attemptsRetained": true,
+        "timeoutRetention": true,
+        "nonTimeoutPropagation": true,
+        "successDeletion": true,
+        "missingSchedulerPreserved": true,
+        "noExactlyOnceClaim": true,
+        "staticRuntimeDistinction": true
+      }
+    },
+    {
+      "id": "simple",
+      "question": "What does enqueue return if this owner submits the same payload again?",
+      "phaseOrder": [
+        "assess simple",
+        "simple explainer gathers source directly",
+        "terminal and artifact checked",
+        "check return and mutation citations"
+      ],
+      "explorers": 0,
+      "explainers": 1,
+      "outputs": [
+        "simple-explainer/output.md"
+      ],
+      "checks": {
+        "returnsTupleKey": true,
+        "existingEntryUnchanged": true,
+        "recreationAfterRemoval": true,
+        "noExplorerClaim": true,
+        "staticRuntimeDistinction": true
+      }
+    }
+  ],
+  "children": [
+    {
+      "id": "/root/how_restoration_runtime/api_explorer",
+      "status": "completed",
+      "nestedChildren": 0
+    },
+    {
+      "id": "/root/how_restoration_runtime/delivery_explorer",
+      "status": "completed",
+      "nestedChildren": 0
+    },
+    {
+      "id": "/root/how_restoration_runtime/complex_explainer",
+      "status": "completed",
+      "nestedChildren": 0
+    },
+    {
+      "id": "/root/how_restoration_runtime/simple_explainer",
+      "status": "completed",
+      "nestedChildren": 0
+    }
+  ],
+  "maxSimultaneousChildren": 1,
+  "allOwnedChildrenTerminal": true,
+  "sourceAndConfigHashesUnchanged": true,
+  "limitations": [
+    "Synthetic three-file fixture, not production-scale investigation.",
+    "No application or tests executed; behavioral results are source-derived.",
+    "Explorers ran serially due initial assigned-path verification and available capacity; parallel explorer execution was not exercised.",
+    "Same-provider inherited children only; no concrete-target or cross-provider execution tested.",
+    "Source scope supplied, no repository/history search needed.",
+    "First CLI attempt repeated --role and returned only the final role. Independent explorer resolution followed; parent had independently validated both roles before the initial explorer dispatch.",
+    "Children received coordinator-validated configuration context; they did not independently resolve it because they made no further dispatch.",
+    "Initial capabilities tool response was printed in full and truncated in tool output; complete payload remained stored and was written unwrapped for resolver validation."
+  ]
+}

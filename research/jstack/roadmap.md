@@ -8,9 +8,11 @@ Status as of 2026-10-11. Model setup, verification tooling and upstream maintena
 
 The [2026-10-13 audit](fidelity-audits/2026-10-13/README.md) compared all 36 mapped components with their exact source pins. It found material drift in shipped instructions and missing supporting references. The comparison is complete; corrections and fresh behavioral checks remain pending. Follow its focused correction order before adding the 23 playbooks. Existing bounded evaluation records remain historical evidence, not proof of upstream equivalence.
 
-The first correction moves the 12 foundation/helper attribution records into [research-owned adaptation records](adaptations/README.md), preserving licenses and operational instructions. Principle-body and procedure restorations remain next; this packaging change does not close behavioral findings.
+The first correction moved the 12 foundation/helper attribution records into [research-owned adaptation records](adaptations/README.md), preserving licenses and operational instructions. That packaging change did not close behavioral findings.
 
-The next correction restores all 24 principle bodies from their exact pin, with [recorded narrow differences](principle-adaptations.md) and [source comparison plus bounded runtime evidence](evaluations/principle-restoration/README.md). Missing helper dependencies and provider invocation policy remain open; the helper procedure restorations follow this work.
+PR #29 restored all 24 principle bodies from their exact pin, with [recorded narrow differences](principle-adaptations.md) and [source comparison plus bounded runtime evidence](evaluations/principle-restoration/README.md). Missing helper dependencies and provider invocation policy remain open.
+
+The next correction restores How and Why's entrypoint organization, both How prompts and all 12 Why references. [Restoration evidence](evaluations/investigation-restoration/README.md) separates exact-source comparison from inherited-agent fixture exercises. Configured delegation and the approved shared investigation contract remain in place. Architect, Interrogate and Reflect are the next correction group in the audit order; this work does not complete the broader fidelity backlog.
 
 ## Completed: setup-jstack
 
