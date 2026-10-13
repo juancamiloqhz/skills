@@ -38,5 +38,3 @@ Check delegated artifacts before accepting them. A worker's self-report is not i
 Check the combined product against the original predicate through its real interface, including integration behavior and recovery where required. Audit the decision trail against the bounded run evidence and follow its review procedure. A missing check, unavailable reviewer or inconclusive result stays visible; do not report full verification.
 
 Return the designed workflow, rigor and reason, decision-trail path, verified outcomes, failed or unverified checks, and remaining work. Report review limitations and flags. PRs, merges, installation, external messages and recurring schedules follow their own applicable task authorization. This skill supplies no automatic authority for them.
-
-The [upstream record](references/upstream.md) identifies the source and intentional differences.

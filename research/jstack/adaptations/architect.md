@@ -1,6 +1,8 @@
 # Upstream attribution
 
-Adapted from [pstack architect](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/architect/SKILL.md) and its three references at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../LICENSE) retains Lauren Tan's attribution.
+Relocated from the skill package on 2026-10-13. This record describes the existing adaptation; it does not approve every difference. The [fidelity audit](../fidelity-audits/2026-10-13/README.md) classifies remaining corrections.
+
+Adapted from [pstack architect](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/architect/SKILL.md) and its three references at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/architect/LICENSE) retains Lauren Tan's attribution.
 
 Jstack preserves grounding with how and conditional why, usage-first sketches, structurally distinct alternatives through Arena, design screening, optional checkpoints and reconsideration when implementation reveals repeated architectural friction. Architect remains independently invocable with normal skill discovery for future callers.
 

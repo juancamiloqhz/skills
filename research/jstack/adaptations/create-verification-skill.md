@@ -1,10 +1,12 @@
 # Upstream attribution
 
+Relocated from the skill package on 2026-10-13. This record describes the existing adaptation; it does not approve every difference. The [fidelity audit](../fidelity-audits/2026-10-13/README.md) classifies remaining corrections.
+
 Adapted from Lauren Tan's pstack `create-verification-skill` at `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`, inspected on 2026-10-10.
 
 - [Generator](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/create-verification-skill/SKILL.md).
 - [Feature map index](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/create-verification-skill/references/feature-map-example/README.md), [creation example](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/create-verification-skill/references/feature-map-example/create-note.md), and [search example](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/create-verification-skill/references/feature-map-example/search.md).
-- [MIT license](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/LICENSE); Lauren Tan's notice is retained in this skill's `LICENSE`.
+- [MIT license](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/LICENSE); Lauren Tan's notice is retained in [package LICENSE](../../../skills/jstack/create-verification-skill/LICENSE).
 
 The adaptation retains repository inspection, project-local generation, the feature-map shape, real user-path proof, and evidence surviving cleanup. It replaces the fixed Cursor output directory with an explicit destination or repository convention, defaulting to `.agents/skills`. It uses T3 Code's browser operations when applicable, allows ordinary subprocesses for noninteractive CLIs, and respects user-controlled installation.
 

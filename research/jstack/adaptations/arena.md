@@ -1,6 +1,8 @@
 # Upstream attribution
 
-Adapted from [pstack arena](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/arena/SKILL.md) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../LICENSE) retains Lauren Tan's attribution.
+Relocated from the skill package on 2026-10-13. This record describes the existing adaptation; it does not approve every difference. The [fidelity audit](../fidelity-audits/2026-10-13/README.md) classifies remaining corrections.
+
+Adapted from [pstack arena](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/arena/SKILL.md) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/arena/LICENSE) retains Lauren Tan's attribution.
 
 Jstack preserves the Frame, Candidates, Cross-judge, Pick, Synthesize and Verify sequence, hidden scoring rubric, one cross-judge, coordinator comparison and coherent synthesis. It keeps Arena independently invocable, with normal skill discovery so future playbooks can call it. Setup-jstack supplies the configured panel and judge pool instead of fixed defaults or rejected-model substitutions. An architect caller can select its own runner panel and require structurally distinct design candidates.
 

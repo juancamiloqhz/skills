@@ -1,6 +1,8 @@
 # Upstream attribution
 
-Adapted from [pstack reflect](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/reflect/SKILL.md) and its judgment, tooling, divergent and synthesizer references at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../LICENSE) retains Lauren Tan's attribution.
+Relocated from the skill package on 2026-10-13. This record describes the existing adaptation; it does not approve every difference. The [fidelity audit](../fidelity-audits/2026-10-13/README.md) classifies remaining corrections.
+
+Adapted from [pstack reflect](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/reflect/SKILL.md) and its judgment, tooling, divergent and synthesizer references at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/reflect/LICENSE) retains Lauren Tan's attribution.
 
 Jstack preserves three lenses, their two scalar role assignments, a separate synthesizer, existing-skill-first routing, already-covered rejection and a structural-enforcement check. Accepted, Rejected and Backlog remain distinct. Normal discovery permits explicit playbook callers as well as direct invocation.
 

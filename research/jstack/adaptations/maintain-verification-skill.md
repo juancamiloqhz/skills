@@ -1,6 +1,8 @@
 # Upstream attribution
 
-Adapted from Lauren Tan's pstack [maintain-verification-skill](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/maintain-verification-skill/SKILL.md) at `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`, inspected on 2026-10-11. The upstream [MIT license](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/LICENSE) notice is retained in this skill's `LICENSE`.
+Relocated from the skill package on 2026-10-13. This record describes the existing adaptation; it does not approve every difference. The [fidelity audit](../fidelity-audits/2026-10-13/README.md) classifies remaining corrections.
+
+Adapted from Lauren Tan's pstack [maintain-verification-skill](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/maintain-verification-skill/SKILL.md) at `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`, inspected on 2026-10-11. The upstream [MIT license](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/LICENSE) notice is retained in [package LICENSE](../../../skills/jstack/maintain-verification-skill/LICENSE).
 
 The adaptation retains feature-map reconciliation, source review, live exercise of each feature, verification-only edits, regression reporting, evidence preservation, cleanup, and clean/changed/blocked outcomes. It accepts the existing project-local skill path rather than requiring Cursor's directory. It is self-contained when installed separately from the generator.
 

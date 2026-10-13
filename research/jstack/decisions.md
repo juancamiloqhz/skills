@@ -22,7 +22,7 @@ Portable skills are the current distribution format. Their source directories ar
 
 On 2026-10-11, the user approved optional `<project_root>/.jstack/models.json` configuration. Explicit file selection takes precedence over `JSTACK_CONFIG`, then the project file, then the existing XDG global path. Each file supplies the complete 17-role map; files are not merged. Setup offers global or project scope and seeds a new project draft from global settings when available. Consumers share setup's lookup and pass the selected absolute path to children. `inherit-parent` keeps its existing conversation-model meaning.
 
-Retain pstack's reasoning-budget labels with their target effort shown: unlimited/max, large/xhigh, medium/high, small/medium. This gives setup a bulk effort choice without implying a spending cap. Keep schema version 1 and the `preset` field; effective per-seat options remain authoritative at resolution time. See the [upstream rationale](../../skills/jstack/setup-jstack/references/upstream.md).
+Retain pstack's reasoning-budget labels with their target effort shown: unlimited/max, large/xhigh, medium/high, small/medium. This gives setup a bulk effort choice without implying a spending cap. Keep schema version 1 and the `preset` field; effective per-seat options remain authoritative at resolution time. See the [upstream rationale](adaptations/setup-jstack.md).
 
 Setup configures routing only. A configured role does not enable a workflow or grant execution permissions. Future consumers must load and revalidate the configuration when invoked.
 
