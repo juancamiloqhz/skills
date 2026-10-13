@@ -40,3 +40,5 @@ Standalone [Swarm](../../skills/jstack/swarm/SKILL.md) coordinates partitioned c
 Standalone [Reflect](../../skills/jstack/reflect/SKILL.md) reviews bounded conversation evidence through judgment, tooling and divergent lenses, then checks recommendations against existing guidance. Its [evaluation](evaluations/reflect/README.md) records three review lenses, separate synthesis, rejected duplicate guidance and preserved assessment boundaries.
 
 Standalone [Figure it out](../../skills/jstack/figure-it-out/SKILL.md) designs custom workflows, returns at planning-only boundaries and verifies authorized execution with a reviewed decision trail. Its [evaluation](evaluations/figure-it-out/README.md) records planning-only return, real CLI checks and a corrected audit-reporting failure.
+
+The [engineering principle index](../../skills/jstack/juan-mode/references/principles/index.md) maps all 24 upstream leaves into four scoped references within juan-mode. The [evaluation](evaluations/principles/README.md) records eight tabletop scenarios and a full source audit; the playbook procedures remain planned.

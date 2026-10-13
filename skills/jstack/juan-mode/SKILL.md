@@ -15,6 +15,10 @@ On activation, opt-out, handoff or resume, follow [conversation state](reference
 
 For each new task while active, read the [route registry](references/routes.md), select by deliverable and report any unavailable procedure. Casual conversation does not start a playbook. Preserve ongoing work when a later message clarifies it; a new task needs a fresh route. Read an implemented playbook before using its steps. Use the user's existing authorization for concrete actions within its scope.
 
+## Engineering principles
+
+When framing, implementing or reviewing scoped engineering work, use the [principle index](references/principles/index.md) to load relevant guidance. Apply it within the requested scope, compatibility obligations and existing authorization. A principle is not a substitute for an unavailable playbook.
+
 ## Prepare execution
 
 Before a routed task dispatches any child, read [configuration discovery](references/configuration.md). Discover the installed `setup-jstack` entrypoint from the current skill catalog, then use this package's [preflight helper](scripts/preflight.py) with a fresh T3 Code catalog. It calls the canonical resolver, validates the entire saved map, preserves ordered seats and options, and checks effective child capability. It reads configuration without changing it or launching agents.
@@ -31,4 +35,4 @@ When a caller or implemented playbook selects investigation, discover `how` for 
 
 Report the requested outcome, actual verification and any remaining limitation. Distinguish completed, incomplete, blocked, paused and cancelled work. Task completion leaves mode activation intact. PR publication follows the requested delivery; merging, recurring scheduling and installation require their own applicable authorization. Skill installation remains manual.
 
-The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Remaining helper workflows, principles and playbooks arrive in later implementation groups; their upstream names are not dependencies on unrelated global skills.
+The [upstream record](references/upstream.md) identifies the source revision and intentional differences. Remaining helper workflows and playbooks arrive in later implementation groups; their upstream names are not dependencies on unrelated global skills.
