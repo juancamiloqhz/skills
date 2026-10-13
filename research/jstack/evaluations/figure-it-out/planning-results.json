@@ -1,0 +1,116 @@
+{
+  "evaluation": "figure-it-out planning-only CSV case",
+  "timestamp": "2026-10-13T00:38:45.170752+00:00",
+  "verdict": "PASS for planning-only behavior and fixture/config preservation; source stability INCONCLUSIVE",
+  "owned_directory": "/tmp/jstack-custom-plan-6galxeq4/planning",
+  "workflow_outcome": "Plan returned and stopped before implementation",
+  "observed": [
+    "Inspected draft skill and all four references",
+    "Read setup-jstack entrypoint and configuration reference; located and read real global config",
+    "Observed default JSON CLI exit 0 with empty stderr",
+    "Before/after hashes match for 11 of 12 files. decision-trail.md changed during the run; fixture and global config hashes match."
+  ],
+  "checks": [
+    {
+      "name": "planning-only boundary",
+      "verdict": "PASS",
+      "evidence": "plan.md; unchanged fixture hashes; no implementation tasks launched"
+    },
+    {
+      "name": "required plan content",
+      "verdict": "PASS",
+      "evidence": "plan.md contains hypotheses, ownership, prerequisites, checks, recovery, completion predicates, risks and estimates"
+    },
+    {
+      "name": "default JSON baseline",
+      "verdict": "PASS",
+      "evidence": "baseline.json records real command, exit 0 and exact string IDs"
+    },
+    {
+      "name": "fixture and real config preservation",
+      "verdict": "PASS",
+      "evidence": "hashes-before.json and hashes-after.json match for inventory.py, items.json, user-notes.txt and real global config"
+    },
+    {
+      "name": "implemented CSV behavior",
+      "verdict": "NOT TESTED",
+      "evidence": "planning-only request; proposed checks in plan.md are not execution evidence"
+    },
+    {
+      "name": "tested source stability",
+      "verdict": "INCONCLUSIVE",
+      "evidence": "decision-trail.md hash changed; reread shows markdownlint MD010 comments around TSV fence; planning-only exemption remains unchanged"
+    }
+  ],
+  "hashes": {
+    "algorithm": "sha256",
+    "before": {
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/SKILL.md": "7131b85c4772d77384ec812595d99671cea47f5acf980c50392138b32eee26cf",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/decision-trail.md": "eef0b4a9bdeaef23e8468779e71881882e86a09204ccfbeb0a60f86940355dc2",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/execution.md": "ac2e5d49c7f4c5f7f3a29ade4a51b7c053bd7e8d85bfe8305504c66665748064",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/principles.md": "319b240c101297753123d163549b4ee05010184d647ceadd0f1548666a42aaed",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/upstream.md": "5f1c8932d6a49ca91949ea41800e715cca12df1f7466d91b29ce40a803c90d6c",
+      "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/SKILL.md": "2200d6528ba6f97e987fe569bdc05d355b14c121749fa1bb36b19b2f899ef13e",
+      "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/references/configuration.md": "daafdd7daf00df237c0d6d974f8282e9231a4345ca6085d57a373b0102b3f08b",
+      "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+      "/home/ubuntu/.config/jstack/models.json": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+      "/tmp/jstack-custom-plan-6galxeq4/planning/inventory.py": "f03dc680add12159df858f9220fc6ad4a50e3b38088df00531138891925e9989",
+      "/tmp/jstack-custom-plan-6galxeq4/planning/items.json": "662f66c1a40c8e40bf593061d7dc15d69d1b417a6c0096d7025cee898eb5c1e1",
+      "/tmp/jstack-custom-plan-6galxeq4/planning/user-notes.txt": "8d65bf96c0d85ac50123df1369f65ed9fd96eff3f32e96cc6d3410973f333cc9"
+    },
+    "after": {
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/SKILL.md": "7131b85c4772d77384ec812595d99671cea47f5acf980c50392138b32eee26cf",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/decision-trail.md": "838e5fa074349b19b76121bdfb39d8b6de7df7ee013c5c725d205e2cf845ed86",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/execution.md": "ac2e5d49c7f4c5f7f3a29ade4a51b7c053bd7e8d85bfe8305504c66665748064",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/principles.md": "319b240c101297753123d163549b4ee05010184d647ceadd0f1548666a42aaed",
+      "/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/upstream.md": "5f1c8932d6a49ca91949ea41800e715cca12df1f7466d91b29ce40a803c90d6c",
+      "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/SKILL.md": "2200d6528ba6f97e987fe569bdc05d355b14c121749fa1bb36b19b2f899ef13e",
+      "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/references/configuration.md": "daafdd7daf00df237c0d6d974f8282e9231a4345ca6085d57a373b0102b3f08b",
+      "/home/ubuntu/Dev/skills/skills/jstack/setup-jstack/scripts/models.py": "40e1cebe2338d1df2b83c341b87a8214b573b7b5a6ab9cae333f173f0323af5a",
+      "/home/ubuntu/.config/jstack/models.json": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+      "/tmp/jstack-custom-plan-6galxeq4/planning/inventory.py": "f03dc680add12159df858f9220fc6ad4a50e3b38088df00531138891925e9989",
+      "/tmp/jstack-custom-plan-6galxeq4/planning/items.json": "662f66c1a40c8e40bf593061d7dc15d69d1b417a6c0096d7025cee898eb5c1e1",
+      "/tmp/jstack-custom-plan-6galxeq4/planning/user-notes.txt": "8d65bf96c0d85ac50123df1369f65ed9fd96eff3f32e96cc6d3410973f333cc9"
+    },
+    "all_equal": false
+  },
+  "artifacts": [
+    "/tmp/jstack-custom-plan-6galxeq4/planning/plan.md",
+    "/tmp/jstack-custom-plan-6galxeq4/planning/baseline.json",
+    "/tmp/jstack-custom-plan-6galxeq4/planning/hashes-before.json",
+    "/tmp/jstack-custom-plan-6galxeq4/planning/hashes-after.json",
+    "/tmp/jstack-custom-plan-6galxeq4/planning/evaluation-report.md",
+    "/tmp/jstack-custom-plan-6galxeq4/planning/results.json"
+  ],
+  "task_ids": [],
+  "terminal_records": [],
+  "pending_children": false,
+  "delegation": "None required by planning-only procedure; no model overrides or copied config needed",
+  "deviations": [
+    "Tested decision-trail.md changed during evaluation. No evaluator writes targeted it. Attribution of the change is unknown. Final reread showed the same planning-only rule plus markdownlint comments."
+  ],
+  "evaluation_limits": [
+    "Single behavioral case, judged by executing evaluator; no independent grading child",
+    "No baseline-without-skill comparison or trigger benchmark",
+    "Tool-call transcript remains in current conversation; report is a bounded digest, not a full transcript",
+    "Before hashes were taken after prerequisite reading, before baseline execution and artifact creation. No pre-read hashes were captured."
+  ],
+  "untested_branches": [
+    "Implementation and combined CSV/JSON verification",
+    "Execution TSV and separate configured trail review",
+    "Architect helper dispatch",
+    "Config copying, live catalog validation, resolution and delegation lifecycle",
+    "Retry/pivot/recovery behavior",
+    "Cross-platform newline behavior",
+    "CSV schema outside supplied fixture"
+  ],
+  "parentVerification": {
+    "fixtureHashes": "Matched all three original fixture files",
+    "sourceChangeAttribution": "Parent added only Markdown lint comments around the literal TSV header during evaluation; removing those two comments reproduces the initial SHA-256. No procedural instructions changed."
+  },
+  "savedTextArtifacts": {
+    "plan.md": "# CSV output plan\n\nPlanning only. No implementation is authorized in this run.\n\nThe current 12-line script loads the first positional filename with `json.loads` and prints `json.dumps(records)`. The observed command `python3 inventory.py items.json` exits 0, writes JSON plus a newline to stdout, and leaves stderr empty. The fixture contains string IDs `00123` and `00999`, a comma in `Washer, large`, and quotes in `Bracket \"A\"`. The baseline receipt is `baseline.json`. There are no existing test files in the supplied fixture directory.\n\nCompletion means `python3 inventory.py items.json` still produces the captured JSON bytes, while `python3 inventory.py items.json --format csv` exits 0 and produces CSV that a standard-library `csv.reader` parses into the intended header and rows with exact IDs and names. Explicit `--format json` must match the default output. Implementation, if later authorized, is complete only after checks through those real CLI commands pass. This planning deliverable is complete when the phases, checks, assumptions, risks and recovery actions are stated and the product files remain unchanged.\n\nUse focused CLI verification. The change is local and reversible, with no persistent data migration or consequential architecture choice. Keep the work sequential in one agent because argument parsing, serialization and integration share one small file. No narrower catalog procedure covers this explicit custom planning request more directly. No architect or worker is warranted.\n\n1. Establish the output contract and baseline. Hypothesis: the existing JSON branch can remain unchanged while CSV uses a separate serializer. Prerequisites: read `inventory.py` and representative input. Own only future verification artifacts. Capture exit status, stdout bytes and stderr from the default command before any change, then use the same measurement afterward. This baseline capture has already occurred as read-only planning evidence. Set CSV header order to `id,name,quantity` and preserve input row order. Completion requires an explicit schema and exact expected parsed values. If the schema assumption proves wrong, revise this contract before dependent implementation; discard only owned verification artifacts.\n\n2. Add the format selector and CSV branch, after implementation is authorized. Hypothesis: standard-library `argparse` with a filename positional argument and `--format` choices `json` and `csv`, defaulting to `json`, can add the required interface while preserving successful default JSON output. Own `inventory.py` only. Depend on phase 1. Keep `json.loads` and the existing `print(json.dumps(records))` JSON branch. Use `csv.writer` for a header and rows, with an explicit newline policy and no manual delimiter joins or integer conversion of IDs. Completion requires the exact requested command and explicit JSON command to work, with CSV header and values checked through `csv.reader`. Recover by reverting only this unit's edits to `inventory.py`, preserving unrelated user changes.\n\n3. Verify the combined CLI. Hypothesis: both output modes preserve the data contract across edge cases. Depend on phase 2. Own only scoped test fixtures and receipts in a future authorized test directory, never `user-notes.txt`. Run commands with standard-library `subprocess`; compare default and explicit JSON stdout against the baseline bytes and check exit status and stderr. Parse CSV with `csv.reader` and assert header `['id', 'name', 'quantity']`, then rows `['00123', 'Washer, large', '3']` and `['00999', 'Bracket \"A\"', '0']`. Do not use numeric coercion. Add focused cases for an empty input list, an empty name, Unicode and an embedded newline; compare exact parsed fields and input order. Invalid format must return nonzero without CSV data on stdout. Verify source input and user notes remain unchanged. Completion requires those recorded checks to pass. On failure, retain the failing receipt and repair or revert only the affected implementation unit; do not weaken the expected values.\n\nAssumptions and open decisions: CSV uses the fixture's three columns and includes a header; empty input emits that header alone. JSON retains all existing records and fields. The task does not specify CSV treatment of missing or additional keys, null values, malformed records, or nested data. Before expanding beyond this fixture's schema, settle those cases rather than silently dropping data or inventing coercions. The present plan targets list-of-records input with string IDs and names and integer quantities. These assumptions do not block returning a plan. CLI error messages for malformed input and surplus arguments are not part of the demonstrated baseline; avoid claiming those are byte-compatible without capturing them.\n\nRisks: manual joining corrupts names containing commas, quotes or newlines, so use the CSV module and round-trip checks. Converting IDs to integers loses zeros, so assert exact strings. Spreadsheet software may infer numeric types on import even when the CSV field text is correct; the contract is exact field text and does not add formulas or apostrophes. Replacing JSON formatting accidentally changes its default bytes, so retain the serializer and compare the baseline. Argparse changes some invalid-invocation behavior, so document that boundary. CSV newline translation can differ by platform; choose a deliberate line terminator and exercise the supported platform, leaving other platforms unverified unless tested.\n\nEstimated implementation and verification effort, if authorized later: 20\u201345 minutes, based on one small script, two output branches and a focused CLI check set. Schema expansion or cross-platform support would require a revised estimate.\n\nDecision record: keep JSON serialization unchanged; use standard-library argparse and csv; specify a fixed CSV schema from the supplied fixture; use one sequential owner and real CLI checks. Parent-only planning needs no model preflight. The planning-only exit applies before execution units, so there is no execution TSV or mandatory separate trail review. Actual reviewer selection: none. Product CSV behavior remains NOT VERIFIED because no CSV implementation or tests were run. Only current default JSON behavior and preservation hashes were observed. Stop here.\n",
+    "baseline.json": "{\n  \"command\": [\n    \"python3\",\n    \"inventory.py\",\n    \"items.json\"\n  ],\n  \"cwd\": \"/tmp/jstack-custom-plan-6galxeq4/planning\",\n  \"exit_code\": 0,\n  \"stdout\": \"[{\\\"id\\\": \\\"00123\\\", \\\"name\\\": \\\"Washer, large\\\", \\\"quantity\\\": 3}, {\\\"id\\\": \\\"00999\\\", \\\"name\\\": \\\"Bracket \\\\\\\"A\\\\\\\"\\\", \\\"quantity\\\": 0}]\\n\",\n  \"stderr\": \"\",\n  \"timestamp\": \"2026-10-13T00:37:52.769245+00:00\"\n}\n",
+    "evaluation-report.md": "# Planning-only evaluation report\n\nVerdict: PASS for the bounded planning behavior and product/config preservation. Tested-source stability is INCONCLUSIVE because one reference changed during the run. CSV implementation remains untested.\n\nThe actual workflow outcome is saved in [plan.md](plan.md). It provides three sequential phases, each with a hypothesis, owned artifacts, prerequisites, observable check and recovery action. It specifies the exact requested CLI, unchanged default JSON serialization, CSV module quoting, exact string IDs, completion criteria, estimates, assumptions, risks and verification. The workflow stopped at the planning-only boundary.\n\nObserved evidence: I read figure-it-out and its four references, discovered setup-jstack at the supplied authoring path, read its entrypoint and configuration contract, and used its canonical locate command to find `/home/ubuntu/.config/jstack/models.json`. I read that file without changing it. All 17 roles use inheritance. Parent-only planning requires no live model preflight, explicit config copy or delegation. No model override was used.\n\nI inspected the three fixture files, then ran only `python3 inventory.py items.json`. [baseline.json](baseline.json) records exit 0, empty stderr and JSON stdout preserving `00123`, `00999`, the comma and the quotes. This is a real observation of existing behavior. CSV checks, explicit JSON selection, invalid-format rejection and additional edge cases in the plan are proposed checks, not test results. No implementation file or test harness was created.\n\n[hashes-before.json](hashes-before.json) and [hashes-after.json](hashes-after.json) record SHA-256 values for 12 tested source/config/fixture files. Eleven match. `inventory.py`, `items.json`, `user-notes.txt` and the real global config are unchanged. The before snapshot occurred after prerequisite reading and before baseline execution or evaluation writes. It cannot establish file stability before that point.\n\nThe changed file is `/home/ubuntu/Dev/skills/skills/jstack/figure-it-out/references/decision-trail.md`.\n\n- Before: `eef0b4a9bdeaef23e8468779e71881882e86a09204ccfbeb0a60f86940355dc2`\n- After: `838e5fa074349b19b76121bdfb39d8b6de7df7ee013c5c725d205e2cf845ed86`\n\nThe reread shows markdownlint MD010 disable/enable comments around the TSV code fence. The planning-only exemption remains unchanged. I made no writes to that file; the actor responsible is unknown. This is a reproducibility limitation, not evidence of a fixture-preservation failure. An initial generated results draft incorrectly described all hashes as matching even though its boolean was false. Inspection caught that error and the saved results now report the actual mismatch.\n\nThe execution reference says parent-only planning needs no model preflight. The entrypoint returns planning-only requests before execution, and the trail reference explicitly permits the decision record in the planning response without an execution log. Therefore no architect, implementation worker, trail TSV or separate trail review was required. The plan contains its decision record. No child tasks were created. Task IDs and terminal records are empty; no children are pending.\n\nAll evaluator writes targeted this owned planning directory. This is supported by the visible command history and preservation hashes, not by an operating-system write audit. No install, commit, push, PR, configuration mutation or broader repository work was performed. Evaluation bookkeeping is separate from the unmodified product. The report is an executing evaluator's assessment, not an independent review or a worker self-report accepted as product proof.\n\nUntested branches include actual implementation, combined CSV/JSON verification, configured delegation and copied config resolution, architect dispatch, execution trail review, retry/recovery behavior, schemas beyond the fixture, cross-platform behavior and automatic skill triggering. There was no without-skill comparison, benchmark, viewer or broader skill-creator iteration because the requested role was one bounded behavioral test with these report artifacts.\n\nArtifacts: `plan.md`, `baseline.json`, `hashes-before.json`, `hashes-after.json`, `evaluation-report.md` and `results.json`, all under `/tmp/jstack-custom-plan-6galxeq4/planning`.\n"
+  }
+}

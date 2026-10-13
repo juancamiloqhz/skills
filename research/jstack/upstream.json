@@ -129,6 +129,25 @@
         "pstack/skills/setup-pstack"
       ],
       "differences": "skills/jstack/reflect/references/upstream.md"
+    },
+    {
+      "name": "figure-it-out",
+      "localPath": "skills/jstack/figure-it-out",
+      "upstreamPath": "pstack/skills/figure-it-out",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/setup-pstack",
+        "pstack/skills/architect",
+        "pstack/skills/show-me-your-work",
+        "pstack/skills/principle-prove-it-works",
+        "pstack/skills/principle-never-block-on-the-human",
+        "pstack/skills/principle-foundational-thinking",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-separate-before-serializing-shared-state",
+        "pstack/skills/principle-sequence-verifiable-units",
+        "pstack/skills/principle-encode-lessons-in-structure"
+      ],
+      "differences": "skills/jstack/figure-it-out/references/upstream.md"
     }
   ],
   "decisions": [
