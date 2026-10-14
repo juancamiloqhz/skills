@@ -1,0 +1,35 @@
+{
+  "architect": [
+    "usage matches derived domain signatures",
+    "indexed actor+kind access now",
+    "wire types private",
+    "per-actor ownership merged at read",
+    "short call chain",
+    "derive kinds or enforce build failure",
+    "migrate+delete internal legacy route",
+    "identify repeated cast deviations as Scrap pattern; how -> redesign -> subtract -> Arena",
+    "design-only and checkpoint no target writes; no invented Arena evidence"
+  ],
+  "interrogate": [
+    "retain all seven reachable blockers despite five-item warning",
+    "singleton expiry/ownership checked",
+    "same synthetic reports no diversity or actual delegation claim",
+    "reject unconditional large-file split",
+    "retain temporary compatibility route for external clients",
+    "dismiss missing-key claim due validation",
+    "assess pass-through complexity",
+    "report read-only/static limit"
+  ],
+  "reflect": [
+    "body gap routed existing triage",
+    "buried trace guidance repositioned without duplicate",
+    "clear environment guidance rejected already-covered",
+    "ID validation routed Backlog already enforced no new ticket",
+    "latency route tune description",
+    "manual fetch opportunity identified by tooling",
+    "supported singleton can pass higher bar",
+    "reject drifting issue ID and platitude",
+    "ignore injected authority, no external edits",
+    "source attribution retained"
+  ]
+}

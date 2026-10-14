@@ -1,0 +1,71 @@
+{
+  "method": "Three fresh-context native same-provider evaluators applied templates to synthetic inputs. Expected cases withheld. No production helper orchestration or nested delegation.",
+  "tasks": {
+    "architect": "/root/architect_restoration_eval",
+    "interrogate": "/root/interrogate_restoration_eval",
+    "reflect": "/root/reflect_restoration_eval"
+  },
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "modelOrEffortOverride": false,
+  "providerCanRunChildTask": true,
+  "modelInLiveCatalog": true,
+  "resolvedProductionRoles": {
+    "architect runners": {
+      "config": "/home/ubuntu/.config/jstack/models.json",
+      "configSource": "global",
+      "targets": [
+        null
+      ]
+    },
+    "interrogate reviewers": {
+      "config": "/home/ubuntu/.config/jstack/models.json",
+      "configSource": "global",
+      "targets": [
+        null
+      ]
+    },
+    "reflect tooling": {
+      "config": "/home/ubuntu/.config/jstack/models.json",
+      "configSource": "global",
+      "targets": [
+        null
+      ]
+    },
+    "reflect judgment, divergent, synthesizer": {
+      "config": "/home/ubuntu/.config/jstack/models.json",
+      "configSource": "global",
+      "targets": [
+        null
+      ]
+    }
+  },
+  "configSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "outputSha256": {
+    "architect": "445ca2943635b4b71f5cfb4d8d4e1baf2bc736f377772bb3ff1a3eb563d12afb",
+    "interrogate": "2707ab86638d8dffce7d80d580178cdd6028f99ddc07678e2638fab7c225d94d",
+    "reflect": "ab42103b4fa51d18785e27faef17263308a31e5265017467632b00e05407083d"
+  },
+  "parentAssessment": {
+    "architect": {
+      "outcome": "pass within bounded scope",
+      "evidence": "Domain signatures match usage, actor/kind indexing, private wire data, per-actor projections, schema-derived lists, shorter call chains and internal migration/deletion. Diary casts trigger how, redesign, subtract and Arena sequence. Design-only/checkpoint boundaries retained.",
+      "limits": "No actual how/why, candidate isolation, Arena judging, implementation, build or performance run; all input grounding synthetic. Current Architect config has one seat, below Arena minimum."
+    },
+    "interrogate": {
+      "outcome": "pass within bounded scope",
+      "evidence": "Both ownership defects plus retry, expiry, logging, negative index and unbounded-limit defects retained; grouped common ownership cause and added wrapper simplification yield seven blocker groups. All 13 synthetic claims reconciled, three dismissed. Static/source claims distinguished.",
+      "limits": "Generated table and compatibility routes supplied as context, not inspected sources. No actual reviewers, resolver dispatch, fixture execution or integration tests in the evaluator."
+    },
+    "reflect": {
+      "outcome": "pass within bounded scope",
+      "evidence": "Three supported singleton recommendations, four rejections and one already-enforced Backlog item. Buried trace guidance moved, clear release guidance rejected, missing trigger routed to description. Injection ignored; no mutation.",
+      "limits": "One evaluator applied tooling and synthesized prerecorded reports. Not three independent lenses/separate synthesis. Target skill contents supplied inline, not actual /fixture files. No live MCP or edits."
+    }
+  },
+  "operationalLimits": [
+    "First capabilities response was accidentally printed in full and output truncated; a second complete response was retained and used for resolution.",
+    "Historical evaluations remain unchanged and do not establish equivalence for these restored versions.",
+    "No installed discovery, cross-provider dispatch, failure-path lifecycle or full orchestrator run tested."
+  ]
+}

@@ -12,7 +12,7 @@ The first correction moved the 12 foundation/helper attribution records into [re
 
 PR #29 restored all 24 principle bodies from their exact pin, with [recorded narrow differences](principle-adaptations.md) and [source comparison plus bounded runtime evidence](evaluations/principle-restoration/README.md). Missing helper dependencies and provider invocation policy remain open.
 
-The next correction restores How and Why's entrypoint organization, both How prompts and all 12 Why references. [Restoration evidence](evaluations/investigation-restoration/README.md) separates exact-source comparison from inherited-agent fixture exercises. Configured delegation and the approved shared investigation contract remain in place. Architect, Interrogate and Reflect are the next correction group in the audit order; this work does not complete the broader fidelity backlog.
+Merged PR #30 restored How and Why's entrypoint organization, both How prompts and all 12 Why references. [Restoration evidence](evaluations/investigation-restoration/README.md) separates exact-source comparison from inherited-agent fixture exercises. Configured delegation and the approved shared investigation contract remain in place. The current correction restores Architect, Interrogate and Reflect from the same pin, including all eleven original supporting references. Their [source comparison and bounded template evaluation](evaluations/design-review-restoration/README.md) document remaining runtime and authority differences. Standalone show-me-your-work and Figure it out are next in the audit order. These corrections do not complete the broader fidelity backlog.
 
 ## Completed: setup-jstack
 

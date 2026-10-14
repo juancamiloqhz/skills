@@ -1,0 +1,27 @@
+{
+  "request": "Design the replacement event counter API. Return sketches and a rationale; stop before implementation. Evaluate both submitted sketches, propose a candidate, then assess the separate implementation diary and report the next workflow steps. This is a bounded template exercise; do not launch other agents or pretend an Arena round happened.",
+  "grounding": {
+    "read_pattern": "Callers request counts by actor and event type. Event-type lookups dominate at about one million events; no full event scan is acceptable per lookup.",
+    "write_pattern": "Independent actors each own an append-only event stream; reads combine streams.",
+    "boundary": "Incoming JSON wire payloads use type_tag/count_value; callers consume domain EventKind and Count. All consumers are internal and can migrate together.",
+    "usage": [
+      "counter.record(actor, EventKind.Click, 3)",
+      "counter.countFor(actor, EventKind.Click)",
+      "counter.snapshot()"
+    ],
+    "invariants": "Event kinds are declared in the schema. A new kind must be handled by counters and serialization. No external compatibility contract exists."
+  },
+  "candidate_a": "Public API record(WireMessage): boolean; countFor(kind): Count scans every actor event list. UI passes raw type_tag/count_value. Everyone writes shared mutable totals under a global lock. Requests pass UI -> facade -> manager -> service -> registry -> adapter -> store across seven files. Keep both legacy and new counter APIs indefinitely. Maintain SUPPORTED_KINDS by hand beside schema enum.",
+  "candidate_b": "Public API record(actor, kind, amount): void, countFor(actor, kind): Count; per-actor maps index domain kind to totals, combined at snapshot reads. Parse wire payloads in ingestion. Public facade and pure count operations in one module; storage module is private. Derive serialization variants from the schema. Migrate all internal callers and delete old API.",
+  "implementation_diary": [
+    {
+      "module": "importer",
+      "deviation": "Importers must cast WireMessage as unknown as Count to call the counter; wrapper comment tells callers which fields to copy."
+    },
+    {
+      "module": "replayer",
+      "deviation": "Replay also casts wire objects to Count and documents manual field copying; a third adapter is proposed to hide this."
+    }
+  ],
+  "authority": "Only /tmp/jstack-design-review-eval/architect/result.md is writable. The diary is a hypothetical separate run. Do not modify target implementation."
+}
