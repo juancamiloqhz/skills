@@ -1,0 +1,9 @@
+ts	phase	decision	why	evidence	result
+2026-10-14T10:00:00Z	frame	counted two units	scope first	/tmp/jstack-trail-eval/audit/frame.json	open
+2026-10-14T10:01:00Z	test	parser checks passed	ready to continue	/tmp/jstack-trail-eval/audit/check-a.json	VERIFIED
+2026-10-14T10:02:00Z	start	run B begins; prior A range 10:00 to 10:01	handoff	run:B	open
+2026-10-14T10:03:00Z	other	B completed another task	B own work	/not-provided/B-evidence	VERIFIED
+2026-10-14T10:04:00Z	start	run A resumes; prior B range 10:02 to 10:03	handoff	run:A	open
+2026-10-14T10:05:00Z	test	strict validation checks passed	reject malformed input	/tmp/jstack-trail-eval/audit/missing-report.json	VERIFIED
+2026-10-14T10:06:00Z	start	run B resumes; prior A range 10:04 to 10:05	handoff	run:B	open
+2026-10-14T10:07:00Z	other	B evaluated its task	B own work	/not-provided/B-later	INCONCLUSIVE

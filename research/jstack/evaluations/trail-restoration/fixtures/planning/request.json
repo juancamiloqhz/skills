@@ -1,0 +1,10 @@
+{
+  "request": "Use Figure it out to plan a migration of an internal CSV command from permissive dates to strict YYYY-MM-DD dates. Planning only: show phases and stop before implementation or worker dispatch. The existing CLI checks cover valid rows and bad dates, and we can capture its current output. Estimated duration is 4-6 hours. Two implementation units will later be delegated: parser validation and error messages, followed by integration. Specify how each unit and its evidence will be reviewed.",
+  "constraints": [
+    "No external API or storage contract change",
+    "No unresolved architecture decision",
+    "Preserve the existing CLI flags",
+    "Same inherited model for all roles; no configuration changes"
+  ],
+  "source": "Synthetic task; no implementation files or execution is provided."
+}

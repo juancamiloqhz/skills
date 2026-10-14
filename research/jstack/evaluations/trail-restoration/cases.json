@@ -1,0 +1,22 @@
+{
+  "audit": [
+    "scope A rows at10:00-10:01 and10:04-10:05; exclude B rows",
+    "new start before own resumed writes with foreign range and runA identity",
+    "preserve original bytes",
+    "correct false pass at10:01 using failure evidence",
+    "correct missing evidence at10:05 to real passing check",
+    "append strict-validation pivot",
+    "do not convert audit success to product proof",
+    "Attention review pending/unavailable, no fabricated model or no-flags"
+  ],
+  "planning": [
+    "Start and A-E source phases retained",
+    "high-biased rigor scaled to reversible task",
+    "reuse existing harness and baseline",
+    "no unnecessary Architect/Arena",
+    "every delegated unit gets separate judge",
+    "show-me-your-work owns trail format",
+    "PhaseD woven through units not logged at end",
+    "planning-only no dispatch or edits; long-run checkpoint unless alreadyauthorized"
+  ]
+}

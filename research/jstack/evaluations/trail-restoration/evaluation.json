@@ -1,0 +1,47 @@
+{
+  "baseCommit": "6feca1dd9d8b9b2e902649f150724ae838f6bfed",
+  "tasks": {
+    "audit": "/root/trail_audit_eval",
+    "planning": "/root/figure_planning_eval",
+    "review": "/root/trail_review_eval"
+  },
+  "freshContexts": true,
+  "modelOrEffortOverrides": false,
+  "inheritedProvider": "codex",
+  "inheritedModel": "gpt-6-astra",
+  "reviewRole": {
+    "role": "judgment and prose",
+    "config": "/home/ubuntu/.config/jstack/models.json",
+    "targets": [
+      null
+    ],
+    "sourceFirstResolution": "global",
+    "sourceSecondResolution": "explicit"
+  },
+  "reviewIdentityLimit": "Native tasks inherit parent selection with no override. Reviewer reports child runtime does not independently expose model identity; its report preserves that uncertainty. No cross-family independence claimed.",
+  "outputSha256": {
+    "audit": "1ab920f2b9721c568aebb8475c644b82f7b10fc576f9094f4883ef028e38d0bb",
+    "planning": "d9db990af10d95776d198a5892939364ccf217238a7f22db9c4a3c86e7dc55a7",
+    "review": "31b2b6b77e3aced05deb4d1a376bc04a26bf2bad3dbe6f718bb1c1077e53798c",
+    "correctedTrail": "19154b9df0d779470a274754c4af694a41151433d211a417edfc63d650c55f25"
+  },
+  "assessment": {
+    "audit": "Passed bounded audit checks: original 8 rows preserved; new start identifies foreign B stretch; two corrections and omitted pivot append with resolving evidence; B claims left outside audit; pending review disclosed.",
+    "planning": "Passed planning-only checks: source A-E retained; artifact returns at B with prospective execution plan, existing harness/baseline, separate judge for each delegated unit, standalone trail ownership, no needless architecture round. No execution dispatch.",
+    "review": "Separate inherited reviewer confirmed run boundaries, prefix preservation, corrections and omitted-pivot record. No remaining unsupported A claim within synthetic evidence. Flags retain original false VERIFIED rows, digest-only pivot support and absent real parser/full-history evidence."
+  },
+  "actualExecution": [
+    "real distributed logger CLI tests",
+    "audit agent appended five rows with real helper",
+    "separate reviewer read and compared artifacts"
+  ],
+  "notExecuted": [
+    "parser implementation or tests",
+    "full Figure-it-out delegated implementation",
+    "cross-provider or different-family review",
+    "installed catalog invocation",
+    "failure/cancellation recovery",
+    "concurrent logger writes"
+  ],
+  "historicalEvidencePreserved": true
+}

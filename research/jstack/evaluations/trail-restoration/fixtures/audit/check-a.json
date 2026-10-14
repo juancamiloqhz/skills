@@ -1,0 +1,6 @@
+{
+  "run": "A",
+  "command": "test_parser",
+  "exitCode": 1,
+  "result": "invalid date accepted"
+}

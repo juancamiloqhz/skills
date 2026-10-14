@@ -1,40 +1,57 @@
 ---
 name: figure-it-out
-description: Design and follow an auditable workflow for a multi-part task when no narrower procedure fits. Use for an explicit figure-it-out request, a large migration needing a custom plan, or a workflow caller requesting task-specific phases.
+description: "Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'."
 ---
 
 # Figure it out
 
-Design the workflow before changing the product. Scale its gates to the consequences, then verify each unit against the requested outcome. Direct invocation is task-scoped and leaves juan-mode activation unchanged. This helper does not make an unavailable named playbook executable. Read [principle adaptations](references/principles.md) when framing the workflow.
+When the task matches no playbook, design one. The deliverable before any code is the workflow itself: a sequence of phases that scales rigor to the task, runs the scientific method, and leaves a decision trail a human can audit after stepping away.
 
-## Frame the task
+Direct invocation is task-scoped and leaves juan-mode activation unchanged. Establish source scope, owned artifacts and the requested return boundary; preserve unrelated work. Planning-only requests stop after Phase B. Implementation, commits, PRs, merges and installation follow the original task's authority. This helper does not make an unavailable named playbook executable.
 
-Inspect the relevant source, current status and existing verification. Preserve unrelated changes. Identify the requested deliverable and delivery authority, including planning-only requests and explicit checkpoints. Reuse a narrower available procedure when it covers the task instead of composing another workflow.
+Discover required helpers through the skill catalog or explicit authoring paths and read their actual entrypoints; do not assume sibling installations. If a required jstack helper is unavailable, mark that phase incomplete and provide `npx skills add juancamiloqhz/skills --skill NAME` for manual installation. Pass the selected absolute configuration through helpers once resolved.
 
-State a falsifiable completion predicate, the approximate units of work, dependencies and unresolved assumptions. Give estimates as ranges with their basis, not guarantees. Choose rigor through concrete gates and artifacts: a reversible internal change can use focused checks; a data migration or difficult-to-reverse decision needs recovery evidence and stronger review. Record an observation limit as unknown rather than inventing a baseline.
+## Start
 
-Present framing and tradeoffs before a long run. Honor a requested checkpoint and clarify material unknowns that affect scope. Continue authorized independent work while awaiting answers. Existing authorization covers routine reversible steps; elapsed time supplies no approval. A multi-hour or materially expanded run needs its scope and resource commitment settled before execution.
+Open a task plan whose first item is to read the relevant standalone principles through [principle discovery](references/principles.md). Then add the phases below as tasks.
 
-## Design the workflow
+## Phase A: Frame
 
-Write a phase list with each unit's hypothesis, owned files or artifacts, prerequisites, observable check and recovery action. Sequence the riskiest unknown early, establish the data contracts and needed verification before dependent features, and keep units independently reviewable. Capture pre-change behavior with the same measurement that will evaluate the result. Reuse existing checks when adequate; add a harness only for a real verification gap.
+Ground first, then commit. Don't start the run until you can state:
 
-For a consequential unresolved architecture choice, discover jstack `architect` through the skill catalog and request its design-only return. Verify its jstack setup contract and pass the selected absolute config when one has been chosen. A missing required helper makes that phase incomplete; provide `npx skills add juancamiloqhz/skills --skill architect` for manual installation. Concrete mechanical work needs no design tournament.
+- The definition of done as a falsifiable predicate (the **principle-prove-it-works** principle skill).
+- Scope, quantified: rough units and effort, plus the blockers grounding surfaced.
+- The rigor level, biased high. One-way doors and high blast radius get more. Reversible low-stakes steps get less. Rigor is gates and artifacts, not "try harder".
 
-Decide whether any work can run independently. Read [execution](references/execution.md) before delegation. A custom plan does not imply a particular worker count or authorize new model assignments. Name ownership and integration checks; keep shared plans and decision records parent-owned.
+Present the framing and tradeoffs before committing to a long run. Reversible work proceeds (the **principle-never-block-on-the-human** principle skill), but a multi-hour run earns one framing checkpoint before execution unless its scope and resource commitment are already authorized. Honor any explicit stop-for-approval request; elapsed time is not approval.
 
-For a planning-only request, return the phase list, rigor, verification design, assumptions and open decisions here. Do not implement a unit or launch implementation workers. Otherwise place the designed units in the working plan and execute within the existing task authority.
+## Phase B: Design the workflow
 
-## Execute and measure
+Decompose into atomic, independently-landable units. Sequence riskiest-unknown-first. Scaffold and verification come before features (the **principle-foundational-thinking** principle skill).
 
-Before the first execution unit, start the [decision trail](references/decision-trail.md). Each unit states its hypothesis, makes the smallest useful change, and measures the actual artifact. Record VERIFIED, NOT VERIFIED or INCONCLUSIVE with the check and evidence. A successful build or worker summary alone cannot prove the product predicate.
+- Build the verification harness before the work, with the baseline captured from the pre-change state, so the check reads as "old value vs new value". Reuse an adequate existing harness; record an unavailable baseline rather than inventing one.
+- For one-way-door design decisions, run the **architect** skill with a design-only return (it runs **arena**). Skip it for mechanical work whose shape is already concrete. A second arena over a settled design is over-engineering (the **principle-laziness-protocol** principle skill).
+- Read [configured delegation](references/execution.md) before dispatch. Decide what fans out. Parallelize only across seams, and give each worker its own worktree or branch (the **principle-separate-before-serializing-shared-state** principle skill). Don't over-fan.
+- Write the designed phase list down. That list is what the human reviews.
 
-Keep a change when evidence supports it. If it fails, diagnose the observation method as well as the change; recover only the unit's owned changes and preserve other work. Record a justified pivot or corrected gate separately. Do not weaken the expected behavior to turn a failure green. Dependent units wait for a verified prerequisite; independent authorized units may continue with the gap explicit. Bound retries by new evidence and surface an unresolved blocker instead of looping indefinitely.
+For a planning-only request, return the phase list, rigor, verification design, assumptions and open decisions here without execution workers or product edits. Otherwise execute the design within existing authority. Add its steps to the task plan as concrete items between the Phase C and Phase D entries. Run each under the Phase C loop discipline, and weave the Phase D log through them, a row as each step lands, rather than saving the whole trail for the end.
 
-Check delegated artifacts before accepting them. A worker's self-report is not its judge. Use a separate reviewer for consequential delegated work, with the configured judgment role, and independently inspect decisive evidence in the parent. Recurring mechanically preventable mistakes warrant a scoped test, validator or other concrete follow-up, not an automatic expansion of the task.
+## Phase C: Run the loop
 
-## Verify and hand back
+Each unit is an experiment. State the hypothesis, make the smallest change, measure against the predicate on the real artifact, keep it if it advanced, revert only the unit's owned changes if it didn't, preserving unrelated work. Apply the **principle-sequence-verifiable-units** principle skill, verifying each unit before starting the next instead of batching checks at the end.
 
-Check the combined product against the original predicate through its real interface, including integration behavior and recovery where required. Audit the decision trail against the bounded run evidence and follow its review procedure. A missing check, unavailable reviewer or inconclusive result stays visible; do not report full verification.
+- Verify by inspecting the artifact, never a self-report. When something passes too easily, suspect the observation method before the system.
+- Pair every delegated work unit with a separate judge using the configured `judgment and prose` role. Inspect its report and decisive artifact evidence; inherited or same-model judging does not establish model diversity. Missing review remains incomplete. If a worker games the gate, discard that unit's result while preserving other work and harden the contract. If the gate itself is wrong, fix the gate in its own change rather than routing around it.
+- A verdict is VERIFIED, NOT VERIFIED, or INCONCLUSIVE. Inconclusive is not a pass. Don't hide a negative.
 
-Return the designed workflow, rigor and reason, decision-trail path, verified outcomes, failed or unverified checks, and remaining work. Report review limitations and flags. PRs, merges, installation, external messages and recurring schedules follow their own applicable task authorization. This skill supplies no automatic authority for them.
+## Phase D: Keep the audit trail
+
+Log the run via the **show-me-your-work** skill, starting before the first execution unit and adding rows as work lands. figure-it-out's work is usually ambitious enough to commit the trail so the reviewer can read it in the PR, when publication is authorized. The trail plus the diff is what lets the human come back and trust the work.
+
+## Phase E: Verify and hand back
+
+Check the whole against the Phase A predicate on the real product, not just the harness. Encode any recurring correction as a gate, a lint rule, a check, or a script (the **principle-encode-lessons-in-structure** principle skill).
+
+Complete the trail skill's run-bounded audit and configured review before handoff. A missing check or review stays unverified; bound retries by new evidence and report blockers instead of cycling.
+
+**Reply:** the playbook you designed, the rigor level and why, the decision-trail path, what's verified against the predicate, and what's still open. Include the trail skill's Attention section with its actual reviewer and flags or missing review.

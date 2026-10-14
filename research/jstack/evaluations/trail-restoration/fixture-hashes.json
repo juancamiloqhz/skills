@@ -1,0 +1,9 @@
+{
+  "fixtures/audit/check-a.json": "4ef8448f03ee529e5f19f1a7dadc691782cf77dfcd32b7cc392b116e651a5bd5",
+  "fixtures/audit/check-b.json": "78388f2559a885f702390e78203cd743a03eb2d8ce5e59f4bc4f615b775fd1f3",
+  "fixtures/audit/decisions.tsv": "0d5ad032b77ee7d938bc4e9846e78b7b5609a44ba57cfb038e57e98074efa2ee",
+  "fixtures/audit/digest.json": "a4dddcfa27ef6d8f5d3fc76ab57134f5b91c876d54bf3a5254460234f48e44b8",
+  "fixtures/audit/frame.json": "f63d0e34de6bdaddfd3ee352595265b3022bc9239aa71e96f9766f107797e536",
+  "fixtures/audit/request.json": "0654bef3439f348dda228f9190f922c9482c9148d78bbf9fdaafd17a2f5f16df",
+  "fixtures/planning/request.json": "67bd2b73355bfd7e2b44e1262af203cafce6e51332a7ed1e5f3df2678555a340"
+}
