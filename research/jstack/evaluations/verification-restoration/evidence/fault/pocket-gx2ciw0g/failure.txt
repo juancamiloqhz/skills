@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py", line 64, in main
+    drive("show-existing", "show", "1", expected=first)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py", line 56, in drive
+    return command(feature, "--data-dir", data, *arguments, **kwargs)
+  File "/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py", line 43, in command
+    require(json.loads(result.stdout) == expected, f"{feature}: unexpected JSON: {record}")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py", line 18, in require
+    raise AssertionError(message)
+AssertionError: show-existing: unexpected JSON: {'feature': 'show-existing', 'argv': ['/usr/bin/python3', '/tmp/jstack-verification-restoration/fault/pocket.py', '--data-dir', '/tmp/jstack-verification-restoration/fault/.pocket-verify-w2g4lbwl/data', 'show', '1'], 'exit_code': 0, 'stdout': '{"id": 1, "title": "Packing list", "body": "wrong body"}\n', 'stderr': ''}

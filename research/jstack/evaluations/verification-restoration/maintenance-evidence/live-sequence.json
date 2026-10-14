@@ -1,0 +1,114 @@
+[
+  {
+    "feature": "doctor",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-retry.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "doctor",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-retry.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "passed",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  },
+  {
+    "feature": "create",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/create.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "create",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/create.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "passed",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  },
+  {
+    "feature": "doctor",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-before-read.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "doctor",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-before-read.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "passed",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  },
+  {
+    "feature": "read",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/read.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "read",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/read.json"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "failed",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  },
+  {
+    "feature": "doctor",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-after-read.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "doctor",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-after-read.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "passed",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  },
+  {
+    "feature": "doctor",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-before-export.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "doctor",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/doctor-before-export.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "passed",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  },
+  {
+    "feature": "export",
+    "evidence": "/tmp/jstack-verification-restoration/maintenance-evidence/export.json",
+    "command": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py",
+      "export",
+      "/tmp/jstack-verification-restoration/maintenance-evidence/export.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "outcome": "verified-unreachable",
+    "evidence_retained": true,
+    "cleanup_verified": true
+  }
+]

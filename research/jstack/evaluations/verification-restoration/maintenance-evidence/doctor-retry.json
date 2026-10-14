@@ -1,0 +1,15 @@
+{
+  "feature": "doctor",
+  "calls": [
+    {
+      "args": [
+        "--version"
+      ],
+      "stdout": "ledger 2\n",
+      "stderr": "",
+      "returncode": 0
+    }
+  ],
+  "outcome": "passed",
+  "cleanup": true
+}

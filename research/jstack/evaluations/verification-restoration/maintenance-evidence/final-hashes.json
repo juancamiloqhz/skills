@@ -1,0 +1,10 @@
+{
+  "ledger.py": "4ca6e527b7c090e0feffc267a283c7ebd9db70f173e4eee32eea72b45289d9bb",
+  "README.md": "89c07e4a19a4a25891c978a8c59460d96d6ed8b1e5cb2c7eb8c75bd5e7581a49",
+  ".agents/skills/verify-ledger/SKILL.md": "35caec94f87ed6410602f59c52f7f71ba06e7446782ce588c6d73a1ca35f77cc",
+  ".agents/skills/verify-ledger/features/README.md": "1bb69e897c6dd3a5028ac0f7b5a88167e0c9517608df892099c51ba75d1dbc37",
+  ".agents/skills/verify-ledger/features/create.md": "4e7a12e5a7040816f16f3cce232e1ae27572d5e40db5f8cb900e4bb5fa255959",
+  ".agents/skills/verify-ledger/features/export.md": "2127fea902a115eec0501860441fbb9fd0f524dd100e326b743f05956edf10c0",
+  ".agents/skills/verify-ledger/features/read.md": "da650f231b7ab4026d65c1cf1cd81485e5c2ea7df57f0cac0449ea7f491e5580",
+  ".agents/skills/verify-ledger/scripts/drive.py": "6933c0a18ad8f7923924530a0f209cf8e07360acd81c099e4834f0bc383068e4"
+}

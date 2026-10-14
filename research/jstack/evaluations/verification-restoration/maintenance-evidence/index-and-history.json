@@ -1,0 +1,17 @@
+{
+  "entries": [
+    "create.md",
+    "read.md",
+    "export.md"
+  ],
+  "files": [
+    "create.md",
+    "export.md",
+    "read.md"
+  ],
+  "missing": [],
+  "dead": [],
+  "duplicates": false,
+  "canonical": "/tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger",
+  "history": "No Git metadata; README accepted migration is supplied range. ledger.py parser exposes create/get/export, all mapped."
+}

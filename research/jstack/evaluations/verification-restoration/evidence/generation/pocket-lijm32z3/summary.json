@@ -1,0 +1,7 @@
+{
+  "app": "/tmp/jstack-verification-restoration/generation/pocket.py",
+  "evidence": "/tmp/jstack-verification-restoration/generation-evidence/pocket-lijm32z3",
+  "passed": true,
+  "scratch": "/tmp/jstack-verification-restoration/generation/.pocket-verify-u475wecf",
+  "cleanup": "owned scratch removed; subprocesses completed; evidence retained"
+}

@@ -1,0 +1,20 @@
+{
+  "feature": "create",
+  "calls": [
+    {
+      "args": [
+        "--data",
+        "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-7fcmiv93",
+        "create",
+        "--body",
+        "Case Sensitive"
+      ],
+      "stdout": "{\"body\": \"Case Sensitive\"}\n",
+      "stderr": "",
+      "returncode": 0
+    }
+  ],
+  "data": "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-7fcmiv93",
+  "outcome": "passed",
+  "cleanup": true
+}

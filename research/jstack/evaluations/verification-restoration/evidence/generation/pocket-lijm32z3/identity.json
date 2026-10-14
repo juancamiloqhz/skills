@@ -1,0 +1,9 @@
+{
+  "repo": "/tmp/jstack-verification-restoration/generation",
+  "sha256": {
+    "pocket.py": "3b9a74d274cb0862b9f6a51ef4c425b9008a155190c363b9e1b3bc0d8045172a",
+    "README.md": "54e11347f4640495da6e5d0578df3c44c09fad6f0f1edc3ac235844412966330"
+  },
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "executable": "/usr/bin/python3"
+}

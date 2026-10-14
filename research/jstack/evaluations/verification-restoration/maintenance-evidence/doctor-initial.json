@@ -1,0 +1,16 @@
+{
+  "feature": "doctor",
+  "calls": [
+    {
+      "args": [
+        "--version"
+      ],
+      "stdout": "ledger 2\n",
+      "stderr": "",
+      "returncode": 0
+    }
+  ],
+  "outcome": "failed",
+  "error": "wrong app identity",
+  "cleanup": true
+}
