@@ -1,0 +1,9 @@
+{
+  "run": "A",
+  "command": "test_parser",
+  "exitCode": 0,
+  "checks": [
+    "valid row",
+    "reject invalid date"
+  ]
+}

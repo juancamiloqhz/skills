@@ -1,0 +1,30 @@
+{
+  "type": "bounded synthetic digest",
+  "run": "A",
+  "turns": [
+    {
+      "id": 1,
+      "action": "framed two units"
+    },
+    {
+      "id": 2,
+      "action": "ran test_parser; invalid-date test failed"
+    },
+    {
+      "id": 3,
+      "action": "Run B took over; its work is not visible to A"
+    },
+    {
+      "id": 4,
+      "action": "A resumed, repaired validation and ran test_parser; both checks passed"
+    },
+    {
+      "id": 5,
+      "action": "A abandoned permissive date coercion in favor of strict validation; rationale: malformed input must fail"
+    },
+    {
+      "id": 6,
+      "action": "Run B wrote again; no knowledge of its work is available"
+    }
+  ]
+}

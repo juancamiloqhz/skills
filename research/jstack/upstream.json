@@ -164,6 +164,18 @@
       "differences": "research/jstack/adaptations/figure-it-out.md"
     },
     {
+      "name": "show-me-your-work",
+      "localPath": "skills/jstack/show-me-your-work",
+      "upstreamPath": "pstack/skills/show-me-your-work",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/setup-pstack",
+        "pstack/skills/unslop",
+        "pstack/skills/principle-encode-lessons-in-structure"
+      ],
+      "differences": "research/jstack/adaptations/show-me-your-work.md"
+    },
+    {
       "name": "principle-attack-the-premise",
       "localPath": "skills/jstack/principle-attack-the-premise",
       "upstreamPath": "pstack/skills/principle-attack-the-premise",

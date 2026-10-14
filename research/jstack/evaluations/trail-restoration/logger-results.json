@@ -1,0 +1,12 @@
+{
+  "passed": [
+    "invalid argument counts reject without log creation",
+    "nested directory, template header, UTC stamps and preserved prior bytes",
+    "embedded tab/newline/CR normalized; all four formula prefixes quoted",
+    "empty cells stay six columns; corrections append without rewriting history",
+    "existing empty log gets a header"
+  ],
+  "limits": [
+    "serial writers only; no network-mount fault injection or concurrent append test"
+  ]
+}

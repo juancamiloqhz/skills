@@ -22,7 +22,8 @@ This repository is the canonical source for skills I have developed and validate
 | [`interrogate`](./skills/jstack/interrogate) | Challenges code or designs with configured reviewers and a checked, report-only verdict. | Experimental; see [evaluation](./research/jstack/evaluations/interrogate/README.md) |
 | [`swarm`](./skills/jstack/swarm) | Coordinates configured workers for coverage or races and verifies one consolidated result. | Experimental; see [evaluation](./research/jstack/evaluations/swarm/README.md) |
 | [`reflect`](./skills/jstack/reflect) | Reviews bounded session evidence through three lenses and proposes verified guidance changes or structural fixes. | Experimental; see [evaluation](./research/jstack/evaluations/reflect/README.md) |
-| [`figure-it-out`](./skills/jstack/figure-it-out) | Designs a custom workflow with measured units, scoped execution and a reviewed decision trail. | Experimental; see [evaluation](./research/jstack/evaluations/figure-it-out/README.md) |
+| [`figure-it-out`](./skills/jstack/figure-it-out) | Designs a custom workflow with measured units, scoped execution and a reviewed decision trail. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
+| [`show-me-your-work`](./skills/jstack/show-me-your-work) | Keeps an append-only decision log and reviews this run's evidence before handoff. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
 | [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/create-verification-skill/README.md) |
 | [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/maintain-verification-skill/README.md) |
 
@@ -124,6 +125,8 @@ skills/
     reflect/
       SKILL.md
     figure-it-out/
+      SKILL.md
+    show-me-your-work/
       SKILL.md
     create-verification-skill/
       SKILL.md

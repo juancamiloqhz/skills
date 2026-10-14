@@ -1,0 +1,92 @@
+{
+  "validate figure-it-out": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/figure-it-out"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  "validate show-me-your-work": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/show-me-your-work"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  "bash syntax": {
+    "command": [
+      "bash",
+      "-n",
+      "skills/jstack/show-me-your-work/scripts/log.sh"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "manifest": "valid; only new standalone mapping added; old pins/checkpoint/decisions unchanged",
+  "protectedPathsUnchanged": [
+    "skills/jstack/setup-jstack",
+    "skills/jstack/juan-mode",
+    "skills/jstack/arena",
+    "skills/jstack/architect",
+    "skills/jstack/interrogate",
+    "skills/jstack/reflect",
+    "skills/jstack/figure-it-out/references/principles.md",
+    "skills/jstack/figure-it-out/references/execution.md"
+  ],
+  "historicalEvaluationFilesUnchanged": 105,
+  "unchangedConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "skillHashes": {
+    "skills/jstack/figure-it-out/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/figure-it-out/SKILL.md": "3597867d2e81505c043ffc9b6d87b937b858e4f002064a97dd6af16220b89ec4",
+    "skills/jstack/figure-it-out/references/execution.md": "ac2e5d49c7f4c5f7f3a29ade4a51b7c053bd7e8d85bfe8305504c66665748064",
+    "skills/jstack/figure-it-out/references/principles.md": "07613762b7e3b03453e411fd2512ddec53e073a024722b2273ce0df544944aa7",
+    "skills/jstack/show-me-your-work/LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+    "skills/jstack/show-me-your-work/SKILL.md": "51b7cc359addd340e19719f96aa3982c0815f276f1254c06b6078a5252b7ebf5",
+    "skills/jstack/show-me-your-work/references/decision-log-template.tsv": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+    "skills/jstack/show-me-your-work/references/execution.md": "c82e118b72d2efd6e9c85d8a75db4d578158219ab9c987d0bb7ba42c19172547",
+    "skills/jstack/show-me-your-work/scripts/log.sh": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e"
+  },
+  "localMarkdownTargets": 157,
+  "markdownlint": {
+    "command": [
+      "npx",
+      "--no-install",
+      "markdownlint-cli2",
+      "skills/jstack/figure-it-out/SKILL.md",
+      "skills/jstack/figure-it-out/references/principles.md",
+      "skills/jstack/figure-it-out/references/execution.md",
+      "skills/jstack/show-me-your-work/SKILL.md",
+      "skills/jstack/show-me-your-work/references/execution.md",
+      "research/jstack/adaptations/figure-it-out.md",
+      "research/jstack/adaptations/show-me-your-work.md",
+      "research/jstack/evaluations/trail-restoration/README.md",
+      "research/jstack/roadmap.md",
+      "README.md",
+      "research/jstack/principle-adaptations.md"
+    ],
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.3 (markdownlint v0.41.1)\nFinding: skills/jstack/figure-it-out/SKILL.md skills/jstack/figure-it-out/references/principles.md skills/jstack/figure-it-out/references/execution.md skills/jstack/show-me-your-work/SKILL.md skills/jstack/show-me-your-work/references/execution.md research/jstack/adaptations/figure-it-out.md research/jstack/adaptations/show-me-your-work.md research/jstack/evaluations/trail-restoration/README.md research/jstack/roadmap.md README.md research/jstack/principle-adaptations.md\nLinting: 11 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  "whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "comparisonReproduced": true,
+  "loggerExecutable": true
+}
