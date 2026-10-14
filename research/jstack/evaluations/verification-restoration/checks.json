@@ -1,0 +1,32 @@
+{
+  "sourceFilesCompared": 5,
+  "byteIdenticalExamples": 3,
+  "licensesMatchPin": true,
+  "manifestValid": true,
+  "checkerTestsPassed": 11,
+  "packageValidatorsPassed": 2,
+  "operationalMarkdownLint": "12 files, zero issues",
+  "reviewedCheckpointPinsAndDecisionsUnchanged": true,
+  "savedModelsSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "pocketSourcePreserved": true,
+  "generatedAndCopiedLinksResolve": true,
+  "generationAndReusePassed": true,
+  "wrongOutputFaultDetected": true,
+  "evidenceSurvivesAndScratchAbsent": true,
+  "maintenance": {
+    "outcome": "changed",
+    "sourceReadersCompleted": 6,
+    "initialReadAndExportOverlapped": true,
+    "coordinatorOwnedSerialLivePass": true,
+    "create": "passed",
+    "read": "failed product regression, assertion retained",
+    "export": "verified-unreachable, explicit entitlement error",
+    "doctor": "drift detected, repaired and retried once",
+    "allEightProofFilesRetained": true,
+    "ownedScratchAbsent": true,
+    "productSourcePreserved": true,
+    "savedConfigUnchanged": true
+  },
+  "whitespaceCheck": "Raw unified diff has required blank context prefixes; one file-specific .gitattributes exception preserves those bytes. Other changes pass git diff --check.",
+  "evaluationPythonSyntaxAndDocumentationLinksValid": true
+}

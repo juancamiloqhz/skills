@@ -1,0 +1,25 @@
+{
+  "selected_config": "/home/ubuntu/.config/jstack/models.json",
+  "whole_map_validated": true,
+  "role": "how explorer",
+  "resolved_target": null,
+  "inherited_provider": "codex",
+  "inherited_model": "gpt-6-astra",
+  "can_run_child_task": true,
+  "native_fresh_context_used": true,
+  "model_overrides": false,
+  "config_unchanged": true,
+  "product_and_readme_unchanged": true,
+  "canonical_symlink_preserved": true,
+  "helper_executable": true,
+  "all_evidence_present": true,
+  "all_drive_data_absent": true,
+  "owned_runtime_directory_removed": true,
+  "temporary_catalog_removed": true,
+  "changed_files": [
+    ".agents/skills/verify-ledger/SKILL.md",
+    ".agents/skills/verify-ledger/features/create.md",
+    ".agents/skills/verify-ledger/features/export.md",
+    ".agents/skills/verify-ledger/scripts/drive.py"
+  ]
+}

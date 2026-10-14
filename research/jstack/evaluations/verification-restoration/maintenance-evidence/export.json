@@ -1,0 +1,20 @@
+{
+  "feature": "export",
+  "calls": [
+    {
+      "args": [
+        "--data",
+        "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-7kv5hsw6/absent",
+        "export"
+      ],
+      "stdout": "{\"error\": \"export entitlement unavailable\"}\n",
+      "stderr": "",
+      "returncode": 3
+    }
+  ],
+  "data": "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-7kv5hsw6",
+  "outcome": "verified-unreachable",
+  "prerequisite": "licensed-export entitlement unavailable; cannot obtain it in this fixture",
+  "data_created": false,
+  "cleanup": true
+}

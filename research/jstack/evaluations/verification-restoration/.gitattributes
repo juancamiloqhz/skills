@@ -1,0 +1,2 @@
+# Preserve blank context lines in the raw unified diff.
+maintenance-evidence/verifier.diff whitespace=-blank-at-eol

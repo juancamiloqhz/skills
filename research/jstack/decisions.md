@@ -37,3 +37,7 @@ Use one source line per prose paragraph, with separate paragraph, list, and code
 ## Standalone investigation skills, 2026-10-12
 
 Package how and why as separate skills, as pstack does, with direct invocation and catalog-discovered use by juan-mode playbooks. This supersedes the initial plan to bundle these two procedures as references inside juan-mode. Their configured roles and investigation algorithms remain. Setup-jstack owns their shared configuration and evidence contract; they do not require a juan-mode installation or activate its persistent mode. Other planned helpers retain their existing packaging until assessed. Installation and updates remain manual.
+
+## Automatic Claude linking, 2026-10-14
+
+The user explicitly reaffirmed PR #9's automatic project-local linking: "Keep automatic Claude linking (preserve existing behavior)". Every generated verification skill gets a relative `.claude/skills/verify-<app>` link to its canonical directory, regardless of the executing provider. This is an intentional jstack addition to pstack. Preserve conflicting paths, keep canonical files inside the authorized repository and verify the link resolves the complete package. This decision does not authorize global installation or establish live provider discovery. Future fidelity reviews should preserve this choice unless the user changes it. See the [generator adaptation record](adaptations/create-verification-skill.md).

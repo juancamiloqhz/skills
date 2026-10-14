@@ -1,0 +1,31 @@
+{
+  "feature": "read",
+  "calls": [
+    {
+      "args": [
+        "--data",
+        "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-4_8drfl3",
+        "create",
+        "--body",
+        "Case Sensitive"
+      ],
+      "stdout": "{\"body\": \"Case Sensitive\"}\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "args": [
+        "--data",
+        "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-4_8drfl3",
+        "get"
+      ],
+      "stdout": "{\"body\": \"CASE SENSITIVE\"}\n",
+      "stderr": "",
+      "returncode": 0
+    }
+  ],
+  "data": "/tmp/jstack-verification-restoration/maintenance-evidence/runtime/ledger-verify-4_8drfl3",
+  "outcome": "failed",
+  "error": "{'body': 'CASE SENSITIVE'}",
+  "cleanup": true
+}

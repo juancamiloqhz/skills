@@ -1,0 +1,9 @@
+{
+  "repo": "/tmp/jstack-verification-restoration/fault",
+  "sha256": {
+    "pocket.py": "26961e71168b671b1b6bf669ae045cdb47b739580bd05d911a16b4ea499f1acc",
+    "README.md": "54e11347f4640495da6e5d0578df3c44c09fad6f0f1edc3ac235844412966330"
+  },
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "executable": "/usr/bin/python3"
+}

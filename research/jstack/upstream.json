@@ -42,7 +42,9 @@
       "localPath": "skills/jstack/create-verification-skill",
       "upstreamPath": "pstack/skills/create-verification-skill",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/maintain-verification-skill"
+      ],
       "differences": "research/jstack/adaptations/create-verification-skill.md"
     },
     {
@@ -50,7 +52,10 @@
       "localPath": "skills/jstack/maintain-verification-skill",
       "upstreamPath": "pstack/skills/maintain-verification-skill",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/setup-pstack",
+        "pstack/skills/create-verification-skill"
+      ],
       "differences": "research/jstack/adaptations/maintain-verification-skill.md"
     },
     {

@@ -1,37 +1,38 @@
 ---
 name: create-verification-skill
-description: Generate and exercise a project-local verification skill for real UI, CLI, API, or library behavior. Use when creating reusable verification instructions for a repository or when jstack setup offers them; not for running an existing verification skill or configuring models.
+description: "Generate a project-local verification skill that drives your app the way a user does — any language, framework, or platform. Use for /create-verification-skill, \"make a control skill for this repo\", or when a project has no scripted way to prove UI/CLI/service behavior."
 ---
 
 # Create a verification skill
 
-Build instructions another agent can follow without this conversation: start the real application, exercise a user-visible behavior, preserve evidence, and clean up owned state. Read [the output contract](references/output-contract.md) before writing.
+Every serious project needs a scripted way to drive the real app and prove behavior: launch it, exercise a feature the way a user would, and capture evidence. This skill generates that as a project-local skill (`.agents/skills/verify-<app>/`) tailored to the repo. You write the generator's output for the next agent, not for a human: it will be read cold, mid-task, by an agent that has never seen the app.
 
-## Inspect the project
+Generation follows the requested repository and its instructions. Honor an explicit destination or established repository convention; otherwise use the default above. Preserve unrelated work and existing suitable verification skills rather than creating competing copies. A documentation-only repository with no executable product needs no invented app skill. This task does not change model settings or global installations.
 
-Establish the target repository from the request and read its applicable instructions. Inspect its documented startup commands, public entry points, existing verification skills and test tooling. Ask only for missing information that prevents a grounded or authorized run.
+## 1. Interview the repo, not the user
 
-Identify the primary user interface and any secondary interfaces, prerequisites, observable results, and how to isolate processes, data, profiles and ports. Prefer the repository's existing harness. A short-lived CLI can use ordinary subprocesses; interactive terminal behavior needs a PTY. API proof uses the public endpoint, and library proof uses a real public-API client.
+Answer these from the codebase and only ask the user what you cannot observe:
 
-If a suitable verify skill already exists, assess it and make only requested repairs rather than creating a competing one. Reuse a working test harness as the execution mechanism when it exercises the intended user path. A documentation-only repository with no executable product needs no invented app skill; explain that outcome and stop without generating files.
+- **Surface:** what does a user actually touch? A web UI, a CLI/TUI, a desktop app, an API, a mobile app, a library? A repo can have several; pick the primary one and note the rest.
+- **Run:** how does the app start locally? Prefer the repo's own documented dev command (package scripts, Makefile, README quickstart). Note ports, env vars, seed data, auth.
+- **Drive:** how can an agent interact with it programmatically? Existing harnesses first — Playwright/Cypress specs, expect scripts, PTY helpers, curl-able endpoints, a debug port. Only then pick a generic recipe: browser/CDP for web and Electron, a tmux/PTY harness for CLI/TUI, plain HTTP for services.
+- **Observe:** what evidence can be captured? Screenshots, terminal transcripts, response bodies, logs, exit codes, DB state.
+- **Isolate:** can two instances run side by side (ports, data dirs, profiles)? If not, say so in the generated skill: refusing to double-drive a shared instance beats corrupting the user's session.
 
-Check that the documented baseline actually runs before claiming verified output. Report missing credentials, dependencies, startup failures or inaccessible tools precisely. Small verification scaffolding must be identified and cleaned up; broader application fixes, system installation and external changes require authorization under the current task. Do not manufacture passing output or bypass a broken startup path.
+If the checkout doesn't build or start as-is, fix it only within the task's authorization (or report it precisely) before generating; a skill written against a broken base teaches wrong steps. When an irrelevant missing asset blocks startup (a static dir the API never serves, a sample config), the generated skill may create it, clearly marked as verification scaffolding, and remove it in cleanup.
 
-## Select tools and output location
+For browser interaction in T3 Code, start with `preview_status`, then `preview_open` if no automation-capable preview is attached. Use current callable schemas, observed snapshot locators and the host's ownership/fallback rules. A repository harness remains valid when the task or repository workflow names it. Outside T3 Code, use the available project harness and record its prerequisites. Missing credentials, dependencies or tools are blockers, not permission for installation or broader application repair.
 
-For browser interaction in T3 Code, start with `preview_status`, then `preview_open` if no automation-capable preview is attached. Use current callable schemas and observed snapshot locators. Respect human-owned tabs and current T3 Code fallback rules. An existing repository harness remains useful for its documented tests. A failed T3 Code preview is not permission to install system libraries or silently switch browser systems. Record the blocker if the required route cannot run. Outside T3 Code, use the available project harness and state its prerequisites.
+## 2. Generate the skill
 
-Write one canonical project-local skill. Honor an explicit output path or repository convention; otherwise author `.agents/skills/verify-<app>/`. Use a stable lowercase app name. Check the destination before writing and preserve unrelated content. The project-local Claude Code link below is part of generation. Global skill installations, updates and provider settings remain user-managed.
+Write `.agents/skills/verify-<app>/SKILL.md` with YAML frontmatter (`name: verify-<app>` and a `description` that names the app, the surface, and when to reach for it — without frontmatter the skill never registers) and these sections, each grounded in what the interview actually found (no placeholders left):
 
-## Generate the instructions and feature map
-
-Write `SKILL.md` with a valid name and a description naming the product, interface, and verification triggers. Follow the output contract for Launch, Doctor, Drive, Evidence, Cleanup and any Helpers. Ground commands, selectors, assertions, and prerequisites in this checkout. Resolve paths from the repository or skill location instead of relying on the author's working directory or temporary machine paths.
-
-Add `features/README.md` and a small set of feature files, usually three to five when that many meaningful features exist. The index defines baseline state, links the features and tracks tested versus untested entry points. Each feature explains what users do, exact steps to reproduce it, and the observable result. Do not treat a map of intended coverage as completed verification.
-
-Keep scratch data separate from retained evidence. Limit changes to owned instances and authorized test state. A skill, test mode, or dry-run flag grants no permission to send messages, charge accounts, publish, push, or mutate shared services. Verify a claimed dry-run's effects rather than trusting its name. Keep credentials and private payloads out of artifacts.
-
-## Link the generated skill for Claude Code
+- **Launch:** the exact command that starts the app for verification, and how to tell it's ready (a log line, a port answering, a prompt). Include teardown. For a short-lived CLI or TUI there is no server to keep alive: launch means build the binary (or install deps) once, then start each drive in its own isolated session. Ordinary noninteractive CLIs can use subprocesses; interactive terminal behavior needs a PTY or tmux. A library uses a runnable client of its public API. Keep owned scratch separate from retained evidence and document isolation or its absence.
+- **Doctor:** one read-only check that answers "is this instance worth driving?" — process up, right version/build, port owned by us, auth valid. An agent runs this first whenever anything looks off. It checks identity/readiness without silently seeding or repairing state.
+- **Drive:** the harness recipe with real selectors/commands from this repo, not examples. Prefer stable handles (ARIA labels, data attributes, prompt strings, route paths) over coordinates and tab order.
+- **Evidence:** what to capture for a proof and where it goes. State the proof standards: exercise the real user path, not internal setters or test-only endpoints; capture the action and the resulting state, not just the final screen; verify side effects (files written, rows inserted, messages sent) alongside what's visible; mocks only where a production boundary already isolates the external system. When the safe path is a dry-run or test mode, verify what it actually skips by observing (files, network, git refs) rather than trusting its name: some dry-runs still touch the network or open a browser. Assertions must fail on mismatches even when the app exits zero; capture the command/action, actual result, app identity and feature entry point. Keep secrets out of artifacts. No recipe or test mode authorizes external messages, charges, publication or shared-service mutations.
+- **Cleanup:** how to tear down instances the run created. Never kill by process name; kill what you started. Cleanup removes instances and scratch state, never the evidence: proof artifacts survive the teardown, in a location the skill names. Cleanup handles partial launches and checks that owned state/processes are gone; never remove an unverified user directory.
+- **Helpers:** any script the skill ships is executable and its invocation is shown in the skill body. A helper the reader has to reverse-engineer is not a helper. Propagate application and assertion failures, preserve diagnostics, and resolve paths from the repository or skill location instead of a previous temporary checkout.
 
 For every generated skill, automatically create `.claude/skills/verify-<app>` as a relative symlink to its canonical directory, regardless of the executing provider or the project's current use of Claude Code. Create missing parent directories. Link the whole directory so features and helpers share one source. If the canonical skill already lives at that path or an existing link resolves to it, leave it in place.
 
@@ -39,10 +40,14 @@ For the default layout, the link target is `../../.agents/skills/verify-<app>`. 
 
 Verify that `SKILL.md` and the generated supporting files resolve to the canonical files through the link. Report both paths and any linking failure at handoff. [Claude Code supports project-local symlinked skill directories](https://code.claude.com/docs/en/skills#choose-where-skills-load); report live client discovery as untested unless checked in a Claude Code session. Linking is a generator step, not an instruction the generated skill must execute on every run.
 
-## Exercise and hand off
+## 3. Seed the feature map
 
-Follow the generated instructions end to end for at least one mapped feature: launch, doctor, perform the real action, assert its result and relevant side effects, retain evidence, then clean up. Use the generated helper invocation if one exists. Clean up owned processes and scratch data on failure too; preserve diagnostics and never kill by process name. After cleanup, check that the proof still exists and that the owned process or scratch state is gone.
+Create `.agents/skills/verify-<app>/features/README.md` plus one file per user-facing feature you can identify (aim for the top 3-5 to start, from routes, commands, menus, or docs). Follow the shape in [`references/feature-map-example/`](references/feature-map-example/), with a README index and one file per feature. Each file answers, from the user's point of view: what the feature is, how to reach it, how to drive it with the harness, and what observable end state proves it works. The four H2s are `Sub-features`, `How to get to it (user POV)`, `Driving it with <harness>`, and `Gotchas`. These Notes files illustrate output shape, not commands to execute in an unrelated project. Replace the harness name with the actual tool, keep commands grounded and mark only exercised paths verified. The map is the repo's maintained verification source; a proof that drives one convenient entry point is incomplete when the map lists others.
 
-Fix recipe defects and repeat the failed path. If execution is blocked, label the output a draft and name the failed command or missing prerequisite; do not claim a proven skill. If no skill was generated, say so. Successful handoff names the output path, feature and entry points exercised, evidence location, cleanup result, and untested interfaces or features.
+## 4. Prove the generated skill before handing it over
 
-For later upkeep, `maintain-verification-skill` audits an existing map against source and live behavior. Resolve it from the current catalog or an explicitly supplied source path before handing off; it may be installed separately. If unavailable, provide manual installation instructions rather than assuming a sibling directory or installing it. Model setup may offer this generator as a separate project verification task; invoking it does not change `models.json`.
+Run its own instructions end to end once: launch, doctor, drive ONE mapped feature (one is enough; the map exists so later runs can cover the rest), capture evidence, clean up. After cleanup, confirm the evidence still exists at the named location — a cleanup that eats the proof fails this step. Fix what fails, and run the generated cleanup after every failed iteration too, so broken attempts don't strand processes and ports. A generated skill that was never executed is a draft, not a deliverable. Report the generated and linked paths, feature/entry points exercised, retained proof, cleanup outcome and untested coverage. A linking conflict or failed check stays explicit; do not claim complete generation when a required step is unresolved.
+
+## 5. Offer the maintenance loop
+
+Point the user at `/maintain-verification-skill` for keeping the map honest as the app changes. Resolve it from the catalog or an explicit authoring path; it may be installed separately. If unavailable, provide the manual command `npx skills add juancamiloqhz/skills --skill maintain-verification-skill` rather than installing it. Suggest a cadence only if they ask.

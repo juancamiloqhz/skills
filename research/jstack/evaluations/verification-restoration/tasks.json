@@ -1,0 +1,30 @@
+{
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "selectionOverrides": false,
+  "context": "Fresh context, raw task/skill/fixture only; expected findings withheld.",
+  "tasks": [
+    {
+      "task": "/root/verification_generator_eval",
+      "request": "Create a verification skill for Pocket in /tmp/jstack-verification-restoration/generation and prove it works.",
+      "skill": "skills/jstack/create-verification-skill/SKILL.md",
+      "writes": "Temporary fixture and owned evidence only",
+      "constraints": "No product edits, installs, network services, settings changes, commits/pushes/PRs or delegation."
+    },
+    {
+      "task": "/root/verification_maintenance_eval",
+      "request": "Audit and maintain the existing verification skill for the Ledger app at /tmp/jstack-verification-restoration/maintenance. Leave proven corrections locally and report the result; do not publish.",
+      "skill": "skills/jstack/maintain-verification-skill/SKILL.md",
+      "dependency": "skills/jstack/setup-jstack",
+      "writes": "Canonical temp verification package and owned evidence only",
+      "constraints": "Read-only per-feature delegation required. No product edits, installs, settings/entitlement changes, commits/pushes/PRs. Preserve ledger.py and README.md."
+    },
+    {
+      "task": "/root/verification_reuse_eval",
+      "request": "Use the existing verify-pocket skill in /tmp/jstack-verification-restoration/reuse to verify Pocket and report whether it works.",
+      "skill": "Fresh copy of generated package",
+      "writes": "Owned scratch/evidence only",
+      "constraints": "No prior generation evidence/reports. No source/package edits, installs, network, commits/settings or delegation. Report rather than silently repair problems."
+    }
+  ]
+}

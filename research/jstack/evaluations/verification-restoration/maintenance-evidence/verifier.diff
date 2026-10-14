@@ -1,0 +1,85 @@
+diff -ru /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/features/create.md /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/features/create.md
+--- /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/features/create.md	2026-10-14 20:51:14.019603556 +0000
++++ /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/features/create.md	2026-10-14 20:54:17.663426611 +0000
+@@ -2,7 +2,7 @@
+ 
+ ## Sub-features
+ 
+-Store a body verbatim with the add command.
++Store a body verbatim with the create command.
+ 
+ ## How to get to it (user POV)
+ 
+diff -ru /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/features/export.md /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/features/export.md
+--- /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/features/export.md	2026-10-14 20:51:14.019791454 +0000
++++ /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/features/export.md	2026-10-14 20:54:17.663426611 +0000
+@@ -4,6 +4,8 @@
+ 
+ Export the current note as JSON.
+ 
++This requires the licensed-export entitlement. This fixture has no entitlement and cannot obtain one, so successful export is unreachable here.
++
+ ## How to get to it (user POV)
+ 
+ Use the documented Ledger CLI from the repository root.
+@@ -14,4 +16,4 @@
+ 
+ ## Gotchas
+ 
+-Use only fresh owned data.
++Use only fresh owned data. Attempt export against a nonexistent child of an owned temporary directory. Expect exit 3 and JSON `{"error":"export entitlement unavailable"}` with no data created. Record `verified-unreachable` and the missing entitlement, not a successful export. Do not bypass the requirement.
+diff -ru /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/scripts/drive.py /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py
+--- /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/scripts/drive.py	2026-10-14 20:51:14.019896159 +0000
++++ /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/scripts/drive.py	2026-10-14 20:54:17.664426630 +0000
+@@ -14,21 +14,28 @@
+     return p.stdout
+ try:
+     if feature=='doctor':
+-        assert call(['--version']).strip()=='ledger 1', 'wrong app identity'
++        assert call(['--version']).strip()=='ledger 2', 'wrong app identity'
+     else:
+         data=Path(tempfile.mkdtemp(prefix='ledger-verify-'))
+         report['data']=str(data)
+         if feature in ('create','read'):
+-            got=json.loads(call(['--data',str(data),'add','--body','Case Sensitive']))
++            got=json.loads(call(['--data',str(data),'create','--body','Case Sensitive']))
+             assert got=={'body':'Case Sensitive'}, got
+             assert json.loads((data/'note.json').read_text())==got
+             if feature=='read':
+                 got=json.loads(call(['--data',str(data),'get']))
+                 assert got=={'body':'Case Sensitive'}, got
+         elif feature=='export':
+-            json.loads(call(['--data',str(data),'export']))
++            target=data/'absent'
++            got=json.loads(call(['--data',str(target),'export'], expected=3))
++            assert got=={'error':'export entitlement unavailable'}, got
++            assert report['calls'][-1]['stderr']=='', report['calls'][-1]['stderr']
++            assert not target.exists(), 'export created data without entitlement'
++            report['outcome']='verified-unreachable'
++            report['prerequisite']='licensed-export entitlement unavailable; cannot obtain it in this fixture'
++            report['data_created']=False
+         else: raise ValueError(feature)
+-    report['outcome']='passed'
++    report.setdefault('outcome','passed')
+ except Exception as exc:
+     report['outcome']='failed'; report['error']=str(exc); status=1
+ finally:
+diff -ru /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/SKILL.md /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/SKILL.md
+--- /tmp/jstack-verification-restoration/maintenance-evidence/original-verifier/SKILL.md	2026-10-14 20:51:14.019374473 +0000
++++ /tmp/jstack-verification-restoration/maintenance/.agents/skills/verify-ledger/SKILL.md	2026-10-14 20:54:17.662426592 +0000
+@@ -11,12 +11,14 @@
+ 
+ ## Doctor
+ 
+-`python3 .agents/skills/verify-ledger/scripts/drive.py doctor /absolute/evidence/doctor.json` checks version read-only. Expected identity is `ledger 1`. Run before each fresh feature session and after failure.
++`python3 .agents/skills/verify-ledger/scripts/drive.py doctor /absolute/evidence/doctor.json` checks version read-only. Expected identity is `ledger 2`. Run before each fresh feature session and after failure.
+ 
+ ## Drive
+ 
+ Run `python3 .agents/skills/verify-ledger/scripts/drive.py FEATURE /absolute/evidence/FEATURE.json`, where FEATURE is create, read or export. See features/README.md. Each is a real public CLI invocation. Product output and persisted data must satisfy the documented contract even with exit 0.
+ 
++Export requires the licensed-export entitlement, which this fixture cannot obtain. Its drive proves the documented rejection and records `verified-unreachable`, not a successful export. The helper exits 0 when that prerequisite check matches the contract. Never bypass entitlement. Read must preserve the body verbatim; a case change remains a failed drive.
++
+ ## Evidence
+ 
+ The helper records every command, output and exit status, assertion result, owned data path and cleanup result. Supply unique evidence paths; never overwrite old proof. Failed assertions must return nonzero. Evidence survives cleanup.

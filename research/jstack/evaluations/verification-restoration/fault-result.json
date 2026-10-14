@@ -1,0 +1,29 @@
+{
+  "description": "Parent fault injection in separate disposable copy: show returns wrong body with exit zero. Generated helper unchanged.",
+  "returncode": 1,
+  "stdout": "Evidence: /tmp/jstack-verification-restoration/fault-evidence/pocket-gx2ciw0g\n",
+  "stderr": "Traceback (most recent call last):\n  File \"/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py\", line 100, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py\", line 64, in main\n    drive(\"show-existing\", \"show\", \"1\", expected=first)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py\", line 56, in drive\n    return command(feature, \"--data-dir\", data, *arguments, **kwargs)\n  File \"/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py\", line 43, in command\n    require(json.loads(result.stdout) == expected, f\"{feature}: unexpected JSON: {record}\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/jstack-verification-restoration/fault/.agents/skills/verify-pocket/scripts/verify.py\", line 18, in require\n    raise AssertionError(message)\nAssertionError: show-existing: unexpected JSON: {'feature': 'show-existing', 'argv': ['/usr/bin/python3', '/tmp/jstack-verification-restoration/fault/pocket.py', '--data-dir', '/tmp/jstack-verification-restoration/fault/.pocket-verify-w2g4lbwl/data', 'show', '1'], 'exit_code': 0, 'stdout': '{\"id\": 1, \"title\": \"Packing list\", \"body\": \"wrong body\"}\\n', 'stderr': ''}\n",
+  "helperSha256": "1a5a5451a8b062af902400cf9d5d4a0b763768f39465a6097af35b2db2eb94e6",
+  "mutation": "show-existing output body replaced with 'wrong body'",
+  "summary": {
+    "app": "/tmp/jstack-verification-restoration/fault/pocket.py",
+    "evidence": "/tmp/jstack-verification-restoration/fault-evidence/pocket-gx2ciw0g",
+    "passed": false,
+    "scratch": "/tmp/jstack-verification-restoration/fault/.pocket-verify-w2g4lbwl",
+    "cleanup": "owned scratch removed; subprocesses completed; evidence retained"
+  },
+  "lastCommand": {
+    "feature": "show-existing",
+    "argv": [
+      "/usr/bin/python3",
+      "/tmp/jstack-verification-restoration/fault/pocket.py",
+      "--data-dir",
+      "/tmp/jstack-verification-restoration/fault/.pocket-verify-w2g4lbwl/data",
+      "show",
+      "1"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"id\": 1, \"title\": \"Packing list\", \"body\": \"wrong body\"}\n",
+    "stderr": ""
+  }
+}
