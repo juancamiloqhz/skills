@@ -1,0 +1,28 @@
+{
+  "preflightTestsPassed": 15,
+  "skillValidator": "passed",
+  "markdownLint": "8 files, zero issues",
+  "manifest": "valid",
+  "pinsCheckpointDeferredDecisionsAndOtherMappings": "unchanged",
+  "preflightCodeTestsAndConfigurationContract": "unchanged",
+  "savedModelConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "parentFixtureReplay": "passed",
+  "routingCasesAssessed": 10,
+  "freshStyleTaskIds": [
+    "/root/mode_style_first",
+    "/root/mode_style_followup"
+  ],
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "selectionOverrides": false,
+  "styleRoleResolvedTargets": [
+    null
+  ],
+  "all23Playbooks": "still pending",
+  "installedSetupInvestigationReferenceExists": false,
+  "authoringSetupInvestigationReferenceExists": true,
+  "documentationLinks": "all checked local links resolve",
+  "existingPrinciplesSection": "byte-identical to preceding local version",
+  "finalSourceComparison": "matches recorded comparison",
+  "whitespaceCheck": "passed"
+}

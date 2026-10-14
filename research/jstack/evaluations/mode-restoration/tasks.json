@@ -1,0 +1,28 @@
+{
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "freshContext": true,
+  "selectionOverrides": false,
+  "tasks": [
+    {
+      "taskId": "/root/mode_routing_a",
+      "brief": "Independent skill evaluation. Read /home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md and required references. Apply its routing rules to each independent request in /tmp/jstack-mode-restoration/routing-a.json. Treat juan-mode as already active for these supplied scenarios, except where the request states otherwise; this evaluates initial routing only, not execution of the scenario tasks. For each return selected route, required helpers/gates, known unavailable dependencies, task boundary and first permitted next action. Do not perform scenario work, delegate, install, change settings, call GitHub or edit repository files. Catalog/package inspection is read-only; /home/ubuntu/Dev/skills/skills/jstack is the explicitly provided jstack authoring source if you need to verify availability. Save result /tmp/jstack-mode-restoration/routing-a-result.md. Expected routes are withheld. Report ambiguity in the instructions rather than inventing support. Reading for this evaluation does not activate persistent mode.",
+      "status": "completed"
+    },
+    {
+      "taskId": "/root/mode_routing_b",
+      "brief": "Independent skill evaluation. Read /home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md and required references. Apply its routing rules to each independent request in /tmp/jstack-mode-restoration/routing-b.json. Treat juan-mode as already active for these supplied scenarios, except where the request states otherwise; this evaluates initial routing only, not execution of the scenario tasks. For each return selected route, required helpers/gates, known unavailable dependencies, task boundary and first permitted next action. Do not perform scenario work, delegate, install, change settings, call GitHub or edit repository files. Catalog/package inspection is read-only; /home/ubuntu/Dev/skills/skills/jstack is the explicitly provided jstack authoring source if you need to verify availability. Save result /tmp/jstack-mode-restoration/routing-b-result.md. Expected routes are withheld. Report ambiguity in the instructions rather than inventing support. Reading for this evaluation does not activate persistent mode.",
+      "status": "completed"
+    },
+    {
+      "taskId": "/root/mode_style_first",
+      "brief": "Bounded ordinary-child style evaluation, not a playbook execution. Original task: explain and verify how partition handles zero and preserves order in /tmp/jstack-mode-restoration/fixture.py. Before work, read /home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md in full, including its inline Principles, and read every principle leaf you actually apply from the explicitly provided /home/ubuntu/Dev/skills/skills/jstack packages. Apply that working style within this brief; reading does not activate persistent conversation mode. Selected role judgment and prose resolved to null by parent preflight; selected absolute config is /home/ubuntu/.config/jstack/models.json, preserve it. Fresh child inherits provider/model/effort, no overrides. Scope: inspect and execute this small pure-Python fixture; write only /tmp/jstack-mode-restoration/style-first-result.md and owned temporary evidence if needed. No source changes, installs, external actions, commits or further delegation. Required return: actual behavior/proof, exact command and result, files read, principles that changed your choices, and untested limits. Do not invent a completed playbook or claim all-provider persistence. Expected output withheld. Do not inspect other evaluation reports.",
+      "status": "completed"
+    },
+    {
+      "taskId": "/root/mode_style_followup",
+      "brief": "Fresh ordinary-child follow-up evaluation. Original task: explain and verify how partition handles zero and preserves order in /tmp/jstack-mode-restoration/fixture.py. Prior child /root/mode_style_first completed on the same unchanged temporary fixture, with no branch or edits. It reported zero belongs to other, stable relative order within each group, three literal-output cases passed and source unchanged. Its full report is /tmp/jstack-mode-restoration/style-first-result.md. Later directive: extend the verification to a generator input and repeated calls to check whether output lists are shared between calls. No repairs were requested. Before work, read /home/ubuntu/Dev/skills/skills/jstack/juan-mode/SKILL.md in full including Principles and every leaf you apply from the explicitly provided /home/ubuntu/Dev/skills/skills/jstack packages. Apply the style only under this bounded brief, without persistent activation. Selected role judgment and prose resolved null; config /home/ubuntu/.config/jstack/models.json stays unchanged, inherit model/effort. Scope: read and execute the small fixture, write only /tmp/jstack-mode-restoration/style-followup-result.md and owned temporary evidence. No source/settings changes, installations, external actions, commits or nested delegation. Return exact command/output, inspected files, principles that changed choices and untested limits. Inspect actual fixture and prior report; do not treat prior results as proof of the added cases. Expected new outcomes withheld.",
+      "status": "completed"
+    }
+  ]
+}

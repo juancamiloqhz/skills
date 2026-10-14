@@ -14,7 +14,7 @@ This repository is the canonical source for skills I have developed and validate
 | [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
 | [`setup-jstack`](./skills/jstack/setup-jstack) | Configures jstack workflow roles using T3 Code's live provider/model catalog, reasoning budgets, global defaults and optional project settings. | Experimental; configuration helper tested |
-| [`juan-mode`](./skills/jstack/juan-mode) | Provides conversation activation, a 23-route registry and configured delegation preflight. | Foundation only; playbooks pending; see [evaluation](./research/jstack/evaluations/juan-mode-foundation/README.md) |
+| [`juan-mode`](./skills/jstack/juan-mode) | Provides persistent-mode instructions, inline task routing and configured delegation preflight. | Foundation only; playbooks pending; see [evaluation](./research/jstack/evaluations/mode-restoration/README.md) |
 | [`how`](./skills/jstack/how) | Explains runtime flow, component ownership and failure behavior using configured investigation roles. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
 | [`why`](./skills/jstack/why) | Investigates historical rationale, contradictions and unknowns using relevant evidence sources. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
 | [`arena`](./skills/jstack/arena) | Compares configured candidates, selects one cross-judge and synthesizes a verified artifact. | Experimental; see [evaluation](./research/jstack/evaluations/arena/README.md) |
@@ -155,7 +155,7 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 
 ## jstack
 
-jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/jstack/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3 Code. [`juan-mode`](./skills/jstack/juan-mode/SKILL.md), corresponding to pstack's `poteto-mode`, now provides the execution foundation: activation instructions, the complete route registry, dependency discovery and model preflight. Its 23 playbook procedures remain planned. The [upstream reference](research/jstack/adaptations/juan-mode.md) records the inspected revision and MIT attribution. Source availability does not establish automatic rule loading or persistence after restart.
+jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/jstack/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3 Code. [`juan-mode`](./skills/jstack/juan-mode/SKILL.md), corresponding to pstack's `poteto-mode`, now provides the execution foundation: activation instructions, the inline playbook list, mandatory helper triggers, dependency discovery and model preflight. Its 23 playbook procedures remain planned. The [upstream reference](research/jstack/adaptations/juan-mode.md) records the inspected revision and MIT attribution. Source availability does not establish automatic rule loading or persistence after restart.
 
 The standalone [`how`](./skills/jstack/how/SKILL.md) and [`why`](./skills/jstack/why/SKILL.md) skills explain runtime behavior and investigate historical rationale. Invoke either directly without activating juan-mode. Each requires an available, current setup-jstack installation for model resolution and the shared investigation contract; neither requires the other or juan-mode. Future playbooks will discover these skills through the provider's catalog. Install or update the dependencies manually, for example:
 
@@ -175,7 +175,7 @@ npx skills add juancamiloqhz/skills --skill setup-jstack
 
 ## Jstack research
 
-[Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `setup-jstack` is released; `juan-mode` has a foundation implementation with [bounded evaluation evidence](./research/jstack/evaluations/juan-mode-foundation/README.md). The complete playbook release remains in development.
+[Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `setup-jstack` is released; `juan-mode` has a foundation implementation with [bounded evaluation evidence](./research/jstack/evaluations/mode-restoration/README.md). The complete playbook release remains in development.
 
 For pstack updates, use the [upstream maintenance procedure](./research/jstack/upstream-maintenance.md). Its checker detects changes and preserves evidence; a review decides which changes belong in jstack. The [roadmap](./research/jstack/roadmap.md) records the enabled weekly review and verified delivery.
 

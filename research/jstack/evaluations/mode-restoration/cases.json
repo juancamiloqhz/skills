@@ -1,0 +1,42 @@
+[
+  {
+    "id": "small",
+    "request": "Add a switch to hide archived rows in this small CLI. I will review the local changes."
+  },
+  {
+    "id": "crosscutting",
+    "request": "Plan a migration from integer customer IDs to UUIDs across the API, database and twenty clients. Stop after the plan; I will approve execution."
+  },
+  {
+    "id": "away",
+    "request": "I am going to bed. Finish this bounded parser change and leave tested local changes for me; do not open or merge a PR."
+  },
+  {
+    "id": "program",
+    "request": "Own this multi-day project across many repositories, stacked PRs and a fleet of agents until the whole migration lands. This will not fit in one session."
+  },
+  {
+    "id": "empirical",
+    "request": "Read-only question: does this function retry validation errors or just transport errors? Explain from the source; do not change it or build a prototype."
+  },
+  {
+    "id": "benchmark",
+    "request": "Run the existing benchmark and tell me whether this patch is faster. No new infrastructure or installations."
+  },
+  {
+    "id": "status",
+    "request": "Anything outstanding on PR 72? Report status only; do not fix, comment or merge."
+  },
+  {
+    "id": "open",
+    "request": "Open a PR for the already tested changes, then hand it back. Do not monitor or merge it."
+  },
+  {
+    "id": "authoring",
+    "request": "Review this SKILL.md description for ambiguity and propose wording only. Do not activate the mode merely because we are editing it."
+  },
+  {
+    "id": "contested",
+    "request": "We disagree about the two designs. Give an adversarial design review, with no implementation or PR."
+  }
+]
