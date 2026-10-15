@@ -22,7 +22,8 @@
       "contextPaths": [
         "pstack/docs/guide/02-poteto-mode.md",
         "pstack/skills/setup-pstack",
-        "pstack/agents/poteto-agent.md"
+        "pstack/agents/poteto-agent.md",
+        "pstack/skills/benchmark-checklist"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
@@ -400,6 +401,18 @@
         "pstack/skills/typescript-best-practices"
       ],
       "differences": "research/jstack/principle-adaptations.md"
+    },
+    {
+      "name": "benchmark-checklist",
+      "localPath": "skills/jstack/benchmark-checklist",
+      "upstreamPath": "pstack/skills/benchmark-checklist",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+        "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+        "pstack/skills/poteto-mode/playbooks/hillclimb.md"
+      ],
+      "differences": "research/jstack/adaptations/benchmark-checklist.md"
     }
   ],
   "decisions": [

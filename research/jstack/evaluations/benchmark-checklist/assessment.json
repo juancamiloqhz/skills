@@ -1,0 +1,39 @@
+{
+  "kind": "Parent manual assessment of seven independent requests, not a statistical reliability score",
+  "cases": {
+    "C1": {
+      "met": true,
+      "basis": "Reject speedup; timed generator creation without consumed work."
+    },
+    "C2": {
+      "met": true,
+      "basis": "Reject latency claim; fast failures and incorrect output."
+    },
+    "C3": {
+      "met": true,
+      "basis": "No adoption winner from untuned A; inconclusive until tuned fairly."
+    },
+    "C4": {
+      "met": true,
+      "basis": "Inconclusive claim without limiter profile/counters; do not invent one."
+    },
+    "C5": {
+      "met": true,
+      "basis": "One disclosed timed run with actual work and output checks is allowed; no fabricated comparison/profile requirement."
+    },
+    "C6": {
+      "met": true,
+      "basis": "Choosing options is not ballpark; one per side cannot support choice; no unauthorized extra runs."
+    },
+    "C7": {
+      "met": true,
+      "basis": "10 ms removed permits 90 ms minimum if other work unchanged, about 11.1% throughput speedup or 10% less time; reject attributed 2x and inspect timing gap."
+    }
+  },
+  "limitations": [
+    "Six supplied synthetic evidence reviews; only C5 executed a timed ballpark.",
+    "No installed-provider discovery, automatic triggering or model comparison.",
+    "Runtime evaluator corrected its own delimiter expectation before measured samples; first attempt retained.",
+    "C5 initial python command failed before execution; python3 used for the sole timed export."
+  ]
+}

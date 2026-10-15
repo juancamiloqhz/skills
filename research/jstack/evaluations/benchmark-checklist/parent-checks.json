@@ -1,0 +1,8 @@
+{
+  "archiveHashes": "match",
+  "alternatingMeasuredCalls": 36,
+  "completedRuntimeChecks": 42,
+  "recomputedSummaries": "match",
+  "unmeasuredOutputReplay": "both variants match all expected fields and retained hashes at 2000/20000 rows",
+  "timingReplay": "not performed; historical timings are observations, not repeatable assertions"
+}

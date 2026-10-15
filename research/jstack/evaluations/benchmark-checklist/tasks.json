@@ -1,0 +1,25 @@
+{
+  "dispatch": "native spawn_agent, fresh context, no model or effort overrides",
+  "capabilities": {
+    "inheritedProviderInstanceId": "codex",
+    "inheritedModel": "gpt-6-astra",
+    "canRunChildTask": true
+  },
+  "authorization": "skill-creator independent forward-testing; synthetic fixture and bounded outputs only",
+  "tasks": [
+    {
+      "id": "/root/benchmark_runtime",
+      "state": "completed",
+      "input": "runtime-record.json files request.md and exporter.py",
+      "outcome": "Completed comparison, with initial evaluator delimiter error retained.",
+      "briefSummary": "Read the actual benchmark-checklist skill and apply the supplied realistic request. Write only runtime/output; source, repository and settings remain read-only. No installations, network, PR, schedule, other-process changes or delegation. Maximum 90 seconds of workload. Retain commands, raw measurements, correctness evidence, profiles, limitations and hashes. Do not read expected criteria or other evaluator output."
+    },
+    {
+      "id": "/root/benchmark_cases",
+      "state": "completed",
+      "input": "cases-record.json files cases.json; runtime exporter.py for C5 only",
+      "outcome": "Seven cases assessed; exactly one timed ballpark export.",
+      "briefSummary": "Apply the actual skill independently to seven requests. Treat supplied observations as synthetic. Only C5 may run one timed export. Write only cases/output; no source/settings/installations/external actions or children. Retain verdicts, next permitted actions, scripts/stdout and hashes. Do not read expected criteria or other evaluation outputs."
+    }
+  ]
+}
