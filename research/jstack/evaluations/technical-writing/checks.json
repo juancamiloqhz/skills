@@ -1,0 +1,25 @@
+{
+  "tutorialReplay": [
+    {
+      "command": "python3 pocket.py --data-dir first-note-data add --title \"  Travel  \" --body \"Passport\"",
+      "exitCode": 0,
+      "stdout": "{\"id\": 1, \"title\": \"Travel\", \"body\": \"Passport\"}\n"
+    },
+    {
+      "command": "python3 pocket.py --data-dir first-note-data show 1",
+      "exitCode": 0,
+      "stdout": "{\"id\": 1, \"title\": \"Travel\", \"body\": \"Passport\"}\n"
+    }
+  ],
+  "prVerificationReplay": {
+    "exitCode": 0,
+    "stdout": "PASS: before.py padded\nPASS: before.py blank\nPASS: before.py empty\nPASS: pocket.py padded\nPASS: pocket.py blank\nPASS: pocket.py empty\nPASS: rejected add preserves existing notes byte for byte\nPASS: valid add trims new title, preserves old note and body, and assigns next ID\nPASS: show\nPASS: list\nPASS: 10 behavior checks\n",
+    "changeToRunner": "Only temporary output root replaced; fixtures and assertions unchanged."
+  },
+  "prArtifactAssertions": [
+    "Exact three repository headings",
+    "Python snippet parses and uses four spaces",
+    "One-line commit message"
+  ],
+  "modeCommandInvocations": 26
+}

@@ -1,0 +1,354 @@
+[
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--help"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\n\nPocket: a tiny local note CLI used as a verification fixture.\n\npositional arguments:\n  {add,show,list}\n\noptions:\n  -h, --help           show this help message and exit\n  --version            show program's version number and exit\n  --data-dir DATA_DIR\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--version"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "Pocket 1.0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "add",
+      "--title",
+      "  Travel  ",
+      "--body",
+      "Passport"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "{\"id\": 1, \"title\": \"Travel\", \"body\": \"Passport\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "show",
+      "1"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "{\"id\": 1, \"title\": \"Travel\", \"body\": \"Passport\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "add",
+      "--title",
+      "Packing"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "{\"id\": 2, \"title\": \"Packing\", \"body\": \"\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "list"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "[{\"id\": 1, \"title\": \"Travel\", \"body\": \"Passport\"}, {\"id\": 2, \"title\": \"Packing\", \"body\": \"\"}]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "empty-store",
+      "list"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "[]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "add",
+      "--help"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "usage: pocket.py add [-h] --title TITLE [--body BODY]\n\noptions:\n  -h, --help     show this help message and exit\n  --title TITLE\n  --body BODY\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "show",
+      "--help"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "usage: pocket.py show [-h] id\n\npositional arguments:\n  id\n\noptions:\n  -h, --help  show this help message and exit\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "list",
+      "--help"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "usage: pocket.py list [-h]\n\noptions:\n  -h, --help  show this help message and exit\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "list"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: the following arguments are required: --data-dir\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: the following arguments are required: command\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "add"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py add [-h] --title TITLE [--body BODY]\npocket.py add: error: the following arguments are required: --title\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "add",
+      "--title",
+      "   "
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: title must not be blank\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "show"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py show [-h] id\npocket.py show: error: the following arguments are required: id\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "show",
+      "abc"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py show [-h] id\npocket.py show: error: argument id: invalid int value: 'abc'\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "show",
+      "99"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: note not found\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "delete"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: argument command: invalid choice: 'delete' (choose from add, show, list)\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "list",
+      "--unknown"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: unrecognized arguments: --unknown\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "list",
+      "--data-dir",
+      "first-note-data"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\npocket.py: error: the following arguments are required: --data-dir\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "invalid-json",
+      "list"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 41, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 20, in main\n    notes = json.loads(file.read_text()) if file.exists() else []\n            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/json/__init__.py\", line 352, in loads\n    return _default_decoder.decode(s)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/usr/lib/python3.14/json/decoder.py\", line 345, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/json/decoder.py\", line 363, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "blocked-path",
+      "add",
+      "--title",
+      "Test"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 41, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 28, in main\n    args.data_dir.mkdir(parents=True, exist_ok=True)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 1012, in mkdir\n    os.mkdir(self, mode)\n    ~~~~~~~~^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'blocked-path'\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "-h"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "usage: pocket.py [-h] [--version] --data-dir DATA_DIR {add,show,list} ...\n\nPocket: a tiny local note CLI used as a verification fixture.\n\npositional arguments:\n  {add,show,list}\n\noptions:\n  -h, --help           show this help message and exit\n  --version            show program's version number and exit\n  --data-dir DATA_DIR\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "first-note-data",
+      "add",
+      "--title"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: pocket.py add [-h] --title TITLE [--body BODY]\npocket.py add: error: argument --title: expected one argument\n"
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "body-check",
+      "add",
+      "--title",
+      "Body",
+      "--body",
+      "  kept  "
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 0,
+    "stdout": "{\"id\": 1, \"title\": \"Body\", \"body\": \"  kept  \"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "pocket.py",
+      "--data-dir",
+      "incompatible-data",
+      "show",
+      "1"
+    ],
+    "cwd": "/tmp/jstack-writing-eval-20261015/modes",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 41, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 32, in main\n    result = next((n for n in notes if n['id'] == args.id), None)\n  File \"/tmp/jstack-writing-eval-20261015/modes/pocket.py\", line 32, in <genexpr>\n    result = next((n for n in notes if n['id'] == args.id), None)\n                                       ~^^^^^^\nKeyError: 'id'\n"
+  }
+]

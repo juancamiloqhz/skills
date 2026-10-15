@@ -1,0 +1,3 @@
+PASS: PR headings match pr-template.md exactly and retain order.
+PASS: Python example uses four spaces.
+PASS: Commit message is one line.

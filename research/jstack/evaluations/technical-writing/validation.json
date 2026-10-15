@@ -1,0 +1,111 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/Dev/skills/research/jstack/evaluations/technical-writing/compare.py"
+    ],
+    "exitCode": 0,
+    "stdout": "Full JSON equals source-comparison.json",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/jstack/test_skill_packaging.py"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.069s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/jstack-technical-writing"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/jstack-juan-mode"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  {
+    "check": "Actual upstream manifest loader",
+    "result": "passed; 39 mapped components"
+  },
+  {
+    "command": [
+      "node",
+      "/home/ubuntu/.npm/_npx/0b2c56f61857d977/node_modules/markdownlint-cli2/markdownlint-cli2-bin.mjs",
+      "README.md",
+      "research/jstack/fidelity-status.md",
+      "research/jstack/juan-mode-spec.md",
+      "research/jstack/roadmap.md",
+      "skills/jstack/jstack-juan-mode/SKILL.md",
+      "research/jstack/adaptations/technical-writing.md",
+      "research/jstack/evaluations/technical-writing/README.md",
+      "research/jstack/evaluations/technical-writing/fixtures/context.md",
+      "research/jstack/evaluations/technical-writing/fixtures/draft.md",
+      "research/jstack/evaluations/technical-writing/fixtures/pr-template.md",
+      "research/jstack/evaluations/technical-writing/outputs/modes/command-reference.md",
+      "research/jstack/evaluations/technical-writing/outputs/modes/explicit-data-directories.md",
+      "research/jstack/evaluations/technical-writing/outputs/modes/first-note.md",
+      "research/jstack/evaluations/technical-writing/outputs/modes/result.md",
+      "research/jstack/evaluations/technical-writing/outputs/modes/retrieve-note.md",
+      "research/jstack/evaluations/technical-writing/outputs/pr/draft-rewrite.md",
+      "research/jstack/evaluations/technical-writing/outputs/pr/pr-description.md",
+      "research/jstack/evaluations/technical-writing/outputs/pr/result.md",
+      "research/jstack/evaluations/technical-writing/outputs/unavailable/result.md",
+      "skills/jstack/jstack-technical-writing/SKILL.md"
+    ],
+    "exitCode": 1,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/roadmap.md skills/jstack/jstack-juan-mode/SKILL.md research/jstack/adaptations/technical-writing.md research/jstack/evaluations/technical-writing/README.md research/jstack/evaluations/technical-writing/fixtures/context.md research/jstack/evaluations/technical-writing/fixtures/draft.md research/jstack/evaluations/technical-writing/fixtures/pr-template.md research/jstack/evaluations/technical-writing/outputs/modes/command-reference.md research/jstack/evaluations/technical-writing/outputs/modes/explicit-data-directories.md research/jstack/evaluations/technical-writing/outputs/modes/first-note.md research/jstack/evaluations/technical-writing/outputs/modes/result.md research/jstack/evaluations/technical-writing/outputs/modes/retrieve-note.md research/jstack/evaluations/technical-writing/outputs/pr/draft-rewrite.md research/jstack/evaluations/technical-writing/outputs/pr/pr-description.md research/jstack/evaluations/technical-writing/outputs/pr/result.md research/jstack/evaluations/technical-writing/outputs/unavailable/result.md skills/jstack/jstack-technical-writing/SKILL.md\nLinting: 20 files\nSummary: 4 issues in 4 files\n",
+    "stderr": "research/jstack/evaluations/technical-writing/fixtures/pr-template.md:1 error MD041/first-line-heading/first-line-h1 First line in a file should be a top-level heading [Context: \"## Summary\"]\nresearch/jstack/evaluations/technical-writing/outputs/pr/draft-rewrite.md:1 error MD041/first-line-heading/first-line-h1 First line in a file should be a top-level heading [Context: \"`add` strips leading and trail...\"]\nresearch/jstack/evaluations/technical-writing/outputs/pr/pr-description.md:1 error MD041/first-line-heading/first-line-h1 First line in a file should be a top-level heading [Context: \"## Summary\"]\nresearch/jstack/evaluations/technical-writing/outputs/unavailable/result.md:1 error MD041/first-line-heading/first-line-h1 First line in a file should be a top-level heading [Context: \"- **Writing check incomplete:*...\"]\n"
+  },
+  {
+    "unchangedFile": "/home/ubuntu/.config/jstack/models.json",
+    "sha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+  },
+  {
+    "unchangedFile": "/home/ubuntu/.agents/skills/unslop/SKILL.md",
+    "sha256": "c6d2572294d933a428211921069e9a248490e9b466ca59437cb4d9de248600ca"
+  },
+  {
+    "check": "Repository Markdown lint (16 files)",
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/roadmap.md skills/jstack/jstack-juan-mode/SKILL.md research/jstack/adaptations/technical-writing.md research/jstack/evaluations/technical-writing/README.md research/jstack/evaluations/technical-writing/fixtures/context.md research/jstack/evaluations/technical-writing/fixtures/draft.md research/jstack/evaluations/technical-writing/outputs/modes/command-reference.md research/jstack/evaluations/technical-writing/outputs/modes/explicit-data-directories.md research/jstack/evaluations/technical-writing/outputs/modes/first-note.md research/jstack/evaluations/technical-writing/outputs/modes/result.md research/jstack/evaluations/technical-writing/outputs/modes/retrieve-note.md research/jstack/evaluations/technical-writing/outputs/pr/result.md skills/jstack/jstack-technical-writing/SKILL.md\nLinting: 16 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Byte-identical copies of four intentional non-H1 artifacts; MD041 disabled",
+    "files": [
+      "research/jstack/evaluations/technical-writing/fixtures/pr-template.md",
+      "research/jstack/evaluations/technical-writing/outputs/pr/draft-rewrite.md",
+      "research/jstack/evaluations/technical-writing/outputs/pr/pr-description.md",
+      "research/jstack/evaluations/technical-writing/outputs/unavailable/result.md"
+    ],
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: 0.md 1.md 2.md 3.md\nLinting: 4 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Relative links in changed Markdown",
+    "result": "passed after repairing three pre-existing inventory links in the touched mode specification"
+  },
+  {
+    "check": "Final evidence serialization",
+    "result": "Updated Markdown lint, relative links and staged whitespace checks pass; JSON strings preserve literal whitespace in logs and proposal."
+  }
+]
