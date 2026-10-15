@@ -34,7 +34,8 @@
       "contextPaths": [
         "pstack/skills/poteto-mode",
         "pstack/skills/how",
-        "pstack/skills/why"
+        "pstack/skills/why",
+        "pstack/skills/create-verification-skill"
       ],
       "differences": "research/jstack/adaptations/setup-jstack.md"
     },

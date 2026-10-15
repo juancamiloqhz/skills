@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-15",
+  "setupTests": 16,
+  "preflightTests": 15,
+  "upstreamCheckerTests": 11,
+  "skillValidation": "pass",
+  "markdownLint": "pass",
+  "manifestValidation": "pass",
+  "changedMarkdownLocalLinks": "pass",
+  "gitDiffCheck": "pass",
+  "sourcePinsUnchanged": true,
+  "reviewedCheckpointUnchanged": true,
+  "licenseMatchesPin": true,
+  "inlineExampleMatchesTemplate": true,
+  "runtimeEvidence": "parent-checks.json",
+  "limits": "README.md"
+}

@@ -67,7 +67,7 @@ A concrete seat is:
 
 This model is illustrative; setup must verify it in the live catalog. Empty options preserve provider defaults. Model identity includes the provider instance: identical model IDs across providers are distinct seats. Extra fields and aliases such as `auto` are rejected. Provider Auto is a concrete catalog selection.
 
-Scalar roles have one seat. `arena runners`, `architect runners` and `interrogate reviewers` have nonempty ordered lists. `arena cross-judge pool` also has a nonempty list, but a consumer selects one seat rather than launching the whole pool. The template uses one inherited seat per list; setup changes fan-out only when requested. `swarm workers` is a scalar default for workers, not the worker count.
+Scalar roles have one seat. `arena runners`, `architect runners` and `interrogate reviewers` have nonempty ordered lists. `arena cross-judge pool` also has a nonempty list, but a consumer selects one seat rather than launching the whole pool. A new template uses two inherited seats per panel and one inherited alternative in the cross-judge pool. Two inherited panel seats launch separate agents, not different model families. Existing configurations and copied global seeds retain their list lengths; setup changes those counts only when requested. The template budget defaults to medium as a draft value, and setup asks for the actual budget before saving. `swarm workers` is a scalar default for workers, not the worker count.
 
 ## Consumer contract
 

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "preset": "small",
+  "roles": {
+    "feature, refactoring": {
+      "alias": "inherit-parent"
+    },
+    "bug-fix": {
+      "alias": "inherit-parent"
+    },
+    "perf-issue": {
+      "alias": "inherit-parent"
+    },
+    "hillclimb": {
+      "alias": "inherit-parent"
+    },
+    "judgment and prose": {
+      "alias": "inherit-parent"
+    },
+    "hardest tasks": {
+      "alias": "inherit-parent"
+    },
+    "how explorer": {
+      "alias": "inherit-parent"
+    },
+    "how explainer": {
+      "alias": "inherit-parent"
+    },
+    "why investigators": {
+      "alias": "inherit-parent"
+    },
+    "why synthesizer": {
+      "alias": "inherit-parent"
+    },
+    "reflect tooling": {
+      "alias": "inherit-parent"
+    },
+    "reflect judgment, divergent, synthesizer": {
+      "alias": "inherit-parent"
+    },
+    "arena runners": [
+      {
+        "alias": "inherit-parent"
+      }
+    ],
+    "arena cross-judge pool": [
+      {
+        "alias": "inherit-parent"
+      }
+    ],
+    "swarm workers": {
+      "alias": "inherit-parent"
+    },
+    "architect runners": [
+      {
+        "alias": "inherit-parent"
+      }
+    ],
+    "interrogate reviewers": [
+      {
+        "alias": "inherit-parent"
+      }
+    ]
+  }
+}

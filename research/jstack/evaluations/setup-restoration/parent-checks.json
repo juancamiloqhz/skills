@@ -1,0 +1,25 @@
+{
+  "fresh": {
+    "savedSha256": "8ee7e93ddc42db50a6e3ac10a6100d30599a7664424767dddbdff7d21a3caf46",
+    "lookupAndResolution": {
+      "config": "/tmp/jstack-setup-eval-20261015/fresh/xdg/jstack/models.json",
+      "configSource": "global",
+      "targets": [
+        null,
+        null
+      ]
+    }
+  },
+  "seed": {
+    "savedSha256": "656c92347dd74a4dd35560f78279c1e13cd880a6df7b4ad093f488ab64576fc4",
+    "lookupAndResolution": {
+      "config": "/tmp/jstack-setup-eval-20261015/seed/project/.jstack/models.json",
+      "configSource": "project",
+      "targets": [
+        null
+      ]
+    }
+  },
+  "globalSeedByteIdentical": true,
+  "realConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+}

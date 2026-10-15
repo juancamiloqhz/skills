@@ -31,10 +31,19 @@ SEAT = {"providerInstanceId": "codex", "model": "code-model",
 class ModelsTest(unittest.TestCase):
     def test_inheritance_and_panel_count(self):
         config = template("medium")
-        config["roles"]["arena runners"] *= 2
         validate(config, CATALOG)
-        self.assertEqual(resolve(config, "arena runners"), [None, None])
+        for role in ("arena runners", "architect runners", "interrogate reviewers"):
+            self.assertEqual(resolve(config, role), [None, None])
+        self.assertEqual(resolve(config, "arena cross-judge pool"), [None])
         self.assertEqual(resolve(config, "how explorer"), [None])
+
+    def test_panel_seats_can_be_configured_independently(self):
+        config = template("medium")
+        config["roles"]["arena runners"][0].clear()
+        config["roles"]["arena runners"][0].update(SEAT)
+        validate(config, CATALOG)
+        self.assertEqual(resolve(config, "arena runners"), [SEAT, None])
+        self.assertEqual(resolve(config, "architect runners"), [None, None])
 
     def test_concrete_target_and_atomic_roundtrip(self):
         config = template("large")
@@ -222,6 +231,10 @@ class ConfigLookupTest(unittest.TestCase):
         self.assertEqual(self.cli(*args).returncode, 1)
 
     def test_project_seed_save_and_global_save_preserve_other_scope(self):
+        existing = template("small")
+        for role in ("arena runners", "architect runners", "interrogate reviewers"):
+            existing["roles"][role] = [{"alias": "inherit-parent"}]
+        atomic_write(self.global_config, existing)
         target = self.output("locate", "--scope", "project")
         source = self.output("locate", "--scope", "global")
         draft = read_json(source["path"])
@@ -233,10 +246,23 @@ class ConfigLookupTest(unittest.TestCase):
         self.assertEqual(read_json(self.project_config), draft)
         self.assertEqual(self.global_config.read_bytes(), original_global)
         self.assertEqual(len(draft["roles"]), 17)
+        for role in ("arena runners", "architect runners", "interrogate reviewers"):
+            self.assertEqual(resolve(read_json(self.project_config), role), [None])
         original_project = self.project_config.read_bytes()
         draft_path.write_text(json.dumps(template("unlimited")))
         self.output("write", draft_path, "--catalog", self.catalog, "--output", source["path"])
         self.assertEqual(self.project_config.read_bytes(), original_project)
+
+    def test_unused_stale_role_blocks_resolution_without_writing(self):
+        config = template("medium")
+        config["roles"]["bug-fix"] = dict(SEAT, model="retired-model")
+        atomic_write(self.project_config, config)
+        before = self.project_config.read_bytes()
+        result = self.cli("resolve", "--catalog", self.catalog, "--role", "how explorer")
+        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("bug-fix: unavailable model", result.stderr)
+        self.assertEqual(self.project_config.read_bytes(), before)
 
     def test_worktree_root_and_pinned_parent_selection(self):
         (self.repo / "file.txt").write_text("fixture\n")
