@@ -18,15 +18,45 @@ Updating skills under their new names can leave old installed copies behind. Thi
    ```
 
    Select your providers and scope in the installer. Add the other helpers and principles you use by their new names below. Mode activation still requires its selected helper dependencies.
-3. Remove only the verified old jstack installation entries using your installer's supported removal flow. Preserve unrelated packages, local modifications and model files. Resolve uncertain ownership before deleting anything.
+3. Remove only the verified old jstack installation entries using the commands below. Preserve unrelated packages, local modifications and model files. Resolve uncertain ownership before deleting anything.
 4. Refresh the host's skill catalog or start a fresh conversation. Confirm the new names resolve to the intended installation and the former jstack entries are gone. Existing conversations may still hold old skill text and paths; reload the renamed entrypoint before continuing active mode.
 5. Invoke `jstack-how` on a small read-only question. Confirm the task identifies its actual skill path and uses `jstack-setup`. If a dependency is missing or ambiguous, it must report that gap rather than substitute `how` or `setup-pstack`.
 
 There are no unprefixed compatibility aliases. Existing `.jstack/models.json`, global model files and all 17 role keys remain valid. For example, `jstack-swarm` still resolves `swarm workers`. This rename does not require rerunning setup. Generated project skills remain `verify-<app>` with the existing Claude link behavior.
 
+## Removal commands
+
+The [Skills CLI documentation](https://github.com/vercel-labs/skills#skills-remove) and the locally cached CLI version 1.7.2 confirm `remove`, with `rm` as an alias. These commands are instructions for the user; no removal was performed when preparing this guide.
+
+For global installations, list installed skills, then open the interactive removal picker:
+
+```sh
+npx skills list --global
+npx skills remove --global
+```
+
+Select only old names belonging to jstack. To name specific verified old copies directly, for example:
+
+```sh
+npx skills remove --global setup-jstack juan-mode
+```
+
+The old names in that command are deliberate: removal targets the old installations. Add other old names from the mapping only after checking their ownership. The CLI targets installed names, not a repository source filter. Keep the confirmation prompt; do not use `--all`, which removes unrelated skills too.
+
+For project-local installations, run the commands from that project and omit `--global`:
+
+```sh
+npx skills list
+npx skills remove
+```
+
+Use `--agent codex`, for example, to restrict removal to one provider. Otherwise the CLI cleans the selected skills' agent links in the chosen scope. Inspect the proposed removal before confirming, especially when providers share a canonical installation.
+
 ## Name mapping
 
-| Former local name | Current catalog name |
+Both columns are intentional. The left column identifies old installations to remove; the right column identifies new packages to install and invoke. The new packages become available from the default branch after the naming PR is merged.
+
+| Old installed name to remove | New catalog name to install |
 | --- | --- |
 | `juan-mode` | `jstack-juan-mode` |
 | `setup-jstack` | `jstack-setup` |
