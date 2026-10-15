@@ -1,0 +1,24 @@
+HASH PASS source/records.py 3e932aee42037ea3fda0cf07b9d2d92501fb2c5a7ad1105451653424c862c25c
+HASH PASS source/contract.md 28ab4d36a9a32787645443c00f79ed9a4d7afe777f15c59f6639304c3ebc303b
+HASH PASS models.json 8ee7e93ddc42db50a6e3ac10a6100d30599a7664424767dddbdff7d21a3caf46
+CASE 01 PASS empty zero: records=[]; limit=0; expected=[]; actual=[]; input unchanged
+CASE 02 PASS empty positive: records=[]; limit=1; expected=[]; actual=[]; input unchanged
+CASE 03 PASS empty huge positive: records=[]; limit=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000; expected=[]; actual=[]; input unchanged
+CASE 04 PASS singleton zero: records=[7]; limit=0; expected=[]; actual=[]; input unchanged
+CASE 05 PASS singleton exact length: records=[7]; limit=1; expected=[7]; actual=[7]; input unchanged
+CASE 06 PASS singleton above length: records=[7]; limit=2; expected=[7]; actual=[7]; input unchanged
+CASE 07 PASS ordered prefix one: records=[3, -1, 0, 8]; limit=1; expected=[3]; actual=[3]; input unchanged
+CASE 08 PASS ordered prefix interior: records=[3, -1, 0, 8]; limit=3; expected=[3, -1, 0]; actual=[3, -1, 0]; input unchanged
+CASE 09 PASS ordered exact length: records=[3, -1, 0, 8]; limit=4; expected=[3, -1, 0, 8]; actual=[3, -1, 0, 8]; input unchanged
+CASE 10 PASS ordered above length: records=[3, -1, 0, 8]; limit=5; expected=[3, -1, 0, 8]; actual=[3, -1, 0, 8]; input unchanged
+CASE 11 PASS nonempty huge positive: records=[3, -1, 0, 8]; limit=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000; expected=[3, -1, 0, 8]; actual=[3, -1, 0, 8]; input unchanged
+CASE 12 PASS duplicates at cutoff: records=[4, 4, 2, 4]; limit=2; expected=[4, 4]; actual=[4, 4]; input unchanged
+CASE 13 PASS separated duplicates: records=[4, 2, 4, 2]; limit=3; expected=[4, 2, 4]; actual=[4, 2, 4]; input unchanged
+CASE 14 PASS all duplicates: records=[0, 0, 0]; limit=3; expected=[0, 0, 0]; actual=[0, 0, 0]; input unchanged
+CASE 15 PASS large integer values: records=[-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, -10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]; limit=3; expected=[-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, -10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]; actual=[-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, -10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]; input unchanged
+CASE 16 PASS duplicates zero: records=[4, 4, 2, 4]; limit=0; expected=[]; actual=[]; input unchanged
+CASE 17 PASS empty negative: records=[]; limit=-1; expected=None; actual='ValueError'; input unchanged
+CASE 18 PASS singleton negative: records=[7]; limit=-1; expected=None; actual='ValueError'; input unchanged
+CASE 19 PASS duplicate list negative: records=[4, 4, 2, 4]; limit=-3; expected=None; actual='ValueError'; input unchanged
+CASE 20 PASS huge negative: records=[3, -1, 0, 8]; limit=-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000; expected=None; actual='ValueError'; input unchanged
+PASS: 20 cases; 16 nonnegative limits; 4 negative limits; 3 zero limits; input unchanged in every case.

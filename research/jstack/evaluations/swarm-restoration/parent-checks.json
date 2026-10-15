@@ -1,0 +1,13 @@
+{
+  "threeTerminalWorkers": true,
+  "freshInheritedDispatches": true,
+  "defaultAndExplicitInheritanceResolution": [
+    null
+  ],
+  "originalConfigPathRetained": true,
+  "sourceAndSyntheticConfigUnchanged": true,
+  "temporaryCatalogAndOverrideRemoved": true,
+  "independentCoverageReplay": "20 cases passed; stdout equals worker log",
+  "realConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "briefLimitation": "Arm B had a mistyped hash followed by explicit correction within the same dispatch; worker verified correct pin."
+}

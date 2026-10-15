@@ -50,3 +50,5 @@ The [engineering Principles section](../../skills/jstack/juan-mode/SKILL.md#prin
 Setup's [fidelity correction](evaluations/setup-restoration/README.md) restores the seven source steps and inline role map. New unseeded configurations use two inherited seats for Arena, Architect and Interrogate; existing files and seeded panel counts stay unchanged. Whole-configuration validation remains an explicit user choice.
 
 Arena's [fidelity correction](evaluations/arena-restoration/README.md) restores the six original phases and four principle routes. Ordinary Arena can finish with a sole survivor after a dropout while disclosing the unavailable comparison; Architect retains its two-design requirement.
+
+Swarm's [fidelity correction](evaluations/swarm-restoration/README.md) restores its Start/phase organization and explicit task-local race-arm selections. Saved worker defaults remain unchanged; every override uses the canonical catalog validator after whole-configuration validation.
