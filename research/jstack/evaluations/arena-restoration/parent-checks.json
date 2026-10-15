@@ -1,0 +1,12 @@
+{
+  "sourceAndSyntheticConfigUnchanged": true,
+  "frozenAndOriginalCandidateHashesMatch": true,
+  "dispatchBriefHashesMatch": true,
+  "candidateBriefsIdenticalExceptOwnedPath": true,
+  "dispatchCount": 3,
+  "allDispatchesFreshInherited": true,
+  "recordedFreezeBeforeJudge": true,
+  "allThreeChildrenTerminal": true,
+  "realConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "timingLimit": "Recorded timestamps are coordinator evidence, not an independent host event trace."
+}

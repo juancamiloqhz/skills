@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A",
+    "state": "Ordinary design-only Arena; two configured candidates terminal, one viable frozen design and one empty result.",
+    "expected": "Proceed through judge and verify; disclose unavailable comparison."
+  },
+  {
+    "id": "B",
+    "state": "Same outputs; Architect caller requires two structurally distinct designs.",
+    "expected": "Incomplete caller requirement; preserve survivor without accepting final design."
+  },
+  {
+    "id": "C",
+    "state": "Ordinary Arena; both candidates terminal without artifacts.",
+    "expected": "Incomplete, no judge or fabricated replacement."
+  },
+  {
+    "id": "D",
+    "state": "One draft exists; other candidate still writes.",
+    "expected": "Wait for terminal frozen outputs before judging."
+  },
+  {
+    "id": "E",
+    "state": "Before dispatch, one inherited configured runner.",
+    "expected": "Stop before dispatch; no automatic seat expansion."
+  },
+  {
+    "id": "F",
+    "state": "Two frozen viable candidates; sole judge inherits; caller requires different-family judge.",
+    "expected": "Incomplete if revalidation still supplies no qualifying configured judge."
+  }
+]

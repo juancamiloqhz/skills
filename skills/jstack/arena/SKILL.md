@@ -1,42 +1,59 @@
 ---
 name: arena
-description: Compare independently produced candidates for the same task, cross-judge them and synthesize one verified artifact. Use when the user asks for competing approaches or an arena, or a workflow needs candidate comparison.
+description: "Spawn N parallel candidates at the same task, pick a base, graft the strongest parts of the losers into it. Use for /arena, 'arena this', 'throw it in the arena', or when one attempt at a non-trivial artifact would lock in the wrong shape."
 ---
 
 # Arena
 
-Produce one synthesized artifact from independently generated candidates. Direct invocation is task-scoped and leaves juan-mode activation unchanged. A calling playbook supplies the artifact, source scope, selected configuration and return boundary. Design-only callers receive a design package; this skill does not advance them into implementation. Read [configuration and execution](references/execution.md) before dispatch.
+Open a task plan with one entry per phase (Frame, Fan out, Cross-judge, Pick, Graft, Verify) before launching anything.
 
-## Frame
+Direct invocation is task-scoped and leaves juan-mode activation unchanged. A calling playbook supplies the artifact, source scope, selected configuration and return boundary. Design-only callers receive a design package without implementation. Establish permitted actions, owned outputs and observable acceptance checks from the request. Read [configuration and execution](references/execution.md) before dispatch.
 
-Track Frame, Candidates, Cross-judge, Pick, Synthesize and Verify in the task plan. State the requested artifact, source revision, permitted actions, output location and observable acceptance checks. Derive three to six concrete comparison criteria. Keep the scoring rubric and model identities out of candidate briefs; candidates receive the common task requirements and grounding, not hidden expectations required for correctness.
+Discover the named **principle-*** skills through the current catalog or explicitly supplied authoring paths and read them at their decision points below. Resolve their resources relative to the discovered package. A missing required dependency makes the affected phase incomplete; provide the manual command `npx skills add juancamiloqhz/skills --skill NAME` rather than installing or replacing its procedure.
 
-Resolve `arena runners`, or `architect runners` when the caller explicitly selects that panel for a design task. Preserve all configured seats in order, including duplicates and inheritance. Require at least two configured candidates; a single seat is valid model configuration but cannot perform this comparison. Resolve `arena cross-judge pool` and select one executable alternative before spending candidate work. Prefer a demonstrably different model family from the coordinator when available. A same-family or inherited judge is permitted unless the caller requires family diversity; disclose the limitation. Different provider instances alone do not prove different model families. An unverifiable required independence condition or insufficient configuration stops the comparison as incomplete without changing settings or inventing seats.
+## Phase A: Frame
 
-Give candidates distinct labels and owned output directories. For code changes use isolated worktrees prepared by the coordinator; for design or text use separate temporary directories. Check existing contents and preserve unrelated work. A prompt path alone does not change the child's app workspace binding. Run artifact writers serially until the selected provider/tools have demonstrated explicit-path behavior. Safe independent work may then run concurrently.
+Every candidate gets the same prompt, so the prompt is the contract.
 
-## Produce candidates
+1. State the artifact each candidate is producing.
+2. Derive the rubric, 3-6 concrete gradeable criteria for what success looks like on *this* task. It is the picker's tool in Phase D. Candidates only see the task.
+3. Pick the runners. Resolve `arena runners` through setup-jstack, or `architect runners` when the caller explicitly selects that panel. Preserve all configured seats in order, including duplicates and inheritance; require at least two configured candidates to start. Inherited seats omit the dispatch target and retain the parent's model and effort. Keep model choices and counts fixed unless the user requests a configuration change; no default-model substitution or automatic fan-out expansion. Resolve the cross-judge pool and check that an eligible judge exists before spending candidate work. Prefer a different family from the parent's; disclose same-family or inherited judging. If the caller requires diversity and it cannot be established, stop incomplete.
+4. Give each candidate its own output location (a git worktree where possible, otherwise `/tmp/arena-<slug>/candidate-<n>/`), per the **principle-separate-before-serializing-shared-state** principle skill. For a child needing a separate checkout, use T3 `delegate_task` with `isolation: "worktree"`; it starts from the parent local commit and does not copy uncommitted edits. For design or text, use separate owned temporary directories. Preserve unrelated work. A prompt path alone does not change app workspace binding.
 
-Dispatch one child per configured panel entry with the same task and grounding, its assigned source and output paths, the selected absolute configuration path, permitted actions and stop condition. Each produces the artifact and a short rationale identifying alternatives considered and rejected. Candidate children do not read each other's outputs, the rubric, judge notes or the coordinator's preferred answer. Use fresh task context when the delegation interface supports it; if it only inherits a context containing those materials, use a supported fresh-context transport or report the isolation gap before dispatch.
+## Phase B: Fan out
 
-Wait for every task and any nested work to finish before judging. Inspect actual outputs and record failures or absent artifacts as dropouts. Continue only if at least two viable candidates remain and any caller-specific requirement still holds. Do not silently replace a failed configured seat, increase fan-out or claim a comparison when only one candidate survived. Retain useful artifacts when returning an incomplete result.
+Dispatch all N candidates asynchronously when capacity and demonstrated path ownership permit, using the native or T3 transport described in the execution reference. Keep writers serial until explicit-path behavior is established. Each receives the same task, the path to shared grounding, its own output path, selected absolute configuration, permitted actions and completion condition, and instructions to produce the artifact and a short rationale naming the alternatives it considered and what it rejected. Use fresh task context; candidates must not receive other candidates, the rubric, judge notes or the coordinator's preferred answer. If the transport cannot provide that isolation, report the gap before dispatch.
 
-## Cross-judge and pick
+Wait for every candidate and its nested work to finish, inspect actual outputs and freeze the artifacts before judging. If a candidate produces no output, proceed with N-1 and note the dropout. With one viable survivor, ordinary Arena can judge, verify and return that artifact, explicitly stating that no multi-candidate comparison was possible. With none, return incomplete. A caller requiring two viable or structurally distinct candidates, including Architect, remains incomplete when its requirement fails. Do not invent replacement seats or silently retry on another model.
 
-Revalidate the selected configuration and judge capability. Dispatch exactly one judge from the pool, with read-only access to frozen candidate artifacts, the task and rubric. Label artifacts by candidate ID, not provider or model; keep the identity mapping in the coordinator's record. This avoids supplying model labels to the judge, but does not guarantee that style or artifact content cannot reveal authorship. The judge scores each criterion, cites concrete artifact evidence and recommends a base. It does not edit candidates or synthesize the result.
+## Phase C: Cross-judge
 
-While the judge works, the coordinator reads every viable candidate and scores each against the same rubric. Read the judge's actual report after it completes. Investigate disagreements against artifacts and criteria before selecting a base; the judge is evidence, not an automatic vote. Prefer a coherent boundary and smaller public interface when candidates otherwise tie. If a caller requires structurally distinct alternatives, verify that property before accepting synthesis. Convergence is acceptable for ordinary Arena tasks, but does not satisfy a required design-space exploration.
+After all Phase B candidates complete, revalidate the selected configuration and current catalog, then choose one eligible model from the configured `arena cross-judge pool`. Prefer a different model family from the parent's. Spawn one read-only judge subagent on that model. It sees the rubric and the candidates by path label, scores each criterion, and recommends a base with rationale. Keep provider/model identity mappings in the coordinator's record; labels do not guarantee that artifact style cannot reveal authorship. The judge does not edit or synthesize. It runs in parallel with your reading in Phase D. Don't spawn it while candidates are still writing.
 
-## Synthesize
+## Phase D: Pick a base
 
-Keep the original candidates intact. Starting from the chosen base, create the final artifact in its separately owned destination. Inspect each losing candidate for useful contributions, usually a small number rather than most of its content. Integrate selected contributions coherently instead of mechanically concatenating them. Record what was retained, rejected and why. If candidates converge, record that no graft was needed. If they diverge because the requirements were underspecified, reframe and start fresh candidate tasks with the corrected common brief rather than averaging incompatible assumptions.
+Read every candidate end to end before picking. Score each against the rubric criterion by criterion, not on holistic feel, and compare with the cross-judge. Agreement on the base confirms the pick. Disagreement means one of you is biased or the rubric was ambiguous. Read both rationales before deciding.
 
-The coordinator performs synthesis unless the calling workflow supplies an already authorized synthesis role. Candidate selection does not authorize source edits, installation, publication, PR creation or merge outside the original request. For a design-only task, keep sketches and rationale in the assigned artifact directory and leave the target implementation untouched.
+Pick the base a future maintainer can extend most easily without breaking invariants. When two feel tied, prefer the cleaner boundary or smaller API, per the **principle-laziness-protocol** principle skill. Honor any caller requirement for structurally distinct candidates before accepting a base.
 
-## Verify and return
+## Phase E: Graft
 
-Verify the synthesized artifact against the original acceptance checks, not just the scoring rubric. For code, execute the appropriate authorized checks in the correct checkout; for a design, trace representative caller usage, ownership, failure paths and constraints against the grounded source. Report source inspection separately from executed behavior. An unavailable prerequisite makes verification incomplete, not passing.
+Keep original candidates intact; synthesize in a separately owned destination. The coordinator performs synthesis unless the calling workflow supplies an already authorized synthesis role.
 
-If verification fails, identify whether the requirements need reframing or a missed contribution must be integrated, then repeat the affected phase and checks. A new review or candidate round uses fresh child tasks with the original brief, relevant prior findings and unresolved objections. Do not endlessly rerun unchanged work after a failure; return the concrete unmet condition when progress needs new information or authority.
+Walk each losing candidate once more for what is worth porting into the base, usually one or two things per candidate, not most of it. Fold each graft in by hand, per the **principle-redesign-from-first-principles** principle skill, so the result stays coherent under one mental model. Don't paste mechanically.
 
-Return the final artifact and a synthesis note naming the base, per-criterion comparison, judge verdict and disagreements, contributions with source labels, rejected alternatives, dropouts or convergence, actual verification and remaining gaps. Retain task IDs and candidate artifacts needed to review the result; remove owned temporary catalogs. The coordinator checks terminal state and reconciles owned writes before declaring completion. Return to the user or caller at its requested boundary.
+If the candidates converge on one shape, that is strong agreement. Note it and return the consensus shape within the task's delivery authority. No graft is needed. If they wildly diverge, Phase A was under-specified. Reframe and re-run rather than averaging the divergence.
+
+Reframing uses fresh tasks with the corrected common brief and the same selected panel. Do not rerun unchanged work indefinitely when progress requires new information or authority. Design-only scope and explicit caller checkpoints remain in force; selecting a candidate does not authorize implementation, installation, PRs or merges.
+
+## Phase F: Verify
+
+Verify the synthesized artifact like any other output, per the **principle-prove-it-works** principle skill. If verification finds a problem the arena missed, either Phase A was wrong (re-frame and re-run) or a candidate caught it and you missed the graft (go back to Phase E). Don't paper over it.
+
+Execute the original acceptance checks in the correct checkout when authorized. For design artifacts, trace caller usage, ownership and failure paths against the grounded source. Distinguish inspection from executed behavior; an unavailable prerequisite is incomplete verification.
+
+## Outputs
+
+One synthesized artifact, with a short synthesis note alongside naming the base and why, the cross-judge's verdict, each graft with its source candidate, what was rejected and why, any convergence or dropouts, and the verification result.
+
+Retain the per-criterion comparison, disagreements, task IDs and artifacts needed to review the result. Reconcile owned writes and terminal child state before claiming completion; remove owned temporary catalogs. Return at the caller's requested boundary, disclosing failed diversity, dropout or verification requirements.

@@ -31,7 +31,7 @@ Skip Phase A only when the work is genuinely greenfield with no surrounding syst
 
 Run the **arena** skill with the design-sketch task and the Phase A grounding artifacts. Pass `references/runner-prompt.md` as each runner's prompt.
 
-Use the configured `architect runners` panel in place of `arena runners`, retaining `arena cross-judge pool`. Arena owns canonical resolution, capability checks, independent candidate contexts, owned outputs, judging and terminal child checks. Preserve configured seats, including inheritance and duplicates; never add default seats or substitute models. At least two viable configured candidates are required by the current Arena contract. Inherited or repeated models do not establish model diversity. Pass an explicit design-only return to Arena; Architect owns any later implementation.
+Use the configured `architect runners` panel in place of `arena runners`, retaining `arena cross-judge pool`. Arena owns canonical resolution, capability checks, independent candidate contexts, owned outputs, judging and terminal child checks. Preserve configured seats, including inheritance and duplicates; never add default seats or substitute models. This Architect caller requires at least two viable configured candidates; Arena's ordinary one-survivor fallback does not satisfy that requirement. Inherited or repeated models do not establish model diversity. Pass an explicit design-only return to Arena; Architect owns any later implementation.
 
 Design it twice. Require at least two structurally distinct candidates before synthesis, even when the first looks sufficient. This is the **principle-exhaust-the-design-space** principle skill made concrete. Whole-shape alternatives, not point fixes inside one shape.
 
