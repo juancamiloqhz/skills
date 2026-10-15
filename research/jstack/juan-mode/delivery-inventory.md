@@ -8,7 +8,7 @@ Source: [poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4add4fd4
 
 All routes inherit the mode's relevant principles, prose rules, delegated-work review, and model routing. Reuse jstack's validated role map and preserve each seat's options. Delivery prose and general judgment use `judgment and prose`; code corrections use their implementation role, with `hardest tasks` for the documented hard cases. Verification fan-out uses `swarm workers`. A playbook is a bundled procedure; reusable helpers and platform adapters need their own declared dependency contracts.
 
-Source: [mode subagents and principles](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md), [jstack configuration](../../../skills/jstack/setup-jstack/references/configuration.md).
+Source: [mode subagents and principles](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md), [jstack configuration](../../../skills/jstack/jstack-setup/references/configuration.md).
 
 The inspected watcher files are `watch-pr`, `cli.ts`, `types.ts`, and `policy.ts`; the entrypoint invokes `bootstrap.ts`, which can install Bun dependencies. The watcher supplies GitHub status classification as well as its polling loop. Replace the loop with native T3 Code watching and preserve explicit readiness checks against the forge. Watching is an event source, not proof of mergeability, resolved threads, or current verification. Do not inherit the install-on-launch behavior.
 
@@ -20,7 +20,7 @@ Source: live `link_pull_request`, `list_thread_pull_requests`, `watch_pull_reque
 
 Use child tasks for delegated work and fresh tasks with consolidated context for review rounds. New top-level conversations require the user's request. `t3_worktree_handoff` changes the current thread's binding and ends its turn; its continuation prompt resumes work in the new checkout. It cannot move an already attached thread. `t3_thread_launch` binds an explicitly requested separate conversation before it starts. These are distinct from a child using an isolated checkout whose path is in its task brief.
 
-Source: live `delegate_task`, `task_status`, `task_cancel`, `t3_worktree_handoff`, `t3_worktree_status`, and `t3_thread_launch` descriptions inspected on 2026-10-11; [jstack T3 Code integration](../../../skills/jstack/setup-jstack/references/t3-code.md).
+Source: live `delegate_task`, `task_status`, `task_cancel`, `t3_worktree_handoff`, `t3_worktree_status`, and `t3_thread_launch` descriptions inspected on 2026-10-11; [jstack T3 Code integration](../../../skills/jstack/jstack-setup/references/t3-code.md).
 
 Also inspected in full are `check-plan.mjs`, `worktree-audit.sh`, `references/bugbot-triage.md`, and the `show-me-your-work` skill. Adapt the first two with their owning playbooks. Keep evidence-based review-comment triage in an internal reference. Reuse one canonical decision trail across planning, execution, pause, and pickup rather than inventing a separate record format for each.
 
@@ -34,7 +34,7 @@ Source: [opening-a-pr](https://github.com/cursor/plugins/blob/11713c683fe4add4fd
 
 Adapt the cleanup and writing helpers into explicit reusable contracts, honoring the repository's PR template and the existing `pr` skill where available. Replace blanket resets, forced ready status, and automatic publication with the user's delivery scope and preservation of unrelated work. Use the callable PR creation tool or supported forge CLI, then register every URL through T3 Code. Opening a PR finishes without starting a watch unless monitoring was requested; a child returns its PR evidence to the parent.
 
-Basis: proposed adaptation of [opening-a-pr](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/opening-a-pr.md); live PR-linking and watching descriptions; [jstack permission boundary](../../../skills/jstack/setup-jstack/references/configuration.md).
+Basis: proposed adaptation of [opening-a-pr](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/opening-a-pr.md); live PR-linking and watching descriptions; [jstack permission boundary](../../../skills/jstack/jstack-setup/references/configuration.md).
 
 Acceptance scenario: with an unrelated dirty file and a two-layer change, publish only the authorized changes, preserve that file, target the child PR at its parent branch, and verify both URLs are linked with no automatic watch or merge. Repeat a local-only request and confirm it produces no PR. Prerequisites are forge credentials, publication permission, repository checks, and an available review helper; Origin is optional.
 
@@ -62,7 +62,7 @@ Source: [shipping](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403e
 
 Replace the cloud-agent requirement with independent configured verification children in isolated execution environments. Route runtime lanes through `swarm workers` and judgment through the relevant review role. Preserve patch-bound evidence, conservative re-verification after changed patches, and one-at-a-time landing. The parent posts authorized verdicts and owns event waits. Use repository merge policy rather than forcing squash everywhere. Prove native continuation across merges before enabling unattended stack shipping; when continuation is unavailable, report the exact resume point without claiming the rest was queued.
 
-Basis: proposed adaptation of [shipping](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/shipping.md), [role resolution](../../../skills/jstack/setup-jstack/references/configuration.md), and the live T3 Code watch/link lifecycle.
+Basis: proposed adaptation of [shipping](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/shipping.md), [role resolution](../../../skills/jstack/jstack-setup/references/configuration.md), and the live T3 Code watch/link lifecycle.
 
 Acceptance scenario: independently verify a three-PR stack with pass, fail, pass results. Only the first PR can land; the failed middle PR prevents the third from landing. Change the first PR's patch after its verdict and confirm fresh verification is required. After a successful merge, confirm current trunk and recompute the remaining stack before touching the next PR. Prerequisites are explicit merge authority, forge branch-policy access, independent runnable verification, and a proven parent continuation path for unattended runs.
 

@@ -1,8 +1,10 @@
 # Upstream attribution
 
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
 The 2026-10-15 correction restores the six original phases, separate Cross-judge and Pick sections, Outputs, source description and four principle routes. It also restores proceeding after a candidate dropout. The [source comparison and evaluation](../evaluations/arena-restoration/README.md) distinguish this correction from the [historical Arena evaluation](../evaluations/arena/README.md). The [original audit](../fidelity-audits/2026-10-13/helpers.md#arena) remains unchanged.
 
-Adapted from [pstack arena](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/arena/SKILL.md) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/arena/LICENSE) retains Lauren Tan's attribution.
+Adapted from [pstack arena](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/arena/SKILL.md) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/jstack-arena/LICENSE) retains Lauren Tan's attribution.
 
 ## Complete comparison
 

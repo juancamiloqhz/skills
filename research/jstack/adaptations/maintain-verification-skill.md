@@ -1,14 +1,16 @@
 # Verification maintenance adaptation
 
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
 Adapted from Lauren Tan's pstack `maintain-verification-skill` at `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`. The 2026-10-14 restoration follows the [fidelity policy](../upstream-fidelity.md). [Comparison and evaluation](../evaluations/verification-restoration/README.md) account for the final files. The pin and reviewed checkpoint remain unchanged.
 
 ## Files and restored behavior
 
-`pstack/skills/maintain-verification-skill/SKILL.md` maps to `skills/jstack/maintain-verification-skill/SKILL.md`. Restore Outcomes, Edit scope and the numbered Pass 0–6. Each feature again gets a read-only source child, followed by reconciliation and coordinator-only live driving. The three live-session invariants, doctor repair and one retry, concrete `verified-unreachable` evidence, product-gap triage and rereading every changed file are retained.
+`pstack/skills/maintain-verification-skill/SKILL.md` maps to `skills/jstack/jstack-maintain-verification-skill/SKILL.md`. Restore Outcomes, Edit scope and the numbered Pass 0–6. Each feature again gets a read-only source child, followed by reconciliation and coordinator-only live driving. The three live-session invariants, doctor repair and one retry, concrete `verified-unreachable` evidence, product-gap triage and rereading every changed file are retained.
 
 The earlier parent-only source pass is removed. Missing prerequisites no longer automatically mean all maintenance is blocked: upstream permits an evidenced unreachable route. A separately reported product regression also does not automatically block an independently proven verification correction. These restore source behavior under the fidelity policy; they do not mark a failed or unreachable product feature as passed. Unfinished coverage, ambiguous intent, unsafe cleanup and unproven corrections remain blocked.
 
-[Package LICENSE](../../../skills/jstack/maintain-verification-skill/LICENSE) matches `pstack/LICENSE` at the pin. The only added operational file is `references/execution.md`, described below. There are no upstream supporting files omitted from this package.
+[Package LICENSE](../../../skills/jstack/jstack-maintain-verification-skill/LICENSE) matches `pstack/LICENSE` at the pin. The only added operational file is `references/execution.md`, described below. There are no upstream supporting files omitted from this package.
 
 ## Remaining differences
 

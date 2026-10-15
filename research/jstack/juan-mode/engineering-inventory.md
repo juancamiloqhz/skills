@@ -16,11 +16,11 @@ Sources: [architect](https://github.com/cursor/plugins/blob/11713c683fe4add4fd40
 
 Proposed role mappings below use jstack's existing 17-role registry. Validate the complete configuration against the live catalog before dispatch, preserve seat order/options and inherited targets, and fail on stale selections instead of adopting upstream fallback models. `architect runners` and `interrogate reviewers` can each contain one inherited seat. Upstream nevertheless requires two distinct design candidates and describes review diversity as its source of adversarial signal. The specification must resolve these cases explicitly; neither silently increasing configured fan-out nor describing one-model review as cross-model review is acceptable. Role resolution alone proves no provider execution.
 
-Sources: [configuration contract](../../../skills/jstack/setup-jstack/references/configuration.md), [role registry](../../../skills/jstack/setup-jstack/scripts/models.py), [T3 Code delegation contract](../../../skills/jstack/setup-jstack/references/t3-code.md).
+Sources: [configuration contract](../../../skills/jstack/jstack-setup/references/configuration.md), [role registry](../../../skills/jstack/jstack-setup/scripts/models.py), [T3 Code delegation contract](../../../skills/jstack/jstack-setup/references/t3-code.md).
 
 Replace Cursor `Task` and model slugs with supported child-task dispatch, explicit context and retained task IDs. Use fresh children for review rounds. Replace `/loop` with the current task's bounded progress mechanism; persistent scheduling requires task-specific authorization. Root-triggered writing helpers, principles, `swarm`, `figure-it-out` and Opening a PR are additional common dependencies, even when a leaf omits them. An upstream route never expands the user's permissions or authorizes publication, installation or communication. Global skill availability on this machine is not a bundled dependency contract.
 
-Sources: [root triggers and autonomy](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md), [local execution boundary](../../../skills/jstack/setup-jstack/references/configuration.md).
+Sources: [root triggers and autonomy](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md), [local execution boundary](../../../skills/jstack/jstack-setup/references/configuration.md).
 
 Proposed packaging: bundle the helper procedures inside `juan-mode` references for the initial complete package. Keep `setup-jstack` as an explicitly discovered dependency for the resolver and the verification tools as separate optional operations. Upstream standalone skill names below identify the behavior to adapt; they do not require a separate jstack installation for every helper.
 
@@ -30,7 +30,7 @@ Sources: [CLI control and profiling](https://github.com/cursor/plugins/blob/1171
 
 The shipped verification generator and maintainer already specify public-interface proof, owned-state isolation, evidence retention and cleanup. Reuse an existing project verifier when appropriate; generation, maintenance and ordinary execution remain separate operations. Their retained evaluations establish focused CLI behavior, not browser, profiling, pixel parity or cross-provider workflow execution. Read both shipped skills, the generator's output contract and both evaluation READMEs.
 
-Sources: [generator](../../../skills/jstack/create-verification-skill/SKILL.md), [output contract](../../../skills/jstack/create-verification-skill/references/output-contract.md), [maintainer](../../../skills/jstack/maintain-verification-skill/SKILL.md), [generator evaluation](../evaluations/create-verification-skill/README.md), [maintenance evaluation](../evaluations/maintain-verification-skill/README.md).
+Sources: [generator](../../../skills/jstack/jstack-create-verification-skill/SKILL.md), [output contract](../../../skills/jstack/jstack-create-verification-skill/SKILL.md), [maintainer](../../../skills/jstack/jstack-maintain-verification-skill/SKILL.md), [generator evaluation](../evaluations/create-verification-skill/README.md), [maintenance evaluation](../evaluations/maintain-verification-skill/README.md).
 
 ## investigation
 

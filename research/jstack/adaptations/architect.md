@@ -1,6 +1,8 @@
 # Architect adaptation
 
-Source: [pstack architect](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/architect), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [architect](../../../skills/jstack/architect/SKILL.md). Its [MIT license](../../../skills/jstack/architect/LICENSE) matches the pinned plugin notice.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Source: [pstack architect](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/architect), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [architect](../../../skills/jstack/jstack-architect/SKILL.md). Its [MIT license](../../../skills/jstack/jstack-architect/LICENSE) matches the pinned plugin notice.
 
 This correction restores the source entrypoint and all three reference files. Phase order, usage-first design, structurally different alternatives, interface depth, eight red flags, the eight-section rationale and the full Scrap loop follow upstream. The [comparison and evaluation](../evaluations/design-review-restoration/README.md) retain every source/local diff and the test limits. Earlier adaptation text remains in Git at `34cbcca75dabd8d58e1d2b0945f6d550cfa572c7`; it is not continuing approval for drift.
 

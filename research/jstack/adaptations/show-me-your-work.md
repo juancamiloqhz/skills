@@ -1,6 +1,8 @@
 # Show me your work adaptation
 
-Source: [pstack show-me-your-work](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/show-me-your-work), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [show-me-your-work](../../../skills/jstack/show-me-your-work/SKILL.md). The [MIT license](../../../skills/jstack/show-me-your-work/LICENSE) is the exact pinned plugin notice.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Source: [pstack show-me-your-work](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/show-me-your-work), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [show-me-your-work](../../../skills/jstack/jstack-show-me-your-work/SKILL.md). The [MIT license](../../../skills/jstack/jstack-show-me-your-work/LICENSE) is the exact pinned plugin notice.
 
 Restores a standalone skill instead of Figure-it-out's local decision-trail summary. All three source files retain their boundaries. `scripts/log.sh` and `references/decision-log-template.tsv` are byte-identical to the pin; the script retains executable mode. The source's columns, example, run-start boundaries, append-only correction rule, evidence checks, committed-script preference and composition contract remain intact. [Comparison and evaluation](../evaluations/trail-restoration/README.md) record exact differences and observed behavior.
 

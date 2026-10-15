@@ -1,0 +1,22 @@
+[
+  {
+    "name": "how",
+    "path": "/tmp/jstack-name-eval-20261015/legacy/how/SKILL.md",
+    "source": "juancamiloqhz/skills (previous installation)"
+  },
+  {
+    "name": "setup-jstack",
+    "path": "/tmp/jstack-name-eval-20261015/legacy/setup-jstack/SKILL.md",
+    "source": "juancamiloqhz/skills (previous installation)"
+  },
+  {
+    "name": "jstack-how",
+    "path": "/home/ubuntu/Dev/skills/skills/jstack/jstack-how/SKILL.md",
+    "source": "juancamiloqhz/skills"
+  },
+  {
+    "name": "jstack-setup",
+    "path": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/SKILL.md",
+    "source": "juancamiloqhz/skills"
+  }
+]

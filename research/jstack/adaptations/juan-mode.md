@@ -1,12 +1,14 @@
 # Juan-mode adaptation
 
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
 Adapted from [poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md) at `11713c683fe4add4fd403ea880580abbc9e0875f`. The 2026-10-14 entrypoint restoration follows the [fidelity policy](../upstream-fidelity.md). [Comparison and evaluation](../evaluations/mode-restoration/README.md) distinguish restored instructions, runtime substitutions and pending implementation. The pin and reviewed checkpoint remain unchanged.
 
 ## File accounting
 
 | Source | Local disposition |
 | --- | --- |
-| `pstack/skills/poteto-mode/SKILL.md` | `skills/jstack/juan-mode/SKILL.md`. Restore Non-negotiables, Principles, Autonomy, Subagents, Writing the reply, Comments and Playbooks in the original order. The 23 inline route entries retain their source order and examples. Differences below. |
+| `pstack/skills/poteto-mode/SKILL.md` | `skills/jstack/jstack-juan-mode/SKILL.md`. Restore Non-negotiables, Principles, Autonomy, Subagents, Writing the reply, Comments and Playbooks in the original order. The 23 inline route entries retain their source order and examples. Differences below. |
 | `pstack/skills/poteto-mode/references/bugbot-triage.md` | Same relative reference under juan-mode. Restore the complete rubric and all learned patterns. Add only a pending-Babysit and task-authority qualification in the introduction. |
 | `pstack/agents/poteto-agent.md` | Context dependency. Its full-mode and applicable-leaf reads become explicit ordinary-child brief instructions in Subagents and `references/execution.md`; no unsupported Cursor wrapper is packaged. |
 | Remaining 43 files under upstream mode | Pending procedures or tooling, including all 23 playbooks. The comparison inventories their paths and hashes. This PR does not port or certify their algorithms. The [foundation audit](../fidelity-audits/2026-10-13/foundation.md) retains the detailed backlog. |

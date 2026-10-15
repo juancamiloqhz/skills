@@ -1,5 +1,7 @@
 # Jstack adaptation records
 
+Current jstack skill identities use the `jstack-` prefix. See the [name mapping and manual migration guide](../skill-names.md). Earlier assessments and evaluation artifacts retain their original names; current local links point to the renamed packages.
+
 Source pins and adaptation rationale live here instead of inside installed skill packages. The [upstream manifest](../upstream.json) maps each component to its record. The 24 principle records remain in [principle adaptations](../principle-adaptations.md).
 
 On 2026-10-13, the 12 foundation/helper records moved from `skills/jstack/<name>/references/upstream.md` to this directory. Existing rationale is preserved as a record of the implementation, not blanket approval. The [fidelity audit](../fidelity-audits/2026-10-13/README.md) identifies remaining structural and behavioral corrections.

@@ -1,6 +1,8 @@
 # Reflect adaptation
 
-Source: [pstack reflect](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/reflect), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [reflect](../../../skills/jstack/reflect/SKILL.md). Its [MIT license](../../../skills/jstack/reflect/LICENSE) matches the pinned plugin notice.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Source: [pstack reflect](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/reflect), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [reflect](../../../skills/jstack/jstack-reflect/SKILL.md). Its [MIT license](../../../skills/jstack/jstack-reflect/LICENSE) matches the pinned plugin notice.
 
 This correction restores the six-step entrypoint and all four source templates. The jstack-only `references/assessment.md` summary is removed. The three lenses, manual-context scan, used-skill and missed-trigger routes, six-month durability criterion, higher singleton bar, clear-versus-buried guidance distinction and compact Accepted table follow upstream. Already-enforced mechanisms again belong in Backlog, rather than the former local Rejected disposition. See the [comparison and evaluation](../evaluations/design-review-restoration/README.md). The earlier adaptation record remains in Git at `34cbcca75dabd8d58e1d2b0945f6d550cfa572c7`.
 
@@ -19,4 +21,4 @@ This correction restores the six-step entrypoint and all four source templates. 
 | All four templates | Add blank lines, table spacing and local Markdown lint exceptions for upstream's heading-free prompts and angle-bracket placeholders. | Repository lint compatibility without changing upstream template structure. |
 | `SKILL.md` structural principle | Use `principle-encode-lessons-in-structure`. | Shipped standalone catalog name; context watch added to manifest. |
 
-The existing jstack-only [execution contract](../../../skills/jstack/reflect/references/execution.md) remains unchanged. It owns config lookup, role resolution, actual capacity and checked lifecycle. Source examples in the synthesizer remain examples, not new universal package-manager or description-ratio policy. Pins, checkpoint, configuration and historical evaluations remain unchanged.
+The existing jstack-only [execution contract](../../../skills/jstack/jstack-reflect/references/execution.md) remains unchanged. It owns config lookup, role resolution, actual capacity and checked lifecycle. Source examples in the synthesizer remain examples, not new universal package-manager or description-ratio policy. Pins, checkpoint, configuration and historical evaluations remain unchanged.

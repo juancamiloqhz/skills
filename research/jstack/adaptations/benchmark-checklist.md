@@ -1,6 +1,8 @@
 # Benchmark checklist adaptation
 
-Source: [pstack benchmark-checklist](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/benchmark-checklist/SKILL.md), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [benchmark-checklist](../../../skills/jstack/benchmark-checklist/SKILL.md). The package [MIT license](../../../skills/jstack/benchmark-checklist/LICENSE) matches the pinned plugin notice, including Lauren Tan's attribution.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Source: [pstack benchmark-checklist](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/benchmark-checklist/SKILL.md), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [benchmark-checklist](../../../skills/jstack/jstack-benchmark-checklist/SKILL.md). The package [MIT license](../../../skills/jstack/jstack-benchmark-checklist/LICENSE) matches the pinned plugin notice, including Lauren Tan's attribution.
 
 The source directory contains only `SKILL.md`. Its name, description, introduction, one-run ballpark exception, preparation, all seven questions, reporting rules and playbook integration bullets are preserved. No question, threshold, example or section is summarized or moved. The package needs no model resolver, new role, script or supporting reference; the caller applies it to the actual measurement.
 

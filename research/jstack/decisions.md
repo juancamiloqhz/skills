@@ -14,11 +14,11 @@ Explicit invocation activates juan-mode for later tasks in the same conversation
 
 Develop in small, focused pull requests. Merge a completed skill before installation from `juancamiloqhz/skills` with the Skills CLI. The user performs all skill installations and updates manually; agents provide commands but do not run them. The selected installation providers are Codex, Claude Code, Cursor, and OpenCode. This selection is not a claim that every future workflow has been tested on all four providers.
 
-Portable skills are the current distribution format. Their source directories are grouped under `skills/jstack/`, with each skill retaining its own `SKILL.md`, supporting files and existing name. The `jstack/` container has no `SKILL.md` and introduces no plugin namespace. A broader plugin or generated adapter system has not been committed to.
+Portable skills are the current distribution format. Their source directories are grouped under `skills/jstack/`, with each skill retaining its own `SKILL.md`, supporting files and a portable `jstack-` name under the 2026-10-15 decision below. The `jstack/` container has no `SKILL.md` and introduces no plugin namespace. A broader plugin or generated adapter system has not been committed to.
 
 ## Shipped configuration
 
-`setup-jstack` uses T3 Code's live capability catalog and saves validated model assignments as global defaults or optional project settings. The [configuration contract](../../skills/jstack/setup-jstack/references/configuration.md) defines the schema, 17 roles, inheritance, reasoning budgets, and consumer requirements.
+`setup-jstack` uses T3 Code's live capability catalog and saves validated model assignments as global defaults or optional project settings. The [configuration contract](../../skills/jstack/jstack-setup/references/configuration.md) defines the schema, 17 roles, inheritance, reasoning budgets, and consumer requirements.
 
 On 2026-10-11, the user approved optional `<project_root>/.jstack/models.json` configuration. Explicit file selection takes precedence over `JSTACK_CONFIG`, then the project file, then the existing XDG global path. Each file supplies the complete 17-role map; files are not merged. Setup offers global or project scope and seeds a new project draft from global settings when available. Consumers share setup's lookup and pass the selected absolute path to children. `inherit-parent` keeps its existing conversation-model meaning.
 
@@ -47,3 +47,9 @@ The user explicitly reaffirmed PR #9's automatic project-local linking: "Keep au
 The user chose two inherited seats for newly created Arena, Architect and Interrogate panels. Fresh templates therefore give `arena runners`, `architect runners` and `interrogate reviewers` two `inherit-parent` entries. They represent separate agents using the executing conversation's model and effort, not model-family diversity. This does not migrate existing files or enlarge a project draft copied from global settings. The cross-judge pool is a separate list of alternatives and remains one inherited alternative; Arena selects one judge from it.
 
 The user also explicitly chose to keep whole-configuration validation. A stale assignment in any role blocks resolution, even for a workflow using another role. Missing/extra roles remain errors; setup reports them for repair instead of silently dropping mappings or substituting defaults. Future fidelity reviews should preserve these decisions unless the user changes them.
+
+## Portable skill names, 2026-10-15
+
+The user approved distinct `jstack-<skill-name>` identities for all shipped jstack skills to distinguish them from pstack and unrelated packages. Setup becomes `jstack-setup`, and the mode becomes `jstack-juan-mode`. Directory names, frontmatter, callers and installation commands change together. The [mapping and manual migration guide](skill-names.md) records all 38 names. Earlier entries and evaluations retain their historical names.
+
+A literal colon is not a portable skill name; plugin-qualified names would require a separate distribution decision. No compatibility copies are shipped under the former names. Model files, role keys, generated `verify-<app>` skills, upstream paths and revision pins stay unchanged. Existing installations require manual migration, not an automatic cleanup.

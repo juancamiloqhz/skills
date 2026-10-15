@@ -157,8 +157,8 @@ Source: linked immutable files below; live `orchestrator_capabilities` payload a
 [store]: https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/scripts/orch/store.ts
 [bootstrap]: https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/scripts/bootstrap.ts
 [check-plan]: https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/scripts/check-plan.mjs
-[config]: ../../../skills/jstack/setup-jstack/references/configuration.md
-[t3]: ../../../skills/jstack/setup-jstack/references/t3-code.md
-[roles]: ../../../skills/jstack/setup-jstack/scripts/models.py
-[setup]: ../../../skills/jstack/setup-jstack/SKILL.md
+[config]: ../../../skills/jstack/jstack-setup/references/configuration.md
+[t3]: ../../../skills/jstack/jstack-setup/references/t3-code.md
+[roles]: ../../../skills/jstack/jstack-setup/scripts/models.py
+[setup]: ../../../skills/jstack/jstack-setup/SKILL.md
 [decisions]: ../decisions.md

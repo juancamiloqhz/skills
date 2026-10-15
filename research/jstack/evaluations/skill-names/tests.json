@@ -1,0 +1,47 @@
+{
+  "suites": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/jstack/test_skill_packaging.py"
+      ],
+      "exitCode": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.083s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "skills/jstack/jstack-juan-mode/scripts/test_preflight.py"
+      ],
+      "exitCode": 0,
+      "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 7.575s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "skills/jstack/jstack-setup/scripts/test_models.py"
+      ],
+      "exitCode": 0,
+      "output": "...................\n----------------------------------------------------------------------\nRan 19 tests in 4.918s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/jstack/test_check_upstream.py"
+      ],
+      "exitCode": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 3.808s\n\nOK\n"
+    }
+  ],
+  "configurationSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "markdownlint": {
+    "version": "0.23.2",
+    "files": 113,
+    "issues": 0
+  },
+  "currentDocumentationFileLinks": "passed"
+}

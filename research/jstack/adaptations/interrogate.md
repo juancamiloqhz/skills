@@ -1,6 +1,8 @@
 # Interrogate adaptation
 
-Source: [pstack interrogate](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/interrogate), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [interrogate](../../../skills/jstack/interrogate/SKILL.md). Its [MIT license](../../../skills/jstack/interrogate/LICENSE) matches the pinned plugin notice.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Source: [pstack interrogate](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/interrogate), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [interrogate](../../../skills/jstack/jstack-interrogate/SKILL.md). Its [MIT license](../../../skills/jstack/jstack-interrogate/LICENSE) matches the pinned plugin notice.
 
 This correction restores the source's five-step entrypoint and four reference files. It removes the jstack-only `references/review-criteria.md` summary in favor of the original reviewer prompt, rubric and code-quality lens. The full lead framework returns, including hypothetical-versus-actual checking, singleton security scrutiny and verdict calibration. See the [comparison and evaluation](../evaluations/design-review-restoration/README.md).
 
@@ -19,4 +21,4 @@ The earlier record at `34cbcca75dabd8d58e1d2b0945f6d550cfa572c7` incorrectly des
 | `references/code-quality-review.md` | Clarify that structural improvements are proposals during review. | The source's quoted audit prompt includes action language; the entrypoint's report-only boundary governs it. The strict criteria are otherwise unchanged. |
 | `references/lead-judgment.md` | Retain the five-item warning and explicitly state it is not a cap on verified blockers. Add a list-spacing fix. | Avoid hiding correctness or security findings to satisfy a count. The fixture retains more than five blocker groups after rejecting unsupported claims. |
 
-The existing jstack-only [execution contract](../../../skills/jstack/interrogate/references/execution.md) is unchanged. It supplies canonical setup lookup, inherited/concrete dispatch, capabilities, owned outputs and terminal checks. Markdown spacing changes preserve source organization. Pins, checkpoint, historical evidence and setup contracts remain unchanged.
+The existing jstack-only [execution contract](../../../skills/jstack/jstack-interrogate/references/execution.md) is unchanged. It supplies canonical setup lookup, inherited/concrete dispatch, capabilities, owned outputs and terminal checks. Markdown spacing changes preserve source organization. Pins, checkpoint, historical evidence and setup contracts remain unchanged.

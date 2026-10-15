@@ -1,0 +1,192 @@
+[
+  {
+    "name": "jstack-architect",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-arena",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-benchmark-checklist",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-create-verification-skill",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-figure-it-out",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-how",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-interrogate",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-juan-mode",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-maintain-verification-skill",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-attack-the-premise",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-boundary-discipline",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-build-the-lever",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-encode-lessons-in-structure",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-exhaust-the-design-space",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-experience-first",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-explain-the-number",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-fix-root-causes",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-foundational-thinking",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-guard-the-context-window",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-laziness-protocol",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-make-operations-idempotent",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-migrate-callers-then-delete-legacy-apis",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-minimize-reader-load",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-model-the-domain",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-never-block-on-the-human",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-outcome-oriented-execution",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-prove-it-works",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-redesign-from-first-principles",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-separate-before-serializing-shared-state",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-sequence-verifiable-units",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-subtract-before-you-add",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-test-behavior-not-implementation",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-principle-type-system-discipline",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-reflect",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-setup",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-show-me-your-work",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-swarm",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "name": "jstack-why",
+    "exitCode": 0,
+    "output": "Skill is valid!\n"
+  }
+]
