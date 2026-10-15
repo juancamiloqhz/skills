@@ -19,6 +19,7 @@ CATALOG = {"providers": [
                 {"id": "medium"}, {"id": "high"}]},
             {"id": "fastMode", "type": "boolean"},
         ]},
+        {"id": "review-model", "options": []},
     ]},
     {"providerInstanceId": "disabled", "canRunChildTask": False, "models": [
         {"id": "code-model", "options": []},
@@ -263,6 +264,56 @@ class ConfigLookupTest(unittest.TestCase):
         self.assertEqual(result.stdout, "")
         self.assertIn("bug-fix: unavailable model", result.stderr)
         self.assertEqual(self.project_config.read_bytes(), before)
+
+    def test_task_worker_override_preserves_saved_default_and_source(self):
+        override = self.root / "arm.json"
+        saved = template("small")
+        saved_seat = {"providerInstanceId": "codex", "model": "review-model", "options": {}}
+        saved["roles"]["swarm workers"] = saved_seat
+        atomic_write(self.global_config, saved)
+        original = self.global_config.read_bytes()
+        for seat, target in ((SEAT, SEAT), (saved_seat, saved_seat),
+                             ({"alias": "inherit-parent"}, None)):
+            override.write_text(json.dumps(seat))
+            result = self.output("resolve", "--catalog", self.catalog, "--role", "swarm workers",
+                                 "--worker-override", override, "--with-source")
+            self.assertEqual(result, {"config": str(self.global_config),
+                                     "configSource": "global", "targets": [target]})
+            self.assertEqual(self.global_config.read_bytes(), original)
+        self.assertEqual(self.output("resolve", "--catalog", self.catalog,
+                                     "--role", "swarm workers"), [saved_seat])
+
+    def test_invalid_worker_override_never_falls_back_or_changes_settings(self):
+        override = self.root / "arm.json"
+        original = self.global_config.read_bytes()
+        for seat in (dict(SEAT, model="unavailable"),
+                     dict(SEAT, options={"reasoningEffort": "max"}),
+                     {"alias": "auto"}, [SEAT]):
+            override.write_text(json.dumps(seat))
+            result = self.cli("resolve", "--catalog", self.catalog, "--role", "swarm workers",
+                              "--worker-override", override)
+            self.assertEqual(result.returncode, 1)
+            self.assertEqual(result.stdout, "")
+            self.assertEqual(self.global_config.read_bytes(), original)
+        override.write_text(json.dumps(SEAT))
+        result = self.cli("resolve", "--catalog", self.catalog, "--role", "how explorer",
+                          "--worker-override", override)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("requires the swarm workers role", result.stderr)
+
+    def test_worker_override_does_not_bypass_whole_map_validation(self):
+        config = template("medium")
+        config["roles"]["bug-fix"] = dict(SEAT, model="retired-model")
+        atomic_write(self.project_config, config)
+        original = self.project_config.read_bytes()
+        override = self.root / "arm.json"
+        override.write_text(json.dumps({"alias": "inherit-parent"}))
+        result = self.cli("resolve", "--catalog", self.catalog, "--role", "swarm workers",
+                          "--worker-override", override)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("bug-fix: unavailable model", result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(self.project_config.read_bytes(), original)
 
     def test_worktree_root_and_pinned_parent_selection(self):
         (self.repo / "file.txt").write_text("fixture\n")

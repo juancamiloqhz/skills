@@ -203,6 +203,7 @@ def main():
             sub.add_argument("--role", required=True, choices=ROLES)
             sub.add_argument("--project-root")
             sub.add_argument("--with-source", action="store_true")
+            sub.add_argument("--worker-override", help="task-local Swarm seat JSON; never saved")
     args = parser.parse_args()
     try:
         if args.command == "template":
@@ -213,7 +214,8 @@ def main():
             location = (locate_config(args.config, args.project_root)
                         if args.command == "resolve" else {"path": args.config})
             try:
-                config = validate(read_json(location["path"]), read_json(args.catalog))
+                catalog = read_json(args.catalog)
+                config = validate(read_json(location["path"]), catalog)
             except (ValueError, OSError, KeyError, TypeError) as error:
                 raise ValueError(f"configuration {location['path']}: {error}") from error
             if args.command == "write":
@@ -221,6 +223,12 @@ def main():
                 result = {"written": str(Path(args.output).expanduser())}
             elif args.command == "resolve":
                 result = resolve(config, args.role)
+                if args.worker_override is not None:
+                    require(args.role == "swarm workers", "worker override requires the swarm workers role")
+                    seat = read_json(args.worker_override)
+                    providers = {p["providerInstanceId"]: p for p in catalog["providers"]}
+                    validate_seat(seat, providers, "worker override")
+                    result = [None if "alias" in seat else dict(seat)]
                 if args.with_source:
                     result = {"config": location["path"], "configSource": location["source"],
                               "targets": result}
