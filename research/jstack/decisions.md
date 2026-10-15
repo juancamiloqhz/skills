@@ -41,3 +41,9 @@ Package how and why as separate skills, as pstack does, with direct invocation a
 ## Automatic Claude linking, 2026-10-14
 
 The user explicitly reaffirmed PR #9's automatic project-local linking: "Keep automatic Claude linking (preserve existing behavior)". Every generated verification skill gets a relative `.claude/skills/verify-<app>` link to its canonical directory, regardless of the executing provider. This is an intentional jstack addition to pstack. Preserve conflicting paths, keep canonical files inside the authorized repository and verify the link resolves the complete package. This decision does not authorize global installation or establish live provider discovery. Future fidelity reviews should preserve this choice unless the user changes it. See the [generator adaptation record](adaptations/create-verification-skill.md).
+
+## Setup defaults and validation, 2026-10-15
+
+The user chose two inherited seats for newly created Arena, Architect and Interrogate panels. Fresh templates therefore give `arena runners`, `architect runners` and `interrogate reviewers` two `inherit-parent` entries. They represent separate agents using the executing conversation's model and effort, not model-family diversity. This does not migrate existing files or enlarge a project draft copied from global settings. The cross-judge pool is a separate list of alternatives and remains one inherited alternative; Arena selects one judge from it.
+
+The user also explicitly chose to keep whole-configuration validation. A stale assignment in any role blocks resolution, even for a workflow using another role. Missing/extra roles remain errors; setup reports them for repair instead of silently dropping mappings or substituting defaults. Future fidelity reviews should preserve these decisions unless the user changes them.

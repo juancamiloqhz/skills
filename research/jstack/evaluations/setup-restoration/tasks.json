@@ -1,0 +1,15 @@
+{
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "overrides": null,
+  "freshContext": true,
+  "children": [
+    "/root/setup_fresh_eval",
+    "/root/setup_seed_eval"
+  ],
+  "isolation": "owned temporary fixture directories; no repository checkout writes",
+  "requests": [
+    "Configure global defaults, medium, all roles inherited, default panel sizes.",
+    "Create project-local config from existing global defaults, preserving budget and assignments."
+  ]
+}

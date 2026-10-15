@@ -17,10 +17,8 @@ ROLES = (
     "arena cross-judge pool", "swarm workers", "architect runners",
     "interrogate reviewers",
 )
-LIST_ROLES = frozenset((
-    "arena runners", "arena cross-judge pool", "architect runners",
-    "interrogate reviewers",
-))
+PANEL_ROLES = frozenset(("arena runners", "architect runners", "interrogate reviewers"))
+LIST_ROLES = PANEL_ROLES | {"arena cross-judge pool"}
 PRESETS = {"small": "medium", "medium": "high", "large": "xhigh", "unlimited": "max"}
 
 
@@ -83,7 +81,8 @@ def template(preset):
         "schemaVersion": 1,
         "preset": preset,
         "roles": {
-            role: [{"alias": "inherit-parent"}] if role in LIST_ROLES
+            role: [{"alias": "inherit-parent"} for _ in range(2 if role in PANEL_ROLES else 1)]
+            if role in LIST_ROLES
             else {"alias": "inherit-parent"}
             for role in ROLES
         },

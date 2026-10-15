@@ -46,3 +46,5 @@ Standalone [Figure it out](../../skills/jstack/figure-it-out/SKILL.md) designs c
 The [engineering Principles section](../../skills/jstack/juan-mode/SKILL.md#principles) routes to all 24 standalone principle skills through catalog discovery. The [evaluation](evaluations/principles/README.md) records eight tabletop scenarios and a full source audit; the playbook procedures remain planned.
 
 [Principle adaptation records](principle-adaptations.md) retain pinned sources and comparison notes outside the installed operational entrypoints.
+
+Setup's [fidelity correction](evaluations/setup-restoration/README.md) restores the seven source steps and inline role map. New unseeded configurations use two inherited seats for Arena, Architect and Interrogate; existing files and seeded panel counts stay unchanged. Whole-configuration validation remains an explicit user choice.
