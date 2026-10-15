@@ -2,7 +2,7 @@
 
 For jstack implementation and maintenance, follow the [upstream-fidelity policy](upstream-fidelity.md). Preserve upstream structure by default and document only necessary or explicitly approved deviations.
 
-Drafted on 2026-10-11 against `cursor/plugins` revision `11713c683fe4add4fd403ea880580abbc9e0875f`, fetched again for this assessment. This is an implementation specification, not a shipped skill or a report of successful workflow execution. The [initial assessment](juan-mode-adaptation.md) supplies context; the inventories below record the complete playbook review.
+Drafted on 2026-10-11 against `cursor/plugins` revision `11713c683fe4add4fd403ea880580abbc9e0875f`, using the source fetched for that assessment. Updated on 2026-10-15 to reconcile merged fidelity corrections through PR #37. The [current fidelity status](fidelity-status.md) supersedes stale packaging and redesign proposals in the initial inventories. This is an implementation specification, not a shipped skill or a report of successful workflow execution. The [initial assessment](juan-mode-adaptation.md) supplies context; the inventories below record the complete playbook review.
 
 ## Scope and accepted behavior
 
@@ -26,21 +26,24 @@ The authoritative upstream set is the [pinned playbook directory](https://github
 
 Use one installable `juan-mode` skill containing the entrypoint, all 23 playbook files, shared workflow references, principle discovery, prompt templates and the small scripts that its behavior requires. Playbooks remain internal procedures, not separately installed skills. Keep the entrypoint focused on activation, routing, shared rules and completion requirements; read detailed material only when its route needs it.
 
-Package `how` and `why` as standalone jstack skills, matching pstack's independent invocation boundary. This replaces the initial bundled-reference choice by user decision on 2026-10-12. Users can invoke either directly without activating or installing juan-mode; implemented playbooks discover them through the current skill catalog and pass their task scope and absolute model-config path. Both depend on setup-jstack for the canonical resolver and shared investigation contract. Arena also has an independent invocation boundary and is implemented as a standalone skill discovered by callers; its design-only return supports Architect. Architect also ships as a standalone skill because users can request architecture design independently and playbooks need a design-only return. It discovers how, conditional why and Arena, selecting the configured architect panel. Interrogate ships independently for report-only code and design review, using its configured reviewer panel and lead judgment. Swarm ships independently for partitioned coverage and races, using a scalar configured worker selection with task-derived count and verified aggregation. Reflect ships independently because users can request a retrospective directly and playbooks need bounded learning proposals. It uses three reviewers and a separate synthesizer with two scalar configured roles. Figure-it-out ships independently because a user can request a custom workflow without activating the mode. Its decision trail remains bundled; it discovers seven relevant standalone principle skills. By user decision, all 24 principles ship as independent `principle-*` skills, replacing the initial internal-reference packaging. Juan-mode discovers them through its upstream-organized Principles section. Preserve each procedure's roles and algorithms.
+Package `how` and `why` as standalone jstack skills, matching pstack's independent invocation boundary. This replaces the initial bundled-reference choice by user decision on 2026-10-12. Users can invoke either directly without activating or installing juan-mode; implemented playbooks discover them through the current skill catalog and pass their task scope and absolute model-config path. Both depend on setup-jstack for the canonical resolver and shared investigation contract. Arena also has an independent invocation boundary and is implemented as a standalone skill discovered by callers; its design-only return supports Architect. Architect also ships as a standalone skill because users can request architecture design independently and playbooks need a design-only return. It discovers how, conditional why and Arena, selecting the configured architect panel. Interrogate ships independently for report-only code and design review, using its configured reviewer panel and lead judgment. Swarm ships independently for partitioned coverage and races, using a scalar configured worker default, validated explicit task-local arm selections, task-derived count and verified aggregation. Reflect ships independently because users can request a retrospective directly and playbooks need bounded learning proposals. It uses three reviewers and a separate synthesizer with two scalar configured roles. Figure-it-out ships independently because a user can request a custom workflow without activating the mode. It calls the standalone `show-me-your-work` skill for its decision trail and discovers seven relevant standalone principle skills. By user decision, all 24 principles ship as independent `principle-*` skills, replacing the initial internal-reference packaging. Juan-mode discovers them through its upstream-organized Principles section. Preserve each procedure's roles and algorithms.
 
 Keep `setup-jstack` as an explicit runtime dependency for its canonical configuration validator and resolver. Resolve its actual installation directory through the provider's skill catalog. Do not assume it is a filesystem sibling of `juan-mode` or copy `models.py` into another independent implementation. If the dependency cannot be found, explain the missing installation and retain the existing model configuration. Installations remain manual. The first implementation group must prove discovery with separately installed skill directories.
 
 Existing project verification is an input to the playbooks. `create-verification-skill` and `maintain-verification-skill` stay separate skills, reached only for an appropriate generation or maintenance task. Running an existing verifier does not require generating another one.
 
-Suggested internal layout, to be populated as implementation groups land:
+Current package layout with planned playbooks shown explicitly. Add upstream supporting paths when their consuming procedure is implemented; do not introduce a replacement workflow-reference layout solely for organization:
 
 ```text
 skills/jstack/juan-mode/
   SKILL.md
-  playbooks/                 # the 23 supported task procedures
-  references/workflows/      # remaining shared design and review procedures
-  references/t3-code.md      # execution and lifecycle requirements
-  scripts/                   # demonstrated validation or state-management needs
+  playbooks/                 # planned: all 23 upstream procedures
+  references/bugbot-triage.md # restored upstream reference
+  references/activation.md   # local conversation-state contract
+  references/configuration.md
+  references/execution.md    # local T3 execution contract
+  scripts/preflight.py
+  scripts/test_preflight.py
   LICENSE
 ```
 
@@ -82,9 +85,9 @@ Autopilot and Orchestrate require tested write isolation or a disclosed serial e
 
 ## Shared dependencies and intentional changes
 
-The following dispositions cover the common entrypoint dependencies as well as the detailed inventory. Every retained source adaptation must carry its source pin and MIT attribution. A helper being mentioned here does not mean it is implemented.
+The following dispositions cover the common entrypoint dependencies as well as the detailed inventory. Record each adaptation's source pin in research and the manifest, and retain its required license in the distributed package. A helper being mentioned here does not mean it is implemented.
 
-| Upstream dependency | Proposed juan-mode disposition |
+| Upstream dependency | Current implementation direction |
 | --- | --- |
 | `how`, `why` | Separate skills for direct invocation and catalog-discovered playbook use, with configured role resolution and explicit child prompts. |
 | `arena` | Standalone candidate comparison and synthesis, discovered through the catalog. Preserve configured panels and one selected cross-judge; support design-only callers. |
@@ -93,16 +96,18 @@ The following dispositions cover the common entrypoint dependencies as well as t
 | `swarm` | Standalone partitioned coverage and races with task-derived count, configured workers, pinned evidence and checked aggregation. |
 | `reflect` | Standalone bounded session review with three lenses, existing-guidance checks and separate synthesis. Proposals and application remain distinct. |
 | `figure-it-out`, `show-me-your-work` | Standalone custom-workflow and decision-trail skills, with planning-only return and checked execution. Use bounded T3 Code evidence and configured judgment review with same-model disclosure. |
-| `benchmark-checklist`, `tdd` | Bundle the relevant measurement and failing-then-passing proof procedures; preserve real workloads, repeatability and measurement limits. |
-| `unslop`, `technical-writing`, `deslop` | Bundle concise writing and code-review references, with repository conventions taking precedence. Do not depend on a user's unrelated global skill installation. |
-| `no-comments` and `comment-sicko` | Replace the deletion-first persona with an evidence-based review of the scoped diff. Preserve useful explanations, license text and justified suppressions until a verified replacement exists. |
-| All 24 `principle-*` leaves | Implemented as 24 independently discoverable skills, each with attribution and license; juan-mode keeps only a upstream-organized Principles section. Scope adaptations preserve compatibility, authority and evidence limits; mapping alone is not runtime verification. |
-| `typescript-best-practices` | Carry relevant language-specific guidance as an optional reference reached for TypeScript work; follow the target repository's conventions. |
-| Cursor `create-skill` and control skills | Replace with portable skill-authoring requirements and an explicit control-capability contract. T3 Code preview is the preferred browser path; CLI, profiler and simulator access remain separate capabilities. |
+| `benchmark-checklist` | Pending standalone port with all seven checks, production tuning, separate profiling and the source ballpark exception. Implement before claiming the affected measurement gate works. |
+| `tdd` | Preserve the standalone source boundary and Bug fix's cheap-test versus expensive-integration distinction. Assess an explicit external dependency or faithful port with that first caller; same-name installation is insufficient. |
+| `technical-writing` | Pending standalone port preserving the four layers, document modes, worked example and Unslop dependency. |
+| `unslop`, external `deslop` | Preserve independently discoverable skill boundaries. Compare an intended external package to its pinned source or port it faithfully before claiming the dependency is satisfied. Do not replace either with a condensed bundled reference. |
+| `no-comments` and `comment-sicko` | Assess the full skill and agent together. Preserve upstream review, rejection/rerun and fix order by default. Record narrow conflicts with repository constraints or authority; an optional replacement review policy requires a user decision. No blanket persona or algorithm replacement is approved. |
+| All 24 `principle-*` leaves | Implemented as 24 independently discoverable skills, each with research-owned attribution and a package license; juan-mode retains the upstream-organized inline Principles section. Scope adaptations preserve compatibility, authority and evidence limits; mapping alone is not runtime verification. |
+| `typescript-best-practices` | Pending standalone conditional TypeScript helper, including `references/patterns.md`. Preserve its source structure and record the known negative-duration example correction. |
+| Cursor `create-skill` and control skills | Use the advertised host authoring skill for the unavailable Cursor built-in. Assess the complete external control skills before choosing supported substitutions. T3 preview covers only demonstrated browser behavior; CLI, TUI, Electron and simulator execution need their own evidence. |
 | Verification generation and maintenance | Reuse the shipped jstack skills when separately requested or accepted; existing verifier execution belongs to the active task. |
 | `/loop`, Cursor agent wrappers and cloud task options | Use the supported child lifecycle and bounded task continuation. Do not add a hidden scheduler, launch provider CLIs as substitute agents or claim cloud isolation. |
 | `watch-pr` | Use T3 Code parent-owned PR watches for waiting; retain independent readiness checks against the forge. |
-| `check-plan.mjs`, `orch`, bootstrap and worktree audit | Adapt only needed validators and owned run records. Remove hardcoded Graphite, ten-lane/cloud assumptions and automatic dependency installation. Rewrite unsafe cleanup classifications. |
+| `check-plan.mjs`, `orch`, bootstrap and worktree audit | Port each tool with its first consuming procedure, preserving validation, evidence and state algorithms. Assess all ten live-lane proof obligations instead of deleting them for portability. Resolve the source Graphite/frontier contradiction before choosing a substitute. Replace automatic installation with a manual prerequisite and unsafe cleanup classifications with actual ownership/merge evidence. |
 
 Sources include the [mode's dependency rules](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md), [principle source directory](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills), [comment reviewer](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/agents/comment-sicko.md), [deslop](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/deslop/SKILL.md), and the detailed inventory's linked helper and script sources. The 24 principle leaves were read for this assessment; this count is separate from the 23 playbooks.
 
@@ -133,7 +138,7 @@ All-playbook release evidence includes at least one representative executed case
 These groups organize work into focused PRs. They are not reduced releases. A group may need several PRs; each must have an independently inspectable result and acceptance evidence.
 
 1. **Execution foundation.** Implement the entrypoint, full route registry, installed-dependency discovery, configuration resolution and explicit delegation contract. Prove activation/opt-out and resume behavior, model selection and the workspace execution model. These results determine which providers can support the full release.
-2. **Shared procedures.** Implement the helper references, principle mapping, review contracts, evidence rules and required small validators. Prove design-only helper return, configured fan-out, distinct candidate/judge handling and clear unavailable-capability results.
+2. **Shared procedures.** Complete the standalone helper dependencies, principle mapping, review contracts, evidence rules and required validators, following the [current fidelity status](fidelity-status.md). Prove design-only helper return, configured fan-out, distinct candidate/judge handling and clear unavailable-capability results.
 3. **Engineering and experiments.** Implement the 9 engineering routes plus Prototype, Eval and Authoring a skill. Exercise diagnosis versus implementation, behavior-preserving refactoring, performance evidence, visual proof and blinded candidate evaluation.
 4. **Delivery and recovery.** Implement the 7 delivery routes with parent-owned monitoring, conservative cleanup, exact-head shipping checks, pause/pickup and a plan validator matched to the actual T3 Code execution model.
 5. **Autonomous coordination.** Implement Autonomous run, Orchestrate, Autopilot-full and Autopilot-stack against the already-tested task, workspace and PR contracts. Exercise restart reconciliation, held merge authority, child failure and user stop.
