@@ -1,6 +1,6 @@
 # Conversation state
 
-Treat activation as a user instruction scoped to the current conversation. Explicit invocation turns it on, task completion leaves it on, and explicit opt-out turns it off. A request to author, review or explain juan-mode is not invocation. New conversations start inactive unless the user invokes it there. A delegated child receives only its task's relevant instructions and authority.
+Treat activation as a user instruction scoped to the current conversation. Explicit invocation turns it on, task completion leaves it on, and explicit opt-out turns it off. A request to author, review or explain juan-mode is not invocation. New conversations start inactive unless the user invokes it there. An ordinary playbook child reads the full mode style and applicable principle leaves under its explicit brief; specialized workflow children keep their procedure's instructions. Neither inherits persistent activation or authority outside its bounded task merely by reading the style.
 
 Retain this small record in the conversation's working state. Include it in a handoff or compaction summary when one is produced. Get the thread ID from T3 Code's current-thread configuration, not from a repository file or another task's example.
 

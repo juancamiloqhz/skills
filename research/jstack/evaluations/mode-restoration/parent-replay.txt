@@ -1,0 +1,9 @@
+generator result = {'negative': [-2, -1, -2], 'other': [3, 0, 2, 0]}
+generator exhausted = True
+first result = {'negative': [-3, -1], 'other': [0, 4]}
+second result = {'negative': [-5], 'other': [7, 0]}
+first after append and second clear = {'negative': [-3, -1, -99], 'other': [0, 4, 99]}
+second after clear = {'negative': [], 'other': []}
+third result after earlier mutations = {'negative': [-3, -1], 'other': [0, 4]}
+PASS: generator order and zero placement; exhaustion; eight distinct output lists; mutation isolation.
+Fixture bytes unchanged = True

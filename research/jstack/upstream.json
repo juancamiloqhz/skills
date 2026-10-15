@@ -21,7 +21,8 @@
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
         "pstack/docs/guide/02-poteto-mode.md",
-        "pstack/skills/setup-pstack"
+        "pstack/skills/setup-pstack",
+        "pstack/agents/poteto-agent.md"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },

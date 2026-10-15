@@ -1,0 +1,12 @@
+{
+  "small": "Feature unavailable; no invented execution or custom fallback solely because missing",
+  "crosscutting": "Figure-it-out takes priority; retain planning-only boundary",
+  "away": "Figure-it-out and Show-me-your-work; no PR/merge, no timer",
+  "program": "Orchestrate, unavailable; not a bounded Figure-it-out run",
+  "empirical": "Investigation unavailable; read-only available helper may answer from source, no sketch or preference question",
+  "benchmark": "Required benchmark-checklist missing; measurement claim incomplete without gate. No invented results or install",
+  "status": "Babysit assessment, unavailable; no repair/comment/merge or unrelated babysit substitute",
+  "open": "Opening a PR unavailable; no automatic Babysit/watch/merge",
+  "authoring": "Authoring/modifying a skill or read-only review analysis as warranted; no activation from authoring, no actual edit",
+  "contested": "Interrogate design-only; no implementation/publication, disclose missing no-comments and actual model diversity"
+}
