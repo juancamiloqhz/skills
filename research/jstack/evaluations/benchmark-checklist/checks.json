@@ -1,0 +1,14 @@
+{
+  "skillValidation": [
+    "benchmark-checklist",
+    "juan-mode"
+  ],
+  "upstreamCheckerTests": 11,
+  "markdownLint": "pass",
+  "localLinks": 236,
+  "sourceComparison": "matches retained final record",
+  "manifest": "valid; one component and mode context added; existing pins, decisions, checkpoint preserved",
+  "inputHashes": "both evaluations match unchanged current inputs",
+  "realConfigSha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "parentEvidenceCheck": "pass; output replay unmeasured"
+}

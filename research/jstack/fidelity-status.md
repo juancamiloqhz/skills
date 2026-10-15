@@ -1,17 +1,17 @@
 # Jstack fidelity status
 
-As of 2026-10-15, at merged PR #37, commit `d4cfe22`. The seven correction groups in the [original audit](fidelity-audits/2026-10-13/README.md) now have merged source restorations. Required helper dependencies and runtime checks remain open. All 23 playbook procedures remain unimplemented.
+Baseline reconciliation on 2026-10-15 followed merged PR #37, commit `d4cfe22`, and shipped in PR #38. The subsequent benchmark-checklist port updates the dependency status below. The seven correction groups in the [original audit](fidelity-audits/2026-10-13/README.md) now have merged source restorations. Required helper dependencies and runtime checks remain open. All 23 playbook procedures remain unimplemented.
 
 This record reconciles the existing audit with current files and recorded evaluations. It is not a new full semantic audit or a fresh workflow evaluation. The original reports and test artifacts retain their dates, failures and limits. This record and the [fidelity policy](upstream-fidelity.md) supersede the initial specification/inventories wherever those propose bundled standalone helpers, shortened algorithms or optional redesign without a user decision.
 
 ## Merged corrections
 
-The original 36 mapped components now total 37 because Show me your work is standalone. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 34. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`.
+The original 36 mapped components reached 37 with standalone Show me your work and now total 38 with benchmark-checklist. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 35. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`.
 
 | Original correction group | Merged result | Evidence and remaining limit |
 | --- | --- | --- |
 | 1. Provenance | PR #28 moved 12 adaptation records to research. Licenses and operational procedures remain in packages. | [Packaging record](adaptations/README.md). This closed provenance placement, not behavior findings. |
-| 2. Principles | PR #29 restored all 24 bodies and dependency calls, with seven narrow exceptions. | [Differences](principle-adaptations.md), [source and bounded exercises](evaluations/principle-restoration/README.md). Benchmark and TypeScript helpers are absent; principle invocation metadata remains unresolved. |
+| 2. Principles | PR #29 restored all 24 bodies and dependency calls, with seven narrow exceptions. | [Differences](principle-adaptations.md), [source and bounded exercises](evaluations/principle-restoration/README.md). Benchmark-checklist is now supplied below; the TypeScript helper is absent; principle invocation metadata remains unresolved. |
 | 3. How and Why | PR #30 restored both How prompts, all 12 Why references, source organization and source-specific investigation rules. | [Final alignment comparison](evaluations/investigation-restoration/alignment-review/README.md). Live connectors and all-provider discovery remain unverified. |
 | 4. Architect, Interrogate, Reflect | PR #31 restored all eleven supporting references, review criteria, phase order and synthesis classifications. | [Evaluation](evaluations/design-review-restoration/README.md). Template exercises do not establish full execution of each restored orchestrator. PR #36 later corrected Architect's caller sentence. |
 | 5. Trail and Figure it out | PR #32 restored the standalone trail package, exact logger/template, original phases and mandatory per-unit judging. | [Evaluation](evaluations/trail-restoration/README.md). Real logger and bounded audit/review passed; full delegated implementation and model-family diversity remain unproven. |
@@ -20,15 +20,15 @@ The original 36 mapped components now total 37 because Show me your work is stan
 
 The original findings about Reflect's already-enforced Backlog, Figure-it-out's required judge, maintenance's `verified-unreachable` result and Arena's ordinary sole-survivor result were resolved by restoring source behavior. They are not new user preference questions. Architect still requires two structurally distinct designs. Preserve the [recorded setup and linking decisions](decisions.md), inherited model choices, task authority and manual installation.
 
-## Missing or unverified helper dependencies
+## Helper dependency status
 
-The source paths below use pin `11713c683fe4add4fd403ea880580abbc9e0875f`. They are dependency targets, not new adaptation pins or implemented mappings. Each port must enumerate all source files, preserve its boundary, add the license and manifest mapping/context dependencies, document necessary differences, and test the affected caller behavior.
+The source paths below use pin `11713c683fe4add4fd403ea880580abbc9e0875f`. Benchmark-checklist now has its own mapping at that pin. The remaining missing packages are dependency targets, not implemented mappings. Each port must enumerate all source files, preserve its boundary, add the license and manifest mapping/context dependencies, document necessary differences, and test the affected caller behavior.
 
 | Dependency | Exact source scope | Current disposition and first affected caller |
 | --- | --- | --- |
-| Benchmark checklist | `pstack/skills/benchmark-checklist/SKILL.md` | No jstack package. Next port. Required by Explain the Number and Juan-mode measurement triggers; later Perf issue and Hillclimb depend on it. |
+| Benchmark checklist | `pstack/skills/benchmark-checklist/SKILL.md` | Now a [standalone package](../../skills/jstack/benchmark-checklist/SKILL.md) with [bounded evaluation](evaluations/benchmark-checklist/README.md). Explain the Number and the mode can discover it; installed-provider use and the later Perf issue/Hillclimb procedures remain unverified. |
 | TypeScript best practices | `pstack/skills/typescript-best-practices/SKILL.md` and `references/patterns.md` | No jstack package. Conditional dependency of Type System Discipline. Preserve both files; correct the known claim that plain numeric duration excludes negative ranges. |
-| Technical writing | `pstack/skills/technical-writing/SKILL.md` | No jstack package. Required by the mode's documentation/PR trigger. Preserve all four layers, document modes and the worked example. Assess its Unslop dependency alongside it. |
+| Technical writing | `pstack/skills/technical-writing/SKILL.md` | No jstack package. Next focused port, required by the mode's documentation/PR trigger. Preserve all four layers, document modes and the worked example. Assess its Unslop dependency alongside it. |
 | No comments | `pstack/skills/no-comments/SKILL.md` and `pstack/agents/comment-sicko.md` | Neither is packaged. Required before mode-led review. Assess the complete reviewer and skill together, including exceptions, rejection/rerun limits, How/Why calls, scoped fixes and constraint encodings. Record precise authority/repository conflicts; do not replace the whole procedure by preference. |
 | Unslop and TDD | `pstack/skills/unslop/SKILL.md`; `pstack/skills/tdd/SKILL.md` | Same-name skills are available in this session, but are not jstack packages with established pinned equivalence. Decide faithful external reuse or a standalone port after comparison. Unslop affects writing/trail calls; TDD affects Bug fix. |
 | Deslop | `cursor-team-kit/skills/deslop/SKILL.md` | External pre-commit dependency. No jstack package or verified external-equivalence record. Keep its own boundary; a formatter is not a substitute. |
@@ -53,15 +53,17 @@ These checks constrain support and release claims. They do not prohibit independ
 
 ## Next implementation and later tools
 
-Next is a focused standalone benchmark-checklist PR. Preserve the source's introduction, ballpark exception, preparation, seven questions, Report and Other perf material sections. Keep profiling outside reported runs, production tuning on both sides, physical-limit arithmetic, error/output checks, at least five alternating runs per side, median/range, end-to-end relevance and proof that work occurred inside the timed region. Its references to Opening a PR, Perf issue and Hillclimb do not implement those routes.
+The standalone benchmark-checklist port preserves the full source procedure and adds only the recorded catalog-invocation, task-authority and pending-playbook qualifications. Its [evaluation](evaluations/benchmark-checklist/README.md) records actual export measurements separately from synthetic counterexamples. It does not implement Opening a PR, Perf issue or Hillclimb.
 
-Verification should include a real bounded workload with recorded errors/work counts and alternating measurements, plus counterexamples for a no-op timer, fast failures, an untuned comparison and an unsupported speedup. Test the one-run user-requested ballpark exception separately from choosing between options. If profiling or other prerequisites are unavailable, report the relevant conclusion as inconclusive. Do not install tools or change model settings to make a case pass.
+Next is technical-writing with a comparison of its Unslop dependency. Preserve the standalone source, four layers, document modes and worked example. Test actual documentation revisions and the mode distinctions without weakening repository conventions or editing the user's installed writing skills.
 
 Then address the remaining standalone dependencies and invocation question in focused work, before enabling their consuming routes. This preserves the accepted all-23 target and grouped implementation. It does not require porting unrelated pstack skills.
 
 The 23 source playbooks still have no local procedure files. The mode comparison also records pending supporting paths. Port tools with their first consuming procedure and retain the [original audit's algorithm requirements](fidelity-audits/2026-10-13/foundation.md#f7-preserve-pending-tool-algorithms-and-resolve-upstream-contradictions-before-porting): ordered plan blocks and ten live proof lanes; watcher blocker priority and stale-head invalidation; contiguous verified stack landing; orchestration ledger/gates/frontier and atomicity; manual dependency prerequisites; and conservative worktree ownership checks. The conflicting upstream Graphite assumptions need a concrete frontier decision. A host PR watch replaces waiting, not independent merge-readiness verification.
 
 ## Reconciliation checks
+
+The following checks describe the PR #38 baseline. The benchmark evaluation records the later package/caller changes and validation separately.
 
 Re-ran all nine existing restoration `compare.py` scripts against the shared pinned upstream cache. Seven outputs match their recorded comparisons exactly, using How/Why's final alignment record. The design/review output differs only in Architect's later caller sentence, covered by the matching Arena comparison. Setup differs only in the three support files changed by Swarm, covered by the matching Swarm comparison. Historical snapshots remain unchanged.
 

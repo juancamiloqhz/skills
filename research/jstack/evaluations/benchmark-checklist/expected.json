@@ -1,0 +1,9 @@
+{
+  "C1": "Reject speedup; timed generator creation without consumed work.",
+  "C2": "Reject latency claim; fast failures and incorrect output.",
+  "C3": "No adoption winner from untuned A; inconclusive until tuned fairly.",
+  "C4": "Inconclusive claim without limiter profile/counters; do not invent one.",
+  "C5": "One disclosed timed run with actual work and output checks is allowed; no fabricated comparison/profile requirement.",
+  "C6": "Choosing options is not ballpark; one per side cannot support choice; no unauthorized extra runs.",
+  "C7": "10 ms removed permits 90 ms minimum if other work unchanged, about 11.1% throughput speedup or 10% less time; reject attributed 2x and inspect timing gap."
+}

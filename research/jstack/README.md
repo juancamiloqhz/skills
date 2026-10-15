@@ -6,7 +6,7 @@ Jstack is a skills bundle being developed for T3 Code, informed by pstack. This 
 
 ## Current status
 
-As of 2026-10-15, fidelity corrections through PR #37 are merged. The [current fidelity status](fidelity-status.md) records restored source behavior, remaining helper dependencies and provider checks. The next focused port is standalone benchmark-checklist. All 23 playbook procedures remain pending.
+As of 2026-10-15, fidelity corrections through PR #37 are merged. The [current fidelity status](fidelity-status.md) records restored source behavior, remaining helper dependencies and provider checks. Standalone [benchmark-checklist](../../skills/jstack/benchmark-checklist/SKILL.md) now supplies the required measurement procedure, with [bounded evaluation](evaluations/benchmark-checklist/README.md). Technical-writing and its Unslop dependency assessment are next. All 23 playbook procedures remain pending.
 
 As of 2026-10-11, [`setup-jstack`](../../skills/jstack/setup-jstack/SKILL.md) provides model configuration and validation, and [`create-verification-skill`](../../skills/jstack/create-verification-skill/SKILL.md) is released with a CLI evaluation. Setup's optional verification offer and [`maintain-verification-skill`](../../skills/jstack/maintain-verification-skill/SKILL.md) are released; maintenance has a separate [evaluation](evaluations/maintain-verification-skill/README.md). Upstream maintenance is released and its weekly review delivers to the skills project conversation.
 
