@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jstack: Setup"
+  short_description: "Configure T3 Code models and reasoning by workflow role"
+  default_prompt: "Use $jstack-setup to configure my T3 Code workflow model assignments and reasoning budget."

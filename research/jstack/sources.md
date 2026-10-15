@@ -10,13 +10,13 @@ The setup adaptation uses `cursor/plugins` revision `ccb5507cec1546dc88135c1139c
 
 - [setup-pstack](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/setup-pstack/SKILL.md): source for the setup concept and role registry.
 - [poteto-mode](https://github.com/cursor/plugins/blob/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/poteto-mode/SKILL.md): previously inspected consumer context, not an implemented jstack workflow.
-- [Local attribution](adaptations/setup-jstack.md) and [retained MIT notice](../../skills/jstack/setup-jstack/LICENSE): adaptation scope and Lauren Tan's upstream copyright notice.
+- [Local attribution](adaptations/setup-jstack.md) and [retained MIT notice](../../skills/jstack/jstack-setup/LICENSE): adaptation scope and Lauren Tan's upstream copyright notice.
 
 ## Local implementation references
 
-- [Setup skill](../../skills/jstack/setup-jstack/SKILL.md): setup behavior and limits.
-- [Configuration contract](../../skills/jstack/setup-jstack/references/configuration.md): schema and consumer requirements.
-- [T3 Code integration reference](../../skills/jstack/setup-jstack/references/t3-code.md): integration guidance shipped with setup. Recheck callable tools and injected runtime instructions before execution.
+- [Setup skill](../../skills/jstack/jstack-setup/SKILL.md): setup behavior and limits.
+- [Configuration contract](../../skills/jstack/jstack-setup/references/configuration.md): schema and consumer requirements.
+- [T3 Code integration reference](../../skills/jstack/jstack-setup/references/t3-code.md): integration guidance shipped with setup. Recheck callable tools and injected runtime instructions before execution.
 
 ## Historical material
 

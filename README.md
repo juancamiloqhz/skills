@@ -13,20 +13,20 @@ This repository is the canonical source for skills I have developed and validate
 | [`agent-instructions`](./skills/agent-instructions) | Audits, proposes, creates, and repairs repository `AGENTS.md` and `CLAUDE.md` files using repository evidence and harness-aware loading rules. | Experimental |
 | [`agent-workflow-readiness`](./skills/agent-workflow-readiness) | Audits a repository's architecture, domain documentation, ADR candidates, agent instructions, and issue tracker before agent-workflow setup. | Experimental |
 | [`deep-understanding`](./skills/deep-understanding) | Makes the human's understanding a first-class deliverable through incremental explanation, active recall, and lightweight knowledge checks. | Experimental |
-| [`setup-jstack`](./skills/jstack/setup-jstack) | Configures jstack workflow roles using T3 Code's live provider/model catalog, reasoning budgets, global defaults and optional project settings. | Experimental; configuration helper tested |
-| [`juan-mode`](./skills/jstack/juan-mode) | Provides persistent-mode instructions, inline task routing and configured delegation preflight. | Foundation only; playbooks pending; see [evaluation](./research/jstack/evaluations/mode-restoration/README.md) |
-| [`how`](./skills/jstack/how) | Explains runtime flow, component ownership and failure behavior using configured investigation roles. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
-| [`why`](./skills/jstack/why) | Investigates historical rationale, contradictions and unknowns using relevant evidence sources. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
-| [`arena`](./skills/jstack/arena) | Compares configured candidates, selects one cross-judge and synthesizes a verified artifact. | Experimental; see [evaluation](./research/jstack/evaluations/arena/README.md) |
-| [`architect`](./skills/jstack/architect) | Grounds competing design sketches and returns a design or continues with authorized implementation. | Experimental; see [evaluation](./research/jstack/evaluations/architect/README.md) |
-| [`interrogate`](./skills/jstack/interrogate) | Challenges code or designs with configured reviewers and a checked, report-only verdict. | Experimental; see [evaluation](./research/jstack/evaluations/interrogate/README.md) |
-| [`swarm`](./skills/jstack/swarm) | Coordinates configured workers for coverage or races and verifies one consolidated result. | Experimental; see [evaluation](./research/jstack/evaluations/swarm/README.md) |
-| [`reflect`](./skills/jstack/reflect) | Reviews bounded session evidence through three lenses and proposes verified guidance changes or structural fixes. | Experimental; see [evaluation](./research/jstack/evaluations/reflect/README.md) |
-| [`figure-it-out`](./skills/jstack/figure-it-out) | Designs a custom workflow with measured units, scoped execution and a reviewed decision trail. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
-| [`show-me-your-work`](./skills/jstack/show-me-your-work) | Keeps an append-only decision log and reviews this run's evidence before handoff. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
-| [`benchmark-checklist`](./skills/jstack/benchmark-checklist) | Checks performance measurements for real work, errors, fair tuning, repeatability and a measured limiter. | Experimental; see [evaluation](./research/jstack/evaluations/benchmark-checklist/README.md) |
-| [`create-verification-skill`](./skills/jstack/create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/verification-restoration/README.md) |
-| [`maintain-verification-skill`](./skills/jstack/maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/verification-restoration/README.md) |
+| [`jstack-setup`](./skills/jstack/jstack-setup) | Configures jstack workflow roles using T3 Code's live provider/model catalog, reasoning budgets, global defaults and optional project settings. | Experimental; configuration helper tested |
+| [`jstack-juan-mode`](./skills/jstack/jstack-juan-mode) | Provides persistent-mode instructions, inline task routing and configured delegation preflight. | Foundation only; playbooks pending; see [evaluation](./research/jstack/evaluations/mode-restoration/README.md) |
+| [`jstack-how`](./skills/jstack/jstack-how) | Explains runtime flow, component ownership and failure behavior using configured investigation roles. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
+| [`jstack-why`](./skills/jstack/jstack-why) | Investigates historical rationale, contradictions and unknowns using relevant evidence sources. | Experimental; see [evaluation](./research/jstack/evaluations/shared-investigation/README.md) |
+| [`jstack-arena`](./skills/jstack/jstack-arena) | Compares configured candidates, selects one cross-judge and synthesizes a verified artifact. | Experimental; see [evaluation](./research/jstack/evaluations/arena/README.md) |
+| [`jstack-architect`](./skills/jstack/jstack-architect) | Grounds competing design sketches and returns a design or continues with authorized implementation. | Experimental; see [evaluation](./research/jstack/evaluations/architect/README.md) |
+| [`jstack-interrogate`](./skills/jstack/jstack-interrogate) | Challenges code or designs with configured reviewers and a checked, report-only verdict. | Experimental; see [evaluation](./research/jstack/evaluations/interrogate/README.md) |
+| [`jstack-swarm`](./skills/jstack/jstack-swarm) | Coordinates configured workers for coverage or races and verifies one consolidated result. | Experimental; see [evaluation](./research/jstack/evaluations/swarm/README.md) |
+| [`jstack-reflect`](./skills/jstack/jstack-reflect) | Reviews bounded session evidence through three lenses and proposes verified guidance changes or structural fixes. | Experimental; see [evaluation](./research/jstack/evaluations/reflect/README.md) |
+| [`jstack-figure-it-out`](./skills/jstack/jstack-figure-it-out) | Designs a custom workflow with measured units, scoped execution and a reviewed decision trail. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
+| [`jstack-show-me-your-work`](./skills/jstack/jstack-show-me-your-work) | Keeps an append-only decision log and reviews this run's evidence before handoff. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
+| [`jstack-benchmark-checklist`](./skills/jstack/jstack-benchmark-checklist) | Checks performance measurements for real work, errors, fair tuning, repeatability and a measured limiter. | Experimental; see [evaluation](./research/jstack/evaluations/benchmark-checklist/README.md) |
+| [`jstack-create-verification-skill`](./skills/jstack/jstack-create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/verification-restoration/README.md) |
+| [`jstack-maintain-verification-skill`](./skills/jstack/jstack-maintain-verification-skill) | Audits existing verification instructions against source and live behavior, repairs drift, and reports product regressions. | Experimental; see [evaluation](./research/jstack/evaluations/verification-restoration/README.md) |
 
 ## Engineering principles
 
@@ -34,30 +34,30 @@ These 24 jstack skills are independently installable and discoverable. Juan-mode
 
 | Skill | When to use |
 | --- | --- |
-| [`principle-attack-the-premise`](./skills/jstack/principle-attack-the-premise) | After multiple fixes sharing an assumption fail the same gate. |
-| [`principle-boundary-discipline`](./skills/jstack/principle-boundary-discipline) | When wiring validation, adapters or error handling. |
-| [`principle-build-the-lever`](./skills/jstack/principle-build-the-lever) | When tooling would make nontrivial work repeatable or reviewable. |
-| [`principle-encode-lessons-in-structure`](./skills/jstack/principle-encode-lessons-in-structure) | When a mechanical correction recurs. |
-| [`principle-exhaust-the-design-space`](./skills/jstack/principle-exhaust-the-design-space) | When a consequential novel decision has multiple viable shapes. |
-| [`principle-experience-first`](./skills/jstack/principle-experience-first) | When user experience and implementation convenience conflict. |
-| [`principle-explain-the-number`](./skills/jstack/principle-explain-the-number) | Before reporting or acting on a measured performance or evaluation result. |
-| [`principle-fix-root-causes`](./skills/jstack/principle-fix-root-causes) | When diagnosing a failure. |
-| [`principle-foundational-thinking`](./skills/jstack/principle-foundational-thinking) | Before choosing structures or sequencing features. |
-| [`principle-guard-the-context-window`](./skills/jstack/principle-guard-the-context-window) | When large evidence or a long run strains context. |
-| [`principle-laziness-protocol`](./skills/jstack/principle-laziness-protocol) | When tempted to add layers or widen a refactor. |
-| [`principle-make-operations-idempotent`](./skills/jstack/principle-make-operations-idempotent) | For commands or loops subject to retries and partial failure. |
-| [`principle-migrate-callers-then-delete-legacy-apis`](./skills/jstack/principle-migrate-callers-then-delete-legacy-apis) | When replacing an internal API. |
-| [`principle-minimize-reader-load`](./skills/jstack/principle-minimize-reader-load) | When code is hard to trace. |
-| [`principle-model-the-domain`](./skills/jstack/principle-model-the-domain) | When state or domain rules spread across branches. |
-| [`principle-never-block-on-the-human`](./skills/jstack/principle-never-block-on-the-human) | When a reversible scoped action is already authorized. |
-| [`principle-outcome-oriented-execution`](./skills/jstack/principle-outcome-oriented-execution) | During an explicitly planned rewrite or migration. |
-| [`principle-prove-it-works`](./skills/jstack/principle-prove-it-works) | Before declaring an outcome complete. |
-| [`principle-redesign-from-first-principles`](./skills/jstack/principle-redesign-from-first-principles) | When a new requirement challenges the existing design. |
-| [`principle-separate-before-serializing-shared-state`](./skills/jstack/principle-separate-before-serializing-shared-state) | When multiple actors might mutate the same object. |
-| [`principle-sequence-verifiable-units`](./skills/jstack/principle-sequence-verifiable-units) | For multi-step edits or dependent delivery. |
-| [`principle-subtract-before-you-add`](./skills/jstack/principle-subtract-before-you-add) | When sequencing a refactor or addition. |
-| [`principle-test-behavior-not-implementation`](./skills/jstack/principle-test-behavior-not-implementation) | When adding or reviewing tests. |
-| [`principle-type-system-discipline`](./skills/jstack/principle-type-system-discipline) | When designing types or handling untyped inputs. |
+| [`jstack-principle-attack-the-premise`](./skills/jstack/jstack-principle-attack-the-premise) | After multiple fixes sharing an assumption fail the same gate. |
+| [`jstack-principle-boundary-discipline`](./skills/jstack/jstack-principle-boundary-discipline) | When wiring validation, adapters or error handling. |
+| [`jstack-principle-build-the-lever`](./skills/jstack/jstack-principle-build-the-lever) | When tooling would make nontrivial work repeatable or reviewable. |
+| [`jstack-principle-encode-lessons-in-structure`](./skills/jstack/jstack-principle-encode-lessons-in-structure) | When a mechanical correction recurs. |
+| [`jstack-principle-exhaust-the-design-space`](./skills/jstack/jstack-principle-exhaust-the-design-space) | When a consequential novel decision has multiple viable shapes. |
+| [`jstack-principle-experience-first`](./skills/jstack/jstack-principle-experience-first) | When user experience and implementation convenience conflict. |
+| [`jstack-principle-explain-the-number`](./skills/jstack/jstack-principle-explain-the-number) | Before reporting or acting on a measured performance or evaluation result. |
+| [`jstack-principle-fix-root-causes`](./skills/jstack/jstack-principle-fix-root-causes) | When diagnosing a failure. |
+| [`jstack-principle-foundational-thinking`](./skills/jstack/jstack-principle-foundational-thinking) | Before choosing structures or sequencing features. |
+| [`jstack-principle-guard-the-context-window`](./skills/jstack/jstack-principle-guard-the-context-window) | When large evidence or a long run strains context. |
+| [`jstack-principle-laziness-protocol`](./skills/jstack/jstack-principle-laziness-protocol) | When tempted to add layers or widen a refactor. |
+| [`jstack-principle-make-operations-idempotent`](./skills/jstack/jstack-principle-make-operations-idempotent) | For commands or loops subject to retries and partial failure. |
+| [`jstack-principle-migrate-callers-then-delete-legacy-apis`](./skills/jstack/jstack-principle-migrate-callers-then-delete-legacy-apis) | When replacing an internal API. |
+| [`jstack-principle-minimize-reader-load`](./skills/jstack/jstack-principle-minimize-reader-load) | When code is hard to trace. |
+| [`jstack-principle-model-the-domain`](./skills/jstack/jstack-principle-model-the-domain) | When state or domain rules spread across branches. |
+| [`jstack-principle-never-block-on-the-human`](./skills/jstack/jstack-principle-never-block-on-the-human) | When a reversible scoped action is already authorized. |
+| [`jstack-principle-outcome-oriented-execution`](./skills/jstack/jstack-principle-outcome-oriented-execution) | During an explicitly planned rewrite or migration. |
+| [`jstack-principle-prove-it-works`](./skills/jstack/jstack-principle-prove-it-works) | Before declaring an outcome complete. |
+| [`jstack-principle-redesign-from-first-principles`](./skills/jstack/jstack-principle-redesign-from-first-principles) | When a new requirement challenges the existing design. |
+| [`jstack-principle-separate-before-serializing-shared-state`](./skills/jstack/jstack-principle-separate-before-serializing-shared-state) | When multiple actors might mutate the same object. |
+| [`jstack-principle-sequence-verifiable-units`](./skills/jstack/jstack-principle-sequence-verifiable-units) | For multi-step edits or dependent delivery. |
+| [`jstack-principle-subtract-before-you-add`](./skills/jstack/jstack-principle-subtract-before-you-add) | When sequencing a refactor or addition. |
+| [`jstack-principle-test-behavior-not-implementation`](./skills/jstack/jstack-principle-test-behavior-not-implementation) | When adding or reviewing tests. |
+| [`jstack-principle-type-system-discipline`](./skills/jstack/jstack-principle-type-system-discipline) | When designing types or handling untyped inputs. |
 
 ## Install
 
@@ -110,28 +110,28 @@ skills/
     agents/
       openai.yaml
   jstack/
-    setup-jstack/
+    jstack-setup/
       SKILL.md
-    juan-mode/
+    jstack-juan-mode/
       SKILL.md
-    how/
+    jstack-how/
       SKILL.md
-    why/
+    jstack-why/
       SKILL.md
-    arena/
-    architect/
-    interrogate/
-    swarm/
+    jstack-arena/
+    jstack-architect/
+    jstack-interrogate/
+    jstack-swarm/
       SKILL.md
-    reflect/
+    jstack-reflect/
       SKILL.md
-    figure-it-out/
+    jstack-figure-it-out/
       SKILL.md
-    show-me-your-work/
+    jstack-show-me-your-work/
       SKILL.md
-    create-verification-skill/
+    jstack-create-verification-skill/
       SKILL.md
-    maintain-verification-skill/
+    jstack-maintain-verification-skill/
       SKILL.md
 ```
 
@@ -156,27 +156,27 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 
 ## jstack
 
-jstack is the bundle name. Its configuration skill, [`setup-jstack`](./skills/jstack/setup-jstack/SKILL.md), adapts pstack's model setup concept for T3 Code. [`juan-mode`](./skills/jstack/juan-mode/SKILL.md), corresponding to pstack's `poteto-mode`, now provides the execution foundation: activation instructions, the inline playbook list, mandatory helper triggers, dependency discovery and model preflight. Its 23 playbook procedures remain planned. The [upstream reference](research/jstack/adaptations/juan-mode.md) records the inspected revision and MIT attribution. Source availability does not establish automatic rule loading or persistence after restart.
+jstack is the bundle name. Its configuration skill, [`jstack-setup`](./skills/jstack/jstack-setup/SKILL.md), adapts pstack's model setup concept for T3 Code. [`jstack-juan-mode`](./skills/jstack/jstack-juan-mode/SKILL.md), corresponding to pstack's `poteto-mode`, now provides the execution foundation: activation instructions, the inline playbook list, mandatory helper triggers, dependency discovery and model preflight. Its 23 playbook procedures remain planned. The [upstream reference](research/jstack/adaptations/juan-mode.md) records the inspected revision and MIT attribution. Source availability does not establish automatic rule loading or persistence after restart.
 
-The standalone [`how`](./skills/jstack/how/SKILL.md) and [`why`](./skills/jstack/why/SKILL.md) skills explain runtime behavior and investigate historical rationale. Invoke either directly without activating juan-mode. Each requires an available, current setup-jstack installation for model resolution and the shared investigation contract; neither requires the other or juan-mode. Future playbooks will discover these skills through the provider's catalog. Install or update the dependencies manually, for example:
+The standalone [`jstack-how`](./skills/jstack/jstack-how/SKILL.md) and [`jstack-why`](./skills/jstack/jstack-why/SKILL.md) skills explain runtime behavior and investigate historical rationale. Invoke either directly without activating jstack-juan-mode. Each requires an available, current jstack-setup installation for model resolution and the shared investigation contract; neither requires the other or jstack-juan-mode. Future playbooks will discover these skills through the provider's catalog. Install or update the dependencies manually, for example:
 
 ```sh
-npx skills add juancamiloqhz/skills --skill setup-jstack --skill how --skill why
+npx skills add juancamiloqhz/skills --skill jstack-setup --skill jstack-how --skill jstack-why
 ```
 
-Model configuration can use global defaults or an optional `<project_root>/.jstack/models.json`. Lookup selects an explicit file first, then `JSTACK_CONFIG`, the project file, and finally `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`. Each selected file supplies all 17 roles. Setup offers global or project scope; the [configuration contract](./skills/jstack/setup-jstack/references/configuration.md) defines initialization, validation and worktree handoffs.
+Model configuration can use global defaults or an optional `<project_root>/.jstack/models.json`. Lookup selects an explicit file first, then `JSTACK_CONFIG`, the project file, and finally `${XDG_CONFIG_HOME:-$HOME/.config}/jstack/models.json`. Each selected file supplies all 17 roles. Setup offers global or project scope; the [configuration contract](./skills/jstack/jstack-setup/references/configuration.md) defines initialization, validation and worktree handoffs.
 
-The bundle's source skills live under [`skills/jstack/`](./skills/jstack/). This directory groups independent skills and has no `SKILL.md` of its own. Keep each skill's existing name for installation and invocation. The Skills CLI supports this category layout; moving the source does not add a plugin namespace.
+The bundle's source skills live under [`skills/jstack/`](./skills/jstack/). This directory groups independent skills and has no `SKILL.md` of its own. All shipped jstack skills use portable `jstack-` names for installation and invocation, including `jstack-setup`, `jstack-juan-mode` and `jstack-principle-*`. The directory itself adds no namespace. See the [manual migration guide](research/jstack/skill-names.md) when updating an older installation.
 
 Install just the setup skill and select providers interactively:
 
 ```sh
-npx skills add juancamiloqhz/skills --skill setup-jstack
+npx skills add juancamiloqhz/skills --skill jstack-setup
 ```
 
 ## Jstack research
 
-[Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `setup-jstack` is released; `juan-mode` has a foundation implementation with [bounded evaluation evidence](./research/jstack/evaluations/mode-restoration/README.md). The complete playbook release remains in development.
+[Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `jstack-setup` is released; `jstack-juan-mode` has a foundation implementation with [bounded evaluation evidence](./research/jstack/evaluations/mode-restoration/README.md). The complete playbook release remains in development.
 
 For pstack updates, use the [upstream maintenance procedure](./research/jstack/upstream-maintenance.md). Its checker detects changes and preserves evidence; a review decides which changes belong in jstack. The [roadmap](./research/jstack/roadmap.md) records the enabled weekly review and verified delivery.
 

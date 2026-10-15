@@ -1,17 +1,19 @@
 # Verification generator adaptation
 
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
 Adapted from Lauren Tan's pstack `create-verification-skill` at `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`. The 2026-10-14 restoration follows the [fidelity policy](../upstream-fidelity.md). [Comparison and evaluation](../evaluations/verification-restoration/README.md) cover the final files; the pin and reviewed checkpoint are unchanged.
 
 ## Files and retained structure
 
-| Upstream file under `pstack/skills/create-verification-skill/` | Local file under `skills/jstack/create-verification-skill/` | Disposition |
+| Upstream file under `pstack/skills/create-verification-skill/` | Local file under `skills/jstack/jstack-create-verification-skill/` | Disposition |
 | --- | --- | --- |
 | `SKILL.md` | `SKILL.md` | Restore all five numbered sections, repository interview, six inline output requirements, executable-helper requirement, one-feature proof and cadence only when asked. Differences below. |
 | `references/feature-map-example/README.md` | Same relative path | Restored byte-for-byte. |
 | `references/feature-map-example/create-note.md` | Same relative path | Restored byte-for-byte. |
 | `references/feature-map-example/search.md` | Same relative path | Restored byte-for-byte. |
 
-The earlier jstack `references/output-contract.md` is removed. The source's inline requirements and worked examples again own the contract. Notes commands illustrate output shape; the generated skill must use its actual application. [Package LICENSE](../../../skills/jstack/create-verification-skill/LICENSE) matches `pstack/LICENSE` at the pin, including Lauren Tan's copyright notice.
+The earlier jstack `references/output-contract.md` is removed. The source's inline requirements and worked examples again own the contract. Notes commands illustrate output shape; the generated skill must use its actual application. [Package LICENSE](../../../skills/jstack/jstack-create-verification-skill/LICENSE) matches `pstack/LICENSE` at the pin, including Lauren Tan's copyright notice.
 
 ## Remaining differences
 

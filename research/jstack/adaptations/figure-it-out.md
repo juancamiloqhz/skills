@@ -1,6 +1,8 @@
 # Figure it out adaptation
 
-Source: [pstack figure-it-out](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/figure-it-out/SKILL.md), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [figure-it-out](../../../skills/jstack/figure-it-out/SKILL.md). The [MIT license](../../../skills/jstack/figure-it-out/LICENSE) matches the pinned plugin notice.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Source: [pstack figure-it-out](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/figure-it-out/SKILL.md), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [figure-it-out](../../../skills/jstack/jstack-figure-it-out/SKILL.md). The [MIT license](../../../skills/jstack/jstack-figure-it-out/LICENSE) matches the pinned plugin notice.
 
 Restores the original description, Start and Phase A–E organization, high-biased rigor, hypothesis loop, required judge for every delegated work unit and explicit audit-trail phase. Figure-it-out now calls standalone Show me your work and leaves its format there. The former `references/decision-trail.md` is removed. The old summary adaptation remains historical in Git at `6feca1dd9d8b9b2e902649f150724ae838f6bfed`. [Comparison and evaluation](../evaluations/trail-restoration/README.md) retain the complete source diff and tests.
 

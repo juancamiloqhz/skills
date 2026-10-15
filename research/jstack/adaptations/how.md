@@ -1,6 +1,8 @@
 # How source and adaptation record
 
-Adapted from [pstack how](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/how) at `11713c683fe4add4fd403ea880580abbc9e0875f`. The [local package](../../../skills/jstack/how/SKILL.md) retains the exact [MIT notice](../../../skills/jstack/how/LICENSE). Source pins and the reviewed checkpoint are unchanged.
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
+Adapted from [pstack how](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/how) at `11713c683fe4add4fd403ea880580abbc9e0875f`. The [local package](../../../skills/jstack/jstack-how/SKILL.md) retains the exact [MIT notice](../../../skills/jstack/jstack-how/LICENSE). Source pins and the reviewed checkpoint are unchanged.
 
 The 2026-10-13 restoration replaces the compressed entrypoint with the pinned step order, descriptions and substantive instructions, and restores all 2 supporting references. [Full source diffs](../evaluations/investigation-restoration/alignment-review/source-comparison.json) cover every file. The prior [adaptation record](https://github.com/juancamiloqhz/skills/blob/7b86b39e2645ad5595878ba3c3bb3201c9d8a2ce/research/jstack/adaptations/how.md) is historical; it no longer describes the current reference inventory.
 

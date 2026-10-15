@@ -1,0 +1,1560 @@
+{
+  "baseline": "3c2e32c17ea6a08900af822fe205703e47be0072",
+  "reviewedThrough": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+  "upstreamManifestFieldsPreserved": true,
+  "packageFileSetsPreserved": true,
+  "allLicensesPreserved": true,
+  "packages": [
+    {
+      "name": "jstack-juan-mode",
+      "previousName": "juan-mode",
+      "localPath": "skills/jstack/jstack-juan-mode",
+      "upstreamPath": "pstack/skills/poteto-mode",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/juan-mode.md",
+      "upstreamOnlyFiles": [
+        "playbooks/authoring-a-skill.md",
+        "playbooks/autonomous-run.md",
+        "playbooks/autopilot-full.md",
+        "playbooks/autopilot-stack.md",
+        "playbooks/babysit.md",
+        "playbooks/bug-fix.md",
+        "playbooks/eval.md",
+        "playbooks/feature.md",
+        "playbooks/hillclimb.md",
+        "playbooks/investigation.md",
+        "playbooks/multi-phase-plan.md",
+        "playbooks/opening-a-pr.md",
+        "playbooks/orchestrate.md",
+        "playbooks/pause-safely.md",
+        "playbooks/perf-issue.md",
+        "playbooks/prototype.md",
+        "playbooks/refactoring.md",
+        "playbooks/runtime-forensics.md",
+        "playbooks/session-pickup.md",
+        "playbooks/shipping.md",
+        "playbooks/trace-forensics.md",
+        "playbooks/visual-parity.md",
+        "playbooks/worktree-cleanup.md",
+        "scripts/bootstrap.ts",
+        "scripts/bun.lock",
+        "scripts/check-plan.mjs",
+        "scripts/orch/orch.test.ts",
+        "scripts/orch/orch.ts",
+        "scripts/orch/store.ts",
+        "scripts/package.json",
+        "scripts/watch-pr/cli.test.ts",
+        "scripts/watch-pr/cli.ts",
+        "scripts/watch-pr/fakes.test-helper.ts",
+        "scripts/watch-pr/github.test.ts",
+        "scripts/watch-pr/github.ts",
+        "scripts/watch-pr/policy.test.ts",
+        "scripts/watch-pr/policy.ts",
+        "scripts/watch-pr/render.ts",
+        "scripts/watch-pr/tsconfig.json",
+        "scripts/watch-pr/types.compile.ts",
+        "scripts/watch-pr/types.ts",
+        "scripts/watch-pr/watch-pr",
+        "scripts/worktree-audit.sh"
+      ],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "1ebba1204d31a5c330dc3711b351006455faed1e4c59046892219b21a0050dcf",
+          "previousSha256": "9dc065f0375690b3a8fad3cba7440c14d9c1576dc549d110e39417beef363a3c",
+          "unchangedAfterNameNormalization": false,
+          "upstreamPath": "pstack/skills/poteto-mode/SKILL.md",
+          "upstreamSha256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/activation.md",
+          "sha256": "528f8e7dd79c8252b719bbdda17bc84d4b034343ec59f50f385ab924c87a697a",
+          "previousSha256": "2227af10f986bf98b07142ad043752267b27e3af81093797e36461fa44c585ba",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "references/bugbot-triage.md",
+          "sha256": "db6077df3fa168e589b31a474d7cb551cf3a3959d66e91377e10ff43d00d91c6",
+          "previousSha256": "db6077df3fa168e589b31a474d7cb551cf3a3959d66e91377e10ff43d00d91c6",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/poteto-mode/references/bugbot-triage.md",
+          "upstreamSha256": "b2d146c770d8d3593e1ef3d77b668039b8e1f78093ea1a86f1d45d7f99614309",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/configuration.md",
+          "sha256": "5e180778c9295a340e0a5eb752147acc5a77088cd6f98ef00a8d4d499363509b",
+          "previousSha256": "dbc2936a18e56d8a69f7c04dee07e8859f1d0ee8ab629daa8c2fb68522ffc1af",
+          "unchangedAfterNameNormalization": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "c6a85d8543a165c1365fa246575a63fe86d3019bd9655babeade1b11a549e412",
+          "previousSha256": "c6a85d8543a165c1365fa246575a63fe86d3019bd9655babeade1b11a549e412",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "scripts/preflight.py",
+          "sha256": "d5364696f52c17093e2752eb6f785fcd18c9c84a76dac03c891ba02435acc142",
+          "previousSha256": "25c4051dfcf85a23afd10df7db535319b1aadfd64912da4529c8ce1478da7cbd",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "scripts/test_preflight.py",
+          "sha256": "284deba10ba65a9b5e714030c6f19fd83ca49a65da60d5b9e5c26f6a4a4c0eed",
+          "previousSha256": "4caae5ab2660b50ffe5e922c8fb1d802ff554ed68b1070ccb80ea58cc6bc1298",
+          "unchangedAfterNameNormalization": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-setup",
+      "previousName": "setup-jstack",
+      "localPath": "skills/jstack/jstack-setup",
+      "upstreamPath": "pstack/skills/setup-pstack",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "differences": "research/jstack/adaptations/setup-jstack.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "2f28c10be7863f934666538c894eec2ec29bcfd98b6b299d2e8f6f0a37f13817",
+          "previousSha256": "7cdab3c9c4730e4da17289e4ca0e1402ef49ab9f4b5d9eae4335624a1a17c2a4",
+          "unchangedAfterNameNormalization": false,
+          "upstreamPath": "pstack/skills/setup-pstack/SKILL.md",
+          "upstreamSha256": "d61b47256a18155a81c8e5ef95e3cc6569ce8c18317c35c4dd9c8015cf68cb59",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "agents/openai.yaml",
+          "sha256": "9e8f848556bad51a4d6a0b4119283791c7ac56f1840bdda7789e8b520daafb03",
+          "previousSha256": "351b0bcfde3a3ce7d284bcb23469ca794e8ecd88349cec721e65b9a0c8a62d9d",
+          "unchangedAfterNameNormalization": false
+        },
+        {
+          "file": "references/configuration.md",
+          "sha256": "ee783d0d91122fa2fb5ebb080847666dd91ad8c28e93574a91f09d7fab79e8cb",
+          "previousSha256": "14a706180de924ce2022c7c703a59fcb96aba4c8686e6c5b14acd842ccadc949",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "references/investigation.md",
+          "sha256": "811066c8d8c340431e4fa1aebd33436a7e1174812a8b4a0a904932ab05ed65cb",
+          "previousSha256": "54fdd282d283bad660cebb254dbbe6514de8a6b6447723431bba13ca16f27464",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "references/t3-code.md",
+          "sha256": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+          "previousSha256": "b48fb694b26d2f434974fb8b5656dc10a98e0e4dcdfef2ba82196f7e7a1992c0",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "scripts/models.py",
+          "sha256": "51b1703870147c42c12ce1d7cb3bc1a712920b3aebbb832d7beb72a4ab66abf2",
+          "previousSha256": "51b1703870147c42c12ce1d7cb3bc1a712920b3aebbb832d7beb72a4ab66abf2",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "scripts/test_models.py",
+          "sha256": "d204509cc14cd80c5acaf78eefe15ac5346a005fe6541965780c894d24b63855",
+          "previousSha256": "d204509cc14cd80c5acaf78eefe15ac5346a005fe6541965780c894d24b63855",
+          "unchangedAfterNameNormalization": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-create-verification-skill",
+      "previousName": "create-verification-skill",
+      "localPath": "skills/jstack/jstack-create-verification-skill",
+      "upstreamPath": "pstack/skills/create-verification-skill",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "differences": "research/jstack/adaptations/create-verification-skill.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "71a0419228fdc9d7a7aa22fc97864a0e57ea337bc98fd0f0270d8335ad4fa2b1",
+          "previousSha256": "dbe3cc894686d1241f0fabf52717302f096e22b5c910f2fbd134da3e626f9ed1",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/create-verification-skill/SKILL.md",
+          "upstreamSha256": "644f2551403c1bca01a2855b34611b6e7be0ce0dc5b204514c376c0f6a6e6ac4",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "agents/openai.yaml",
+          "sha256": "54262efaedc51da8b1b95424d541fca65d9ce2f527b9f99714779158adb5fb4c",
+          "previousSha256": "f1b49f83366a5c5290117e2f5bf8db4deca581b3c704268b9e560e312de44fd5",
+          "unchangedAfterNameNormalization": false
+        },
+        {
+          "file": "references/feature-map-example/README.md",
+          "sha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+          "previousSha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/create-verification-skill/references/feature-map-example/README.md",
+          "upstreamSha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "references/feature-map-example/create-note.md",
+          "sha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+          "previousSha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/create-verification-skill/references/feature-map-example/create-note.md",
+          "upstreamSha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "references/feature-map-example/search.md",
+          "sha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
+          "previousSha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/create-verification-skill/references/feature-map-example/search.md",
+          "upstreamSha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
+          "identicalToUpstream": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-maintain-verification-skill",
+      "previousName": "maintain-verification-skill",
+      "localPath": "skills/jstack/jstack-maintain-verification-skill",
+      "upstreamPath": "pstack/skills/maintain-verification-skill",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "differences": "research/jstack/adaptations/maintain-verification-skill.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "2bb4b7c8c308d007428e0b0687ae0403df92fdbe99c39c62563dc8142de67f85",
+          "previousSha256": "09d7fe77569b065c9e63e9e0cae94036151c43013ba0e8692900ed5058d51d95",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/maintain-verification-skill/SKILL.md",
+          "upstreamSha256": "515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "agents/openai.yaml",
+          "sha256": "c05c849d23def7882f93e7172c805837d8f5d9b5378f8310abad1bb9bda7b39c",
+          "previousSha256": "533eb8b8c62db90d985bedc8779ec9827491f3db557214eefa9be6f2ef9e7ecb",
+          "unchangedAfterNameNormalization": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "2dc9ba154f1ceca09e2b94580e0122ca749ca987683e533daad034c5b424da9e",
+          "previousSha256": "8c02271ba2a10f2c0f2a4d45accdfa1b1cff3c615aa220dd3cfe4ca40b9b2859",
+          "unchangedAfterNameNormalization": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-how",
+      "previousName": "how",
+      "localPath": "skills/jstack/jstack-how",
+      "upstreamPath": "pstack/skills/how",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/how.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "5bcd6cd729fde96bf5e653b3ebe73af958a19f51652b02317ae098a954e12574",
+          "previousSha256": "da05917d2fd678d9156aadda2c3c4069acff44a5f100393daade4eb59b2bafd4",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/how/SKILL.md",
+          "upstreamSha256": "47cfe3e6fe55c49c3bdf8ad1b645dcd5fece8f0c36fd22d2e7221f9faa71f648",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/explainer-prompt.md",
+          "sha256": "edcb9257334f6e9e5a31e3508848d1c0c82e3d32b40928b14e1fd451c77f32b0",
+          "previousSha256": "edcb9257334f6e9e5a31e3508848d1c0c82e3d32b40928b14e1fd451c77f32b0",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/how/references/explainer-prompt.md",
+          "upstreamSha256": "ddb89cebefc24e2b54517a331aedfe045b6971e101f45c71b8cef4cccff45bff",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/explorer-prompt.md",
+          "sha256": "6c7e2063c228d50682628888fe4c97c7bde390b87bcf844b9aa1526ad4e8ff62",
+          "previousSha256": "6c7e2063c228d50682628888fe4c97c7bde390b87bcf844b9aa1526ad4e8ff62",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/how/references/explorer-prompt.md",
+          "upstreamSha256": "a3b44a6e5bb16a6d4d1cac19db8ed5322ffd5f5f5d45baca4e73990ca096f8be",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-why",
+      "previousName": "why",
+      "localPath": "skills/jstack/jstack-why",
+      "upstreamPath": "pstack/skills/why",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/why.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "16dd7007744829d2967b239deed4d9c5c550e4c7ad0285f4112fdf86a868c2e1",
+          "previousSha256": "5f3088bd57c33072217db30d5585f642d11360d072df66530565c7b68b81f223",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/SKILL.md",
+          "upstreamSha256": "fa1d1e9dec14b15381c1ccccad74044d6b6ea3b4af56821f59ba2d8e59b07545",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/epistemics.md",
+          "sha256": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+          "previousSha256": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/epistemics.md",
+          "upstreamSha256": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "references/investigator-prompt.md",
+          "sha256": "cac7c382828051b27a270c71d0c32d174bec55502d8213939e6f7fba58862580",
+          "previousSha256": "cac7c382828051b27a270c71d0c32d174bec55502d8213939e6f7fba58862580",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/investigator-prompt.md",
+          "upstreamSha256": "c44afba186f899094f3694e6c9d6de5d14ff7c4ce28b787a9f50fc789c9a7fc3",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/source-playbook.md",
+          "sha256": "5d6ac85d27a0c17d482a62c7515594871c5c1241495d6b7fc898ea4acd36a31a",
+          "previousSha256": "337039b0dbd9ceaf86c05c150bf9834f2c0e78febf0e14a6c88f2df4d66954d7",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/source-playbook.md",
+          "upstreamSha256": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/code-archaeology.md",
+          "sha256": "80facefff92e1d4d30c5fc120b904f893329bc35568f0eb25827d7214e99c7db",
+          "previousSha256": "80facefff92e1d4d30c5fc120b904f893329bc35568f0eb25827d7214e99c7db",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/code-archaeology.md",
+          "upstreamSha256": "f6b5c4c3dd4ddc31da446bbbe4d88806e2201f15a76b97b3e44ce25c5862e321",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/databricks.md",
+          "sha256": "17e6852b343a345d0db787f06ab6810298825b79f56320c1691ec0f1548a6e66",
+          "previousSha256": "17e6852b343a345d0db787f06ab6810298825b79f56320c1691ec0f1548a6e66",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/databricks.md",
+          "upstreamSha256": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/datadog.md",
+          "sha256": "1b519b602d32b8f4910e5198c46716cb6bc6ee9ae596313eb7f0ced9f4adb811",
+          "previousSha256": "1b519b602d32b8f4910e5198c46716cb6bc6ee9ae596313eb7f0ced9f4adb811",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/datadog.md",
+          "upstreamSha256": "b139faac5dc11b8f26c8255dce6033c1a6ac143b038d3dd103f2034c5dbec9cd",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/incident-postmortem.md",
+          "sha256": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+          "previousSha256": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/incident-postmortem.md",
+          "upstreamSha256": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "references/sources/linear.md",
+          "sha256": "0f37aa78de430d160d0b773e3c800c3baab1fbc5de7809af850070d81965dc2f",
+          "previousSha256": "0f37aa78de430d160d0b773e3c800c3baab1fbc5de7809af850070d81965dc2f",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/linear.md",
+          "upstreamSha256": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/notion.md",
+          "sha256": "426a50cc6b32023e947306cb94aaba22aa4d13dda1689c55eaae9aee8e36239e",
+          "previousSha256": "426a50cc6b32023e947306cb94aaba22aa4d13dda1689c55eaae9aee8e36239e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/notion.md",
+          "upstreamSha256": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/sentry.md",
+          "sha256": "6ff8928acf50816c233075a4cbdd950958897db2a05fcda7a01f830e0c92c7be",
+          "previousSha256": "6ff8928acf50816c233075a4cbdd950958897db2a05fcda7a01f830e0c92c7be",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/sentry.md",
+          "upstreamSha256": "e0ed11e474c3d248bc5ac16d37ca1439b2db0253a3413252194556643cf8328a",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/sources/slack.md",
+          "sha256": "2f00220622ddb5d9c2e0e5858effd8ff82001b8e3a10f124023fe7d5d0f70fe9",
+          "previousSha256": "2f00220622ddb5d9c2e0e5858effd8ff82001b8e3a10f124023fe7d5d0f70fe9",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/sources/slack.md",
+          "upstreamSha256": "58fee61d024b3700b407e7acbed367944720ff05adfddb6954d36c88368f3ba7",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/synthesizer-prompt.md",
+          "sha256": "5610740621dd8ef26c380d24c0c7cc1035b85c5269212ab2011f908379532268",
+          "previousSha256": "5610740621dd8ef26c380d24c0c7cc1035b85c5269212ab2011f908379532268",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/why/references/synthesizer-prompt.md",
+          "upstreamSha256": "11c62671aa7b7a6e3d36929ffe2b59bf95e6ca664eee4d93e6ee527dd3390ddb",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-arena",
+      "previousName": "arena",
+      "localPath": "skills/jstack/jstack-arena",
+      "upstreamPath": "pstack/skills/arena",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/arena.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "2877d4a85d744d73e92b5ed695783a3caa0f29754337e0d88528b8977732cb47",
+          "previousSha256": "849dadf12e7542035bf6e282e825eb8a9e9980501cbe8b589342f91f76be2a4c",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/arena/SKILL.md",
+          "upstreamSha256": "f15524f216c1c63804b89edb4ff8e53bb21a7b8ed367368dedeb9468eeec6a92",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "3d64c71eda0ae3d24f0958aee25aeb6bd03ba706399973361d4867731e18d622",
+          "previousSha256": "60868e798b7ffdbbfec73d587f84aa7263a287b5dbb88bc45ddfa64e32265e22",
+          "unchangedAfterNameNormalization": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-architect",
+      "previousName": "architect",
+      "localPath": "skills/jstack/jstack-architect",
+      "upstreamPath": "pstack/skills/architect",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/architect.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "154f4bb94839d6735b4106a3b3f416fb4c6697ebeaaa8040c9368c9886fc63e7",
+          "previousSha256": "05de7ebc966b8814349adef8725fcd0e785069616084ef75a48a48e072ca10bf",
+          "unchangedAfterNameNormalization": false,
+          "upstreamPath": "pstack/skills/architect/SKILL.md",
+          "upstreamSha256": "31f8e97a52bfa5432edd61f68ade2a8632ef0bacbc2d2a6802d7a0e6821944ac",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/design-red-flags.md",
+          "sha256": "06ebbe6d2ccc4d09caeed917c8a4146820d2210c983ad2284a083cc6e54bb830",
+          "previousSha256": "06ebbe6d2ccc4d09caeed917c8a4146820d2210c983ad2284a083cc6e54bb830",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/architect/references/design-red-flags.md",
+          "upstreamSha256": "d0e639e4cc588ec865f930d3a4111faad60987ae36925917e319d7ceca7c69ce",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/rationale-template.md",
+          "sha256": "eabb18d527091acf1c33d8754126ca701e1619bba95afc35058a62c236b6d8a6",
+          "previousSha256": "fdb5b1a107fe75d88712494c9b5787794463ad95e1c0ac8b2c0e3c84ea6691ec",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/architect/references/rationale-template.md",
+          "upstreamSha256": "0cedfccdc7b47fc881febd5a8293eecbc542c20f8df825639904a8102d2eb5d3",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/runner-prompt.md",
+          "sha256": "2953d99e296cec35a643810c54434b5d85eb25dadb78dc8508d28c866f381e7d",
+          "previousSha256": "14c135af04e5e2aa55b3fc1f6e991f76f815e389b184fed3fb2f3f6469793fe8",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/architect/references/runner-prompt.md",
+          "upstreamSha256": "21dd5314aab778c5007228027a4591d97693fbec6ab86524037772b63f40948e",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-interrogate",
+      "previousName": "interrogate",
+      "localPath": "skills/jstack/jstack-interrogate",
+      "upstreamPath": "pstack/skills/interrogate",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/interrogate.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "44de41fba137c0403deb902306c8c1f3f211d78a6e0916729c0ee623f54c34b6",
+          "previousSha256": "eae4a5c2b30730353e881c66e995f3e4b009c96fa2ec064fa50789c5d057fc65",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/interrogate/SKILL.md",
+          "upstreamSha256": "25341c393f515c1e1fa9bce668b7551e9f98c195113a460ff524d3c1f7f50cd9",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/code-quality-review.md",
+          "sha256": "ed701db0e31d706dc472711afffc40b8f1afa722c4eed582b24eee2f84711905",
+          "previousSha256": "ed701db0e31d706dc472711afffc40b8f1afa722c4eed582b24eee2f84711905",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/interrogate/references/code-quality-review.md",
+          "upstreamSha256": "79162fda183eafd40d51661fbb5e151c7ba250f89e506ba17f5bd135dcbd50a8",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "3d763ada10b85244c7455f87569ea12fa29c7e60d02e46fdc8e987a0e51f605f",
+          "previousSha256": "ec0b80aa64037d86c9501ebfa49134f1593eb17e5057f9ef4704cd5aae621002",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "references/lead-judgment.md",
+          "sha256": "5534877dffc2d6685588c5b405d2ea29966968c8b48f27128b85e8de760edccc",
+          "previousSha256": "5534877dffc2d6685588c5b405d2ea29966968c8b48f27128b85e8de760edccc",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/interrogate/references/lead-judgment.md",
+          "upstreamSha256": "6e5bdf5670eb34017692e9b6c546f36ac7552e6bb9f3f2f3429164fcc46a9361",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/reviewer-prompt.md",
+          "sha256": "d8448ccdddfc09697fdcec277e7c617ed0ddc79aeee099bbb3ab59a7e6f682ea",
+          "previousSha256": "d8448ccdddfc09697fdcec277e7c617ed0ddc79aeee099bbb3ab59a7e6f682ea",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/interrogate/references/reviewer-prompt.md",
+          "upstreamSha256": "f6005cc2b535006fca97a96c5bfda49df57312eedf1ffd8d1aaaf3eb33817c25",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/rubric.md",
+          "sha256": "e2a452cf56c26c9645fc4c9b8edfcd8d887e10d1e4341b4ad2a337413c6caf02",
+          "previousSha256": "e2a452cf56c26c9645fc4c9b8edfcd8d887e10d1e4341b4ad2a337413c6caf02",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/interrogate/references/rubric.md",
+          "upstreamSha256": "0f9c6bdb0b96e26dbde5f6407f417e0c02f54080e7a1268d8994f3c3ec6c5ac0",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-swarm",
+      "previousName": "swarm",
+      "localPath": "skills/jstack/jstack-swarm",
+      "upstreamPath": "pstack/skills/swarm",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/swarm.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "9449d0baaec9488385ec3b51a6bb531c5cbcc6ae34d0029e0ab680ba9610e6f6",
+          "previousSha256": "693659f88eeef85b51beb92da3f455fcd9d19015807d58945972a2584e40afcf",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/swarm/SKILL.md",
+          "upstreamSha256": "bdcee4168e22428036e93d7cdeec3f391dbc4132f927f6db2540328c22db0273",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "4ec3dc9eed2b62ef66cc5aedbce1ec0a429058e4298a9004381a24c00d3179a0",
+          "previousSha256": "280628b34657094d8beb1192b449c29889118f69ce3de2a84a6c55acb027eb38",
+          "unchangedAfterNameNormalization": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-reflect",
+      "previousName": "reflect",
+      "localPath": "skills/jstack/jstack-reflect",
+      "upstreamPath": "pstack/skills/reflect",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/reflect.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "6637c07599d78aefe62271a6ec2450c96e85b2e4a58ee99842ce0c12b41f5dbd",
+          "previousSha256": "f94340274278bcb72d7fb73b779ee9efd9f163756048fcb948394b53b63b47a6",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/reflect/SKILL.md",
+          "upstreamSha256": "f5e9200f37e2a4567c0eeb0ba244fde66c1b3f35e3b7a883de2f85b3bda7365a",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/divergent-reviewer.md",
+          "sha256": "341cde30b35e25f87ef5e6360ec129540c2caeb2b800344578b3cbd965ce1db3",
+          "previousSha256": "341cde30b35e25f87ef5e6360ec129540c2caeb2b800344578b3cbd965ce1db3",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/reflect/references/divergent-reviewer.md",
+          "upstreamSha256": "f6030d88e20e906ef5e2d9ba44cb013ce610c49c2fe2ef74c377d32e0dc9e939",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "3c3f14d4475118e5996eadea15746499e57d5d712a511b7286953f1a40a22e8b",
+          "previousSha256": "5bf89e30a1da1e6cb1c1d7c9528ac50b7cc0a263ff6fb72d4b3dff2edc8f3a01",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "references/judgment-reviewer.md",
+          "sha256": "51d0e74b3cfb02166916ed3cdbe4991102c7137305a4ce418ef1785217f354ef",
+          "previousSha256": "51d0e74b3cfb02166916ed3cdbe4991102c7137305a4ce418ef1785217f354ef",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/reflect/references/judgment-reviewer.md",
+          "upstreamSha256": "38f917619fbf346062d643e0ad6b12fc952d58678dfcbbf42ffcf6d8b9c08307",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/synthesizer.md",
+          "sha256": "9e08f4437bc8d85d03f20ea7a789553bdb6295d08151e9fb3f1cf64eb8a702e6",
+          "previousSha256": "9e08f4437bc8d85d03f20ea7a789553bdb6295d08151e9fb3f1cf64eb8a702e6",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/reflect/references/synthesizer.md",
+          "upstreamSha256": "6af816963de74d1a1aef4070273c1ff533d2072732e488e159ddc0b299fec3cd",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/tooling-reviewer.md",
+          "sha256": "333d4b813ba6447ea7e5543f23399758a5745f4339c75c4bd708529d9753d7c0",
+          "previousSha256": "333d4b813ba6447ea7e5543f23399758a5745f4339c75c4bd708529d9753d7c0",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/reflect/references/tooling-reviewer.md",
+          "upstreamSha256": "f81b8697e7366fbbc18feba52c6e3253a101f751091364ebc4396a1d9b5753b4",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-figure-it-out",
+      "previousName": "figure-it-out",
+      "localPath": "skills/jstack/jstack-figure-it-out",
+      "upstreamPath": "pstack/skills/figure-it-out",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/figure-it-out.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "e708137c20184ac7581459e912d04386b4fe810d6cdafe1d1260f2516b83e301",
+          "previousSha256": "3597867d2e81505c043ffc9b6d87b937b858e4f002064a97dd6af16220b89ec4",
+          "unchangedAfterNameNormalization": false,
+          "upstreamPath": "pstack/skills/figure-it-out/SKILL.md",
+          "upstreamSha256": "d9574cc24929773d5c23f40626ae1e09660afddd7de48e08dd6494d9fff9bbf0",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "2e494d9f43a7a2aa3d092b6954bf513c1948f955487361d7d1b69a1acf3d8061",
+          "previousSha256": "ac2e5d49c7f4c5f7f3a29ade4a51b7c053bd7e8d85bfe8305504c66665748064",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "references/principles.md",
+          "sha256": "89f869c0a5e4550324e5c93322f67662e2d7905c16267229dd466f253db2c2a5",
+          "previousSha256": "07613762b7e3b03453e411fd2512ddec53e073a024722b2273ce0df544944aa7",
+          "unchangedAfterNameNormalization": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-show-me-your-work",
+      "previousName": "show-me-your-work",
+      "localPath": "skills/jstack/jstack-show-me-your-work",
+      "upstreamPath": "pstack/skills/show-me-your-work",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/show-me-your-work.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "a74f2d6627c9f61e308c2a61a87651422a7dfe3a8a0d913ffb7e80e323aee067",
+          "previousSha256": "51b7cc359addd340e19719f96aa3982c0815f276f1254c06b6078a5252b7ebf5",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/show-me-your-work/SKILL.md",
+          "upstreamSha256": "bcff5f7f9fd23f92c12b251f9cd6b947e9485e1055cfacb6fdd9cae0789d7550",
+          "identicalToUpstream": false
+        },
+        {
+          "file": "references/decision-log-template.tsv",
+          "sha256": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+          "previousSha256": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/show-me-your-work/references/decision-log-template.tsv",
+          "upstreamSha256": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "references/execution.md",
+          "sha256": "b8f68ce3acfdbcd86cb2b0a4f16e447eae9b712399f38b04370be321eab37353",
+          "previousSha256": "c82e118b72d2efd6e9c85d8a75db4d578158219ab9c987d0bb7ba42c19172547",
+          "unchangedAfterNameNormalization": true
+        },
+        {
+          "file": "scripts/log.sh",
+          "sha256": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e",
+          "previousSha256": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/show-me-your-work/scripts/log.sh",
+          "upstreamSha256": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e",
+          "identicalToUpstream": true
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-attack-the-premise",
+      "previousName": "principle-attack-the-premise",
+      "localPath": "skills/jstack/jstack-principle-attack-the-premise",
+      "upstreamPath": "pstack/skills/principle-attack-the-premise",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "bc618deae140cbb168bb92939da21306b5c4ed7f0f3c4677dbdaf0879bdf7461",
+          "previousSha256": "0c53a3be8bb300663309f89633cdb5f5b31c09522ae8db6a8d837e8ae9465582",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-attack-the-premise/SKILL.md",
+          "upstreamSha256": "c87bd7536f772f8a403ad8155535ee17a1bbec9a353156693eb3bb1520c87ae3",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-boundary-discipline",
+      "previousName": "principle-boundary-discipline",
+      "localPath": "skills/jstack/jstack-principle-boundary-discipline",
+      "upstreamPath": "pstack/skills/principle-boundary-discipline",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "d58542fe20bd1df3740471c5bf164f0dd47b9b15fd4110b27347896d34440a1e",
+          "previousSha256": "868dcb3d9164b0ca7cad31f2087f4d880219a2968e355639c41ea9ed4ed23fea",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-boundary-discipline/SKILL.md",
+          "upstreamSha256": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-build-the-lever",
+      "previousName": "principle-build-the-lever",
+      "localPath": "skills/jstack/jstack-principle-build-the-lever",
+      "upstreamPath": "pstack/skills/principle-build-the-lever",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "a031a8ee624ed650c083033e36de5500c7213a68394d9500ca3484274f9536c6",
+          "previousSha256": "3eb7111418eee1e9fe832ee5eda41a6a1bd54d8875fb6dd59057c11f20f382a6",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-build-the-lever/SKILL.md",
+          "upstreamSha256": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-encode-lessons-in-structure",
+      "previousName": "principle-encode-lessons-in-structure",
+      "localPath": "skills/jstack/jstack-principle-encode-lessons-in-structure",
+      "upstreamPath": "pstack/skills/principle-encode-lessons-in-structure",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "caecf2f91f53070f9971a0e0b17973e1b289dabf7e6ba53dce09229bcfacdff6",
+          "previousSha256": "f37337fd45a374a85a45b4b3218f54f0a29377d142bdb5ee633fba1f108240c3",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+          "upstreamSha256": "ad12c26209770c52f632d9480c048ac5334ce8e5d6297f83ade59652a56cb3ef",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-exhaust-the-design-space",
+      "previousName": "principle-exhaust-the-design-space",
+      "localPath": "skills/jstack/jstack-principle-exhaust-the-design-space",
+      "upstreamPath": "pstack/skills/principle-exhaust-the-design-space",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "b35aa7df85804241a09c8ae83d4b145c61f007dc558c2123904f2ef265bbb5c4",
+          "previousSha256": "1920628e1dd495b7acc05aea044a6d21196d8f6cfee82888c31d7363e2a6fee5",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+          "upstreamSha256": "8583310d7297b7823d75494faa57b003564d436807febecdecbd8321abe5cf6e",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-experience-first",
+      "previousName": "principle-experience-first",
+      "localPath": "skills/jstack/jstack-principle-experience-first",
+      "upstreamPath": "pstack/skills/principle-experience-first",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "d8522d66ea623c358381fc11ac252c39aac46b9c31469d8d5bde2dbb23e7f237",
+          "previousSha256": "9ee8c05282de7d53524c9245fb2d34398adad2951eac2e6c02b8e299d80a2b57",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-experience-first/SKILL.md",
+          "upstreamSha256": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-explain-the-number",
+      "previousName": "principle-explain-the-number",
+      "localPath": "skills/jstack/jstack-principle-explain-the-number",
+      "upstreamPath": "pstack/skills/principle-explain-the-number",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "c76f4daf45f59b4c1b027b0facf7874b9f5dcac0d85f659439361debe9ffaa1c",
+          "previousSha256": "822be1d3da9d50df5c859ebc9ca32ee74deeac0203c2ec64a0d9ebcfd330fccf",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-explain-the-number/SKILL.md",
+          "upstreamSha256": "cd5a25f9e7cf023627ccb470dc5faa97542f29b4319496a32b839a8e1e988047",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-fix-root-causes",
+      "previousName": "principle-fix-root-causes",
+      "localPath": "skills/jstack/jstack-principle-fix-root-causes",
+      "upstreamPath": "pstack/skills/principle-fix-root-causes",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "5557b28d49595e5fb9826f184fffdebc685b84dac52900995b91ac2950b9df13",
+          "previousSha256": "f996689fcc2a7dae36dbcd6abef93e74232ce73e89522aea5ef2d8182cd9daa9",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-fix-root-causes/SKILL.md",
+          "upstreamSha256": "ba4cd38da1dcc8fe5432feb64457cba95594736a9b21b2ebf8f8c52aee068707",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-foundational-thinking",
+      "previousName": "principle-foundational-thinking",
+      "localPath": "skills/jstack/jstack-principle-foundational-thinking",
+      "upstreamPath": "pstack/skills/principle-foundational-thinking",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "f92a31dd1f5454f5fb87c632d314bbbd691defece87c8a34690c597eed6a44ff",
+          "previousSha256": "f57e579f9860481fcbe0f21dc3dbdb50278c56bcdc0d621016a7c4ddc167b785",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-foundational-thinking/SKILL.md",
+          "upstreamSha256": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-guard-the-context-window",
+      "previousName": "principle-guard-the-context-window",
+      "localPath": "skills/jstack/jstack-principle-guard-the-context-window",
+      "upstreamPath": "pstack/skills/principle-guard-the-context-window",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "7771862edebc98baa467cf024591ee18619f67ed4266ff1c17c130c87f973a01",
+          "previousSha256": "a545b666c6ef17e69c6054a91c393beab872da24273db0504fef3fa7a47f8215",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+          "upstreamSha256": "d2cef147862576e3d709b7afc149d85196245e8338b9c7eef337c95fba412b3e",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-laziness-protocol",
+      "previousName": "principle-laziness-protocol",
+      "localPath": "skills/jstack/jstack-principle-laziness-protocol",
+      "upstreamPath": "pstack/skills/principle-laziness-protocol",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "f1f694f627b1a10b7d4dd160d45a9823f5cb53285e156c90a38a2810c10ac361",
+          "previousSha256": "f6726f2d836905fd0d0bff478807ade1cfaa54a887fd5f12eaa9b82cfd4b7b1e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-laziness-protocol/SKILL.md",
+          "upstreamSha256": "9006579e9e3f33955d17569733db688ae65f22577dc3b21803d219a5a8445aff",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-make-operations-idempotent",
+      "previousName": "principle-make-operations-idempotent",
+      "localPath": "skills/jstack/jstack-principle-make-operations-idempotent",
+      "upstreamPath": "pstack/skills/principle-make-operations-idempotent",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "a705d17f19722b6a07bc7c69f4d3c5c2c2ab2f6ed9f53e97392145b0ca263010",
+          "previousSha256": "999c9bfbd26f026d3861e2f55a3e83b398cd619e0b22777cbc44ea3b26e06ad1",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+          "upstreamSha256": "540738217c3da7bf513b9886924ad6a2bc77e58be867f5bd2e1831c74bf2ce70",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-migrate-callers-then-delete-legacy-apis",
+      "previousName": "principle-migrate-callers-then-delete-legacy-apis",
+      "localPath": "skills/jstack/jstack-principle-migrate-callers-then-delete-legacy-apis",
+      "upstreamPath": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "6ee5aa01f736105bb811f20dc0b71afbfc7351e844afc2d017fe2ed79563a0ab",
+          "previousSha256": "4995efba98a7fa1db3c81bbee1268a3ce9f43b0a6c921552b4818e027f244336",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+          "upstreamSha256": "09978915a4a11990cf0a9a02d9c08cc59e0b7a04c5c24b83aa560fbe4146f75b",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-minimize-reader-load",
+      "previousName": "principle-minimize-reader-load",
+      "localPath": "skills/jstack/jstack-principle-minimize-reader-load",
+      "upstreamPath": "pstack/skills/principle-minimize-reader-load",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "a2661a1e19cbff065a643283470186ccc7aad9d0b7020464a7c64266dbfe293f",
+          "previousSha256": "55de08fcd5d631e87391d1765eeea6825471eb4fa9a1a1be50c19034e157a1a6",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+          "upstreamSha256": "1ea2b7fef2391cae5844c4efdbd59031f775e8a52d06b7495d707229a200dcca",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-model-the-domain",
+      "previousName": "principle-model-the-domain",
+      "localPath": "skills/jstack/jstack-principle-model-the-domain",
+      "upstreamPath": "pstack/skills/principle-model-the-domain",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "eed1b0d33b19cb1fe0f8e4c0dc6b64d0ae3c185ef20c4734ef4def081e6e7d12",
+          "previousSha256": "a4fdfdc40fba6bed744ef9d23180cb0f9c764a8976436cd90e9a3f75a9724dd0",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-model-the-domain/SKILL.md",
+          "upstreamSha256": "52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-never-block-on-the-human",
+      "previousName": "principle-never-block-on-the-human",
+      "localPath": "skills/jstack/jstack-principle-never-block-on-the-human",
+      "upstreamPath": "pstack/skills/principle-never-block-on-the-human",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "087de5dd567bbde6c0a3c4906ade81e99ef1cc13f88da1928af7e70e3a02b36c",
+          "previousSha256": "0dabe8af5881d2a1d819ea03b69930134f91fe5cf165c245d54b162ea6e64ac6",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+          "upstreamSha256": "05030a7a083c337676f793881b4e93cd218e8f1dd676529f56e6ac1d3efb8d1f",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-outcome-oriented-execution",
+      "previousName": "principle-outcome-oriented-execution",
+      "localPath": "skills/jstack/jstack-principle-outcome-oriented-execution",
+      "upstreamPath": "pstack/skills/principle-outcome-oriented-execution",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "8d92cd508609dfe854b960bf2f424512f1320ef98196c5c13163ad70f983ae26",
+          "previousSha256": "4d4c8e0904d71a2fc962ce28082f76a0d416d2eb365b1d0f228a200a1e2c476f",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+          "upstreamSha256": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-prove-it-works",
+      "previousName": "principle-prove-it-works",
+      "localPath": "skills/jstack/jstack-principle-prove-it-works",
+      "upstreamPath": "pstack/skills/principle-prove-it-works",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "3142979febf6ed2473d61b7f727b8732b630583ef6efb6cd42e9efb5d88bcaaa",
+          "previousSha256": "76d2d6b4e095f316214c5e8d0e092161dbabd7f8c3d455c0131be42da4135962",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-prove-it-works/SKILL.md",
+          "upstreamSha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-redesign-from-first-principles",
+      "previousName": "principle-redesign-from-first-principles",
+      "localPath": "skills/jstack/jstack-principle-redesign-from-first-principles",
+      "upstreamPath": "pstack/skills/principle-redesign-from-first-principles",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "3ab20cafe1bd47439c6f5679f3339f66062c8887de3b663113872bb58bf2405b",
+          "previousSha256": "e16eb2309c81b91dcebab71222daef922a178315bfc51f5ad181524e5732545e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+          "upstreamSha256": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-separate-before-serializing-shared-state",
+      "previousName": "principle-separate-before-serializing-shared-state",
+      "localPath": "skills/jstack/jstack-principle-separate-before-serializing-shared-state",
+      "upstreamPath": "pstack/skills/principle-separate-before-serializing-shared-state",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "c4f69c44df2fa7b833682f1595c1597d3bd908dd5e99adf9a72b17b6b0441dd4",
+          "previousSha256": "67435a9a535bdbd865a98e047487b26ccf9e5f4ddb14e6fefbac593d2710dab5",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+          "upstreamSha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-sequence-verifiable-units",
+      "previousName": "principle-sequence-verifiable-units",
+      "localPath": "skills/jstack/jstack-principle-sequence-verifiable-units",
+      "upstreamPath": "pstack/skills/principle-sequence-verifiable-units",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "2d870070d8aaf100e274f7800ad24a3e9d80803be328f4da3e145cb8f1bce9ba",
+          "previousSha256": "5e33269f388e817710dda6e9bf4a5f6a3d912e58d3fd849bfbb0e548e0153eb5",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+          "upstreamSha256": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-subtract-before-you-add",
+      "previousName": "principle-subtract-before-you-add",
+      "localPath": "skills/jstack/jstack-principle-subtract-before-you-add",
+      "upstreamPath": "pstack/skills/principle-subtract-before-you-add",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "88be57c8935275a76aa40d07579f76246b7c1132805f21e11f109aa278be710f",
+          "previousSha256": "4a93bd110b95c867fd68a91bef76d4fdb4cbb0120d9024137e59e3e2fb6fc987",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+          "upstreamSha256": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-test-behavior-not-implementation",
+      "previousName": "principle-test-behavior-not-implementation",
+      "localPath": "skills/jstack/jstack-principle-test-behavior-not-implementation",
+      "upstreamPath": "pstack/skills/principle-test-behavior-not-implementation",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "ab72a85b5ab55b151548778e3408f98a9cbb3e86893ced71a8c1be2a5491c56a",
+          "previousSha256": "788b6a641bd769482649c493e2a5e093cd5bb1c521dadf8f624b0ba234b5edb3",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+          "upstreamSha256": "b2b73ba42920f9c3174ecdf808ec6e4591b3a9266ada9a05814f386004266d3a",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-principle-type-system-discipline",
+      "previousName": "principle-type-system-discipline",
+      "localPath": "skills/jstack/jstack-principle-type-system-discipline",
+      "upstreamPath": "pstack/skills/principle-type-system-discipline",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/principle-adaptations.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "3fe1ca06ea01cafcdcfbd1e4f8058f7f4f99bc434e8f365922845147301fdda0",
+          "previousSha256": "b164c82b2ff1ffc7542d9b56c4006c10f4f1362e312c6bd097ba18e189a3704f",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/principle-type-system-discipline/SKILL.md",
+          "upstreamSha256": "2e492cef34bb25a20b9115df61f9ef3a9837e3fda144ffda8079e5f45a1b72e8",
+          "identicalToUpstream": false
+        }
+      ]
+    },
+    {
+      "name": "jstack-benchmark-checklist",
+      "previousName": "benchmark-checklist",
+      "localPath": "skills/jstack/jstack-benchmark-checklist",
+      "upstreamPath": "pstack/skills/benchmark-checklist",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "differences": "research/jstack/adaptations/benchmark-checklist.md",
+      "upstreamOnlyFiles": [],
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "previousSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/LICENSE",
+          "upstreamSha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+          "identicalToUpstream": true
+        },
+        {
+          "file": "SKILL.md",
+          "sha256": "be1a7ad17083722dc771b623014b2bc6a0319e7ba449d3abf2d715844ffffd33",
+          "previousSha256": "7ef8f524ac139502b06835194f76ea87ad986b34679d94fa5532a3c8d5bbfad7",
+          "unchangedAfterNameNormalization": true,
+          "upstreamPath": "pstack/skills/benchmark-checklist/SKILL.md",
+          "upstreamSha256": "ba109e96c8f6c1c391baccf19e5d11e14370df7b3f2605e1572cd565a6c0fca0",
+          "identicalToUpstream": false
+        }
+      ]
+    }
+  ]
+}

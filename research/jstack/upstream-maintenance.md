@@ -1,5 +1,7 @@
 # Jstack upstream maintenance
 
+Current jstack skill identities use the `jstack-` prefix. See the [name mapping and manual migration guide](skill-names.md). Earlier assessments and evaluation artifacts retain their original names; current local links point to the renamed packages.
+
 For jstack implementation and maintenance, follow the [upstream-fidelity policy](upstream-fidelity.md). Preserve upstream structure by default and document only necessary or explicitly approved deviations.
 
 Use this procedure when checking pstack changes, reviewing a detected update, or implementing an approved upstream recommendation. The [manifest](upstream.json) records sources and decisions; the [checker](../../scripts/jstack/check_upstream.py) collects reproducible evidence. This is repository maintenance tooling, not an installable skill. The [first review](upstream-reviews/2026-10-11.md) records the live trial and source evidence.

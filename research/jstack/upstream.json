@@ -15,8 +15,8 @@
   ],
   "skills": [
     {
-      "name": "juan-mode",
-      "localPath": "skills/jstack/juan-mode",
+      "name": "jstack-juan-mode",
+      "localPath": "skills/jstack/jstack-juan-mode",
       "upstreamPath": "pstack/skills/poteto-mode",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -28,8 +28,8 @@
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
     {
-      "name": "setup-jstack",
-      "localPath": "skills/jstack/setup-jstack",
+      "name": "jstack-setup",
+      "localPath": "skills/jstack/jstack-setup",
       "upstreamPath": "pstack/skills/setup-pstack",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [
@@ -41,8 +41,8 @@
       "differences": "research/jstack/adaptations/setup-jstack.md"
     },
     {
-      "name": "create-verification-skill",
-      "localPath": "skills/jstack/create-verification-skill",
+      "name": "jstack-create-verification-skill",
+      "localPath": "skills/jstack/jstack-create-verification-skill",
       "upstreamPath": "pstack/skills/create-verification-skill",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [
@@ -51,8 +51,8 @@
       "differences": "research/jstack/adaptations/create-verification-skill.md"
     },
     {
-      "name": "maintain-verification-skill",
-      "localPath": "skills/jstack/maintain-verification-skill",
+      "name": "jstack-maintain-verification-skill",
+      "localPath": "skills/jstack/jstack-maintain-verification-skill",
       "upstreamPath": "pstack/skills/maintain-verification-skill",
       "adaptedFrom": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "contextPaths": [
@@ -62,8 +62,8 @@
       "differences": "research/jstack/adaptations/maintain-verification-skill.md"
     },
     {
-      "name": "how",
-      "localPath": "skills/jstack/how",
+      "name": "jstack-how",
+      "localPath": "skills/jstack/jstack-how",
       "upstreamPath": "pstack/skills/how",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -73,8 +73,8 @@
       "differences": "research/jstack/adaptations/how.md"
     },
     {
-      "name": "why",
-      "localPath": "skills/jstack/why",
+      "name": "jstack-why",
+      "localPath": "skills/jstack/jstack-why",
       "upstreamPath": "pstack/skills/why",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -84,8 +84,8 @@
       "differences": "research/jstack/adaptations/why.md"
     },
     {
-      "name": "arena",
-      "localPath": "skills/jstack/arena",
+      "name": "jstack-arena",
+      "localPath": "skills/jstack/jstack-arena",
       "upstreamPath": "pstack/skills/arena",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -99,8 +99,8 @@
       "differences": "research/jstack/adaptations/arena.md"
     },
     {
-      "name": "architect",
-      "localPath": "skills/jstack/architect",
+      "name": "jstack-architect",
+      "localPath": "skills/jstack/jstack-architect",
       "upstreamPath": "pstack/skills/architect",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -125,8 +125,8 @@
       "differences": "research/jstack/adaptations/architect.md"
     },
     {
-      "name": "interrogate",
-      "localPath": "skills/jstack/interrogate",
+      "name": "jstack-interrogate",
+      "localPath": "skills/jstack/jstack-interrogate",
       "upstreamPath": "pstack/skills/interrogate",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -136,8 +136,8 @@
       "differences": "research/jstack/adaptations/interrogate.md"
     },
     {
-      "name": "swarm",
-      "localPath": "skills/jstack/swarm",
+      "name": "jstack-swarm",
+      "localPath": "skills/jstack/jstack-swarm",
       "upstreamPath": "pstack/skills/swarm",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -146,8 +146,8 @@
       "differences": "research/jstack/adaptations/swarm.md"
     },
     {
-      "name": "reflect",
-      "localPath": "skills/jstack/reflect",
+      "name": "jstack-reflect",
+      "localPath": "skills/jstack/jstack-reflect",
       "upstreamPath": "pstack/skills/reflect",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -157,8 +157,8 @@
       "differences": "research/jstack/adaptations/reflect.md"
     },
     {
-      "name": "figure-it-out",
-      "localPath": "skills/jstack/figure-it-out",
+      "name": "jstack-figure-it-out",
+      "localPath": "skills/jstack/jstack-figure-it-out",
       "upstreamPath": "pstack/skills/figure-it-out",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -176,8 +176,8 @@
       "differences": "research/jstack/adaptations/figure-it-out.md"
     },
     {
-      "name": "show-me-your-work",
-      "localPath": "skills/jstack/show-me-your-work",
+      "name": "jstack-show-me-your-work",
+      "localPath": "skills/jstack/jstack-show-me-your-work",
       "upstreamPath": "pstack/skills/show-me-your-work",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -188,8 +188,8 @@
       "differences": "research/jstack/adaptations/show-me-your-work.md"
     },
     {
-      "name": "principle-attack-the-premise",
-      "localPath": "skills/jstack/principle-attack-the-premise",
+      "name": "jstack-principle-attack-the-premise",
+      "localPath": "skills/jstack/jstack-principle-attack-the-premise",
       "upstreamPath": "pstack/skills/principle-attack-the-premise",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -201,16 +201,16 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-boundary-discipline",
-      "localPath": "skills/jstack/principle-boundary-discipline",
+      "name": "jstack-principle-boundary-discipline",
+      "localPath": "skills/jstack/jstack-principle-boundary-discipline",
       "upstreamPath": "pstack/skills/principle-boundary-discipline",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-build-the-lever",
-      "localPath": "skills/jstack/principle-build-the-lever",
+      "name": "jstack-principle-build-the-lever",
+      "localPath": "skills/jstack/jstack-principle-build-the-lever",
       "upstreamPath": "pstack/skills/principle-build-the-lever",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -221,32 +221,32 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-encode-lessons-in-structure",
-      "localPath": "skills/jstack/principle-encode-lessons-in-structure",
+      "name": "jstack-principle-encode-lessons-in-structure",
+      "localPath": "skills/jstack/jstack-principle-encode-lessons-in-structure",
       "upstreamPath": "pstack/skills/principle-encode-lessons-in-structure",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-exhaust-the-design-space",
-      "localPath": "skills/jstack/principle-exhaust-the-design-space",
+      "name": "jstack-principle-exhaust-the-design-space",
+      "localPath": "skills/jstack/jstack-principle-exhaust-the-design-space",
       "upstreamPath": "pstack/skills/principle-exhaust-the-design-space",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-experience-first",
-      "localPath": "skills/jstack/principle-experience-first",
+      "name": "jstack-principle-experience-first",
+      "localPath": "skills/jstack/jstack-principle-experience-first",
       "upstreamPath": "pstack/skills/principle-experience-first",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-explain-the-number",
-      "localPath": "skills/jstack/principle-explain-the-number",
+      "name": "jstack-principle-explain-the-number",
+      "localPath": "skills/jstack/jstack-principle-explain-the-number",
       "upstreamPath": "pstack/skills/principle-explain-the-number",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -256,56 +256,56 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-fix-root-causes",
-      "localPath": "skills/jstack/principle-fix-root-causes",
+      "name": "jstack-principle-fix-root-causes",
+      "localPath": "skills/jstack/jstack-principle-fix-root-causes",
       "upstreamPath": "pstack/skills/principle-fix-root-causes",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-foundational-thinking",
-      "localPath": "skills/jstack/principle-foundational-thinking",
+      "name": "jstack-principle-foundational-thinking",
+      "localPath": "skills/jstack/jstack-principle-foundational-thinking",
       "upstreamPath": "pstack/skills/principle-foundational-thinking",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-guard-the-context-window",
-      "localPath": "skills/jstack/principle-guard-the-context-window",
+      "name": "jstack-principle-guard-the-context-window",
+      "localPath": "skills/jstack/jstack-principle-guard-the-context-window",
       "upstreamPath": "pstack/skills/principle-guard-the-context-window",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-laziness-protocol",
-      "localPath": "skills/jstack/principle-laziness-protocol",
+      "name": "jstack-principle-laziness-protocol",
+      "localPath": "skills/jstack/jstack-principle-laziness-protocol",
       "upstreamPath": "pstack/skills/principle-laziness-protocol",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-make-operations-idempotent",
-      "localPath": "skills/jstack/principle-make-operations-idempotent",
+      "name": "jstack-principle-make-operations-idempotent",
+      "localPath": "skills/jstack/jstack-principle-make-operations-idempotent",
       "upstreamPath": "pstack/skills/principle-make-operations-idempotent",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-migrate-callers-then-delete-legacy-apis",
-      "localPath": "skills/jstack/principle-migrate-callers-then-delete-legacy-apis",
+      "name": "jstack-principle-migrate-callers-then-delete-legacy-apis",
+      "localPath": "skills/jstack/jstack-principle-migrate-callers-then-delete-legacy-apis",
       "upstreamPath": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-minimize-reader-load",
-      "localPath": "skills/jstack/principle-minimize-reader-load",
+      "name": "jstack-principle-minimize-reader-load",
+      "localPath": "skills/jstack/jstack-principle-minimize-reader-load",
       "upstreamPath": "pstack/skills/principle-minimize-reader-load",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -314,32 +314,32 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-model-the-domain",
-      "localPath": "skills/jstack/principle-model-the-domain",
+      "name": "jstack-principle-model-the-domain",
+      "localPath": "skills/jstack/jstack-principle-model-the-domain",
       "upstreamPath": "pstack/skills/principle-model-the-domain",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-never-block-on-the-human",
-      "localPath": "skills/jstack/principle-never-block-on-the-human",
+      "name": "jstack-principle-never-block-on-the-human",
+      "localPath": "skills/jstack/jstack-principle-never-block-on-the-human",
       "upstreamPath": "pstack/skills/principle-never-block-on-the-human",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-outcome-oriented-execution",
-      "localPath": "skills/jstack/principle-outcome-oriented-execution",
+      "name": "jstack-principle-outcome-oriented-execution",
+      "localPath": "skills/jstack/jstack-principle-outcome-oriented-execution",
       "upstreamPath": "pstack/skills/principle-outcome-oriented-execution",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-prove-it-works",
-      "localPath": "skills/jstack/principle-prove-it-works",
+      "name": "jstack-principle-prove-it-works",
+      "localPath": "skills/jstack/jstack-principle-prove-it-works",
       "upstreamPath": "pstack/skills/principle-prove-it-works",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -348,24 +348,24 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-redesign-from-first-principles",
-      "localPath": "skills/jstack/principle-redesign-from-first-principles",
+      "name": "jstack-principle-redesign-from-first-principles",
+      "localPath": "skills/jstack/jstack-principle-redesign-from-first-principles",
       "upstreamPath": "pstack/skills/principle-redesign-from-first-principles",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-separate-before-serializing-shared-state",
-      "localPath": "skills/jstack/principle-separate-before-serializing-shared-state",
+      "name": "jstack-principle-separate-before-serializing-shared-state",
+      "localPath": "skills/jstack/jstack-principle-separate-before-serializing-shared-state",
       "upstreamPath": "pstack/skills/principle-separate-before-serializing-shared-state",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-sequence-verifiable-units",
-      "localPath": "skills/jstack/principle-sequence-verifiable-units",
+      "name": "jstack-principle-sequence-verifiable-units",
+      "localPath": "skills/jstack/jstack-principle-sequence-verifiable-units",
       "upstreamPath": "pstack/skills/principle-sequence-verifiable-units",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -375,24 +375,24 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-subtract-before-you-add",
-      "localPath": "skills/jstack/principle-subtract-before-you-add",
+      "name": "jstack-principle-subtract-before-you-add",
+      "localPath": "skills/jstack/jstack-principle-subtract-before-you-add",
       "upstreamPath": "pstack/skills/principle-subtract-before-you-add",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-test-behavior-not-implementation",
-      "localPath": "skills/jstack/principle-test-behavior-not-implementation",
+      "name": "jstack-principle-test-behavior-not-implementation",
+      "localPath": "skills/jstack/jstack-principle-test-behavior-not-implementation",
       "upstreamPath": "pstack/skills/principle-test-behavior-not-implementation",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "principle-type-system-discipline",
-      "localPath": "skills/jstack/principle-type-system-discipline",
+      "name": "jstack-principle-type-system-discipline",
+      "localPath": "skills/jstack/jstack-principle-type-system-discipline",
       "upstreamPath": "pstack/skills/principle-type-system-discipline",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
@@ -403,8 +403,8 @@
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
-      "name": "benchmark-checklist",
-      "localPath": "skills/jstack/benchmark-checklist",
+      "name": "jstack-benchmark-checklist",
+      "localPath": "skills/jstack/jstack-benchmark-checklist",
       "upstreamPath": "pstack/skills/benchmark-checklist",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [

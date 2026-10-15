@@ -1,5 +1,7 @@
 # Jstack fidelity status
 
+Current jstack skill identities use the `jstack-` prefix. See the [name mapping and manual migration guide](skill-names.md). Earlier assessments and evaluation artifacts retain their original names; current local links point to the renamed packages.
+
 Baseline reconciliation on 2026-10-15 followed merged PR #37, commit `d4cfe22`, and shipped in PR #38. The subsequent benchmark-checklist port updates the dependency status below. The seven correction groups in the [original audit](fidelity-audits/2026-10-13/README.md) now have merged source restorations. Required helper dependencies and runtime checks remain open. All 23 playbook procedures remain unimplemented.
 
 This record reconciles the existing audit with current files and recorded evaluations. It is not a new full semantic audit or a fresh workflow evaluation. The original reports and test artifacts retain their dates, failures and limits. This record and the [fidelity policy](upstream-fidelity.md) supersede the initial specification/inventories wherever those propose bundled standalone helpers, shortened algorithms or optional redesign without a user decision.
@@ -26,7 +28,7 @@ The source paths below use pin `11713c683fe4add4fd403ea880580abbc9e0875f`. Bench
 
 | Dependency | Exact source scope | Current disposition and first affected caller |
 | --- | --- | --- |
-| Benchmark checklist | `pstack/skills/benchmark-checklist/SKILL.md` | Now a [standalone package](../../skills/jstack/benchmark-checklist/SKILL.md) with [bounded evaluation](evaluations/benchmark-checklist/README.md). Explain the Number and the mode can discover it; installed-provider use and the later Perf issue/Hillclimb procedures remain unverified. |
+| Benchmark checklist | `pstack/skills/benchmark-checklist/SKILL.md` | Now a [standalone package](../../skills/jstack/jstack-benchmark-checklist/SKILL.md) with [bounded evaluation](evaluations/benchmark-checklist/README.md). Explain the Number and the mode can discover it; installed-provider use and the later Perf issue/Hillclimb procedures remain unverified. |
 | TypeScript best practices | `pstack/skills/typescript-best-practices/SKILL.md` and `references/patterns.md` | No jstack package. Conditional dependency of Type System Discipline. Preserve both files; correct the known claim that plain numeric duration excludes negative ranges. |
 | Technical writing | `pstack/skills/technical-writing/SKILL.md` | No jstack package. Next focused port, required by the mode's documentation/PR trigger. Preserve all four layers, document modes and the worked example. Assess its Unslop dependency alongside it. |
 | No comments | `pstack/skills/no-comments/SKILL.md` and `pstack/agents/comment-sicko.md` | Neither is packaged. Required before mode-led review. Assess the complete reviewer and skill together, including exceptions, rejection/rerun limits, How/Why calls, scoped fixes and constraint encodings. Record precise authority/repository conflicts; do not replace the whole procedure by preference. |

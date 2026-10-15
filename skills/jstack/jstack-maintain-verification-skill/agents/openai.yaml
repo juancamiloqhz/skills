@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jstack: Maintain verification skill"
+  short_description: "Audit and repair existing project verification skills"
+  default_prompt: "Use $jstack-maintain-verification-skill to audit this repository's verification skill against source and live behavior, repair stale recipes, and report evidence."

@@ -1,8 +1,10 @@
 # Upstream attribution
 
+The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
+
 The 2026-10-15 correction restores the source description, Start list, four named phases and numbered Frame procedure. It restores task-local model assignments for explicit race arms instead of treating the saved scalar default as a prohibition. [Source comparison and bounded evaluation](../evaluations/swarm-restoration/README.md) retain the full difference record. The [original fidelity audit](../fidelity-audits/2026-10-13/helpers.md#swarm) remains historical evidence.
 
-Adapted from [pstack swarm](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/swarm/SKILL.md) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/swarm/LICENSE) retains Lauren Tan's attribution.
+Adapted from [pstack swarm](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/swarm/SKILL.md) at revision `11713c683fe4add4fd403ea880580abbc9e0875f`. The bundled [MIT license](../../../skills/jstack/jstack-swarm/LICENSE) retains Lauren Tan's attribution.
 
 The source directory contains only `SKILL.md`. Its complete contents and local changes were compared; the package license remains byte-identical to the pin. The source algorithm retains partition/race/mixed shapes, declared race rules, exact revision and measurement evidence, and one fresh retry for missing required evidence. Reports keep PASS, ISSUES and BLOCKED worker outcomes distinct from overall coverage.
 
