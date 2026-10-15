@@ -89,7 +89,11 @@
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
         "pstack/skills/architect",
-        "pstack/skills/setup-pstack"
+        "pstack/skills/setup-pstack",
+        "pstack/skills/principle-separate-before-serializing-shared-state",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-redesign-from-first-principles",
+        "pstack/skills/principle-prove-it-works"
       ],
       "differences": "research/jstack/adaptations/arena.md"
     },
