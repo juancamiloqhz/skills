@@ -21,3 +21,7 @@ The complete procedure does not prescribe a particular profiling library, databa
 Control CLI, Guard the Context Window and Control UI source context are already watched through the mode manifest. No manifest or watch changes are needed. All 42 mappings, source pins, reviewed checkpoint and decisions remain unchanged. The mode's existing MIT license matches its pin.
 
 [Full source comparison and evaluation](../evaluations/runtime-forensics/README.md) cover the new procedure and both enclosing entrypoints at their own pins. Existing playbooks and support scripts are unchanged. The evaluation retains real capture data, intervention/restoration evidence, cleanup and remaining limits. No installation, model configuration or schedule changes.
+
+## Bug fix handoff update, 2026-10-16
+
+Bug fix now has a local procedure. The reply qualification removes only that route from its unavailable list; Perf issue remains unavailable and diagnosis alone still grants no fix authority. [Bug fix source comparison](../evaluations/bug-fix/source-comparison.json) records the final Runtime forensics procedure against its original pin. The earlier live evaluation remains evidence for its recorded snapshot.

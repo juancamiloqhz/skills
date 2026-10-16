@@ -1,0 +1,43 @@
+{
+  "kind": "Parent-executed unavailable-interface boundary check; not a second full-mode agent run",
+  "root": "/tmp/jstack-bug-fix-unavailable-20261016",
+  "files": {
+    "README.md": {
+      "sha256": "8e9a0805959be45405a7577e663026f148389cad6b768d02e72280277eb5b865",
+      "text": "# Native device picker support bundle\n\nThe reported defect is lost selection after the operating-system device dialog closes. The application requires the vendor native picker, an authenticated hardware session and a desktop display. These are unavailable on this host. This bundle has no test runner or native integration harness.\n\n`node diagnose.cjs` checks whether the native picker package can load and reports the actual prerequisite failure. Do not install packages, contact vendor services or construct a mocked dialog to claim the reported behavior is reproduced. The wrapper alone cannot simulate native lifecycle events. Local read-only diagnosis and retained evidence are authorized.\n"
+    },
+    "picker.cjs": {
+      "sha256": "ea77037082c34c0d3afbec4a9f896d57ccb187eb168528073daca258113d0632",
+      "text": "const picker = require('@vendor/device-picker');\nexports.chooseDevice = async function chooseDevice() {\n  const selection = await picker.open();\n  return selection === null ? null : selection.id;\n};\n"
+    },
+    "diagnose.cjs": {
+      "sha256": "714f16707de999993582410ad8d0230480cd548d7860031b06d3d29ffed051af",
+      "text": "try {\n  require('./picker.cjs');\n  console.log('Native picker module loaded; a desktop and hardware session are still required.');\n} catch (error) {\n  console.error('Native picker unavailable: ' + error.message);\n  process.exitCode = 2;\n}\n"
+    },
+    "caller-note.txt": {
+      "sha256": "91acac45cad904b504ea0f5213f0a4ef1eabc7b6e266360e56c880169700a7cf",
+      "text": "Do not change this support bundle or pretend a mock proves native behavior.\n"
+    }
+  },
+  "command": [
+    "node",
+    "diagnose.cjs"
+  ],
+  "exitCode": 2,
+  "stdout": "",
+  "stderr": "Native picker unavailable: Cannot find module '@vendor/device-picker'\nRequire stack:\n- /tmp/jstack-bug-fix-unavailable-20261016/picker.cjs\n- /tmp/jstack-bug-fix-unavailable-20261016/diagnose.cjs\n",
+  "steps": {
+    "1": "incomplete: local diagnostic reaches a missing native module before the reported dialog behavior; no UI reproduction",
+    "2": "incomplete: no runtime evidence for the reported selection-loss mechanism",
+    "3": "not run: no evidenced mechanism or implementation authority in read-only bundle",
+    "4": "incomplete: no reproduced original native behavior or fixed build",
+    "5": "not run: no bug regression/fix pair; no commits authorized",
+    "6": "skip: local-only case; Opening a PR unavailable"
+  },
+  "sourcesUnchanged": true,
+  "limits": [
+    "CLI prerequisite error is not native dialog reproduction.",
+    "README states desktop/hardware constraints; those were not independently reached.",
+    "No unit-test or simulated-dialog result substitutes for the missing interface."
+  ]
+}
