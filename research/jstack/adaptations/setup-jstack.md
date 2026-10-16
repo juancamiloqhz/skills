@@ -59,3 +59,7 @@ The subsequent [Swarm restoration](../evaluations/swarm-restoration/README.md) a
 ## Investigation availability, 2026-10-16
 
 The setup entrypoint and configuration reference now identify Juan-mode's read-only Investigation playbook as available. The remaining 22 procedures are still pending. This corrects two jstack-owned availability statements; no setup procedure, model behavior or source pin changes. See the [Investigation assessment](investigation.md) and its complete source comparison.
+
+## Prototype availability, 2026-10-16
+
+The same two availability statements now include the throwaway Prototype procedure and identify 21 remaining routes. See the [Prototype assessment](prototype.md). Setup steps, model behavior and source pin remain unchanged.

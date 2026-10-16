@@ -1,0 +1,18 @@
+{
+  "root": "/tmp/jstack-prototype-input-20261016",
+  "files": {
+    "existing-plan.txt": {
+      "text": "Caller-owned draft. Do not replace with a prototype.\n",
+      "sha256": "487c561fbbcdb8a20a3a9b22f85522d452e48d82e3cea4a6b66bcbb2a87f14ee"
+    },
+    "cases.json": {
+      "text": "{\n  \"clean\": [\n    {\n      \"id\": \"c1\",\n      \"email\": \"one@example.invalid\"\n    },\n    {\n      \"id\": \"c2\",\n      \"email\": \"two@example.invalid\"\n    }\n  ],\n  \"duplicate\": [\n    {\n      \"id\": \"c1\",\n      \"email\": \"one@example.invalid\"\n    },\n    {\n      \"id\": \"c1\",\n      \"email\": \"replacement@example.invalid\"\n    },\n    {\n      \"id\": \"c2\",\n      \"email\": \"two@example.invalid\"\n    }\n  ],\n  \"invalid\": [\n    {\n      \"id\": \"c1\",\n      \"email\": \"one@example.invalid\"\n    },\n    {\n      \"id\": \"c2\",\n      \"email\": \"\"\n    },\n    {\n      \"id\": \"c3\",\n      \"email\": \"three@example.invalid\"\n    }\n  ],\n  \"mixed\": [\n    {\n      \"id\": \"c1\",\n      \"email\": \"one@example.invalid\"\n    },\n    {\n      \"id\": \"c1\",\n      \"email\": \"replacement@example.invalid\"\n    },\n    {\n      \"id\": \"c2\",\n      \"email\": \"\"\n    },\n    {\n      \"id\": \"c3\",\n      \"email\": \"three@example.invalid\"\n    }\n  ]\n}\n",
+      "sha256": "6780108d003fe0ce391937a05bcb85386d22ff5a886212453b5d079b8ef3f923"
+    },
+    "README.md": {
+      "text": "# Batch import design context\n\nWe are deciding how a future importer should handle invalid rows and repeated customer IDs within one upload. Operators need row-level feedback and must be able to see what was accepted. No application implementation exists in this fixture. The file existing-plan.txt is caller-owned work.\n\nThe design direction is a nonvisual command-line experiment. Use the supplied rows as input, with id and email as required nonempty strings. Do not contact external services.\n",
+      "sha256": "941456fa22fb82533277a7607214be59718d2afc4c495a095f3097d5b0b0aef5"
+    }
+  },
+  "configSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+}

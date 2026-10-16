@@ -7,7 +7,7 @@ description: Configure jstack model assignments and reasoning budgets for T3 Cod
 
 Configure jstack's model routing through T3 Code's live catalog. Save global defaults or an optional project configuration. This skill does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
 
-The bundle is named `jstack`. Its workflow entrypoint is `jstack-juan-mode`, the counterpart to pstack's `poteto-mode`. Juan-mode provides an execution foundation and the read-only Investigation playbook; its other 22 playbook procedures remain unavailable.
+The bundle is named `jstack`. Its workflow entrypoint is `jstack-juan-mode`, the counterpart to pstack's `poteto-mode`. Juan-mode provides an execution foundation and the Investigation and Prototype playbooks; its other 21 playbook procedures remain unavailable.
 
 ## Steps
 

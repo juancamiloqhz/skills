@@ -1,0 +1,11 @@
+{
+  "capturedFilesUnchanged": 143,
+  "howExplainer": {
+    "taskId": "/root/prototype_live_eval/how_explainer",
+    "status": "completed",
+    "basis": "Parent directly inspected native list_agents terminal result and findings; scalar preflight resolved inherited null target."
+  },
+  "scriptReview": "Parent read complete artifact before replay; it reads fixture JSON and prints results, with no source writes, network, installation or persistence. Artifact copy is byte-identical.",
+  "writingLimit": "Initial partial writing check is preserved. Evaluator follow-up supplies late scan/rewrite proposals/self-audit, leaving original final answer unchanged. Do not count this as an unqualified initial full writing pass.",
+  "remainingModeLimits": "Feature throughput checkpoint remains unavailable and is not claimed passed; Build the Lever manual-first-unit comparison was not performed, as disclosed. Six Prototype steps have bounded evidence; this does not establish completion of every general mode workflow."
+}

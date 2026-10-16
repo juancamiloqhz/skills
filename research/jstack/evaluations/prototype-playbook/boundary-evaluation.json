@@ -1,0 +1,219 @@
+{
+  "assessment": "Independent scoped forward assessment of Prototype routing boundaries.",
+  "date": "2026-10-16",
+  "observed": {
+    "inputs": [
+      {
+        "path": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/SKILL.md",
+        "sha256": "e48b28f35bb0dcc3b292832fe3f9af9db30605d85cd1bd773370c1ea58325908",
+        "read_in_full": true
+      },
+      {
+        "path": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/playbooks/prototype.md",
+        "sha256": "4b53b295a488328345282c38f0742da1acab62c0a8875233d2c4571465661af3",
+        "read_in_full": true
+      },
+      {
+        "path": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/playbooks/investigation.md",
+        "sha256": "564634644e4da2b5e0595afad9fd1e8c8d640ff1535eeb0b86299f72e6fc5e44",
+        "read_in_full": true
+      },
+      {
+        "path": "/home/ubuntu/Dev/skills/research/jstack/upstream-fidelity.md",
+        "sha256": "924fef067c52c33d3c5274e338046d375678bb71cdc778a15532f42604250ef4",
+        "read_in_full": true
+      },
+      {
+        "path": "/home/ubuntu/.agents/skills/unslop/SKILL.md",
+        "sha256": "c6d2572294d933a428211921069e9a248490e9b466ca59437cb4d9de248600ca",
+        "read_in_full": true
+      },
+      {
+        "path": "/tmp/jstack-prototype-input-20261016/README.md",
+        "sha256": "941456fa22fb82533277a7607214be59718d2afc4c495a095f3097d5b0b0aef5",
+        "read_in_full": true
+      },
+      {
+        "path": "/tmp/jstack-prototype-input-20261016/cases.json",
+        "sha256": "6780108d003fe0ce391937a05bcb85386d22ff5a886212453b5d079b8ef3f923",
+        "read_in_full": true
+      },
+      {
+        "path": "/tmp/jstack-prototype-input-20261016/existing-plan.txt",
+        "sha256": "487c561fbbcdb8a20a3a9b22f85522d452e48d82e3cea4a6b66bcbb2a87f14ee",
+        "read_in_full": true
+      }
+    ],
+    "actions": [
+      "Read the mode, Prototype, Investigation, fidelity policy, Unslop and supplied fixture files.",
+      "Calculated input SHA-256 hashes.",
+      "Wrote this assessment only."
+    ],
+    "fixture_limits": "The fixture contains README.md, cases.json and caller-owned existing-plan.txt. It contains no application implementation or screenshots. Its nonvisual unresolved import design is context for another case. It does not override the fixed-requirements premise in staged case C.",
+    "mode_activation": "Reading these files for this bounded assessment did not activate persistent mode."
+  },
+  "staged_cases": [
+    {
+      "id": "A",
+      "premise": "Mode is active. User requests only a cited explanation of existing code and expressly prohibits experiments and code writes.",
+      "route": "Investigation",
+      "route_basis": [
+        "Mode read-only Investigation trigger.",
+        "Mode empirical-fork rule expressly preserves explanation-only Investigation.",
+        "Prototype introduction says explanation-only Investigation does not authorize building an experiment."
+      ],
+      "concrete_response": "I will trace the existing code and provide a cited explanation. The request remains an Investigation. Experiments and code writes are outside its scope. The supplied evaluation fixture has no application implementation, so it does not support an explanation of importer behavior.",
+      "step_state": [
+        {
+          "step": "1. Route through the **jstack-how** skill. For motivation questions, also route through the **jstack-why** skill.",
+          "state": "pending",
+          "reason": "The real task must discover and read jstack-how and meet its routing requirements. This evaluation does not execute helpers or delegation. Add jstack-why only for a motivation question."
+        },
+        {
+          "step": "2. Throughput checkpoint stays one line: `throughput checkpoint: n/a, read-only investigation`.",
+          "state": "ready_to_record",
+          "reason": "The task list would record exactly throughput checkpoint: n/a, read-only investigation."
+        },
+        {
+          "step": "3. Produce the `jstack-how`-shaped output (Overview / Key Concepts / How It Works / Where Things Live / Gotchas), or a recommendation with a tradeoffs table if the request is a decision between alternatives. Preserve Why's separation of facts, inference, unknowns and source coverage in either format; do not turn a plausible rationale into a confirmed reason.",
+          "state": "pending",
+          "reason": "No staged application source or cited explanation was supplied or executed here. Use source citations and distinguish facts, inference and unknowns when it is."
+        },
+        {
+          "step": "4. Apply the **unslop** skill to the reply. Discover the intended pstack dependency through the current catalog or an explicit authoring path and read it in full. Respect host invocation restrictions; missing, ambiguous or blocked Unslop leaves the writing check incomplete without installing or substituting a package.",
+          "state": "complete_for_this_assessment_only",
+          "reason": "Read the advertised Unslop skill and applied it to this report. This does not certify a future Investigation reply."
+        }
+      ],
+      "prototype_steps": "Not selected. No scratch build, switcher or empirical observation is authorized.",
+      "completion": "Routing assessed. Investigation execution and cited answer remain unassessed."
+    },
+    {
+      "id": "B",
+      "premise": "User requests comparison of two visual layouts. Direction is already set. Staged environment supplies static screenshots, but intended control-ui is unavailable and no interaction has been performed.",
+      "route": "Prototype for choosing between layouts, unless the actual request limits the deliverable to a read-only comparison of existing images, in which case Investigation applies. The staged request does not say that no sketch is permitted.",
+      "concrete_response": "The two layouts can receive a provisional comparison from their screenshots. Visual verification remains incomplete because the intended control-ui skill is unavailable and no interaction has been exercised. Static images do not establish interaction behavior. This assessment received no screenshots or throwaway artifact, so I cannot name a preferred variant, cite image evidence, or supply a scratch path. No prototype completion is claimed.",
+      "step_state": [
+        {
+          "step": "1. Scope the decision the prototype exists to make: which layout, which interaction, which density, or for an empirical fork which behavior, timing, or approach. No decision means no prototype. Route to Feature.",
+          "state": "staged_scope_available",
+          "reason": "The decision is which of the two layouts to use. Their actual contents and the deciding criteria are not in this assessment."
+        },
+        {
+          "step": "2. Gather references when the design space is open. Search for prior art, summarize a moodboard of themes, palettes, and layouts, let the user pick directions before building. Skip when the direction is set.",
+          "state": "skipped",
+          "reason": "skip: The direction is already set. Do not require a moodboard or another direction-selection checkpoint."
+        },
+        {
+          "step": "3. Build throwaway in an isolated scratch dir, separate from production source. For a visual decision, vanilla HTML/CSS/JS or the lightest stack that renders the idea, CDN deps, a dev server with hot reload. For a behavioral or timing decision, the smallest script that exercises the question. No production framework, no tests, no abstractions. Use a newly owned scratch directory and preserve existing project files and settings. Use available tools and dependencies; this step does not authorize installations.",
+          "state": "unproven",
+          "reason": "Static screenshots do not prove a newly owned isolated scratch artifact exists. This evaluation authorizes no build or experiment."
+        },
+        {
+          "step": "4. When comparing alternatives, build them behind one switcher (buttons or a keypress), each variant labeled. This is the **jstack-principle-exhaust-the-design-space** principle skill made cheap.",
+          "state": "unproven",
+          "reason": "Two screenshots do not prove a labeled switcher exists. Keep the step incomplete unless actual artifact evidence establishes it."
+        },
+        {
+          "step": "5. Verify on the matching surface. For a visual decision, screenshot each variant via the control skill and drive the interaction. For a behavioral or timing decision, observe the thing you are deciding by logging the timing, printing the output, or watching the render. The observation is the test here, not an assertion. Discover and read the intended control skill before visual verification; unavailable or blocked access leaves that gate incomplete. A screenshot alone does not establish the required interaction. Timing or performance claims also follow the mode's benchmark-checklist trigger.",
+          "state": "incomplete",
+          "reason": "The staged intended control-ui dependency is unavailable. No interaction has been performed. Existing screenshots may be described as supplied evidence, never as screenshots captured by the agent through the control skill. Another verification tool does not establish equivalence."
+        },
+        {
+          "step": "6. Present alternatives, tradeoffs, and a recommendation. The output is the decision plus the throwaway artifact, not shippable code. Hand the chosen direction to **Feature** (or `jstack-architect` for the shape) for the real build. Preserve existing implementation authority, but report Feature as unavailable until its procedure is supplied; do not ship the scratch artifact as the implementation. A design-only request ends with the recommendation and artifact.",
+          "state": "partial_deliverable_possible_but_not_observed",
+          "reason": "A real screenshot comparison may give image-supported tradeoffs and a provisional recommendation while stating the verification gap. Do not invent interaction findings, variants, a scratch artifact or Feature completion. No screenshots were actually provided to this evaluator."
+        }
+      ],
+      "dependency_response": "Name the intended external control-ui dependency as unavailable. Do not substitute an unrelated same-name skill, install anything, or claim the gate passed.",
+      "completion": "Only the route and gate consequences were assessed. Neither runtime visual comparison nor interaction verification ran."
+    },
+    {
+      "id": "C",
+      "premise": "User says Build the customer importer. Requirements are fixed. No unresolved design or empirical decision remains. Production work is authorized. Feature procedure is absent.",
+      "route": "Feature, unavailable",
+      "route_basis": [
+        "Prototype step 1 requires a decision and explicitly routes to Feature when there is none.",
+        "Mode says a missing narrower playbook alone does not justify relabeling ordinary work as custom.",
+        "Mode preserves implementation authorization but does not permit invented missing steps."
+      ],
+      "concrete_response": "This is a Feature request. The requirements are fixed, so a prototype would not settle a decision. Production implementation is already authorized. The Feature procedure is unavailable, so I cannot run it or claim its checkpoints passed. I can continue independent authorized source inspection and requirement mapping. The provided fixture contains no application implementation. I have not built or shipped an importer.",
+      "step_state": [
+        {
+          "step": "1. Scope the decision the prototype exists to make: which layout, which interaction, which density, or for an empirical fork which behavior, timing, or approach. No decision means no prototype. Route to Feature.",
+          "state": "route_decision_complete",
+          "reason": "The staged premise supplies no unresolved decision. Select Feature."
+        },
+        {
+          "step": "2. Gather references when the design space is open. Search for prior art, summarize a moodboard of themes, palettes, and layouts, let the user pick directions before building. Skip when the direction is set.",
+          "state": "not_applicable_after_route",
+          "reason": "skip: Prototype is not the selected workflow for fixed implementation requirements."
+        },
+        {
+          "step": "3. Build throwaway in an isolated scratch dir, separate from production source. For a visual decision, vanilla HTML/CSS/JS or the lightest stack that renders the idea, CDN deps, a dev server with hot reload. For a behavioral or timing decision, the smallest script that exercises the question. No production framework, no tests, no abstractions. Use a newly owned scratch directory and preserve existing project files and settings. Use available tools and dependencies; this step does not authorize installations.",
+          "state": "not_applicable_after_route",
+          "reason": "skip: Prototype is not the selected workflow for fixed implementation requirements."
+        },
+        {
+          "step": "4. When comparing alternatives, build them behind one switcher (buttons or a keypress), each variant labeled. This is the **jstack-principle-exhaust-the-design-space** principle skill made cheap.",
+          "state": "not_applicable_after_route",
+          "reason": "skip: Prototype is not the selected workflow for fixed implementation requirements."
+        },
+        {
+          "step": "5. Verify on the matching surface. For a visual decision, screenshot each variant via the control skill and drive the interaction. For a behavioral or timing decision, observe the thing you are deciding by logging the timing, printing the output, or watching the render. The observation is the test here, not an assertion. Discover and read the intended control skill before visual verification; unavailable or blocked access leaves that gate incomplete. A screenshot alone does not establish the required interaction. Timing or performance claims also follow the mode's benchmark-checklist trigger.",
+          "state": "not_applicable_after_route",
+          "reason": "skip: Prototype is not the selected workflow for fixed implementation requirements."
+        },
+        {
+          "step": "6. Present alternatives, tradeoffs, and a recommendation. The output is the decision plus the throwaway artifact, not shippable code. Hand the chosen direction to **Feature** (or `jstack-architect` for the shape) for the real build. Preserve existing implementation authority, but report Feature as unavailable until its procedure is supplied; do not ship the scratch artifact as the implementation. A design-only request ends with the recommendation and artifact.",
+          "state": "not_applicable_after_route",
+          "reason": "skip: Prototype is not the selected workflow for fixed implementation requirements."
+        }
+      ],
+      "feature_state": {
+        "procedure": "unavailable",
+        "throughput_checkpoint": "pending with the missing Feature procedure",
+        "implementation_authority": "already granted in the staged case and preserved",
+        "implementation": "not performed by this routing-only assessment"
+      },
+      "allowed_next_work": "Read existing source, locate importer boundaries, and map the fixed requirements where actual project evidence exists. Do not manufacture Feature steps or use the scratch artifact as production code. Do not invoke figure-it-out solely because Feature is absent. An independently established large or cross-cutting scope could trigger that separate route.",
+      "completion": "Routing assessed. Feature execution is incomplete. Missing procedure is not missing user permission."
+    }
+  ],
+  "procedure_tensions": [
+    {
+      "text": "Prototype says no planning while mode requires a copied task list.",
+      "resolution": "The Prototype introduction explicitly keeps copied steps and limits no planning to production design planning. Record skipped steps with reasons."
+    },
+    {
+      "text": "Prototype says the verification bar inverts and observation is the test.",
+      "resolution": "Its specific visual rule still requires screenshots through the intended control skill and interaction. Neither the speed emphasis nor supplied screenshots waives the gate."
+    },
+    {
+      "text": "Mode urges action on empirical forks while the staged explanation request prohibits experiments.",
+      "resolution": "Both mode and Prototype expressly preserve read-only Investigation. User scope also takes priority."
+    },
+    {
+      "text": "Mode says use figure-it-out whenever no bundled playbook fits, while Feature is not bundled.",
+      "resolution": "The same paragraph says absence of a narrower playbook alone does not justify custom routing. Fixed ordinary importer implementation matches the Feature trigger even though its procedure is unavailable."
+    },
+    {
+      "text": "Prototype hands the chosen direction to Feature while Feature is unavailable.",
+      "resolution": "Step 6 explicitly preserves implementation authority and reports the missing procedure. It forbids shipping the scratch artifact as the implementation."
+    },
+    {
+      "text": "Comparison of already supplied visual layouts can also be a read-only decision request.",
+      "resolution": "The actual user boundary determines Investigation versus Prototype. The staged B request establishes a layout choice but does not establish that an experiment is required. This ambiguity does not affect the conclusion that missing control-ui and absent interaction cannot pass Prototype step 5."
+    }
+  ],
+  "principles": "No principle leaf was read or applied as an additional procedural authority in this routing-only assessment. Decisions above follow the directly read mode and playbooks. No principle execution or compliance is claimed.",
+  "limits": [
+    "These are staged routing assessments, not observed executions of A, B or C.",
+    "No network, browser, delegation, experiment, application write, configuration write, installed-skill edit, PR or installation occurred.",
+    "No production behavior, timing, interaction or layout preference was observed.",
+    "Input hashes identify the files actually read. They are not a pinned upstream comparison.",
+    "The parent owns pinned upstream comparison and fidelity disposition.",
+    "No other evaluator output or parent conclusion was read.",
+    "This assessment does not establish operational completeness of dependencies whose procedures were not executed."
+  ]
+}
