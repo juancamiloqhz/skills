@@ -1,0 +1,53 @@
+[
+  {
+    "name": "original-index",
+    "source": "type NonEmpty<T>=[T,...T[]];\nfunction pickWinner(entries: NonEmpty<string>): string {\n return entries[Math.floor(Math.random()*entries.length)];\n}\n",
+    "command": [
+      "node",
+      "/home/ubuntu/Dev/hirejohn/node_modules/typescript/lib/tsc.js",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--target",
+      "ES2022",
+      "--noEmit",
+      "/tmp/jstack-ts-counterexamples-dm0x96do/original-index.ts"
+    ],
+    "exitCode": 2,
+    "stdout": "original-index.ts(3,2): error TS2322: Type 'string | undefined' is not assignable to type 'string'.\n  Type 'undefined' is not assignable to type 'string'.\n",
+    "stderr": ""
+  },
+  {
+    "name": "adapted-index",
+    "source": "type NonEmpty<T>=[T,...T[]];\nfunction pickWinner(entries: NonEmpty<string>): string {\n return entries[Math.floor(Math.random()*entries.length)] ?? entries[0];\n}\n",
+    "command": [
+      "node",
+      "/home/ubuntu/Dev/hirejohn/node_modules/typescript/lib/tsc.js",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--target",
+      "ES2022",
+      "--noEmit",
+      "/tmp/jstack-ts-counterexamples-dm0x96do/adapted-index.ts"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "numeric-duration",
+    "source": "type TimeRange={start:Date;durationMs:number};\nconst values:TimeRange[]=[-1,NaN,Infinity].map(durationMs=>({start:new Date(0),durationMs}));\nif(values.length!==3)throw new Error('unexpected');\n",
+    "command": [
+      "node",
+      "/home/ubuntu/Dev/hirejohn/node_modules/typescript/lib/tsc.js",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--target",
+      "ES2022",
+      "--noEmit",
+      "/tmp/jstack-ts-counterexamples-dm0x96do/numeric-duration.ts"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

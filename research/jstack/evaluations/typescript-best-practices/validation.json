@@ -1,0 +1,73 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/jstack/test_skill_packaging.py"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.075s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/jstack-typescript-best-practices"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/jstack-principle-type-system-discipline"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  {
+    "check": "Actual upstream manifest loader",
+    "result": "41 mappings valid"
+  },
+  {
+    "command": [
+      "node",
+      "/home/ubuntu/.npm/_npx/0b2c56f61857d977/node_modules/markdownlint-cli2/markdownlint-cli2-bin.mjs",
+      "README.md",
+      "research/jstack/fidelity-status.md",
+      "research/jstack/juan-mode-spec.md",
+      "research/jstack/principle-adaptations.md",
+      "research/jstack/roadmap.md",
+      "skills/jstack/jstack-principle-type-system-discipline/SKILL.md",
+      "research/jstack/adaptations/typescript-best-practices.md",
+      "research/jstack/evaluations/typescript-best-practices/README.md",
+      "skills/jstack/jstack-typescript-best-practices/SKILL.md",
+      "skills/jstack/jstack-typescript-best-practices/references/patterns.md"
+    ],
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/principle-adaptations.md research/jstack/roadmap.md skills/jstack/jstack-principle-type-system-discipline/SKILL.md research/jstack/adaptations/typescript-best-practices.md research/jstack/evaluations/typescript-best-practices/README.md skills/jstack/jstack-typescript-best-practices/SKILL.md skills/jstack/jstack-typescript-best-practices/references/patterns.md\nLinting: 10 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Relative links in changed Markdown",
+    "result": "passed"
+  },
+  {
+    "check": "Model configuration unchanged",
+    "sha256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+  },
+  {
+    "check": "Final source versus evaluator snapshots",
+    "result": "Patterns exact; entrypoint differs only in documented table separator whitespace"
+  },
+  {
+    "check": "git diff --cached --check",
+    "result": "passed"
+  }
+]

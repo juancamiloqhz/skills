@@ -1,0 +1,33 @@
+{
+  "patternsSha256": "5d82bda698c7ad41efd101bc1a4b8cd03d9256717bcf5dc2f637252bf8d5a1e6",
+  "extractedSourceAndAssertions": "type NonEmpty<T> = [T, ...T[]];\n// Do: an empty value of the type can't exist\nfunction pickWinner(entries: NonEmpty<string>): string {\n  return entries[Math.floor(Math.random() * entries.length)] ?? entries[0];\n}\n\nconst isNonEmpty = <T>(arr: T[]): arr is NonEmpty<T> => arr.length > 0 && 0 in arr;\n\nfunction check(ok: boolean, message: string): void { if (!ok) throw new Error(message); }\ncheck(!isNonEmpty<string>([]), \"empty rejected\");\ncheck(!isNonEmpty(Array<string>(1)), \"head hole rejected\");\nconst dense = [\"a\", \"b\"];\ncheck(isNonEmpty(dense), \"dense accepted\");\nconst random = Math.random;\ntry {\n  if (isNonEmpty(dense)) {\n    Math.random = () => 0;\n    check(pickWinner(dense) === \"a\", \"first selection\");\n    Math.random = () => 0.999;\n    check(pickWinner(dense) === \"b\", \"last selection\");\n  }\n  check(pickWinner([\"only\"]) === \"only\", \"singleton selection\");\n  const laterHole = [\"head\"];\n  laterHole.length = 2;\n  if (isNonEmpty(laterHole)) {\n    check(pickWinner(laterHole) === \"head\", \"unchecked later index uses valid head\");\n  }\n} finally { Math.random = random; }\nconsole.log(\"7 guard and selection assertions passed\");\n",
+  "results": [
+    {
+      "command": [
+        "node",
+        "/home/ubuntu/Dev/hirejohn/node_modules/typescript/lib/tsc.js",
+        "--strict",
+        "--noUncheckedIndexedAccess",
+        "--target",
+        "ES2022",
+        "--module",
+        "commonjs",
+        "--outDir",
+        "/tmp/jstack-ts-replay-3844wdp8/out",
+        "/tmp/jstack-ts-replay-3844wdp8/examples.ts"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "/tmp/jstack-ts-replay-3844wdp8/out/examples.js"
+      ],
+      "exitCode": 0,
+      "stdout": "7 guard and selection assertions passed\n",
+      "stderr": ""
+    }
+  ]
+}
