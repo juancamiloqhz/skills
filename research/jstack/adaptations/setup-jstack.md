@@ -67,3 +67,7 @@ The same two availability statements now include the throwaway Prototype procedu
 ## Trace forensics availability, 2026-10-16
 
 The entrypoint and consumer contract now include Trace forensics and identify 20 remaining procedures. See the [Trace assessment](trace-forensics.md). Setup behavior, configuration schema and source pin remain unchanged.
+
+## Skill-authoring availability, 2026-10-16
+
+The entrypoint and configuration consumer note now include Authoring or modifying a skill and report 19 pending procedures. [Source comparison and evaluation](../evaluations/authoring-a-skill/README.md) cover these availability-only changes. Setup behavior, model roles, existing configuration, source pin and installation remain unchanged.

@@ -1,0 +1,44 @@
+{
+  "independentLayout": true,
+  "packagesNotSiblings": true,
+  "frontmatter": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "/tmp/jstack-notes-consumer-20261016/packages/notes"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n"
+  },
+  "brokenPackageReference": {
+    "rejected": true,
+    "reason": "('missing package reference', 'references/absent.md')"
+  },
+  "missingHelper": {
+    "rejected": true,
+    "reason": "missing independent helper"
+  },
+  "originalInputsUnchanged": true,
+  "copiedFilesByteIdentical": true,
+  "scope": "Parent fixture-specific link validator and copied layout. This is not a shipped runtime validator, installed host discovery test, or full behavioral proof.",
+  "verificationScript": "from pathlib import Path\nimport json,re,yaml,hashlib,shutil,subprocess\nroot=Path('/tmp/jstack-notes-consumer-20261016');package=root/'packages/notes';catalog=json.loads((root/'catalog.json').read_text());scratch=Path('/tmp/jstack-authoring-negative-20261016');scratch.mkdir(exist_ok=False)\ndef validate(pkg,available):\n text=(pkg/'SKILL.md').read_text();front=yaml.safe_load(text.split('---')[1]);assert front['name'] and front['description']\n for p in pkg.rglob('*.md'):\n  for target in re.findall(r'\\]\\(([^)]+)\\)',p.read_text()):\n   if '://' in target or target.startswith('#'):continue\n   path=(p.parent/target.split('#')[0]).resolve();assert path.is_relative_to(pkg.resolve()) and path.is_file(),('missing package reference',target)\n helper=Path(available['release-facts']);assert helper.is_file(),'missing independent helper'\n helper_front=yaml.safe_load(helper.read_text().split('---')[1]);assert helper_front['name']=='release-facts','wrong helper identity'\n return True\nchecks={'independentLayout':validate(package,catalog),'packagesNotSiblings':package.parent!=(root/'separate-helper/facts').parent}\nr=subprocess.run(['python3','-B','/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py',str(package)],text=True,capture_output=True);assert r.returncode==0;checks['frontmatter']={'command':r.args,'exitCode':r.returncode,'stdout':r.stdout}\nbroken=scratch/'broken';shutil.copytree(package,broken);p=broken/'SKILL.md';p.write_text(p.read_text().replace('references/comparison.md','references/absent.md'))\ntry:validate(broken,catalog)\nexcept AssertionError as e:checks['brokenPackageReference']={'rejected':True,'reason':str(e)}\nelse:raise AssertionError('accepted broken reference')\ntry:validate(package,{'release-facts':str(root/'missing-helper/SKILL.md')})\nexcept AssertionError as e:checks['missingHelper']={'rejected':True,'reason':str(e)}\nelse:raise AssertionError('accepted missing helper')\noriginal=Path('/tmp/jstack-authoring-20261016');hashes=json.loads((original/'inputs.json').read_text());assert all(hashlib.sha256((original/name).read_bytes()).hexdigest()==digest for name,digest in hashes.items())\nchecks['originalInputsUnchanged']=True\nchecks['copiedFilesByteIdentical']=all(p.read_bytes()==(package/p.relative_to(original/'output/release-notes')).read_bytes() for p in (original/'output/release-notes').rglob('*')if p.is_file())\nassert checks['copiedFilesByteIdentical']\nchecks['scope']='Parent fixture-specific link validator and copied layout. This is not a shipped runtime validator, installed host discovery test, or full behavioral proof.'\n(scratch/'result.json').write_text(json.dumps(checks,indent=2)+'\\n');print(json.dumps(checks,indent=2))\n",
+  "comparisonScript": "from pathlib import Path\nimport subprocess,json,hashlib,difflib\nroot=Path('/home/ubuntu/Dev/skills'); out=root/'research/jstack/evaluations/authoring-a-skill'\nbase='3f38175b1b5c1eb557794d27d422ea4aa6215c23';cache='/home/ubuntu/.cache/jstack/upstream/upstream.git'\ndef git(*args):return subprocess.check_output(['git',*args],cwd=root).decode()\ndef upstream(pin,path):return git('--git-dir='+cache,'show',pin+':'+path)\ndef sha(s):return hashlib.sha256(s.encode()).hexdigest()\ndef diff(a,b,x,y):return ''.join(difflib.unified_diff(a.splitlines(True),b.splitlines(True),fromfile=x,tofile=y))\nm=json.loads((root/'research/jstack/upstream.json').read_text());old=json.loads(git('show',base+':research/jstack/upstream.json'))\nexpected=json.loads(json.dumps(old));expected['skills'][0]['contextPaths'].append('pstack/skills/principle-encode-lessons-in-structure');assert m==expected\nreport={'base':base,'manifestCheck':'Only Encode Lessons in Structure mode context added; watch roots, pins, reviewed checkpoint, decisions and mappings preserved','mappedSkills':len(m['skills']),'comparisons':[],'packageChecks':[]}\nfor name in ['jstack-juan-mode','jstack-setup']:\n row=next(r for r in m['skills']if r['name']==name); pin=row['adaptedFrom'];local=row['localPath']+'/SKILL.md';source=row['upstreamPath']+'/SKILL.md';a=upstream(pin,source);b=(root/local).read_text()\n report['comparisons'].append({'local':local,'source':source,'pin':pin,'upstreamSHA256':sha(a),'localSHA256':sha(b),'completePinnedDiff':diff(a,b,source,local),'baseDiff':diff(git('show',base+':'+local),b,base,local),'assessment':row['differences']})\n assert upstream(pin,'pstack/LICENSE')==(root/row['localPath']/'LICENSE').read_text()\n files=git('ls-tree','-r','--name-only',base,'--',row['localPath']).splitlines();changed=[f for f in files if (root/f).read_text()!=git('show',base+':'+f)]\n assert changed==([local] if name=='jstack-juan-mode' else [local,row['localPath']+'/references/configuration.md'])\n report['packageChecks'].append({'package':name,'licenseMatchesPin':True,'existingFilesCompared':len(files),'changedExistingFiles':changed})\nrow=m['skills'][0];source=row['upstreamPath']+'/playbooks/authoring-a-skill.md';local=row['localPath']+'/playbooks/authoring-a-skill.md';a=upstream(row['adaptedFrom'],source);b=(root/local).read_text()\nreport['comparisons'].append({'local':local,'source':source,'pin':row['adaptedFrom'],'upstreamSHA256':sha(a),'localSHA256':sha(b),'completePinnedDiff':diff(a,b,source,local),'assessment':'research/jstack/adaptations/authoring-a-skill.md'})\nreport['upstreamPlaybooks']=git('--git-dir='+cache,'ls-tree','-r','--name-only',row['adaptedFrom'],'--',row['upstreamPath']+'/playbooks').splitlines();assert len(report['upstreamPlaybooks'])==23\nreport['localPlaybooks']=sorted(str(p.relative_to(root))for p in (root/row['localPath']/'playbooks').glob('*.md'));assert len(report['localPlaybooks'])==4\nfor path in expected['skills'][0]['contextPaths'][-1:]:\n listing=git('--git-dir='+cache,'ls-tree','-r','--name-only',row['adaptedFrom'],'--',path).splitlines();assert listing; report.setdefault('newContextSourceFiles',{})[path]=listing\nf='skills/jstack/jstack-setup/references/configuration.md';report['configurationReferenceDiff']=diff(git('show',base+':'+f),(root/f).read_text(),base,f)\n(out/'source-comparison.json').write_text(json.dumps(report,indent=2)+'\\n')\nprint(report['comparisons'][-1]['completePinnedDiff']);print(json.dumps(report['packageChecks']));print('41 mappings; 23 upstream/4 local playbooks; declared context paths exist.')\n",
+  "consumerAssessment": {
+    "kind": "Parent read both complete customer outputs and checked each claim against original raw snapshots; not a self-reported score.",
+    "summary": "Correct July identity, 6-seat limit, CSV/PDF availability and Excel planned status. No build identifier or invented date.",
+    "comparison": "Correct 10-to-6 seat decrease, PDF planned-to-available transition, removed JSON and newly planned Excel. Both source paths cited beside each change; no unchanged CSV fact.",
+    "citationsExist": true,
+    "helperAndOperationalPackageMatchOriginal": true,
+    "consumerSnapshotsMatchOriginalValues": true,
+    "limitations": "One fresh consumer handles both requests. This does not isolate each reference read into a separate invocation or prove host catalog discovery.",
+    "copyNote": "The author added validation.md after freezing the three operational files. That evidence note is archived with author output, not part of the independent consumer package."
+  },
+  "observedLimits": [
+    "Author-run reverse comparison included unnecessary unchanged CSV context; preserved, not silently rewritten.",
+    "Author could not execute the mode-required delegated How under the explicit no-further-delegation scope. Broad mode completion is not claimed.",
+    "Feature checkpoint and Opening a PR remain unavailable; local delivery skipped publication."
+  ],
+  "sourceHashesMatch": 19,
+  "globalConfigurationUnchangedSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b"
+}
