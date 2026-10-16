@@ -101,6 +101,8 @@ Both columns are intentional. The left column identifies old installations to re
 
 `jstack-control-cli` adapts the external Cursor team-kit Control CLI skill. It has no former jstack installation name to remove. After its PR merges, select `jstack-control-cli` explicitly when manually installing the helpers you use. Do not remove another collection's `control-cli` solely because its name is unprefixed.
 
+`jstack-deslop` adapts the external Cursor team-kit Deslop skill. It also has no former jstack name to remove. Select `jstack-deslop` when manually installing the pre-commit helper after merge; preserve any unrelated `deslop` installation.
+
 ## Upstream maintenance and evidence
 
 `upstream.json` maps each new local identity to its original upstream path and unchanged revision pin. The shared reviewed checkpoint does not move. Preserve pstack's boundaries, headings, procedures and role labels; translate only package identities and their callers. Future adaptations must apply this mapping rather than restoring unprefixed names.

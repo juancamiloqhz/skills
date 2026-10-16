@@ -40,6 +40,10 @@ The [Runtime forensics procedure](../../skills/jstack/jstack-juan-mode/playbooks
 
 The standalone [jstack-control-cli helper](../../skills/jstack/jstack-control-cli/SKILL.md) supplies the terminal-control dependency for future engineering playbooks. Its [evaluation](evaluations/control-cli/README.md) covers an actual PTY prompt flow, startup timeout, early exit and owned-process cleanup. The pinned Python example's silent timeout is corrected with retained before/after evidence. Runtime forensics now has its own bounded live CPU-profile evaluation. Other consuming playbooks remain pending; rich TUI input and Control UI still require separate proof.
 
+## Implemented dependency: Deslop
+
+The standalone [jstack-deslop helper](../../skills/jstack/jstack-deslop/SKILL.md) supplies Juan-mode's pre-commit cleanup dependency. Its body matches the pinned source exactly. The [evaluation](evaluations/deslop/README.md) checks cleanup against actual public outputs while preserving boundary validation and unrelated staged work. It adds a helper, not another playbook; five procedures remain available and 18 pending.
+
 ## Completed: jstack-setup
 
 Model configuration and validation shipped in [PR #2](https://github.com/juancamiloqhz/skills/pull/2), with prose formatting corrected in [PR #3](https://github.com/juancamiloqhz/skills/pull/3). Release checks included six helper tests, skill validation, and Markdown linting. Setup was installed for the four selected providers and invoked successfully in a T3 Code session.
