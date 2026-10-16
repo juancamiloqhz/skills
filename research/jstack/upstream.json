@@ -33,7 +33,8 @@
         "pstack/skills/why",
         "pstack/skills/architect",
         "pstack/skills/principle-exhaust-the-design-space",
-        "cursor-team-kit/skills/control-ui"
+        "cursor-team-kit/skills/control-ui",
+        "pstack/skills/principle-guard-the-context-window"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },

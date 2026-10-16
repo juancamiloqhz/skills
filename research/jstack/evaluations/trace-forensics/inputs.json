@@ -1,0 +1,13 @@
+{
+  "root": "/tmp/jstack-trace-input-20261016",
+  "files": {
+    "existing-note.txt": "c221a8cf3c3d930a3e5f4b655f4a2214741ddfd07a7bbaf4366c1e81740b2f31",
+    "README.md": "4d57ffa72645e44775727bed47dd997ed4aa610348c6e1cf4392644d2d52975d",
+    "unmapped.cpuprofile": "c9c19be5d933e4cfb8622fef4468518a2b8603ffa95fa1ff5793a30cdc7a634e",
+    "after.cpuprofile.gz": "330a3204a84f1a40f186e2b6af90a5f62f277fc66c7d1d5b2e6fc8abb29e36a8",
+    "before.cpuprofile": "910f1fda5ae10539b85fc4cae0411f8443c0de2629eaf611e6beec78830999ed",
+    "report.js": "b69e196bca5bfe553f68e0e60162806ba57c49b4877d4fd2f8287162863fac40"
+  },
+  "configSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "synthetic": true
+}

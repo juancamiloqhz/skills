@@ -110,7 +110,7 @@ Trigger: an existing CPU profile, trace, heap snapshot or spindump. Output: arti
 
 Source: [trace-forensics](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/trace-forensics.md).
 
-Propose `judgment and prose` for reduction and `hardest tasks` when warranted. Normalize into a queryable representation appropriate to the format, with SQLite where useful, without modifying the original artifact. Prerequisites are a supported parser and source mapping; missing symbols are an explicit diagnostic limit. Captured-artifact analysis does not require a live browser or service.
+The [implemented procedure](../../../skills/jstack/jstack-juan-mode/playbooks/trace-forensics.md) uses configured `judgment and prose` for reduction and `hardest tasks` when warranted. Preserve the source's SQLite normalization step before querying, without modifying the original artifact. Prerequisites are a supported parser and source mapping; missing symbols are an explicit diagnostic limit. Captured-artifact analysis does not require a live browser or service. The [bounded evaluation](../evaluations/trace-forensics/README.md) records synthetic CPU-profile coverage and remaining formats.
 
 Acceptance scenario: supply a known CPU profile with symbols and a paired capture, plus a separate unmapped capture. Require attribution to the known hot path and reproducible query evidence in the first case. The second must name absent symbols and avoid inventing a source line or rerunning the application. Original input hashes must remain unchanged.
 

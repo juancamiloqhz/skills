@@ -1,0 +1,107 @@
+{
+  "inputsAndConfigUnchanged": true,
+  "fixturesByteIdentical": true,
+  "profiles": {
+    "before.cpuprofile": {
+      "nodes": 5,
+      "samples": 5000,
+      "deltaTotalUs": 1400000,
+      "profileSpanUs": 1400000,
+      "countByNode": {
+        "4": 4000,
+        "5": 1000
+      },
+      "precedingDeltaGroupedByCurrentNodeUs": {
+        "4": 400000,
+        "5": 1000000
+      },
+      "followingIntervalByCurrentNodeUs": {
+        "4": 1300000,
+        "5": 99900
+      },
+      "unattributedInitialUs": 100,
+      "unattributedTailUs": 0,
+      "countFractionTimesSpanUs": {
+        "4": 1120000.0,
+        "5": 280000.0
+      }
+    },
+    "after.cpuprofile.gz": {
+      "nodes": 5,
+      "samples": 5000,
+      "deltaTotalUs": 500000,
+      "profileSpanUs": 500000,
+      "countByNode": {
+        "4": 4000,
+        "5": 1000
+      },
+      "precedingDeltaGroupedByCurrentNodeUs": {
+        "4": 400000,
+        "5": 100000
+      },
+      "followingIntervalByCurrentNodeUs": {
+        "4": 400000,
+        "5": 99900
+      },
+      "unattributedInitialUs": 100,
+      "unattributedTailUs": 0,
+      "countFractionTimesSpanUs": {
+        "4": 400000.0,
+        "5": 100000.0
+      }
+    },
+    "unmapped.cpuprofile": {
+      "nodes": 2,
+      "samples": 3,
+      "deltaTotalUs": 6000,
+      "profileSpanUs": 6000,
+      "countByNode": {
+        "2": 3
+      },
+      "precedingDeltaGroupedByCurrentNodeUs": {
+        "2": 6000
+      },
+      "followingIntervalByCurrentNodeUs": {
+        "2": 5000
+      },
+      "unattributedInitialUs": 1000,
+      "unattributedTailUs": 0,
+      "countFractionTimesSpanUs": {
+        "2": 6000.0
+      }
+    }
+  },
+  "limits": "Synthetic inputs. Preceding-delta grouping and following-interval weighting are explicit conventions, not exact function CPU duration. Missing initial/tail attribution remains explicit.",
+  "unmappedDatabase": {
+    "integrity": "ok",
+    "rawRoundTrip": true,
+    "orderedSamplesMatch": true,
+    "symbolsAbsent": true,
+    "databaseSHA256": "35e9f3ff36a924cb9014fb3f781a3620a50895c677c94291bf3723fe2399807f"
+  },
+  "pairedDatabase": {
+    "integrity": "ok",
+    "orderedSamplesAndTimestampsMatch": true,
+    "edgesMatch": true,
+    "exactSourceURLsAndLinesMatch": true,
+    "queryReplaysMatch": {
+      "queries.sql": 13,
+      "sensitivity.sql": 5
+    },
+    "databaseSHA256": "e92886a62d894ad5b0bcf1414f4d20f32b2a045fcc268b4c64173703499c2d6b",
+    "correctedQueryReplay": {
+      "file": "sensitivity-v2.sql",
+      "queries": 5,
+      "rawResultsMatch": true,
+      "fourFrameTotalsAndPerProfilePercentagesIndependentlyCorrect": true,
+      "initialQueryIssue": "v1 totals omitted GROUP BY profile. Retained v1 replay equality proves reproducibility only, not correct denominators. v2 is the accepted sensitivity result."
+    }
+  },
+  "verificationScript": "from pathlib import Path\nimport json, hashlib, gzip, sqlite3, collections\nroot=Path('/home/ubuntu/Dev/skills/research/jstack/evaluations/trace-forensics')\ninputs=json.loads((root/'inputs.json').read_text()); supplied=Path(inputs['root'])\nsha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()\nassert all(sha(supplied/name)==digest==sha(root/'fixtures'/name) for name,digest in inputs['files'].items())\nassert sha(Path('/home/ubuntu/.config/jstack/models.json'))==inputs['configSHA256']\nreport={'inputsAndConfigUnchanged':True,'fixturesByteIdentical':True,'profiles':{},'limits':'Synthetic inputs. Preceding-delta grouping and following-interval weighting are explicit conventions, not exact function CPU duration. Missing initial/tail attribution remains explicit.'}\nfor name in ['before.cpuprofile','after.cpuprofile.gz','unmapped.cpuprofile']:\n p=supplied/name; data=p.read_bytes(); profile=json.loads(gzip.decompress(data) if name.endswith('.gz') else data)\n ids={n['id'] for n in profile['nodes']};samples=profile['samples'];deltas=profile['timeDeltas'];assert len(samples)==len(deltas) and set(samples)<=ids\n same=collections.Counter();following=collections.Counter()\n for node,delta in zip(samples,deltas):same[node]+=delta\n for i in range(len(samples)-1):following[samples[i]]+=deltas[i+1]\n counts=collections.Counter(samples);span=profile['endTime']-profile['startTime']\n report['profiles'][name]={'nodes':len(ids),'samples':len(samples),'deltaTotalUs':sum(deltas),'profileSpanUs':span,'countByNode':dict(counts),'precedingDeltaGroupedByCurrentNodeUs':dict(same),'followingIntervalByCurrentNodeUs':dict(following),'unattributedInitialUs':deltas[0],'unattributedTailUs':span-sum(deltas),'countFractionTimesSpanUs':{node:count/len(samples)*span for node,count in counts.items()}}\n assert sum(following.values())+deltas[0]+span-sum(deltas)==span\np=Path('/tmp/jstack-trace-unmapped-20261016/profile.sqlite'); db=sqlite3.connect(f'file:{p}?mode=ro',uri=True)\nassert db.execute('pragma integrity_check').fetchone()==('ok',) and not db.execute('pragma foreign_key_check').fetchall()\nprofile=json.loads((supplied/'unmapped.cpuprofile').read_text())\nassert json.loads(db.execute('select raw_json from artifact').fetchone()[0])==profile\nassert db.execute('select node_id,delta_us from samples order by ordinal').fetchall()==list(zip(profile['samples'],profile['timeDeltas']))\nassert db.execute('select function_name,url,line_number,column_number from nodes where id=2').fetchone()==('','',-1,-1)\nreport['unmappedDatabase']={'integrity':'ok','rawRoundTrip':True,'orderedSamplesMatch':True,'symbolsAbsent':True,'databaseSHA256':sha(p)}\npair=Path('/tmp/jstack-trace-pair-20261016/parser'); db=sqlite3.connect(f'file:{pair / \"profiles.sqlite\"}?mode=ro',uri=True)\nassert db.execute('pragma integrity_check').fetchone()==('ok',) and not db.execute('pragma foreign_key_check').fetchall()\nfor label,name in [('before','before.cpuprofile'),('after','after.cpuprofile.gz')]:\n raw=(supplied/name).read_bytes(); data=json.loads(gzip.decompress(raw) if name.endswith('.gz') else raw)\n assert db.execute('select node_id,delta_us from samples where profile=? order by sample_index',(label,)).fetchall()==list(zip(data['samples'],data['timeDeltas']))\n elapsed=data['startTime'];timestamps=[]\n for delta in data['timeDeltas']:elapsed+=delta;timestamps.append((elapsed,))\n assert db.execute('select timestamp_us from samples where profile=? order by sample_index',(label,)).fetchall()==timestamps\n assert db.execute('select count(*) from nodes where profile=?',(label,)).fetchone()==(5,)\n expected_edges=sorted((node['id'],child) for node in data['nodes'] for child in node.get('children',[]))\n assert db.execute('select parent_id,child_id from edges where profile=? order by parent_id,child_id',(label,)).fetchall()==expected_edges\n for node in data['nodes'][1:]:\n  frame=node['callFrame'];assert frame['url']==str(supplied/'report.js')\n  row=db.execute('select line_one,source_line,status from source_mappings where profile=? and node_id=?',(label,node['id'])).fetchone()\n  assert row==(frame['lineNumber']+1,(supplied/'report.js').read_text().splitlines()[frame['lineNumber']],'matched_supplied_source')\nimport re\ndb.row_factory=sqlite3.Row\nreplayed={}\nfor sqlname,resultname in [('queries.sql','raw-results.json'),('sensitivity.sql','sensitivity-results.json')]:\n results={name:[dict(row) for row in db.execute(sql)] for name,sql in re.findall(r'-- query: ([^\\n]+)\\n(.*?)(?=-- query: |\\Z)',(pair/sqlname).read_text(),re.S)}\n assert results==json.loads((pair/resultname).read_text());replayed[sqlname]=len(results)\nreport['pairedDatabase']={'integrity':'ok','orderedSamplesAndTimestampsMatch':True,'edgesMatch':True,'exactSourceURLsAndLinesMatch':True,'queryReplaysMatch':replayed,'databaseSHA256':sha(pair/'profiles.sqlite')}\n(root/'parent-verification.json').write_text(json.dumps(report,indent=2)+'\\n')\nprint(json.dumps(report,indent=2))\n",
+  "sourceComparisonScript": "from pathlib import Path\nimport subprocess,json,hashlib,difflib\nroot=Path('/home/ubuntu/Dev/skills'); out=root/'research/jstack/evaluations/trace-forensics'\nbase='61d78c5f4b8fc91cc6aac0a528dd1f7fef664d5d';cache='/home/ubuntu/.cache/jstack/upstream/upstream.git'\ndef git(*args):return subprocess.check_output(['git',*args],cwd=root).decode()\ndef upstream(pin,path):return git('--git-dir='+cache,'show',pin+':'+path)\ndef sha(s):return hashlib.sha256(s.encode()).hexdigest()\ndef diff(a,b,x,y):return ''.join(difflib.unified_diff(a.splitlines(True),b.splitlines(True),fromfile=x,tofile=y))\nm=json.loads((root/'research/jstack/upstream.json').read_text());old=json.loads(git('show',base+':research/jstack/upstream.json'))\nexpected=json.loads(json.dumps(old));expected['skills'][0]['contextPaths'].append('pstack/skills/principle-guard-the-context-window');assert m==expected\nreport={'base':base,'manifestCheck':'Only Guard the Context Window mode context added; watch roots, pins, reviewed checkpoint, decisions and mappings preserved','mappedSkills':len(m['skills']),'comparisons':[],'packageChecks':[]}\nfor name in ['jstack-juan-mode','jstack-setup']:\n row=next(r for r in m['skills']if r['name']==name); pin=row['adaptedFrom'];local=row['localPath']+'/SKILL.md';source=row['upstreamPath']+'/SKILL.md';a=upstream(pin,source);b=(root/local).read_text()\n report['comparisons'].append({'local':local,'source':source,'pin':pin,'upstreamSHA256':sha(a),'localSHA256':sha(b),'completePinnedDiff':diff(a,b,source,local),'baseDiff':diff(git('show',base+':'+local),b,base,local),'assessment':row['differences']})\n assert upstream(pin,'pstack/LICENSE')==(root/row['localPath']/'LICENSE').read_text()\n files=git('ls-tree','-r','--name-only',base,'--',row['localPath']).splitlines();changed=[f for f in files if (root/f).read_text()!=git('show',base+':'+f)]\n assert changed==([local] if name=='jstack-juan-mode' else [local,row['localPath']+'/references/configuration.md'])\n report['packageChecks'].append({'package':name,'licenseMatchesPin':True,'existingFilesCompared':len(files),'changedExistingFiles':changed})\nrow=m['skills'][0];source=row['upstreamPath']+'/playbooks/trace-forensics.md';local=row['localPath']+'/playbooks/trace-forensics.md';a=upstream(row['adaptedFrom'],source);b=(root/local).read_text()\nreport['comparisons'].append({'local':local,'source':source,'pin':row['adaptedFrom'],'upstreamSHA256':sha(a),'localSHA256':sha(b),'completePinnedDiff':diff(a,b,source,local),'assessment':'research/jstack/adaptations/trace-forensics.md'})\nreport['upstreamPlaybooks']=git('--git-dir='+cache,'ls-tree','-r','--name-only',row['adaptedFrom'],'--',row['upstreamPath']+'/playbooks').splitlines();assert len(report['upstreamPlaybooks'])==23\nreport['localPlaybooks']=sorted(str(p.relative_to(root))for p in (root/row['localPath']/'playbooks').glob('*.md'));assert len(report['localPlaybooks'])==3\nfor path in expected['skills'][0]['contextPaths'][-1:]:\n listing=git('--git-dir='+cache,'ls-tree','-r','--name-only',row['adaptedFrom'],'--',path).splitlines();assert listing; report.setdefault('newContextSourceFiles',{})[path]=listing\nf='skills/jstack/jstack-setup/references/configuration.md';report['configurationReferenceDiff']=diff(git('show',base+':'+f),(root/f).read_text(),base,f)\n(out/'source-comparison.json').write_text(json.dumps(report,indent=2)+'\\n')\nprint(report['comparisons'][-1]['completePinnedDiff']);print(json.dumps(report['packageChecks']));print('41 mappings; 23 upstream/3 local playbooks; declared context paths exist.')\n",
+  "parserPreservation": {
+    "beforeEqualsAfter": true,
+    "currentHashesMatch": true,
+    "files": 150
+  }
+}
