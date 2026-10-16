@@ -1,0 +1,113 @@
+{
+  "verification": "parent inspection of actual raw artifacts; no second runtime execution",
+  "pid": 529457,
+  "profile": {
+    "nodes": 12,
+    "samples": 2718,
+    "durationMicroseconds": 3030211,
+    "refreshPreviewFrame": {
+      "functionName": "refreshPreview",
+      "scriptId": "87",
+      "url": "file:///tmp/jstack-runtime-forensics-20261016/app/preview.cjs",
+      "lineNumber": 6,
+      "columnNumber": 23
+    },
+    "refreshPreviewSelfSamples": 734,
+    "ancestry": [
+      "listOnTimeout",
+      "processTimers",
+      "(root)"
+    ],
+    "rawStopResponseMatchesSavedProfile": true,
+    "sampleIdsAndDeltasValid": true,
+    "liveSourceMatchesFixture": true
+  },
+  "phases": [
+    {
+      "phase": "enabled",
+      "frames": 73,
+      "wallMilliseconds": 1501.2091359999977,
+      "processCPUUserMicroseconds": 439658,
+      "processCPUSystemMicroseconds": 1992
+    },
+    {
+      "phase": "disabled",
+      "frames": 0,
+      "wallMilliseconds": 1499.4024069999941,
+      "processCPUUserMicroseconds": 10674,
+      "processCPUSystemMicroseconds": 8
+    },
+    {
+      "phase": "restored",
+      "frames": 73,
+      "wallMilliseconds": 1500.4616559999995,
+      "processCPUUserMicroseconds": 446083,
+      "processCPUSystemMicroseconds": 4040
+    }
+  ],
+  "restoration": {
+    "descriptorBefore": {
+      "value": true,
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "descriptorAfter": {
+      "value": true,
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "globalKeysAdded": [],
+    "probeType": "evaluation-local closures only, no global probe installed"
+  },
+  "cleanup": {
+    "pid": 529457,
+    "returncode": -15,
+    "waitCompleted": true,
+    "procExistsAfterWait": false,
+    "elapsed": 74.24738200940192
+  },
+  "ownerProcessAbsent": true,
+  "inspectorConnectionResult": 111,
+  "protocols": [
+    {
+      "file": "baseline-protocol.jsonl",
+      "matchedRequests": 7,
+      "errors": 0
+    },
+    {
+      "file": "inspect-preview-protocol.jsonl",
+      "matchedRequests": 1,
+      "errors": 0
+    },
+    {
+      "file": "intervention-protocol.jsonl",
+      "matchedRequests": 1,
+      "errors": 0
+    },
+    {
+      "file": "runtime-state-protocol.jsonl",
+      "matchedRequests": 1,
+      "errors": 0
+    },
+    {
+      "file": "source-map-protocol.jsonl",
+      "matchedRequests": 5,
+      "errors": 0
+    }
+  ],
+  "unchangedInputs": {
+    "app/caller-note.txt": "9bb13deed360824ce0a02269d27782e22d67c25933731f2801c6835aaa1eaf06",
+    "app/README.md": "de55252dd18e2965c66843e076d76f4d345650d4c6776aee73cf9157044b3a2c",
+    "app/preview.cjs": "73a2b7f86008e905729a914a19b4e3deca1a3cf4edf480e1e9c420b5a33dd557"
+  },
+  "globalConfigSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "limits": [
+    "Controlled fixture, not production performance evidence.",
+    "Sample counts are not exact function CPU durations.",
+    "Process CPU counters include all work and inspector overhead.",
+    "One live run; host plan created too late and general Architect design gate unexecuted.",
+    "Boundary cases are instruction assessment, not live failure tests."
+  ]
+}
