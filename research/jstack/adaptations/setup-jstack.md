@@ -63,3 +63,7 @@ The setup entrypoint and configuration reference now identify Juan-mode's read-o
 ## Prototype availability, 2026-10-16
 
 The same two availability statements now include the throwaway Prototype procedure and identify 21 remaining routes. See the [Prototype assessment](prototype.md). Setup steps, model behavior and source pin remain unchanged.
+
+## Trace forensics availability, 2026-10-16
+
+The entrypoint and consumer contract now include Trace forensics and identify 20 remaining procedures. See the [Trace assessment](trace-forensics.md). Setup behavior, configuration schema and source pin remain unchanged.
