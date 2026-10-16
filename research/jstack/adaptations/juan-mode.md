@@ -4,6 +4,10 @@ The [2026-10-15 naming decision](../skill-names.md) additionally changes this pa
 
 Adapted from [poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md) at `11713c683fe4add4fd403ea880580abbc9e0875f`. The 2026-10-14 entrypoint restoration follows the [fidelity policy](../upstream-fidelity.md). [Comparison and evaluation](../evaluations/mode-restoration/README.md) distinguish restored instructions, runtime substitutions and pending implementation. The pin and reviewed checkpoint remain unchanged.
 
+## Current playbook coverage
+
+Investigation is now the first implemented procedure; 22 routes remain pending. The [Investigation adaptation](investigation.md) and [evaluation](../evaluations/investigation-playbook/README.md) account for its full source, three availability-paragraph changes and unchanged mode support files. The restoration tables below describe the earlier baseline; their statements that all procedures were pending are historical. Later benchmark, writing and No-comments ports also supersede the helper-gap statements. Source pins and the reviewed checkpoint remain unchanged.
+
 ## File accounting
 
 | Source | Local disposition |

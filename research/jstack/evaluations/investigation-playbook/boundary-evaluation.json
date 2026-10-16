@@ -1,0 +1,138 @@
+{
+  "evaluation": "Investigation failure boundaries, 2026-10-16",
+  "scope": "Read-only evaluation. Staged cases are not end-to-end workflow executions. Only this report is written. No delegation, network, implementation, source/config/installed edits, publication, installation or watches.",
+  "inputs": {
+    "mode": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/SKILL.md",
+    "playbook": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/playbooks/investigation.md",
+    "policy": "/home/ubuntu/Dev/skills/research/jstack/upstream-fidelity.md",
+    "activation_reference": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/references/activation.md",
+    "external_unslop": "/home/ubuntu/.agents/skills/unslop/SKILL.md",
+    "source": "/tmp/jstack-investigation-source-20261016",
+    "catalog_for_A": [
+      "jstack-juan-mode",
+      "unslop at explicit external path"
+    ],
+    "excluded_from_A": [
+      "jstack-how",
+      "jstack-setup"
+    ],
+    "read_claim": "The complete policy, containing mode, playbook, activation reference, external Unslop and three fixture worktree files were read. No other evaluation report or parent conclusion was read."
+  },
+  "executed_evidence": [
+    "Read events.py in full. Lines 5-7 look up the incoming ID and immediately return recent[event_id], False for an existing ID. Lines 8-12 are bypassed by that return.",
+    "Complete README says the caller owns an insertion-ordered dictionary. scratch.txt is an existing caller-owned untracked note.",
+    "Read external Unslop as evaluation evidence. Its metadata includes disable-model-invocation: true. This read does not establish that any host invocation or writing check passed.",
+    "Read activation reference. Review or a bounded child brief does not activate persistent mode. Completing a task in an already active conversation preserves activation.",
+    "Hashed relevant files and inspected Git status. No runtime behavioral test, How phase, setup preflight, Unslop host invocation or Feature phase ran."
+  ],
+  "cases": [
+    {
+      "id": "A",
+      "input": "How does accept_event handle duplicate IDs? Do not change anything.",
+      "staged_conditions": "Only jstack-juan-mode and the explicit external Unslop entry are in the allowed catalog. jstack-how and jstack-setup are unavailable. Source is readable.",
+      "boundary": "Step 1 cannot complete because the exact jstack-how package is missing. The missing setup package also prevents configured helper preflight and dispatch. Do not read a globally available but excluded How package, replace How with another skill, install packages, or present direct source inspection as a successful How run.",
+      "permitted_actions": [
+        "Read authorized source independently.",
+        "Return direct, cited source facts.",
+        "Name both unavailable packages and provide manual installation commands.",
+        "Preserve all original playbook steps as incomplete or skipped where applicable.",
+        "Write only the assigned temporary findings report."
+      ],
+      "concrete_response": "Overview\nThe required jstack-how route is unavailable, so this Investigation is incomplete. Independent source inspection shows that a repeated ID returns the stored original event and False. [events.py](/tmp/jstack-investigation-source-20261016/events.py:5)\n\nKey concepts\nThe caller supplies the recent dictionary. Duplicate detection uses event['id']. [README.md](/tmp/jstack-investigation-source-20261016/README.md:3) [events.py](/tmp/jstack-investigation-source-20261016/events.py:5)\n\nHow it works\nFor an existing ID, the function returns at line 7. It does not reach the copy, assignment or eviction code at lines 8-11. The incoming payload therefore does not replace the stored event. [events.py](/tmp/jstack-investigation-source-20261016/events.py:6)\n\nWhere things live\nThe function is in [events.py](/tmp/jstack-investigation-source-20261016/events.py:4). These findings come from reading that file. No runtime test or How phase ran.\n\nGotchas\nThe required jstack-how and jstack-setup packages are absent from the allowed catalog. No selected model configuration or helper preflight has been verified. Manual installation commands are below. They were not executed.\n\n- `npx skills add juancamiloqhz/skills --skill jstack-how`\n- `npx skills add juancamiloqhz/skills --skill jstack-setup`\n\nthroughput checkpoint: n/a, read-only investigation\n\nThe Unslop writing check has not been established as complete. Source and configuration remain unchanged.",
+      "step_status": {
+        "1": "Incomplete. How and setup unavailable.",
+        "2": "The literal checkpoint is included in the staged response.",
+        "3": "Independently supported source answer supplied in the named shape. This does not satisfy the missing How phase.",
+        "4": "Not claimed complete. External instructions were inspected for this evaluation, not invoked as a completed workflow phase."
+      },
+      "finding": "The containing mode explicitly allows independent authorized work while reporting missing dependencies. A useful source answer is permitted; workflow completion is not."
+    },
+    {
+      "id": "B",
+      "input": "Explanation-only request, staged continuation after successful How. Host explicitly rejects external Unslop invocation at step 4. No alternate provider, package or path bypass is authorized.",
+      "staged_conditions": "The successful How phase and its verified events.py:5-7 evidence are supplied premises. This evaluator did not run that earlier phase. Host rejection is supplied as a condition, not observed from an actual invocation attempt.",
+      "boundary": "Stop the blocked writing phase. Retain supported findings and report the writing check as incomplete. Do not try another provider, path, package, installation or a silent manual substitute to claim the check passed.",
+      "permitted_actions": [
+        "Return the already supported answer.",
+        "Disclose the host rejection and incomplete step 4.",
+        "Leave explanation-only authority intact."
+      ],
+      "concrete_response": "Overview\nFor a repeated ID, accept_event returns the stored original event and False. [events.py](/tmp/jstack-investigation-source-20261016/events.py:5)\n\nKey concepts\nThe duplicate branch uses event['id'] to find the existing entry. [events.py](/tmp/jstack-investigation-source-20261016/events.py:5)\n\nHow it works\nThe branch returns recent[event_id] immediately. The incoming payload does not replace that entry. [events.py](/tmp/jstack-investigation-source-20261016/events.py:6)\n\nWhere things live\nThis behavior is in [events.py](/tmp/jstack-investigation-source-20261016/events.py:5). The staged How result supplies this verified evidence.\n\nGotchas\nThe host rejected external Unslop invocation at step 4. The writing check remains incomplete, so the full Investigation is incomplete. The supported behavior finding still stands. No alternate invocation or package was used.\n\nthroughput checkpoint: n/a, read-only investigation",
+      "step_status": {
+        "1": "Successful only as a staged premise, not an evaluator execution.",
+        "2": "Included in the staged response; earlier execution is not asserted.",
+        "3": "Supported answer rendered here from the supplied and independently read evidence.",
+        "4": "Blocked by the staged host restriction. Writing check incomplete."
+      },
+      "finding": "A failed writing gate limits the completion claim. It does not erase verified source evidence or authorize an invocation bypass."
+    },
+    {
+      "id": "C",
+      "input": "After the Investigation answer, the user asks, Implement a change so repeated IDs replace the original payload. This evaluation permits routing inspection only, with no code edits.",
+      "boundary": "Transfer the new implementation request to Feature because it changes behavior. Investigation stays read-only. The latest implementation instruction supersedes the earlier explanation-only limit for the requested product change, but this evaluation still forbids edits. Keep task authority separate from route availability.",
+      "permitted_actions": [
+        "Describe the Feature handoff and the scope already authorized.",
+        "Carry prior evidence into the handoff with its verification and incomplete-gate status intact.",
+        "Report the bundled Feature procedure unavailable.",
+        "Do independent authorized preparation if any remains within the evaluation brief."
+      ],
+      "concrete_response": "The request to replace the stored payload changes behavior, so the next route is Feature. Your implementation request carries forward to that route without a new approval question. Investigation itself does not implement the change.\n\nThe bundled Feature procedure is unavailable. Its steps have not run, and route selection does not make them complete. This evaluation permits routing inspection only, so no code changes were made. The handoff retains the existing duplicate-ID evidence and any incomplete Investigation checks. It grants no merge or installation authority.",
+      "route_state": {
+        "previous_route": "Investigation. Preserve its actual completion or incomplete status.",
+        "next_route": "Feature selected, procedure unavailable, execution not started.",
+        "authority": "The staged user authorized replacing original payloads for repeated IDs. Actual evaluator authority remains read-only. No publication, merge, install or broader rewrite is authorized.",
+        "mode_activation": "If Juan-mode was already active, it stays active across this handoff. Reading the mode for this evaluation did not activate it.",
+        "fallback": "Do not invent Feature steps or relabel this ordinary change as figure-it-out solely because Feature is missing."
+      },
+      "finding": "The handoff sentence does not require a redundant approval question. The containing mode explicitly carries already-granted implementation authority while distinguishing selected routes from available procedures."
+    }
+  ],
+  "upstream_fidelity": {
+    "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+    "upstream_path": "pstack/skills/poteto-mode/playbooks/investigation.md",
+    "local_path": "skills/jstack/jstack-juan-mode/playbooks/investigation.md",
+    "comparison": "Not completed. The current manifest supplies the mode pin. Four existing local candidate directories did not provide a Git object at that pin, and filename discovery found no matching cached Investigation source there. Network use was prohibited.",
+    "deviations": "No implementation or source change was made by this evaluation. No upstream-fidelity completion claim is made."
+  },
+  "limitations": [
+    "These are staged boundary responses and static source checks, not an end-to-end playbook execution or a host invocation test.",
+    "No configured delegation, setup resolution or model capability was tested.",
+    "No principal leaf skill was invoked or credited as applied.",
+    "Initial exploratory reads used a nonexistent manifest path, then an unavailable python command, then a broad source-tree reader that stopped on binary .git/index. These were read-only failed probes. A corrected python3 read explicitly inspected all three worktree files.",
+    "The first Git status read did not disable optional locks. Later status reads used --no-optional-locks. No intentional Git mutation was performed.",
+    "Whole-repository unchanged status alone cannot prove all contents unchanged. Exact SHA-256 equality is recorded for the evaluated source, mode, playbook, policy, manifest, activation reference and external Unslop."
+  ],
+  "integrity": {
+    "sha256_before": {
+      "/home/ubuntu/Dev/skills/research/jstack/upstream-fidelity.md": "924fef067c52c33d3c5274e338046d375678bb71cdc778a15532f42604250ef4",
+      "/home/ubuntu/Dev/skills/research/jstack/upstream.json": "a2453a82cabd71b63d2c92ae95be59b11e7c697c49cfeeede07ecedf1120415f",
+      "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/SKILL.md": "0ba715b9b39d6000fc1ae6a92838cc018ee9caf8fa1b330622357cb9f6cd58c3",
+      "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/playbooks/investigation.md": "564634644e4da2b5e0595afad9fd1e8c8d640ff1535eeb0b86299f72e6fc5e44",
+      "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/references/activation.md": "528f8e7dd79c8252b719bbdda17bc84d4b034343ec59f50f385ab924c87a697a",
+      "/home/ubuntu/.agents/skills/unslop/SKILL.md": "c6d2572294d933a428211921069e9a248490e9b466ca59437cb4d9de248600ca",
+      "/tmp/jstack-investigation-source-20261016/README.md": "0361f884d5cdbd63c05d0c1ae5bb620cbac240e7b4873459feb089e9b8ebcc13",
+      "/tmp/jstack-investigation-source-20261016/events.py": "e6bab8c84e9245bbba89bf9f7e190b904b89c7b5a25f90ac6f8ea38bdd765e51",
+      "/tmp/jstack-investigation-source-20261016/scratch.txt": "a09c56fff43ba0959b09ab1efe7c96b9954e921d4428267c9082fc275f1b6e56"
+    },
+    "sha256_after": {
+      "/home/ubuntu/Dev/skills/research/jstack/upstream-fidelity.md": "924fef067c52c33d3c5274e338046d375678bb71cdc778a15532f42604250ef4",
+      "/home/ubuntu/Dev/skills/research/jstack/upstream.json": "a2453a82cabd71b63d2c92ae95be59b11e7c697c49cfeeede07ecedf1120415f",
+      "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/SKILL.md": "0ba715b9b39d6000fc1ae6a92838cc018ee9caf8fa1b330622357cb9f6cd58c3",
+      "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/playbooks/investigation.md": "564634644e4da2b5e0595afad9fd1e8c8d640ff1535eeb0b86299f72e6fc5e44",
+      "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/references/activation.md": "528f8e7dd79c8252b719bbdda17bc84d4b034343ec59f50f385ab924c87a697a",
+      "/home/ubuntu/.agents/skills/unslop/SKILL.md": "c6d2572294d933a428211921069e9a248490e9b466ca59437cb4d9de248600ca",
+      "/tmp/jstack-investigation-source-20261016/README.md": "0361f884d5cdbd63c05d0c1ae5bb620cbac240e7b4873459feb089e9b8ebcc13",
+      "/tmp/jstack-investigation-source-20261016/events.py": "e6bab8c84e9245bbba89bf9f7e190b904b89c7b5a25f90ac6f8ea38bdd765e51",
+      "/tmp/jstack-investigation-source-20261016/scratch.txt": "a09c56fff43ba0959b09ab1efe7c96b9954e921d4428267c9082fc275f1b6e56"
+    },
+    "all_recorded_hashes_equal": true,
+    "repository_status_before": " M research/jstack/upstream.json\n M skills/jstack/jstack-juan-mode/SKILL.md\n?? research/jstack/evaluations/investigation-playbook/\n?? skills/jstack/jstack-juan-mode/playbooks/\n",
+    "repository_status_after": " M research/jstack/adaptations/juan-mode.md\n M research/jstack/fidelity-status.md\n M research/jstack/juan-mode-spec.md\n M research/jstack/roadmap.md\n M research/jstack/upstream.json\n M skills/jstack/jstack-juan-mode/SKILL.md\n?? research/jstack/adaptations/investigation.md\n?? research/jstack/evaluations/investigation-playbook/\n?? skills/jstack/jstack-juan-mode/playbooks/\n",
+    "repository_status_equal": false,
+    "source_status_before": "?? scratch.txt\n",
+    "source_status_after": "?? scratch.txt\n",
+    "source_status_equal": true,
+    "baseline_timing": "Hashes captured after initial instruction reads and before concrete case response generation. Source status captured after source reading. No source writes occurred.",
+    "repository_status_note": "Repository-wide status changed during concurrent work. The exact status snapshots above show that difference. This evaluator wrote only this report, and every recorded input hash remained equal. The fixture status also remained equal."
+  }
+}

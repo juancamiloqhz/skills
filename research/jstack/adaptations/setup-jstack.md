@@ -55,3 +55,7 @@ The shared [investigation contract](../../../skills/jstack/jstack-setup/referenc
 ## Swarm task-local resolution, 2026-10-15
 
 The subsequent [Swarm restoration](../evaluations/swarm-restoration/README.md) adds `resolve --worker-override ARM_JSON`, limited to the `swarm workers` role. This restores the source setup step 3(c) distinction between a saved scalar default and explicitly assigned race/comparison arms. The helper validates the entire saved map first, validates the override with the existing seat/catalog rules, then returns its effective target without writing either file. The original selected config path stays in `--with-source`; the task retains the override separately. No schema, default budget, saved-model or other-role behavior changes. The accompanying configuration-contract paragraph and executable tests document the new flag. Source pins remain unchanged; the earlier setup snapshot remains historical evidence of its prior support-file hashes.
+
+## Investigation availability, 2026-10-16
+
+The setup entrypoint and configuration reference now identify Juan-mode's read-only Investigation playbook as available. The remaining 22 procedures are still pending. This corrects two jstack-owned availability statements; no setup procedure, model behavior or source pin changes. See the [Investigation assessment](investigation.md) and its complete source comparison.
