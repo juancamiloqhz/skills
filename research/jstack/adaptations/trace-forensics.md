@@ -21,3 +21,7 @@ This path uses an existing format parser, SQLite, the separately shipped Guard t
 The manifest adds the principle's source directory as mode context. It already watches the entire source mode directory and setup context. All source pins, mapped-skill count, decisions, watched roots and reviewed checkpoint stay unchanged. The original engineering inventory's optional-SQLite proposal is corrected to the pinned source's actual normalization step under the fidelity policy.
 
 [Complete comparison and evaluation](../evaluations/trace-forensics/README.md) cover the entire new procedure and both changed entrypoints at their own pins. Prior Investigation/Prototype procedures, mode support files and setup scripts are unchanged. The evaluation distinguishes actual parsing/querying from synthetic profile values, missing symbols and untested formats. No schedule, installed skill or model configuration changes.
+
+## Bug fix handoff update, 2026-10-16
+
+Bug fix now has a local procedure. Step 6 removes only that route from its unavailable list; Perf issue remains pending and diagnosis alone still grants no fix authority. [Bug fix source comparison](../evaluations/bug-fix/source-comparison.json) records the final procedure against its original pin. Earlier trace evaluations retain their recorded snapshots.

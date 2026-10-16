@@ -40,7 +40,9 @@
         "pstack/skills/principle-guard-the-context-window",
         "pstack/skills/principle-encode-lessons-in-structure",
         "cursor-team-kit/skills/control-cli",
-        "cursor-team-kit/skills/deslop"
+        "cursor-team-kit/skills/deslop",
+        "pstack/skills/tdd",
+        "pstack/skills/principle-sequence-verifiable-units"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },

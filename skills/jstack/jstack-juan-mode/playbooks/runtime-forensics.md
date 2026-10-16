@@ -8,4 +8,4 @@
 4. Map the finding back to source: file, symbol, the line that allocates or schedules. Missing symbols remain an explicit attribution gap.
 5. Throughput checkpoint stays one line: `throughput checkpoint: n/a, read-only forensics`. Here read-only means diagnosis without a source fix; temporary runtime changes still require the scope and cleanup in step 3. Stop and reap only processes this run owns, preserving requested evidence and unrelated sessions.
 
-**Reply:** the signal captured, the reduced finding, how you proved the mechanism, the source location, artifact paths. No fix unless asked. Hand back to Bug fix or Perf once the cause is known. Preserve existing implementation authority, but disclose that Bug fix and Perf issue remain unavailable procedures; diagnosis alone does not authorize a fix.
+**Reply:** the signal captured, the reduced finding, how you proved the mechanism, the source location, artifact paths. No fix unless asked. Hand back to Bug fix or Perf once the cause is known. Preserve existing implementation authority, but disclose that Perf issue remains unavailable; diagnosis alone does not authorize a fix.

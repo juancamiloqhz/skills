@@ -1,0 +1,330 @@
+{
+  "kind": "Independent parent replay of actual committed states",
+  "initialHead": "03cf51b589b19c6914172c2a6a9a9a636618c1f4",
+  "commits": [
+    "e544a2625eec02070fe3e7f660904a0974849d3b",
+    "995506d5cb9903e2ca4cf8805ed4b860efb59933"
+  ],
+  "redCommitChanges": [
+    "test/cli.test.cjs"
+  ],
+  "greenCommitChanges": [
+    "store.cjs"
+  ],
+  "unchangedRegressionAcrossCommits": true,
+  "originalProductionAtRedCommit": true,
+  "protectedHashes": {
+    "caller-note.txt": "af4dbdd687c6d9987d3f752f9ce1d21349fe3696e27ce007a8b0b74f76491c7f",
+    "cli.cjs": "c5a67150ff153ac9ed43b63a4ad3f930191d2e36701c9bea21ac0ab9f229481d",
+    "README.md": "25d80be3498ba67080739a90510fd55f41a4d40b70e2fefddd11f371b6e62b54",
+    ".gitignore": "c5049c183f87267ff36ee98b52517e1f78670639f3a060baa89d4093a555f59b"
+  },
+  "runs": [
+    {
+      "phase": "red",
+      "commit": "e544a2625eec02070fe3e7f660904a0974849d3b",
+      "suite": {
+        "command": [
+          "node",
+          "--test"
+        ],
+        "exitCode": 1,
+        "stdout": "\u2714 new records persist independently (264.783056ms)\n\u2716 updating a record persists its replacement and preserves other records (255.724735ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 651.613315\n\n\u2716 failing tests:\n\ntest at test/cli.test.cjs:21:1\n\u2716 updating a record persists its replacement and preserves other records (255.724735ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n    {\n  +   priority: 2\n  -   priority: 5\n    }\n  \n      at TestContext.<anonymous> (/tmp/jstack-bug-fix-20261016/parent-replay/red/test/cli.test.cjs:28:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: { priority: 2 },\n    expected: { priority: 5 },\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n",
+        "stderr": ""
+      },
+      "publicRepro": [
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/red/observed.json",
+            "put",
+            "alpha",
+            "2"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"saved\":true}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/red/observed.json",
+            "put",
+            "beta",
+            "4"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"saved\":true}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/red/observed.json",
+            "put",
+            "alpha",
+            "5"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"saved\":true}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/red/observed.json",
+            "get",
+            "alpha"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"priority\":2}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/red/observed.json",
+            "get",
+            "beta"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"priority\":4}\n",
+          "stderr": ""
+        }
+      ],
+      "persistedState": {
+        "alpha": {
+          "priority": 2
+        },
+        "beta": {
+          "priority": 4
+        }
+      }
+    },
+    {
+      "phase": "green",
+      "commit": "995506d5cb9903e2ca4cf8805ed4b860efb59933",
+      "suite": {
+        "command": [
+          "node",
+          "--test"
+        ],
+        "exitCode": 0,
+        "stdout": "\u2714 new records persist independently (239.768681ms)\n\u2714 updating a record persists its replacement and preserves other records (276.180432ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 641.898582\n",
+        "stderr": ""
+      },
+      "publicRepro": [
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/green/observed.json",
+            "put",
+            "alpha",
+            "2"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"saved\":true}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/green/observed.json",
+            "put",
+            "beta",
+            "4"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"saved\":true}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/green/observed.json",
+            "put",
+            "alpha",
+            "5"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"saved\":true}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/green/observed.json",
+            "get",
+            "alpha"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"priority\":5}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "cli.cjs",
+            "/tmp/jstack-bug-fix-20261016/parent-replay/green/observed.json",
+            "get",
+            "beta"
+          ],
+          "exitCode": 0,
+          "stdout": "{\"priority\":4}\n",
+          "stderr": ""
+        }
+      ],
+      "persistedState": {
+        "alpha": {
+          "priority": 5
+        },
+        "beta": {
+          "priority": 4
+        }
+      }
+    }
+  ],
+  "globalConfigSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "limits": [
+    "Saved commits are independently executable; original chronology and helper execution require evaluator records.",
+    "No cross-provider, native UI, contested design, full Opening a PR or merge workflow is demonstrated."
+  ],
+  "workflowEvidence": {
+    "verbatimPlanBeforeFirstReproduction": true,
+    "planCreated": "2026-10-16T22:35:06.037Z",
+    "firstRecordedCommand": "2026-10-16T22:35:48.886Z",
+    "redRunProductionMatchesOriginal": true,
+    "redRunFinished": "2026-10-16T22:41:02.078611+00:00",
+    "greenRunStarted": "2026-10-16T22:41:18.615820+00:00",
+    "sourceSnapshotsMatchFinal": {
+      "SKILL.md": "25986ba5fd46cf70ac49be4bde91ccff2e8ad448e9d52a77f30170fbf33cc558",
+      "playbooks/bug-fix.md": "1d39c3c7e8e1fb5d59e0c766bd1a2afa3e2262c94adb5c30394a252dcea36889"
+    },
+    "preflights": {
+      "how-preflight": {
+        "role": "how explainer",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ],
+        "resolver": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py",
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "explicit"
+      },
+      "why-preflight": {
+        "role": "why investigators",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ],
+        "resolver": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py",
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "explicit"
+      },
+      "synthesis-preflight": {
+        "role": "why synthesizer",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ],
+        "resolver": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py",
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "explicit"
+      },
+      "implementation-preflight": {
+        "role": "bug-fix",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ],
+        "resolver": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py",
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "explicit"
+      },
+      "comments-preflight": {
+        "role": "judgment and prose",
+        "selectionKind": "scalar",
+        "targets": [
+          null
+        ],
+        "effectiveIdentities": [
+          {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-astra",
+            "inherited": true
+          }
+        ],
+        "availability": [
+          {
+            "canDispatch": true,
+            "reason": null
+          }
+        ],
+        "resolver": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py",
+        "config": "/home/ubuntu/.config/jstack/models.json",
+        "configSource": "explicit"
+      }
+    }
+  }
+}

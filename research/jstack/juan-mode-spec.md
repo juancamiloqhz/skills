@@ -39,7 +39,7 @@ Current package layout with planned playbooks shown explicitly. Add upstream sup
 ```text
 skills/jstack/jstack-juan-mode/
   SKILL.md
-  playbooks/                 # Five procedures implemented; 18 pending
+  playbooks/                 # Six procedures implemented; 17 pending
   references/bugbot-triage.md # restored upstream reference
   references/activation.md   # local conversation-state contract
   references/configuration.md
@@ -99,7 +99,7 @@ The following dispositions cover the common entrypoint dependencies as well as t
 | `jstack-reflect` | Standalone bounded session review with three lenses, existing-guidance checks and separate synthesis. Proposals and application remain distinct. |
 | `jstack-figure-it-out`, `jstack-show-me-your-work` | Standalone custom-workflow and decision-trail skills, with planning-only return and checked execution. Use bounded T3 Code evidence and configured judgment review with same-model disclosure. |
 | `jstack-benchmark-checklist` | Standalone helper with all seven checks, production tuning, separate profiling and the source ballpark exception. [Bounded evaluation](evaluations/benchmark-checklist/README.md) covers a synthetic export and misleading evidence; installed-provider discovery remains unverified. |
-| `jstack-tdd` | Standalone port preserves the six-step failing-first procedure and impractical-test alternative. The installed unprefixed skill has a different workflow. [Bounded evaluation](evaluations/tdd/README.md) covers a cheap CLI regression and an unavailable native integration; Bug fix remains pending. |
+| `jstack-tdd` | Standalone port preserves the six-step failing-first procedure and impractical-test alternative. The installed unprefixed skill has a different workflow. [Bounded evaluation](evaluations/tdd/README.md) covers a cheap CLI regression and an unavailable native integration; Bug fix now consumes the helper; its [evaluation](evaluations/bug-fix/README.md) records the supported path. |
 | `jstack-technical-writing` | Standalone writing standard preserving four layers, document modes and the worked example. Uses the separately assessed external Unslop dependency; missing or blocked invocation remains incomplete. |
 | `unslop`, `deslop` | Preserve independently discoverable skill boundaries. Unslop remains external with its version-specific assessment. Standalone `jstack-deslop` now preserves the pinned cleanup procedure and supplies the pre-commit dependency, with [bounded cleanup evidence](evaluations/deslop/README.md). |
 | `jstack-typescript-best-practices` | Standalone TypeScript syntax and patterns helper called by Type System Discipline; numeric constraints still require boundary validation. See [evaluation](evaluations/typescript-best-practices/README.md). |
@@ -138,7 +138,7 @@ All-playbook release evidence includes at least one representative executed case
 
 ## Current playbook coverage
 
-[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) and [Prototype](../../skills/jstack/jstack-juan-mode/playbooks/prototype.md) are implemented, with bounded [Investigation](evaluations/investigation-playbook/README.md) and [Prototype](evaluations/prototype-playbook/README.md) evaluations. [Trace forensics](../../skills/jstack/jstack-juan-mode/playbooks/trace-forensics.md) adds [fixed-artifact analysis](evaluations/trace-forensics/README.md). [Authoring or modifying a skill](../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) adds [local skill-authoring validation](evaluations/authoring-a-skill/README.md). [Runtime forensics](../../skills/jstack/jstack-juan-mode/playbooks/runtime-forensics.md) adds [live-process diagnosis](evaluations/runtime-forensics/README.md). The other 18 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
+[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) and [Prototype](../../skills/jstack/jstack-juan-mode/playbooks/prototype.md) are implemented, with bounded [Investigation](evaluations/investigation-playbook/README.md) and [Prototype](evaluations/prototype-playbook/README.md) evaluations. [Trace forensics](../../skills/jstack/jstack-juan-mode/playbooks/trace-forensics.md) adds [fixed-artifact analysis](evaluations/trace-forensics/README.md). [Authoring or modifying a skill](../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) adds [local skill-authoring validation](evaluations/authoring-a-skill/README.md). [Runtime forensics](../../skills/jstack/jstack-juan-mode/playbooks/runtime-forensics.md) adds [live-process diagnosis](evaluations/runtime-forensics/README.md). [Bug fix](../../skills/jstack/jstack-juan-mode/playbooks/bug-fix.md) adds [delegated repair and verification](evaluations/bug-fix/README.md). The other 17 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
 
 ## Implementation groups
 

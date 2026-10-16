@@ -75,3 +75,7 @@ The entrypoint and configuration consumer note now include Authoring or modifyin
 ## Runtime-forensics availability, 2026-10-16
 
 The entrypoint and configuration consumer note now include Runtime forensics and report 18 pending procedures. [Source comparison and evaluation](../evaluations/runtime-forensics/README.md) cover these availability-only changes. Setup behavior, roles, existing configuration, source pin and installation remain unchanged.
+
+## Bug fix availability, 2026-10-16
+
+The entrypoint and configuration reference now include Bug fix as the sixth available Juan-mode procedure, leaving 17 pending. [Bug fix comparison and evaluation](../evaluations/bug-fix/README.md) cover these availability-only edits against setup's own pin. Configuration lookup, roles and scripts remain unchanged.
