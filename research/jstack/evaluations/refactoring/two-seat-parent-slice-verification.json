@@ -1,0 +1,53 @@
+{
+  "method": "Replay evaluator-captured source slices with the final unchanged test pin. These are snapshot replays, not Git history when delivery is uncommitted.",
+  "records": [
+    {
+      "source": "/tmp/jstack-refactoring-20261016/two-seat-evidence/implementation/before.cjs",
+      "sourceSHA256": "a2c49da4e3c3db6fb7b20aa5e97ad9889e1dba2db4086b8febdd44739c535c6f",
+      "test": {
+        "argv": [
+          "node",
+          "--test"
+        ],
+        "exit": 0,
+        "stdout": "\u2714 formats every exact status and preserves title bytes (2.728073ms)\n\u2714 unknown statuses use the fallback without coercing status (0.502673ms)\n\u2714 title conversion retains addition semantics and propagates errors (0.977055ms)\n\u2714 keeps the public export and row consumer contract (0.626612ms)\n\u2714 CLI preserves exact stdout and accepts empty strings (586.103722ms)\n\u2714 CLI preserves usage errors and exit code (175.893108ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 917.050566\n",
+        "stderr": ""
+      },
+      "publicCases": 87,
+      "failures": [],
+      "resultsSHA256": "fd799c523ff0decee45179834b71a2f737a88a0fa1efa24c2014e739979224e7"
+    },
+    {
+      "source": "/tmp/jstack-refactoring-20261016/two-seat-evidence/implementation/subtracted.cjs",
+      "sourceSHA256": "f0488da4b2fbe65471b0a7e6177a3f9498512e434e2876ffb882d85e8a4f97a8",
+      "test": {
+        "argv": [
+          "node",
+          "--test"
+        ],
+        "exit": 0,
+        "stdout": "\u2714 formats every exact status and preserves title bytes (2.435886ms)\n\u2714 unknown statuses use the fallback without coercing status (0.420966ms)\n\u2714 title conversion retains addition semantics and propagates errors (0.881217ms)\n\u2714 keeps the public export and row consumer contract (0.52125ms)\n\u2714 CLI preserves exact stdout and accepts empty strings (577.710926ms)\n\u2714 CLI preserves usage errors and exit code (168.390441ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 872.921298\n",
+        "stderr": ""
+      },
+      "publicCases": 87,
+      "failures": [],
+      "resultsSHA256": "fd799c523ff0decee45179834b71a2f737a88a0fa1efa24c2014e739979224e7"
+    },
+    {
+      "source": "/tmp/jstack-refactoring-20261016/two-seat-evidence/implementation/final.cjs",
+      "sourceSHA256": "6c4db41b9a2bdbaa2e89013f12118d3b491c07eb5e648ae9790025ca99022fc7",
+      "test": {
+        "argv": [
+          "node",
+          "--test"
+        ],
+        "exit": 0,
+        "stdout": "\u2714 formats every exact status and preserves title bytes (2.706265ms)\n\u2714 unknown statuses use the fallback without coercing status (0.385291ms)\n\u2714 title conversion retains addition semantics and propagates errors (0.848144ms)\n\u2714 keeps the public export and row consumer contract (0.579562ms)\n\u2714 CLI preserves exact stdout and accepts empty strings (605.906537ms)\n\u2714 CLI preserves usage errors and exit code (175.523369ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 910.983493\n",
+        "stderr": ""
+      },
+      "publicCases": 87,
+      "failures": [],
+      "resultsSHA256": "fd799c523ff0decee45179834b71a2f737a88a0fa1efa24c2014e739979224e7"
+    }
+  ]
+}

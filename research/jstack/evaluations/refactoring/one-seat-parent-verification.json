@@ -1,0 +1,1465 @@
+{
+  "baseline": "1a9ce12060d42f6f918453dcba54d17a9a31d5b3",
+  "current": "1a9ce12060d42f6f918453dcba54d17a9a31d5b3",
+  "publicCases": 87,
+  "failures": [],
+  "cases": [
+    {
+      "args": [
+        "queued",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "queued",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "queued",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "queued",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "queued",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "queued",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "queued",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "queued",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[WAIT] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "active",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "active",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[RUN] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "paused",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "paused",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[HOLD] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "done",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[OK] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "failed",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "failed",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[FAIL] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cancelled",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "cancelled",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[STOP] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "unknown",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "unknown",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "DONE",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "DONE",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "__proto__",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "__proto__",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "constructor",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "constructor",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        "write report"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        "write report"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] write report\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        ""
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        ""
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        "  spaced  "
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        "  spaced  "
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?]   spaced  \n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        "caf\u00e9 \ud83d\udc08"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] caf\u00e9 \ud83d\udc08\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        "line\nbreak"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        "line\nbreak"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] line\nbreak\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        "--flag"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        "--flag"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] --flag\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "toString",
+        "[OK] title"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "toString",
+        "[OK] title"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 0,
+      "stdout": "[?] [OK] title\n",
+      "stderr": ""
+    },
+    {
+      "args": [],
+      "argv": [
+        "node",
+        "cli.cjs"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: node cli.cjs STATUS TITLE\n"
+    },
+    {
+      "args": [
+        "done"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: node cli.cjs STATUS TITLE\n"
+    },
+    {
+      "args": [
+        "done",
+        "title",
+        "extra"
+      ],
+      "argv": [
+        "node",
+        "cli.cjs",
+        "done",
+        "title",
+        "extra"
+      ],
+      "cwd": "/tmp/jstack-refactoring-20261016/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: node cli.cjs STATUS TITLE\n"
+    }
+  ],
+  "negativeControlDetected": [
+    [
+      "queued",
+      "write report"
+    ],
+    [
+      "queued",
+      ""
+    ],
+    [
+      "queued",
+      "  spaced  "
+    ],
+    [
+      "queued",
+      "caf\u00e9 \ud83d\udc08"
+    ],
+    [
+      "queued",
+      "line\nbreak"
+    ],
+    [
+      "queued",
+      "--flag"
+    ],
+    [
+      "queued",
+      "[OK] title"
+    ]
+  ],
+  "apiEquivalence": {
+    "argv": [
+      "node",
+      "-e",
+      "const assert=require('node:assert/strict');\nconst a=require(process.argv[1]);const b=require(process.argv[2]);assert.deepEqual(Object.keys(a),Object.keys(b));\nconst statuses=['queued','active','paused','done','failed','cancelled','__proto__','constructor',null,undefined,1,true,new String('queued'),['queued'],{toString(){return 'queued'}},Symbol('queued'),{}];\nconst titles=['','a',null,undefined,1,{toString(){return 'title'}},Symbol('title')];\nconst result=(f,s,t)=>{try{return {value:f(s,t)}}catch(e){return {error:e.name,message:e.message}}};\nlet n=0;for(const s of statuses)for(const t of titles){assert.deepEqual(result(a.formatStatus,s,t),result(b.formatStatus,s,t));n++}\nconsole.log(n+' imported API equivalence cases passed');",
+      "/tmp/jstack-refactoring-20261016/parent/baseline/format.cjs",
+      "/tmp/jstack-refactoring-20261016/app/format.cjs"
+    ],
+    "cwd": "/tmp/jstack-refactoring-20261016/app",
+    "exit": 0,
+    "stdout": "119 imported API equivalence cases passed\n",
+    "stderr": ""
+  },
+  "tests": {
+    "argv": [
+      "node",
+      "--test"
+    ],
+    "cwd": "/tmp/jstack-refactoring-20261016/app",
+    "exit": 0,
+    "stdout": "\u2714 formats each exact status without appending a newline (1.851454ms)\n\u2714 unknown, differently cased, and prototype-property statuses use fallback (0.27388ms)\n\u2714 status comparison never coerces non-string values (0.367999ms)\n\u2714 keeps title whitespace, Unicode, and primitive coercion (0.277565ms)\n\u2714 title conversion uses the default hint exactly once (1.304782ms)\n\u2714 title conversion errors propagate on known and fallback paths (4.96177ms)\n\u2714 consumer preserves row order, holes, and errors (0.483424ms)\n\u2714 CLI preserves output bytes and accepts empty arguments (572.124276ms)\n\u2714 CLI rejects missing and extra arguments with exact usage on stderr (237.639742ms)\n\u2139 tests 9\n\u2139 suites 0\n\u2139 pass 9\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 950.315687\n",
+    "stderr": ""
+  },
+  "unchangedFiles": {
+    "cli.cjs": true,
+    "consumer.cjs": true,
+    "package.json": true,
+    "README.md": true
+  },
+  "status": {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/tmp/jstack-refactoring-20261016/app",
+    "exit": 0,
+    "stdout": " M format.cjs\n?? format.test.cjs\n",
+    "stderr": ""
+  }
+}

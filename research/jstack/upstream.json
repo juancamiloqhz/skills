@@ -46,7 +46,15 @@
         "pstack/skills/arena",
         "pstack/skills/interrogate",
         "pstack/skills/principle-model-the-domain",
-        "pstack/skills/principle-separate-before-serializing-shared-state"
+        "pstack/skills/principle-separate-before-serializing-shared-state",
+        "pstack/skills/figure-it-out",
+        "pstack/skills/principle-foundational-thinking",
+        "pstack/skills/principle-redesign-from-first-principles",
+        "pstack/skills/principle-subtract-before-you-add",
+        "pstack/skills/principle-laziness-protocol",
+        "pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
+        "pstack/skills/principle-prove-it-works",
+        "pstack/skills/principle-minimize-reader-load"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },

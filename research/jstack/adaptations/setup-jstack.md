@@ -82,4 +82,8 @@ The entrypoint and configuration reference now include Bug fix as the sixth avai
 
 ## Feature availability
 
-The Feature procedure and its shared four-part throughput checkpoint are now available. Current coverage is seven playbooks with 16 pending. Configured Architect and Arena panels retain their required counts; existing settings are not expanded. The [Feature adaptation](feature.md) and [evaluation](../evaluations/feature/README.md) record source comparison, isolated two-seat execution, the one-seat limitation and remaining publication dependency.
+The Feature procedure and its shared four-part throughput checkpoint are now available. Feature brought coverage to seven playbooks with 16 pending. Configured Architect and Arena panels retain their required counts; existing settings are not expanded. The [Feature adaptation](feature.md) and [evaluation](../evaluations/feature/README.md) record source comparison, isolated two-seat execution, the one-seat limitation and remaining publication dependency.
+
+## Refactoring availability
+
+Setup and its configuration reference now list Refactoring as an available consumer, with eight procedures and 15 pending. This changes no setup step, role, default, resolver behavior or user configuration. See the [Refactoring adaptation](refactoring.md).
