@@ -1,0 +1,45 @@
+{
+  "root": "/tmp/jstack-notes-consumer-20261016",
+  "files": {
+    "catalog.json": {
+      "sha256": "08833a7f3a772ede80397baed4dd135dae47c2f57f10a67605db0738afc983a6",
+      "text": "{\n  \"release-facts\": \"/tmp/jstack-notes-consumer-20261016/separate-helper/facts/SKILL.md\"\n}\n"
+    },
+    "output/comparison.md": {
+      "sha256": "2bb8aef586d68f78d4bca2f51ebc2597383df01adacd234f0ba14560b1df48f6",
+      "text": "Changes from June to July:\n\n- The seat limit decreased from 10 seats to 6 seats. Sources: [June snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/june.json), [July snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/july.json).\n- PDF export moved from planned in June to available in July. Sources: [June snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/june.json), [July snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/july.json).\n- JSON export was removed from the available export formats in July. Sources: [June snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/june.json), [July snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/july.json).\n- Excel export was added to the planned features in July. It is not listed as available. Sources: [June snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/june.json), [July snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/july.json).\n"
+    },
+    "output/record.md": {
+      "sha256": "7c0930785663374c5f52eef667cc722108a5d338df7a50dafadfc8832251a305",
+      "text": "Actual files read:\n- /tmp/jstack-notes-consumer-20261016/packages/notes/SKILL.md\n- /tmp/jstack-notes-consumer-20261016/catalog.json\n- /home/ubuntu/.agents/skills/unslop/SKILL.md\n- /tmp/jstack-notes-consumer-20261016/packages/notes/references/summary.md\n- /tmp/jstack-notes-consumer-20261016/packages/notes/references/comparison.md\n- /tmp/jstack-notes-consumer-20261016/separate-helper/facts/SKILL.md\n- /tmp/jstack-notes-consumer-20261016/snapshots/july.json\n- /tmp/jstack-notes-consumer-20261016/snapshots/june.json\n\nOutput paths:\n- /tmp/jstack-notes-consumer-20261016/output/summary.md\n- /tmp/jstack-notes-consumer-20261016/output/comparison.md\n- /tmp/jstack-notes-consumer-20261016/output/record.md\n\nCommands executed:\n1. cat with the release-notes SKILL.md, catalog.json, and unslop SKILL.md paths above.\n2. cat with the summary guidance, comparison guidance, release-facts SKILL.md, July snapshot, and June snapshot paths above.\n3. python3 via a heredoc to reread both JSON snapshots, verify all release facts with assertions, check the writing, and write these three output files.\n\nFact check: The catalog resolved release-facts to its advertised path, which was read. Both snapshots contain every field needed for these claims. Assertions verified release identifiers, seat limits, available export formats, and planned features. No implementation date was inferred.\n\nWriting check: Reviewed both drafts for plain language, complete sentences, supported claims, preserved units, clear available versus planned status, and source citations. The comparison omits unchanged facts. Assertions confirmed no internal build identifiers or em dashes in either customer document.\n\nLimitations: The snapshots provide no implementation dates. No external verification was attempted. All input files were preserved.\n"
+    },
+    "output/summary.md": {
+      "sha256": "823c292206fee55c5eb46a10abc317a009000d7528730ab43c6a61776863a2c9",
+      "text": "July supports up to 6 seats and exports in CSV and PDF. Excel export is planned.\n\nSource: [July snapshot](/tmp/jstack-notes-consumer-20261016/snapshots/july.json).\n"
+    },
+    "packages/notes/SKILL.md": {
+      "sha256": "9dd277049e797604811ae040da0fc2628f8103aaf57dc0156536bc0baf495921",
+      "text": "---\nname: release-notes\ndescription: Summarize a supplied release snapshot or compare two release snapshots for customers.\nmetadata:\n  owner: docs\n---\n\n# Release notes\n\nRead [summary guidance](references/summary.md) when asked to summarize a release snapshot. Read [comparison guidance](references/comparison.md) when asked to compare two release snapshots.\n\nResolve the independently installed **release-facts** skill through the supplied host catalog and read its advertised path. Use it to check facts before replying. If the helper is unavailable, report that the fact check is incomplete.\n"
+    },
+    "packages/notes/references/comparison.md": {
+      "sha256": "c05fcd1d35bd1544ce57121752aef90821ddc0e073804733ef9bad043b568ccb",
+      "text": "# Compare release snapshots\n\nIdentify the baseline and target snapshots from the request or release identifiers. Ask if the direction remains ambiguous.\n\nCompare customer-visible facts and report additions, removals, and changed limits. State each changed limit's old and new values with their units. Treat an item removed from a complete list as a removal. Treat a missing field as unknown.\n\nPreserve both release identifiers and cite both snapshot paths beside each change. Keep planned features distinct from available features. Omit internal build identifiers and unchanged facts. If the inputs show no customer-visible changes, say so and cite both inputs. Report unknown values separately.\n"
+    },
+    "packages/notes/references/summary.md": {
+      "sha256": "a2bbf15e393bdb04c54325c46cce2c01145bdd704aec4d6b56f9da0786fbcdb8",
+      "text": "# Summary guidance\n\nList the customer-visible changes in the supplied snapshot. Preserve its release identifier. Omit internal build identifiers. Cite the snapshot path.\n"
+    },
+    "separate-helper/facts/SKILL.md": {
+      "sha256": "9cd9139cdde6259fff3d6850002e8acebed1da151de8f074f37e414f5f0459a4",
+      "text": "---\nname: release-facts\ndescription: Check release-note claims against supplied JSON snapshots.\n---\n\n# Release facts\n\nUse only the supplied snapshots. Treat missing values as unknown. Preserve the units and the distinction between an available feature and a planned feature. Return the verified facts and source paths. Do not infer an implementation date.\n"
+    },
+    "snapshots/july.json": {
+      "sha256": "7868389f7aa17cb31965807e9725dce6ae4ffffeda64a1928c1f66765155d440",
+      "text": "{\n  \"release\": \"July\",\n  \"maxSeats\": 6,\n  \"exportFormats\": [\n    \"csv\",\n    \"pdf\"\n  ],\n  \"plannedFeatures\": [\n    \"excel export\"\n  ],\n  \"buildId\": \"build-68\"\n}\n"
+    },
+    "snapshots/june.json": {
+      "sha256": "63587b7642a8b62df4c26a30817016609fadbdea2e254d0e9eaaea0c41455c8e",
+      "text": "{\n  \"release\": \"June\",\n  \"maxSeats\": 10,\n  \"exportFormats\": [\n    \"csv\",\n    \"json\"\n  ],\n  \"plannedFeatures\": [\n    \"pdf export\"\n  ],\n  \"buildId\": \"build-67\"\n}\n"
+    }
+  }
+}

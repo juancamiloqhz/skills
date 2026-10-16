@@ -1,0 +1,37 @@
+{
+  "root": "/tmp/jstack-authoring-20261016",
+  "files": {
+    "catalog.json": {
+      "sha256": "954a2786c525ea4087b2179a01928d068032592cf3f01b1b4ee3ae4bc5cb3bfd",
+      "text": "{\n  \"release-facts\": \"/tmp/jstack-authoring-20261016/helper-store/release-facts/SKILL.md\",\n  \"skill-creator\": \"/home/ubuntu/.codex/skills/.system/skill-creator/SKILL.md\"\n}\n"
+    },
+    "input/request.txt": {
+      "sha256": "49e10ecf5283847834b608bb446987009d8de7a64bad8315b67f835ec219c9fc",
+      "text": "Update the release-notes skill so it also handles requests to compare two release snapshots. Keep its existing single-snapshot summary behavior. For comparisons, report customer-visible additions, removals and changed limits, with citations to both inputs. Read helpers through the supplied host catalog; release-facts is installed separately from this skill. Preserve existing metadata. Deliver the revised package and validation notes locally in output/release-notes. Do not publish or install it. The snapshots are examples to exercise the workflow, not rules to hard-code into it.\n"
+    },
+    "input/caller-note.txt": {
+      "sha256": "06a38aa0fee6926e36dcbb7b02344f96cc441f10ff19b624ad5fd20692bff3bb",
+      "text": "Do not replace this note or publish these drafts.\n"
+    },
+    "input/snapshots/may.json": {
+      "sha256": "f6d4fc7471a17219817ee605c71af15d40d48579a8ea510687a9575f692d227a",
+      "text": "{\"release\": \"May\", \"maxSeats\": 12, \"exportFormats\": [\"csv\", \"json\"], \"plannedFeatures\": [\"pdf export\"], \"buildId\": \"internal-b\"}\n"
+    },
+    "input/snapshots/april.json": {
+      "sha256": "87f4ec972e44ef42e011c4c662850f1a289e0a630fa78e4a10ed2422e289344d",
+      "text": "{\"release\": \"April\", \"maxSeats\": 8, \"exportFormats\": [\"csv\"], \"plannedFeatures\": [\"pdf export\"], \"buildId\": \"internal-a\"}\n"
+    },
+    "input/release-notes/SKILL.md": {
+      "sha256": "c5b12b6d80e126179c91c3c5bf8607fdc86ed26a52fdea310e7eec07c5207c6c",
+      "text": "---\nname: release-notes\ndescription: Summarize a supplied release snapshot for customers.\nmetadata:\n  owner: docs\n---\n\n# Release notes\n\nRead [summary guidance](references/summary.md) when asked to summarize a release snapshot. Use the independently installed **release-facts** skill from the host catalog to check facts before replying.\n"
+    },
+    "input/release-notes/references/summary.md": {
+      "sha256": "a2bbf15e393bdb04c54325c46cce2c01145bdd704aec4d6b56f9da0786fbcdb8",
+      "text": "# Summary guidance\n\nList the customer-visible changes in the supplied snapshot. Preserve its release identifier. Omit internal build identifiers. Cite the snapshot path.\n"
+    },
+    "helper-store/release-facts/SKILL.md": {
+      "sha256": "9cd9139cdde6259fff3d6850002e8acebed1da151de8f074f37e414f5f0459a4",
+      "text": "---\nname: release-facts\ndescription: Check release-note claims against supplied JSON snapshots.\n---\n\n# Release facts\n\nUse only the supplied snapshots. Treat missing values as unknown. Preserve the units and the distinction between an available feature and a planned feature. Return the verified facts and source paths. Do not infer an implementation date.\n"
+    }
+  }
+}

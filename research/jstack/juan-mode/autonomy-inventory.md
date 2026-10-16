@@ -120,7 +120,7 @@ Source: proposed acceptance cases derived from [eval][eval] and [arena][arena].
 
 ## authoring-a-skill
 
-Trigger on creating or editing a `SKILL.md`. Output the authored package, rationale for its instructions and validation evidence. Upstream depends on Cursor's built-in `create-skill`, relevant principle leaves and Opening a PR. Adapt authoring to available skill-creation and agent-writing guidance; `judgment and prose` is the existing role for a delegated draft, and structural helper code uses the corresponding implementation role.
+The [implemented procedure](../../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) triggers on creating or editing a `SKILL.md`. Output the authored package, rationale for its instructions and validation evidence. Upstream depends on Cursor's built-in `create-skill`, relevant principle leaves and Opening a PR. Adapt authoring to available skill-creation and agent-writing guidance; `judgment and prose` is the existing role for a delegated draft, and structural helper code uses the corresponding implementation role.
 
 Source: [authoring-a-skill][authoring], [mode roles][mode], [local role registry][roles].
 
@@ -128,7 +128,7 @@ Validate required frontmatter, referenced files, independently installed helper 
 
 Source: proposed adaptation of [authoring-a-skill][authoring], [setup discovery conventions][setup] and [local delivery decisions][decisions].
 
-Accept when a small sample router resolves its packaged references after independent installation layout is simulated, while a deliberately broken helper reference fails validation. A behavioral routing change must select the correct playbook on contrasting requests. A wording-only edit needs document validation rather than invented runtime tests. Prerequisites are an explicit authoring dependency, package/link validation and the evaluation route for material behavior changes.
+Accept when a small sample router resolves its packaged references after independent installation layout is simulated, while a deliberately broken helper reference fails validation. A behavioral routing change must select the correct playbook on contrasting requests. A wording-only edit needs document validation rather than invented runtime tests. Prerequisites are an explicit authoring dependency and package/link validation. Structural edits require behavior cases; the separate Eval procedure remains pending and is not required by this source playbook. See the [bounded authoring evaluation](../evaluations/authoring-a-skill/README.md).
 
 Source: proposed acceptance cases derived from [authoring-a-skill][authoring], [eval][eval] and [setup dependency handling][setup].
 

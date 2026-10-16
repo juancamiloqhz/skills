@@ -1,0 +1,50 @@
+{
+  "request": "Make this local skill wording plainer. Preserve its behavior, metadata and references. Do not publish or install it.",
+  "authoringDependency": {
+    "path": "/home/ubuntu/.codex/skills/.system/skill-creator/SKILL.md",
+    "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66"
+  },
+  "before": "---\nname: release-brief\ndescription: Summarize a supplied release snapshot for customers.\nmetadata:\n  owner: docs\n---\n\n# Release brief\n\nIn order to prepare a release summary, utilize the supplied snapshot and the [format](references/format.md). It is important to note that missing values must remain unknown.\n",
+  "after": "---\nname: release-brief\ndescription: Summarize a supplied release snapshot for customers.\nmetadata:\n  owner: docs\n---\n\n# Release brief\n\nTo prepare a release summary, use the supplied snapshot and the [format](references/format.md). Keep missing values unknown.\n",
+  "checks": [
+    {
+      "label": "before",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "/tmp/jstack-authoring-wording-20261016/before/release-brief"
+      ],
+      "exitCode": 0,
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    },
+    {
+      "label": "after",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "/tmp/jstack-authoring-wording-20261016/after/release-brief"
+      ],
+      "exitCode": 0,
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    }
+  ],
+  "referencesResolve": true,
+  "metadataAndReferenceUnchanged": true,
+  "stepStatus": [
+    "Read advertised Codex authoring guide; edited only owned scratch output.",
+    "Required frontmatter and package reference validation pass.",
+    "skip: subjective wording-only edit; no behavioral change or runtime test claimed.",
+    "skip: local-only delivery; Opening a PR remains unavailable."
+  ],
+  "writingProcess": {
+    "scan": "Found filler In order to / It is important to note and inflated utilize.",
+    "rewrite": "Replaced with To / Keep / use; preserved reference and unknown-value rule.",
+    "selfAudit": "Read full revised paragraph for missing meaning, command authority, fragments and inflated claims; no further change needed."
+  },
+  "limits": "Parent-executed document exercise, not independent behavioral evaluation or installed discovery.",
+  "executionScript": "from pathlib import Path\nimport json,hashlib,subprocess,re,yaml\nroot=Path('/tmp/jstack-authoring-wording-20261016');root.mkdir(exist_ok=False)\nbefore='''---\nname: release-brief\ndescription: Summarize a supplied release snapshot for customers.\nmetadata:\n  owner: docs\n---\n\n# Release brief\n\nIn order to prepare a release summary, utilize the supplied snapshot and the [format](references/format.md). It is important to note that missing values must remain unknown.\n'''\nafter=before.replace('In order to prepare a release summary, utilize','To prepare a release summary, use').replace('It is important to note that missing values must remain unknown.','Keep missing values unknown.')\nfor label,text in [('before',before),('after',after)]:\n p=root/label/'release-brief';(p/'references').mkdir(parents=True);(p/'SKILL.md').write_text(text);(p/'references/format.md').write_text('# Format\\n\\nUse the release identifier as the heading and list customer-visible changes.\\n')\nchecks=[]\nfor label in ['before','after']:\n p=root/label/'release-brief';r=subprocess.run(['python3','-B','/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py',str(p)],capture_output=True,text=True);assert r.returncode==0\n checks.append({'label':label,'command':r.args,'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr})\n for target in re.findall(r'\\]\\(([^)]+)\\)',(p/'SKILL.md').read_text()):assert (p/target).is_file()\nassert yaml.safe_load(before.split('---')[1])==yaml.safe_load(after.split('---')[1])\nassert (root/'before/release-brief/references/format.md').read_bytes()==(root/'after/release-brief/references/format.md').read_bytes()\nresult={'request':'Make this local skill wording plainer. Preserve its behavior, metadata and references. Do not publish or install it.','authoringDependency':{'path':'/home/ubuntu/.codex/skills/.system/skill-creator/SKILL.md','sha256':hashlib.sha256(Path('/home/ubuntu/.codex/skills/.system/skill-creator/SKILL.md').read_bytes()).hexdigest()},'before':before,'after':after,'checks':checks,'referencesResolve':True,'metadataAndReferenceUnchanged':True,'stepStatus':['Read advertised Codex authoring guide; edited only owned scratch output.','Required frontmatter and package reference validation pass.','skip: subjective wording-only edit; no behavioral change or runtime test claimed.','skip: local-only delivery; Opening a PR remains unavailable.'],'writingProcess':{'scan':'Found filler In order to / It is important to note and inflated utilize.','rewrite':'Replaced with To / Keep / use; preserved reference and unknown-value rule.','selfAudit':'Read full revised paragraph for missing meaning, command authority, fragments and inflated claims; no further change needed.'},'limits':'Parent-executed document exercise, not independent behavioral evaluation or installed discovery.'}\n(root/'record.json').write_text(json.dumps(result,indent=2)+'\\n');print('Wording-only edit: both document validators pass; metadata/reference unchanged; behavioral tests deliberately skipped.')\n"
+}
