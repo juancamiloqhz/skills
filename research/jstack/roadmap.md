@@ -44,6 +44,10 @@ The standalone [jstack-control-cli helper](../../skills/jstack/jstack-control-cl
 
 The standalone [jstack-deslop helper](../../skills/jstack/jstack-deslop/SKILL.md) supplies Juan-mode's pre-commit cleanup dependency. Its body matches the pinned source exactly. The [evaluation](evaluations/deslop/README.md) checks cleanup against actual public outputs while preserving boundary validation and unrelated staged work. It adds a helper, not another playbook; five procedures remain available and 18 pending.
 
+## Implemented dependency: TDD
+
+The standalone [jstack-tdd helper](../../skills/jstack/jstack-tdd/SKILL.md) supplies the focused failing-test-first procedure for the future Bug fix caller. Its [evaluation](evaluations/tdd/README.md) covers a cheap CLI regression and an unavailable native integration without inventing a test harness. The existing unprefixed TDD skill is a different workflow. Bug fix remains pending; five playbooks are available and 18 pending.
+
 ## Completed: jstack-setup
 
 Model configuration and validation shipped in [PR #2](https://github.com/juancamiloqhz/skills/pull/2), with prose formatting corrected in [PR #3](https://github.com/juancamiloqhz/skills/pull/3). Release checks included six helper tests, skill validation, and Markdown linting. Setup was installed for the four selected providers and invoked successfully in a T3 Code session.
