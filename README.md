@@ -24,6 +24,7 @@ This repository is the canonical source for skills I have developed and validate
 | [`jstack-reflect`](./skills/jstack/jstack-reflect) | Reviews bounded session evidence through three lenses and proposes verified guidance changes or structural fixes. | Experimental; see [evaluation](./research/jstack/evaluations/reflect/README.md) |
 | [`jstack-figure-it-out`](./skills/jstack/jstack-figure-it-out) | Designs a custom workflow with measured units, scoped execution and a reviewed decision trail. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
 | [`jstack-show-me-your-work`](./skills/jstack/jstack-show-me-your-work) | Keeps an append-only decision log and reviews this run's evidence before handoff. | Experimental; see [evaluation](./research/jstack/evaluations/trail-restoration/README.md) |
+| [`jstack-no-comments`](./skills/jstack/jstack-no-comments) | Runs Comment Sicko, checks comment deletions and code flags, and fixes accepted issues within the requested scope. | Experimental; see [evaluation](./research/jstack/evaluations/no-comments/README.md) |
 | [`jstack-technical-writing`](./skills/jstack/jstack-technical-writing) | Applies four writing layers to docs, RFCs, readmes, PR descriptions and commit messages, with an external Unslop dependency. | Experimental; see [evaluation](./research/jstack/evaluations/technical-writing/README.md) |
 | [`jstack-benchmark-checklist`](./skills/jstack/jstack-benchmark-checklist) | Checks performance measurements for real work, errors, fair tuning, repeatability and a measured limiter. | Experimental; see [evaluation](./research/jstack/evaluations/benchmark-checklist/README.md) |
 | [`jstack-create-verification-skill`](./skills/jstack/jstack-create-verification-skill) | Generates project-local verification instructions and exercises a real feature with evidence and cleanup. | Experimental; see [evaluation](./research/jstack/evaluations/verification-restoration/README.md) |
@@ -129,6 +130,8 @@ skills/
     jstack-figure-it-out/
       SKILL.md
     jstack-show-me-your-work/
+      SKILL.md
+    jstack-no-comments/
       SKILL.md
     jstack-technical-writing/
       SKILL.md

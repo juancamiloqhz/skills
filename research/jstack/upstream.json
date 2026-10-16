@@ -25,7 +25,9 @@
         "pstack/agents/poteto-agent.md",
         "pstack/skills/benchmark-checklist",
         "pstack/skills/technical-writing",
-        "pstack/skills/unslop"
+        "pstack/skills/unslop",
+        "pstack/skills/no-comments",
+        "pstack/agents/comment-sicko.md"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
@@ -426,6 +428,22 @@
         "pstack/skills/poteto-mode"
       ],
       "differences": "research/jstack/adaptations/technical-writing.md"
+    },
+    {
+      "name": "jstack-no-comments",
+      "localPath": "skills/jstack/jstack-no-comments",
+      "upstreamPath": "pstack/skills/no-comments",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/agents/comment-sicko.md",
+        "pstack/skills/poteto-mode",
+        "pstack/skills/how",
+        "pstack/skills/why",
+        "pstack/skills/architect",
+        "pstack/skills/principle-fix-root-causes",
+        "pstack/skills/principle-redesign-from-first-principles"
+      ],
+      "differences": "research/jstack/adaptations/no-comments.md"
     }
   ],
   "decisions": [

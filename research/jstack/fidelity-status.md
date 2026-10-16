@@ -2,13 +2,13 @@
 
 Current jstack skill identities use the `jstack-` prefix. See the [name mapping and manual migration guide](skill-names.md). Earlier assessments and evaluation artifacts retain their original names; current local links point to the renamed packages.
 
-Baseline reconciliation on 2026-10-15 followed merged PR #37, commit `d4cfe22`, and shipped in PR #38. The subsequent benchmark-checklist and technical-writing ports update the dependency status below. The seven correction groups in the [original audit](fidelity-audits/2026-10-13/README.md) now have merged source restorations. Required helper dependencies and runtime checks remain open. All 23 playbook procedures remain unimplemented.
+Baseline reconciliation on 2026-10-15 followed merged PR #37, commit `d4cfe22`, and shipped in PR #38. The subsequent benchmark-checklist, technical-writing and no-comments ports update the dependency status below. The seven correction groups in the [original audit](fidelity-audits/2026-10-13/README.md) now have merged source restorations. Required helper dependencies and runtime checks remain open. All 23 playbook procedures remain unimplemented.
 
 This record reconciles the existing audit with current files and recorded evaluations. It is not a new full semantic audit or a fresh workflow evaluation. The original reports and test artifacts retain their dates, failures and limits. This record and the [fidelity policy](upstream-fidelity.md) supersede the initial specification/inventories wherever those propose bundled standalone helpers, shortened algorithms or optional redesign without a user decision.
 
 ## Merged corrections
 
-The original 36 mapped components reached 37 with standalone Show me your work, 38 with benchmark-checklist, and now total 39 with technical-writing. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 36. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`.
+The original 36 mapped components reached 37 with standalone Show me your work, 38 with benchmark-checklist, 39 with technical-writing, and now total 40 with no-comments. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 37. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`.
 
 | Original correction group | Merged result | Evidence and remaining limit |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ The source paths below use pin `11713c683fe4add4fd403ea880580abbc9e0875f`. Bench
 | Benchmark checklist | `pstack/skills/benchmark-checklist/SKILL.md` | Now a [standalone package](../../skills/jstack/jstack-benchmark-checklist/SKILL.md) with [bounded evaluation](evaluations/benchmark-checklist/README.md). Explain the Number and the mode can discover it; installed-provider use and the later Perf issue/Hillclimb procedures remain unverified. |
 | TypeScript best practices | `pstack/skills/typescript-best-practices/SKILL.md` and `references/patterns.md` | No jstack package. Conditional dependency of Type System Discipline. Preserve both files; correct the known claim that plain numeric duration excludes negative ranges. |
 | Technical writing | `pstack/skills/technical-writing/SKILL.md` | Now a [standalone package](../../skills/jstack/jstack-technical-writing/SKILL.md) preserving all four layers, modes and the worked example. [Bounded evaluation](evaluations/technical-writing/README.md) covers document revisions and PR writing. External Unslop invocation remains host-dependent. |
-| No comments | `pstack/skills/no-comments/SKILL.md` and `pstack/agents/comment-sicko.md` | Neither is packaged. Required before mode-led review. Assess the complete reviewer and skill together, including exceptions, rejection/rerun limits, How/Why calls, scoped fixes and constraint encodings. Record precise authority/repository conflicts; do not replace the whole procedure by preference. |
+| No comments | `pstack/skills/no-comments/SKILL.md` and `pstack/agents/comment-sicko.md` | Now [packaged together](../../skills/jstack/jstack-no-comments/SKILL.md), preserving parent/reviewer boundaries and the full source procedure. [Bounded evaluation](evaluations/no-comments/README.md) covers comment cleanup and parent decision limits; conditional Architect and cross-provider execution remain unverified for this caller. |
 | Unslop and TDD | `pstack/skills/unslop/SKILL.md`; `pstack/skills/tdd/SKILL.md` | The installed pstack Unslop has a [version-specific content-equivalence assessment](adaptations/technical-writing.md#unslop-dependency-assessment) and remains external. Its invocation flag can block catalog calls on some hosts. TDD still needs an equivalence or port decision with Bug fix. |
 | Deslop | `cursor-team-kit/skills/deslop/SKILL.md` | External pre-commit dependency. No jstack package or verified external-equivalence record. Keep its own boundary; a formatter is not a substitute. |
 | Control CLI and UI | `cursor-team-kit/skills/control-cli/SKILL.md`; `cursor-team-kit/skills/control-ui/SKILL.md` | External execution dependencies. Existing preview tools and project verifiers supply bounded capabilities, not equivalence to both skills. Assess CLI/TUI and browser/Electron requirements with the consuming route. |
@@ -57,7 +57,7 @@ These checks constrain support and release claims. They do not prohibit independ
 
 The standalone benchmark-checklist port preserves the full source procedure and adds only the recorded catalog-invocation, task-authority and pending-playbook qualifications. Its [evaluation](evaluations/benchmark-checklist/README.md) records actual export measurements separately from synthetic counterexamples. It does not implement Opening a PR, Perf issue or Hillclimb.
 
-Technical writing now has its standalone port and [bounded writing evaluation](evaluations/technical-writing/README.md), with external Unslop assessed separately from host invocation. Next is No-comments together with its full Comment Sicko reviewer. Preserve the source review/fix order and resolve concrete authority or repository conflicts without replacing its procedure by preference.
+Technical writing now has its standalone port and [bounded writing evaluation](evaluations/technical-writing/README.md), with external Unslop assessed separately from host invocation. No-comments now includes its full Comment Sicko reviewer and [bounded cleanup/decision evaluation](evaluations/no-comments/README.md). Remaining work includes TypeScript best practices, workflow-specific external dependencies and installed-provider checks before claiming full playbook coverage.
 
 Then address the remaining standalone dependencies and invocation question in focused work, before enabling their consuming routes. This preserves the accepted all-23 target and grouped implementation. It does not require porting unrelated pstack skills.
 
@@ -65,7 +65,7 @@ The 23 source playbooks still have no local procedure files. The mode comparison
 
 ## Reconciliation checks
 
-The following checks describe the PR #38 baseline. The benchmark and technical-writing evaluations record the later package/caller changes and validation separately.
+The following checks describe the PR #38 baseline. The benchmark, technical-writing and no-comments evaluations record the later package/caller changes and validation separately.
 
 Re-ran all nine existing restoration `compare.py` scripts against the shared pinned upstream cache. Seven outputs match their recorded comparisons exactly, using How/Why's final alignment record. The design/review output differs only in Architect's later caller sentence, covered by the matching Arena comparison. Setup differs only in the three support files changed by Swarm, covered by the matching Swarm comparison. Historical snapshots remain unchanged.
 
