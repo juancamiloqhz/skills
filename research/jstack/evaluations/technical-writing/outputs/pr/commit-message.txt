@@ -1,0 +1,1 @@
+Trim note titles and reject blank titles in add

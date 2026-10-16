@@ -18,9 +18,9 @@ The scope is adapting the complete working approach and playbook set to T3 Code.
 
 Each inventory entry records its trigger, deliverable, dependencies, T3 Code changes and an acceptance scenario. These are source assessments and proposed checks, not test results.
 
-- [Engineering inventory](jstack-juan-mode/engineering-inventory.md) covers 9 playbooks: Investigation, Feature, Bug fix, Refactoring, Perf issue, Hillclimb, Runtime forensics, Trace forensics and Visual parity.
-- [Delivery inventory](jstack-juan-mode/delivery-inventory.md) covers 7 playbooks: Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely and Worktree cleanup.
-- [Autonomy and tooling inventory](jstack-juan-mode/autonomy-inventory.md) covers 7 playbooks: Autonomous run, Orchestrate, Autopilot-full, Autopilot-stack, Prototype, Eval and Authoring a skill.
+- [Engineering inventory](juan-mode/engineering-inventory.md) covers 9 playbooks: Investigation, Feature, Bug fix, Refactoring, Perf issue, Hillclimb, Runtime forensics, Trace forensics and Visual parity.
+- [Delivery inventory](juan-mode/delivery-inventory.md) covers 7 playbooks: Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely and Worktree cleanup.
+- [Autonomy and tooling inventory](juan-mode/autonomy-inventory.md) covers 7 playbooks: Autonomous run, Orchestrate, Autopilot-full, Autopilot-stack, Prototype, Eval and Authoring a skill.
 
 The authoritative upstream set is the [pinned playbook directory](https://github.com/cursor/plugins/tree/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks). Before implementation and release, compare its filenames with the supported-route registry. Every source playbook needs an implementation, an acceptance result and documented differences. Extra routes must have their own justification.
 
@@ -100,7 +100,7 @@ The following dispositions cover the common entrypoint dependencies as well as t
 | `jstack-figure-it-out`, `jstack-show-me-your-work` | Standalone custom-workflow and decision-trail skills, with planning-only return and checked execution. Use bounded T3 Code evidence and configured judgment review with same-model disclosure. |
 | `jstack-benchmark-checklist` | Standalone helper with all seven checks, production tuning, separate profiling and the source ballpark exception. [Bounded evaluation](evaluations/benchmark-checklist/README.md) covers a synthetic export and misleading evidence; installed-provider discovery remains unverified. |
 | `tdd` | Preserve the standalone source boundary and Bug fix's cheap-test versus expensive-integration distinction. Assess an explicit external dependency or faithful port with that first caller; same-name installation is insufficient. |
-| `technical-writing` | Pending standalone port preserving the four layers, document modes, worked example and Unslop dependency. |
+| `jstack-technical-writing` | Standalone writing standard preserving four layers, document modes and the worked example. Uses the separately assessed external Unslop dependency; missing or blocked invocation remains incomplete. |
 | `unslop`, external `deslop` | Preserve independently discoverable skill boundaries. Compare an intended external package to its pinned source or port it faithfully before claiming the dependency is satisfied. Do not replace either with a condensed bundled reference. |
 | `no-comments` and `comment-sicko` | Assess the full skill and agent together. Preserve upstream review, rejection/rerun and fix order by default. Record narrow conflicts with repository constraints or authority; an optional replacement review policy requires a user decision. No blanket persona or algorithm replacement is approved. |
 | All 24 `jstack-principle-*` leaves | Implemented as 24 independently discoverable skills, each with research-owned attribution and a package license; jstack-juan-mode retains the upstream-organized inline Principles section. Scope adaptations preserve compatibility, authority and evidence limits; mapping alone is not runtime verification. |

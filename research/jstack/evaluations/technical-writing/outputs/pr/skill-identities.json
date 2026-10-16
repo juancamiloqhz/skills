@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/home/ubuntu/Dev/skills/skills/jstack/jstack-technical-writing/SKILL.md",
+    "resolvedPath": "/home/ubuntu/Dev/skills/skills/jstack/jstack-technical-writing/SKILL.md",
+    "sha256": "a8307333c88873aa3e8971485201fd0bc1358eeed74a36a6ea02790ba6c5efd2"
+  },
+  {
+    "path": "/home/ubuntu/.agents/skills/unslop/SKILL.md",
+    "resolvedPath": "/home/ubuntu/.agents/skills/unslop/SKILL.md",
+    "sha256": "c6d2572294d933a428211921069e9a248490e9b466ca59437cb4d9de248600ca"
+  },
+  {
+    "path": "/home/ubuntu/.agents/skills/pr/SKILL.md",
+    "resolvedPath": "/home/ubuntu/.agents/skills/pr/SKILL.md",
+    "sha256": "ab63f1cf78647389edcd386c9427c5dfca27ed2836930c24773ffee834c19bcd"
+  }
+]

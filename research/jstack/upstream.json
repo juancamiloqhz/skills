@@ -23,7 +23,9 @@
         "pstack/docs/guide/02-poteto-mode.md",
         "pstack/skills/setup-pstack",
         "pstack/agents/poteto-agent.md",
-        "pstack/skills/benchmark-checklist"
+        "pstack/skills/benchmark-checklist",
+        "pstack/skills/technical-writing",
+        "pstack/skills/unslop"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
@@ -413,6 +415,17 @@
         "pstack/skills/poteto-mode/playbooks/hillclimb.md"
       ],
       "differences": "research/jstack/adaptations/benchmark-checklist.md"
+    },
+    {
+      "name": "jstack-technical-writing",
+      "localPath": "skills/jstack/jstack-technical-writing",
+      "upstreamPath": "pstack/skills/technical-writing",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/unslop",
+        "pstack/skills/poteto-mode"
+      ],
+      "differences": "research/jstack/adaptations/technical-writing.md"
     }
   ],
   "decisions": [
