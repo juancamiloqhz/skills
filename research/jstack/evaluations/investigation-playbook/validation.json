@@ -1,0 +1,59 @@
+{
+  "checks": [
+    {
+      "check": "python3 -B scripts/jstack/test_skill_packaging.py",
+      "result": "4 tests passed; exit 0"
+    },
+    {
+      "check": "quick_validate.py skills/jstack/jstack-juan-mode",
+      "result": "Skill is valid; exit 0"
+    },
+    {
+      "check": "quick_validate.py skills/jstack/jstack-setup",
+      "result": "Skill is valid; exit 0"
+    },
+    {
+      "check": "check_upstream.load_manifest with actual root and manifest",
+      "result": "Accepted; 41 mappings. Pins, decisions and reviewed checkpoint preserved."
+    },
+    {
+      "check": "Markdownlint changed documentation and entrypoints",
+      "files": [
+        "README.md",
+        "research/jstack/adaptations/investigation.md",
+        "research/jstack/adaptations/juan-mode.md",
+        "research/jstack/adaptations/setup-jstack.md",
+        "research/jstack/evaluations/investigation-playbook/README.md",
+        "research/jstack/evaluations/investigation-playbook/fixtures/README.md",
+        "research/jstack/fidelity-status.md",
+        "research/jstack/juan-mode-spec.md",
+        "research/jstack/roadmap.md",
+        "skills/jstack/jstack-juan-mode/SKILL.md",
+        "skills/jstack/jstack-setup/SKILL.md",
+        "skills/jstack/jstack-setup/references/configuration.md"
+      ],
+      "exitCode": 0,
+      "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/adaptations/investigation.md research/jstack/adaptations/juan-mode.md research/jstack/adaptations/setup-jstack.md research/jstack/evaluations/investigation-playbook/README.md research/jstack/evaluations/investigation-playbook/fixtures/README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/roadmap.md skills/jstack/jstack-juan-mode/SKILL.md skills/jstack/jstack-setup/SKILL.md skills/jstack/jstack-setup/references/configuration.md\nLinting: 12 files\nSummary: 0 issues in 0 files\n",
+      "stderr": ""
+    },
+    {
+      "check": "Byte-identical Investigation fragment in isolated lint directory",
+      "configuration": {
+        "MD013": false,
+        "MD041": false
+      },
+      "result": "Passed with zero issues. Preserves upstream level-three heading."
+    },
+    {
+      "check": "Changed Markdown relative destinations",
+      "existingDestinations": 214,
+      "result": "passed"
+    },
+    {
+      "check": "git diff --check",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

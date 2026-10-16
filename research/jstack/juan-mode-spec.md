@@ -39,7 +39,7 @@ Current package layout with planned playbooks shown explicitly. Add upstream sup
 ```text
 skills/jstack/jstack-juan-mode/
   SKILL.md
-  playbooks/                 # planned: all 23 upstream procedures
+  playbooks/                 # Investigation implemented; 22 procedures pending
   references/bugbot-triage.md # restored upstream reference
   references/activation.md   # local conversation-state contract
   references/configuration.md
@@ -135,6 +135,10 @@ Investigation and forensic cases must preserve their source-write boundary. Temp
 Eval isolates candidate context from judge rubrics and model identities. Verify actual candidate actions through available evidence. T3 Code's summarized activity is not automatically equivalent to raw provider transcripts; mark unobservable criteria inconclusive or provide an authorized instrumented fixture. Keep performance measurements tied to their workload, run count, variability and limiting resource.
 
 All-playbook release evidence includes at least one representative executed case per route, cross-route tests of the common contracts, and failure cases for unavailable capabilities. These checks demonstrate bounded support rather than every possible platform or task. Record coordinating provider, child provider, effective model options, source revision and evidence paths. Do not derive a support claim from installation or the catalog alone.
+
+## Current playbook coverage
+
+[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) is implemented, with [bounded evaluation](evaluations/investigation-playbook/README.md). The other 22 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
 
 ## Implementation groups
 

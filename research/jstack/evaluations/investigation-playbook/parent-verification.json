@@ -1,0 +1,12 @@
+{
+  "evaluatedSourceHEAD": "73baef288ef389fd0ba8882a3ef3c53f00392519",
+  "fixtureFilesAndGitUnchanged": 33,
+  "configSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "copiedPlansMatchFourSteps": true,
+  "correctedAnswersHaveNamedSections": true,
+  "decisiveCitationLineBoundsValid": true,
+  "terminalChildren": 4,
+  "whyCoverageCategories": 7,
+  "semanticReview": "Read both final answers and raw Why synthesis; duplicate-return, insertion eviction and aliasing claims match the complete source. Full commit bodies establish the replay requirement but provide no exact-number rationale. External categories remain explicit scope gaps. Original format/checkpoint misses are preserved, not counted as clean first-pass success.",
+  "writingPass": "The evaluator acknowledged a missed complete self-audit and completed it late after parent follow-up. Pre-check answers remain intact. Parent inspected prose deltas; confidence, evidence categories and source claims are preserved. Neither request is counted as an unqualified first-pass workflow success."
+}
