@@ -1,0 +1,34 @@
+{
+  "kind": "Parent-executed configuration boundary check, not a second agent run",
+  "command": [
+    "python3",
+    "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/scripts/preflight.py",
+    "--setup-skill",
+    "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup",
+    "--project-root",
+    "/tmp/jstack-feature-20261016/app",
+    "--config",
+    "/home/ubuntu/.config/jstack/models.json",
+    "--catalog",
+    "/tmp/jstack-feature-20261016/parent-capabilities.json",
+    "--role",
+    "architect runners"
+  ],
+  "exitCode": 0,
+  "stdout": "{\n  \"role\": \"architect runners\",\n  \"selectionKind\": \"panel\",\n  \"targets\": [\n    null\n  ],\n  \"effectiveIdentities\": [\n    {\n      \"providerInstanceId\": \"codex\",\n      \"model\": \"gpt-6-astra\",\n      \"inherited\": true\n    }\n  ],\n  \"availability\": [\n    {\n      \"canDispatch\": true,\n      \"reason\": null\n    }\n  ],\n  \"resolver\": \"/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py\",\n  \"config\": \"/home/ubuntu/.config/jstack/models.json\",\n  \"configSource\": \"explicit\"\n}\n",
+  "stderr": "",
+  "semanticOutcome": "incomplete: configuration is valid but one Architect candidate cannot satisfy Feature step 2 and Architect Phase B; no candidate dispatched from this configuration",
+  "globalConfigSHA256Before": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "globalConfigSHA256After": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "requiredCandidates": 2,
+  "availableCandidates": 1,
+  "fixtureConfig": {
+    "path": "/tmp/jstack-feature-20261016/models.json",
+    "sha256": "8ee7e93ddc42db50a6e3ac10a6100d30599a7664424767dddbdff7d21a3caf46",
+    "origin": "models.py template --preset medium, isolated evaluation only"
+  },
+  "limits": [
+    "Tests canonical resolution and applies the documented caller count requirement; does not simulate an agent response.",
+    "No global/project user configuration was modified; inherited seats do not establish model-family diversity."
+  ]
+}

@@ -24,3 +24,7 @@ The pinned `cursor-team-kit/skills/control-ui/SKILL.md` was read in full for dep
 The manifest adds the direct Architect, Exhaust the Design Space and Control UI context paths. Control UI is outside the previously watched pstack tree, so its exact subtree is added to `watchPaths`. This expands future detection to the required external source without changing the scheduler, source pins, decisions or reviewed checkpoint. No Control CLI dependency is added for an unshipped behavioral script.
 
 The [evaluation and full comparison](../evaluations/prototype-playbook/README.md) distinguish live execution from staged boundaries. The mode's existing Investigation file and support files remain unchanged. Setup keeps its separate source pin; only its two jstack-owned availability sentences change. Historical audit/evaluation records remain intact; the current fidelity table also corrects its stale claim that the already-shipped TypeScript helper is absent.
+
+## Feature handoff update
+
+Feature is now available, so Prototype step 6 no longer labels it unavailable. Existing implementation authority carries forward; a design-only request still ends locally and the scratch prototype is not the production implementation. The [Feature evaluation](../evaluations/feature/README.md) compares the complete updated Prototype with its source pin. Earlier Prototype evaluation snapshots remain historical.

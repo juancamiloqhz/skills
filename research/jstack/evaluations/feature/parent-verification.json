@@ -1,0 +1,434 @@
+{
+  "kind": "Independent parent replay of actual local commits and public CLI",
+  "base": "7e9ef24bc1a5705545e591d8ab249c89416bb804",
+  "commits": [
+    "94305bbde59a414a6c8647bcd91b256ef2ab0b0d"
+  ],
+  "changedFiles": [
+    "cli.cjs",
+    "test/cli.test.cjs"
+  ],
+  "protectedHashes": {
+    "export.cjs": "db148498bd302244b98917120b93a438325bf65122d4a11cab021a455066f72e",
+    "data.json": "7007dbb3dca8f6b7c8afe2afbe17e8f6644c67a23512b6d03212e06d70c56cb2",
+    "caller-note.txt": "176edb25945671c578d38215d3fa4692ba6ad024d262ed3ad1c259adc16abe8d",
+    "README.md": "60bd0cc01d5d7d9b31e6e10de1de6c0175cc836c597106c0a366ff9a3cb9851d"
+  },
+  "commitChecks": [
+    {
+      "commit": "94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "changedFiles": [
+        "cli.cjs",
+        "test/cli.test.cjs"
+      ],
+      "suite": {
+        "command": [
+          "node",
+          "--test"
+        ],
+        "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+        "exitCode": 0,
+        "stdout": "\u2714 list and existing export preserve complete records and order (141.979139ms)\n\u2714 list filters by open status (57.114621ms)\n\u2714 list filters by done status (57.836434ms)\n\u2714 list filters by exact owner (59.796751ms)\n\u2714 list filters by owner with spaces (59.861909ms)\n\u2714 list filters by status and owner (62.546447ms)\n\u2714 list filters by owner and status (57.764819ms)\n\u2714 list filters by no matching intersection (51.898946ms)\n\u2714 list filters by case-sensitive owner (54.294974ms)\n\u2714 list filters by owner whitespace is exact (55.94992ms)\n\u2714 list filters by owner prefix does not match (56.190214ms)\n\u2714 list filters by empty owner is a value (67.65764ms)\n\u2714 list filters by null owner is not a string (59.604372ms)\n\u2714 rejects invalid arguments [\"--other\",\"x\"] (58.20993ms)\n\u2714 rejects invalid arguments [\"extra\"] (56.291933ms)\n\u2714 rejects invalid arguments [\"--status=open\"] (58.521205ms)\n\u2714 rejects invalid arguments [\"--owner=Ada\"] (60.777566ms)\n\u2714 rejects invalid arguments [\"--\"] (57.116746ms)\n\u2714 rejects invalid arguments [\"--status\",\"open\",\"--status\",\"done\"] (49.180654ms)\n\u2714 rejects invalid arguments [\"--owner\",\"Ada\",\"--owner\",\"Lin\"] (54.646746ms)\n\u2714 rejects invalid arguments [\"--owner\",\"\",\"--owner\",\"Ada\"] (62.366715ms)\n\u2714 rejects invalid arguments [\"--status\"] (52.437585ms)\n\u2714 rejects invalid arguments [\"--owner\"] (54.173829ms)\n\u2714 rejects invalid arguments [\"--status\",\"--owner\",\"Ada\"] (57.275152ms)\n\u2714 rejects invalid arguments [\"--owner\",\"--status\",\"open\"] (53.073417ms)\n\u2714 rejects invalid arguments [\"--status\",\"pending\"] (56.726579ms)\n\u2714 rejects invalid arguments [\"--status\",\"OPEN\"] (56.831038ms)\n\u2714 rejects invalid arguments [\"--status\",\"\"] (72.274139ms)\n\u2714 validates arguments before opening the input file (52.158036ms)\n\u2139 tests 29\n\u2139 suites 0\n\u2139 pass 29\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1916.042833\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "publicCases": [
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t3\",\"title\":\"Review docs\",\"status\":\"open\",\"owner\":\"Ada\"},{\"id\":\"t1\",\"title\":\"Ship parser\",\"status\":\"done\",\"owner\":\"Ada\"},{\"id\":\"t4\",\"title\":\"Triage\",\"status\":\"open\",\"owner\":\"Lin\"},{\"id\":\"t2\",\"title\":\"Check CLI\",\"status\":\"done\",\"owner\":\"Lin\"},{\"id\":\"t5\",\"title\":\"No owner\",\"status\":\"open\",\"owner\":null},{\"id\":\"t6\",\"title\":\"Unicode caf\u00e9\",\"status\":\"open\",\"owner\":\"Ada Lovelace\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t3",
+        "t1",
+        "t4",
+        "t2",
+        "t5",
+        "t6"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "open"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t3\",\"title\":\"Review docs\",\"status\":\"open\",\"owner\":\"Ada\"},{\"id\":\"t4\",\"title\":\"Triage\",\"status\":\"open\",\"owner\":\"Lin\"},{\"id\":\"t5\",\"title\":\"No owner\",\"status\":\"open\",\"owner\":null},{\"id\":\"t6\",\"title\":\"Unicode caf\u00e9\",\"status\":\"open\",\"owner\":\"Ada Lovelace\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t3",
+        "t4",
+        "t5",
+        "t6"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "done"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t1\",\"title\":\"Ship parser\",\"status\":\"done\",\"owner\":\"Ada\"},{\"id\":\"t2\",\"title\":\"Check CLI\",\"status\":\"done\",\"owner\":\"Lin\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t1",
+        "t2"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner",
+        "Ada"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t3\",\"title\":\"Review docs\",\"status\":\"open\",\"owner\":\"Ada\"},{\"id\":\"t1\",\"title\":\"Ship parser\",\"status\":\"done\",\"owner\":\"Ada\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t3",
+        "t1"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner",
+        "Ada Lovelace"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t6\",\"title\":\"Unicode caf\u00e9\",\"status\":\"open\",\"owner\":\"Ada Lovelace\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t6"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "open",
+        "--owner",
+        "Ada"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t3\",\"title\":\"Review docs\",\"status\":\"open\",\"owner\":\"Ada\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t3"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner",
+        "Lin",
+        "--status",
+        "done"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[{\"id\":\"t2\",\"title\":\"Check CLI\",\"status\":\"done\",\"owner\":\"Lin\"}]\n",
+      "stderr": "",
+      "expectedIds": [
+        "t2"
+      ]
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner",
+        "missing"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[]\n",
+      "stderr": "",
+      "expectedIds": []
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner",
+        "ada"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[]\n",
+      "stderr": "",
+      "expectedIds": []
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "done",
+        "--owner",
+        "Ada Lovelace"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 0,
+      "stdout": "[]\n",
+      "stderr": "",
+      "expectedIds": []
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--unknown",
+        "x"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Unknown argument: --unknown\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Missing value for --status\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Missing value for --owner\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "blocked"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Invalid --status: expected open or done\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "open",
+        "--status",
+        "done"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Repeated flag: --status\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--owner",
+        "Ada",
+        "--owner",
+        "Lin"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Repeated flag: --owner\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "--owner",
+        "Ada"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Missing value for --status\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    },
+    {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "extra"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Unknown argument: extra\n",
+      "expectation": "exit 2, empty stdout, useful nonempty stderr"
+    }
+  ],
+  "exportCase": {
+    "command": [
+      "node",
+      "export.cjs",
+      "data.json"
+    ],
+    "cwd": "/tmp/jstack-feature-20261016/parent-replay/94305bbde59a414a6c8647bcd91b256ef2ab0b0d",
+    "exitCode": 0,
+    "stdout": "t3,t1,t4,t2,t5,t6\n",
+    "stderr": ""
+  },
+  "beforeFeature": {
+    "command": [
+      "node",
+      "cli.cjs",
+      "data.json",
+      "list",
+      "--status",
+      "open"
+    ],
+    "cwd": "/tmp/jstack-feature-20261016/parent-replay/base",
+    "exitCode": 2,
+    "stdout": "",
+    "stderr": "Usage: FILE list\n"
+  },
+  "originalUnfiltered": {
+    "command": [
+      "node",
+      "cli.cjs",
+      "data.json",
+      "list"
+    ],
+    "cwd": "/tmp/jstack-feature-20261016/parent-replay/base",
+    "exitCode": 0,
+    "stdout": "[{\"id\":\"t3\",\"title\":\"Review docs\",\"status\":\"open\",\"owner\":\"Ada\"},{\"id\":\"t1\",\"title\":\"Ship parser\",\"status\":\"done\",\"owner\":\"Ada\"},{\"id\":\"t4\",\"title\":\"Triage\",\"status\":\"open\",\"owner\":\"Lin\"},{\"id\":\"t2\",\"title\":\"Check CLI\",\"status\":\"done\",\"owner\":\"Lin\"},{\"id\":\"t5\",\"title\":\"No owner\",\"status\":\"open\",\"owner\":null},{\"id\":\"t6\",\"title\":\"Unicode caf\u00e9\",\"status\":\"open\",\"owner\":\"Ada Lovelace\"}]\n",
+    "stderr": ""
+  },
+  "wrongOutputSensitivity": {
+    "kind": "Parent checker negative control, not an agent-generated candidate",
+    "run": {
+      "command": [
+        "node",
+        "cli.cjs",
+        "data.json",
+        "list",
+        "--status",
+        "open"
+      ],
+      "cwd": "/tmp/jstack-feature-20261016/parent-replay/wrong-output",
+      "exitCode": 0,
+      "stdout": "[\n  {\n    \"id\": \"t3\",\n    \"title\": \"Review docs\",\n    \"status\": \"open\",\n    \"owner\": \"Ada\"\n  },\n  {\n    \"id\": \"t1\",\n    \"title\": \"Ship parser\",\n    \"status\": \"done\",\n    \"owner\": \"Ada\"\n  },\n  {\n    \"id\": \"t4\",\n    \"title\": \"Triage\",\n    \"status\": \"open\",\n    \"owner\": \"Lin\"\n  },\n  {\n    \"id\": \"t2\",\n    \"title\": \"Check CLI\",\n    \"status\": \"done\",\n    \"owner\": \"Lin\"\n  },\n  {\n    \"id\": \"t5\",\n    \"title\": \"No owner\",\n    \"status\": \"open\",\n    \"owner\": null\n  },\n  {\n    \"id\": \"t6\",\n    \"title\": \"Unicode caf\\u00e9\",\n    \"status\": \"open\",\n    \"owner\": \"Ada Lovelace\"\n  }\n]\n",
+      "stderr": ""
+    },
+    "result": "Rejected output despite exit 0; all rows returned instead of requested open subset."
+  },
+  "fixtureConfigSHA256": "8ee7e93ddc42db50a6e3ac10a6100d30599a7664424767dddbdff7d21a3caf46",
+  "globalConfigSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "limits": [
+    "Public behavior and committed states are independently executed; design/dispatch chronology depends on retained evaluator records.",
+    "No cross-provider, installed discovery, visual UI or full Opening a PR workflow is demonstrated."
+  ],
+  "workflowEvidence": {
+    "sourceSnapshotsMatchFinal": true,
+    "initialPlanMatchesAllEightVerbatimSteps": true,
+    "planCreationTime": "2026-10-16T22:53:03.451159+00:00",
+    "allRegisteredChildrenTerminal": true,
+    "childCount": 9,
+    "preservedPlanViolations": [
+      {
+        "file": "plan-update-02.json",
+        "activeItems": [
+          "2. `jstack-architect` for parallel design exploration, returning a design before step 4. Preserve its configured panel, two structurally distinct candidate requirement and Arena judging. An undersized panel or unavailable helper leaves this step incomplete; do not add seats or proceed as if design exploration passed.",
+          "Architect Sketch",
+          "Design Arena Fan out"
+        ]
+      },
+      {
+        "file": "plan-update-03.json",
+        "activeItems": [
+          "2. `jstack-architect` for parallel design exploration, returning a design before step 4. Preserve its configured panel, two structurally distinct candidate requirement and Arena judging. An undersized panel or unavailable helper leaves this step incomplete; do not add seats or proceed as if design exploration passed.",
+          "Architect Sketch",
+          "Design Arena Cross-judge"
+        ]
+      },
+      {
+        "file": "plan-update-04.json",
+        "activeItems": [
+          "4. Delegate code-writing to a subagent using the configured `feature, refactoring` role, or `hardest tasks` when warranted by the mode's difficulty rule, with a specific scope (file paths, named data shape and its organizing structure per **jstack-principle-model-the-domain**, a state machine over scattered booleans, a table/registry over branching, a typed model over repeated shape assumptions, chosen before the delegate writes logic, and success criteria). When the implementation admits multiple valid shapes (error handling, abstraction layer, test structure), delegate via the **jstack-arena** skill instead so the runners surface the alternatives and the cross-judge guards the pick. Mandatory: no skip-with-reason escape, and Laziness Protocol does not override it (the gain is review separation, not lines saved). A subagent forbidden to spawn satisfies this by owning the diff directly with the same review separation. No \"standing by\" reply that waits on a nested agent. Comments per **Comments**. Surgical edits, re-ground against the source for upstream-derived files. Port shared-primitive improvements to all consumers and verify each. Resolve every dispatch through the mode's preflight and preserve the selected absolute configuration, with no fixed-model fallback. Commit liberally within existing authority.",
+          "Implementation Arena Fan out"
+        ]
+      }
+    ],
+    "timingLimit": "The plan payload records creation time; exact dispatch and command chronology additionally relies on evaluator visible-turn evidence, not a full exported transcript.",
+    "registryFinalCheckAt": "2026-10-16T23:08:22.577992+00:00",
+    "registrySHA256": "91721e112654b193988216ddefa7018de47da6f02fcb49962892042a9929a976"
+  }
+}

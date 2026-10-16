@@ -79,3 +79,7 @@ The entrypoint and configuration consumer note now include Runtime forensics and
 ## Bug fix availability, 2026-10-16
 
 The entrypoint and configuration reference now include Bug fix as the sixth available Juan-mode procedure, leaving 17 pending. [Bug fix comparison and evaluation](../evaluations/bug-fix/README.md) cover these availability-only edits against setup's own pin. Configuration lookup, roles and scripts remain unchanged.
+
+## Feature availability
+
+The Feature procedure and its shared four-part throughput checkpoint are now available. Current coverage is seven playbooks with 16 pending. Configured Architect and Arena panels retain their required counts; existing settings are not expanded. The [Feature adaptation](feature.md) and [evaluation](../evaluations/feature/README.md) record source comparison, isolated two-seat execution, the one-seat limitation and remaining publication dependency.
