@@ -1,0 +1,28 @@
+{
+  "reviewerNonCommentTokensAndAstUnchanged": true,
+  "protectedCommentsRetained": true,
+  "acceptedCommentDeletions": 4,
+  "fixtureBehavior": [
+    {
+      "stage": "before",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/jstack-comments-replay-smdq0cp0/check.py\", line 3, in <module>\n    assert format_amount(42) == '42 cents'\n           ~~~~~~~~~~~~~^^^^\n  File \"/tmp/jstack-comments-replay-smdq0cp0/invoice.py\", line 8, in format_amount\n    return cents + \" cents\"  # type: ignore[operator]\n           ~~~~~~^~~~~~~~~~\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n"
+    },
+    {
+      "stage": "reviewer",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/jstack-comments-replay-uw66ufr6/check.py\", line 3, in <module>\n    assert format_amount(42) == '42 cents'\n           ~~~~~~~~~~~~~^^^^\n  File \"/tmp/jstack-comments-replay-uw66ufr6/invoice.py\", line 8, in format_amount\n    return cents + \" cents\"\n           ~~~~~~^~~~~~~~~~\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n"
+    },
+    {
+      "stage": "after",
+      "exitCode": 0,
+      "stdout": "4 behavior assertions passed\n",
+      "stderr": ""
+    }
+  ],
+  "boundaryAandCUnchanged": true,
+  "boundaryBCommentOnlyDeletion": true,
+  "boundaryEncodingsApplied": 0
+}
