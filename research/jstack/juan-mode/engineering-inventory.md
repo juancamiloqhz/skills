@@ -26,7 +26,7 @@ Proposed packaging: bundle the helper procedures inside `juan-mode` references f
 
 Read `cursor-team-kit/skills/control-cli/SKILL.md`, `control-ui/SKILL.md` and `pstack/skills/benchmark-checklist/SKILL.md` in full. Their useful contracts are deterministic driving, application identity, retained artifacts and meaningful measurement. Adapt browser selection to T3 Code preview rules; preserve repository harnesses and use a PTY only for interactive terminal behavior. Browser driving does not establish CPU/heap capture or Electron attachment. Choose profiling tools from the target runtime and report missing access. Keep measurement runs separate from intrusive profiling, count errors and completed work, alternate comparable runs and report noise.
 
-Control CLI now has a [standalone jstack port](../../../skills/jstack/jstack-control-cli/SKILL.md) and [bounded terminal evaluation](../evaluations/control-cli/README.md). Runtime forensics now has a separate live CPU-profile evaluation below. This helper alone does not enable Bug fix, Perf issue or the other pending callers, or establish profiling and Control UI support.
+Control CLI now has a [standalone jstack port](../../../skills/jstack/jstack-control-cli/SKILL.md) and [bounded terminal evaluation](../evaluations/control-cli/README.md). Runtime forensics now has a separate live CPU-profile evaluation below. Bug fix and Feature now have their own procedures and evaluations. This helper alone does not enable pending callers or establish profiling and Control UI support.
 
 Sources: [CLI control and profiling](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/control-cli/SKILL.md), [UI control and CDP](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/control-ui/SKILL.md), [benchmark checklist](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/benchmark-checklist/SKILL.md).
 
@@ -53,6 +53,8 @@ Source: [feature](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea
 Use `feature, refactoring` for implementation, `hardest tasks` for qualifying complexity, plus the helpers' roles. Adapt design-only composition and publication to requested delivery. Prerequisites are resolved helper packages, sufficient configured design candidates, isolated writable state and a runnable public interface. The skill must distinguish blocked runtime verification from completed implementation.
 
 Acceptance scenario: add a public CLI filter to a fixture with existing data. Require a grounded design, scoped child implementation, parent inspection, assertions on real stdout/persistent state and proof retained after cleanup. A child claiming success with incorrect output must fail verification. An explicit local-only request must remain local.
+
+The [Feature procedure](../../../skills/jstack/jstack-juan-mode/playbooks/feature.md) is now implemented, including the shared throughput checkpoint. Its [evaluation](../evaluations/feature/README.md) separates isolated two-seat execution from the existing global one-seat configuration, which cannot satisfy Architect. Opening a PR remains unavailable.
 
 ## bug-fix
 

@@ -1,0 +1,19 @@
+{
+  "authoringErrors": [
+    {
+      "operation": "Read assumed Architect execution.md",
+      "error": "cat: skills/jstack/jstack-architect/references/execution.md: No such file or directory",
+      "correction": "Read Architect entrypoint and its actual Arena execution reference."
+    },
+    {
+      "operation": "Capture live catalog in one shell argument",
+      "error": "Argument list too long (os error 7)",
+      "correction": "Captured the same payload in bounded 16000-character chunks; parsed and used it for canonical preflight."
+    },
+    {
+      "operation": "Interpret Feature commit sequencing",
+      "error": "Initial parent verifier required every commit to pass and rejected the red test-first commit.",
+      "correction": "Read the complete Sequence Work into Verifiable Units leaf. It permits red-first evidence within one passing delivery unit. Recorded the overstrict assertion and kept the already completed, authorized atomic consolidation without claiming that the original red commit alone violated the playbook."
+    }
+  ]
+}

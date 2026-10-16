@@ -42,7 +42,11 @@
         "cursor-team-kit/skills/control-cli",
         "cursor-team-kit/skills/deslop",
         "pstack/skills/tdd",
-        "pstack/skills/principle-sequence-verifiable-units"
+        "pstack/skills/principle-sequence-verifiable-units",
+        "pstack/skills/arena",
+        "pstack/skills/interrogate",
+        "pstack/skills/principle-model-the-domain",
+        "pstack/skills/principle-separate-before-serializing-shared-state"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
