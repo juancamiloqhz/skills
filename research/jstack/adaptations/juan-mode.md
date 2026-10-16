@@ -42,3 +42,7 @@ The previous jstack `references/routes.md` summary is removed; the original inli
 The old claim that T3 `delegate_task` has no workspace-binding option is obsolete. The current callable tool and injected host contract provide `isolation: "worktree"`. A child needing a separate checkout must use that option. It starts from the parent's local commit, completes project setup and does not copy uncommitted edits. Prompt paths and manual `git worktree add` are not substitutes for app binding. Shared checkouts remain suitable for bounded reads or serial writes; parallel writes still require ownership and demonstrated tool behavior. This is a current-tool contract correction, not a new all-provider isolation claim.
 
 The manifest now watches `pstack/agents/poteto-agent.md` as context. Setup, Arena and Swarm remain the next scopes in fidelity group 7. Their unresolved defaults, validation and race choices are not changed here. This is not an official Cursor, pstack or T3 Code integration.
+
+## Control CLI dependency
+
+The matching-control trigger now discovers standalone `jstack-control-cli` for terminal apps while retaining external Control UI. The dependency paragraph distinguishes those packages. [Control CLI adaptation and caller comparison](control-cli.md) cover both changes; all route procedures and availability counts remain unchanged.

@@ -97,8 +97,12 @@ Both columns are intentional. The left column identifies old installations to re
 | `principle-type-system-discipline` | `jstack-principle-type-system-discipline` |
 | `benchmark-checklist` | `jstack-benchmark-checklist` |
 
+## Additional standalone helpers
+
+`jstack-control-cli` adapts the external Cursor team-kit Control CLI skill. It has no former jstack installation name to remove. After its PR merges, select `jstack-control-cli` explicitly when manually installing the helpers you use. Do not remove another collection's `control-cli` solely because its name is unprefixed.
+
 ## Upstream maintenance and evidence
 
-`upstream.json` maps each new local identity to its original pstack path and unchanged revision pin. The shared reviewed checkpoint does not move. Preserve pstack's boundaries, headings, procedures and role labels; translate only package identities and their callers. Future adaptations must apply this mapping rather than restoring unprefixed names.
+`upstream.json` maps each new local identity to its original upstream path and unchanged revision pin. The shared reviewed checkpoint does not move. Preserve pstack's boundaries, headings, procedures and role labels; translate only package identities and their callers. Future adaptations must apply this mapping rather than restoring unprefixed names.
 
 Old reports, audit outputs, task transcripts and reproduction scripts retain the paths and hashes they actually tested. Run those scripts at their recorded commits. For the last pre-migration tree, use commit `3c2e32c17ea6a08900af822fe205703e47be0072`. They are historical evidence, not current installation instructions. The [migration evaluation](evaluations/skill-names/README.md) records current checks and pinned-source comparisons.

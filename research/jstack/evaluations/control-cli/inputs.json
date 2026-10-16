@@ -1,0 +1,17 @@
+{
+  "root": "/tmp/jstack-control-cli-20261016",
+  "files": {
+    "app/caller-note.txt": {
+      "sha256": "8de1394851f861fd5819b75729a53aa19a3e99e8997cbd7c90b225ddffda3968",
+      "text": "Retain this existing note and app source unchanged.\n"
+    },
+    "app/README.md": {
+      "sha256": "83abfea884a8b01427c351995e0b6a94078dbebe13b574c6e2e1f7f74d734317",
+      "text": "# Greeter terminal\n\nRun `python3 terminal.py` in a terminal. Enter a name, then use help, status and quit. Optional modes `stall` and `exit-early` exercise startup failures. No repository harness is supplied.\n"
+    },
+    "app/terminal.py": {
+      "sha256": "b363758451233f0b181bbc31f2b91a8fb410d3718125630becf16c5a83c06b3c",
+      "text": "import os\nimport sys\nimport threading\n\nmode = sys.argv[1] if len(sys.argv) > 1 else \"normal\"\nif not (sys.stdin.isatty() and sys.stdout.isatty()):\n    print(\"A terminal is required\", flush=True)\n    raise SystemExit(3)\nif mode == \"exit-early\":\n    print(\"BOOT FAILED\", flush=True)\n    raise SystemExit(7)\nif mode == \"stall\":\n    print(\"STARTING\", flush=True)\n    threading.Event().wait()\nprint(\"Name: \", end=\"\", flush=True)\nname = input()\nprint(f\"Hello {name}\", flush=True)\nwhile True:\n    print(\"cmd> \", end=\"\", flush=True)\n    command = input()\n    if command == \"help\":\n        print(\"Commands: help, status, quit\", flush=True)\n    elif command == \"status\":\n        print(\"STATUS ready; tty=yes\", flush=True)\n    elif command == \"quit\":\n        print(\"BYE\", flush=True)\n        break\n    else:\n        print(\"Unknown command\", flush=True)\n"
+    }
+  }
+}
