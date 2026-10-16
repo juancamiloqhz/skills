@@ -39,7 +39,7 @@ Current package layout with planned playbooks shown explicitly. Add upstream sup
 ```text
 skills/jstack/jstack-juan-mode/
   SKILL.md
-  playbooks/                 # Four procedures implemented; 19 pending
+  playbooks/                 # Five procedures implemented; 18 pending
   references/bugbot-triage.md # restored upstream reference
   references/activation.md   # local conversation-state contract
   references/configuration.md
@@ -138,7 +138,7 @@ All-playbook release evidence includes at least one representative executed case
 
 ## Current playbook coverage
 
-[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) and [Prototype](../../skills/jstack/jstack-juan-mode/playbooks/prototype.md) are implemented, with bounded [Investigation](evaluations/investigation-playbook/README.md) and [Prototype](evaluations/prototype-playbook/README.md) evaluations. [Trace forensics](../../skills/jstack/jstack-juan-mode/playbooks/trace-forensics.md) adds [fixed-artifact analysis](evaluations/trace-forensics/README.md). [Authoring or modifying a skill](../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) adds [local skill-authoring validation](evaluations/authoring-a-skill/README.md). The other 19 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
+[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) and [Prototype](../../skills/jstack/jstack-juan-mode/playbooks/prototype.md) are implemented, with bounded [Investigation](evaluations/investigation-playbook/README.md) and [Prototype](evaluations/prototype-playbook/README.md) evaluations. [Trace forensics](../../skills/jstack/jstack-juan-mode/playbooks/trace-forensics.md) adds [fixed-artifact analysis](evaluations/trace-forensics/README.md). [Authoring or modifying a skill](../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) adds [local skill-authoring validation](evaluations/authoring-a-skill/README.md). [Runtime forensics](../../skills/jstack/jstack-juan-mode/playbooks/runtime-forensics.md) adds [live-process diagnosis](evaluations/runtime-forensics/README.md). The other 18 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
 
 ## Implementation groups
 
