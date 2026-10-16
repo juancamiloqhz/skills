@@ -1,0 +1,55 @@
+[
+  {
+    "check": "python3 -B scripts/jstack/test_skill_packaging.py",
+    "result": "4 tests passed; exit 0"
+  },
+  {
+    "check": "quick_validate.py jstack-juan-mode and jstack-setup",
+    "result": "Both entrypoints valid; exit 0"
+  },
+  {
+    "check": "check_upstream.load_manifest(actual manifest, actual root)",
+    "result": "Accepted 41 mappings including new context/watch paths"
+  },
+  {
+    "check": "Changed documentation/entrypoints",
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/adaptations/juan-mode.md research/jstack/adaptations/prototype.md research/jstack/adaptations/setup-jstack.md research/jstack/evaluations/prototype-playbook/README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/roadmap.md skills/jstack/jstack-juan-mode/SKILL.md skills/jstack/jstack-setup/SKILL.md skills/jstack/jstack-setup/references/configuration.md\nLinting: 11 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Initial verbatim final-response lint with only MD041 disabled",
+    "exitCode": 1,
+    "finding": "MD034 reported two raw fixture email addresses. Preserve original evidence and disable MD034 only for that artifact."
+  },
+  {
+    "check": "Byte-identical fragment skills/jstack/jstack-juan-mode/playbooks/prototype.md",
+    "configuration": {
+      "MD013": false,
+      "MD041": false
+    },
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: artifact.md\nLinting: 1 file\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Byte-identical fragment research/jstack/evaluations/prototype-playbook/artifacts/final-response.md",
+    "configuration": {
+      "MD013": false,
+      "MD041": false,
+      "MD034": false
+    },
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: artifact.md\nLinting: 1 file\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Changed Markdown relative destinations",
+    "count": 225,
+    "result": "all exist"
+  },
+  {
+    "check": "git diff --check",
+    "exitCode": 0
+  }
+]

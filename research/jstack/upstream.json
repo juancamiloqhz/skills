@@ -11,7 +11,8 @@
     "schemas/plugin.schema.json",
     "schemas/marketplace.schema.json",
     "scripts/validate-plugins.mjs",
-    ".github/workflows/validate-plugins.yml"
+    ".github/workflows/validate-plugins.yml",
+    "cursor-team-kit/skills/control-ui"
   ],
   "skills": [
     {
@@ -29,7 +30,10 @@
         "pstack/skills/no-comments",
         "pstack/agents/comment-sicko.md",
         "pstack/skills/how",
-        "pstack/skills/why"
+        "pstack/skills/why",
+        "pstack/skills/architect",
+        "pstack/skills/principle-exhaust-the-design-space",
+        "cursor-team-kit/skills/control-ui"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },

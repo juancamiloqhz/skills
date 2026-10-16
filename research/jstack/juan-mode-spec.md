@@ -39,7 +39,7 @@ Current package layout with planned playbooks shown explicitly. Add upstream sup
 ```text
 skills/jstack/jstack-juan-mode/
   SKILL.md
-  playbooks/                 # Investigation implemented; 22 procedures pending
+  playbooks/                 # Investigation and Prototype implemented; 21 procedures pending
   references/bugbot-triage.md # restored upstream reference
   references/activation.md   # local conversation-state contract
   references/configuration.md
@@ -138,7 +138,7 @@ All-playbook release evidence includes at least one representative executed case
 
 ## Current playbook coverage
 
-[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) is implemented, with [bounded evaluation](evaluations/investigation-playbook/README.md). The other 22 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
+[Investigation](../../skills/jstack/jstack-juan-mode/playbooks/investigation.md) and [Prototype](../../skills/jstack/jstack-juan-mode/playbooks/prototype.md) are implemented, with bounded [Investigation](evaluations/investigation-playbook/README.md) and [Prototype](evaluations/prototype-playbook/README.md) evaluations. The other 21 routes remain pending. This does not close the provider/persistence release gates below or change the accepted all-23 target.
 
 ## Implementation groups
 
