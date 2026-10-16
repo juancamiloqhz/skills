@@ -1,0 +1,14 @@
+[
+  {
+    "case": "one-seat",
+    "matchingCurrentSourceReadHashes": 35
+  },
+  {
+    "case": "two-seat",
+    "matchingCurrentSourceReadHashes": 43
+  },
+  {
+    "check": "Comparison/source/archived-artifact hashes and fixture bytes match final files; global settings unchanged",
+    "result": "pass"
+  }
+]

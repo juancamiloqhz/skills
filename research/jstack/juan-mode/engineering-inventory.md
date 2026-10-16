@@ -26,7 +26,7 @@ Proposed packaging: bundle the helper procedures inside `juan-mode` references f
 
 Read `cursor-team-kit/skills/control-cli/SKILL.md`, `control-ui/SKILL.md` and `pstack/skills/benchmark-checklist/SKILL.md` in full. Their useful contracts are deterministic driving, application identity, retained artifacts and meaningful measurement. Adapt browser selection to T3 Code preview rules; preserve repository harnesses and use a PTY only for interactive terminal behavior. Browser driving does not establish CPU/heap capture or Electron attachment. Choose profiling tools from the target runtime and report missing access. Keep measurement runs separate from intrusive profiling, count errors and completed work, alternate comparable runs and report noise.
 
-Control CLI now has a [standalone jstack port](../../../skills/jstack/jstack-control-cli/SKILL.md) and [bounded terminal evaluation](../evaluations/control-cli/README.md). Runtime forensics now has a separate live CPU-profile evaluation below. Bug fix and Feature now have their own procedures and evaluations. This helper alone does not enable pending callers or establish profiling and Control UI support.
+Control CLI now has a [standalone jstack port](../../../skills/jstack/jstack-control-cli/SKILL.md) and [bounded terminal evaluation](../evaluations/control-cli/README.md). Runtime forensics now has a separate live CPU-profile evaluation below. Bug fix, Feature and Refactoring now have their own procedures and evaluations. This helper alone does not enable pending callers or establish profiling and Control UI support.
 
 Sources: [CLI control and profiling](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/control-cli/SKILL.md), [UI control and CDP](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/control-ui/SKILL.md), [benchmark checklist](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/benchmark-checklist/SKILL.md).
 
@@ -77,6 +77,8 @@ Source: [refactoring](https://github.com/cursor/plugins/blob/11713c683fe4add4fd4
 Use `feature, refactoring`, with helper roles as needed. Tool replacement is ordinary isolated child editing and supported verification. Prerequisites are an executable baseline, characterized outputs and visibility of all consumers. Large cross-cutting work hands off to the separately specified bespoke-planning dependency.
 
 Acceptance scenario: replace a branching CLI formatter with a lookup table while retaining exact public outputs. Capture baseline cases before edits, replay afterward, inspect string references and every caller, and reject an unrelated output improvement. Type checking alone must not satisfy equivalence.
+
+The [Refactoring procedure](../../../skills/jstack/jstack-juan-mode/playbooks/refactoring.md) is now implemented. Its [evaluation](../evaluations/refactoring/README.md) covers a focused formatter with baseline capture before edits and independent public equivalence checks. The evaluation distinguishes a one-seat Architect blocker from a separate two-seat fixture run; API/caller migrations remain untested by these cases.
 
 ## perf-issue
 
