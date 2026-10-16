@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "fixture": "cheap",
+      "changedFiles": [
+        "options.cjs",
+        "test/cli.test.cjs"
+      ],
+      "headUnchanged": true,
+      "protectedHashes": {
+        "README.md": "144b2ba593ff95022aa477eed1568500ea2e3195cec5a03b00f08bd349d6a422",
+        "cli.cjs": "99653e8332df1323f8440e3fec1d9dfdcf250bc95a7a9e1c035f6c114c32e9ee",
+        "caller-note.txt": "ad9b60620bd71ca3b7cb6b41adfcc8bb3493347b25507bef95ef23623c47260d"
+      }
+    },
+    {
+      "originalSourceAtRedStage": true,
+      "sameRegressionAtBothStages": true,
+      "existingTestLinesRemoved": 0,
+      "sixExistingContractsEqual": true
+    },
+    {
+      "fixture": "unavailable",
+      "changedFiles": [],
+      "headUnchanged": true,
+      "protectedHashes": {
+        "README.md": "8e9a0805959be45405a7577e663026f148389cad6b768d02e72280277eb5b865",
+        "picker.cjs": "ea77037082c34c0d3afbec4a9f896d57ccb187eb168528073daca258113d0632",
+        "diagnose.cjs": "714f16707de999993582410ad8d0230480cd548d7860031b06d3d29ffed051af",
+        "caller-note.txt": "91acac45cad904b504ea0f5213f0a4ef1eabc7b6e266360e56c880169700a7cf"
+      }
+    }
+  ],
+  "replays": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-name-pattern=zero export limit means unlimited",
+        "test/cli.test.cjs"
+      ],
+      "cwd": "/tmp/jstack-tdd-20261016/parent-replay/red",
+      "exitCode": 1,
+      "stdout": "\u2716 zero export limit means unlimited (66.883664ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 0\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 181.990435\n\n\u2716 failing tests:\n\ntest at test/cli.test.cjs:18:1\n\u2716 zero export limit means unlimited (66.883664ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n    {\n      format: 'json',\n  +   limit: 20\n  -   limit: 0\n    }\n  \n      at TestContext.<anonymous> (/tmp/jstack-tdd-20261016/parent-replay/red/test/cli.test.cjs:22:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: { limit: 20, format: 'json' },\n    expected: { limit: 0, format: 'json' },\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-name-pattern=zero export limit means unlimited",
+        "test/cli.test.cjs"
+      ],
+      "cwd": "/tmp/jstack-tdd-20261016/parent-replay/green",
+      "exitCode": 0,
+      "stdout": "\u2714 zero export limit means unlimited (63.54366ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 173.319238\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test"
+      ],
+      "cwd": "/tmp/jstack-tdd-20261016/parent-replay/green",
+      "exitCode": 0,
+      "stdout": "\u2714 default export limit (77.499733ms)\n\u2714 positive export limit (63.907192ms)\n\u2714 zero export limit means unlimited (56.32033ms)\n\u2714 invalid export limit (54.393044ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 363.5988\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "diagnose.cjs"
+      ],
+      "cwd": "/tmp/jstack-tdd-20261016/unavailable/app",
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Native picker unavailable: Cannot find module '@vendor/device-picker'\nRequire stack:\n- /tmp/jstack-tdd-20261016/unavailable/app/picker.cjs\n- /tmp/jstack-tdd-20261016/unavailable/app/diagnose.cjs\n"
+    }
+  ],
+  "globalConfigSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "installedTDDUnchanged": true,
+  "limits": [
+    "Replays validate saved states; original execution order is recorded by evaluator stage evidence and command log.",
+    "Standalone authoring-path evaluation, not installed or full-mode invocation.",
+    "Native prerequisite failure is not reproduction of reported selection-loss behavior."
+  ]
+}

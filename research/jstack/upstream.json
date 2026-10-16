@@ -488,6 +488,16 @@
         "cursor-team-kit/LICENSE"
       ],
       "differences": "research/jstack/adaptations/deslop.md"
+    },
+    {
+      "name": "jstack-tdd",
+      "localPath": "skills/jstack/jstack-tdd",
+      "upstreamPath": "pstack/skills/tdd",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "pstack/skills/poteto-mode/playbooks/bug-fix.md"
+      ],
+      "differences": "research/jstack/adaptations/tdd.md"
     }
   ],
   "decisions": [

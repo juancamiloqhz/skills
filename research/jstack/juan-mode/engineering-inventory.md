@@ -56,11 +56,13 @@ Acceptance scenario: add a public CLI filter to a fixture with existing data. Re
 
 ## bug-fix
 
-Trigger: a defect to reproduce and correct. Output: the observed failure, evidenced mechanism, minimal fix and failing-then-passing output. Dependencies are a matching control path, `how`, regression-oriented `why`, conditional `architect`, optional cheap-path `tdd` and Opening a PR. Preserve mechanism confirmation before design fan-out and verification on the original interface.
+Trigger: a defect to reproduce and correct. Output: the observed failure, evidenced mechanism, minimal fix and failing-then-passing output. Dependencies are a matching control path, `how`, regression-oriented `why`, conditional `architect`, optional cheap-path `jstack-tdd` and Opening a PR. Preserve mechanism confirmation before design fan-out and verification on the original interface.
 
 Source: [bug-fix](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/bug-fix.md).
 
 Use `bug-fix` plus investigation/design roles and `hardest tasks` where justified. Replace Cursor `/loop` with scoped continued diagnosis. Prerequisites are a reachable reproducer or authorized synthetic trigger, the target's runtime and isolated state. If the real interface is inaccessible, retain the failed attempt and exact prerequisite; a unit-test pass must not imply reproduced-bug absence.
+
+The [standalone jstack-tdd helper](../../../skills/jstack/jstack-tdd/SKILL.md) now preserves the pinned six-step test-first procedure and impractical-test alternative. Its [bounded evaluation](../evaluations/tdd/README.md) covers a public CLI regression and an unavailable native prerequisite. This helper does not implement Bug fix, commit staging or Opening a PR.
 
 Acceptance scenario: seed a CLI defect that exits zero but returns the wrong persisted value. The public reproducer must fail before implementation and pass afterward; review must reject unrelated defensive changes. In a cheap-test fixture, stage the failing regression test before the fix. An inaccessible-interface case must report blocked proof.
 

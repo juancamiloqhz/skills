@@ -103,6 +103,8 @@ Both columns are intentional. The left column identifies old installations to re
 
 `jstack-deslop` adapts the external Cursor team-kit Deslop skill. It also has no former jstack name to remove. Select `jstack-deslop` when manually installing the pre-commit helper after merge; preserve any unrelated `deslop` installation.
 
+`jstack-tdd` ports pstack's focused bug-fix testing skill. It has no former jstack installation name to remove. Select `jstack-tdd` when manually installing this helper after merge; an unrelated installed `tdd` skill may have a different workflow and should be preserved.
+
 ## Upstream maintenance and evidence
 
 `upstream.json` maps each new local identity to its original upstream path and unchanged revision pin. The shared reviewed checkpoint does not move. Preserve pstack's boundaries, headings, procedures and role labels; translate only package identities and their callers. Future adaptations must apply this mapping rather than restoring unprefixed names.

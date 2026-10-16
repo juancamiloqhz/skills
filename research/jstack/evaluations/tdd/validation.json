@@ -1,0 +1,53 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/jstack/test_skill_packaging.py"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.086s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "skills/jstack/jstack-tdd"
+    ],
+    "exitCode": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "-c",
+      "import sys;from pathlib import Path;sys.path.insert(0,'scripts/jstack');from check_upstream import load_manifest;load_manifest(Path('research/jstack/upstream.json'),Path.cwd());print('Manifest valid')"
+    ],
+    "exitCode": 0,
+    "stdout": "Manifest valid\n",
+    "stderr": ""
+  },
+  {
+    "check": "Changed documentation/entrypoints",
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/adaptations/tdd.md research/jstack/evaluations/tdd/README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/juan-mode/engineering-inventory.md research/jstack/roadmap.md research/jstack/skill-names.md skills/jstack/jstack-tdd/SKILL.md\nLinting: 9 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Changed Markdown relative destinations",
+    "count": 247,
+    "result": "all exist"
+  },
+  {
+    "check": "git diff --check",
+    "exitCode": 0
+  },
+  {
+    "check": "git diff --cached --check",
+    "exitCode": 0
+  }
+]
