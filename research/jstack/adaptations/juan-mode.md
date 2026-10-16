@@ -46,3 +46,7 @@ The manifest now watches `pstack/agents/poteto-agent.md` as context. Setup, Aren
 ## Control CLI dependency
 
 The matching-control trigger now discovers standalone `jstack-control-cli` for terminal apps while retaining external Control UI. The dependency paragraph distinguishes those packages. [Control CLI adaptation and caller comparison](control-cli.md) cover both changes; all route procedures and availability counts remain unchanged.
+
+## Deslop dependency
+
+The pre-commit trigger now discovers standalone `jstack-deslop` instead of the external Cursor plugin name. The dependency paragraph keeps Control UI external and identifies both shipped helpers. [Deslop adaptation and caller comparison](deslop.md) cover the two caller changes; all five procedures and the 18 pending routes remain unchanged. This supersedes the earlier table's external Deslop disposition.

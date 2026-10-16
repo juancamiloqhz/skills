@@ -14,7 +14,8 @@
     ".github/workflows/validate-plugins.yml",
     "cursor-team-kit/skills/control-ui",
     "cursor-team-kit/skills/control-cli",
-    "cursor-team-kit/LICENSE"
+    "cursor-team-kit/LICENSE",
+    "cursor-team-kit/skills/deslop"
   ],
   "skills": [
     {
@@ -38,7 +39,8 @@
         "cursor-team-kit/skills/control-ui",
         "pstack/skills/principle-guard-the-context-window",
         "pstack/skills/principle-encode-lessons-in-structure",
-        "cursor-team-kit/skills/control-cli"
+        "cursor-team-kit/skills/control-cli",
+        "cursor-team-kit/skills/deslop"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
@@ -476,6 +478,16 @@
         "cursor-team-kit/LICENSE"
       ],
       "differences": "research/jstack/adaptations/control-cli.md"
+    },
+    {
+      "name": "jstack-deslop",
+      "localPath": "skills/jstack/jstack-deslop",
+      "upstreamPath": "cursor-team-kit/skills/deslop",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "cursor-team-kit/LICENSE"
+      ],
+      "differences": "research/jstack/adaptations/deslop.md"
     }
   ],
   "decisions": [
