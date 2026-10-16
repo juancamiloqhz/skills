@@ -12,7 +12,9 @@
     "schemas/marketplace.schema.json",
     "scripts/validate-plugins.mjs",
     ".github/workflows/validate-plugins.yml",
-    "cursor-team-kit/skills/control-ui"
+    "cursor-team-kit/skills/control-ui",
+    "cursor-team-kit/skills/control-cli",
+    "cursor-team-kit/LICENSE"
   ],
   "skills": [
     {
@@ -35,7 +37,8 @@
         "pstack/skills/principle-exhaust-the-design-space",
         "cursor-team-kit/skills/control-ui",
         "pstack/skills/principle-guard-the-context-window",
-        "pstack/skills/principle-encode-lessons-in-structure"
+        "pstack/skills/principle-encode-lessons-in-structure",
+        "cursor-team-kit/skills/control-cli"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
@@ -463,6 +466,16 @@
         "pstack/skills/principle-boundary-discipline"
       ],
       "differences": "research/jstack/adaptations/typescript-best-practices.md"
+    },
+    {
+      "name": "jstack-control-cli",
+      "localPath": "skills/jstack/jstack-control-cli",
+      "upstreamPath": "cursor-team-kit/skills/control-cli",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "cursor-team-kit/LICENSE"
+      ],
+      "differences": "research/jstack/adaptations/control-cli.md"
     }
   ],
   "decisions": [

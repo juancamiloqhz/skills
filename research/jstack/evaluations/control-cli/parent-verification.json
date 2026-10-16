@@ -1,0 +1,17 @@
+{
+  "rawTranscriptsIdenticalOnIndependentParentReplay": true,
+  "readEventsReconstructEveryRawTranscript": true,
+  "normalActions": [
+    "Ada",
+    "help",
+    "status",
+    "quit"
+  ],
+  "failureModesReceiveNoInput": true,
+  "allSixHarnessChildrenReapedAndAbsent": true,
+  "inputHashesUnchanged": true,
+  "globalConfigurationSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+  "liveVsFinalDifference": "Only the Python example changed after the independent live run; parent executed that exact final example on all three modes.",
+  "finalExampleMatchesExecutedTemplate": true,
+  "limits": "Parent inspected and executed the actual retained harness. This does not prove profiling, tmux, resize/interrupt controls, process descendants or installed discovery."
+}

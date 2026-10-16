@@ -32,6 +32,10 @@ The [Trace forensics procedure](../../skills/jstack/jstack-juan-mode/playbooks/t
 
 The [authoring procedure](../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) uses the host authoring skill, validates package and helper references, tests structural changes and preserves the requested delivery boundary. Its [evaluation](evaluations/authoring-a-skill/README.md) covers a local router change and a wording-only edit. Opening a PR remains a pending procedure; publishing, merging and installation retain their existing authority requirements.
 
+## Implemented dependency: Control CLI
+
+The standalone [jstack-control-cli helper](../../skills/jstack/jstack-control-cli/SKILL.md) supplies the terminal-control dependency for future engineering playbooks. Its [evaluation](evaluations/control-cli/README.md) covers an actual PTY prompt flow, startup timeout, early exit and owned-process cleanup. The pinned Python example's silent timeout is corrected with retained before/after evidence. Runtime forensics and other consuming playbooks remain pending; profiling, rich TUI input and Control UI still require separate proof.
+
 ## Completed: jstack-setup
 
 Model configuration and validation shipped in [PR #2](https://github.com/juancamiloqhz/skills/pull/2), with prose formatting corrected in [PR #3](https://github.com/juancamiloqhz/skills/pull/3). Release checks included six helper tests, skill validation, and Markdown linting. Setup was installed for the four selected providers and invoked successfully in a T3 Code session.
