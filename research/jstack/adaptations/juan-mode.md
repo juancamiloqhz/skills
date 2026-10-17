@@ -130,3 +130,7 @@ The [runtime foundation](orch-runtime.md) adds the upstream store and CLI under 
 ## Orchestrate GitHub frontier, 2026-10-17
 
 The [frontier adaptation](orch-frontier.md) replaces Graphite discovery with a required explicit PR list, verified GitHub state, published Git refs and parent ancestry. Its [evaluation](../evaluations/orch-frontier/README.md) covers rejection without record changes and separates live reads from modeled races. Store formats remain unchanged. Orchestrate is still unavailable pending completion reconciliation and coordinator recovery; there are still 22 procedures.
+
+## Recoverable Orchestrate inbox, 2026-10-17
+
+The [inbox adaptation](orch-inbox-recovery.md) adds claim/ack commands and one current batch manifest. Its [evaluation](../evaluations/orch-inbox-recovery/README.md) demonstrates replay after a killed local holder and cleanup after filesystem refusal. It does not claim T3 lifecycle recovery or exactly-once classification. Orchestrate remains unavailable; task/result reconciliation and verifier precedence are next.

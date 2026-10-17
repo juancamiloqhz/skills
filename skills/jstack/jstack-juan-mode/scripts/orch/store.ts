@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import type { Dirent } from "node:fs";
 import {
   access,
@@ -55,6 +55,19 @@ export interface InboxPointer {
 export interface InboxPushResult {
   readonly pointer: InboxPointer;
   readonly filename: string;
+}
+
+export interface InboxEntry {
+  readonly filename: string;
+  readonly pointer: InboxPointer;
+  readonly sha256: string;
+}
+
+export interface InboxBatch {
+  readonly id: string;
+  readonly state: "pending" | "acknowledged";
+  readonly entries: readonly InboxEntry[];
+  readonly receipt: { readonly path: string; readonly sha256: string } | null;
 }
 
 export interface OpenGate {
@@ -196,6 +209,8 @@ export interface Store {
   readonly inbox: {
     readonly push: (params: PushInboxParams) => Promise<InboxPushResult>;
     readonly drain: () => Promise<readonly InboxPointer[]>;
+    readonly claim: () => Promise<InboxBatch | null>;
+    readonly ack: (id: string, receipt: string) => Promise<InboxBatch>;
     readonly peek: () => Promise<readonly InboxPointer[]>;
     readonly count: () => Promise<number>;
   };
@@ -555,9 +570,9 @@ function pointerCells(pointer: InboxPointer): readonly string[] {
   ];
 }
 
-async function readPointers(
+async function readPointerEntries(
   directory: string
-): Promise<readonly InboxPointer[]> {
+): Promise<readonly InboxEntry[]> {
   let entries: Dirent[];
   try {
     entries = await readdir(directory, { withFileTypes: true });
@@ -569,28 +584,98 @@ async function readPointers(
     }
     throw error;
   }
-  const result: InboxPointer[] = [];
+  const result: InboxEntry[] = [];
   const files = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".tsv"))
     .sort((left, right) => left.name.localeCompare(right.name));
   for (const entry of files) {
-    const raw = (await readFile(join(directory, entry.name), "utf8")).replace(
-      /\r?\n$/,
-      ""
-    );
+    const contents = await readFile(join(directory, entry.name), "utf8");
+    const raw = contents.replace(/\r?\n$/, "");
     const row = raw.split("\t");
     if (/[\r\n]/.test(raw) || row.length !== 5) {
       throw new UserError(`inbox pointer ${entry.name} is malformed`);
     }
     result.push({
-      ts: row[0] ?? "",
-      agent: row[1] ?? "",
-      unit: row[2] ?? "",
-      status: row[3] ?? "",
-      report: row[4] ?? "",
+      filename: entry.name,
+      sha256: digest(contents),
+      pointer: {
+        ts: row[0] ?? "",
+        agent: row[1] ?? "",
+        unit: row[2] ?? "",
+        status: row[3] ?? "",
+        report: row[4] ?? "",
+      },
     });
   }
   return result;
+}
+
+async function readPointers(directory: string): Promise<readonly InboxPointer[]> {
+  return (await readPointerEntries(directory)).map((entry) => entry.pointer);
+}
+
+function digest(contents: string): string {
+  return createHash("sha256").update(contents).digest("hex");
+}
+
+async function readInboxBatch(store: string): Promise<InboxBatch | null> {
+  const path = join(store, "inbox-batch.json");
+  let value: unknown;
+  try {
+    value = JSON.parse(await readFile(path, "utf8"));
+  } catch (error) {
+    if (errorCode(error) === "ENOENT") return null;
+    throw new UserError(`cannot read inbox-batch.json: ${errorMessage(error)}`);
+  }
+  const invalid = () => new UserError("inbox-batch.json has an invalid shape");
+  if (!isRecord(value) || typeof value.id !== "string" ||
+      !/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(value.id) ||
+      !(value.state === "pending" || value.state === "acknowledged") ||
+      !isUnknownArray(value.entries) || value.entries.length === 0) throw invalid();
+  const entries: InboxEntry[] = [];
+  for (const entry of value.entries) {
+    if (!isRecord(entry) || typeof entry.filename !== "string" ||
+        !/^[A-Za-z0-9][A-Za-z0-9._-]*\.tsv$/.test(entry.filename) ||
+        typeof entry.sha256 !== "string" || !/^[0-9a-f]{64}$/.test(entry.sha256) ||
+        !isRecord(entry.pointer)) throw invalid();
+    const { ts, agent, unit, status, report } = entry.pointer;
+    if (typeof ts !== "string" || typeof agent !== "string" ||
+        typeof unit !== "string" || typeof status !== "string" || typeof report !== "string" ||
+        [ts, agent, unit, status, report].some((cell) => /[\t\r\n]/.test(cell))) throw invalid();
+    entries.push({ filename: entry.filename, sha256: entry.sha256, pointer: { ts, agent, unit, status, report } });
+  }
+  if (new Set(entries.map((entry) => entry.filename)).size !== entries.length) throw invalid();
+  let receipt: InboxBatch["receipt"] = null;
+  if (value.state === "acknowledged") {
+    if (!isRecord(value.receipt) || typeof value.receipt.path !== "string" ||
+        value.receipt.path.length === 0 || typeof value.receipt.sha256 !== "string" ||
+        !/^[0-9a-f]{64}$/.test(value.receipt.sha256)) throw invalid();
+    receipt = { path: value.receipt.path, sha256: value.receipt.sha256 };
+  } else if (value.receipt !== null) throw invalid();
+  return { id: value.id, state: value.state, entries, receipt };
+}
+
+async function checkBatchFiles(store: string, batch: InboxBatch): Promise<void> {
+  for (const entry of batch.entries) {
+    let contents: string;
+    try {
+      contents = await readFile(join(store, "inbox", entry.filename), "utf8");
+    } catch (error) {
+      if (errorCode(error) === "ENOENT" && batch.state === "acknowledged") continue;
+      throw new UserError(`cannot read claimed pointer ${entry.filename}: ${errorMessage(error)}`);
+    }
+    if (digest(contents) !== entry.sha256) {
+      throw new UserError(`claimed pointer ${entry.filename} changed; reconcile before acknowledging`);
+    }
+  }
+}
+
+async function finishAcknowledgedBatch(store: string, batch: InboxBatch): Promise<void> {
+  if (batch.state !== "acknowledged") throw new UserError("batch is not acknowledged");
+  await checkBatchFiles(store, batch);
+  for (const entry of batch.entries) {
+    await rm(join(store, "inbox", entry.filename), { force: true });
+  }
 }
 
 function renderGates(rows: readonly Gate[]): string {
@@ -1321,8 +1406,56 @@ export function openStore(
         await atomicWrite(join(inbox, filename), contents);
         return { pointer, filename };
       },
+      claim: async () => {
+        await beginWrite();
+        const previous = await readInboxBatch(store);
+        if (previous?.state === "pending") {
+          await checkBatchFiles(store, previous);
+          return previous;
+        }
+        if (previous !== null) await finishAcknowledgedBatch(store, previous);
+        const entries = await readPointerEntries(join(store, "inbox"));
+        if (entries.length === 0) return null;
+        if (entries.some((entry) => !/^[A-Za-z0-9][A-Za-z0-9._-]*\.tsv$/.test(entry.filename))) {
+          throw new UserError("inbox pointer filename is not supported for a recoverable batch");
+        }
+        const batch: InboxBatch = { id: randomUUID(), state: "pending", entries, receipt: null };
+        await atomicWrite(join(store, "inbox-batch.json"), `${JSON.stringify(batch, null, 2)}\n`);
+        return batch;
+      },
+      ack: async (id, receiptPath) => {
+        await beginWrite();
+        const batch = await readInboxBatch(store);
+        if (batch === null || batch.id !== id) throw new UserError("inbox batch does not match; claim the current batch first");
+        const path = resolve(requiredLine(receiptPath, "receipt path"));
+        if (batch.state === "acknowledged") {
+          if (path !== batch.receipt?.path) throw new UserError("batch was acknowledged with a different receipt");
+          await finishAcknowledgedBatch(store, batch);
+          return batch;
+        }
+        if (path === join(store, "inbox-batch.json") || path.startsWith(join(store, "inbox") + "/")) {
+          throw new UserError("receipt must be outside the inbox and batch state file");
+        }
+        let contents: string;
+        try {
+          contents = await readFile(path, "utf8");
+        } catch (error) {
+          throw new UserError(`cannot read classification receipt: ${errorMessage(error)}`);
+        }
+        if (contents.trim().length === 0) throw new UserError("receipt must not be empty");
+        await checkBatchFiles(store, batch);
+        const acknowledged: InboxBatch = {
+          ...batch, state: "acknowledged", receipt: { path, sha256: digest(contents) },
+        };
+        await atomicWrite(join(store, "inbox-batch.json"), `${JSON.stringify(acknowledged, null, 2)}\n`);
+        await finishAcknowledgedBatch(store, acknowledged);
+        return acknowledged;
+      },
       drain: async () => {
         await beginWrite();
+        const batch = await readInboxBatch(store);
+        if (batch?.state === "pending") throw new UserError("inbox has a pending batch; record its decisions and acknowledge it before draining");
+        if (batch !== null) await finishAcknowledgedBatch(store, batch);
         const inbox = join(store, "inbox");
         const rows = await readPointers(inbox);
         const drained = join(
