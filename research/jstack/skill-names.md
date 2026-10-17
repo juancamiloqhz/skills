@@ -99,6 +99,8 @@ Both columns are intentional. The left column identifies old installations to re
 
 ## Additional standalone helpers
 
+`jstack-control-ui` adapts Cursor team-kit Control UI. It has no former jstack installation name to remove. Select `jstack-control-ui` when manually installing the helper after merge; preserve unrelated `control-ui` installations.
+
 `jstack-control-cli` adapts the external Cursor team-kit Control CLI skill. It has no former jstack installation name to remove. After its PR merges, select `jstack-control-cli` explicitly when manually installing the helpers you use. Do not remove another collection's `control-cli` solely because its name is unprefixed.
 
 `jstack-deslop` adapts the external Cursor team-kit Deslop skill. It also has no former jstack name to remove. Select `jstack-deslop` when manually installing the pre-commit helper after merge; preserve any unrelated `deslop` installation.

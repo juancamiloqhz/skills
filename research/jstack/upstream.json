@@ -514,6 +514,16 @@
         "pstack/skills/poteto-mode/playbooks/bug-fix.md"
       ],
       "differences": "research/jstack/adaptations/tdd.md"
+    },
+    {
+      "name": "jstack-control-ui",
+      "localPath": "skills/jstack/jstack-control-ui",
+      "upstreamPath": "cursor-team-kit/skills/control-ui",
+      "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "contextPaths": [
+        "cursor-team-kit/LICENSE"
+      ],
+      "differences": "research/jstack/adaptations/control-ui.md"
     }
   ],
   "decisions": [

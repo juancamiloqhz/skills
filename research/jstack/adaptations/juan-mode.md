@@ -74,3 +74,7 @@ The [Hillclimb adaptation](hillclimb.md) adds the tenth procedure, leaving 13 pe
 ## Eval procedure
 
 The [Eval adaptation](eval.md) adds the eleventh procedure, leaving 12 pending. It preserves all seven steps and the source blinding rules, using configured model diversity and scoped run evidence. Its specialized child briefs keep orchestration metadata private. Other routes and helper algorithms remain unchanged. See the [bounded evaluation](../evaluations/eval/README.md).
+
+## Control UI dependency
+
+The UI trigger now discovers standalone `jstack-control-ui`, and the dependency paragraph lists both shipped control helpers. The [Control UI adaptation](control-ui.md) accounts for these two caller changes and the full helper source. No playbook route or existing procedure changes; Visual parity remains pending.

@@ -1,0 +1,31 @@
+{
+  "base": "5fd0dcd101cfa4afc60955b0cb43dc3e3df778b9",
+  "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "comparisons": [
+    {
+      "source": "cursor-team-kit/skills/control-ui/SKILL.md",
+      "local": "skills/jstack/jstack-control-ui/SKILL.md",
+      "sourceSHA256": "410cae25bdb1e5d2323b126abc5047b0213be7fdb0195710213fa8de8a751871",
+      "localSHA256": "3e9edbdb23e45d635eec5fdf9a337eba0adeac66c905abccf9e6f59e01ea63c0",
+      "completeDiffSHA256": "c6a36f808506394bc978280cb6a582ff749e269766b844c0d402fe61f5c6568c",
+      "assessment": "research/jstack/adaptations/control-ui.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "sourceSHA256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+      "localSHA256": "ecc5dcb777b058aa8868a53048075de70c6c9f9e3e1a8cfa9e7231ab4758c5b1",
+      "completeDiffSHA256": "c4adc75ff2ff4f89706a5696cab2999e718a3f973ba536a9ecc7324a265d09b9",
+      "assessment": "research/jstack/adaptations/juan-mode.md"
+    }
+  ],
+  "manifest": "One new mapping; all previous mappings, watch/context paths, pins and checkpoint unchanged.",
+  "playbooks": {
+    "available": 11,
+    "pending": 12
+  },
+  "sourceStructure": "All headings, numbered-step markers, original description and both complete JavaScript examples preserved.",
+  "license": "Exact cursor-team-kit/LICENSE at pin, including Cursor copyright.",
+  "callerPackage": "Every existing file compared; only two Control UI caller paragraphs change.",
+  "retention": "Full source diffs inspected in task scratch; exact identities and adaptation records retained without duplicate source text."
+}
