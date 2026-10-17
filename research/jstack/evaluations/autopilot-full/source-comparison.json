@@ -1,0 +1,45 @@
+{
+  "base": "fb7dd9ffe9f65aae572aa523398be087c7623b6b",
+  "assessment": "research/jstack/adaptations/autopilot-full.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/autopilot-full.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "47335b8646468e28b556c5d2a55f3f14a665bee234a153d1ee40a75c0876e77d",
+      "diffSHA256": "3a13836f5d75c7df79dbe55636f69242a0f4a12adc8a82e988eb87bacf2fa63c"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/multi-phase-plan.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "81c3783f8e68084a9201581eab1349c177bdb0e870172926be8a9aaecb54431b",
+      "diffSHA256": "e685e0b1b77734a3e9bb693c9a2f5bd2d23eadd81ca0bf35a2e1f54a8d121f5f"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/babysit.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/babysit.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "f3225a1cee03cd22d67c5994da3960adabb01c4a4141d3ef213fba615d742cd0",
+      "diffSHA256": "09df37d763c582377ed3dae8151af5aeeb87de8428467acb83a4331df264d008"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "ff6ceed0520a58bd0bf6da9a1157a74e9df790acc87fee56bb860c18aebb4b58",
+      "diffSHA256": "42581588a804568de29ff8f72130a8fb839bffe436e29edc632d00840ed328a7"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "9c58602811bdabae979b95cbacdc18adc51628e3c877d0fcf8bcd7d1dc7a1849",
+      "diffSHA256": "db388ef54a62282db700e2f7631f852cd47ab85670afa771f9d96314293985b9"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; prior setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 21
+}
