@@ -1,0 +1,40 @@
+{
+  "base": "7ae0996d4aa7da6fc3f693b50d8b68feda2f57f9",
+  "assessment": "research/jstack/adaptations/multi-phase-plan.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/multi-phase-plan.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "fe9eb1a6e93d684f222a46d5e127284f64ee008abccda8892c701ebba961893f",
+      "diffSHA256": "afc02d62e12e27792b67f5e5eefc8fed738e576ff201e753c2e62b8f58bb8e5c"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/check-plan.mjs",
+      "local": "skills/jstack/jstack-juan-mode/scripts/check-plan.mjs",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "cc3b4bc0251d5827929232971d8b791cce6174a0d6c943dc6ce3f445183b6e2b",
+      "diffSHA256": "2bee28d31e3e46756449fdca4938459b801ee74f76c34bc2d8a79d7efba5965f"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "1e799945b4dea7f040b763ae4e87a9e3946ad6cce21b91fe7e559522955f6b0b",
+      "diffSHA256": "bed01aef4abf7c5fb2eb1a47206b3ef3a99a81be9b5f5003721f5717ad219a6d"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "9ddb5cde917dc99f38f762dc7db7578ea773e2416e81cb5eda208ab6cf00929b",
+      "diffSHA256": "8a4486469c7a2a68728a014dd0d9061686101b99d911ed23b1082eabdde494b3"
+    }
+  ],
+  "selectionRuleSource": "pstack/skills/poteto-mode/playbooks/autopilot-stack.md at 11713c683fe4add4fd403ea880580abbc9e0875f",
+  "checkerDifference": "Only PROGRAM_MARKERS changes from /loop 1h to schedule_task and the compact hourly interval marker.",
+  "configurationReferenceChange": "Availability only; existing setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 16
+}
