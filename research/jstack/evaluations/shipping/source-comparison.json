@@ -1,0 +1,39 @@
+{
+  "base": "d5fb19341c40f515da764fad59a1608003f70ca1",
+  "assessment": "research/jstack/adaptations/shipping.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/shipping.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/shipping.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "5c63d64d76ad71718fc7dfbef438e23b7e8f82bb62d9a1c7ac4ac875e5138c30",
+      "diffSHA256": "2f69b0235500885dfde16cc0b41d2991f095c74e297a34a4ad019d1c49ba2e80"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/babysit.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/babysit.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "8ec19fedf8192d3e1e42d0692729afc7248ce322add07cf7d598af0118916f79",
+      "diffSHA256": "71ac2be86ea9b578a043da6289b4699f3b7438fe163f0e2465be043a688b4d02"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "014f4bfad8eb67137cfa633e921737bfb9fab42b3586e5c4fa48efe066abb80f",
+      "diffSHA256": "916750921db078b8de5d4d1eb573bae55a710a859172e3db42853b8083a23f5a"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "ee1c98b8e9bb99afd9c07f0a08275bb372843cb66a1d734756f8966691f7e7b5",
+      "diffSHA256": "3b0fc51bddaffdb2d9014ecbd41bc656ddab9475949363b36c98e6665177d8c3"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; existing setup adaptation retained.",
+  "manifest": "All 45 mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Unchanged mode MIT notice.",
+  "localPlaybooks": 15,
+  "retention": "Full source diffs inspected in scratch. This record retains identities and the linked semantic assessment."
+}

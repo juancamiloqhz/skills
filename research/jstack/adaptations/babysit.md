@@ -23,3 +23,7 @@ The source tests deliberately accept `UNKNOWN` merge states and treat `BLOCKED` 
 Review-thread reads cap at 100 and use each thread's first comment, commit history caps at 50, and connected-stack discovery caps at 300 open PRs. Check-rollup fallback is paginated. Empty check results fail closed, including repositories with no check runs. No installation or readiness claim should disguise these limitations. The source's stack-wide tier ordering can report an upper conflict before frontier CI; the playbook still prohibits unauthorized upper fixes.
 
 The [evaluation](../evaluations/babysit/README.md) and [complete source comparison](../evaluations/babysit/source-comparison.json) separate preserved behavior, T3 adaptations and remaining live tests. Prior entrypoint and Opening a PR differences remain accounted for in their existing adaptation records.
+
+## Shipping caller update
+
+Shipping is now available. The introduction links its bundled procedure and retains the missing-procedure qualification for both Autopilot routes. No Babysit procedure step or watcher code changes in this update. See the [Shipping assessment](shipping.md).
