@@ -8,15 +8,15 @@ The [procedure draft](../../../../skills/jstack/jstack-juan-mode/playbooks/orche
 
 Base is merged PR #74, `d148e8a0796737f47fc01271be18138766d43747`. The implementation uses the saved `feature, refactoring` role, Codex gpt-6.1-sol at high effort, in an actual T3-bound worktree. The coordinator owns publication and durable records. No new workflow activation, installation, schedule, model-file change or host restart belongs to this pilot.
 
-The implementation and saved `swarm workers` roles both select GPT-6.1-Sol. The coordinator requested a task-local Claude Opus 5.5/high verifier to meet the different-family requirement. That request does not alter the saved configuration and must be answered before the override is dispatched. The PR's current-head verdict and any unresolved gate are recorded in its body and the local ledger; an old verdict does not certify a changed head.
+The implementation and saved `swarm workers` roles both select GPT-6.1-Sol. The user approved a task-local Claude Opus 5.5/high verifier to meet the different-family requirement, leaving the saved configuration unchanged. Independent verification is pending at this checkpoint; the local ledger has no verdict. When verification finishes, record its actual PR head in the ledger and report the outcome in the PR body. An old verdict does not certify a changed head.
 
-The coordinator store is `/home/ubuntu/.cache/jstack/orchestrate/recovery-pilot-20261017`. It retains standing orders, original task/run bindings, briefs, receipt classifications, the decision trail and the restart checkpoint. It is active recovery state, not a repository artifact. Raw reports and generated test data remain outside Git.
+The coordinator records its active store path in the conversation's handoff. The store retains standing orders, original task/run bindings, briefs, receipt classifications, the decision trail and the restart checkpoint. It is active recovery state, not durable published evidence. Raw reports and generated test data remain outside Git; the committed scripts reproduce the local checks without that store.
 
 ## Executed checks
 
 The worker committed `6535083d19f906912e17de957a086a3abc84ace9` on its assigned branch and returned completed with no pending child work. The coordinator inspected the changed files, applied that commit cleanly, and separately ran the subprocess test against an exact cached runtime copy. Both interrupted and normal paths passed. Six changed-evidence cases were rejected before CLI access; repeated acknowledged replay preserved state and issued no unit updates. Test observations are synthetic; the worker task and its actual Git worktree/commit are live evidence.
 
-The worker corrected an initial test expectation for the CLI count response and its invocation-log offset before the successful run. An initial commit used a command-local hooks-path override despite the brief; the worker replaced it with an ordinary amend using standard hook discovery. The coordinator records that deviation rather than claiming it never occurred. No hook configuration was persisted.
+The worker corrected an initial test expectation for the CLI count response and its invocation-log offset before the successful run. It reported using a command-local hooks-path override despite the brief, then replacing the initial commit with an ordinary amend using standard hook discovery. The coordinator confirmed the amend history and absence of persisted hook configuration; the original override is worker-reported.
 
 Independent verification and trail-review outcomes are external receipts associated with the actual PR head, so this document does not certify itself. The pilot remains incomplete while either review or landing is pending.
 
