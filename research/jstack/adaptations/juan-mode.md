@@ -82,3 +82,7 @@ The UI trigger now discovers standalone `jstack-control-ui`, and the dependency 
 ## Visual parity coverage
 
 The [Visual parity adaptation](visual-parity.md) adds the twelfth procedure, leaving eleven pending. Availability paragraphs now list it; route triggers, existing procedures, setup defaults and model resolution remain unchanged. The [evaluation](../evaluations/visual-parity/README.md) records exact screenshot comparisons and explicit missing-baseline behavior.
+
+## Opening a PR coverage
+
+[Opening a PR](opening-a-pr.md) adds the thirteenth procedure, leaving ten pending. Availability paragraphs and seven existing callers now reach it; original caller algorithms, roles and setup behavior remain unchanged. Publication authority remains separate from local preparation, monitoring and merging. See the [evaluation](../evaluations/opening-a-pr/README.md).

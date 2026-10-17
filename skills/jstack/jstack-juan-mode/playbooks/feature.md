@@ -14,7 +14,7 @@
 6. Rebase into small, ordered commits. Stack follow-ups.
    Use the **jstack-principle-sequence-verifiable-units** principle skill, building, verifying, and committing each small unit before the next. Commit, rebase and publish stacks only within the task's authority and preserve unrelated work. For uncommitted local delivery, retain verified artifacts and the proposed order.
 7. If the design is contested, `jstack-interrogate` before shipping.
-8. Run **Opening a PR** when publication is authorized. That procedure remains unavailable in this package; disclose the gap rather than claiming it ran. Preserve local-only delivery and existing publication authority. This playbook does not authorize merging or installation.
+8. Run **Opening a PR** when publication is authorized. Read and follow [Opening a PR](opening-a-pr.md). Preserve local-only delivery and existing publication authority. This playbook does not authorize merging or installation.
 
 Code-coupled work (one feature, one migration) goes to a single owner with the checkpoint inline. That owner fans out internally after the blocking phase. Parent-level fan-out is for slices that produce independent artifacts (audits, cross-subsystem investigations, competing experiments). Rewrite the checkpoint at phase boundaries. Spawn a fresh owner rather than chaining interrupts.
 

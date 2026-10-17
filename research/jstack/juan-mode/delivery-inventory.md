@@ -32,13 +32,13 @@ Trigger when the requested delivery includes a PR. Produce ordered commits, the 
 
 Source: [opening-a-pr](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/opening-a-pr.md), [mode models](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/SKILL.md).
 
-Adapt the cleanup and writing helpers into explicit reusable contracts, honoring the repository's PR template and the existing `pr` skill where available. Replace blanket resets, forced ready status, and automatic publication with the user's delivery scope and preservation of unrelated work. Use the callable PR creation tool or supported forge CLI, then register every URL through T3 Code. Opening a PR finishes without starting a watch unless monitoring was requested; a child returns its PR evidence to the parent.
+The [implemented procedure](../../../skills/jstack/jstack-juan-mode/playbooks/opening-a-pr.md) uses the shipped cleanup and writing helpers, honoring the repository's PR template and the existing `pr` skill where available. Replace blanket resets, forced ready status, and automatic publication with the user's delivery scope and preservation of unrelated work. Use the callable PR creation tool or supported forge CLI, then register every URL through T3 Code. Opening a PR finishes without starting a watch unless monitoring was requested; a child returns its PR evidence to the parent.
 
 Basis: proposed adaptation of [opening-a-pr](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/poteto-mode/playbooks/opening-a-pr.md); live PR-linking and watching descriptions; [jstack permission boundary](../../../skills/jstack/jstack-setup/references/configuration.md).
 
 Acceptance scenario: with an unrelated dirty file and a two-layer change, publish only the authorized changes, preserve that file, target the child PR at its parent branch, and verify both URLs are linked with no automatic watch or merge. Repeat a local-only request and confirm it produces no PR. Prerequisites are forge credentials, publication permission, repository checks, and an available review helper; Origin is optional.
 
-Basis: proposed behavioral evaluation of the preceding delivery contract.
+The [bounded evaluation](../evaluations/opening-a-pr/README.md) checks real local stack ancestry and preservation of staged, unstaged, untracked and ignored work. Live publication is limited to the actual single implementation PR. A published two-layer stack and delegated opener with Interrogate remain untested.
 
 ## babysit
 

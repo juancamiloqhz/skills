@@ -18,7 +18,7 @@
    Apply the **jstack-principle-sequence-verifiable-units** principle skill, verifying each attempt before trying the next.
 4. Parse and compare the artifacts (JSON to sqlite, diff). "Inconclusive" or wrong-surface is not a pass. Flag it. Inspect the delegated diff and repeat the public workload yourself; retain outputs, error/work counts and comparable measurements. Keep profiling runs separate from reported timings, as the checklist requires.
 5. Cite the measurement in the PR when publication is authorized; for local-only delivery, retain it in the local report.
-6. Run **Opening a PR** when publication is authorized. That procedure remains unavailable in this package; disclose the gap rather than claiming it ran. Preserve unrelated work and existing publication authority. This playbook does not authorize merging or installation.
+6. Run **Opening a PR** when publication is authorized. Read and follow [Opening a PR](opening-a-pr.md). Preserve unrelated work and existing publication authority. This playbook does not authorize merging or installation.
 
 For sustained improvement against a metric rather than a one-off fix, use the Hillclimb playbook (`playbooks/hillclimb.md`).
 
