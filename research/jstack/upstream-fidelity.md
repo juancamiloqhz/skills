@@ -14,6 +14,24 @@ Optional structural or behavioral redesign requires an explicit user decision be
 
 Keep upstream source paths, revision pins and adaptation rationale in `research/jstack/` and the upstream manifest. Do not add provenance-only sections to operational SKILL.md files. Preserve required license and copyright notices in each distributed package. Discovery must not depend on a prose Attribution section. Existing helper provenance should be assessed during the broader fidelity audit rather than silently changed in an unrelated task.
 
+## Evaluation evidence retention
+
+User decision, 2026-10-17: keep the minimum evidence needed to review and reproduce jstack changes. Do not commit an entire evaluation workspace. This applies to future skills, playbooks, reviews and maintenance work, starting with PR #55.
+
+Commit:
+
+- Small fixtures and scripts needed to reproduce meaningful behavior checks. Generate deterministic datasets instead of storing them.
+- One concise results report with the claim, environment, commands, outcomes, failures and remaining limitations. Keep individual measurement samples when needed to assess repeatability.
+- Required upstream pins, adaptation decisions and source comparisons. Keep a primary trace or failure excerpt only when it supports a claim the report and reproducer cannot establish alone; explain its purpose.
+
+Keep routine command transcripts, full subagent conversations and reports, capability catalogs, duplicate snapshots, generated datasets, intermediate databases, SQL dumps and raw debugging logs in task-owned scratch or cache by default. Do not replace hundreds of unnecessary files with one giant JSON file, archive, hash inventory or transcript. Summarize relevant findings once, preserving material failures and qualifications.
+
+Before staging, inspect the file list and diff size. For each retained artifact, identify the claim or reproduction step that needs it. Remove redundant or generated artifacts, repair references and rerun the documented reproduction commands when their inputs or packaging change. A passing exit code does not justify retaining every log. Record only the validation result needed by the reviewer.
+
+Keep temporary evidence while a run, review or recovery still needs it. After acceptance, task-owned scratch can be removed when no active task depends on it. Scratch paths are not durable evidence links. Preserve unique evidence needed for an unresolved failure until its finding is captured or the investigation is closed. Do not delete unrelated user data, shared caches or earlier merged review records as part of routine cleanup; historical cleanup needs its own scope.
+
+This is a repository-retention rule, not permission to skip upstream-required verification, decision trails or reviews during execution. Preserve required notices and substantive findings. The approved PR #55 cleanup removes redundant unmerged evidence without changing the operational skills or the reviewed checkpoint.
+
 ## Before delivery
 
 Compare the pinned upstream source with the final jstack files, not only the previous local version. Account for each structural and substantive difference in the skill's attribution/difference record or a linked assessment. Record the upstream path and revision, local location, exact difference, concrete runtime or user requirement, and verification or remaining limitation. Do not treat an old difference as approved merely because it exists.

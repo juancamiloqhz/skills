@@ -21,3 +21,7 @@ The source directory contains only `SKILL.md`. Its name, description, introducti
 Juan-mode's existing mandatory measurement trigger is unchanged. Two availability sentences now list benchmark-checklist as a shipped standalone helper rather than a missing package. The comparison records the complete pinned mode diff and the exact two-sentence change against merged PR #38. All other mode instructions and supporting files remain unchanged. Explain the Number already calls the helper by catalog identity, so its body needs no edit.
 
 The manifest adds this component at the consuming principle/mode pin, retains Explain the Number's existing context watch, adds the mode's direct helper watch, and watches the three named playbook source paths for this helper. Existing component pins, review decisions and the reviewed checkpoint remain unchanged. Research status and package listings now point to the implementation; historical audits and evaluation snapshots retain their original missing-dependency observations. Installation remains manual.
+
+## Perf issue caller availability
+
+Perf issue now has a Juan-mode procedure. The final availability paragraph names it as available and continues to disclose missing Hillclimb and Opening a PR. All measurement questions, preparation, reporting rules and invocation boundaries remain unchanged. The [full pinned comparison](../evaluations/perf-issue/source-comparison.json) records this one-paragraph update.

@@ -25,3 +25,7 @@ The manifest adds the principle's source directory as mode context. It already w
 ## Bug fix handoff update, 2026-10-16
 
 Bug fix now has a local procedure. Step 6 removes only that route from its unavailable list; Perf issue remains pending and diagnosis alone still grants no fix authority. [Bug fix source comparison](../evaluations/bug-fix/source-comparison.json) records the final procedure against its original pin. Earlier trace evaluations retain their recorded snapshots.
+
+## Perf issue handoff update
+
+Perf issue now has a local procedure. Step 6 removes only its unavailable qualification. The diagnosis-only boundary, existing implementation authority and fixed-artifact algorithm remain unchanged. The [complete pinned comparison](../evaluations/perf-issue/source-comparison.json) records this update.

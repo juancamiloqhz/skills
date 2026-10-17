@@ -39,4 +39,4 @@ For a quick ballpark the user asked for, one run is enough. Still check question
 - Vet the **Perf issue** playbook's baseline before the playbook plans from it, and every number after that.
 - Vet the **Hillclimb** playbook's harness before it is frozen. The frozen harness then prints error and work counts, so each keep-or-revert checks questions 4 and 7 for free.
 
-The named playbooks are separate Juan-mode procedures and remain unavailable in jstack. Apply this checklist independently; do not invent their steps or claim they ran. Publication follows the caller's existing authority.
+The named playbooks are separate Juan-mode procedures. Perf issue is available; Hillclimb and Opening a PR remain unavailable in jstack. Apply this checklist independently; do not invent unavailable steps or claim they ran. Publication follows the caller's existing authority.
