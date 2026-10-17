@@ -102,3 +102,7 @@ Multi-phase plan and its structural checker are now bundled, bringing coverage t
 ## Session pickup availability
 
 Session pickup is now the seventeenth procedure, with six pending. See its [adaptation](session-pickup.md) and [evaluation](../evaluations/session-pickup/README.md). Model roles, configuration lookup, pins and reviewed checkpoint are unchanged.
+
+## Pause safely availability, 2026-10-17
+
+Availability now includes Pause safely, bringing the bundle to 18 procedures with five pending. The [adaptation record](pause-safely.md) and [evaluation](../evaluations/pause-safely/README.md) cover the new procedure. This does not activate juan-mode, change model roles or advance upstream pins.
