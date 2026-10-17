@@ -35,10 +35,21 @@ For the local recovery exercise, collect three completed owned tasks through liv
 
 ```bash
 python3 -B research/jstack/evaluations/orchestrate-procedure/replay.py /tmp/orch-replay /tmp/observations.json --cli /absolute/path/to/orch.ts --phase claim
+python3 -B research/jstack/evaluations/orchestrate-procedure/replay.py /tmp/orch-replay /tmp/observations.json --cli /absolute/path/to/orch.ts --phase resume --interrupt-after-first-apply
 python3 -B research/jstack/evaluations/orchestrate-procedure/replay.py /tmp/orch-replay /tmp/observations.json --cli /absolute/path/to/orch.ts --phase resume
 ```
 
-The first phase refuses an existing destination. The second uses the same observations and store after the first process exits. Runtime commands ran from an exact source copy with already-present Commander dependencies; nothing was installed. The retained script is an exercise, not a generic idempotent coordinator or automatic result classifier.
+The claim phase refuses an existing destination. The optional interruption command exits with code 75 after the first unit update, before saving that pointer's classification. The batch stays pending. The next process uses the same observations and store, reconciles the assessed row, and applies only missing unit updates. Omit the interruption command for the normal path. Repeating resume after acknowledgement makes no unit updates or decision writes.
+
+Each new claim saves the original observations and report hashes. Resume rejects changed observations or report bytes before calling the CLI. Saved decisions retain task, run, result, unit, report path, and content hash. Older exercise stores without this evidence require a fresh claim in a new destination. The parent must still authenticate saved observations and inspect reports. This exercise assumes one writer, injects a process exit, and does not establish host-restart durability or a production exactly-once guarantee.
+
+Run the subprocess checks with the exact prepared runtime and its existing Commander dependency:
+
+```bash
+python3 -B research/jstack/evaluations/orchestrate-procedure/test_replay.py --cli /tmp/jstack-orch-inbox-20261017/runtime/orch/orch.ts
+```
+
+The test generates explicitly synthetic observations and reports under `/tmp/jstack-recovery-pilot-20261017/worker`. It checks real unit rows, saved decisions, pending and acknowledged batches, and rejected evidence changes. A logging launcher executes the real Bun CLI and counts unit updates, including the duplicate and replay paths. It installs nothing and leaves the source checkout's dependencies unchanged. The retained scripts are a bounded exercise, not a general coordinator or automatic result classifier.
 
 The four packaging and sixteen preflight tests passed. Changed-document lint with MD013/MD041 disabled and MD040 disabled for the preserved upstream brief fence, relative links, exact source hashes, preserved headings/step labels and diff checks passed. Runtime code is unchanged, so earlier runtime-suite evidence is not represented as a new run. Source pins, reviewed checkpoint, license, lockfile and saved model configuration are unchanged.
 
