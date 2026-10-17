@@ -91,3 +91,7 @@ Setup and its configuration reference now list Refactoring as an available consu
 ## Perf issue availability
 
 The opening availability paragraph and configuration consumer list now include Perf issue. Nine mode procedures are available and 14 pending. Setup behavior, role assignments, existing configuration and defaults are unchanged. The [complete pinned comparison](../evaluations/perf-issue/source-comparison.json) includes the final entrypoint and exact configuration-reference diff.
+
+## Hillclimb availability
+
+The opening paragraph and configuration consumer list now include Hillclimb. Ten mode procedures are available and 13 pending. No setup behavior, role assignment, saved configuration or default changes. The [comparison](../evaluations/hillclimb/source-comparison.json) records both availability updates.

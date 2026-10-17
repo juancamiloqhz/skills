@@ -20,6 +20,6 @@
 5. Cite the measurement in the PR when publication is authorized; for local-only delivery, retain it in the local report.
 6. Run **Opening a PR** when publication is authorized. That procedure remains unavailable in this package; disclose the gap rather than claiming it ran. Preserve unrelated work and existing publication authority. This playbook does not authorize merging or installation.
 
-For sustained improvement against a metric rather than a one-off fix, use the Hillclimb playbook (`playbooks/hillclimb.md`). That procedure remains unavailable; disclose the missing dependency rather than inventing its steps.
+For sustained improvement against a metric rather than a one-off fix, use the Hillclimb playbook (`playbooks/hillclimb.md`).
 
 **Reply:** baseline number, post-fix number, delta, artifact path.
