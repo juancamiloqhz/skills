@@ -1,0 +1,31 @@
+{
+  "base": "236a075e5253748cdd61ff9a91c7ef8ddc2b31e7",
+  "assessment": "research/jstack/adaptations/orch-inbox-recovery.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/store.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/store.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "0eae7cf69282e827b1227166f2e32cee3560f2f3e65b3f1f2faf6fb83d3b4c5b",
+      "localSHA256": "b60107d29fad4b5acbd23db82167badcdebb8db746680dde63ec2d854ffb714d",
+      "identical": false,
+      "diffSHA256": "7e6161f750444d6a555d91cb67acc073b23af36cafc4818280f38b067a5550ce"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/orch.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/orch.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "f091687df627a0b75fabd54af58945a9cd6c7039ef0622012ac9ed60cd8ec434",
+      "localSHA256": "77456ffb38460ae26f33327eeba474bb4f1b9bb6bdfb9fd78f98dca0bd66f036",
+      "identical": false,
+      "diffSHA256": "f50d820b94d926f948047c33bf8e5286204b0404bdec348d3cadd742750f7dcd"
+    }
+  ],
+  "addedFiles": [
+    {
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/inbox.test.ts",
+      "basis": "Executable batch replay, acknowledgement, deletion-refusal and killed-holder recovery checks.",
+      "localSHA256": "2ece518dff4524eb3dd6bb9457a22fd58cbdc6ad3debeafb3950c27f81fffcd6"
+    }
+  ]
+}

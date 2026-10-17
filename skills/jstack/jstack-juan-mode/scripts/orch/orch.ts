@@ -408,6 +408,24 @@ function createProgram(io: Io): Command {
           (result) => result.pointer
         )
     );
+  leaf(inbox, "claim", "read or recover a batch without removing its pointers").action(() =>
+    runStore(
+      program,
+      io,
+      (store) => store.inbox.claim(),
+      (batch) => batch === null ? "(empty)" : `${batch.id}\t${batch.entries.length}\tpending`
+    )
+  );
+  leaf(inbox, "ack <batch>", "acknowledge recorded decisions and remove only that batch")
+    .requiredOption("--receipt <path>", "saved classification receipt path")
+    .action((batch: string, options: { receipt: string }) =>
+      runStore(
+        program,
+        io,
+        (store) => store.inbox.ack(batch, options.receipt),
+        (result) => `${result.id}\tacknowledged`
+      )
+    );
   leaf(inbox, "drain", "drain inbox pointers")
     .option("--peek", "read without draining", false)
     .action((options: InboxDrainOptions) =>
