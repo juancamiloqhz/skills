@@ -134,3 +134,7 @@ The [frontier adaptation](orch-frontier.md) replaces Graphite discovery with a r
 ## Recoverable Orchestrate inbox, 2026-10-17
 
 The [inbox adaptation](orch-inbox-recovery.md) adds claim/ack commands and one current batch manifest. Its [evaluation](../evaluations/orch-inbox-recovery/README.md) demonstrates replay after a killed local holder and cleanup after filesystem refusal. It does not claim T3 lifecycle recovery or exactly-once classification. Orchestrate remains unavailable; task/result reconciliation and verifier precedence are next.
+
+## Completion reconciliation, 2026-10-17
+
+The existing execution reference now specifies [coordinator acceptance](completion-reconciliation.md) for `orch` batches: task/run identity, liveness, repeated or stale results, current artifacts and verifier precedence. Its [paired evaluation](../evaluations/completion-reconciliation/README.md) passed both updated and previous contracts, without proving a benefit or live T3 recovery. No runtime schema or automatic classifier is added. Orchestrate remains unavailable pending the final procedure and pilot/recovery validation.

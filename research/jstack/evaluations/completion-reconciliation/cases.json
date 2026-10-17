@@ -1,0 +1,31 @@
+{
+  "skill_name": "jstack-juan-mode execution contract",
+  "evals": [
+    {
+      "id": 1,
+      "name": "fresh-completions",
+      "prompt": "Process the completion notices for the pagination work in FIXTURE. Read the supplied execution contract and inspect saved assignments, reports, task status and current artifacts. Use instructions.json's real orch CLI and local task-status.py as the modeled status endpoint. Record appropriate bookkeeping decisions, save a receipt, and acknowledge only when processing is accounted for. Leave PRs open and do not dispatch or replace workers. Report actual verification and follow-up work.",
+      "assertions": [
+        "Classifies all five pointers, including one duplicate verifier result, without duplicate application.",
+        "Preserves the independent verifier-failed verdict for API despite the worker's success claim.",
+        "Rejects the superseded UI attempt and does not relabel its old head evidence as current.",
+        "Keeps the mismatched original run identity unresolved without accepting its result.",
+        "Checks the real current artifact and records the authorized current verifier for tests once.",
+        "Saves complete decisions before acknowledgement, leaves PRs and assignments unchanged, and states simulation limits."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "resume-completions",
+      "prompt": "The prior session stopped partway through a completion batch in FIXTURE. Read the supplied execution contract, recover the batch and earlier decisions, then reconcile current task and artifact evidence. Finish appropriate bookkeeping with instructions.json's real orch CLI and the modeled task-status.py endpoint. Save decisions before acknowledgement. Report unresolved work. Do not dispatch, replace workers, mutate Git or change PRs.",
+      "assertions": [
+        "Recovers and accounts for all three pointers in the existing batch.",
+        "Does not accept the task with pending nested work or treat its terminal turn as quiescence.",
+        "Keeps the original run's old-head result distinct from latestTerminalSummary and rejects stale verification.",
+        "Recognizes the earlier recorded verifier result without rewriting its ledger row or reapplying the unit state.",
+        "Records concrete follow-up actions for unresolved results before acknowledging and does not dispatch replacement work.",
+        "Leaves immutable inputs, Git and PRs unchanged and distinguishes modeled status from live recovery evidence."
+      ]
+    }
+  ]
+}

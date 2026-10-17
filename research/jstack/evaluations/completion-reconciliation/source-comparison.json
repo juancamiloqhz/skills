@@ -1,0 +1,26 @@
+{
+  "upstream": {
+    "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+    "path": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+    "sha256": "d42b4375f1bd4ce23da0b575a198571a2117df7eea10c3c9fc6d92ae1053f7be",
+    "governingSections": [
+      "Queue and drain",
+      "Verification",
+      "Liveness and failure"
+    ]
+  },
+  "local": {
+    "path": "skills/jstack/jstack-juan-mode/references/execution.md",
+    "baselineCommit": "6bb80ef6d753bb1d28fa63004619682123f04dcf",
+    "baselineSha256": "c6a85d8543a165c1365fa246575a63fe86d3019bd9655babeade1b11a549e412",
+    "finalSha256": "4a9e836fe78374b5819c22f5062f1a0191ab31b18d79168bec2159cb02b20441",
+    "diff": {
+      "format": "UTF-8 unified diff, Python difflib defaults, keepends=True",
+      "fromfile": "6bb80ef6d753bb1d28fa63004619682123f04dcf/skills/jstack/jstack-juan-mode/references/execution.md",
+      "tofile": "working-tree/skills/jstack/jstack-juan-mode/references/execution.md",
+      "sha256": "005bc9ec91913896b5af1bc70c8f2e8435d3e498114ca7789aa018948def0921"
+    }
+  },
+  "assessment": "research/jstack/adaptations/completion-reconciliation.md",
+  "scope": "Existing T3 execution reference; no one-to-one upstream file. Adds coordinator instructions without changing the CLI or enabling Orchestrate."
+}
