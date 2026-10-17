@@ -119,3 +119,7 @@ Shipping is now the fifteenth bundled procedure; eight remain pending. See the [
 ## Multi-phase plan availability
 
 Multi-phase plan and its structural checker are now bundled, bringing coverage to 16 procedures with seven pending. See the [adaptation](multi-phase-plan.md) and [evaluation](../evaluations/multi-phase-plan/README.md). Configuration roles, selection, source pins and the reviewed checkpoint are unchanged. Execution through either Autopilot or Orchestrate remains unavailable.
+
+## Session pickup availability
+
+Session pickup is now the seventeenth procedure, with six pending. See its [adaptation](session-pickup.md) and [evaluation](../evaluations/session-pickup/README.md). Model roles, configuration lookup, pins and reviewed checkpoint are unchanged.

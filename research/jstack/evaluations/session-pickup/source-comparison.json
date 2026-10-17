@@ -1,0 +1,31 @@
+{
+  "base": "af079ddea7615a632b3aa6a04a9851f01de441e0",
+  "assessment": "research/jstack/adaptations/session-pickup.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/session-pickup.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/session-pickup.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "fe13ffa425878ba217bc7f04508a41e4dd26950b23bfdefdd2ddfa8a22616aec",
+      "diffSHA256": "4900f5f375952888b5cb32bf8b6dd1f2d34b911816eb105fb17a76cbfb73ba17"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "1f7f38923763e48261290f136b7495cd7af4420e8f82b705c5a0413239fa980e",
+      "diffSHA256": "9bdde0c1520dbe91221470b64340f139cbe89ec46e9c5ea52853ca740b1dba77"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "dfa3a5da1e2d5102df7f0959eea5832c236ae75cc65d15900695026a19def5e9",
+      "diffSHA256": "07e8dde44627d7384ac235e825b4d1e6fb41bbd391d2c989d14b3c8bcf5bce4a"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; prior setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 17
+}
