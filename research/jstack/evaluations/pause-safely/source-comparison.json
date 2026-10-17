@@ -1,0 +1,31 @@
+{
+  "base": "1a64f18fa7de8e8ca084ff983b31590195833661",
+  "assessment": "research/jstack/adaptations/pause-safely.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/pause-safely.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/pause-safely.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "37bd9a2fffc634ef1bfe1d0127a9a41d2e24c26576b2c6c1507b69e401d9a032",
+      "diffSHA256": "8970f98d18dd09a52e5b4a5c2c4cd483c8e0cbd7020f4bbaed2604342f277ef0"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "9c40eab80b6e9ee2a4d1aeae23d77bbb1cf01154e0d05fb851b97fee8972ac07",
+      "diffSHA256": "d514e0465e2ff1a27701c84344bb1f1c57c00dc7a5adb00c2a034b54eb2c3eec"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "9f5456d6fd922060b9ceb940ecfd347f08f8166a1d7984a23bb4d136196cb423",
+      "diffSHA256": "1aa1d114c39b4ebede6e8ee1caa85eb3ce87fbce059b51bf617c6f3c1bb94780"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; prior setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 18
+}
