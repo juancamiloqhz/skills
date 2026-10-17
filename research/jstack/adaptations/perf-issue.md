@@ -23,3 +23,7 @@ The six steps, measurement ownership, seven ordered performance mantras, stop ru
 All direct helper source paths are already in the mode's context. The manifest, 44 mappings, pins, review decisions and reviewed checkpoint remain unchanged. The [evaluation](../evaluations/perf-issue/README.md) records complete pinned comparisons for Perf issue, Runtime forensics, Trace forensics, mode, setup and benchmark-checklist, plus the exact local availability changes.
 
 The controlled CLI case uses an isolated setup template with inherited roles and two comparison seats. The saved user configuration remains read-only. Synthetic measurements establish only that workload on the recorded host. They do not establish production performance, browser profiling, model diversity, Hillclimb, publication or provider persistence.
+
+## Hillclimb handoff
+
+Hillclimb now has its own procedure. The closing handoff removes only its unavailability qualification. The Perf issue procedure, seven ordered mantras and early-stop rule remain unchanged. Hillclimb borrows the order and explicitly does not borrow that stop rule. See the [comparison](../evaluations/hillclimb/source-comparison.json).

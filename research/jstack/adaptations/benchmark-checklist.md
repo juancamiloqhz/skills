@@ -25,3 +25,7 @@ The manifest adds this component at the consuming principle/mode pin, retains Ex
 ## Perf issue caller availability
 
 Perf issue now has a Juan-mode procedure. The final availability paragraph names it as available and continues to disclose missing Hillclimb and Opening a PR. All measurement questions, preparation, reporting rules and invocation boundaries remain unchanged. The [full pinned comparison](../evaluations/perf-issue/source-comparison.json) records this one-paragraph update.
+
+## Hillclimb availability
+
+The final paragraph now marks Hillclimb available alongside Perf issue. Opening a PR remains unavailable. Measurement questions, thresholds and other instructions are unchanged. The [comparison](../evaluations/hillclimb/source-comparison.json) records the updated entrypoint.

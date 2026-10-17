@@ -104,6 +104,8 @@ Source: [decision trail](https://github.com/cursor/plugins/blob/11713c683fe4add4
 
 Acceptance scenario: run a small declared number of attempts against a controlled workload, including a correct win, a noisy apparent win and a faster but incorrect change. Only the correct measurable win survives, each outcome appears in the log, the frozen harness stays unchanged, and the target/minimum-attempt predicate remains intact. Prerequisites are a reproducible metric, runtime budget, regression gate and traceable run evidence; persistence across turns needs its own test.
 
+The [Hillclimb procedure](../../../skills/jstack/jstack-juan-mode/playbooks/hillclimb.md) is now implemented. Its [bounded evaluation](../evaluations/hillclimb/README.md) records observed iteration behavior, stop predicates and remaining coverage gaps. The shared trail owns the canonical format; per-attempt measurement evidence preserves the source's experiment fields.
+
 ## runtime-forensics
 
 Trigger: a live symptom such as a leak, idle CPU or rendering glitch. Output: captured signal, reduced finding, tested mechanism and mapped source location. Dependencies are matching runtime instrumentation, artifact parsing and source mapping. Preserve diagnosis-only delivery and escalation to Bug fix or Perf issue when implementation is later requested.

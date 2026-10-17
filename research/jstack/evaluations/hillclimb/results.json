@@ -1,0 +1,418 @@
+{
+  "date": "2026-10-17",
+  "scope": "One serial synthetic CLI exercise; qualified workflow result. See README for limitations.",
+  "environment": {
+    "node": "v24.19.0",
+    "python": "3.14.4",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "cores": 4
+  },
+  "repositoryBase": "da02c53f1d90d83faf5c545ede2c5f0d816e6305",
+  "fixtureBaselineCommit": "be9c074af3125637b3a0ec5ec458fb6ad7e02e92",
+  "acceptedCommit": "270f5087f629e780bd51079cb55bf4b468c9cc8d",
+  "predicate": {
+    "minimumReductionPercent": 30,
+    "minimumMeasuredAttempts": 3,
+    "maximumMeasuredAttempts": 3
+  },
+  "benchmark": {
+    "frozenSHA256": "29ec66d401ca175403359f249538ecdb6f8ab30da4cee553f4ca5d327e35a98d",
+    "replaySHA256": "2c419b0aac91c590fbf45a9ca840011172a18af47ba8d062eee2d5e182065512",
+    "packagingChange": "Fixed scratch paths replaced with paths relative to the copied benchmark script; measurement logic unchanged.",
+    "rule": "Seven alternating pairs; zero errors, eight passing behavior tests and nonoverlapping ranges required for a performance win."
+  },
+  "configuration": {
+    "templateSHA256": "8ee7e93ddc42db50a6e3ac10a6100d30599a7664424767dddbdff7d21a3caf46",
+    "userSHA256": "a9f0a27536cd061b5a6ed6bdf1ccfaf40f35eb8398bea846f0fac301ff81197b",
+    "preflightSelection": "codex/gpt-6-astra, inherited model and effort; native identity not independently attested"
+  },
+  "sensitivity": {
+    "a": {
+      "raw_ms": [
+        65.54041,
+        66.489605,
+        55.722768,
+        63.587104,
+        61.217655,
+        56.216769,
+        80.396119
+      ],
+      "median_ms": 63.587104,
+      "range_ms": [
+        55.722768,
+        80.396119
+      ]
+    },
+    "b": {
+      "raw_ms": [
+        2604.305612,
+        2377.355615,
+        2496.637732,
+        2441.84974,
+        2331.776175,
+        2554.184095,
+        2588.118293
+      ],
+      "median_ms": 2496.637732,
+      "range_ms": [
+        2331.776175,
+        2604.305612
+      ]
+    },
+    "reduction_percent": -3826.327155896265,
+    "past_noise": false,
+    "errors": 0,
+    "work": 560560
+  },
+  "attempts": [
+    {
+      "id": 1,
+      "hypothesis": "Parse primitive string rules lazily once per call; preserve per-event non-string coercion.",
+      "verdict": "kept",
+      "measurement": {
+        "a": {
+          "raw_ms": [
+            2305.782751,
+            2482.507642,
+            2378.258398,
+            2431.134177,
+            2333.238029,
+            2378.198362,
+            2423.943046
+          ],
+          "median_ms": 2378.258398,
+          "range_ms": [
+            2305.782751,
+            2482.507642
+          ]
+        },
+        "b": {
+          "raw_ms": [
+            143.313548,
+            153.032904,
+            128.794604,
+            149.419001,
+            140.438081,
+            153.875369,
+            162.617179
+          ],
+          "median_ms": 149.419001,
+          "range_ms": [
+            128.794604,
+            162.617179
+          ]
+        },
+        "reduction_percent": 93.7172932459461,
+        "past_noise": true,
+        "errors": 0,
+        "work": 1120000
+      },
+      "regressionTestsPassed": 8,
+      "beforeSHA256": "306bf7fdb829050fd6f8ae568d2292905469531fda7e1f15cd63916a5673e4af",
+      "candidateSHA256": "1f6beb396cbeceb5f6bec8dd0d2c3da6955601ca25cba9174ff6de08c6c8f2b3",
+      "patch": "diff --git a/summary.cjs b/summary.cjs\nindex 794877c..73267c9 100644\n--- a/summary.cjs\n+++ b/summary.cjs\n@@ -4,8 +4,11 @@ function summarize(events, serializedRules) {\n   const totals = {};\n   let accepted = 0;\n   let rejected = 0;\n+  let cachedRules;\n   for (const event of events) {\n-    const rules = JSON.parse(serializedRules);\n+    const rules = typeof serializedRules === 'string'\n+      ? (cachedRules ??= JSON.parse(serializedRules))\n+      : JSON.parse(serializedRules);\n     const rule = rules[event.type];\n     if (!rule || event.amount < rule.minimum) {\n       rejected++;\n"
+    },
+    {
+      "id": 2,
+      "hypothesis": "Hoist the primitive-string eligibility check outside the loop.",
+      "verdict": "reverted",
+      "measurement": {
+        "a": {
+          "raw_ms": [
+            168.175996,
+            158.141386,
+            159.592491,
+            162.338406,
+            198.421453,
+            154.077461,
+            146.363601
+          ],
+          "median_ms": 159.592491,
+          "range_ms": [
+            146.363601,
+            198.421453
+          ]
+        },
+        "b": {
+          "raw_ms": [
+            148.367724,
+            148.22392,
+            132.201874,
+            142.757104,
+            146.644079,
+            162.337044,
+            134.744285
+          ],
+          "median_ms": 146.644079,
+          "range_ms": [
+            132.201874,
+            162.337044
+          ]
+        },
+        "reduction_percent": 8.113421827597133,
+        "past_noise": false,
+        "errors": 0,
+        "work": 1120000
+      },
+      "regressionTestsPassed": 8,
+      "beforeSHA256": "1f6beb396cbeceb5f6bec8dd0d2c3da6955601ca25cba9174ff6de08c6c8f2b3",
+      "candidateSHA256": "20bd4bfcc0ac056306d284bdabb2fd1feaf926b3286d833f65232874643ed379",
+      "patch": "diff --git a/summary.cjs b/summary.cjs\nindex 73267c9..aa95971 100644\n--- a/summary.cjs\n+++ b/summary.cjs\n@@ -5,8 +5,9 @@ function summarize(events, serializedRules) {\n   let accepted = 0;\n   let rejected = 0;\n   let cachedRules;\n+  const cacheRules = typeof serializedRules === 'string';\n   for (const event of events) {\n-    const rules = typeof serializedRules === 'string'\n+    const rules = cacheRules\n       ? (cachedRules ??= JSON.parse(serializedRules))\n       : JSON.parse(serializedRules);\n     const rule = rules[event.type];\n"
+    },
+    {
+      "id": 3,
+      "hypothesis": "Check the cached rules before checking primitive-string eligibility.",
+      "verdict": "reverted",
+      "measurement": {
+        "a": {
+          "raw_ms": [
+            151.686356,
+            137.441886,
+            157.572925,
+            135.931052,
+            137.778466,
+            138.607223,
+            136.558745
+          ],
+          "median_ms": 137.778466,
+          "range_ms": [
+            135.931052,
+            157.572925
+          ]
+        },
+        "b": {
+          "raw_ms": [
+            161.855884,
+            147.309768,
+            173.10533,
+            135.36298,
+            146.645864,
+            141.811904,
+            138.899458
+          ],
+          "median_ms": 146.645864,
+          "range_ms": [
+            135.36298,
+            173.10533
+          ]
+        },
+        "reduction_percent": -6.435982528648543,
+        "past_noise": false,
+        "errors": 0,
+        "work": 1120000
+      },
+      "regressionTestsPassed": 8,
+      "beforeSHA256": "1f6beb396cbeceb5f6bec8dd0d2c3da6955601ca25cba9174ff6de08c6c8f2b3",
+      "candidateSHA256": "a560dd6fdeb85281c412adc2c7161c350495794c366d95545378702e9d79225d",
+      "patch": "diff --git a/summary.cjs b/summary.cjs\nindex 73267c9..49f0298 100644\n--- a/summary.cjs\n+++ b/summary.cjs\n@@ -6,9 +6,9 @@ function summarize(events, serializedRules) {\n   let rejected = 0;\n   let cachedRules;\n   for (const event of events) {\n-    const rules = typeof serializedRules === 'string'\n-      ? (cachedRules ??= JSON.parse(serializedRules))\n-      : JSON.parse(serializedRules);\n+    const rules = cachedRules ?? (typeof serializedRules === 'string'\n+      ? (cachedRules = JSON.parse(serializedRules))\n+      : JSON.parse(serializedRules));\n     const rule = rules[event.type];\n     if (!rule || event.amount < rule.minimum) {\n       rejected++;\n"
+    }
+  ],
+  "finalConfirmation": {
+    "a": {
+      "raw_ms": [
+        2541.818327,
+        2473.928796,
+        2252.135137,
+        2328.289097,
+        2445.04793,
+        2378.892619,
+        2384.954887
+      ],
+      "median_ms": 2384.954887,
+      "range_ms": [
+        2252.135137,
+        2541.818327
+      ]
+    },
+    "b": {
+      "raw_ms": [
+        144.611484,
+        146.952812,
+        130.009025,
+        155.829899,
+        138.517197,
+        151.712894,
+        127.037708
+      ],
+      "median_ms": 144.611484,
+      "range_ms": [
+        127.037708,
+        155.829899
+      ]
+    },
+    "reduction_percent": 93.93651071606203,
+    "past_noise": true,
+    "errors": 0,
+    "work": 1120000
+  },
+  "parentVerification": {
+    "summaries": {
+      "baseline": {
+        "runs": 7,
+        "medianMs": 2457.273626,
+        "minMs": 2422.557922,
+        "maxMs": 2559.539239
+      },
+      "app": {
+        "runs": 7,
+        "medianMs": 138.591756,
+        "minMs": 132.731457,
+        "maxMs": 162.903805
+      }
+    },
+    "reductionPercent": 94.35993800065309,
+    "nonoverlap": true,
+    "allCorrect": true,
+    "apiCases": 125,
+    "apiEqual": true,
+    "callerUnchanged": true,
+    "samplesMs": {
+      "baseline": [
+        2559.539239,
+        2422.557922,
+        2435.405351,
+        2457.273626,
+        2452.732318,
+        2459.269811,
+        2517.532605
+      ],
+      "app": [
+        162.903805,
+        134.948448,
+        138.591756,
+        137.990382,
+        145.162691,
+        140.157491,
+        132.731457
+      ]
+    },
+    "regressionTestsPassed": 8,
+    "incorrectOutputRejected": true
+  },
+  "parentAudit": {
+    "attemptSampleHashesChecked": 42,
+    "allAttemptOutputsCorrect": true,
+    "frozenBenchmarkUnchanged": true,
+    "rejectedAttemptsFullyRestored": [
+      2,
+      3
+    ],
+    "acceptedScopedCommits": 1,
+    "unrelatedUntrackedNotePreserved": true,
+    "targetAndFloorMet": true,
+    "hardCapRespected": true
+  },
+  "replayVerification": {
+    "command": "python3 research/jstack/evaluations/hillclimb/reproduce.py NEW_SCRATCH_DIRECTORY",
+    "exitCode": 0,
+    "allCandidateRegressionTestsPassed": true,
+    "candidateNoiseClassifications": [
+      true,
+      false,
+      false
+    ],
+    "parentApiCases": 125,
+    "parentApiEqual": true,
+    "parentOutputCorrect": true,
+    "parentThresholdAndNonoverlapPassed": true,
+    "sameSource": {
+      "a": {
+        "raw_ms": [
+          141.324669,
+          140.777554,
+          163.619223,
+          135.504555,
+          133.081125,
+          153.727628,
+          131.441398
+        ],
+        "median_ms": 140.777554,
+        "range_ms": [
+          131.441398,
+          163.619223
+        ]
+      },
+      "b": {
+        "raw_ms": [
+          140.695748,
+          142.274711,
+          137.905473,
+          145.326394,
+          144.173911,
+          137.316752,
+          132.504747
+        ],
+        "median_ms": 140.695748,
+        "range_ms": [
+          132.504747,
+          145.326394
+        ]
+      },
+      "past_noise": false,
+      "errors": 0
+    },
+    "incorrectOutput": {
+      "a": {
+        "raw_ms": [
+          145.528641,
+          155.567627,
+          134.125763,
+          140.499887,
+          136.465907,
+          158.421461,
+          152.417642
+        ],
+        "median_ms": 145.528641,
+        "range_ms": [
+          134.125763,
+          158.421461
+        ]
+      },
+      "b": {
+        "raw_ms": [
+          69.139747,
+          69.632708,
+          51.471222,
+          53.130424,
+          59.869992,
+          58.046582,
+          56.216703
+        ],
+        "median_ms": 58.046582,
+        "range_ms": [
+          51.471222,
+          69.632708
+        ]
+      },
+      "past_noise": true,
+      "errors": 7
+    }
+  },
+  "trailReview": {
+    "status": "completed",
+    "scope": "bounded digest and actual artifacts; full transcript unavailable",
+    "runtime_identity": "unverified inherited selection",
+    "findings": [
+      "Initial host plan was corrected before measurement but raw host plan history is not in command capture.",
+      "Preliminary reads and some child operations lack raw command capture; retained reports and coordinator reruns supply bounded evidence.",
+      "Attempt 2 comment reviewer emitted a progress message before its required opening.",
+      "Stop row paired frozen-baseline times with a separately labeled paired percentage; an append-only audit row now spells out both complete comparisons.",
+      "Native child runtime identity is unverified; same-family inheritance does not establish cross-family independence."
+    ],
+    "reviewer_inspection_failure": "Initial hash inspection compared historical sensitivity source to current app; corrected to retained baseline snapshot and passed."
+  },
+  "validation": {
+    "packagingTestsPassed": 4,
+    "quickValidation": [
+      "jstack-juan-mode",
+      "jstack-setup",
+      "jstack-benchmark-checklist"
+    ],
+    "manifestValid": true,
+    "fullPinnedComparisons": 5,
+    "availablePlaybooks": 10,
+    "pendingPlaybooks": 13,
+    "markdownAndRelativeLinksPassed": true,
+    "gitDiffCheckPassed": true
+  }
+}

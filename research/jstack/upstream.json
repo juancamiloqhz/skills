@@ -54,7 +54,9 @@
         "pstack/skills/principle-laziness-protocol",
         "pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
         "pstack/skills/principle-prove-it-works",
-        "pstack/skills/principle-minimize-reader-load"
+        "pstack/skills/principle-minimize-reader-load",
+        "pstack/skills/show-me-your-work",
+        "pstack/skills/principle-build-the-lever"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
