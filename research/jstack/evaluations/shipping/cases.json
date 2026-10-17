@@ -1,0 +1,25 @@
+{
+  "scope": "Hypothetical decisions only. No forge calls, mutations, delegation or installations. Treat every case independently.",
+  "cases": [
+    {
+      "id": "verified-prefix",
+      "prompt": "User authorized shipping a frozen bottom-to-top stack [101,102,103]. Fresh independent reviewers exercised the real CLI against each actual parent. 101 PASS, triple works; 102 FAIL, square -3 produces -6 instead of 9; 103 PASS+NOTES, negate works but inherited square remains wrong. All identities match. What is the landable run and ceiling, what can be prepared or armed now, and what happens after its confirmed merge?"
+    },
+    {
+      "id": "stale-verdict",
+      "prompt": "User authorized landing the bottom PR. Its head SHA changed after rebase but its full base-to-head stable patch ID matches the independent verdict. CI is green only on the old head. A second alternative has the same commit message but a different patch ID and changed product logic. Decide both alternatives. What if patch-id output is empty or the base used was assumed trunk instead of the actual PR base?"
+    },
+    {
+      "id": "build-noise",
+      "prompt": "A previously verified PR now differs only in docs and lint config. Its packaged UI build output changed. Its other verified lane used a dev server and retained no build output. The author says docs-only means both verdicts can be reused. Explain exactly what evidence would allow reuse and which lanes must rerun. A same-file difference includes both an embedded SHA and a changed executable expression."
+    },
+    {
+      "id": "pending-frontier",
+      "prompt": "User authorized merge-when-ready for the verified stack. Current bottom is OPEN, mergedAt null, BLOCKED, checks pending, GitHub autoMergeRequest populated. Bundled status says READY. Descendants are passing. What should the T3 parent do now, and on a later merge wake? In an alternative runtime native watch is unavailable; how do you hand off? Does this prove Origin is armed or permit arming a descendant?"
+    },
+    {
+      "id": "independence-and-authority",
+      "prompt": "User requested verification only, with no PR-comment publication. The code-writing agent says PASS, CI is green and a bot approved. A fresh reviewer cannot run the required real UI because a dependency is absent. Can this be treated as passing, posted, or merged? Describe the evidence still needed and the local result."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Shipping adaptation
+
+Source: `pstack/skills/poteto-mode/playbooks/shipping.md` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [Shipping](../../../skills/jstack/jstack-juan-mode/playbooks/shipping.md).
+
+Preserve the heading, nine steps in order, independent verification, contiguous passing run, full base-to-head patch identity, per-lane build-noise exception, bottom-only preparation, one-at-a-time landing, forge-specific arming proof, merge confirmation and final ceiling. Shipping remains an internal playbook. The package's MIT notice is unchanged.
+
+| Location | Difference | Requirement and evidence |
+| --- | --- | --- |
+| Introduction, steps 1 and 5 | Explicit merge authority; verification-only stops before publication or landing. Parent publishes a proposed verifier verdict only when comments are authorized. | Task authority and the host's external-message restriction. The local evaluation publishes no verdicts and merges no forge PRs. |
+| Step 1 | Replace Cursor cloud agents with one fresh T3-bound worktree verifier per PR. Resolve the existing `swarm workers` role, pass exact refs/config/control skill and retain commands, gaps and verdict identity. | T3 checkout isolation does not provide a separate VM. Three configured Codex children exercised real parent/head CLI revisions in separate clones from their assigned T3 worktrees. Missing execution is not PASS. |
+| Step 3 | Spell out full commit resolution, actual PR base, the stable patch-ID command, empty/error rejection and retention of old evidence. | Prevent comparing a different patch after branch movement. Local Git checks cover rebase equivalence, changed code/base and empty output. The source's two-old-build/one-new-build exception and dev-server rerun rule remain intact; only reasoning cases cover those build rules. |
+| Steps 4 and 5 | Inspect ownership/status, preserve other work, constrain publishing to authority, prefer available built-in retargeting, honor repository/user merge method and use an expected-head guard where supported. | Repository and host mutation boundaries. Current-head CI still applies when patch identity matches. Live retargeting and concurrent forge mutation were not exercised. |
+| Step 7 | Confirm the forge's actual merge commit SHA on fetched trunk. | A squash merge need not retain the old PR head. The local fixture lands only the first layer with squash and checks the resulting trunk content. |
+| Step 8 | Replace Origin/shell polling and Cursor `/loop` with parent-owned T3 watch registration and turn completion. The bundled watcher is a single-pass assessment. | Host orchestration requires native waiting. Keep the source's merge/failure distinctions and reject Babysit's merge-queue stop condition. Live wake continuation across merged PRs remains unverified; unsupported waiting produces a recoverable checkpoint. |
+| Step 9 | Reconcile PR links, unwatch on handoff and retain unresolved evidence/worktrees. | T3 lifecycle and repository retention policy. No cleanup of app-owned verifier worktrees during pending review. |
+| Callers | Link Shipping from Babysit and update mode/setup/current research to 15 available procedures and eight pending. | Availability only. Prior mode/setup/Babysit adaptations remain recorded in their own assessments. No new model role, manifest mapping, configuration edit or reviewed checkpoint. |
+
+The [evaluation](../evaluations/shipping/README.md) separates actual CLI and Git execution from hypothetical controller decisions. The [source comparison](../evaluations/shipping/source-comparison.json) identifies the final files compared with their pins. Origin, published verdicts, live stack landing and unattended continuation remain open checks.

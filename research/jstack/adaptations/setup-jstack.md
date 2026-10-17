@@ -111,3 +111,7 @@ The [Visual parity adaptation](visual-parity.md) adds the twelfth procedure, lea
 ## Babysit availability
 
 The mode now bundles Babysit and its single-pass watcher, bringing the current count to 14 available procedures and nine pending. See the [Babysit adaptation](babysit.md) and [evaluation](../evaluations/babysit/README.md). Model roles, configuration selection and source pins are unchanged.
+
+## Shipping availability
+
+Shipping is now the fifteenth bundled procedure; eight remain pending. See the [Shipping adaptation](shipping.md) and [evaluation](../evaluations/shipping/README.md). This changes availability and caller links only; configuration roles, selection, pins and existing adaptations are unchanged.
