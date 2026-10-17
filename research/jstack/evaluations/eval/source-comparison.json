@@ -1,0 +1,69 @@
+{
+  "base": "a07e7d0908c3109f3952b852274c0e1d7515ff0a",
+  "manifest": "Manifest unchanged; all 44 mappings, context paths, watches, pins and checkpoint preserved.",
+  "comparisons": [
+    {
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamSHA256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+      "localSHA256": "09ca3d988f1ce61c96d91129d4ef47341d9b11ae78523c4d47343df1e001b77b",
+      "completePinnedDiffSHA256": "0b1db7acc33a933d2dfabb4e3bdd444abca53fe9cc626058610e68cd97307626",
+      "assessment": "research/jstack/adaptations/juan-mode.md"
+    },
+    {
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "upstreamSHA256": "d61b47256a18155a81c8e5ef95e3cc6569ce8c18317c35c4dd9c8015cf68cb59",
+      "localSHA256": "00c2bd32884febf1e4ccc4e96309cfea79fee442f358750d364ccd1c2284088f",
+      "completePinnedDiffSHA256": "f338017a47bac85dd9302c07c7966fd64e3675ca790aaccbb08861aab61daac3",
+      "assessment": "research/jstack/adaptations/setup-jstack.md"
+    },
+    {
+      "local": "skills/jstack/jstack-juan-mode/playbooks/eval.md",
+      "source": "pstack/skills/poteto-mode/playbooks/eval.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "upstreamSHA256": "b862bfa2fae2399abf047a8e80d3e3dddb64003af96fb1cebb625216131e36bb",
+      "localSHA256": "45c209875dcf4b826c465b27a570bac676f7fd6539952fafd3c1a81e1c949188",
+      "completePinnedDiffSHA256": "c0219b99ed609e44bc590d909860dd8fdd400a1e3070e350baa18043e93c59f7",
+      "assessment": "research/jstack/adaptations/eval.md",
+      "scope": "Seven steps and seven blinding rules compared in full; all differences accounted for in the linked adaptation record."
+    }
+  ],
+  "packageChecks": [
+    {
+      "name": "jstack-juan-mode",
+      "licenseMatchesPin": true,
+      "existingFilesCompared": 18,
+      "changedExistingFiles": [
+        "skills/jstack/jstack-juan-mode/SKILL.md"
+      ]
+    },
+    {
+      "name": "jstack-setup",
+      "licenseMatchesPin": true,
+      "existingFilesCompared": 8,
+      "changedExistingFiles": [
+        "skills/jstack/jstack-setup/SKILL.md",
+        "skills/jstack/jstack-setup/references/configuration.md"
+      ]
+    }
+  ],
+  "configurationReferenceChange": "Availability paragraph adds Eval; no resolver or role-schema change.",
+  "localPlaybooks": [
+    "authoring-a-skill.md",
+    "bug-fix.md",
+    "eval.md",
+    "feature.md",
+    "hillclimb.md",
+    "investigation.md",
+    "perf-issue.md",
+    "prototype.md",
+    "refactoring.md",
+    "runtime-forensics.md",
+    "trace-forensics.md"
+  ],
+  "sourcePlaybooks": 23,
+  "retention": "Full comparisons performed; unchanged historical entrypoint differences remain in their existing adaptation records. Full diffs stay in scratch; this record keeps exact source/local/diff identities and linked assessments without duplicating operational text."
+}

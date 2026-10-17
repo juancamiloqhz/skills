@@ -118,6 +118,8 @@ Accept with one ordinary coding request run against two skill variants in isolat
 
 Source: proposed acceptance cases derived from [eval][eval] and [arena][arena].
 
+The [Eval procedure](../../../skills/jstack/jstack-juan-mode/playbooks/eval.md) is now bundled. Its [bounded evaluation](../evaluations/eval/README.md) records configuration, blinding and transcript-evidence limits. Repeated inherited seats do not establish distinct models; missing diversity stops the comparison before dispatch.
+
 ## authoring-a-skill
 
 The [implemented procedure](../../../skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md) triggers on creating or editing a `SKILL.md`. Output the authored package, rationale for its instructions and validation evidence. Upstream depends on Cursor's built-in `create-skill`, relevant principle leaves and Opening a PR. Adapt authoring to available skill-creation and agent-writing guidance; `judgment and prose` is the existing role for a delegated draft, and structural helper code uses the corresponding implementation role.
