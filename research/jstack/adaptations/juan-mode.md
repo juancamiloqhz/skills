@@ -78,3 +78,7 @@ The [Eval adaptation](eval.md) adds the eleventh procedure, leaving 12 pending. 
 ## Control UI dependency
 
 The UI trigger now discovers standalone `jstack-control-ui`, and the dependency paragraph lists both shipped control helpers. The [Control UI adaptation](control-ui.md) accounts for these two caller changes and the full helper source. No playbook route or existing procedure changes; Visual parity remains pending.
+
+## Visual parity coverage
+
+The [Visual parity adaptation](visual-parity.md) adds the twelfth procedure, leaving eleven pending. Availability paragraphs now list it; route triggers, existing procedures, setup defaults and model resolution remain unchanged. The [evaluation](../evaluations/visual-parity/README.md) records exact screenshot comparisons and explicit missing-baseline behavior.

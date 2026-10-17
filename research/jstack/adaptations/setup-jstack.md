@@ -99,3 +99,7 @@ The opening paragraph and configuration consumer list now include Hillclimb. Ten
 ## Eval availability
 
 Setup and its configuration reference now list Eval as an available consumer. Eleven procedures are bundled and 12 remain pending. Existing saved configurations, templates and resolver behavior are unchanged. Eval checks distinct candidate models and a different-family judge after configuration resolution; repeated inheritance cannot satisfy those requirements. See the [source comparison](../evaluations/eval/source-comparison.json).
+
+## Visual parity coverage
+
+The [Visual parity adaptation](visual-parity.md) adds the twelfth procedure, leaving eleven pending. Availability paragraphs now list it; route triggers, existing procedures, setup defaults and model resolution remain unchanged. The [evaluation](../evaluations/visual-parity/README.md) records exact screenshot comparisons and explicit missing-baseline behavior.

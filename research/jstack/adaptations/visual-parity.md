@@ -1,0 +1,16 @@
+# Visual parity adaptation
+
+Source: `pstack/skills/poteto-mode/playbooks/visual-parity.md` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [playbooks/visual-parity.md](../../../skills/jstack/jstack-juan-mode/playbooks/visual-parity.md).
+
+Preserve the heading, ownership statement, five numbered steps and reply. Baselines precede migration; baseline/harness tampering and restructuring to force a pass remain forbidden. Shared primitives precede dependent components. Any nonzero pixel difference fails. Opening a PR remains the final step, with its unavailable implementation disclosed.
+
+| Location | Difference | Concrete requirement and verification |
+| --- | --- | --- |
+| Step 1 | Discover the shipped `jstack-control-ui`; establish stable captures and retain the state list, reference images and comparison command. Missing tools or unstable captures leave the prerequisite incomplete. | T3 screenshots alone do not perform image comparison. The evaluation uses existing Sharp to decode actual screenshots; repeated captures match. A separate reader refuses to manufacture a missing reference. Installations remain manual. |
+| Step 2 | None. | Exact source text retained. Hash checks confirm the reference CSS, four images, fixture, comparator and stability manifest were preserved throughout the exercise. |
+| Step 3 | Prefix the principle name, resolve configured owners, use T3 worktree binding for separate checkouts, serialize shared changes and recheck affected states. | Existing jstack model ownership and T3 isolation contract. The configured implementation worker migrates a shared CSS property first, then each component. The parent independently detects a later shared-style regression in every state. Parallel worktrees remain untested here. |
+| Step 4 | Replace Cursor `/loop` with repeated capture/comparison/correction within actual scope and execution budget. Require decoded pixel comparisons, complete state coverage, current artifacts and explicit incomplete results. Do not substitute a scheduler. | T3 has no Cursor loop command; a recurring timer is a different operation. One-image-pixel failures, zero-diff repair, missing inputs and dimension mismatch were exercised. No tolerance is introduced. |
+| Step 5 | Disclose the pending Opening a PR procedure and preserve publication, merge and installation authority. | The bundled delivery procedure is unavailable. Evaluation children had no publication authority; this implementation PR follows the user's separate project-work authorization. |
+| Consumers | Add Visual parity to mode/setup availability and current project records. | Twelve procedures available, eleven pending. No routing trigger, helper algorithm, model configuration or setup-default change. |
+
+The [evaluation](../evaluations/visual-parity/README.md) states the tested boundaries. The [source comparison](../evaluations/visual-parity/source-comparison.json) identifies complete pinned comparisons for the procedure and affected entrypoints; earlier unchanged adaptations remain accounted for in their existing records. The manifest's 45 mappings, watches, source pins and reviewed checkpoint remain unchanged. The existing mode mapping already covers its playbooks and Control UI context. Package licenses remain exact.
