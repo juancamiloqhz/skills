@@ -1,9 +1,0 @@
-{
-  "command": [
-    "cat",
-    "/tmp/jstack-perf-issue-20261016/evidence/trail-review-task.json"
-  ],
-  "exit_code": 0,
-  "stdout": "{\"task_name\":\"/root/perf_issue_forward/trail_review\",\"role\":\"judgment and prose\",\"target\":null,\"effectiveModel\":\"gpt-6-astra\",\"transport\":\"native collaboration.spawn_agent\",\"fork_turns\":\"none\",\"brief\":\"trail-review-brief.txt\",\"config\":\"/tmp/jstack-perf-issue-20261016/models.json\",\"status\":\"running\",\"scope\":\"read-only app and existing evidence; own trail-review evidence only\"}\n",
-  "stderr": ""
-}

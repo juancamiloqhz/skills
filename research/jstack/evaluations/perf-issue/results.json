@@ -1,0 +1,242 @@
+{
+  "recordedAt": "2026-10-17",
+  "scope": "Synthetic 80,000-event batch CLI on one shared host; no production or universal JavaScript equivalence claim.",
+  "environment": {
+    "node": "v24.19.0",
+    "logicalCPUs": 4,
+    "loadBefore": "00:02:55 up 58 days, 10:35,  3 users,  load average: 0.63, 0.46, 0.45",
+    "loadAfter": "00:03:13 up 58 days, 10:35,  3 users,  load average: 0.81, 0.51, 0.47"
+  },
+  "timedRegion": "Fresh Node startup, reading both files, JSON parsing, summarization and consumed stdout through process termination. No profiler in timed runs. Same Node, input, flags and host on both sides.",
+  "parentReplay": {
+    "runs": [
+      {
+        "pair": 0,
+        "side": "baseline",
+        "elapsedMs": 2402.731544,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 0,
+        "side": "app",
+        "elapsedMs": 159.678816,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 1,
+        "side": "baseline",
+        "elapsedMs": 2471.07164,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 1,
+        "side": "app",
+        "elapsedMs": 136.834343,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 2,
+        "side": "baseline",
+        "elapsedMs": 2523.360082,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 2,
+        "side": "app",
+        "elapsedMs": 130.835499,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 3,
+        "side": "baseline",
+        "elapsedMs": 2477.113293,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 3,
+        "side": "app",
+        "elapsedMs": 136.118343,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 4,
+        "side": "baseline",
+        "elapsedMs": 2545.314202,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 4,
+        "side": "app",
+        "elapsedMs": 145.284068,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 5,
+        "side": "baseline",
+        "elapsedMs": 2384.872178,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 5,
+        "side": "app",
+        "elapsedMs": 139.797229,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 6,
+        "side": "baseline",
+        "elapsedMs": 2359.877885,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      },
+      {
+        "pair": 6,
+        "side": "app",
+        "elapsedMs": 135.805799,
+        "exitCode": 0,
+        "correct": true,
+        "stderr": ""
+      }
+    ],
+    "summaries": {
+      "baseline": {
+        "runs": 7,
+        "medianMs": 2471.07164,
+        "minMs": 2359.877885,
+        "maxMs": 2545.314202
+      },
+      "app": {
+        "runs": 7,
+        "medianMs": 136.834343,
+        "minMs": 130.835499,
+        "maxMs": 159.678816
+      }
+    },
+    "reductionPercent": 94.46255054750254,
+    "nonoverlap": true,
+    "allCorrect": true
+  },
+  "independentWorkflowRun": {
+    "order": "baseline then app, five alternating pairs",
+    "baselineMs": [
+      2447.85834569484,
+      2496.3275901973248,
+      2602.2116681560874,
+      2473.192003555596,
+      2396.30944468081
+    ],
+    "appMs": [
+      157.19813853502274,
+      133.55657272040844,
+      144.27084289491177,
+      155.05670569837093,
+      151.62717830389738
+    ],
+    "reductionPercent": 93.8691707685489,
+    "failures": 0,
+    "allOutputsMatchedExpected": true
+  },
+  "correctness": {
+    "testsPassed": 8,
+    "parentAPICases": 125,
+    "parentAPIEqual": true,
+    "callerUnchanged": true,
+    "negativeControl": {
+      "exitCode": 0,
+      "acceptedByCorrectnessGate": false,
+      "output": {
+        "processed": 80000,
+        "accepted": 0,
+        "rejected": 80000,
+        "totals": {}
+      }
+    },
+    "workflowAPICases": 164,
+    "workflowCLIScenarios": 8,
+    "expectedCounts": {
+      "processed": 80000,
+      "accepted": 74171,
+      "rejected": 5829
+    }
+  },
+  "profiling": {
+    "timingUse": "Separate diagnostic runs; excluded from acceptance timings. Native parsing is charged to summarize.",
+    "profiles": {
+      "baseline": {
+        "path": "evidence/baseline.cpuprofile",
+        "sha256": "1931cb08b7a60e852a370728fa3d86a0d3444144e8d6afba587024f46ee60c41",
+        "samples": 2124,
+        "sampledUs": 2415531,
+        "summarizeSelfUs": 2286201
+      },
+      "app": {
+        "path": "evidence/post.cpuprofile",
+        "sha256": "3daa7db52c04a533063ecf6cb9ede0945484cf24bb66aaaa5fe44506da8994b1",
+        "samples": 87,
+        "sampledUs": 121475,
+        "summarizeSelfUs": 22291
+      }
+    },
+    "parseProbe": {
+      "baseline": {
+        "count": 80000,
+        "parseMs": 2164.321476999999,
+        "summaryMs": 2212.4410009999997,
+        "processed": 80000,
+        "accepted": 74171,
+        "rejected": 5829
+      },
+      "post": {
+        "count": 1,
+        "parseMs": 0.16507099999999753,
+        "summaryMs": 37.40513900000002,
+        "processed": 80000,
+        "accepted": 74171,
+        "rejected": 5829
+      }
+    }
+  },
+  "inputAndSourceSHA256": {
+    "events.json": "b93155329f8d658fb0ffea476866b0e2ab57997f3ebcfc24c164db49c82ded63",
+    "rules.json": "29b8dc372c8dc6f329657e4d42b119fcb352112a4798ddb5fba62d99adb36a6c",
+    "expected.json": "1ab65702f835c950cfaff7db00583d2270a3c4acea45849bbdddf6f4eca24d9b",
+    "baseline/summary.cjs": "306bf7fdb829050fd6f8ae568d2292905469531fda7e1f15cd63916a5673e4af",
+    "app/summary.cjs": "2872592925d698eefaac22656be02f6fa54457414058b9bebd2fdbe4dbb449a0",
+    "app/cli.cjs": "2ea342069e70a0eacf276ee91be26b45b36d4741986f3c6e07f3eecf2b760e2b"
+  },
+  "workflowAssessment": {
+    "outcome": "local target met; full workflow conformance qualified",
+    "implementationAttempts": 1,
+    "descendantsCompleted": 5,
+    "codeReview": "No defects found in the bounded review.",
+    "trailReview": "Ten decision rows supported; capture, guidance timing, source-path and identity qualifications retained in README.",
+    "config": "Unmodified isolated medium template; inherited roles, two comparison seats unused. Saved global config unchanged.",
+    "limitsDocumentedIn": "README.md"
+  },
+  "retention": "Condensed from the original recorded runs without rerunning or altering their results. Repeated stdout bodies, command transcripts, agent reports and generated intermediates are omitted. The fixture regenerates expected output; two primary profiles retain hotspot evidence."
+}

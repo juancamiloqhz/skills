@@ -1,1 +1,0 @@
-{"task_name":"/root/perf_issue_forward/implementation","role":"perf-issue","target":null,"effectiveModel":"gpt-6-astra","transport":"native collaboration.spawn_agent","fork_turns":"none","brief":"implementation-brief.txt","config":"/tmp/jstack-perf-issue-20261016/models.json","status":"running","scope":"app/summary.cjs and app/summary.test.cjs; own implementation evidence only"}

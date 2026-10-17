@@ -1,8 +1,0 @@
-{
-  "task": "/root/perf_issue_forward/code_review",
-  "selection": "inherited codex gpt-6-astra",
-  "evidence": "../commands/preflight-code-review.json and parent brief",
-  "limitation": "Configuration evidence is not independent runtime model attestation. Same-family independent context is not model diversity.",
-  "overrides": false,
-  "descendants": false
-}

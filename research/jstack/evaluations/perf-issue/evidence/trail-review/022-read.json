@@ -1,9 +1,0 @@
-{
-  "command": [
-    "cat",
-    "/tmp/jstack-perf-issue-20261016/evidence/commands/review-principle-path-check.json"
-  ],
-  "exit_code": 0,
-  "stdout": "{\n  \"command\": [\n    \"bash\",\n    \"-c\",\n    \"readlink -f /home/ubuntu/.agents/skills/jstack-principle-explain-the-number/SKILL.md /home/ubuntu/.agents/skills/jstack-principle-prove-it-works/SKILL.md /home/ubuntu/.agents/skills/jstack-principle-test-behavior-not-implementation/SKILL.md; cmp /home/ubuntu/.agents/skills/jstack-principle-explain-the-number/SKILL.md /home/ubuntu/Dev/skills/skills/jstack/jstack-principle-explain-the-number/SKILL.md; cmp /home/ubuntu/.agents/skills/jstack-principle-prove-it-works/SKILL.md /home/ubuntu/Dev/skills/skills/jstack/jstack-principle-prove-it-works/SKILL.md; cmp /home/ubuntu/.agents/skills/jstack-principle-test-behavior-not-implementation/SKILL.md /home/ubuntu/Dev/skills/skills/jstack/jstack-principle-test-behavior-not-implementation/SKILL.md\"\n  ],\n  \"cwd\": \"/tmp/jstack-perf-issue-20261016\",\n  \"started\": \"2026-10-17T00:05:08.848048+00:00\",\n  \"stdout\": \"/home/ubuntu/.agents/skills/jstack-principle-explain-the-number/SKILL.md\\n/home/ubuntu/.agents/skills/jstack-principle-prove-it-works/SKILL.md\\n/home/ubuntu/.agents/skills/jstack-principle-test-behavior-not-implementation/SKILL.md\\n\",\n  \"stderr\": \"\",\n  \"exit_code\": 0,\n  \"seconds\": 0.013328876346349716\n}",
-  "stderr": ""
-}

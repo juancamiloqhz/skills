@@ -1,9 +1,0 @@
-{
-  "command": [
-    "cat",
-    "/tmp/jstack-perf-issue-20261016/evidence/code-review/compatibility.json"
-  ],
-  "exit_code": 0,
-  "stdout": "{\n  \"command\": [\n    \"node\",\n    \"verify.cjs\",\n    \"evidence/code-review/compatibility\"\n  ],\n  \"cwd\": \"/tmp/jstack-perf-issue-20261016\",\n  \"stdout\": \"{\\\"commonjsComparisons\\\":164,\\\"cliScenarios\\\":8,\\\"status\\\":\\\"pass\\\"}\\n\",\n  \"stderr\": \"\",\n  \"exit_code\": 0\n}\n",
-  "stderr": ""
-}

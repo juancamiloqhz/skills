@@ -1,1 +1,0 @@
-const fs=require('node:fs');const f=require(process.argv[2]).summarize;const cases=JSON.parse(fs.readFileSync(process.argv[3],'utf8'));console.log(JSON.stringify(cases.map(c=>{try{return{ok:true,value:f(...c)}}catch(e){return{ok:false,name:e.name,message:e.message}}})));

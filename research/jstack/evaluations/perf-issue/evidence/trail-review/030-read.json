@@ -1,9 +1,0 @@
-{
-  "command": [
-    "cat",
-    "/tmp/jstack-perf-issue-20261016/evidence/commands/parent-tests.json"
-  ],
-  "exit_code": 0,
-  "stdout": "{\n  \"command\": [\n    \"node\",\n    \"--test\",\n    \"summary.test.cjs\"\n  ],\n  \"cwd\": \"/tmp/jstack-perf-issue-20261016/app\",\n  \"started\": \"2026-10-17T00:01:36.715972+00:00\",\n  \"stdout\": \"\\u2714 reports all work and weighted category totals (2.706145ms)\\n\\u2714 empty batches do not consume rules (0.272688ms)\\n\\u2714 nonempty batches reject invalid rules (0.71901ms)\\n\\u2714 empty iterables do not parse rules regardless of length (0.393944ms)\\n\\u2714 iteration errors precede invalid rules (0.367069ms)\\n\\u2714 each call uses its own rules and totals (0.695072ms)\\n\\u2714 non-string rules can change through coercion between events (1.640029ms)\\n\\u2714 non-string rules retain later coercion failures (0.363208ms)\\n\\u2139 tests 8\\n\\u2139 suites 0\\n\\u2139 pass 8\\n\\u2139 fail 0\\n\\u2139 cancelled 0\\n\\u2139 skipped 0\\n\\u2139 todo 0\\n\\u2139 duration_ms 122.254942\\n\",\n  \"stderr\": \"\",\n  \"exit_code\": 0,\n  \"seconds\": 0.19385832641273737\n}",
-  "stderr": ""
-}

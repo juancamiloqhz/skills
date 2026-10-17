@@ -1,9 +1,0 @@
-{
-  "command": [
-    "cat",
-    "/tmp/jstack-perf-issue-20261016/evidence/comments/proposed.diff"
-  ],
-  "exit_code": 0,
-  "stdout": "",
-  "stderr": ""
-}

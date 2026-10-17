@@ -1,9 +1,0 @@
-{
-  "command": [
-    "cat",
-    "/tmp/jstack-perf-issue-20261016/evidence/checkpoint.txt"
-  ],
-  "exit_code": 0,
-  "stdout": "Blocking first steps. Capture baseline CPU profile, public CLI output, tests, runtime and load. Complete How explanation and validate role dispatch before an app edit. Test whether parse repetition is the measured limiter in a separate instrumented run.\nIndependent workstreams. The How reader owns only its findings. Benchmark preparation owns task-local scripts. App implementation will have one exclusive writer. No more than two concurrent descendants.\nShared mutable state. Parent owns plan, measurements and decisions.tsv. Child findings and command directories are disjoint. Source mutation and measurements serialize.\nSmallest safe decomposition. One implementation worker is best because the candidate change is inside one 19-line function. A second writer would share the same file. Architect is conditional on crossing a function boundary or changing ownership, parameters or contracts. No such change has yet been chosen.\n",
-  "stderr": ""
-}
