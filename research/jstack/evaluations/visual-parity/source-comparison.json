@@ -1,0 +1,69 @@
+{
+  "base": "f7b940e3623745bb642eb940fb34ad71ec07ca2a",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/visual-parity.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/visual-parity.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "950ca51999a6454c98eee6bcbc3d1bbe501a4e3a5d5439b6f6ddc378991b256c",
+      "localSHA256": "4d2e8f61a9d53d71a4b67e6da8a0c747fb869e2d05d1285d13394e484baa4529",
+      "completeDiffSHA256": "296a153428453f2ef137e5ae11be220e3f53890b04628029035c1d14379c9498",
+      "assessment": "research/jstack/adaptations/visual-parity.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+      "localSHA256": "a1d3e4ef708fa091234fddf6f924f088f4b094ed7c42994a6c1eb934e5c61045",
+      "completeDiffSHA256": "d04af8e360d587edd08b33a6c5f7ebe48316de9e0d409e12e1fd24d7ed5d7827",
+      "assessment": "research/jstack/adaptations/juan-mode.md"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "sourceSHA256": "d61b47256a18155a81c8e5ef95e3cc6569ce8c18317c35c4dd9c8015cf68cb59",
+      "localSHA256": "5d07baba904cc1cebf97243abf749cfc445fbc5523d2f5abc726acb4a79f5647",
+      "completeDiffSHA256": "d1aa6f1465db580a3f0781f30dc41c7614b3c305c5728882a7d8ef5ed80b6f6c",
+      "assessment": "research/jstack/adaptations/setup-jstack.md"
+    }
+  ],
+  "packageChecks": [
+    {
+      "name": "jstack-juan-mode",
+      "licenseMatchesPin": true,
+      "existingFilesCompared": 19,
+      "changedExistingFiles": [
+        "skills/jstack/jstack-juan-mode/SKILL.md"
+      ]
+    },
+    {
+      "name": "jstack-setup",
+      "licenseMatchesPin": true,
+      "existingFilesCompared": 8,
+      "changedExistingFiles": [
+        "skills/jstack/jstack-setup/SKILL.md",
+        "skills/jstack/jstack-setup/references/configuration.md"
+      ]
+    }
+  ],
+  "manifest": "All 45 mappings, context and watch paths, pins and reviewed checkpoint unchanged.",
+  "configurationReferenceChange": "Availability paragraph adds Visual parity; resolver and role schema unchanged.",
+  "sourcePlaybooks": 23,
+  "localPlaybooks": [
+    "authoring-a-skill.md",
+    "bug-fix.md",
+    "eval.md",
+    "feature.md",
+    "hillclimb.md",
+    "investigation.md",
+    "perf-issue.md",
+    "prototype.md",
+    "refactoring.md",
+    "runtime-forensics.md",
+    "trace-forensics.md",
+    "visual-parity.md"
+  ],
+  "retention": "Complete source diffs inspected in scratch; exact identities and linked adaptation records retained without duplicate source text."
+}
