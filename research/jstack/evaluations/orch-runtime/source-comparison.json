@@ -1,0 +1,58 @@
+{
+  "base": "e830ea86dec6cce3e6bfb16625526ee47355a3ea",
+  "assessment": "research/jstack/adaptations/orch-runtime.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/orch.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/orch.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "f091687df627a0b75fabd54af58945a9cd6c7039ef0622012ac9ed60cd8ec434",
+      "localSHA256": "0212343f5b77ef9966d94aac32ce521fea90074ec3dcd559b8a0cf8c5e94b47e",
+      "identical": false,
+      "diffSHA256": "8fc59a7c45c3f5e75736474c83d79ca6f1d8d8866bb623e79e4120fd80edba99"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/store.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/store.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "0eae7cf69282e827b1227166f2e32cee3560f2f3e65b3f1f2faf6fb83d3b4c5b",
+      "localSHA256": "0eae7cf69282e827b1227166f2e32cee3560f2f3e65b3f1f2faf6fb83d3b4c5b",
+      "identical": true,
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/orch.test.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/orch.test.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "773153ac74de6eb15f58d2682f487f5f30672d7efe3ef1d24a131aa9129d279b",
+      "localSHA256": "773153ac74de6eb15f58d2682f487f5f30672d7efe3ef1d24a131aa9129d279b",
+      "identical": true,
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/bootstrap.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/bootstrap.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "ccd2ed08fd9da9d0d942e5f2491cfc74bb92d8a08fa51755e0da1ac8de287361",
+      "localSHA256": "8782681a46728789c348e81bd18212d85dbd6661d652116af750d9048a311269",
+      "identical": false,
+      "diffSHA256": "59f73b7fb6243a2423370cd67d04e8a20e865598d4a7bca1889d65028493f956"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/package.json",
+      "local": "skills/jstack/jstack-juan-mode/scripts/package.json",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "d1f815091209d49763775cc188e8e06ff32d5fec648bffd2272bc25a165e87c3",
+      "localSHA256": "8c6b849736ec82a922eeb0d37b80beb97a5ab9a77b36d8437d3fb5e3476578f5",
+      "identical": false,
+      "diffSHA256": "1b83b1e417f8eae73d4249349637285bfd9d6120eb23691db73e59a582e5498e"
+    }
+  ],
+  "addedFiles": [
+    {
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/tsconfig.json",
+      "basis": "Exact compiler settings from the pinned scripts/watch-pr/tsconfig.json; enables strict checking for this directory.",
+      "localSHA256": "1ecccc72320b086c63ce3f73c959896fd747363e63553b3b1136296ea4069e45"
+    }
+  ]
+}
