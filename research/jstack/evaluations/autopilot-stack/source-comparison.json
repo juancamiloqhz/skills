@@ -1,0 +1,52 @@
+{
+  "base": "04af71fe541c52228eb93f602f1e1f1817dca93b",
+  "assessment": "research/jstack/adaptations/autopilot-stack.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/autopilot-stack.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "c8dcd1c0a4832f698c0284a0668d2281de2beeef82a4cb0dcf32352e1a6e2225",
+      "diffSHA256": "d8ed4e655aeba85441cffe6da00f1261727910581b5bfbc36d1cb22a25f21ac7"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/multi-phase-plan.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "5d3ef342a7d1b52dc155295f15a14a3f6833e72ddcb67fc2383cbcc334389e3c",
+      "diffSHA256": "b5e73cb244a37afd8444935cf861c143f45284e73773b546cbc5949f14313b46"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/babysit.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/babysit.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "d2bec6cf6d084f8f1d47369c22e4b823ea12cee2eca12d4c677d2281dd0641cd",
+      "diffSHA256": "17384e979c11d6c5417f5724840d11b531066d7b312fa52a1dd11a5fe1374265"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "9f6a26ba2c58fd447b0431eed4d501fc19c960c31df869161f90c2d637fc50b3",
+      "diffSHA256": "7ca2e5b91dc0a931b63d47a1490867fe6f287b380cbabcdcfc1b907dcb201932"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "7b08f2c6408e836b7919147d2b3bc0cd1d1d51d3c5f646da867e153e22c2204d",
+      "diffSHA256": "29ff06b97374bdfe3ab8b42b4ce71dbf8d2813d0330539cbf28baf9eaee896c1"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/opening-a-pr.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "5b4629d86a8d7c87397afffb3f14d9a532686989c7005807949bd30c6323a4c4",
+      "diffSHA256": "563e67aa605f8fe048c993cf6b601f3db811eb9af97c16c350b40af18d092991"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; prior setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 22
+}
