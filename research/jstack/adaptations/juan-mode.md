@@ -122,3 +122,7 @@ Availability now includes Autopilot-full, bringing the bundle to 21 procedures w
 ## Autopilot-stack availability, 2026-10-17
 
 Availability now includes Autopilot-stack, bringing the bundle to 22 procedures with Orchestrate pending. The [adaptation](autopilot-stack.md) and [evaluation](../evaluations/autopilot-stack/README.md) preserve root-owned topology and operator-owned landing, with explicit T3 task, watch and scheduling constraints. Model roles, source pins and reviewed checkpoint remain unchanged.
+
+## Orchestrate state helper, 2026-10-17
+
+The [runtime foundation](orch-runtime.md) adds the upstream store and CLI under `scripts/orch`, using the existing read-only dependency check. Its [evaluation](../evaluations/orch-runtime/README.md) records local persistence and lock behavior separately from untested coordinator recovery. Orchestrate remains unavailable and the playbook count stays at 22.

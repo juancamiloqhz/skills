@@ -180,4 +180,8 @@ The [Autopilot-full procedure](../../skills/jstack/jstack-juan-mode/playbooks/au
 
 ## Autopilot-stack
 
-The [Autopilot-stack procedure](../../skills/jstack/jstack-juan-mode/playbooks/autopilot-stack.md) gives the coordinator sole control of stack topology and leaves every PR open for the operator. Its [bounded evaluation](evaluations/autopilot-stack/README.md) exercises local rebases, explicit remote leases, changed patch identity and blocked delivery after drift. Forge and verifier receipts are simulated; live multi-owner publication, wake continuation and restart recovery remain unverified. Next, assess Orchestrate and its state/coordination tooling.
+The [Autopilot-stack procedure](../../skills/jstack/jstack-juan-mode/playbooks/autopilot-stack.md) gives the coordinator sole control of stack topology and leaves every PR open for the operator. Its [bounded evaluation](evaluations/autopilot-stack/README.md) exercises local rebases, explicit remote leases, changed patch identity and blocked delivery after drift. Forge and verifier receipts are simulated; live multi-owner publication, wake continuation and restart recovery remain unverified. The Orchestrate state helper is now available as a separate foundation below.
+
+## Orchestrate runtime foundation
+
+The [orch helper](../../skills/jstack/jstack-juan-mode/scripts/orch) preserves upstream units, ledger, inbox, gates and status formats. Its [evaluation](evaluations/orch-runtime/README.md) covers the real local CLI, process-boundary persistence, lock recovery and manual dependency checks. This does not enable Orchestrate; the count remains 22 of 23 playbooks. Next, replace Graphite-only frontier discovery with the planned Git/forge adapter, then establish completion deduplication, drain recovery and T3 child reconciliation before porting and validating the coordinator procedure. Preserve the upstream boundaries and record each necessary adaptation.

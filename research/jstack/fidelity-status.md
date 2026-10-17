@@ -55,6 +55,8 @@ These checks constrain support and release claims. They do not prohibit independ
 
 ## Next implementation and later tools
 
+The [Orchestrate state helper](evaluations/orch-runtime/README.md) now preserves the upstream store and CLI with a manual dependency check. Graphite replacement and coordinator recovery remain prerequisites; this does not add the final playbook or close any provider/persistence release gate.
+
 The standalone benchmark-checklist port preserves the full source procedure and adds only the recorded catalog-invocation, task-authority and pending-playbook qualifications. Its [evaluation](evaluations/benchmark-checklist/README.md) records actual export measurements separately from synthetic counterexamples. The checklist alone does not implement playbooks. Perf issue, Hillclimb, Eval, Visual parity, Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely, Worktree cleanup, Autonomous run, Autopilot-full and Autopilot-stack are now available separately. Opening a PR is now available with its own delivery evaluation.
 
 Technical writing now has its standalone port and [bounded writing evaluation](evaluations/technical-writing/README.md), with external Unslop assessed separately from host invocation. No-comments now includes its full Comment Sicko reviewer and [bounded cleanup/decision evaluation](evaluations/no-comments/README.md). TypeScript best practices now supplies the Type System Discipline helper with [compiler and caller evaluation](evaluations/typescript-best-practices/README.md). Remaining work includes workflow-specific external dependencies and installed-provider checks before claiming full playbook coverage.

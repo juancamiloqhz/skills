@@ -50,6 +50,8 @@ Source: proposed acceptance cases derived from [autonomous run][autonomous] and 
 
 ## orchestrate
 
+The [state helper foundation](../evaluations/orch-runtime/README.md) is implemented and tested locally. Orchestrate itself remains unavailable. The copied helper retains Graphite discovery and does not enforce notification deduplication, verifier precedence or acknowledged drains; these are explicit coordinator prerequisites below.
+
 Trigger on a standing program that exceeds one agent's session budget. Output durable units, briefs, child states, verification ledger, branch/PR ordering, decision trail and remaining gates. The coordinator owns decomposition and integration decisions; workers and verifiers own scoped code and proof. Dependencies include `figure-it-out` boundaries, `arena` for disputed design, the trail, `orch`, and delivery playbooks. Resolve task-specific workers, `swarm workers` for parallel verification, `arena` seats for design, and `judgment and prose` for delegated coordination.
 
 Source: [orchestrate][orchestrate], [figure-it-out][figure], [role registry][roles].
