@@ -1,0 +1,204 @@
+{
+  "status": "bounded live workflow complete; variant promotion deferred",
+  "base": "a07e7d0908c3109f3952b852274c0e1d7515ff0a",
+  "boundaryChecksBeforeAuthorizedImport": [
+    {
+      "case": 1,
+      "decision": "incomplete at Eval step 1; no dispatch",
+      "reason": "One configured runner, one distinct effective model, and no different-family judge. Both resolved roles are executable but insufficient for Eval.",
+      "roleExitCodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": 2,
+      "decision": "incomplete at Eval step 1; no dispatch",
+      "reason": "Two configured runners resolve to the same codex/gpt-6-astra model. The only judge also inherits codex/gpt-6-astra. No candidate diversity or different-family judge.",
+      "roleExitCodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": 3,
+      "decision": "incomplete at Eval step 1; no dispatch",
+      "reason": "Whole-map validation fails on unrelated bug-fix role with missing-provider. No role targets resolved.",
+      "roleExitCodes": [
+        1,
+        1
+      ]
+    }
+  ],
+  "boundarySideEffects": "No dispatch, configuration writes or promotion. All boundary input hashes preserved.",
+  "configurationImport": "User-authorized permanent import; 17 roles validated; exact attachment readback; effective global selection. Not an Eval fallback.",
+  "taskIdPrefix": "node:delegated-task:command%3Amcp%3A1306b48b-98ae-44eb-8d85-8c0e6f409fb9%3Adelegate-task%3A",
+  "runIdentity": "Each task childRunId has ordinal 1; original runs only, all four terminal with no pending descendants.",
+  "candidates": [
+    {
+      "label": "birch",
+      "variant": "earlier",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "taskIdSuffix": "cedar-birch-20261017-r1",
+      "passed": 3,
+      "total": 6,
+      "guideRead": {
+        "commandItemPosition": 3,
+        "actualCommandAndReturnedText": true
+      },
+      "guideCompliance": "Code follows assigned arithmetic rule",
+      "initialParentScores": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "finalParentScores": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "label": "maple",
+      "variant": "revised",
+      "provider": "cursor",
+      "model": "claude-sonnet-5-5",
+      "taskIdSuffix": "cedar-maple-20261017-r1",
+      "passed": 6,
+      "total": 6,
+      "guideRead": {
+        "commandItemPosition": 1,
+        "actualCommandAndReturnedText": true
+      },
+      "guideCompliance": "Code follows assigned arithmetic rule",
+      "initialParentScores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "finalParentScores": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "label": "elm",
+      "variant": "revised",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "taskIdSuffix": "cedar-elm-20261017-r1",
+      "passed": 6,
+      "total": 6,
+      "guideRead": {
+        "commandItemPosition": 3,
+        "actualCommandAndReturnedText": true
+      },
+      "guideCompliance": "Code follows assigned arithmetic rule",
+      "initialParentScores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "finalParentScores": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "label": "ash",
+      "variant": "earlier",
+      "provider": "cursor",
+      "model": "claude-sonnet-5-5",
+      "taskIdSuffix": "cedar-ash-20261017-r1",
+      "passed": 6,
+      "total": 6,
+      "guideRead": {
+        "commandItemPosition": 1,
+        "actualCommandAndReturnedText": true
+      },
+      "guideCompliance": "Deliberate documented departure from float rule",
+      "initialParentScores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "finalParentScores": [
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "limitations": [
+    "One run per model/variant; no statistical quality claim.",
+    "Only exposed command/read records verified; hidden provider context unobservable.",
+    "Arithmetic choices can reveal grouping; style may reveal authorship.",
+    "Default Decimal precision failure confirmed in supplemental post-judge case; blind judge missed it.",
+    "Separate checkouts, nested delegation, dropouts, catalog drift and installed-mode routing not exercised."
+  ],
+  "promotion": false,
+  "judge": {
+    "taskIdSuffix": "cedar-single-judge-20261017-r1",
+    "provider": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "options": {
+      "effort": "xhigh"
+    },
+    "status": "completed",
+    "scores": {
+      "birch": [
+        0,
+        2,
+        2,
+        1
+      ],
+      "maple": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "elm": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ash": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "readOnly": true
+  },
+  "reconciliation": "Accept judge zero for birch exact cents. Retain two for clear code/notes to avoid double-counting correctness. Same substantive conclusion; notes scoring remains subjective.",
+  "supplementalAfterJudging": {
+    "case": "large",
+    "amount": "123456789012345678901234567890.12",
+    "expectedCents": "12345678901234567890123456789012",
+    "passed": [
+      "maple",
+      "elm"
+    ],
+    "failed": [
+      "birch",
+      "ash"
+    ],
+    "ashActualCents": "12345678901234567890123456790000",
+    "scope": "Not in fixed blind suite. Qualifies exactness claims; no retroactive blind-score replacement."
+  },
+  "decision": "Defer variant promotion. Fixed checks improve GPT and tie Sonnet; one run per model/variant cannot establish the preset cross-model improvement claim."
+}

@@ -95,3 +95,7 @@ The opening availability paragraph and configuration consumer list now include P
 ## Hillclimb availability
 
 The opening paragraph and configuration consumer list now include Hillclimb. Ten mode procedures are available and 13 pending. No setup behavior, role assignment, saved configuration or default changes. The [comparison](../evaluations/hillclimb/source-comparison.json) records both availability updates.
+
+## Eval availability
+
+Setup and its configuration reference now list Eval as an available consumer. Eleven procedures are bundled and 12 remain pending. Existing saved configurations, templates and resolver behavior are unchanged. Eval checks distinct candidate models and a different-family judge after configuration resolution; repeated inheritance cannot satisfy those requirements. See the [source comparison](../evaluations/eval/source-comparison.json).
