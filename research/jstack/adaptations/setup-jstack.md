@@ -131,3 +131,7 @@ Availability now includes Pause safely, bringing the bundle to 18 procedures wit
 ## Worktree cleanup availability, 2026-10-17
 
 Availability now includes Worktree cleanup, bringing the bundle to 19 procedures with four pending. The [adaptation record](worktree-cleanup.md) and [evaluation](../evaluations/worktree-cleanup/README.md) cover the procedure and auditor. Model roles, source pins and reviewed checkpoint are unchanged.
+
+## Autonomous run availability, 2026-10-17
+
+Availability now includes Autonomous run, bringing the bundle to 20 procedures with three pending. The [adaptation record](autonomous-run.md) and [evaluation](../evaluations/autonomous-run/README.md) distinguish finite execution from unattended continuation and required review. Model roles, source pins and reviewed checkpoint are unchanged.

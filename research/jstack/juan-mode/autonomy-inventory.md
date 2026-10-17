@@ -40,7 +40,7 @@ Trigger on one sustained task with a checkable exit condition, such as fixing a 
 
 Source: [autonomous run][autonomous], [mode role mapping][mode], [local role registry][roles].
 
-Adapt Cursor `/loop` to task completion and parent-owned PR events. Continued work remains inside the agreed objective; an adjacent bug is not automatic permission for unrelated PRs. An authorized recurring run can use a separately scoped T3 Code schedule with recorded ownership and teardown. A missing wake mechanism is a reported limitation, not a reason to install a hidden heartbeat.
+Implemented in the [Autonomous run procedure](../../../skills/jstack/jstack-juan-mode/playbooks/autonomous-run.md), with [bounded evaluation](../evaluations/autonomous-run/README.md). Adapt Cursor `/loop` to task completion and parent-owned PR events. Continued work remains inside the agreed objective; an adjacent bug is not automatic permission for unrelated PRs. An authorized recurring run can use a separately scoped T3 Code schedule with recorded ownership and teardown. A missing wake mechanism is a reported limitation, not a reason to install a hidden heartbeat.
 
 Source: proposed adaptation of [autonomous run][autonomous]; live `schedule_task` and `watch_pull_request` contracts inspected on 2026-10-11.
 

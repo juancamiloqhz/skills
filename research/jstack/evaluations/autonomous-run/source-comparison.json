@@ -1,0 +1,38 @@
+{
+  "base": "f0c660c97b8e9bcdd6a5ac58dd1e23f37edc937e",
+  "assessment": "research/jstack/adaptations/autonomous-run.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/autonomous-run.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/autonomous-run.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "e980817c0279d3ff81ba1e5bd8e0cce21487ac86521f156abb91230829ac10d9",
+      "diffSHA256": "4e0b97a9943f6cf49fb2033fe8911e5b19dff0a8279098504c58437af6fc2bee"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/hillclimb.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "331f82fda0c84a27dd84e2e87325cfded7788ce1147090eb6e6de410261dcfb0",
+      "diffSHA256": "3413399b1740ad42e203b0349f931a82f91125a73351c3167eb3679e7fcae487"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "5027db81aa9b9a5e45b41ede43c33518c07473c5f92b7bda612e7fd8539b2797",
+      "diffSHA256": "89fb61b360564b589b17ce5c9baad7295da3101097dfeef9922ed438972c3ee1"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "d4282eabd62f83832c35ba7acfc9db87c29a0884659819ee5433aa2d7bf67024",
+      "diffSHA256": "dfdd800a4391b8536c4bf7b427a858579e7601b1669b75f0a414e677b8b92d3a"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; prior setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 20
+}
