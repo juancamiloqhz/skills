@@ -1,5 +1,7 @@
 # Orchestrate runtime evaluation
 
+Historical PR #70 assessment. The subsequent [GitHub frontier adaptation](../orch-frontier/README.md) replaces the Graphite reader described here. Other state-helper and recovery limits remain.
+
 The bundled `orch` helper now records work units, completion pointers, verification verdicts, standing orders and human gates in readable files. This foundation does not enable the Orchestrate playbook. Its Graphite-only frontier and coordinator recovery still need adaptation and validation.
 
 Source is `11713c683fe4add4fd403ea880580abbc9e0875f`; local base is merged PR #69, `e830ea86dec6cce3e6bfb16625526ee47355a3ea`. The [adaptation record](../../adaptations/orch-runtime.md) explains every difference. [Source comparisons](source-comparison.json) record exact file and diff hashes. Store implementation and the 14 upstream tests are unchanged.

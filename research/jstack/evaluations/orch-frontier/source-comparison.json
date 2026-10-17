@@ -1,0 +1,40 @@
+{
+  "base": "1de37148702a711666110a062d57306b29d8dd88",
+  "assessment": "research/jstack/adaptations/orch-frontier.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/orch.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/orch.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "f091687df627a0b75fabd54af58945a9cd6c7039ef0622012ac9ed60cd8ec434",
+      "localSHA256": "9cbe01b406c36679e049dcd699fc3f4c2ea0bc56d506e78c754dd6fefdb7bc02",
+      "identical": false,
+      "diffSHA256": "fc216b0a0abba44129189e60cbef8e1e56a4d725e38858edf4d1f902239d21fa"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/store.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/store.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "0eae7cf69282e827b1227166f2e32cee3560f2f3e65b3f1f2faf6fb83d3b4c5b",
+      "localSHA256": "7fc0274305a660121db8ee06171cb7dd6ccc7820145c31b2a4ac2188aef10bb0",
+      "identical": false,
+      "diffSHA256": "636d71f2c78a955298169d74cfd1f09510be1e46145dc7f3b9c3dff6470063b9"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/orch/orch.test.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/orch.test.ts",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "773153ac74de6eb15f58d2682f487f5f30672d7efe3ef1d24a131aa9129d279b",
+      "localSHA256": "6ba792439f5dac847af155808f3e780424cd52e9c064437dab13630123044787",
+      "identical": false,
+      "diffSHA256": "c5e83f7655aec13e0c2b2f0bf9e551ea545d89dc524748b95a1a204134329712"
+    }
+  ],
+  "addedFiles": [
+    {
+      "local": "skills/jstack/jstack-juan-mode/scripts/orch/frontier.test.ts",
+      "basis": "GitHub/Git replacement for the two retired Graphite-specific tests; generated repositories and modeled API responses.",
+      "localSHA256": "141d3f01b8e9714328b2119a7fd4dc941cfa554ac4aac31304be70f7678b51a0"
+    }
+  ]
+}

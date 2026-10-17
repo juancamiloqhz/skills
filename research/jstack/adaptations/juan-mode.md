@@ -126,3 +126,7 @@ Availability now includes Autopilot-stack, bringing the bundle to 22 procedures 
 ## Orchestrate state helper, 2026-10-17
 
 The [runtime foundation](orch-runtime.md) adds the upstream store and CLI under `scripts/orch`, using the existing read-only dependency check. Its [evaluation](../evaluations/orch-runtime/README.md) records local persistence and lock behavior separately from untested coordinator recovery. Orchestrate remains unavailable and the playbook count stays at 22.
+
+## Orchestrate GitHub frontier, 2026-10-17
+
+The [frontier adaptation](orch-frontier.md) replaces Graphite discovery with a required explicit PR list, verified GitHub state, published Git refs and parent ancestry. Its [evaluation](../evaluations/orch-frontier/README.md) covers rejection without record changes and separates live reads from modeled races. Store formats remain unchanged. Orchestrate is still unavailable pending completion reconciliation and coordinator recovery; there are still 22 procedures.
