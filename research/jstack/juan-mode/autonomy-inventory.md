@@ -82,7 +82,7 @@ Trigger on a queue to build and verify for the operator to land. Output one line
 
 Source: [autopilot-stack][stack], [autopilot-full][full], [role registry][roles].
 
-Use Git and the selected forge to maintain explicit branch-parent relationships. T3 Code links and watches every layer from the parent. Record topology changes and revalidate CI, mergeability and affected verdicts after a restack. Keep merge authority absent throughout this route, even if the user's broader wording says full autonomy. Replace its automatic hourly `/loop` with the explicit audit policy described above.
+Implemented in the [Autopilot-stack procedure](../../../skills/jstack/jstack-juan-mode/playbooks/autopilot-stack.md), with [bounded topology and drift checks](../evaluations/autopilot-stack/README.md). Use Git and the selected forge to maintain explicit branch-parent relationships. T3 Code links and watches every layer from the parent. Record topology changes and revalidate CI, mergeability and affected verdicts after a restack. Keep merge authority absent throughout this route, even if the user's broader wording says full autonomy. Replace its automatic hourly `/loop` with the explicit audit policy described above.
 
 Source: proposed adaptation of [autopilot-stack][stack]; live parent-owned PR-watch contract inspected on 2026-10-11.
 

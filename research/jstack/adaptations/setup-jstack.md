@@ -139,3 +139,7 @@ Availability now includes Autonomous run, bringing the bundle to 20 procedures w
 ## Autopilot-full availability, 2026-10-17
 
 Availability now includes Autopilot-full, bringing the bundle to 21 procedures with two pending. The [adaptation](autopilot-full.md) and [evaluation](../evaluations/autopilot-full/README.md) preserve owner-run merges, root verdicts and named operator holds while recording T3 watch, scheduling and cancellation constraints. Model roles, source pins and reviewed checkpoint remain unchanged.
+
+## Autopilot-stack availability, 2026-10-17
+
+Availability now includes Autopilot-stack, bringing the bundle to 22 procedures with Orchestrate pending. The [adaptation](autopilot-stack.md) and [evaluation](../evaluations/autopilot-stack/README.md) preserve root-owned topology and operator-owned landing, with explicit T3 task, watch and scheduling constraints. Model roles, source pins and reviewed checkpoint remain unchanged.
