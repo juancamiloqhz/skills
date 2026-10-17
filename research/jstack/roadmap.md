@@ -60,6 +60,10 @@ The [Perf issue procedure](../../skills/jstack/jstack-juan-mode/playbooks/perf-i
 
 The [Refactoring procedure](../../skills/jstack/jstack-juan-mode/playbooks/refactoring.md) captures the existing behavior before structural edits, delegates the mechanical work and requires public equivalence proof and reduced reader load. Its [evaluation](evaluations/refactoring/README.md) separates the existing one-seat configuration boundary from a focused CLI refactor using an isolated two-seat setup template. API migration remains a separate evaluation gap. Opening a PR remains unavailable.
 
+## Implemented dependency: Control UI
+
+The standalone [jstack-control-ui helper](../../skills/jstack/jstack-control-ui/SKILL.md) preserves upstream browser control and both Playwright examples, with T3 preview selection, ownership and explicit capability limits. Its [evaluation](evaluations/control-ui/README.md) covers a real local page, rebuilt controls, screenshots and an unavailable CPU profile. Visual parity remains the next consuming procedure; pixel-diff and Electron proof are still pending. Eleven playbooks remain available and twelve pending.
+
 ## Implemented dependency: Control CLI
 
 The standalone [jstack-control-cli helper](../../skills/jstack/jstack-control-cli/SKILL.md) supplies the terminal-control dependency for future engineering playbooks. Its [evaluation](evaluations/control-cli/README.md) covers an actual PTY prompt flow, startup timeout, early exit and owned-process cleanup. The pinned Python example's silent timeout is corrected with retained before/after evidence. Runtime forensics now has its own bounded live CPU-profile evaluation. Other consuming playbooks remain pending; rich TUI input and Control UI still require separate proof.
