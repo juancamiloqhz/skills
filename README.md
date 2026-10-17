@@ -169,6 +169,8 @@ Skills may also contain `references/`, `scripts/`, or `assets/` when those resou
 
 ## jstack
 
+The [Orchestrate state helper](./research/jstack/evaluations/orch-runtime/README.md) is available for local task bookkeeping. The full Orchestrate playbook remains pending its Git/forge adapter and coordinator recovery checks.
+
 jstack is the bundle name. Its configuration skill, [`jstack-setup`](./skills/jstack/jstack-setup/SKILL.md), adapts pstack's model setup concept for T3 Code. [`jstack-juan-mode`](./skills/jstack/jstack-juan-mode/SKILL.md), corresponding to pstack's `poteto-mode`, now provides the execution foundation: activation instructions, the inline playbook list, mandatory helper triggers, dependency discovery and model preflight. Twenty-two of its 23 playbook procedures are available; one remains pending. The [upstream reference](research/jstack/adaptations/juan-mode.md) records the inspected revision and MIT attribution. Source availability does not establish automatic rule loading or persistence after restart.
 
 The standalone [`jstack-how`](./skills/jstack/jstack-how/SKILL.md) and [`jstack-why`](./skills/jstack/jstack-why/SKILL.md) skills explain runtime behavior and investigate historical rationale. Invoke either directly without activating jstack-juan-mode. Each requires an available, current jstack-setup installation for model resolution and the shared investigation contract; neither requires the other or jstack-juan-mode. Future playbooks will discover these skills through the provider's catalog. Install or update the dependencies manually, for example:

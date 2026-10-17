@@ -17,7 +17,7 @@ export function checkDependencies(): void {
   }
   if (installed !== expected)
     throw new Error(
-      `watch-pr requires commander ${expected} in ${scriptsDirectory}/node_modules. ` +
+      `jstack tools require commander ${expected} in ${scriptsDirectory}/node_modules. ` +
       `Ask the user to run bun install --frozen-lockfile from ${scriptsDirectory}; nothing was installed.`
     );
 }
