@@ -106,3 +106,7 @@ Session pickup is now the seventeenth procedure, with six pending. See its [adap
 ## Pause safely availability, 2026-10-17
 
 Availability now includes Pause safely, bringing the bundle to 18 procedures with five pending. The [adaptation record](pause-safely.md) and [evaluation](../evaluations/pause-safely/README.md) cover the new procedure. This does not activate juan-mode, change model roles or advance upstream pins.
+
+## Worktree cleanup availability, 2026-10-17
+
+Availability now includes Worktree cleanup, bringing the bundle to 19 procedures with four pending. The [adaptation record](worktree-cleanup.md) and [evaluation](../evaluations/worktree-cleanup/README.md) cover the procedure and auditor. Model roles, source pins and reviewed checkpoint are unchanged.

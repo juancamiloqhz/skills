@@ -1,0 +1,48 @@
+{
+  "base": "3d4c3e9af3ba8526ee871afbb1c45181a668af36",
+  "assessment": "research/jstack/adaptations/worktree-cleanup.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/worktree-cleanup.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "504be455f9683cfca95b32407874d21795d604659ac1eee594cc2061584cd0e8",
+      "diffSHA256": "7abc76e3674db4efcf7bd1d32a3f51a8be64bff97cf800a2e678afad42348c61"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+      "local": "skills/jstack/jstack-juan-mode/scripts/worktree-audit.sh",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "9672f26e524fc60e31aa22a2b6b2a164d2f4370cdcca9de7ecc58d7a763dceb2",
+      "diffSHA256": "4835518167a4dddd5f7ac2cca357a5ed0032c31cc43674d1598a3a7862c9f239"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localSHA256": "ef2f8f895679c7ea16fff6320cd76e3a6ea4530011ca5a36bcc23cc6d977df39",
+      "diffSHA256": "d74efc6142d05bdea093eca256e8859aa6591ce55606d0b47c2a29262002d5be"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localSHA256": "e5716155d69297952ce23db2c80a77dc37425dc5a90bb4eeda6817a7be16c0ce",
+      "diffSHA256": "c49f71f851584432dc6368bfc2f33a3f9fd69ae40e6872b1efad5776e9afb148"
+    }
+  ],
+  "localSupportForAuditor": [
+    {
+      "local": "skills/jstack/jstack-juan-mode/scripts/worktree_audit.py",
+      "localSHA256": "9a5772e59baf8d61119b6b9c8b797da869153be2a83c14f096e34632d4151308"
+    },
+    {
+      "local": "skills/jstack/jstack-juan-mode/references/worktree-audit.md",
+      "localSHA256": "b0937aed6878ef5813030fa0ee7826f2133cb7733cb97df7ceb8e7c4dff5a9d5"
+    }
+  ],
+  "configurationReferenceChange": "Availability only; prior setup adaptation retained.",
+  "manifest": "Mappings, pins and reviewed checkpoint unchanged.",
+  "packageLicense": "Mode MIT notice unchanged.",
+  "localPlaybooks": 19
+}
