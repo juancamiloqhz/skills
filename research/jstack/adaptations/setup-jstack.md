@@ -115,3 +115,7 @@ The mode now bundles Babysit and its single-pass watcher, bringing the current c
 ## Shipping availability
 
 Shipping is now the fifteenth bundled procedure; eight remain pending. See the [Shipping adaptation](shipping.md) and [evaluation](../evaluations/shipping/README.md). This changes availability and caller links only; configuration roles, selection, pins and existing adaptations are unchanged.
+
+## Multi-phase plan availability
+
+Multi-phase plan and its structural checker are now bundled, bringing coverage to 16 procedures with seven pending. See the [adaptation](multi-phase-plan.md) and [evaluation](../evaluations/multi-phase-plan/README.md). Configuration roles, selection, source pins and the reviewed checkpoint are unchanged. Execution through either Autopilot or Orchestrate remains unavailable.
