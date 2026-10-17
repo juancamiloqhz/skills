@@ -68,7 +68,7 @@ Trigger on a queue of independent PRs with explicit landing authority. Output ow
 
 Source: [autopilot-full][full], [swarm][swarm], [mode roles][mode].
 
-Keep an owner as a logical responsibility across fresh delegated rounds. Move watch registration and event routing to the parent, since T3 Code children cannot watch PRs. Record the exact verified head and recheck affected behavior after rebases or changed patches; a green check alone is insufficient. Link every worked PR. Require the user's actual merge grant and respect named holds. Hourly audits and early ready-PR publication become explicit run policy rather than automatic side effects of routing.
+Implemented in the [Autopilot-full procedure](../../../skills/jstack/jstack-juan-mode/playbooks/autopilot-full.md), with [bounded evidence](../evaluations/autopilot-full/README.md) and live lifecycle limits. Keep an owner as a logical responsibility across fresh delegated rounds. Move watch registration and event routing to the parent, since T3 Code children cannot watch PRs. Record the exact verified head and recheck affected behavior after rebases or changed patches; a green check alone is insufficient. Link every worked PR. Require the user's actual merge grant and respect named holds. Hourly audits and early ready-PR publication become explicit run policy rather than automatic side effects of routing.
 
 Source: proposed adaptation of [autopilot-full][full] and [local authority boundaries][decisions]; live PR-watch and delegation contracts inspected on 2026-10-11.
 

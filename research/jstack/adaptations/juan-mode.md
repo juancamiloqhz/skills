@@ -114,3 +114,7 @@ Availability now includes Worktree cleanup, bringing the bundle to 19 procedures
 ## Autonomous run availability, 2026-10-17
 
 Availability now includes Autonomous run, bringing the bundle to 20 procedures with three pending. The [adaptation record](autonomous-run.md) and [evaluation](../evaluations/autonomous-run/README.md) distinguish finite execution from unattended continuation and required review. Model roles, source pins and reviewed checkpoint are unchanged.
+
+## Autopilot-full availability, 2026-10-17
+
+Availability now includes Autopilot-full, bringing the bundle to 21 procedures with two pending. The [adaptation](autopilot-full.md) and [evaluation](../evaluations/autopilot-full/README.md) preserve owner-run merges, root verdicts and named operator holds while recording T3 watch, scheduling and cancellation constraints. Model roles, source pins and reviewed checkpoint remain unchanged.

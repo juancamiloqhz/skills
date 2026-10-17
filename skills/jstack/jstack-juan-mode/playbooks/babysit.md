@@ -1,6 +1,6 @@
 ### Babysit
 
-**You own the merge frontier. Declare a mode, clear one PR at a time, stop where the human's call begins.** Use this bundled playbook for these requests, not an unrelated host skill with a matching description. A request to land or ship belongs to [Shipping](shipping.md), which begins where this playbook ends. Both Autopilot procedures remain unavailable in this package. Disclose a missing procedure; do not invent its steps or claim it ran.
+**You own the merge frontier. Declare a mode, clear one PR at a time, stop where the human's call begins.** Use this bundled playbook for these requests, not an unrelated host skill with a matching description. A request to land or ship belongs to [Shipping](shipping.md), which begins where this playbook ends. Autopilot-full is available; Autopilot-stack remains unavailable in this package. Disclose a missing procedure; do not invent its steps or claim it ran.
 
 Babysitting starts when the user asks for it, which is normally once a phase or a whole stack is built, not when a PR opens. Finish the stack, get it green here, then land it through Shipping.
 
