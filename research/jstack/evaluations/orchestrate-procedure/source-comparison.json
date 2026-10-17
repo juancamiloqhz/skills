@@ -1,0 +1,22 @@
+{
+  "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "upstreamPath": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+  "localPath": "skills/jstack/jstack-juan-mode/playbooks/orchestrate.md",
+  "upstreamSha256": "d42b4375f1bd4ce23da0b575a198571a2117df7eea10c3c9fc6d92ae1053f7be",
+  "localSha256": "9aba961fb0370c0e174df0d65c06bea792ea09afce3403e50c37b3275d5d61ea",
+  "unifiedDiffSha256": "8ee1d293145ee23bd6bb543f8a340451bbbf6adb82f365d0dc5e7f456f52dc59",
+  "diffFormat": "UTF-8 Python difflib.unified_diff defaults with keepends=True; fromfile=upstreamPath, tofile=localPath",
+  "headingsPreserved": true,
+  "sevenStepLabelsPreserved": true,
+  "assessment": "research/jstack/adaptations/orchestrate.md",
+  "router": {
+    "upstreamPath": "pstack/skills/poteto-mode/SKILL.md",
+    "upstreamSha256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+    "localPath": "skills/jstack/jstack-juan-mode/SKILL.md",
+    "baselineCommit": "a1e196ec198ee5399f2a14c50355e1b9984c8afe",
+    "baselineSha256": "9f6a26ba2c58fd447b0431eed4d501fc19c960c31df869161f90c2d637fc50b3",
+    "localSha256": "cc05bced75b72f9271449b343a1a86fa711d037a02bab8c77a03a3a78cec39d8",
+    "localDiffSha256": "5d74860bb4a41480b8842a5a32044dc18eed5723387f897c050ddcdb4873467a",
+    "scope": "Availability text points to an authoring-only draft; the standing-program trigger and unavailable route are unchanged. Existing full-router adaptations remain in adaptations/juan-mode.md."
+  }
+}

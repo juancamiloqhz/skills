@@ -138,3 +138,7 @@ The [inbox adaptation](orch-inbox-recovery.md) adds claim/ack commands and one c
 ## Completion reconciliation, 2026-10-17
 
 The existing execution reference now specifies [coordinator acceptance](completion-reconciliation.md) for `orch` batches: task/run identity, liveness, repeated or stale results, current artifacts and verifier precedence. Its [paired evaluation](../evaluations/completion-reconciliation/README.md) passed both updated and previous contracts, without proving a benefit or live T3 recovery. No runtime schema or automatic classifier is added. Orchestrate remains unavailable pending the final procedure and pilot/recovery validation.
+
+## Orchestrate procedure draft, 2026-10-17
+
+The [draft procedure](orchestrate.md) preserves upstream structure and connects the existing runtime, frontier and completion contracts to T3 delegation. It remains unavailable as a route. The [bounded evaluation](../evaluations/orchestrate-procedure/README.md) separates planning cases and actual authoring-child delivery from the still-required implementation/verification/landing pilot and host-restart trial.
