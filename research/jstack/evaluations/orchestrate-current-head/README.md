@@ -17,9 +17,11 @@ The exercise records a synthetic pass for PR 1/head A, then requires PR 1/head B
 
 ## Executed results
 
-On 2026-10-17, this fresh implementation round ran both commands with the installed CLI `/tmp/jstack-orch-inbox-20261017/runtime/orch/orch.ts` and scratch parent `/tmp/jstack-current-head-20261017/salvage-tests`. Both exited 0 and reported `PASS` with Bun 1.4.2 and Python 3.14.4. Both source byte comparisons passed before testing. Every behavioral check uses an explicit exception, so the checks remain active under `python -O`, addressing PR75's assertion-optimization limitation.
+On 2026-10-17, a fresh implementation worker ran both commands against an exact runtime copy with its existing dependencies. Both exited 0 and reported `PASS` with Bun 1.4.2 and Python 3.14.4. Both source byte comparisons passed before testing. This new test uses explicit exceptions that remain active under `python -O`; PR75's separate assertion-based replay script is unchanged.
 
-The actual T3 worktree was `/home/ubuntu/.t3/worktrees/skills/t3-27c754f1`, branch `t3/27c754f1`, at clean base `6d7bc41bdf23fb3878c358444e47448c3bb79ccb`. An earlier checkout mutation caused this fresh round. No prior execution or commit ownership is attributed here. These are local synthetic checks; the parent will record separately observed live PR/head results.
+The fresh worker used a separate T3 worktree at base `6d7bc41bdf23fb3878c358444e47448c3bb79ccb`. An unexplained commit in the first checkout caused this fresh round; that checkout and staged work remain preserved. The second checkout had a branch-only rename, with no commit or index change. After that child finished, the coordinator checked its reported file hashes and imported those exact bytes into the parent branch. The coordinator does not claim to have identified the first mutation's actor.
+
+The coordinator reran the normal test and published PR #76 at candidate A, `27ecb31004211e53380035952ca0aae86eae3b7a`, then recorded a passing parent check under that exact PR/head. This report update creates a later candidate. Its live head, the old-record rejection and the subsequent fresh check belong in the PR body and local ledger after observation. The original child result remains bound to its original task/run and tested file hashes; it did not report candidate A as its own commit. These parent checks are not an independent model review.
 
 ## Synthetic boundary and fidelity
 
