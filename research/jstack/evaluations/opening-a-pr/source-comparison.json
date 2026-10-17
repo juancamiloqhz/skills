@@ -1,0 +1,141 @@
+{
+  "base": "a2d2a7a9f05d90f7164aad8410383e40bb839283",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/opening-a-pr.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "931070f5674e81a191277253d4e02b1c45d091b223f93bf506d3896a428a5967",
+      "localSHA256": "a0ebf6db1fdc984253303332b5c3caeabdace6319a02d2c3f86e7c4c092a4095",
+      "completeDiffSHA256": "17d1567edc9a905b572e88eeebbeea6613f7363cbf3dd0eb7a31b2c5ea04654e",
+      "assessment": "research/jstack/adaptations/opening-a-pr.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/authoring-a-skill.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "f6a13a445c360b48d6cd72780ac01955f45b82826476efe0e67c7559329407aa",
+      "localSHA256": "9033b6e73a9250310bfe89726fbe716f5c81205abbe6bb5e1f9ffc154b4b0edd",
+      "completeDiffSHA256": "80b03e5938a4712acf2bc6723f71445569f8a63740b2a50b497c4a0d5e250895",
+      "assessment": "research/jstack/adaptations/authoring-a-skill.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/bug-fix.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/bug-fix.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "018bbc146ae19145caa6c7e70591fee081b64447dda1c1c4b681c9974d928b13",
+      "localSHA256": "da5d933fb0a301e7a62c9010f37af03398c57359b0b02d8f64966eb1c07b1993",
+      "completeDiffSHA256": "8d67e09157da219ef619d4d74afcf12ff3491d233743f45cae0c0a5bc056e0bd",
+      "assessment": "research/jstack/adaptations/bug-fix.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/feature.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/feature.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "3a62cc4a8cbcf144bb9dd05f05420a15be0d38b784d3b141bb730a5852f50a62",
+      "localSHA256": "9199aa11f31de8f2b363d66826b3d5a06eab6e757e18175078a644ea719d4cdc",
+      "completeDiffSHA256": "d883803ff44108e2f63248a43fdbdd8cd51e465b278fa7243b3bfbe77e32df4e",
+      "assessment": "research/jstack/adaptations/feature.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/hillclimb.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "244f289898fe67a458065e90fe8217c916c5acf61cdee8975ade3f9831a12e91",
+      "localSHA256": "955ca26e58a20c550b16581e5e9e5d66b23e80adcb48a92a2fcecce632774380",
+      "completeDiffSHA256": "2623f8cfe6c61d169d335fc35c4ee973d7367d3b057e0ef5969779de422a06eb",
+      "assessment": "research/jstack/adaptations/hillclimb.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/perf-issue.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "2b88ad0f880e4d4d755ac19fe52414d6631d6baa816d060f53cf0a7429d7e14a",
+      "localSHA256": "50690adfe2e7d19f2a4d8740102ae4d9360c8dfe5eb2f82f1683d2d52347490c",
+      "completeDiffSHA256": "bd5e155d5ae32d2f536b54af0685a9206d53f309e3e3407c1d90330a386190f3",
+      "assessment": "research/jstack/adaptations/perf-issue.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/refactoring.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/refactoring.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "50f4f7d3d301551f8b8a57c3303c99958c5ca630ae0d0051823b6987c0eb5b96",
+      "localSHA256": "318802d94e6e7ef0d34e928747fc782faf71c3e83f83d42e02c209a329c97546",
+      "completeDiffSHA256": "57d0ae28c09274f77a2be0b9b881b5d33116f14ce1d61abc2596ac53ee1496e5",
+      "assessment": "research/jstack/adaptations/refactoring.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/visual-parity.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/visual-parity.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "950ca51999a6454c98eee6bcbc3d1bbe501a4e3a5d5439b6f6ddc378991b256c",
+      "localSHA256": "f51d5027eb467641248f0237769d49c1b6331d0ab25f91a85061f9f71364aa66",
+      "completeDiffSHA256": "092076d2f8228aeefdc87b3dd5017dfdfba5bd3f57274bd9b0e8b5f92b46b84c",
+      "assessment": "research/jstack/adaptations/visual-parity.md"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "sourceSHA256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+      "localSHA256": "000b9f6bbd06bc4a57999818efbfec6d54cb911661503fe042c279dbb7bf317d",
+      "completeDiffSHA256": "31f7d8247055be0bffc546b930e10926ffc9fa83695309665e597b4a71bfcacb",
+      "assessment": "research/jstack/adaptations/juan-mode.md"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "sourceSHA256": "d61b47256a18155a81c8e5ef95e3cc6569ce8c18317c35c4dd9c8015cf68cb59",
+      "localSHA256": "97f62ca926251dea51484d8132997f392b821fb3ad81ec5f5f6f3e0b67ccbc30",
+      "completeDiffSHA256": "4515863d4dc2da385a39cf1aad234df3b8dabe9e60ee74334cd9caedb7d0846d",
+      "assessment": "research/jstack/adaptations/setup-jstack.md"
+    }
+  ],
+  "packageChecks": [
+    {
+      "name": "jstack-juan-mode",
+      "licenseMatchesPin": true,
+      "existingFilesCompared": 20,
+      "changedExistingFiles": [
+        "skills/jstack/jstack-juan-mode/SKILL.md",
+        "skills/jstack/jstack-juan-mode/playbooks/authoring-a-skill.md",
+        "skills/jstack/jstack-juan-mode/playbooks/bug-fix.md",
+        "skills/jstack/jstack-juan-mode/playbooks/feature.md",
+        "skills/jstack/jstack-juan-mode/playbooks/hillclimb.md",
+        "skills/jstack/jstack-juan-mode/playbooks/perf-issue.md",
+        "skills/jstack/jstack-juan-mode/playbooks/refactoring.md",
+        "skills/jstack/jstack-juan-mode/playbooks/visual-parity.md"
+      ]
+    },
+    {
+      "name": "jstack-setup",
+      "licenseMatchesPin": true,
+      "existingFilesCompared": 8,
+      "changedExistingFiles": [
+        "skills/jstack/jstack-setup/SKILL.md",
+        "skills/jstack/jstack-setup/references/configuration.md"
+      ]
+    }
+  ],
+  "manifest": "All 45 mappings, watches, context paths, pins and reviewed checkpoint unchanged.",
+  "localPlaybooks": [
+    "authoring-a-skill.md",
+    "bug-fix.md",
+    "eval.md",
+    "feature.md",
+    "hillclimb.md",
+    "investigation.md",
+    "opening-a-pr.md",
+    "perf-issue.md",
+    "prototype.md",
+    "refactoring.md",
+    "runtime-forensics.md",
+    "trace-forensics.md",
+    "visual-parity.md"
+  ],
+  "sourcePlaybooks": 23,
+  "callerChange": "Seven callers replace only the unavailable-procedure sentence with an Opening a PR link. Their prior adaptations remain in the linked records.",
+  "configurationReferenceChange": "Availability adds Opening a PR; Babysit and Shipping still unavailable. No schema or resolver change.",
+  "retention": "Full pinned diffs inspected in task scratch; linked adaptation records account for differences without retaining duplicate source text."
+}
