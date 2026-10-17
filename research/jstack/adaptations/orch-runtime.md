@@ -1,5 +1,7 @@
 # Orchestrate runtime foundation
 
+Historical PR #70 assessment. The subsequent [GitHub frontier adaptation](orch-frontier.md) replaces the Graphite reader described here. Other state-helper and recovery limits remain.
+
 Source: `pstack/skills/poteto-mode/scripts/orch/` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [scripts/orch](../../../skills/jstack/jstack-juan-mode/scripts/orch). This is a dependency port, not activation of Orchestrate. The bundle still provides 22 of 23 playbook procedures.
 
 Preserve the source module boundaries, command names, TSV/JSON formats, exit codes, verdict categories, store locking, status derivation and Graphite discovery. `store.ts` and `orch.test.ts` are byte-identical to the pin. Historical fixture names inside tests remain source examples. No additional skill, configuration role or manifest mapping is needed because the existing juan-mode mapping covers its scripts directory.

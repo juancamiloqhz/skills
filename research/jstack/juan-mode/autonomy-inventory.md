@@ -50,13 +50,13 @@ Source: proposed acceptance cases derived from [autonomous run][autonomous] and 
 
 ## orchestrate
 
-The [state helper foundation](../evaluations/orch-runtime/README.md) is implemented and tested locally. Orchestrate itself remains unavailable. The copied helper retains Graphite discovery and does not enforce notification deduplication, verifier precedence or acknowledged drains; these are explicit coordinator prerequisites below.
+The [state helper foundation](../evaluations/orch-runtime/README.md) is implemented and tested locally. Orchestrate itself remains unavailable. The [GitHub frontier adapter](../evaluations/orch-frontier/README.md) now verifies a supplied PR chain against published refs and ancestry. The helper does not enforce notification deduplication, verifier precedence or acknowledged drains; these are explicit coordinator prerequisites below.
 
 Trigger on a standing program that exceeds one agent's session budget. Output durable units, briefs, child states, verification ledger, branch/PR ordering, decision trail and remaining gates. The coordinator owns decomposition and integration decisions; workers and verifiers own scoped code and proof. Dependencies include `figure-it-out` boundaries, `arena` for disputed design, the trail, `orch`, and delivery playbooks. Resolve task-specific workers, `swarm workers` for parallel verification, `arena` seats for design, and `judgment and prose` for delegated coordination.
 
 Source: [orchestrate][orchestrate], [figure-it-out][figure], [role registry][roles].
 
-Replace assumed cloud workers, nesting depth and fixed concurrency with observed T3 Code capabilities and an explicit in-flight budget. Keep one writer per worktree and topology. Use task IDs and event-driven drains rather than Cursor agent IDs and `/loop`. Replace the Graphite-only frontier with an explicit supported Git/forge adapter before enabling this route; retain verdicts keyed to PR and head SHA. A restart must reconcile real child and branch state, without assuming all local children died or all remote children survived.
+Replace assumed cloud workers, nesting depth and fixed concurrency with observed T3 Code capabilities and an explicit in-flight budget. Keep one writer per worktree and topology. Use task IDs and event-driven drains rather than Cursor agent IDs and `/loop`. Use the implemented GitHub frontier adapter within its explicit scope and same-repository limits; retain verdicts keyed to PR and head SHA. A restart must reconcile real child and branch state, without assuming all local children died or all remote children survived.
 
 Source: proposed adaptation of [orchestrate][orchestrate], [store][store] and [T3 Code integration][t3]; live delegation/status descriptions inspected on 2026-10-11.
 

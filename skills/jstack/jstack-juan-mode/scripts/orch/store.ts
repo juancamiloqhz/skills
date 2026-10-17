@@ -967,234 +967,153 @@ function countLine(value: Counts): string {
     : entries.map(([name, count]) => `${name}=${count}`).join(", ");
 }
 
-const OPEN_GT_PR_STATUSES = new Set([
-  "Trunk branch locked",
-  "Changes requested",
-  "Waiting on PRs in this stack to merge",
-  "Waiting on downstack merge state",
-  "Draft",
-  "Required checks failed",
-  "Undergoing failure detection",
-  "Merge queue failed on current head commit",
-  "Handed off to merge queue...",
-  "Waiting on downstack",
-  "Merge conflicts",
-  "Needs reviewers",
-  "Needs approvals",
-  "Needs restack",
-  "Queued to merge...",
-  "Ready to merge",
-  "Ready to merge as stack",
-  "Rebasing...",
-  "Waiting on CI...",
-  "Stale, needs rebase onto trunk",
-  "Unresolved comments",
-  "Waiting on required CI",
-  "Waiting to merge...",
-]);
-
-interface GtPullRequest {
-  readonly pr: number;
-  readonly state: FrontierPrState;
+interface GithubFrontierPr extends FrontierPr {
+  readonly base: string;
+  readonly baseSha: string;
 }
 
-interface GtFrontierEntry extends GtPullRequest {
-  readonly branches: string;
-}
-
-function parseGtPullRequest({
-  branch,
-  detail,
-}: {
-  branch: string;
-  detail: string;
-}): GtPullRequest {
-  const match =
-    /^(?:\[origin\] )?PR #([1-9]\d*)(?: \(([^)\r\n]+)\))?(?: .+)?$/.exec(
-      detail
-    );
-  const pr = Number(match?.[1] ?? 0);
-  if (match === null || !Number.isSafeInteger(pr)) {
-    throw new UserError(
-      `gt info output has an invalid PR row for branch ${branch}: ${detail}`
-    );
-  }
-  const status = match[2];
-  if (status === "Merged") {
-    return { pr, state: "MERGED" };
-  }
-  if (status === "Closed") {
-    return { pr, state: "CLOSED" };
-  }
-  if (status === undefined || OPEN_GT_PR_STATUSES.has(status)) {
-    return { pr, state: "OPEN" };
-  }
-  throw new UserError(
-    `gt info output has an unknown PR state for branch ${branch}: ${status}`
-  );
-}
-
-function parseGtBranches(raw: string): readonly string[] {
-  const branches: string[] = [];
-  const lines = raw.replace(/\r/g, "").split("\n");
-  for (const [index, line] of lines.entries()) {
-    if (line.length === 0) {
-      continue;
-    }
-    const branchMatch =
-      /^(?:│ )*[◯◉] +([^\s]+)((?: \([^()\r\n]*\))*)$/.exec(line);
-    if (branchMatch === null) {
-      throw new UserError(
-        `gt log short output has an unparseable line ${index + 1}: ${JSON.stringify(line)}`
-      );
-    }
-    const branch = branchMatch[1] ?? "";
-    if (branches.includes(branch)) {
-      throw new UserError(
-        `gt log short output contains duplicate branch ${branch}`
-      );
-    }
-    branches.push(branch);
-  }
-  const trunk = branches[0];
-  if (trunk === undefined) {
-    throw new UserError("gt log short output did not contain a stack");
-  }
-  return branches.slice(1);
-}
-
-function graphitePullRequest({
-  branch,
-  repo,
-}: {
-  branch: string;
-  repo: string;
-}): GtPullRequest {
-  let raw: string;
+function frontierCommand(repo: string, tool: string, args: readonly string[]): string {
   try {
-    raw = execFileSync("gt", ["--no-interactive", "info", branch], {
+    return execFileSync(tool, [...args], {
       cwd: repo,
       encoding: "utf8",
-      env: { ...process.env, NO_COLOR: "1" },
+      timeout: 20_000,
+      maxBuffer: 4 * 1024 * 1024,
+      env: { ...process.env, GH_PROMPT_DISABLED: "1", GIT_TERMINAL_PROMPT: "0" },
       stdio: ["ignore", "pipe", "pipe"],
-    });
+    }).trim();
   } catch (error) {
-    throw new UserError(
-      `gt info ${branch} failed: ${errorMessage(error)}`
-    );
+    throw new UserError(`${tool} frontier read failed: ${errorMessage(error)}`);
   }
-  const rows = raw
-    .replace(/\r/g, "")
-    .split("\n")
-    .filter(
-      (line) =>
-        line.startsWith("PR #") || line.startsWith("[origin] PR #")
-    );
-  if (rows.length === 0) {
-    throw new UserError(
-      `gt info output branch ${branch} has no pull request; this clone's gt metadata may predate the submit, so resolve the frontier from the stacker's clone or after gt sync`
-    );
-  }
-  if (rows.length > 1) {
-    throw new UserError(
-      `gt info output contains multiple PRs for branch ${branch}`
-    );
-  }
-  return parseGtPullRequest({ branch, detail: rows[0] ?? "" });
 }
 
-function graphiteFrontier(repo: string): readonly GtFrontierEntry[] {
-  let raw: string;
+function githubJson(repo: string, endpoint: string): unknown {
+  const raw = frontierCommand(repo, "gh", [
+    "api", "--hostname", "github.com", "--method", "GET", endpoint,
+  ]);
   try {
-    raw = execFileSync(
-      "gt",
-      ["--no-interactive", "log", "short", "--stack", "--reverse"],
-      {
-        cwd: repo,
-        encoding: "utf8",
-        env: { ...process.env, NO_COLOR: "1" },
-        stdio: ["ignore", "pipe", "pipe"],
-      }
-    );
-  } catch (error) {
-    throw new UserError(
-      `gt log short --stack --reverse failed: ${errorMessage(error)}`
-    );
+    return JSON.parse(raw);
+  } catch {
+    throw new UserError("GitHub frontier response is not valid JSON");
   }
-  const result = parseGtBranches(raw).map((branch) => ({
-    branches: branch,
-    ...graphitePullRequest({ branch, repo }),
-  }));
-  if (new Set(result.map((row) => row.pr)).size !== result.length) {
-    throw new UserError("gt info output contains duplicate pull requests");
-  }
-  return result;
 }
 
-function branchSha({
-  branch,
-  repo,
-}: {
-  branch: string;
-  repo: string;
-}): string {
-  let raw: string;
-  try {
-    raw = execFileSync("git", ["rev-parse", branch], {
-      cwd: repo,
-      encoding: "utf8",
-      env: process.env,
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-  } catch (error) {
-    throw new UserError(
-      `git rev-parse ${branch} failed: ${errorMessage(error)}`
-    );
+function githubRepository(repo: string): string {
+  const remote = frontierCommand(repo, "git", ["remote", "get-url", "origin"]);
+  const match = /^(?:https:\/\/github\.com\/|git@github\.com:|ssh:\/\/git@github\.com\/)([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+?)\/?$/.exec(remote);
+  if (match === null) {
+    throw new UserError("frontier requires an origin remote on github.com");
   }
-  const sha = raw.trim();
-  if (!/^[0-9a-f]{40,64}$/i.test(sha)) {
-    throw new UserError(`git rev-parse ${branch} returned an invalid SHA`);
+  const name = match[1]!.replace(/\.git$/, "");
+  if (name.split("/").some((part) => part === "." || part === ".." || part.length === 0)) {
+    throw new UserError("origin has an invalid GitHub repository name");
   }
-  return sha;
+  return name;
 }
 
-function resolveFrontier(repo: string): readonly FrontierPr[] {
-  return graphiteFrontier(repo).map((row) => ({
-    ...row,
-    sha: branchSha({ branch: row.branches, repo }),
-  }));
+function githubSha(value: unknown): value is string {
+  return typeof value === "string" && /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/.test(value);
 }
 
-function validateFrontierPin({
-  actual,
-  expected,
-}: {
-  actual: readonly number[];
-  expected: readonly number[];
-}): void {
-  if (
-    actual.length === expected.length &&
-    actual.every((pr, index) => pr === expected[index])
-  ) {
-    return;
+function githubBranch(repo: string, value: unknown): string {
+  if (typeof value !== "string" || value.length === 0) {
+    throw new UserError("GitHub frontier response has an invalid branch");
   }
-  const actualSet = new Set(actual);
-  const expectedSet = new Set(expected);
-  const missing = expected.filter((pr) => !actualSet.has(pr));
-  const extra = actual.filter((pr) => !expectedSet.has(pr));
-  const drift: string[] = [];
-  if (missing.length > 0) {
-    drift.push(`missing from gt: ${missing.join(",")}`);
+  frontierCommand(repo, "git", ["check-ref-format", `refs/heads/${value}`]);
+  return value;
+}
+
+function githubPullRequest(repo: string, name: string, pr: number): GithubFrontierPr {
+  const value = githubJson(repo, `repos/${name}/pulls/${pr}`);
+  if (!isRecord(value) || value.number !== pr ||
+      !isRecord(value.head) || !isRecord(value.base) ||
+      !isRecord(value.head.repo) || !isRecord(value.base.repo) ||
+      typeof value.head.repo.full_name !== "string" ||
+      typeof value.base.repo.full_name !== "string" ||
+      value.head.repo.full_name.toLowerCase() !== name.toLowerCase() ||
+      value.base.repo.full_name.toLowerCase() !== name.toLowerCase() ||
+      !githubSha(value.head.sha) || !githubSha(value.base.sha) ||
+      typeof value.merged !== "boolean" ||
+      !(value.state === "open" || value.state === "closed") ||
+      (value.merged && value.state !== "closed")) {
+    throw new UserError(`PR #${pr} has invalid or cross-repository frontier evidence`);
   }
-  if (extra.length > 0) {
-    drift.push(`extra in gt: ${extra.join(",")}`);
+  return {
+    pr,
+    branches: githubBranch(repo, value.head.ref),
+    sha: value.head.sha,
+    state: value.merged ? "MERGED" : value.state === "open" ? "OPEN" : "CLOSED",
+    base: githubBranch(repo, value.base.ref),
+    baseSha: value.base.sha,
+  };
+}
+
+function remoteHeads(repo: string, branches: readonly string[]): ReadonlyMap<string, string> {
+  const refs = branches.map((branch) => `refs/heads/${branch}`);
+  const raw = frontierCommand(repo, "git", ["ls-remote", "--refs", "origin", ...refs]);
+  const result = new Map<string, string>();
+  for (const line of raw.split("\n").filter(Boolean)) {
+    const [sha, ref, extra] = line.split("\t");
+    if (!githubSha(sha) || ref === undefined || extra !== undefined ||
+        !refs.includes(ref) || result.has(ref)) {
+      throw new UserError("git ls-remote returned invalid frontier refs");
+    }
+    result.set(ref, sha);
   }
-  if (missing.length === 0 && extra.length === 0) {
-    drift.push(
-      `order differs: expected ${expected.join(",")}; gt ${actual.join(",")}`
-    );
+  for (const ref of refs) {
+    if (!result.has(ref)) throw new UserError(`missing published frontier ref ${ref}`);
   }
-  throw new UserError(`frontier pin mismatch: ${drift.join("; ")}`);
+  return new Map(branches.map((branch) => [branch, result.get(`refs/heads/${branch}`)!]));
+}
+
+function resolveFrontier(repo: string, pin: readonly number[]): readonly FrontierPr[] {
+  const name = githubRepository(repo);
+  const repository = githubJson(repo, `repos/${name}`);
+  if (!isRecord(repository) || typeof repository.full_name !== "string" ||
+      repository.full_name.toLowerCase() !== name.toLowerCase()) {
+    throw new UserError("GitHub frontier repository identity does not match origin");
+  }
+  const trunk = githubBranch(repo, repository.default_branch);
+  const prs = pin.map((pr) => githubPullRequest(repo, name, pr));
+  if (new Set(prs.map((row) => row.branches)).size !== prs.length ||
+      prs.some((row) => row.branches === trunk)) {
+    throw new UserError("frontier PR branches must be distinct and must not be trunk");
+  }
+  let sawOpen = false;
+  for (const row of prs) {
+    if (row.state === "CLOSED") throw new UserError(`PR #${row.pr} is closed without merging; reconcile the requested stack`);
+    if (row.state === "OPEN") sawOpen = true;
+    else if (sawOpen) throw new UserError("merged PRs must precede the open frontier");
+  }
+  const open = prs.filter((row) => row.state === "OPEN");
+  const branches = [trunk, ...open.map((row) => row.branches)];
+  const heads = remoteHeads(repo, branches);
+  let parent = trunk;
+  for (const row of open) {
+    const parentSha = heads.get(parent)!;
+    if (row.base !== parent || row.baseSha !== parentSha || heads.get(row.branches) !== row.sha) {
+      throw new UserError(`PR #${row.pr} has stale or unexpected base/head; expected parent ${parent}`);
+    }
+    const comparison = githubJson(repo, `repos/${name}/compare/${parentSha}...${row.sha}`);
+    if (!isRecord(comparison) || !isRecord(comparison.base_commit) ||
+        !isRecord(comparison.merge_base_commit) ||
+        comparison.base_commit.sha !== parentSha || comparison.merge_base_commit.sha !== parentSha ||
+        !(comparison.status === "ahead" || comparison.status === "identical")) {
+      throw new UserError(`PR #${row.pr} does not contain its current parent; restack before recording the frontier`);
+    }
+    parent = row.branches;
+  }
+  const reread = pin.map((pr) => githubPullRequest(repo, name, pr));
+  const finalHeads = remoteHeads(repo, branches);
+  const finalRepository = githubJson(repo, `repos/${name}`);
+  if (JSON.stringify(prs) !== JSON.stringify(reread) ||
+      branches.some((branch) => heads.get(branch) !== finalHeads.get(branch)) ||
+      githubRepository(repo).toLowerCase() !== name.toLowerCase() ||
+      !isRecord(finalRepository) || finalRepository.full_name !== repository.full_name ||
+      finalRepository.default_branch !== trunk) {
+    throw new UserError("frontier changed during inspection; previous generation retained");
+  }
+  return prs.map(({ pr, branches, sha, state }) => ({ pr, branches, sha, state }));
 }
 
 export function openStore(
@@ -1484,21 +1403,15 @@ export function openStore(
       set: async (params) => {
         await beginWrite();
         const repo = resolve(requiredLine(params.repo, "repo directory"));
-        const pin =
-          params.prs === undefined
-            ? undefined
-            : params.prs.map((pr) => positiveInteger(pr, "PR"));
-        if (pin !== undefined && new Set(pin).size !== pin.length) {
+        if (params.prs === undefined || params.prs.length === 0) {
+          throw new UserError("set --prs <n,...> to the expected bottom-to-top PR order");
+        }
+        const pin = params.prs.map((pr) => positiveInteger(pr, "PR"));
+        if (new Set(pin).size !== pin.length) {
           throw new UserError("--prs must not contain duplicates");
         }
         const old = await readFrontier(store);
-        const prs = resolveFrontier(repo);
-        if (pin !== undefined) {
-          validateFrontierPin({
-            actual: prs.map((row) => row.pr),
-            expected: pin,
-          });
-        }
+        const prs = resolveFrontier(repo, pin);
         const value: Frontier = {
           generation: old.generation + 1,
           prs,
