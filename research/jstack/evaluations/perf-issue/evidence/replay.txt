@@ -1,0 +1,10 @@
+Run from /tmp/jstack-perf-issue-20261016.
+
+node --test app/summary.test.cjs
+node verify.cjs evidence/compatibility-replay-unique
+python3 benchmark.py evidence/benchmark-replay-unique
+python3 final_check.py
+
+Use new output directory names for each replay. The scripts refuse to overwrite an existing result directory. Run the timing command alone, after other app or test executions have stopped. The benchmark uses five alternating baseline/app pairs and validates every result against expected.json. CPU profiles and parse probes are diagnostic artifacts and are excluded from the acceptance timing.
+
+The saved baseline and inputs are read-only. App source remains frozen at the reviewed snapshot. No package installation, commit, repository update, service or publication is needed.

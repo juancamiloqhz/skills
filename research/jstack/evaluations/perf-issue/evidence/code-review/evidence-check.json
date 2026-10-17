@@ -1,0 +1,106 @@
+{
+  "status": "pass",
+  "raw_runs_checked": 10,
+  "failures": 0,
+  "expected_recomputed": true,
+  "source_diff_matches": true,
+  "snapshot_matches": true,
+  "cli_unchanged": true,
+  "baseline": {
+    "median_seconds": 2.473192003555596,
+    "min_seconds": 2.39630944468081,
+    "max_seconds": 2.6022116681560874,
+    "runs": [
+      2.44785834569484,
+      2.4963275901973248,
+      2.6022116681560874,
+      2.473192003555596,
+      2.39630944468081
+    ]
+  },
+  "app": {
+    "median_seconds": 0.15162717830389738,
+    "min_seconds": 0.13355657272040844,
+    "max_seconds": 0.15719813853502274,
+    "runs": [
+      0.15719813853502274,
+      0.13355657272040844,
+      0.14427084289491177,
+      0.15505670569837093,
+      0.15162717830389738
+    ]
+  },
+  "reduction_percent": 93.8691707685489,
+  "profiles": {
+    "baseline": {
+      "total_us": 2415531,
+      "top": [
+        {
+          "function": "summarize",
+          "url": "file:///tmp/jstack-perf-issue-20261016/app/summary.cjs",
+          "us": 2286201
+        },
+        {
+          "function": "(garbage collector)",
+          "url": "",
+          "us": 47422
+        },
+        {
+          "function": "",
+          "url": "file:///tmp/jstack-perf-issue-20261016/app/cli.cjs",
+          "us": 33884
+        },
+        {
+          "function": "(program)",
+          "url": "",
+          "us": 20459
+        },
+        {
+          "function": "readFileUtf8",
+          "url": "",
+          "us": 9814
+        },
+        {
+          "function": "compileForInternalLoader",
+          "url": "node:internal/bootstrap/realm",
+          "us": 4311
+        }
+      ]
+    },
+    "post": {
+      "total_us": 121475,
+      "top": [
+        {
+          "function": "",
+          "url": "file:///tmp/jstack-perf-issue-20261016/app/cli.cjs",
+          "us": 32553
+        },
+        {
+          "function": "summarize",
+          "url": "file:///tmp/jstack-perf-issue-20261016/app/summary.cjs",
+          "us": 22291
+        },
+        {
+          "function": "(program)",
+          "url": "",
+          "us": 20731
+        },
+        {
+          "function": "(garbage collector)",
+          "url": "",
+          "us": 20245
+        },
+        {
+          "function": "readFileUtf8",
+          "url": "",
+          "us": 9013
+        },
+        {
+          "function": "compileForInternalLoader",
+          "url": "node:internal/bootstrap/realm",
+          "us": 5489
+        }
+      ]
+    }
+  }
+}

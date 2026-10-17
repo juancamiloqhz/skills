@@ -1,0 +1,13 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "if test -f evidence/trail-review/report.md; then cat evidence/trail-review/report.md; else echo review-pending; fi"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:07:20.096804+00:00",
+  "stdout": "review-pending\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.0029263971373438835
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "nl",
+    "-ba",
+    "/tmp/jstack-perf-issue-20261016/app/summary.cjs"
+  ],
+  "cwd": "/home/ubuntu/Dev/skills",
+  "stdout": "     1\t'use strict';\n     2\t\n     3\tfunction summarize(events, serializedRules) {\n     4\t  const totals = {};\n     5\t  let accepted = 0;\n     6\t  let rejected = 0;\n     7\t  for (const event of events) {\n     8\t    const rules = JSON.parse(serializedRules);\n     9\t    const rule = rules[event.type];\n    10\t    if (!rule || event.amount < rule.minimum) {\n    11\t      rejected++;\n    12\t      continue;\n    13\t    }\n    14\t    totals[event.type] = (totals[event.type] || 0) + event.amount * rule.multiplier;\n    15\t    accepted++;\n    16\t  }\n    17\t  return { processed: events.length, accepted, rejected, totals };\n    18\t}\n    19\t\n    20\tmodule.exports = { summarize };\n",
+  "stderr": "",
+  "exit_code": 0
+}

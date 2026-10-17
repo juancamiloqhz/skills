@@ -1,0 +1,9 @@
+{
+  "command": [
+    "cat",
+    "/tmp/jstack-perf-issue-20261016/models.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"schemaVersion\": 1,\n  \"preset\": \"medium\",\n  \"roles\": {\n    \"feature, refactoring\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"bug-fix\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"perf-issue\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"hillclimb\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"judgment and prose\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"hardest tasks\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"how explorer\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"how explainer\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"why investigators\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"why synthesizer\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"reflect tooling\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"reflect judgment, divergent, synthesizer\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"arena runners\": [\n      {\n        \"alias\": \"inherit-parent\"\n      },\n      {\n        \"alias\": \"inherit-parent\"\n      }\n    ],\n    \"arena cross-judge pool\": [\n      {\n        \"alias\": \"inherit-parent\"\n      }\n    ],\n    \"swarm workers\": {\n      \"alias\": \"inherit-parent\"\n    },\n    \"architect runners\": [\n      {\n        \"alias\": \"inherit-parent\"\n      },\n      {\n        \"alias\": \"inherit-parent\"\n      }\n    ],\n    \"interrogate reviewers\": [\n      {\n        \"alias\": \"inherit-parent\"\n      },\n      {\n        \"alias\": \"inherit-parent\"\n      }\n    ]\n  }\n}\n",
+  "stderr": ""
+}

@@ -25,3 +25,7 @@ Control CLI, Guard the Context Window and Control UI source context are already 
 ## Bug fix handoff update, 2026-10-16
 
 Bug fix now has a local procedure. The reply qualification removes only that route from its unavailable list; Perf issue remains unavailable and diagnosis alone still grants no fix authority. [Bug fix source comparison](../evaluations/bug-fix/source-comparison.json) records the final Runtime forensics procedure against its original pin. The earlier live evaluation remains evidence for its recorded snapshot.
+
+## Perf issue handoff update
+
+Perf issue now has a local procedure. The reply removes its unavailable qualification while retaining the original Bug fix/Perf handoff and the rule that diagnosis does not authorize a fix. The [full pinned comparison](../evaluations/perf-issue/source-comparison.json) accounts for the final procedure; its earlier live evaluation remains evidence for the recorded snapshot.

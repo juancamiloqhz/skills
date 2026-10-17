@@ -1,0 +1,60 @@
+# Overview
+
+The CLI loads one event batch, applies category rules, and writes counts plus weighted totals as one JSON line. `summarize(events, serializedRules)` is also a public synchronous CommonJS function. The inspected source is the uncommitted scratch application at `/tmp/jstack-perf-issue-20261016/app`, based on revision `327d4ccbcaeb84b00a5bb35b143317f26bf2daeb`. Its three CommonJS files match the saved baseline byte for byte at inspection time. Source hashes are in [inspection record](how-records/14.json).
+
+The saved baseline profile localizes the cost to `summarize`. Source tracing identifies repeated parsing of unchanged rules as the first hypothesis to test. This explanation does not establish a speedup or a performance ceiling. No application, tests, or benchmark were run during this investigation.
+
+# Key concepts
+
+- An event has a category string in `type` and a numeric `amount` for the supplied workload. The fixture has 80,000 events across 67 categories.
+- The rules argument is serialized JSON. Its object maps 64 category names to `{ minimum, multiplier }`. Three event categories therefore have no configured rule. The deterministic fixture formulas are in [generate.py](/tmp/jstack-perf-issue-20261016/generate.py:4); independent input inspection is in [record 14](how-records/14.json).
+- A result contains `{ processed, accepted, rejected, totals }`. `totals` is an ordinary object whose category values accumulate accepted amounts multiplied by their rule's multiplier. See [summary.cjs](/tmp/jstack-perf-issue-20261016/app/summary.cjs:3).
+
+# How it works
+
+The CLI reads `process.argv[2]` as UTF-8 and parses it into events. It then reads `process.argv[3]` as UTF-8, leaving the rules serialized. Both file operations are synchronous. It calls `summarize`, serializes the returned object, and appends a newline to stdout. A thrown error reaches the CLI catch block, which prints `error.message` followed by a newline to stderr and sets exit code 1. See [cli.cjs](/tmp/jstack-perf-issue-20261016/app/cli.cjs:4).
+
+```mermaid
+flowchart LR
+  E[Events file] --> EP[Read and parse events]
+  R[Rules file] --> RT[Read rules text]
+  EP --> S[summarize]
+  RT --> S
+  S --> L[For each event: parse rules, look up category, accept or reject]
+  L --> O[Counts and weighted totals]
+  O --> J[JSON line on stdout]
+```
+
+`summarize` creates fresh counters and an empty totals object. For each event, it parses the entire rules string, looks up `rules[event.type]`, and rejects the event when the rule is falsy or the amount is below the minimum. Equality with the minimum is accepted. An accepted event updates its category total and increments `accepted`; a rejected event increments `rejected`. Finally, `processed` comes from `events.length`. See [summary.cjs](/tmp/jstack-perf-issue-20261016/app/summary.cjs:4).
+
+The repeated `JSON.parse` is inside the event loop at [summary.cjs:8](/tmp/jstack-perf-issue-20261016/app/summary.cjs:8). For this successful 80,000-event workload, static tracing therefore implies 80,000 parses of the same 64-rule document, including events whose category is absent. The code reads the parsed rules without modifying them for the supplied plain JSON data.
+
+The measured evidence comes from the parent's saved executions. The unprofiled CLI record reports 2.370177564 seconds, exit code 0, no stderr, and 80,000 processed events, with 74,171 accepted and 5,829 rejected. This is one timing sample, not a repeatability claim. See [baseline timing](commands/baseline-timing.json). The separate profiled execution is retained in [baseline profile command](commands/baseline-profile.json).
+
+I independently summed the saved CPU profile's 2,124 sample intervals. They total 2,415,531 microseconds, of which 2,286,201 microseconds, or 94.6459%, are attributed to the `summarize` frame. This agrees with the [parent's parsed profile](commands/baseline-parsed.json); the independent calculation and raw frame location are in [record 14](how-records/14.json). These are sampled attribution values, not isolated JSON parsing measurements. The profile identifies the hot function; the source supplies the repeated-parsing hypothesis.
+
+The parent's separate [parse probe](commands/baseline-parse-probe.json) also reports 80,000 parse calls, 2,164.321477 milliseconds inside the parse wrapper, and 2,212.441001 milliseconds for `summarize`. The [probe source](/tmp/jstack-perf-issue-20261016/parse_probe.cjs:10) wraps `JSON.parse` after loading the event input and clocks every invocation. It directly corroborates repeated parsing, but adds per-call instrumentation overhead and measures the function rather than the public CLI. Its times are diagnostic evidence only; they cannot replace the unprofiled end-to-end baseline.
+
+The cheapest supported performance mantra is **"Do it, but don't do it again."** The preceding mantra, "Don't do it," offers no identified dispensable output: rules determine acceptance and weighted totals, and every event must be accounted for. Reusing a parsed rule document within one invocation targets repeated work without skipping events. Parsing should remain deferred until the loop consumes its first event so empty batches retain their current behavior. This is a hypothesis for the next phase, not an implemented change or proof that the 30% target will be met. The ordered mantras are in [the performance playbook](/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/playbooks/perf-issue.md:6).
+
+# Where things live
+
+| Location | Responsibility |
+| --- | --- |
+| [app/cli.cjs](/tmp/jstack-perf-issue-20261016/app/cli.cjs:1) | Positional file arguments, synchronous input, JSON output, CLI error handling. |
+| [app/summary.cjs](/tmp/jstack-perf-issue-20261016/app/summary.cjs:3) | Public aggregation function and CommonJS export. |
+| [app/summary.test.cjs](/tmp/jstack-perf-issue-20261016/app/summary.test.cjs:6) | Weighted totals, threshold equality, missing rules, empty batches, invalid rules. |
+| [app/README.md](/tmp/jstack-perf-issue-20261016/app/README.md:3) | Invocation, workload scope, compatibility requirements. |
+| [baseline profile](baseline.cpuprofile) and [command records](commands/baseline-parsed.json) | Existing runtime evidence. |
+| [how-records](how-records/identity.json) | This task's identity, commands, outputs, exit codes, and source hashes. |
+
+# Gotchas
+
+- An empty batch returns zero counts and empty totals even when rules are invalid JSON. The loop never parses the rules. Hoisting parsing unconditionally before the loop would break the explicit test at [summary.test.cjs:15](/tmp/jstack-perf-issue-20261016/app/summary.test.cjs:15). The CLI still reads both files for an empty batch, so a missing rules file remains an error.
+- Nonempty batches with invalid rules throw a `SyntaxError` from the public function. The CLI converts that exception to its stderr and exit-code behavior. Preserve this distinction. See [summary.test.cjs:19](/tmp/jstack-perf-issue-20261016/app/summary.test.cjs:19) and [cli.cjs:8](/tmp/jstack-perf-issue-20261016/app/cli.cjs:8).
+- Keep the exported object shape, function arguments, and synchronous return behavior. The rules parameter is serialized text, and callers do not currently preparse it. See [summary.cjs:20](/tmp/jstack-perf-issue-20261016/app/summary.cjs:20).
+- The implementation has no schema validation. It uses normal JavaScript property lookup, truthiness, arithmetic coercion, and an ordinary `{}` accumulator. Adding validation, changing prototype behavior, or changing `(totals[event.type] || 0)` would introduce separate behavior changes. See [summary.cjs:9](/tmp/jstack-perf-issue-20261016/app/summary.cjs:9).
+- CommonJS callers can supply values beyond the plain JSON fixture. The loop uses iteration but reports `events.length`; an empty iterable is not necessarily an array with length zero. Non-string rules with observable string conversion, custom event getters, or prototype mutation can make repeated parsing observable. Their compatibility scope is not established by the README or existing tests. This investigation has not executed such cases; it does not claim a simple cache preserves every possible JavaScript input behavior.
+- The saved test record shows three tests passing before changes. It supports those tested cases, not complete API coverage. See [baseline tests](commands/baseline-tests.json). The 30% improvement target still requires a measured post-change CLI run and output comparison.
+
+The simple-path investigation is complete. There were no explorers or child tasks, source edits, configuration changes, or jstack changes. The requested five-section explanation follows the installed template. The upstream-fidelity policy was read; this phase proposes no change to the jstack adaptation and introduces no upstream deviation. The inherited identity and its evidence limits are recorded in [identity.json](how-records/identity.json).

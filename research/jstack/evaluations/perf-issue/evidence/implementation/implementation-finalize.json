@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import shutil; root = Path('/tmp/jstack-perf-issue-20261016/evidence'); [shutil.copyfile(p, root / 'implementation' / p.name) for p in (root / 'commands').glob('implementation-*.json')]; print('All implementation command records archived.')"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:01:08.365084+00:00",
+  "stdout": "All implementation command records archived.\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.06876443140208721
+}

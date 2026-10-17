@@ -1,0 +1,17 @@
+{
+  "task": "/root/perf_issue_forward/trail_review",
+  "role": "judgment and prose",
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "selection": "inherited",
+  "model_override": false,
+  "effort_override": false,
+  "descendants": false,
+  "evidence": [
+    "../commands/preflight-trail-review.json",
+    "../trail-review-task.json",
+    "../identity.json",
+    "native task delivery and inheritance contract"
+  ],
+  "limitations": "The preflight resolves null and records inherited codex gpt-6-astra. The containing T3 thread selection does not independently attest this native child runtime. Fresh context within the same family provides no model-family diversity. No separate child runtime model attestation was available."
+}

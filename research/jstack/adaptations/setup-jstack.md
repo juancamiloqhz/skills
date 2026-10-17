@@ -87,3 +87,7 @@ The Feature procedure and its shared four-part throughput checkpoint are now ava
 ## Refactoring availability
 
 Setup and its configuration reference now list Refactoring as an available consumer, with eight procedures and 15 pending. This changes no setup step, role, default, resolver behavior or user configuration. See the [Refactoring adaptation](refactoring.md).
+
+## Perf issue availability
+
+The opening availability paragraph and configuration consumer list now include Perf issue. Nine mode procedures are available and 14 pending. Setup behavior, role assignments, existing configuration and defaults are unchanged. The [complete pinned comparison](../evaluations/perf-issue/source-comparison.json) includes the final entrypoint and exact configuration-reference diff.

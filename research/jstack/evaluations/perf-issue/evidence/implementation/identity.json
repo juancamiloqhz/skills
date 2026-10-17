@@ -1,0 +1,16 @@
+{
+  "provider": "codex",
+  "model": "gpt-6-astra",
+  "selection": "inherited, no overrides",
+  "source": "parent brief and evidence/commands/preflight-implementation.json",
+  "limitation": "No independent runtime model attestation; no model-family diversity claimed.",
+  "configuration": "/tmp/jstack-perf-issue-20261016/models.json",
+  "descendants": 0,
+  "skills": {
+    "jstack-juan-mode": "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/SKILL.md",
+    "jstack-principle-model-the-domain": "/home/ubuntu/Dev/skills/skills/jstack/jstack-principle-model-the-domain/SKILL.md",
+    "jstack-principle-sequence-verifiable-units": "/home/ubuntu/Dev/skills/skills/jstack/jstack-principle-sequence-verifiable-units/SKILL.md",
+    "jstack-principle-test-behavior-not-implementation": "/home/ubuntu/Dev/skills/skills/jstack/jstack-principle-test-behavior-not-implementation/SKILL.md"
+  },
+  "prose_skill": "/home/ubuntu/.agents/skills/unslop/SKILL.md"
+}

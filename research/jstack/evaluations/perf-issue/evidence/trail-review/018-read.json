@@ -1,0 +1,9 @@
+{
+  "command": [
+    "cat",
+    "/tmp/jstack-perf-issue-20261016/evidence/bootstrap-limitations.txt"
+  ],
+  "exit_code": 0,
+  "stdout": "The initial policy/mode/Unslop read and the second discovery/read command returned command, output and exit records in the visible host transcript, but were not persisted as standalone JSON at that moment. Read3 and read4 retain tool output/exit only. Read5 onward retain command text too. Do not treat reconstructed bootstrap command records as contemporaneously captured. App baseline, timing, profile, test and all subsequent substantive commands use task-owned records. This is an evidence-capture limitation of this forward run.\n",
+  "stderr": ""
+}

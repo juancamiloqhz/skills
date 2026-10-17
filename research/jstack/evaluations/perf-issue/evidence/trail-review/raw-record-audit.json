@@ -1,0 +1,99 @@
+{
+  "command": "Python read-only audit of decisions.tsv and benchmark/{0..4}-{baseline,app}.json; exact code is in native tool transcript",
+  "exit_code": 0,
+  "rows_audited": 10,
+  "row_range": [
+    "2026-10-16T23:56:45Z",
+    "2026-10-17T00:05:50Z"
+  ],
+  "all_evidence_pointers_exist": true,
+  "raw_checks": [
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/0-baseline.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 2.44785834569484,
+      "recorded": "2026-10-17T00:01:50.510980+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/0-app.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 0.15719813853502274,
+      "recorded": "2026-10-17T00:01:50.668664+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/1-baseline.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 2.4963275901973248,
+      "recorded": "2026-10-17T00:01:53.165398+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/1-app.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 0.13355657272040844,
+      "recorded": "2026-10-17T00:01:53.299442+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/2-baseline.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 2.6022116681560874,
+      "recorded": "2026-10-17T00:01:55.902102+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/2-app.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 0.14427084289491177,
+      "recorded": "2026-10-17T00:01:56.047189+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/3-baseline.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 2.473192003555596,
+      "recorded": "2026-10-17T00:01:58.520785+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/3-app.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 0.15505670569837093,
+      "recorded": "2026-10-17T00:01:58.676380+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/4-baseline.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 2.39630944468081,
+      "recorded": "2026-10-17T00:02:01.073155+00:00"
+    },
+    {
+      "artifact": "/tmp/jstack-perf-issue-20261016/evidence/benchmark/4-app.json",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "output_matches_summary": true,
+      "seconds": 0.15162717830389738,
+      "recorded": "2026-10-17T00:02:01.225576+00:00"
+    }
+  ],
+  "chronological_alternation": true,
+  "medians": {
+    "baseline": 2.473192003555596,
+    "app": 0.15162717830389738
+  },
+  "reduction_percent": 93.8691707685489,
+  "decision_snapshot_sha256": "118b0daa55c15bed117949d0bbcc625b675b737b1d1e9d0ed4d76cca154d3db8"
+}

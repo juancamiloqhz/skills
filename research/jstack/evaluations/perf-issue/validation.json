@@ -1,0 +1,77 @@
+[
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "964b09",
+      "wall_time_seconds": 0.078531682,
+      "exit_code": 0,
+      "original_token_count": 26,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.113s\n\nOK\n"
+    }
+  },
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "ce9f82",
+      "wall_time_seconds": 0.089668669,
+      "exit_code": 0,
+      "original_token_count": 12,
+      "output": "Skill is valid!\nSkill is valid!\nSkill is valid!\n"
+    }
+  },
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "4bee53",
+      "wall_time_seconds": 3.1498e-05,
+      "exit_code": 0,
+      "original_token_count": 4,
+      "output": "Manifest valid\n"
+    }
+  },
+  {
+    "check": "Authored documentation and entrypoints; raw evaluator reports preserved without style rewriting",
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: README.md research/jstack/adaptations/benchmark-checklist.md research/jstack/adaptations/juan-mode.md research/jstack/adaptations/perf-issue.md research/jstack/adaptations/runtime-forensics.md research/jstack/adaptations/setup-jstack.md research/jstack/adaptations/trace-forensics.md research/jstack/evaluations/perf-issue/README.md research/jstack/fidelity-status.md research/jstack/juan-mode-spec.md research/jstack/juan-mode/engineering-inventory.md research/jstack/roadmap.md skills/jstack/jstack-benchmark-checklist/SKILL.md skills/jstack/jstack-juan-mode/SKILL.md skills/jstack/jstack-setup/SKILL.md skills/jstack/jstack-setup/references/configuration.md\nLinting: 16 files\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Byte-identical fragment skills/jstack/jstack-juan-mode/playbooks/perf-issue.md",
+    "configuration": {
+      "MD013": false,
+      "MD041": false
+    },
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: artifact.md\nLinting: 1 file\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Byte-identical fragment skills/jstack/jstack-juan-mode/playbooks/runtime-forensics.md",
+    "configuration": {
+      "MD013": false,
+      "MD041": false
+    },
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: artifact.md\nLinting: 1 file\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Byte-identical fragment skills/jstack/jstack-juan-mode/playbooks/trace-forensics.md",
+    "configuration": {
+      "MD013": false,
+      "MD041": false
+    },
+    "exitCode": 0,
+    "stdout": "markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: artifact.md\nLinting: 1 file\nSummary: 0 issues in 0 files\n",
+    "stderr": ""
+  },
+  {
+    "check": "Authored Markdown relative destinations",
+    "count": 369,
+    "result": "all exist"
+  },
+  {
+    "check": "git diff --check",
+    "exitCode": 0
+  }
+]

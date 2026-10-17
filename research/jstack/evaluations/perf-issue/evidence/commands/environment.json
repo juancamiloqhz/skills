@@ -1,0 +1,13 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "uptime; nproc; node --version; ps -eo pid,comm,pcpu --sort=-pcpu | head -12"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-16T23:57:49.454163+00:00",
+  "stdout": " 23:57:49 up 58 days, 10:30,  3 users,  load average: 0.54, 0.41, 0.45\n4\nv24.19.0\n    PID COMMAND         %CPU\n 638055 python3         62.5\n 608539 chrome-headless  3.7\n 425296 codex            3.5\n 212253 node-MainThread  3.2\n 571105 tailscaled       1.4\n2574530 hermes           0.8\n2214414 opencode         0.7\n 608572 chrome-headless  0.5\n 212571 cloudflared      0.4\n2100436 herdr            0.4\n2107901 containerd-shim  0.3\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.04020678345113993
+}

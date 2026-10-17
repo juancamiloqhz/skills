@@ -1,0 +1,13 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "mkdir evidence/review-snapshot; cp app/summary.cjs app/summary.test.cjs evidence/review-snapshot/; cp evidence/implementation/change.diff evidence/final.diff; sha256sum app/summary.cjs app/summary.test.cjs evidence/final.diff"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:01:24.290126+00:00",
+  "stdout": "2872592925d698eefaac22656be02f6fa54457414058b9bebd2fdbe4dbb449a0  app/summary.cjs\n281db682273e45d096a7826998549e0c6cdc9201d9c9fcdd0e1fd49ab850cdf7  app/summary.test.cjs\n49805728a315e80f2e08e42a8074945632412441b29e35374ee3bacb6748d027  evidence/final.diff\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.016118599101901054
+}

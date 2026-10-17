@@ -26,7 +26,7 @@ Proposed packaging: bundle the helper procedures inside `juan-mode` references f
 
 Read `cursor-team-kit/skills/control-cli/SKILL.md`, `control-ui/SKILL.md` and `pstack/skills/benchmark-checklist/SKILL.md` in full. Their useful contracts are deterministic driving, application identity, retained artifacts and meaningful measurement. Adapt browser selection to T3 Code preview rules; preserve repository harnesses and use a PTY only for interactive terminal behavior. Browser driving does not establish CPU/heap capture or Electron attachment. Choose profiling tools from the target runtime and report missing access. Keep measurement runs separate from intrusive profiling, count errors and completed work, alternate comparable runs and report noise.
 
-Control CLI now has a [standalone jstack port](../../../skills/jstack/jstack-control-cli/SKILL.md) and [bounded terminal evaluation](../evaluations/control-cli/README.md). Runtime forensics now has a separate live CPU-profile evaluation below. Bug fix, Feature and Refactoring now have their own procedures and evaluations. This helper alone does not enable pending callers or establish profiling and Control UI support.
+Control CLI now has a [standalone jstack port](../../../skills/jstack/jstack-control-cli/SKILL.md) and [bounded terminal evaluation](../evaluations/control-cli/README.md). Runtime forensics now has a separate live CPU-profile evaluation below. Bug fix, Feature, Refactoring and Perf issue now have their own procedures and evaluations. This helper alone does not enable pending callers or establish profiling and Control UI support.
 
 Sources: [CLI control and profiling](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/control-cli/SKILL.md), [UI control and CDP](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/cursor-team-kit/skills/control-ui/SKILL.md), [benchmark checklist](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/benchmark-checklist/SKILL.md).
 
@@ -89,6 +89,8 @@ Source: [perf-issue](https://github.com/cursor/plugins/blob/11713c683fe4add4fd40
 Use `perf-issue`, the relevant grounding/design roles and `judgment and prose` for delegated analysis without a dedicated role. T3 Code browser tools can drive the workload; a compatible runtime profiler must produce the measurement artifact. Prerequisites include representative data, comparable builds/configurations, countable successful work and tolerable or characterized host noise.
 
 Acceptance scenario: diagnose repeated parsing in a controlled CLI workload, prove the limiter in a separate profiling run, then alternate baseline/treatment runs at least five times each. Report median/range and end-to-end effect. A treatment that merely skips work or errors faster must be rejected; a gap within noise is not a speedup.
+
+The [Perf issue procedure](../../../skills/jstack/jstack-juan-mode/playbooks/perf-issue.md) is now implemented. Its [evaluation](../evaluations/perf-issue/README.md) records a synthetic batch CLI, independent measurement and output checks, and remaining runtime limits.
 
 ## hillclimb
 

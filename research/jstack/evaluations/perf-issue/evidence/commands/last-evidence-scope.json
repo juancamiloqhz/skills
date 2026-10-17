@@ -1,0 +1,13 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "rg --files evidence/trail-review 2>/dev/null || true"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:06:36.428307+00:00",
+  "stdout": "evidence/trail-review/000-first-read.json\nevidence/trail-review/001-read.json\nevidence/trail-review/002-read.json\nevidence/trail-review/003-read.json\nevidence/trail-review/004-read.json\nevidence/trail-review/005-read.json\nevidence/trail-review/006-read.json\nevidence/trail-review/007-read.json\nevidence/trail-review/008-read.json\nevidence/trail-review/009-read.json\nevidence/trail-review/010-read.json\nevidence/trail-review/011-read.json\nevidence/trail-review/012-read.json\nevidence/trail-review/013-read.json\nevidence/trail-review/014-read.json\nevidence/trail-review/017-read.json\nevidence/trail-review/018-read.json\nevidence/trail-review/019-read.json\nevidence/trail-review/020-read.json\nevidence/trail-review/021-read.json\nevidence/trail-review/022-read.json\nevidence/trail-review/023-read.json\nevidence/trail-review/024-read.json\nevidence/trail-review/025-read.json\nevidence/trail-review/026-read.json\nevidence/trail-review/027-read.json\nevidence/trail-review/028-read.json\nevidence/trail-review/029-read.json\nevidence/trail-review/030-read.json\nevidence/trail-review/031-read.json\nevidence/trail-review/032-read.json\nevidence/trail-review/033-read.json\nevidence/trail-review/034-read.json\nevidence/trail-review/035-read.json\nevidence/trail-review/036-read.json\nevidence/trail-review/037-read.json\nevidence/trail-review/038-read.json\nevidence/trail-review/039-read.json\nevidence/trail-review/040-read.json\nevidence/trail-review/041-read.json\nevidence/trail-review/042-read.json\nevidence/trail-review/043-read.json\nevidence/trail-review/044-read.json\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.00966813787817955
+}

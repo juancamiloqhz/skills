@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "import json,os; print(json.dumps({key:os.environ.get(key) for key in [\"NODE_OPTIONS\",\"NODE_ENV\",\"LC_ALL\",\"LANG\",\"TZ\"]}))"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:08:05.273855+00:00",
+  "stdout": "{\"NODE_OPTIONS\": null, \"NODE_ENV\": null, \"LC_ALL\": \"en_US.UTF-8\", \"LANG\": \"C.UTF-8\", \"TZ\": null}\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.03947693668305874
+}

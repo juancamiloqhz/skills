@@ -1,0 +1,9 @@
+{
+  "command": [
+    "cat",
+    "/tmp/jstack-perf-issue-20261016/evidence/identity.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"threadId\": \"5f7384b2-cbbe-431f-942d-929f327635a1\",\n  \"modelSelection\": {\n    \"instanceId\": \"codex\",\n    \"model\": \"gpt-6-astra\",\n    \"options\": [\n      {\n        \"id\": \"reasoningEffort\",\n        \"value\": \"high\"\n      },\n      {\n        \"id\": \"serviceTier\",\n        \"value\": \"default\"\n      }\n    ]\n  },\n  \"runtimeMode\": \"full-access\",\n  \"interactionMode\": \"default\"\n}\n",
+  "stderr": ""
+}

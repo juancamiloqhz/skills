@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "profile_summary.py",
+    "evidence/post.cpuprofile"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:01:40.726948+00:00",
+  "stdout": "{\n  \"profile\": \"evidence/post.cpuprofile\",\n  \"total_sample_us\": 121475,\n  \"top_self\": [\n    {\n      \"function\": \"\",\n      \"file\": \"file:///tmp/jstack-perf-issue-20261016/app/cli.cjs\",\n      \"line\": 1,\n      \"self_us\": 32553,\n      \"share\": 0.26798106606297595\n    },\n    {\n      \"function\": \"summarize\",\n      \"file\": \"file:///tmp/jstack-perf-issue-20261016/app/summary.cjs\",\n      \"line\": 3,\n      \"self_us\": 22291,\n      \"share\": 0.1835027783494546\n    },\n    {\n      \"function\": \"(program)\",\n      \"file\": \"\",\n      \"line\": 0,\n      \"self_us\": 20731,\n      \"share\": 0.1706606297592097\n    },\n    {\n      \"function\": \"(garbage collector)\",\n      \"file\": \"\",\n      \"line\": 0,\n      \"self_us\": 20245,\n      \"share\": 0.1666598065445565\n    },\n    {\n      \"function\": \"readFileUtf8\",\n      \"file\": \"\",\n      \"line\": 0,\n      \"self_us\": 9013,\n      \"share\": 0.07419633669479317\n    },\n    {\n      \"function\": \"compileForInternalLoader\",\n      \"file\": \"node:internal/bootstrap/realm\",\n      \"line\": 383,\n      \"self_us\": 5489,\n      \"share\": 0.04518625231529121\n    },\n    {\n      \"function\": \"readFileSync\",\n      \"file\": \"node:fs\",\n      \"line\": 474,\n      \"self_us\": 2205,\n      \"share\": 0.018151883103519242\n    },\n    {\n      \"function\": \"wrapSafe\",\n      \"file\": \"node:internal/modules/cjs/loader\",\n      \"line\": 1762,\n      \"self_us\": 2176,\n      \"share\": 0.0179131508540852\n    },\n    {\n      \"function\": \"(idle)\",\n      \"file\": \"\",\n      \"line\": 0,\n      \"self_us\": 1808,\n      \"share\": 0.014883720930232559\n    },\n    {\n      \"function\": \"initializeDeprecations\",\n      \"file\": \"node:internal/process/pre_execution\",\n      \"line\": 522,\n      \"self_us\": 1669,\n      \"share\": 0.013739452562255608\n    },\n    {\n      \"function\": \"internalBinding\",\n      \"file\": \"node:internal/bootstrap/realm\",\n      \"line\": 182,\n      \"self_us\": 1109,\n      \"share\": 0.009129450504218975\n    },\n    {\n      \"function\": \"Socket\",\n      \"file\": \"node:net\",\n      \"line\": 485,\n      \"self_us\": 1109,\n      \"share\": 0.009129450504218975\n    }\n  ]\n}\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.0420639468356967
+}

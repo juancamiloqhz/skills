@@ -1,0 +1,14 @@
+{
+  "side": "baseline",
+  "command": [
+    "/opt/node-v24.19.0/bin/node",
+    "cli.cjs",
+    "/tmp/jstack-perf-issue-20261016/evidence/compatibility/invalid-events-events.json",
+    "/tmp/jstack-perf-issue-20261016/evidence/compatibility/invalid-events-rules.json"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016/baseline",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "Unexpected token 'i', \"invalid\" is not valid JSON\n"
+}

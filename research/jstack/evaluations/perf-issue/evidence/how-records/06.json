@@ -1,0 +1,11 @@
+{
+  "command": [
+    "nl",
+    "-ba",
+    "/tmp/jstack-perf-issue-20261016/app/summary.test.cjs"
+  ],
+  "cwd": "/home/ubuntu/Dev/skills",
+  "stdout": "     1\t'use strict';\n     2\tconst test = require('node:test');\n     3\tconst assert = require('node:assert/strict');\n     4\tconst { summarize } = require('./summary.cjs');\n     5\t\n     6\ttest('reports all work and weighted category totals', () => {\n     7\t  assert.deepEqual(summarize([\n     8\t    { type: 'sale', amount: 12 }, { type: 'sale', amount: 3 },\n     9\t    { type: 'sale', amount: 5 }, { type: 'refund', amount: 8 },\n    10\t    { type: 'unknown', amount: 100 }\n    11\t  ], JSON.stringify({ sale: { minimum: 5, multiplier: 2 }, refund: { minimum: 0, multiplier: -1 } })),\n    12\t  { processed: 5, accepted: 3, rejected: 2, totals: { sale: 34, refund: -8 } });\n    13\t});\n    14\t\n    15\ttest('empty batches do not consume rules', () => {\n    16\t  assert.deepEqual(summarize([], 'invalid'), { processed: 0, accepted: 0, rejected: 0, totals: {} });\n    17\t});\n    18\t\n    19\ttest('nonempty batches reject invalid rules', () => {\n    20\t  assert.throws(() => summarize([{ type: 'sale', amount: 12 }], 'invalid'), SyntaxError);\n    21\t});\n",
+  "stderr": "",
+  "exit_code": 0
+}

@@ -1,0 +1,23 @@
+{
+  "role": "judgment and prose",
+  "selectionKind": "scalar",
+  "targets": [
+    null
+  ],
+  "effectiveIdentities": [
+    {
+      "providerInstanceId": "codex",
+      "model": "gpt-6-astra",
+      "inherited": true
+    }
+  ],
+  "availability": [
+    {
+      "canDispatch": true,
+      "reason": null
+    }
+  ],
+  "resolver": "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py",
+  "config": "/tmp/jstack-perf-issue-20261016/models.json",
+  "configSource": "explicit"
+}

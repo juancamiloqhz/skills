@@ -1,0 +1,12 @@
+{
+  "command": [
+    "rg",
+    "-n",
+    "mantra|Don.t|do it|less|frequently|performance",
+    "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/SKILL.md"
+  ],
+  "cwd": "/home/ubuntu/Dev/skills",
+  "stdout": "46:Read the leaf skill in full for any principle you apply. Each entry names when it applies. Each leaf is the **jstack-principle-<title>** skill, with the title in kebab case, hyphens kept and other punctuation dropped, unless the entry gives its name.\n95:**Just do it.** Proceed with reversible work within the requested scope and use existing authorization without asking again. Available tools and mode activation grant no extra authority. External messages, publication, merging, installation and recurring work require applicable user authorization; skill installation remains manual.\n99:**Session overrides:** \"Don't stop\" / \"going to bed\" / \"run until done\" / \"be fully autonomous\" \u2192 keep going.\n135:For an available playbook, open the host task list whose first items are the matched playbook's steps, copied in verbatim, before any task-specific todos. A step you choose not to do stays in the list with a one-line `skip: <reason>`. Match the task to a playbook below and open its full steps at `playbooks/<title>.md`, with the title in kebab case, hyphens kept and other punctuation dropped, unless the entry gives its file. Copy its steps in verbatim. Investigation, Prototype, Trace forensics, Authoring or modifying a skill, Runtime forensics, Bug fix, Feature, Refactoring and Perf issue are available at [playbooks/investigation.md](playbooks/investigation.md), [playbooks/prototype.md](playbooks/prototype.md), [playbooks/trace-forensics.md](playbooks/trace-forensics.md), [playbooks/authoring-a-skill.md](playbooks/authoring-a-skill.md), [playbooks/runtime-forensics.md](playbooks/runtime-forensics.md), [playbooks/bug-fix.md](playbooks/bug-fix.md), [playbooks/feature.md](playbooks/feature.md), [playbooks/refactoring.md](playbooks/refactoring.md) and [playbooks/perf-issue.md](playbooks/perf-issue.md). The other procedures remain pending; keep their paths as identifiers and report unavailability rather than trying to read nonexistent files.\n",
+  "stderr": "",
+  "exit_code": 0
+}

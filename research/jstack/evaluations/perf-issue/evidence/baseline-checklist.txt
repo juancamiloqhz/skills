@@ -1,0 +1,9 @@
+Claim remains provisional until the alternating comparison completes.
+1. Limiter. Node CPU profile attributes 94.65% self samples to summarize. Separate instrumented parse_probe measures 80,000 parses, 2164 ms parse time inside 2212 ms summarize. These diagnostic durations will not be reported as the end-to-end speedup.
+2. Tuning. Documented invocation is a fresh Node CLI process. No build, concurrency, cache or tuning options exist. Use Node v24.19.0 and identical inputs on both sides. This is a synthetic local workload, not production tuning evidence.
+3. Limits. The baseline repeatedly parses 2,744 bytes 80,000 times, about 219.5 MB of logical parsing. Eliminating repeated parses can plausibly remove most baseline summarize cost. Final comparison must be checked against this bound.
+4. Errors. Baseline exits 0, stderr is empty, expected work is 80,000 processed, 74,171 accepted and 5,829 rejected. Supplied tests pass 3/3. Final harness compares every output value to expected.json.
+5. Repeatability. Current isolated CLI timing is a diagnostic sample only. No speedup verdict yet. Final harness alternates baseline and app five times per side and retains ranges.
+6. Relevance. Final timer includes process startup, file reads, JSON parsing, summarize, output capture and process completion. No proxy microbenchmark determines acceptance.
+7. Work. CLI stdout contains all category totals and accounts for every event. The final harness validates all counts and totals after each completed timed child.
+Load. Four logical CPUs and load average 0.54 at environment capture. Unrelated processes are left intact. Both sides will run serially in alternating order.

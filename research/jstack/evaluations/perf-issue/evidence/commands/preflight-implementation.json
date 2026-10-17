@@ -1,0 +1,22 @@
+{
+  "command": [
+    "python3",
+    "/home/ubuntu/Dev/skills/skills/jstack/jstack-juan-mode/scripts/preflight.py",
+    "--setup-skill",
+    "/home/ubuntu/Dev/skills/skills/jstack/jstack-setup",
+    "--project-root",
+    "/tmp/jstack-perf-issue-20261016/app",
+    "--catalog",
+    "/tmp/jstack-perf-issue-20261016/evidence/capabilities-implementation.json",
+    "--config",
+    "/tmp/jstack-perf-issue-20261016/models.json",
+    "--role",
+    "perf-issue"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016/app",
+  "started": "2026-10-16T23:57:58.856082+00:00",
+  "stdout": "{\n  \"role\": \"perf-issue\",\n  \"selectionKind\": \"scalar\",\n  \"targets\": [\n    null\n  ],\n  \"effectiveIdentities\": [\n    {\n      \"providerInstanceId\": \"codex\",\n      \"model\": \"gpt-6-astra\",\n      \"inherited\": true\n    }\n  ],\n  \"availability\": [\n    {\n      \"canDispatch\": true,\n      \"reason\": null\n    }\n  ],\n  \"resolver\": \"/home/ubuntu/Dev/skills/skills/jstack/jstack-setup/scripts/models.py\",\n  \"config\": \"/tmp/jstack-perf-issue-20261016/models.json\",\n  \"configSource\": \"explicit\"\n}\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.20593576319515705
+}

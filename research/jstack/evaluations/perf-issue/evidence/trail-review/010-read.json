@@ -1,0 +1,9 @@
+{
+  "command": [
+    "cat",
+    "/tmp/jstack-perf-issue-20261016/evidence/digest-source-path-addendum.md"
+  ],
+  "exit_code": 0,
+  "stdout": "After reading the code review report, the coordinator noticed that three principle leaves came from installed paths rather than the requested in-development directory. It told the parent that a corrected fresh review might be needed. Before launching that review, it ran readlink and byte comparisons for Explain the Number, Prove It Works and Test Behavior, Not Implementation. All three installed files matched their in-development counterparts byte for byte. The outer parent independently reported the same result, but this run relies on its own commands/review-principle-path-check.json.\n\nNo corrected reviewer was launched. The coordinator retained the original review, disclosed the source-path selection deviation, appended the equivalence evidence and avoided redundant testing. The current code-review result is substantively supported, with qualified path conformance. The initial task brief should have supplied explicit authoring paths for every applicable principle. This history is retained without rewriting the original reviewer report.\n",
+  "stderr": ""
+}

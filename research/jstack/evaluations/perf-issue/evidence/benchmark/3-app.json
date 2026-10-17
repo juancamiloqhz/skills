@@ -1,0 +1,17 @@
+{
+  "pair": 3,
+  "side": "app",
+  "command": [
+    "node",
+    "cli.cjs",
+    "../events.json",
+    "../rules.json"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016/app",
+  "seconds": 0.15505670569837093,
+  "exit_code": 0,
+  "stdout": "{\"processed\":80000,\"accepted\":74171,\"rejected\":5829,\"totals\":{\"category-0\":59943,\"category-1\":119852,\"category-2\":179667,\"category-3\":239388,\"category-4\":59793,\"category-5\":119454,\"category-6\":178947,\"category-7\":239244,\"category-8\":59793,\"category-9\":119526,\"category-10\":179163,\"category-11\":238668,\"category-12\":59601,\"category-13\":119046,\"category-14\":179055,\"category-15\":238668,\"category-16\":59637,\"category-17\":119190,\"category-18\":178623,\"category-19\":237900,\"category-20\":59397,\"category-21\":119118,\"category-22\":178623,\"category-23\":238044,\"category-24\":59469,\"category-25\":118830,\"category-26\":178047,\"category-27\":237084,\"category-28\":59534,\"category-29\":119234,\"category-30\":179067,\"category-31\":239000,\"category-32\":59800,\"category-33\":119678,\"category-34\":179298,\"category-35\":239652,\"category-36\":59895,\"category-37\":119730,\"category-38\":179469,\"category-39\":239076,\"category-40\":59703,\"category-41\":119250,\"category-42\":179361,\"category-43\":239076,\"category-44\":59739,\"category-45\":119394,\"category-46\":178929,\"category-47\":238308,\"category-48\":59499,\"category-49\":119322,\"category-50\":178929,\"category-51\":238452,\"category-52\":59571,\"category-53\":119034,\"category-54\":178353,\"category-55\":237492,\"category-56\":59535,\"category-57\":119034,\"category-58\":178461,\"category-59\":237780,\"category-60\":59391,\"category-61\":118650,\"category-62\":178044,\"category-63\":238444}}\n",
+  "stderr": "",
+  "recorded": "2026-10-17T00:01:58.676380+00:00",
+  "correct": true
+}

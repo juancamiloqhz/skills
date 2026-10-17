@@ -1,0 +1,12 @@
+{
+  "cmd": "cat skills/jstack/jstack-setup/references/investigation.md\ncat skills/jstack/jstack-show-me-your-work/SKILL.md\ncat skills/jstack/jstack-show-me-your-work/references/execution.md\ncat skills/jstack/jstack-principle-model-the-domain/SKILL.md\ncat skills/jstack/jstack-principle-sequence-verifiable-units/SKILL.md\ncat skills/jstack/jstack-principle-explain-the-number/SKILL.md\ncat /tmp/jstack-perf-issue-20261016/app/cli.cjs\ncat /tmp/jstack-perf-issue-20261016/app/summary.cjs\ncat /tmp/jstack-perf-issue-20261016/app/summary.test.cjs\nuptime\nnproc\nnode --version",
+  "chunk_id": "ef9b00",
+  "wall_time_seconds": 2.0729e-05,
+  "exit_code": 0,
+  "original_token_count": 6234,
+  "outputIndexed": {
+    "sha256": "924b077e81ffeae7d2bd0cd74c54be7a3765518d98828353b3571779051ef944",
+    "bytes": 24933,
+    "reason": "Large successful source/catalog read indexed; original remains in scratch. Command, exit and errors retained."
+  }
+}

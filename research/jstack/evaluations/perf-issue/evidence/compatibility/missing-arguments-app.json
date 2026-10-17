@@ -1,0 +1,12 @@
+{
+  "side": "app",
+  "command": [
+    "/opt/node-v24.19.0/bin/node",
+    "cli.cjs"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016/app",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined\n"
+}

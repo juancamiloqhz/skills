@@ -1,0 +1,14 @@
+{
+  "side": "baseline",
+  "command": [
+    "/opt/node-v24.19.0/bin/node",
+    "cli.cjs",
+    "/tmp/jstack-perf-issue-20261016/evidence/code-review/compatibility/empty-invalid-events.json",
+    "/tmp/jstack-perf-issue-20261016/evidence/code-review/compatibility/empty-invalid-rules.json"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016/baseline",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\"processed\":0,\"accepted\":0,\"rejected\":0,\"totals\":{}}\n",
+  "stderr": ""
+}

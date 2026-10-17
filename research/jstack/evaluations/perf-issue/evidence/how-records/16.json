@@ -1,0 +1,10 @@
+{
+  "command": [
+    "cat",
+    "/tmp/jstack-perf-issue-20261016/evidence/commands/baseline-parse-probe.json"
+  ],
+  "cwd": "/home/ubuntu/Dev/skills",
+  "stdout": "{\n  \"command\": [\n    \"node\",\n    \"parse_probe.cjs\",\n    \"/tmp/jstack-perf-issue-20261016/app/summary.cjs\",\n    \"events.json\",\n    \"rules.json\"\n  ],\n  \"cwd\": \"/tmp/jstack-perf-issue-20261016\",\n  \"started\": \"2026-10-16T23:57:27.583875+00:00\",\n  \"stdout\": \"{\\\"count\\\":80000,\\\"parseMs\\\":2164.321476999999,\\\"summaryMs\\\":2212.4410009999997,\\\"processed\\\":80000,\\\"accepted\\\":74171,\\\"rejected\\\":5829}\\n\",\n  \"stderr\": \"\",\n  \"exit_code\": 0,\n  \"seconds\": 2.345976918004453\n}",
+  "stderr": "",
+  "exit_code": 0
+}

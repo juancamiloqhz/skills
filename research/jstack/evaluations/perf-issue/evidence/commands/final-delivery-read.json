@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "import json,pathlib; p=pathlib.Path(\"evidence\"); a=json.loads((p/\"assessment.json\").read_text()); assert a[\"status\"] == \"completed_with_qualifications\"; assert all(c[\"status\"]==\"completed\" and not c[\"pendingChildren\"] for c in a[\"children\"]); assert (p/\"report.md\").read_text().endswith(\"mutation.\\n\"); print(json.dumps({\"assessment\":a[\"status\"],\"performance\":a[\"performance\"],\"children\":a[\"children\"],\"report_bytes\":(p/\"report.md\").stat().st_size},indent=2))"
+  ],
+  "cwd": "/tmp/jstack-perf-issue-20261016",
+  "started": "2026-10-17T00:09:08.359929+00:00",
+  "stdout": "{\n  \"assessment\": \"completed_with_qualifications\",\n  \"performance\": {\n    \"verdict\": \"faster\",\n    \"targetReductionPercent\": 30,\n    \"measuredReductionPercent\": 93.8691707685489,\n    \"baselineMedianSeconds\": 2.473192003555596,\n    \"fixedMedianSeconds\": 0.15162717830389738,\n    \"baselineRangeSeconds\": [\n      2.39630944468081,\n      2.6022116681560874\n    ],\n    \"fixedRangeSeconds\": [\n      0.13355657272040844,\n      0.15719813853502274\n    ],\n    \"runsPerSide\": 5,\n    \"order\": \"baseline then app repeated five times\",\n    \"failures\": 0,\n    \"profiledTiming\": false,\n    \"artifact\": \"evidence/benchmark/summary.json\",\n    \"limiter\": \"Repeated parsing of primitive string rules. Diagnostic count changed from 80000 to 1. Remaining serial parsing, accumulation, allocation, file input and startup remain.\"\n  },\n  \"children\": [\n    {\n      \"task\": \"/root/perf_issue_forward/how\",\n      \"status\": \"completed\",\n      \"pendingChildren\": false\n    },\n    {\n      \"task\": \"/root/perf_issue_forward/implementation\",\n      \"status\": \"completed\",\n      \"pendingChildren\": false\n    },\n    {\n      \"task\": \"/root/perf_issue_forward/comments\",\n      \"status\": \"completed\",\n      \"pendingChildren\": false\n    },\n    {\n      \"task\": \"/root/perf_issue_forward/code_review\",\n      \"status\": \"completed\",\n      \"pendingChildren\": false\n    },\n    {\n      \"task\": \"/root/perf_issue_forward/trail_review\",\n      \"status\": \"completed\",\n      \"pendingChildren\": false\n    }\n  ],\n  \"report_bytes\": 5198\n}\n",
+  "stderr": "",
+  "exit_code": 0,
+  "seconds": 0.04231706261634827
+}
