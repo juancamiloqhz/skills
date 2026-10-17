@@ -18,7 +18,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cli', type=Path, required=True)
     parser.add_argument('--scratch', type=Path,
-                        default=Path('/tmp/jstack-recovery-pilot-20261017/worker'))
+                        default=Path(tempfile.gettempdir()))
     args = parser.parse_args()
     args.scratch.mkdir(parents=True, exist_ok=True)
     scratch = Path(tempfile.mkdtemp(prefix='replay-test-', dir=args.scratch))
