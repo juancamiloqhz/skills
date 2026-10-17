@@ -43,13 +43,13 @@ The claim phase refuses an existing destination. The optional interruption comma
 
 Each new claim saves the original observations and report hashes. Resume rejects changed observations or report bytes before calling the CLI. Saved decisions retain task, run, result, unit, report path, and content hash. Older exercise stores without this evidence require a fresh claim in a new destination. The parent must still authenticate saved observations and inspect reports. This exercise assumes one writer, injects a process exit, and does not establish host-restart durability or a production exactly-once guarantee.
 
-Run the subprocess checks with the exact prepared runtime and its existing Commander dependency:
+Run the subprocess checks with an exact runtime copy and its already-present declared dependencies:
 
 ```bash
-python3 -B research/jstack/evaluations/orchestrate-procedure/test_replay.py --cli /tmp/jstack-orch-inbox-20261017/runtime/orch/orch.ts
+python3 -B research/jstack/evaluations/orchestrate-procedure/test_replay.py --cli /absolute/path/to/orch.ts --scratch /tmp/orch-replay-tests
 ```
 
-The test generates explicitly synthetic observations and reports under `/tmp/jstack-recovery-pilot-20261017/worker`. It checks real unit rows, saved decisions, pending and acknowledged batches, and rejected evidence changes. A logging launcher executes the real Bun CLI and counts unit updates, including the duplicate and replay paths. It installs nothing and leaves the source checkout's dependencies unchanged. The retained scripts are a bounded exercise, not a general coordinator or automatic result classifier.
+The test generates explicitly synthetic observations and reports under the selected scratch directory. It checks real unit rows, saved decisions, pending and acknowledged batches, and rejected evidence changes. A logging launcher executes the real Bun CLI and counts unit updates, including the duplicate and replay paths. It installs nothing and leaves the source checkout's dependencies unchanged. The retained scripts are a bounded exercise, not a general coordinator or automatic result classifier.
 
 The four packaging and sixteen preflight tests passed. Changed-document lint with MD013/MD041 disabled and MD040 disabled for the preserved upstream brief fence, relative links, exact source hashes, preserved headings/step labels and diff checks passed. Runtime code is unchanged, so earlier runtime-suite evidence is not represented as a new run. Source pins, reviewed checkpoint, license, lockfile and saved model configuration are unchanged.
 
