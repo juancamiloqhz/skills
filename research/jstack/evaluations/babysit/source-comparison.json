@@ -1,0 +1,157 @@
+{
+  "pin": "11713c683fe4add4fd403ea880580abbc9e0875f",
+  "base": "90ba52af4081532cb3a10990e27ddabae5e82e2a",
+  "assessment": "research/jstack/adaptations/babysit.md",
+  "comparisons": [
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/babysit.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/babysit.md",
+      "identical": false,
+      "localSHA256": "45f565dc64d8c5734c4251e9988574c66a7de346c9d93fb1ac0ab51812bd16a7",
+      "diffSHA256": "72c76ebd36f1c75ab398110a1cdad4b53f284487a947f3e344be9ef02048843a"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+      "local": "skills/jstack/jstack-juan-mode/playbooks/opening-a-pr.md",
+      "identical": false,
+      "localSHA256": "664eafde4e9dc63e44e2016f4fa7d02fa488a6c2356ddacb3b9580cd653edaad",
+      "diffSHA256": "7802b4453992e0899d6b8512c3f65c96a01a09523fc69c590348e02c3c6929b4"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/references/bugbot-triage.md",
+      "local": "skills/jstack/jstack-juan-mode/references/bugbot-triage.md",
+      "identical": false,
+      "localSHA256": "a6685891c757382b0b7bc8ea9e29aeee71b1e75a116260df054088c91a0618c7",
+      "diffSHA256": "6da178e52ef855bb146ebde2cb04aab5fef51ad36bc0c1953837fb12a6f9adc7"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "local": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "identical": false,
+      "localSHA256": "cfa5d5ff4f8ab61d8008b172dc5bff51567e756fdf34c4c50aa74437e6f127fe",
+      "diffSHA256": "5c000980bc683a01b3c8a99bbc2b04e44953f79468789bd7e809e317c21bbc12"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/bootstrap.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/bootstrap.ts",
+      "identical": false,
+      "localSHA256": "62913fcbeda700d8f6e2749112d475e80d858b5cba6c063aeea8b0a6617177b6",
+      "diffSHA256": "7502b9d1c51ae965eaccc0d3c9b3258cc22e33755bdd6f686e2eb11ab93344fd"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/package.json",
+      "local": "skills/jstack/jstack-juan-mode/scripts/package.json",
+      "identical": false,
+      "localSHA256": "f1696b02b10e83a0a718b0fe7c625791c4a1fea4fdd6fec427fc9cb49932c5cd",
+      "diffSHA256": "fb6d9e1513ad68e5980a74e6dee00caa8142725c0fe0aef0bd03acb2341b4641"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/bun.lock",
+      "local": "skills/jstack/jstack-juan-mode/scripts/bun.lock",
+      "identical": false,
+      "localSHA256": "96d818d30b9f17bbe8e34cc6ebe803db4de13771fc9db54e949d5ff45c0c269d",
+      "diffSHA256": "508103e9a08d8036da54ea5e7fe632088b3f466731beca64daa177e07efa614a"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/cli.test.ts",
+      "identical": true,
+      "localSHA256": "a35592b4c6da96caf8d47987e9cd503fab6c7774ab87d11a43f24b4b5df2a9d1",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/cli.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/cli.ts",
+      "identical": false,
+      "localSHA256": "a119211cced93aab18b9d2306b1270aa33843e02daf38696cf51e230c3302745",
+      "diffSHA256": "4f12d3f486ac63b21c112aae432653397f907330e3e8e23df2933c3cf9fed1bd"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/fakes.test-helper.ts",
+      "identical": true,
+      "localSHA256": "e53e31b7f03068063f53a99a3591b052aaed66e4e2b196b3a364980f60324ab1",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/github.test.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/github.test.ts",
+      "identical": true,
+      "localSHA256": "0cbce011050522938523e36bb42a260e92b812dcd2076930fa681672ad316b24",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/github.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/github.ts",
+      "identical": true,
+      "localSHA256": "d1bbbafbe8e2c703c84da2029de7f2c4011412512f8cf65a42100f46bcb92c8a",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/policy.test.ts",
+      "identical": true,
+      "localSHA256": "a9fedb25feefd1f57ef6a662f80c99018690170a3a8070773a08eaf694d1d3d9",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/policy.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/policy.ts",
+      "identical": false,
+      "localSHA256": "91e717d7105d5f2c1d038afedf5022000f76481fb0e37d40a1f0d477954f7a3d",
+      "diffSHA256": "cc865e39f3d7584d4df095b64365afbe9d8369728afbbc9b09225c231ed6b71a"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/render.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/render.ts",
+      "identical": true,
+      "localSHA256": "2b709e86628d5b8fdb61f860e60ababc342b0626c67576305442cf548283a604",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/tsconfig.json",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/tsconfig.json",
+      "identical": true,
+      "localSHA256": "1ecccc72320b086c63ce3f73c959896fd747363e63553b3b1136296ea4069e45",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/types.compile.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/types.compile.ts",
+      "identical": true,
+      "localSHA256": "621af4c9a664fbf699a9737efccdc248abb416df8819c9dc5f824beae2b9b1d6",
+      "diffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/types.ts",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/types.ts",
+      "identical": false,
+      "localSHA256": "958a9168493baef38f36b9e9bdfa7f47a21eed9a05cb3f44d0cfe5aace0bdc62",
+      "diffSHA256": "99fb993b4ff24e366e0c5dbe39cfd1e8878b862180ce954f89a940e63d261a75"
+    },
+    {
+      "source": "pstack/skills/poteto-mode/scripts/watch-pr/watch-pr",
+      "local": "skills/jstack/jstack-juan-mode/scripts/watch-pr/watch-pr",
+      "identical": false,
+      "localSHA256": "c77365d54ba791bf301eff343e6fbf2e5276a74c89e6f300695d317ea70701da",
+      "diffSHA256": "277a6cb2f4fffdea5f089d3ee5c67b1d66e00d2717eb50692b02c052a4170467"
+    },
+    {
+      "source": "pstack/skills/setup-pstack/SKILL.md",
+      "local": "skills/jstack/jstack-setup/SKILL.md",
+      "pin": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "identical": false,
+      "localSHA256": "06105afaf07a85215909492247825c3389349f0c8447da2eafa7b30fd28e63df",
+      "diffSHA256": "55382abeda8a193573f36d048f4e23a98cd9b93022387921f46b6792deecfefb"
+    }
+  ],
+  "newLocalFiles": [
+    "scripts/.gitignore",
+    "scripts/watch-pr/once.test.ts"
+  ],
+  "configurationReferenceChange": "Availability only; previous setup adaptation retained.",
+  "manifest": "All 45 mappings, pins, watch paths and reviewed checkpoint unchanged.",
+  "packageLicense": "Unchanged from base; mode MIT notice retained.",
+  "localPlaybooks": 14,
+  "retention": "Complete source diffs inspected in scratch; only comparison identities and linked assessments retained."
+}

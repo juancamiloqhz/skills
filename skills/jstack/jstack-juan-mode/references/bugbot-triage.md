@@ -1,6 +1,6 @@
 # Bugbot triage
 
-Use this reference when the Babysit playbook (`../playbooks/babysit.md`) handles Bugbot or review-automation comments. Babysit is not yet implemented in jstack; this reference alone does not provide its monitoring workflow. Apply fixes, replies and thread resolution only within the task's existing authorization; otherwise return the proposed disposition. The goal is not to ignore Bugbot by default. The goal is to stop treating every comment as a required code change.
+Use this reference when the Babysit playbook (`../playbooks/babysit.md`) handles Bugbot or review-automation comments. Read [Babysit](../playbooks/babysit.md) for its monitoring workflow. Apply fixes, replies and thread resolution only within the task's existing authorization; otherwise return the proposed disposition. The goal is not to ignore Bugbot by default. The goal is to stop treating every comment as a required code change.
 
 ## Decision rubric
 

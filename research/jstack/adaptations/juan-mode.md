@@ -86,3 +86,7 @@ The [Visual parity adaptation](visual-parity.md) adds the twelfth procedure, lea
 ## Opening a PR coverage
 
 [Opening a PR](opening-a-pr.md) adds the thirteenth procedure, leaving ten pending. Availability paragraphs and seven existing callers now reach it; original caller algorithms, roles and setup behavior remain unchanged. Publication authority remains separate from local preparation, monitoring and merging. See the [evaluation](../evaluations/opening-a-pr/README.md).
+
+## Babysit availability
+
+The mode now bundles Babysit and its single-pass watcher, bringing the current count to 14 available procedures and nine pending. See the [Babysit adaptation](babysit.md) and [evaluation](../evaluations/babysit/README.md). Model roles, configuration selection and source pins are unchanged.
