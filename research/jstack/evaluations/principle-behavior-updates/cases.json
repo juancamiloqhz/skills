@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "id": "premise",
+      "skill": "jstack-principle-attack-the-premise",
+      "prompt": "A product search misses records. Two attempted fixes, shortening cache TTL and clearing the cache on writes, failed the same test. The shared belief is that stale cache entries cause the misses. A fresh process with caching disabled still misses query 'Café', while query 'Café' finds the record. These are respectively U+0065 U+0301 and U+00E9 in the final syllable. Stored names are NFC; lookup compares casefolded strings without Unicode normalization. Apply the supplied principle. Explain the next step, make a small rerunnable Python check that tests the shared belief and proposed correction, and say what the evidence does and does not prove. There are no worker actors in this system.",
+      "expectations": ["Names the stale-cache premise and tests it before another cache fix", "Uses a rerunnable Unicode lookup comparison without requiring an actor census", "Demonstrates the miss with cache absent and the corrected lookup after normalization"]
+    },
+    {
+      "id": "root-cause",
+      "skill": "jstack-principle-fix-root-causes",
+      "prompt": "Our formatter crashes on user.avatar.url.upper(). The API contract explicitly permits avatar=None, which must display 'default.svg'. A nonempty avatar URL must keep its existing uppercase formatting. For comparison, a billing account balance may never be missing: a broken decoder currently drops balance=0 by treating it as false. Apply the supplied principle to choose the fix in each case. Write and run a minimal Python demonstration through each caller's interface, including the zero-balance case. Do not change the contracts to avoid the failures.",
+      "expectations": ["Handles the legitimate absent avatar at the formatter and preserves populated behavior", "Fixes the decoder that drops zero instead of hiding an invalid missing balance downstream", "Executes tests for both valid empty/populated states and the invalid-state producer"]
+    },
+    {
+      "id": "behavior-tests",
+      "skill": "jstack-principle-test-behavior-not-implementation",
+      "prompt": "Review tests for checkout. Contract: an empty cart sends no payment request; a nonempty cart sends exactly one request with the total in cents. Existing tests assert payment_calls == [] for the empty cart and assert a private helper was called for the paid cart. Apply the supplied principle. Write a minimal executable Python test example that keeps useful assertions and replaces fragile ones. Show that it fails when checkout always does nothing, fails when a charge is duplicated or wrong, and still passes after an internal helper is renamed or removed with observable behavior preserved.",
+      "expectations": ["Keeps the no-charge assertion as observable behavior with a positive paid case", "Asserts one exact external payment payload rather than private helper calls", "Demonstrates rejection of no-op, duplicate and wrong-charge mutations and acceptance of a behavior-preserving refactor"]
+    },
+    {
+      "id": "idempotency",
+      "skill": "jstack-principle-make-operations-idempotent",
+      "prompt": "A worker applies a job through an external service, then records a local acknowledgement. The service supports apply(job_id, payload) with a durable unique job_id: repeating the same ID and payload returns the existing result, and changing its payload is an error. A restart can happen just before the service commits or just after commit but before acknowledgement. An old local claim contains a PID which now belongs to another process; process start identity is available. Apply the supplied principle and implement a small in-memory Python simulation of recovery on both sides of the commit. Verify that retries converge with exactly one external effect, valid results survive and the unrelated reused-PID process is never killed. State what this simulation leaves unverified.",
+      "expectations": ["Reconciles against durable service state using the stable job ID instead of deleting/repeating blindly", "Exercises crash-before and crash-after commit plus repeated recovery with exactly one external effect", "Uses process identity/liveness evidence and preserves an unrelated reused-PID process", "Discloses that a simulation does not prove real process, filesystem or distributed service behavior"]
+    }
+  ]
+}
