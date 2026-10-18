@@ -34,12 +34,12 @@ Keep `jstack-setup` as an explicit runtime dependency for its canonical configur
 
 Existing project verification is an input to the playbooks. `jstack-create-verification-skill` and `jstack-maintain-verification-skill` stay separate skills, reached only for an appropriate generation or maintenance task. Running an existing verifier does not require generating another one.
 
-Current package layout with planned playbooks shown explicitly. Add upstream supporting paths when their consuming procedure is implemented; do not introduce a replacement workflow-reference layout solely for organization:
+Current package layout with all 23 playbook procedures implemented and bounded evaluations recorded. Preserve upstream supporting paths; do not introduce a replacement workflow-reference layout solely for organization:
 
 ```text
 skills/jstack/jstack-juan-mode/
   SKILL.md
-  playbooks/                 # Twenty-two procedures implemented; 1 pending
+  playbooks/                 # All 23 procedures implemented; provider release checks remain
   references/bugbot-triage.md # restored upstream reference
   references/activation.md   # local conversation-state contract
   references/configuration.md
