@@ -56,6 +56,19 @@ class InstallationTests(unittest.TestCase):
         self.assertEqual(report["summary"]["missing"], 1)
         self.assertEqual(report["outcome"], "complete")
 
+    def test_documented_text_command_reports_gaps_and_errors(self):
+        command = [sys.executable, str(CHECKER), "--repo-root", str(self.repo),
+                   "--installed-root", str(self.installed)]
+        shutil.rmtree(self.target)
+        result = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("0 matching, 1 missing, 0 different", result.stdout)
+        self.assertIn("jstack-demo: missing", result.stdout)
+        shutil.rmtree(self.installed)
+        result = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertTrue(result.stdout.startswith("Incomplete:"), result.stdout)
+
     def test_changed_and_missing_files_with_installed_extra(self):
         (self.target / "SKILL.md").write_text("customized")
         (self.target / "scripts/run.py").unlink()
