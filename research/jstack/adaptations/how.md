@@ -6,6 +6,10 @@ Adapted from [pstack how](https://github.com/cursor/plugins/tree/11713c683fe4add
 
 The 2026-10-13 restoration replaces the compressed entrypoint with the pinned step order, descriptions and substantive instructions, and restores all 2 supporting references. [Full source diffs](../evaluations/investigation-restoration/alignment-review/source-comparison.json) cover every file. The prior [adaptation record](https://github.com/juancamiloqhz/skills/blob/7b86b39e2645ad5595878ba3c3bb3201c9d8a2ce/research/jstack/adaptations/how.md) is historical; it no longer describes the current reference inventory.
 
+The [2026-10-18 explorer update](../evaluations/how-explorer-update/README.md) adopts the shorter explorer template through `0148b78c56c72a1b8412055913c79f767095b217`. Upstream removed its opening explanation, explicit traversal recipe and output preamble while retaining all six findings sections. The local file follows that deletion exactly, with existing heading spacing. The shared evidence contract and coordinator citation checks remain unchanged. This supersedes only the explorer-template portion of the historical restoration.
+
+The same upstream range changes `SKILL.md` only to add task-adaptive effort and speed. That change remains unadopted under the existing policy of passing selected model options unchanged. No saved configuration, original adaptation pin or reviewed checkpoint changes.
+
 ## Preserved jstack decisions
 
 Keep standalone invocation and unchanged juan-mode activation, catalog-discovered setup, saved role/model/effort choices, explicit configuration handoff, task IDs, owned outputs and terminal checks. The approved shared setup investigation contract remains unchanged. No fallback model, automatic installation, application edit or external mutation is authorized by investigation. Actual capacity and demonstrated path ownership constrain concurrency; they do not eliminate independent source work.
@@ -15,7 +19,7 @@ The omitted `disable-model-invocation: true` is retained for the existing catalo
 ## Remaining differences from the exact source
 
 - The entrypoint adds the shared setup/task contract in place of fixed model selection. Its two scalar roles and simple/complex task counts match the source algorithm. It restores the simple-path default, four numbered steps and named output sections.
-- Explorer tool names use actual file reads and search operations. The complete traversal algorithm, six findings sections and file inventory are retained.
+- The explorer template matches audited source `0148b78c56c72a1b8412055913c79f767095b217`, apart from blank lines after its six output headings. The findings sections, file inventory and open questions remain. Citation and uncertainty requirements also remain in the existing shared evidence contract and entrypoint; no replacement traversal recipe was added.
 - The explainer template explicitly adapts its opening to the simple path, so it cannot claim nonexistent explorers. The original template's complex-path instructions remain. The upstream Mermaid/ASCII default is retained; only an explicit host rendering requirement overrides it. The diagram decision and five explanation sections remain.
 - The coordinator checks decisive citations and distinguishes static tracing from execution before presenting with light edits. This preserves the existing shared evidence contract.
 
