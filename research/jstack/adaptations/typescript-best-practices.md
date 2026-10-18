@@ -2,6 +2,8 @@
 
 Source revision: `11713c683fe4add4fd403ea880580abbc9e0875f`. Complete upstream scope: `pstack/skills/typescript-best-practices/SKILL.md` and `references/patterns.md`. Local package: [jstack-typescript-best-practices](../../../skills/jstack/jstack-typescript-best-practices/SKILL.md). The license matches the pinned `pstack/LICENSE`.
 
+The [2026-10-18 branded-ID update](../evaluations/typescript-brand-guards/README.md) adopts the only changes in these two upstream files through `0148b78c56c72a1b8412055913c79f767095b217`: the branded-types rule now requires a verifying type guard, and its example uses that guard instead of an `as AgentId` cast. All differences listed below remain unchanged. The original manifest pin and review checkpoint are preserved; the new report records the later source comparison and compiler/runtime checks.
+
 Preserve the rule table, full patterns file, heading order, examples and standalone boundary. Type System Discipline remains a language-independent principle with a conditional TypeScript helper pointer. This helper adds no model role, resolver, runtime dependency or playbook.
 
 ## Complete differences
