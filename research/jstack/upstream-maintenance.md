@@ -14,7 +14,7 @@ From a checkout of this repository, use Python 3.10 or newer and Git on Linux or
 python3 scripts/jstack/check_upstream.py
 ```
 
-The checker fetches the watched upstream branch into a bare Git cache. It compares complete Git trees, retains both sides of renames across the watched boundary, and maps direct and context changes. It never checks out or executes upstream code. `watchPaths` includes the whole plugin and shared discovery/validation files so new skills and packaging changes are visible. Shared changes for unrelated plugins still need a brief dismissal during review.
+The checker fetches the watched upstream branch into a bare Git cache. It compares complete Git trees, retains both sides of renames across the watched boundary, and maps direct and context changes. It never checks out or executes upstream code. `watchPaths` includes the whole plugin, its generated `harness/pstack` distribution, both marketplace catalogs, and supporting discovery/validation files. It also watches the pstack distribution generator and documentation checker. These external paths receive package-level review even when no individual skill mapping matches. Shared changes for unrelated plugins still need a brief dismissal during review. Watching a distribution or tool does not approve adopting it.
 
 By default, JSON evidence, raw patches and `last-run.json` live under `~/.cache/jstack/upstream/`. Override `--cache-dir` for a disposable trial. The cache must be outside this checkout. A nonblocking lock prevents overlapping runs using the same cache. Identical source range, jstack commit and manifest contents reuse one report. The checkout's mapped skills must be clean so the recorded jstack commit represents the reviewed implementation.
 

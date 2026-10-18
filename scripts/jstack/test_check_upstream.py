@@ -128,6 +128,58 @@ class UpstreamCheckTests(unittest.TestCase):
         commit(self.upstream)
         self.assertEqual(self.run_check()["status"], "no_changes")
 
+    def test_repository_watch_list_detects_each_external_pstack_path(self):
+        manifest = CHECKER.parents[2] / "research/jstack/upstream.json"
+        self.data["watchPaths"] = json.loads(manifest.read_text())["watchPaths"]
+        self.save_manifest()
+        original = self.manifest.read_bytes()
+        paths = [
+            "harness/pstack/claude-code/skills/poteto-mode/SKILL.md",
+            ".claude-plugin/marketplace.json",
+            "scripts/generate-pstack-harness-trees.mjs",
+            "scripts/check-pstack-docs.mjs",
+        ]
+        for path in paths:
+            with self.subTest(path=path):
+                base = git(self.upstream, "rev-parse", "HEAD")
+                write(self.upstream, path, "External pstack change\n")
+                head = commit(self.upstream)
+                receipt = self.run_check("--base", base, "--head", head)
+                self.assertEqual(receipt["status"], "changes")
+                self.assertEqual(receipt["changedFiles"], 1)
+                report = json.loads(Path(receipt["report"]).read_text())
+                self.assertEqual(report["changes"], [{
+                    "status": "A", "path": path, "directSkills": [], "contextSkills": [],
+                }])
+                self.assertEqual(report["reviewStatus"], "not_reviewed")
+                self.assertIn("External pstack change", Path(receipt["patch"]).read_text())
+                self.assertEqual(self.manifest.read_bytes(), original)
+
+        base = git(self.upstream, "rev-parse", "HEAD")
+        write(self.upstream, "harness/other-plugin/README.md", "Unrelated adapter\n")
+        write(self.upstream, "scripts/check-other-docs.mjs", "Unrelated checker\n")
+        head = commit(self.upstream)
+        self.assertEqual(self.run_check("--base", base, "--head", head)["status"], "no_changes")
+
+    def test_expanded_watch_list_reassesses_cached_no_change_result(self):
+        manifest = CHECKER.parents[2] / "research/jstack/upstream.json"
+        watched = json.loads(manifest.read_text())["watchPaths"]
+        self.data["watchPaths"] = [p for p in watched if p != "harness/pstack"]
+        self.save_manifest()
+        write(self.upstream, "harness/pstack/README.md", "Changed adapter\n")
+        commit(self.upstream)
+        before = self.run_check()
+        self.assertEqual(before["status"], "no_changes")
+        old_report = Path(before["report"]).read_bytes()
+        self.data["watchPaths"] = watched
+        self.save_manifest()
+        after = self.run_check()
+        self.assertEqual(after["status"], "changes")
+        self.assertFalse(after["reused"])
+        self.assertNotEqual(before["reportId"], after["reportId"])
+        self.assertEqual(Path(before["report"]).read_bytes(), old_report)
+        self.assertEqual(json.loads(self.manifest.read_text())["reviewedThrough"], None)
+
     def test_fetch_failure_preserves_previous_report_and_manifest(self):
         receipt = self.run_check()
         original_report = Path(receipt["report"]).read_bytes()
