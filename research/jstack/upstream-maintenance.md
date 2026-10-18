@@ -8,6 +8,8 @@ Use this procedure when checking pstack changes, reviewing a detected update, or
 
 ## Run detection
 
+For a local documentation change, first run `node scripts/jstack/check_docs.mjs`. It checks current catalog counts, jstack helper names, relative links and heading anchors in the root README and research index, plus guide pages when present. It also checks the Juan-mode playbook index. This requires Node.js and performs no fetch or writes. Historical reports keep their original counts. A passing result does not establish runtime support or full upstream coverage; see the [scope and regression tests](evaluations/docs-consistency/README.md).
+
 From a checkout of this repository, use Python 3.10 or newer and Git on Linux or macOS:
 
 ```sh
