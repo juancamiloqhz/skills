@@ -6,13 +6,13 @@ On 2026-10-18, one explicitly approved restart of `t3code.service` exercised the
 
 The repository was clean at merged PR #76, `12347fd3fe805b49528942f545b067bf5031c30e`. PR #75 had landed the implementation pilot and PR #76 the current-head check. The parent retained their original verdicts and did not treat them as verification of a new head.
 
-The approved target was the Ubuntu user service, with no reboot, installation, configuration change or schedule change. Immediately before execution, metadata across ten projects showed only the parent and its probe active. The preflight checked 308 other unsettled threads for pending question IDs, with none returned. The weekly review was not due during the trial. These observations were not an atomic lock against new activity.
+The approved target was the Ubuntu user service, with no reboot, installation, configuration change or schedule change. Immediately before execution, metadata across ten projects showed only the parent and its probe active. The preflight checked 308 other unsettled threads for pending question IDs, with none returned. The one enabled schedule was next due at 15:09 UTC, outside the trial window. These observations were not an atomic lock against new activity.
 
 The probe used the saved `feature, refactoring` selection, Codex `gpt-6.1-sol` with high effort. Its attached waiting process wrote actual process identities and a heartbeat, then waited up to ten minutes for a parent-owned release file. It had no repository write scope or service-control authority. The saved model configuration remained unchanged.
 
 | Observation | Result |
 | --- | --- |
-| Authorized command | `systemctl --user restart --no-block t3code.service`, once, issued at 02:18:41 UTC; command returned exit 0 |
+| Authorized command | `systemctl --user restart --no-block t3code.service`, once, issued at 02:18:41 UTC; the parent observed exit 0 in the tool response, which is not preserved in the pre-command intent file |
 | Actual service transition | Main PID changed from 767946 to 1769327; new start time 02:18:45 UTC; service active/running afterward |
 | Machine identity | Boot ID unchanged; this was not a reboot |
 | Worker process | PID 1768495, start ticks 514379151, absent after restart; original Codex provider PID also absent |
@@ -21,7 +21,7 @@ The probe used the saved `feature, refactoring` selection, Codex `gpt-6.1-sol` w
 | Worker result | `incomplete/process-unavailable`; no release or successful completion file; no replacement waiter |
 | Repository and saved state | Before recovery writes, Git HEAD, working tree, retained worktrees, model-file hash, trial rows, ledger and pending evidence hashes matched the checkpoint |
 
-The Python and Codex processes occupied a separate systemd agent scope, although their ancestry reached the T3 server. The initial preparation assumption that they belonged directly to the service cgroup was corrected before restart. The observed process loss does not establish its exact termination mechanism. Neither a changed service PID nor a terminal task status proves that worker code succeeded.
+The Python and Codex processes occupied a separate systemd agent scope, although their ancestry reached the T3 server. The initial preparation assumption that they belonged directly to the service cgroup was corrected before restart. T3's later reporting turn wrote `outcome.json` into the original worker directory after its own check that the waiting process was absent. The parent had not dispatched that reporting turn, so future recovery must account for runtime-initiated writers too. The observed process loss does not establish its exact termination mechanism. Neither a changed service PID nor a terminal task status proves that worker code succeeded.
 
 ## Inbox recovery
 
