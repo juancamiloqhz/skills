@@ -143,3 +143,7 @@ Availability now includes Autopilot-full, bringing the bundle to 21 procedures w
 ## Autopilot-stack availability, 2026-10-17
 
 Availability now includes Autopilot-stack, bringing the bundle to 22 procedures with Orchestrate pending. The [adaptation](autopilot-stack.md) and [evaluation](../evaluations/autopilot-stack/README.md) preserve root-owned topology and operator-owned landing, with explicit T3 task, watch and scheduling constraints. Model roles, source pins and reviewed checkpoint remain unchanged.
+
+## Orchestrate availability, 2026-10-18
+
+The introductory coverage sentence now includes Orchestrate. Setup steps, configuration resolution, roles, saved settings and model options are unchanged. See the [release assessment](../evaluations/orchestrate-release/README.md) and [pinned-source comparison](../evaluations/orchestrate-release/source-comparison.json).

@@ -1,6 +1,6 @@
-# Orchestrate procedure draft
+# Orchestrate procedure
 
-Source: `pstack/skills/poteto-mode/playbooks/orchestrate.md` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [draft procedure](../../../skills/jstack/jstack-juan-mode/playbooks/orchestrate.md). This preserves the source's ten headings, seven ordered steps, brief fields, queue discipline, pilot-before-scale rule, worker/verifier distinction and coordinator ownership. The router still exposes 22 available playbooks. This draft is not a released route.
+Source: `pstack/skills/poteto-mode/playbooks/orchestrate.md` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [draft procedure](../../../skills/jstack/jstack-juan-mode/playbooks/orchestrate.md). This preserves the source's ten headings, seven ordered steps, brief fields, queue discipline, pilot-before-scale rule, worker/verifier distinction and coordinator ownership. The router now exposes all 23 playbooks after the [release assessment](../evaluations/orchestrate-release/README.md). The table below retains the original draft assessment; the dated release entry supersedes its then-open pilot/recovery limits.
 
 ## Necessary adaptations
 
@@ -17,3 +17,7 @@ Source: `pstack/skills/poteto-mode/playbooks/orchestrate.md` at `11713c683fe4add
 | Wakes, escalation and close | Parent owns PR watches. Persistent cadence and teardown require applicable authority; missing post-merge coverage is explicit. Gate defaults do not grant approval. Preserve final accounting and trail review. | No watch, timer, model change, installation or external message ran during evaluation. Full decision-trail review is a program requirement, not established by these planning cases. |
 
 The [source comparison](../evaluations/orchestrate-procedure/source-comparison.json) hashes the exact final procedure, pinned source and unified diff. The [results and reproducer](../evaluations/orchestrate-procedure/README.md) separate planning conformance from live child delivery and local recovery. Runtime code, manifests, pins and historical review checkpoints are unchanged.
+
+## Route release, 2026-10-18
+
+PR75 completed the implementation/verification/landing pilot, PR76 the current-head exercise, and PR77 the bounded T3 service restart. A fresh read-only task then rejected historical PR76/A evidence for live PR76/B without mutating either ledger key. The release removes only the draft availability gate and adds one Liveness sentence requiring inspection of runtime-initiated later turns, observed in the restart trial. No step, role, pilot, verification or permission requirement is removed. The earlier draft source comparison remains historical; the [release comparison](../evaluations/orchestrate-release/source-comparison.json) records final source hashes. Machine reboot, replacement implementation writers, nested-writer recovery, broad parallel ownership and other coordinating providers remain unverified.

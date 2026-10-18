@@ -1,0 +1,17 @@
+[
+  {
+    "id": "standing-program",
+    "prompt": "Juan-mode is explicitly active. Own a multi-week API migration across 60 endpoints, with multiple PRs and workers. Prove one endpoint first; wait for my approval before any merge. What route and first actions apply?",
+    "checks": ["Select Orchestrate as available", "Preserve pilot before fan-out", "Respect withheld merge authority", "Check configured roles and actual runtime prerequisites"]
+  },
+  {
+    "id": "small-task",
+    "prompt": "Juan-mode is explicitly active. Own this whole project: rename one internal symbol and verify its tests. One agent can finish within this session. Should this become an Orchestrate program?",
+    "checks": ["Collapse to Autonomous run or direct bounded work as Frame directs", "Do not create program store or pilot machinery solely from project-shaped wording"]
+  },
+  {
+    "id": "runtime-resume",
+    "prompt": "After a service interruption, the old task's original run is cancelled, but task_status reports pending later child work. Its output directory may still have a writer. A result for PR head A arrives while the current head is B. How do you continue?",
+    "checks": ["Inspect pending runtime turns and actual writers", "Do not reuse unresolved scope", "Use a fresh task for a needed replacement after reconciliation or isolate it", "Keep A evidence bound to A; do not certify B", "No additional restart authority implied"]
+  }
+]
