@@ -8,6 +8,10 @@ Adapted from [poteto-mode](https://github.com/cursor/plugins/blob/11713c683fe4ad
 
 All 23 playbook procedures are now available with bounded evaluations, including the [Orchestrate release](../evaluations/orchestrate-release/README.md). The [complete coverage audit](../coverage-audits/2026-10-18/README.md) distinguishes this old-pin implementation milestone from current upstream parity: 32 mode paths have changed since the recorded pin. The restoration tables and staged additions below are historical records; their pending counts are not current availability statements. Source pins and the reviewed checkpoint remain unchanged.
 
+## Current principle summaries
+
+The [2026-10-18 principle update](../evaluations/principle-behavior-updates/README.md) adopts the Attack the Premise, Fix Root Causes and Test Behavior Not Implementation summary lines from poteto-mode at `0148b78c56c72a1b8412055913c79f767095b217`. Make Operations Idempotent already matches that source summary. The four corresponding standalone leaves are updated together. These exact-line changes leave routing, activation, delegation and every other mode instruction unchanged; they do not claim the whole mode is current.
+
 ## File accounting
 
 | Source | Local disposition |
