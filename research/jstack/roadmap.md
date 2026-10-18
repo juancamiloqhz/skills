@@ -10,7 +10,7 @@ Status as of 2026-10-18. Model setup, verification tooling and upstream maintena
 
 The user requested a complete pstack coverage audit on 2026-10-18. The [audit and proposed implementation order](coverage-audits/2026-10-18/README.md) inventory 55 top-level upstream skills, nested automation procedures, agents, tools, guide and distribution. Jstack maps 42 pstack skills plus three external helpers, and 22 mapped trees have newer upstream changes. The recorded delivery target remains the 23 playbooks and their dependencies. Missing components are visible proposals; a broader delivery target requires a user decision. The audit does not authorize implementation or optional distribution/model redesigns. Full provider/persistence verification remains required.
 
-The first proposed implementation is the watcher pagination and owner-approval fix, followed by the other small maintenance/tool gaps and dependency-ordered workflow updates. See the audit for every missing skill, integration decision and concrete acceptance scope.
+The [watcher pagination and owner-approval update](evaluations/watcher-pagination/README.md) is implemented and tested on its review branch. It closes those two specific tool gaps without updating the other audited mode paths. Next proposals are plan-fence parsing and the external watch-path/docs checks, followed by dependency-ordered workflow updates. See the audit for every missing skill, integration decision and concrete acceptance scope.
 
 ## Historical priority: restore upstream fidelity
 
