@@ -16,9 +16,9 @@ The three-unit validation sequence has landed. The earlier reports retain their 
 
 ## Fresh continuation on 2026-10-18
 
-The parent first queried the interrupted probe's task. Its later reporting turn was terminal with no pending children or question, and the original waiting process and provider were absent. It then dispatched a fresh `orchestrate-fresh-continuation-20261018-r1` task using the saved Codex `gpt-6.1-sol`/high selection. That task received the standing orders, saved checkpoint, original task/result references and a new exclusive output directory. It did not reuse the probe directory or resume the old task.
+The parent first queried the interrupted probe's task. Its later reporting turn was terminal with no pending children or question, and the original waiting process and provider were absent. That pre-dispatch status read remains in the conversation but was not separately saved; the retained earlier terminal record and the continuation's own process check corroborate the state. The parent dispatched a fresh `orchestrate-fresh-continuation-20261018-r1` task using the saved Codex `gpt-6.1-sol`/high selection. That task received the standing orders, saved checkpoint, original task/result references and a new exclusive output directory. It did not reuse the probe directory or resume the old task.
 
-The child completed all five checks, with a distinct original run identity and no pending work:
+The child completed all five checks with its own run identity, distinct from the original probe, and no pending work:
 
 1. Original probe and provider PIDs were absent, without PID reuse at observation.
 2. Live GitHub metadata identified PR76's final head as `f7586c19bfeb5affb9f217d9831a6a9033dce4e0`. The intentionally replayed parent receipt for `27ecb31004211e53380035952ca0aae86eae3b7a` was classified stale for that final head.
@@ -40,7 +40,17 @@ The comparison covers final files against each exact manifest source, with basel
 
 ## Validation and remaining support limits
 
-Four packaging tests and sixteen model-preflight tests passed. Pinned-source headings and step-label comparisons passed. Runtime code is unchanged; earlier runtime and replay suite results are not represented as new executions. The [route cases](cases.json) cover a standing program, a small single-session task and recovery with unresolved writer ownership. Review results are recorded after assessment.
+Four packaging tests and sixteen model-preflight tests passed. Pinned-source headings and step-label comparisons passed. Runtime code is unchanged; earlier runtime and replay suite results are not represented as new executions. A configured Claude Opus 5.5/high content and decision-trail review found no blockers in the operational candidate. It reviewed a labeled digest and saved artifacts, not a full transcript, and did not independently rerun tests or query live task/forge state. Minor evidence wording and retrospective log clarifications were addressed.
+
+The reviewer evaluated the [route cases](cases.json) against the final operational files:
+
+| Case | Result |
+| --- | --- |
+| Standing program | All four checks follow: Orchestrate, prerequisites, pilot before scale, and withheld merge authority. |
+| Small task | Both checks follow: use Autonomous run or direct bounded work without program bookkeeping. |
+| Runtime resume | All five checks follow: inspect later turns/writers, preserve unresolved scope, use fresh replacements, keep A evidence tied to A, and infer no new restart authority. |
+
+These are rule-conformance review results, not blinded benchmarks or executed production migrations. The review came from a different model family than the Codex parent; it grants no merge or host-action approval.
 
 This supports a coordinator-led, single-host workflow under the observed T3 capabilities. Required dependencies, supported forge topology, current authority and model diversity are checked per task. A missing prerequisite blocks its affected operation. No claim is made for unattended timers without authorization, uninterrupted worker survival, machine reboot or disk loss, replacement implementation writers, nested-writer recovery, arbitrary parallel ownership, or activation/opt-out persistence across all coordinating providers. Earlier unexplained worktree mutations remain unresolved and are not evidence of safe general concurrency.
 
