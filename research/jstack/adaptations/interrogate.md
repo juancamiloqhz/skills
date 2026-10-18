@@ -8,6 +8,10 @@ This correction restores the source's five-step entrypoint and four reference fi
 
 The earlier record at `34cbcca75dabd8d58e1d2b0945f6d550cfa572c7` incorrectly described upstream as requiring blanket compatibility deletion and a five-blocker cap. The source already conditions deletion on external consumers and describes five items as a calibration warning. Its file-size rule already allows a compelling structural exception. This restoration preserves those distinctions and the source's strict maintainability bar.
 
+The [2026-10-18 lead-judgment update](../evaluations/interrogate-lead-update/README.md) adopts the reference through `0148b78c56c72a1b8412055913c79f767095b217`. Upstream removed the introductory context section and the entire verdict-calibration section, including the five-item warning. The local clarification that the warning was not a cap therefore also disappears. Filtering and singleton security/correctness scrutiny remain. The entrypoint still requires a rationale for dismissed findings. This supersedes only the lead-reference portion of the historical restoration above.
+
+The same upstream range also adds Composer/Cursor-Grok fallback families and adaptive effort/speed to `SKILL.md`. Those changes remain unadopted under the existing canonical configuration contract: selected models and options pass unchanged, and unsupported selections remain incomplete. This update changes neither model policy nor configuration. Original adaptation pins and the reviewed checkpoint remain unchanged.
+
 ## Remaining differences
 
 | Local file | Difference from the same upstream relative path | Requirement and verification |
@@ -19,6 +23,6 @@ The earlier record at `34cbcca75dabd8d58e1d2b0945f6d550cfa572c7` incorrectly des
 | `references/reviewer-prompt.md` | Add design/static distinction, assigned-report-only writes and no further delegation or peer findings. Add a code-fence language. | Report-only authority and separate reviewer contexts; formatting has no procedure effect. |
 | `references/rubric.md` | Replace named Cursor read/search tools with available file reads and search. | Tool names vary by host. All substantive source criteria remain. |
 | `references/code-quality-review.md` | Clarify that structural improvements are proposals during review. | The source's quoted audit prompt includes action language; the entrypoint's report-only boundary governs it. The strict criteria are otherwise unchanged. |
-| `references/lead-judgment.md` | Retain the five-item warning and explicitly state it is not a cap on verified blockers. Add a list-spacing fix. | Avoid hiding correctness or security findings to satisfy a count. The fixture retains more than five blocker groups after rejecting unsupported claims. |
+| `references/lead-judgment.md` | Match the audited `0148b78c56c72a1b8412055913c79f767095b217` source, with one blank line before a list. | CommonMark list spacing; no substantive deviation. See the current lead-judgment evaluation linked above. |
 
 The existing jstack-only [execution contract](../../../skills/jstack/jstack-interrogate/references/execution.md) is unchanged. It supplies canonical setup lookup, inherited/concrete dispatch, capabilities, owned outputs and terminal checks. Markdown spacing changes preserve source organization. Pins, checkpoint, historical evidence and setup contracts remain unchanged.
