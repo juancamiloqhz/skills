@@ -6,6 +6,10 @@ Baseline reconciliation on 2026-10-15 followed merged PR #37, commit `d4cfe22`, 
 
 This record reconciles the existing audit with current files and recorded evaluations. It is not a new full semantic audit or a fresh workflow evaluation. The original reports and test artifacts retain their dates, failures and limits. This record and the [fidelity policy](upstream-fidelity.md) supersede the initial specification/inventories wherever those propose bundled standalone helpers, shortened algorithms or optional redesign without a user decision.
 
+## Complete upstream coverage
+
+The [2026-10-18 audit](coverage-audits/2026-10-18/README.md) compares the full pstack package at `0148b78` with local `1f5a8d7`. It finds 12 unported top-level skills plus external Unslop, three absent Benny procedures, incomplete guide/distribution coverage, and 60 changed upstream paths across 22 already mapped packages. The 23-playbook implementation milestone is not complete pstack parity. The audit records proposed adoption order and decision gates without changing source pins, review checkpoints or installed behavior.
+
 ## Merged corrections
 
 The original 36 mapped components reached 37 with standalone Show me your work, 38 with benchmark-checklist, 39 with technical-writing, 40 with no-comments, 41 with TypeScript best practices, 42 with Control CLI, 43 with Deslop, 44 with TDD, and now total 45 with Control UI. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 42. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`.
