@@ -4,7 +4,7 @@ Current jstack skill identities use the `jstack-` prefix. See the [name mapping 
 
 For jstack implementation and maintenance, follow the [upstream-fidelity policy](upstream-fidelity.md). Preserve upstream structure by default and document only necessary or explicitly approved deviations.
 
-Jstack is a portable skills bundle developed for T3 Code as a close adaptation of pstack. This directory holds decisions, source comparisons, evaluation evidence and the complete upstream coverage backlog. A coverage assessment does not itself approve every proposed implementation.
+Jstack is a portable skills bundle developed for T3 Code as a close adaptation of pstack. This directory holds decisions, source comparisons, evaluation evidence and the complete upstream inventory with a proposed backlog. The recorded delivery target remains the 23 playbooks and their dependencies; the audit does not expand that target or approve implementation.
 
 ## Current status
 

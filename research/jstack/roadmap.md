@@ -6,9 +6,9 @@ For jstack implementation and maintenance, follow the [upstream-fidelity policy]
 
 Status as of 2026-10-18. Model setup, verification tooling and upstream maintenance are released. All 23 poteto-mode playbooks have been assessed for `jstack-juan-mode`, and the [adaptation specification](juan-mode-spec.md) defines the complete target and staged implementation. The execution foundation now has source and bounded evaluation evidence. Investigation, Prototype, Trace forensics, Authoring or modifying a skill, Runtime forensics, Bug fix, Feature, Refactoring, Perf issue, Hillclimb, Eval, Visual parity, Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely, Worktree cleanup, Autonomous run, Autopilot-full, Autopilot-stack and Orchestrate are implemented with bounded evaluations. Full cross-provider and persistence release verification remains open.
 
-## Current priority: complete upstream coverage
+## Proposed next priority: address the coverage audit
 
-The user requested a complete pstack coverage audit on 2026-10-18. The [audit and proposed implementation order](coverage-audits/2026-10-18/README.md) supersede the old playbook-only scope as the coverage inventory: 55 top-level upstream skills, nested automation procedures, agents, tools, guide and distribution. Jstack maps 42 pstack skills plus three external helpers, and 22 mapped trees have newer upstream changes. Missing components remain explicit backlog entries; the audit does not authorize all proposed implementations or optional distribution/model redesigns. Full provider/persistence verification remains required.
+The user requested a complete pstack coverage audit on 2026-10-18. The [audit and proposed implementation order](coverage-audits/2026-10-18/README.md) inventory 55 top-level upstream skills, nested automation procedures, agents, tools, guide and distribution. Jstack maps 42 pstack skills plus three external helpers, and 22 mapped trees have newer upstream changes. The recorded delivery target remains the 23 playbooks and their dependencies. Missing components are visible proposals; a broader delivery target requires a user decision. The audit does not authorize implementation or optional distribution/model redesigns. Full provider/persistence verification remains required.
 
 The first proposed implementation is the watcher pagination and owner-approval fix, followed by the other small maintenance/tool gaps and dependency-ordered workflow updates. See the audit for every missing skill, integration decision and concrete acceptance scope.
 
@@ -150,7 +150,7 @@ Verify the accepted conversation-persistence behavior and publish the coordinati
 
 ## Beyond the initial upstream set
 
-Assess newly added upstream playbooks, extra platform support and standalone helper packaging through the existing maintenance process. The earlier 23-playbook target did not include every pstack skill. The complete coverage audit now tracks the remaining skills and integrations explicitly; deciding to exclude one requires an explicit scope decision. This does not require installing every referenced capability on every host.
+Assess newly added upstream playbooks, extra platform support and standalone helper packaging through the existing maintenance process. The recorded 23-playbook target does not include every pstack skill. The complete coverage audit tracks the remaining skills and integrations so future scope decisions can use a full inventory. Their presence in the audit does not commit jstack to porting them. This does not require installing every referenced capability on every host.
 
 ## Babysit
 
