@@ -4,6 +4,8 @@ The [2026-10-15 naming decision](../skill-names.md) additionally changes this pa
 
 Adapted from Lauren Tan's pstack `create-verification-skill` at `cursor/plugins` revision `ccb5507cec1546dc88135c1139c811e6c59115ba`. The 2026-10-14 restoration follows the [fidelity policy](../upstream-fidelity.md). [Comparison and evaluation](../evaluations/verification-restoration/README.md) cover the final files; the pin and reviewed checkpoint are unchanged.
 
+The [2026-10-18 usable-startup update](../evaluations/verifier-usable-startup/README.md) adopts all three subsequent source changes through `0148b78c56c72a1b8412055913c79f767095b217`: Launch must reach usable state from empty data, missing seed prerequisites must fail the affected journey, and stand-in setup differences remain unverified on the real target. The added wording matches upstream exactly. Existing differences below, including automatic Claude linking, remain intact. Original adaptation pins and the reviewed checkpoint remain unchanged.
+
 ## Files and retained structure
 
 | Upstream file under `pstack/skills/create-verification-skill/` | Local file under `skills/jstack/jstack-create-verification-skill/` | Disposition |
