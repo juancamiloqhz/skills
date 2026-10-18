@@ -195,6 +195,8 @@ npx skills add juancamiloqhz/skills --skill jstack-setup
 
 For pstack updates, use the [upstream maintenance procedure](./research/jstack/upstream-maintenance.md). Its checker detects changes and preserves evidence; a review decides which changes belong in jstack. The [roadmap](./research/jstack/roadmap.md) records the enabled weekly review and verified delivery.
 
+When editing current jstack documentation, run `node scripts/jstack/check_docs.mjs` to check catalog counts, helper names and local links. This is a repository maintenance check; using installed skills does not require it. The [evaluation](./research/jstack/evaluations/docs-consistency/README.md) defines its scope and limits.
+
 ## Maturity
 
 The repository is currently experimental. Skill behavior and packaging may evolve as the skills are tested across different projects.
