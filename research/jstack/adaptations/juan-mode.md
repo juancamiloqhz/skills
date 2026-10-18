@@ -142,3 +142,7 @@ The existing execution reference now specifies [coordinator acceptance](completi
 ## Orchestrate procedure draft, 2026-10-17
 
 The [draft procedure](orchestrate.md) preserves upstream structure and connects the existing runtime, frontier and completion contracts to T3 delegation. It remains unavailable as a route. The [bounded evaluation](../evaluations/orchestrate-procedure/README.md) separates planning cases and actual authoring-child delivery from the still-required implementation/verification/landing pilot and host-restart trial.
+
+## Orchestrate availability, 2026-10-18
+
+The availability text now includes Orchestrate, completing 23 procedures. The standing-program trigger is unchanged; its former draft block is removed. No activation, role selection or authority behavior changes. See the [release assessment](../evaluations/orchestrate-release/README.md) and [pinned-source comparison](../evaluations/orchestrate-release/source-comparison.json).

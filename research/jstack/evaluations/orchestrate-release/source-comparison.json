@@ -1,0 +1,57 @@
+{
+  "baselineCommit": "966bc58e93641be39a5206d1859c829dd4408d88",
+  "diffFormat": "UTF-8 Python difflib.unified_diff defaults, keepends=True; fromfile=upstreamPath, tofile=localPath",
+  "files": [
+    {
+      "upstreamPath": "pstack/skills/poteto-mode/SKILL.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localPath": "skills/jstack/jstack-juan-mode/SKILL.md",
+      "upstreamSha256": "03d61d15c5a0f7abc2c558c7323ff3c360dedc2915ebadf3c76c9e872f41cb64",
+      "localSha256": "2f8b66250a01b676308d077865ac23e62493a6781ec86d7105c8c868cb12734f",
+      "unifiedDiffSha256": "98f38be6e27dc89c9b034c7bc36ed02b911092e588c7aae49e370f6ee39ab910",
+      "changeFromBaselineSha256": "a53c1d04d67693909ebba524e05095f85e164762af7bd70354769f6cbaa64069",
+      "change": "Remove draft-only availability gate; retain all routing triggers and activation authority."
+    },
+    {
+      "upstreamPath": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localPath": "skills/jstack/jstack-juan-mode/playbooks/orchestrate.md",
+      "upstreamSha256": "d42b4375f1bd4ce23da0b575a198571a2117df7eea10c3c9fc6d92ae1053f7be",
+      "localSha256": "ef45cc8398848d6d22d456f8cf80b6fbb7954586bb255b0793ddeaf9f6f19d7c",
+      "unifiedDiffSha256": "4cf305b5319880a0e135b23ded3776ce795762552635374d48bfb7aebdc817b1",
+      "changeFromBaselineSha256": "7739e6f757b38dddd945913deef5bc9f29bd5800f17663a669cbe1c9eb16f769",
+      "change": "Release gate removed after pilot and bounded recovery. Add actual later-runtime-turn liveness check; existing T3 adaptations unchanged.",
+      "headingsPreserved": true,
+      "stepLabelsPreserved": true
+    },
+    {
+      "upstreamPath": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "revision": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "localPath": "skills/jstack/jstack-juan-mode/playbooks/multi-phase-plan.md",
+      "upstreamSha256": "27d310e3fc3937a60b8fcbe1318f9d249a7477a722907bf85b3e4eb3dc436b11",
+      "localSha256": "4f50e3e5dd3d73a238d23e9c87eeb21b1eecba30c02860d6595982075a4ad0f7",
+      "unifiedDiffSha256": "c87b63664e8e1e199dd23574c25fe2d42817ed5f9f6f078115764c565e7f087a",
+      "changeFromBaselineSha256": "fe2cd069357172d26e0d7d16602e3833af4e0669675ad3a0528bae4e4b0619b4",
+      "change": "Remove unavailable-route qualification; preserve plan structure and execution prerequisites.",
+      "headingsPreserved": true,
+      "stepLabelsPreserved": true
+    },
+    {
+      "upstreamPath": "pstack/skills/setup-pstack/SKILL.md",
+      "revision": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "localPath": "skills/jstack/jstack-setup/SKILL.md",
+      "upstreamSha256": "d61b47256a18155a81c8e5ef95e3cc6569ce8c18317c35c4dd9c8015cf68cb59",
+      "localSha256": "72faf76c2e7cbaaabe1c3b6cc21d5088f3d561f48e0ec830528bca0407b73e7c",
+      "unifiedDiffSha256": "851ae52b68845fbc67597817872ff8723509f10a6dd8540d9656250a011364b3",
+      "changeFromBaselineSha256": "9a15e063f2750bad0155b9008d42ddc62398c4f28d380bfcc69e6b5e922beb29",
+      "change": "Update coverage sentence only; no setup step or model behavior change."
+    },
+    {
+      "localPath": "skills/jstack/jstack-juan-mode/references/execution.md",
+      "upstreamPath": null,
+      "localSha256": "081c0400b98368322bc6a405ab09da279b283e90257a6e6c14c27750ed0ec14c",
+      "change": "Local T3 completion contract has no one-to-one upstream file. Remove obsolete draft-route wording only; completion acceptance unchanged.",
+      "assessment": "research/jstack/adaptations/completion-reconciliation.md"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ### Orchestrate
 
-Draft procedure for authoring and bounded validation. The router keeps Orchestrate unavailable until the full pilot and live recovery gates pass. Reading this file does not activate juan-mode or authorize a program.
+Reading this procedure does not activate juan-mode or authorize a program. Check the selected runtime, provider capabilities and task authority before starting.
 
 **You own the program, never the code. Author briefs, drain the queue, keep the frontier green, decide.** For a whole project handed to one standing coordinator chat: multi-day, many stacked PRs, dozens to hundreds of subagents, the human checking in twice a day instead of every five minutes. One task driven to a predicate is Autonomous run. One ambitious run needing a bespoke workflow is figure-it-out. Route here when the work outlives any single agent. Work one agent could finish inside the session's budget is not a program.
 
@@ -94,7 +94,7 @@ A unit is not done until its output is externalized the moment it lands, never b
 
 #### Liveness and failure
 
-- Never resume an agent to check on it. A resume restarts an idle agent. Probe read-only: the ledger, `units.tsv`, `gh`, pushed branches, read-only `task_status` and supported native child status. A completed turn with pending children or a pending question is not a completed task. Transcript mtime is not liveness.
+- Never resume an agent to check on it. A resume restarts an idle agent. Probe read-only: the ledger, `units.tsv`, `gh`, pushed branches, read-only `task_status` and supported native child status. A completed turn with pending children or a pending question is not a completed task. The runtime may start a later reporting or recovery turn without a new parent dispatch; inspect pending runs and actual writers before assigning its scope elsewhere. Transcript mtime is not liveness.
 - A silent death gets a synthetic postmortem row in the inbox (unit, failure mode, last evidence, options). Replan on evidence as it arrives. Never wait for program-wide quiescence. Before replacing a writable scope, confirm that its previous writer has stopped and reconcile its changes, or isolate the replacement and reject late writes.
 - Retry by mode: cap-hit or oom, respawn with smaller scope. Network-drop, retry as-is. Tool-error, retry on a different model only when the saved selection or an explicit user decision permits it; otherwise report the selection gate. Unknown, retry once. Two retries, then abandon the unit and replan around it.
 - A zombie that returns hours late reconciles against the current frontier and ledger before anything is accepted. Salvage unique findings through a fresh unit, never a blind merge.
