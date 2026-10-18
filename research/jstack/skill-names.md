@@ -109,6 +109,14 @@ Both columns are intentional. The left column identifies old installations to re
 
 ## Upstream maintenance and evidence
 
+Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:
+
+```sh
+python3 scripts/jstack/check_installation.py --installed-root "$HOME/.agents/skills"
+```
+
+Run this from the repository root and substitute the actual installed root. The checker reports missing and different packages without changing them. A matching result does not prove provider discovery. See the [installation assessment](evaluations/installation-readiness/README.md) for exit codes, limitations and the latest dated result.
+
 `upstream.json` maps each new local identity to its original upstream path and unchanged revision pin. The shared reviewed checkpoint does not move. Preserve pstack's boundaries, headings, procedures and role labels; translate only package identities and their callers. Future adaptations must apply this mapping rather than restoring unprefixed names.
 
 Old reports, audit outputs, task transcripts and reproduction scripts retain the paths and hashes they actually tested. Run those scripts at their recorded commits. For the last pre-migration tree, use commit `3c2e32c17ea6a08900af822fe205703e47be0072`. They are historical evidence, not current installation instructions. The [migration evaluation](evaluations/skill-names/README.md) records current checks and pinned-source comparisons.
