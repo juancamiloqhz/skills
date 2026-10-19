@@ -8,7 +8,7 @@ The user approved both standalone skills before their newer Autopilot callers. B
 
 Bro's body and description are unchanged. Ketchup preserves all source sections, their order and every substantive source paragraph. The [Bro](../../adaptations/bro.md) and [Ketchup](../../adaptations/ketchup.md) records account for the portable name, independently located Bro dependency, T3 history/status reads, missing-evidence behavior and host visual tools. Both packages retain exact source license bytes and the source's explicit-invocation flag; Codex also gets its supported YAML policy. Full final files were compared against the frozen Git objects.
 
-The manifest adds two mappings at the audited pin and Bro as Ketchup's dependency. The original `2026-10-11-ketchup` decision keeps its ID and range but changes from defer to adapt after approval, with no `appliedCommit` before merge. Its original [review](../../upstream-reviews/2026-10-11.md) remains historical evidence. The shared reviewed checkpoint and all 45 previous mappings are unchanged. Autopilot callers remain for the next coordinated update.
+The manifest adds two mappings at the audited pin and Bro as Ketchup's dependency. The original `2026-10-11-ketchup` decision keeps its ID and range but changes from defer to adapt after approval, with no `appliedCommit` before merge. PR [#96](https://github.com/juancamiloqhz/skills/pull/96) subsequently merged as `14dac6ed370190910651ff8f25c644de85888539`; the next maintenance PR records that verified merge in the ledger. Its original [review](../../upstream-reviews/2026-10-11.md) remains historical evidence. The shared reviewed checkpoint and all 45 previous mappings are unchanged. Autopilot callers remain for the next coordinated update.
 
 ## Consumer exercises
 

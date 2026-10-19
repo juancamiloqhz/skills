@@ -23,7 +23,7 @@
 
 One box is one unit of work. Every box names the evidence that checks it. A nested box is a sub-step of the box above it. Check a box only when its evidence exists, a file, a log line, a screenshot, a test run, or a SHA. The body is a how-to. The appendices explain and record.
 
-The program runs `<juan-mode-root>/playbooks/<execution playbook>.md`. <State whether this procedure is available. If absent, execution is blocked.> <Who merges, and which PR ids are the operator's items that stop at merge-ready.>
+The program runs `<juan-mode-root>/playbooks/<execution playbook>.md`. <State whether this procedure is available. If absent, execution is blocked.> <Who merges, and which PR ids are the operator's items that stop at merge-ready, or STACK-READY under Autopilot-stack.>
 
 Tests alone are not sufficient verification. A PR is verified only when its unit, live, and perf boxes are all checked.
 
@@ -39,7 +39,7 @@ Tests alone are not sufficient verification. A PR is verified only when its unit
   - [ ] `<read command for juan-mode/playbooks/opening-a-pr.md>`
   - [ ] `<read command for each other discovered leaf skill>`
 - [ ] Only after execution and recurring audits are authorized and the execution procedure is available, register the hourly audit with T3 `schedule_task` using `schedule={"type":"interval","everyMs":3600000}` and the tick prompt below, bound to this conversation. Record the returned task ID, cadence and next run time. Check for an existing owned timer before creating one. Missing scheduling support blocks unattended audits; do not substitute a shell loop.
-- [ ] Use this tick prompt, verbatim. "Re-read the current execution playbook from its recorded source. Audit the operation against it and fix drift in this tick. Probe every active lane and judge progress by side effects only. Stand down a stuck lane and dispatch its replacement now. Then post a short status message to the operator in chat only when the audit found a tracked change that no earlier status message reported, such as a PR opened, a code-ready head, a round launched or closed, a verdict, a merge, a stuck agent and the action taken, a blocker added or cleared, or a decision only the operator can make. Name every such change and nothing else. Do not repeat a table, the merged list, or an unchanged blocker. If the audit found none, end the turn with no reply text. Either way, log this tick's row in your decision trail. The row names the items reported, or none."
+- [ ] Use this tick prompt, verbatim. "Re-read the current execution playbook from its recorded source. Audit the operation against it and fix drift in this tick. Probe every active lane and judge progress by side effects only. Answer a waiting question within authority or surface it; waiting is not a stall. Replace genuinely stuck work under the execution playbook's stop-or-isolate rule. Then read the discovered jstack-ketchup helper and catch the operator up in chat only when the audit found a tracked change that no earlier status message reported, such as a PR opened, a code-ready head, a round launched or closed, a verdict, a merge, a stuck agent and the action taken, a blocker added or cleared, or a decision only the operator can make. Report those changes and every pending user decision per the helper, including older unanswered decisions. Do not repeat unchanged progress. If the audit found none, end the turn with no reply text. Either way, log this tick's row in your decision trail. The row names the items reported, or none."
 - [ ] On the operator's hold or stand-down, stop each owned child through the supported cancellation tool and verify its terminal state. Pause the owned audit schedule when the requested hold covers it. Preserve recoverable work and unrelated tasks.
 
 ### Spawn owners
@@ -58,12 +58,12 @@ Tests alone are not sufficient verification. A PR is verified only when its unit
 - [ ] Run the repo's lint and typecheck once before the PR-facing push. Push with hooks on.
 - [ ] Run `/jstack-deslop` before each commit and `/jstack-no-comments` before review.
 - [ ] Triage every Bugbot and security-reviewer comment per `<juan-mode-root>/references/bugbot-triage.md` within the actual reply and resolution authority.
-- [ ] Rebase onto current trunk before the code-ready report and babysit. Keep that merge base in fix rounds. Rebase again only at merge prep, on a `git merge-tree` conflict with trunk, or on a CI failure that comes from a change on trunk.
+- [ ] Apply the chosen execution playbook's base ownership. In Autopilot-full, the owner rebases onto current trunk before the code-ready report and babysit, keeps that base in fix rounds unless trunk conflicts or breaks CI, and uses step 5 for merge prep and later drift. In Autopilot-stack, only the root rebases or retargets; owners report their heads and take over the confirmed new base and lease. Once landing starts, preserve Shipping's frozen-run rule.
 
 ### Verdict and merge, for every PR
 
-- [ ] At the code-ready head SHA and at each later push that changes the patch, run the swarm per the discovered `jstack-swarm/SKILL.md`. One gates lane. The ten live lanes from the PR's **Verify, live** block. The perf lane from its **Verify, perf** block. Two or more audit lanes, each with its own focus, that read the diff and the receipts and distrust the PR body. The root audits the receipts in the merge-ready report before the verdict.
-- [ ] Clean only when every lane is `PASS`. Findings go back to the owner, including a defect that a lane filed as a note. A new head gets a fresh swarm and a fresh verdict, except for results that stay valid under the patch-id rule in `<juan-mode-root>/playbooks/shipping.md`.
+- [ ] A full swarm runs once, at the code-ready head. Another full swarm runs only for new behavior, a redesign, or a large new diff. A rebase, a merge-conflict resolution, or a minor fix gets a single verifier at the new head. Run each full swarm per the discovered `jstack-swarm/SKILL.md`. One gates lane. The ten live lanes from the PR's **Verify, live** block. The perf lane from its **Verify, perf** block. Two or more audit lanes, each with its own focus, that read the diff and the receipts and distrust the PR body. The root audits the receipts in the merge-ready report, or STACK-READY report under Autopilot-stack, before the verdict.
+- [ ] Clean only when every lane is `PASS`. Findings go back to the owner, including a defect that a lane filed as a note. A new head gets a fresh verdict, except for results that stay valid under the patch-id rule in `<juan-mode-root>/playbooks/shipping.md`.
 - [ ] <The merge or append rule from the execution playbook, with the patch-id rule from `<juan-mode-root>/playbooks/shipping.md`.>
 
 ### Boot recipe, for every live lane
@@ -121,13 +121,13 @@ Each live lane runs in its own T3-bound worktree at the PR head, with separate p
 
 - [ ] Copy lane <n> screenshots into `<media path>/<pr-id>-review-<slug>.png`.
 - [ ] Record a 30 to 60 second video of the change in an isolated lane. Save it as `<media path>/<pr-id>-review.mp4`.
-- [ ] Post the screenshots and the video in chat. Stop at merge-ready. Wait for the operator's click.
+- [ ] Post the screenshots and the video in chat. Stop at merge-ready, or STACK-READY under Autopilot-stack. Wait for the operator's review; landing requires the chosen route's explicit authority.
 
 **Merge.**
 
-- [ ] Root's clean verdict at the exact head SHA.
+- [ ] Root's current-head assessment citing independent verification and any still-valid historical lane evidence; current-head CI passes.
 - [ ] Bugbot triage done.
-- [ ] Rebased onto current trunk after the verdict, patch-id unchanged.
+- [ ] The chosen execution playbook's base and merge-result checks pass. A changed patch has fresh verification; reused evidence meets Shipping's patch-id rule. Stack topology changes stay with the root.
 - [ ] <The owner squash-merges its own PR, or the root appends it to the base-branch stack and the operator lands it bottom-up.>
 
 ## Close the program
