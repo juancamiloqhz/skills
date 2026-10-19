@@ -21,7 +21,7 @@ The [current fidelity status](fidelity-status.md) preserves earlier correction a
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.
 - [Complete coverage audit](coverage-audits/2026-10-18/README.md): full upstream inventory, missing components, newer changes, proposed implementation order and decision gates.
 - [Current fidelity status](fidelity-status.md): merged correction evidence and remaining prerequisites.
-- [Benny integration design](integrations/benny.md): two-stage workflow, source coverage, runtime gaps and proposed fixture-first implementation. No live automation.
+- [Benny integration design](integrations/benny.md) and [inactive pack evaluation](evaluations/benny-dormant-pack/README.md): complete source procedures, tested copy/discovery, and remaining event/adapter and live runtime gates. No live automation.
 - [Roadmap](roadmap.md): completed work and proposed next steps, with completion checks.
 - [Sources](sources.md): pinned references and attribution carried forward from existing work.
 - [Juan-mode adaptation](juan-mode-adaptation.md): source assessment, T3 Code integration constraints and design proposals.

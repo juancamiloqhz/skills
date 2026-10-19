@@ -13,3 +13,7 @@ The move follows the explicit [provenance policy](../upstream-fidelity.md#proven
 Research links and the manifest now point here. Relative links inside moved records resolve to the same licenses and operational references. Historical audit paths, evaluation hashes and checkpoint records remain dated evidence of their original files. Neither relocation nor a prior merged rationale resolves the audit's outstanding behavior questions.
 
 Validation for this correction checks all 12 packages in isolated temporary directories with the skill validator and relative-file links, compares their licenses byte-for-byte with the exact pinned upstream notices, validates the manifest, and checks Markdown and whitespace. This is packaging validation; no workflow execution or installed-provider discovery is claimed.
+
+## Dormant automation packs
+
+- [Benny](benny.md): separate automation mapping; full source procedures with T3 setup adaptations, inactive until runtime gates pass.
