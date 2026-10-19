@@ -30,7 +30,7 @@ python3 -B research/jstack/evaluations/bot-ui-local/preview_fixture.py \
 
 Open `http://127.0.0.1:8879/jstack-bot-ui/`. The backend binds an ephemeral loopback port and uses public dummy credentials. Stop the fixture and remove its scratch directory afterward. Documentation/link, JavaScript syntax and diff checks also pass. No raw logs or generated databases are retained in Git.
 
-## Concrete device-access test, after approval
+## Concrete device-access test
 
 No new webhook or private key is needed. Use only the dummy `example/fixture` PR #123 sender, with an explicit reminder to the user that the button is a connectivity test and does not query GitHub.
 
@@ -41,3 +41,15 @@ No new webhook or private key is needed. Use only the dummy `example/fixture` PR
 5. Remove only the matching pilot handler with `tailscale serve --https=443 --set-path=/jstack-bot-ui/ off`, first checking that it still targets this fixture. Verify the original handlers and T3 service are intact. Stop only the owned fixture, close owned test tabs and remove its path-specific storage key and scratch. If ownership has changed, preserve state and reconcile instead of resetting shared configuration.
 
 The user's explicit approval must cover the temporary private HTTPS route and the HTTPS deviation from upstream. Neither this PR nor ordinary continuation grants a shared network configuration change. A successful test would establish this host-specific proxy path, not pstack's direct HTTP/IP variant, a fresh real webhook run, or automatic rollback recovery. Record those limits before shipping the full skill.
+
+## Authorized attempt and remaining operator step
+
+The user approved the temporary private HTTPS route and its cleanup in this conversation. The loopback fixture started and returned the expected `example/fixture` PR #123 scope. Adding the route with the exact command above failed with `Access denied: serve config denied`. Serve's JSON configuration remained identical to the saved pre-test snapshot, including both T3 root routes and absent Funnel. No sudo or operator-privilege change was attempted.
+
+Stopped the owned fixture and removed its scratch directory. No test route or service remains active. An operator can add the authorized route from an Orbit terminal with:
+
+```sh
+sudo tailscale serve --bg --https=443 --set-path=/jstack-bot-ui/ http://127.0.0.1:8879
+```
+
+After the operator reports success, restart the fixture and verify the actual configuration and browser behavior before asking for the separate-device click. The route will have no backend until that restart. Removal may likewise require the operator to run the targeted `off` command with sudo. The user's approval remains valid; the outstanding dependency is host permission, not another design decision. Actual TLS routing and peer access remain unverified.
