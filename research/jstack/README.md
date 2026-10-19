@@ -16,7 +16,7 @@ The [current fidelity status](fidelity-status.md) preserves earlier correction a
 
 ## Read by purpose
 
-- [User guide](../../skills/jstack/jstack-help/docs/guide/README.md): setup, workflow examples and choosing a skill.
+- [User guide](../../skills/jstack/jstack-juan-help/docs/guide/README.md): setup, workflow examples and choosing a skill.
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.
 - [Complete coverage audit](coverage-audits/2026-10-18/README.md): full upstream inventory, missing components, newer changes, proposed implementation order and decision gates.
 - [Current fidelity status](fidelity-status.md): merged correction evidence and remaining prerequisites.

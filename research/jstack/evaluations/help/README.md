@@ -1,6 +1,6 @@
 # Help and guide evaluation
 
-Source: `pstack/skills/poteto-help/` and `pstack/docs/guide/` at `0148b78c56c72a1b8412055913c79f767095b217`. Local: [jstack-help](../../../../skills/jstack/jstack-help/SKILL.md). [Adaptation record](../../adaptations/help.md).
+Source: `pstack/skills/poteto-help/` and `pstack/docs/guide/` at `0148b78c56c72a1b8412055913c79f767095b217`. Local: [jstack-juan-help](../../../../skills/jstack/jstack-juan-help/SKILL.md). [Adaptation record](../../adaptations/help.md).
 
 This change adds a read-only help entrypoint and the complete 11-page source guide inside its independently installable package. Help reads the relevant skill or guide, answers briefly, and supplies at most one prompt plus a source link. A request to execute work remains distinct from a help question. The package keeps the original guide organization and illustrations while explaining actual jstack configuration, activation and host limits.
 
@@ -14,6 +14,8 @@ A fresh native authoring evaluator inherited GPT-6-astra/high and read the entry
 | Activation after reopening | Distinguished intended same-conversation activation until opt-out from unverified provider resume. New conversations start inactive. Offered explicit re-invocation without claiming persistence had been tested. |
 | Make bot UI and `/loop` | Identified the former as unported and the latter as Cursor-specific. Required an actual supported wake mechanism and checkable finish condition, without starting or scheduling a task. |
 | Missing config, user selects Later | Honored Later without asking again, explained unavailable configured delegation, and provided a setup prompt. Explained that inherited effort stays unchanged and a smaller budget is not a spending cap. Used the supplied lookup result, not the real saved configuration. |
+
+The consumer runs preceded the user-requested rename from `jstack-help` to `jstack-juan-help`. The rename changes identity and paths only; packaging, documentation and source-link checks were rerun afterward. Consumer behavior was not rerun for that rename.
 
 All four answers linked the source under the explicit authoring branch and used at most one prompt block. No delegate, setting write, installation or external action was requested by these answers. Their content establishes bounded help behavior, not proof that the recommended workflows work on every provider.
 
@@ -44,10 +46,10 @@ From the repository root:
 node --test scripts/jstack/test_check_docs.mjs
 node scripts/jstack/check_docs.mjs
 python3 -B -m unittest discover -s scripts/jstack -p test_skill_packaging.py
-python3 /home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/jstack/jstack-help
+python3 /home/ubuntu/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/jstack/jstack-juan-help
 ```
 
-The final command is expected to report the unsupported preserved frontmatter field described above; locate the host's validator if installed elsewhere. Compare the source tree at the recorded revision with `skills/jstack/jstack-help/`, mapping `skills/poteto-help/*` to the package root and `docs/guide/02-poteto-mode.md` to `docs/guide/02-juan-mode.md`. Compare each image and license byte-for-byte. Read the substantive diff using the adaptation table rather than treating name substitutions or matching counts as a semantic pass.
+The final command is expected to report the unsupported preserved frontmatter field described above; locate the host's validator if installed elsewhere. Compare the source tree at the recorded revision with `skills/jstack/jstack-juan-help/`, mapping `skills/poteto-help/*` to the package root and `docs/guide/02-poteto-mode.md` to `docs/guide/02-juan-mode.md`. Compare each image and license byte-for-byte. Read the substantive diff using the adaptation table rather than treating name substitutions or matching counts as a semantic pass.
 
 For consumer reproduction, give a fresh reader the entrypoint, one case and access to relevant `skills/jstack/` authoring files. Supply an explicit revision for unpublished-source links. Permit read-only source access; do not provide this report as an answer key, dispatch children, touch real configuration or execute the suggested work. For case 4, supply its missing-config facts. Inspect the actual response for source grounding, a single usable prompt, accurate limitations and no task execution.
 
@@ -55,4 +57,4 @@ For consumer reproduction, give a fresh reader the entrypoint, one case and acce
 
 Installed slash-menu discovery, interactive question delivery, real configuration lookup, explicit-work execution routing, all recommended workflows, cross-provider behavior and persistence were not exercised. Make bot UI and Benny remain unported; Unslop stays external. This work does not close distribution integrations or the provider/persistence release matrix.
 
-After merge and manual installation, try `$jstack-help Which skill should I use to check whether PR #123 is ready?` It should explain the status-check route and give a prompt you can send when ready. Asking for help does not start the review or activate Juan-mode.
+After merge and manual installation, try `$jstack-juan-help Which skill should I use to check whether PR #123 is ready?` It should explain the status-check route and give a prompt you can send when ready. Asking for help does not start the review or activate Juan-mode.

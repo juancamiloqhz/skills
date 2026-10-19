@@ -635,8 +635,8 @@
       "differences": "research/jstack/adaptations/automate-me.md"
     },
     {
-      "name": "jstack-help",
-      "localPath": "skills/jstack/jstack-help",
+      "name": "jstack-juan-help",
+      "localPath": "skills/jstack/jstack-juan-help",
       "upstreamPath": "pstack/skills/poteto-help",
       "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
       "contextPaths": [

@@ -1,16 +1,16 @@
 ---
-name: jstack-help
-description: Guides users through jstack setup, /jstack-juan-mode, and picking the skill, playbook, or principle for a task. Type /jstack-help with a question.
+name: jstack-juan-help
+description: Guides users through jstack setup, /jstack-juan-mode, and picking the skill, playbook, or principle for a task. Type /jstack-juan-help with a question.
 disable-model-invocation: true
 ---
 
-# Jstack help
+# Juan help
 
 Answer the user's question about jstack, hand them a prompt they can send, and link the file the answer came from. For a help question, don't start the work. The user asked how, and a jstack run spends real tokens, so let them send the prompt.
 
 A message that asks for work, such as "use jstack to fix this bug", is not a help question. Discover and read `jstack-juan-mode`, do the requested work under its scope and activation contract, and mention once that explicit invocation is intended to stay active in this conversation until opt-out. If it is not installed, name the dependency instead of inventing its procedure. Reading it to answer a help question does not activate it.
 
-This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. Read bundled guide pages relative to this package. Discover independent skills through the provider catalog or explicit authoring paths rather than assuming sibling directories; public links here identify their canonical copies. If the relevant source cannot be read, say what is missing and qualify the answer. Give the user the public jstack file URL under `https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/`; for bundled pages append `jstack-help/` and their package-relative path. Use an explicit authoring revision when reviewing an unpublished change. Unported upstream capabilities are background, not installed jstack commands.
+This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. Read bundled guide pages relative to this package. Discover independent skills through the provider catalog or explicit authoring paths rather than assuming sibling directories; public links here identify their canonical copies. If the relevant source cannot be read, say what is missing and qualify the answer. Give the user the public jstack file URL under `https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/`; for bundled pages append `jstack-juan-help/` and their package-relative path. Use an explicit authoring revision when reviewing an unpublished change. Unported upstream capabilities are background, not installed jstack commands.
 
 ## Find out what they need
 
@@ -88,7 +88,7 @@ The default answer is `/jstack-juan-mode`, which runs most of the others when it
 | Turn what a finished task taught into skill edits | [`/jstack-reflect`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-reflect/SKILL.md) |
 | Stop agents from repeating the same mistakes in this repo | [`/jstack-correct`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-correct/SKILL.md) |
 | Build a page whose buttons wake a Grok Bot over a webhook, pending port | [`/make-bot-ui`](https://github.com/cursor/plugins/blob/0148b78c56c72a1b8412055913c79f767095b217/pstack/skills/make-bot-ui/SKILL.md) |
-| Find their way around jstack | `/jstack-help` |
+| Find their way around jstack | `/jstack-juan-help` |
 
 If an installed skill is missing from the table, discover it through the catalog, read its frontmatter and route by its description. The `jstack-principle-*` packages are covered under principles below. The upstream Make bot UI row is not shipped by jstack; do not turn it into an invented command.
 

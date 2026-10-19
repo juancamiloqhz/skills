@@ -25,7 +25,7 @@ function fixture(t) {
   for (const name of ["feature", "bug-fix"]) write(`skills/jstack/jstack-juan-mode/playbooks/${name}.md`, `# ${name}\n`);
   write("README.md", names.map((name) => `[${name}](./skills/jstack/${name})`).join("\n") + "\nAll two playbooks. The three skills. One short principles.\n");
   write("research/jstack/README.md", "# Current status\nJstack ships 3 packages and all 2 Juan-mode playbook procedures.\n");
-  write("skills/jstack/jstack-help/docs/guide/start.md", "# Start\nUse /jstack-how or $jstack-how. Install with `--skill jstack-how`.\n[Status](../../../../../research/jstack/README.md#current-status)\n");
+  write("skills/jstack/jstack-juan-help/docs/guide/start.md", "# Start\nUse /jstack-how or $jstack-how. Install with `--skill jstack-how`.\n[Status](../../../../../research/jstack/README.md#current-status)\n");
   const run = () => spawnSync(process.execPath, [join(root, "scripts/jstack/check_docs.mjs")], { encoding: "utf8", cwd: tmpdir() });
   const remove = (path) => rmSync(join(root, path), { recursive: true, force: true });
   return { write, append, run, remove };
@@ -56,7 +56,7 @@ for (const claim of ["All 23 playbooks", "The twenty-three playbooks", "All 23 p
 for (const mention of ["/jstack-missing", "$jstack-missing", "`jstack-missing`", "--skill jstack-missing"]) {
   test(`rejects nonexistent helper: ${mention}`, (t) => {
     const f = fixture(t);
-    f.append("skills/jstack/jstack-help/docs/guide/start.md", mention);
+    f.append("skills/jstack/jstack-juan-help/docs/guide/start.md", mention);
     fails(f.run(), /names jstack-missing, which no shipped skill provides/);
   });
 }
@@ -64,9 +64,9 @@ for (const mention of ["/jstack-missing", "$jstack-missing", "`jstack-missing`",
 test("checks guide anchors, including repeated and formatted headings", (t) => {
   const f = fixture(t);
   f.append("research/jstack/README.md", "## **Déjà** vu\n## **Déjà** vu\n```md\n# Example only\n```\n");
-  f.append("skills/jstack/jstack-help/docs/guide/start.md", "[Repeat](../../../../../research/jstack/README.md#déjà-vu-1)");
+  f.append("skills/jstack/jstack-juan-help/docs/guide/start.md", "[Repeat](../../../../../research/jstack/README.md#déjà-vu-1)");
   assert.equal(f.run().status, 0);
-  f.append("skills/jstack/jstack-help/docs/guide/start.md", "[Wrong](../../../../../research/jstack/README.md#example-only)");
+  f.append("skills/jstack/jstack-juan-help/docs/guide/start.md", "[Wrong](../../../../../research/jstack/README.md#example-only)");
   fails(f.run(), /has no heading with that anchor/);
 });
 
@@ -104,7 +104,7 @@ test("historical reports retain their original counts and names", (t) => {
 
 test("a missing guide is disclosed without blocking the current-doc check", (t) => {
   const f = fixture(t);
-  f.remove("skills/jstack/jstack-help/docs/guide");
+  f.remove("skills/jstack/jstack-juan-help/docs/guide");
   const result = f.run();
   assert.equal(result.status, 0, result.stdout + result.stderr);
   assert.match(result.stdout, /no guide pages present; guide coverage remains pending/);

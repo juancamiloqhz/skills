@@ -97,7 +97,7 @@ The fix lands in the repo as architecture, a type, a lint, or a test, so the nex
 ## Ask how without starting the work
 
 ```text
-/jstack-help how do i get juan-mode to stay on every turn?
+/jstack-juan-help how do i get juan-mode to stay on every turn?
 ```
 
 You get an answer, a prompt to send, and a link to the source. Nothing runs until you send that prompt.
