@@ -564,6 +564,20 @@
       "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
       "contextPaths": [],
       "differences": "research/jstack/adaptations/sharpen.md"
+    },
+    {
+      "name": "jstack-blast-radius",
+      "localPath": "skills/jstack/jstack-blast-radius",
+      "upstreamPath": "pstack/skills/blast-radius",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/skills/how",
+        "pstack/skills/why",
+        "pstack/skills/arena",
+        "pstack/skills/unslop",
+        "pstack/skills/setup-pstack"
+      ],
+      "differences": "research/jstack/adaptations/blast-radius.md"
     }
   ],
   "decisions": [
