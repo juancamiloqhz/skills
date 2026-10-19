@@ -599,6 +599,14 @@
       "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
       "contextPaths": [],
       "differences": "research/jstack/adaptations/correct.md"
+    },
+    {
+      "name": "jstack-create-formal-verification-skill",
+      "localPath": "skills/jstack/jstack-create-formal-verification-skill",
+      "upstreamPath": "pstack/skills/create-formal-verification-skill",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [],
+      "differences": "research/jstack/adaptations/create-formal-verification-skill.md"
     }
   ],
   "decisions": [

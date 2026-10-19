@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-create-formal-verification-skill to verify a consequential property and leave a reproducible project-local skill."
+policy:
+  allow_implicit_invocation: false
