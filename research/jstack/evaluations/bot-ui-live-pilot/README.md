@@ -1,6 +1,6 @@
 # Bot UI live pilot preparation
 
-Prepared 2026-10-19 after PR #109 merged. This is the concrete setup for approval, not a live-test result. The sender, page and local recovery tests are recorded in the [transport](../bot-ui-transport/README.md) and [local UI](../bot-ui-local/README.md) reports.
+Prepared 2026-10-19 after PR #109 merged and approved with PR #110. The [execution results](results.md) record the later incomplete pilot and completed service cleanup. The procedure below is the reviewed plan, not a claim that every check passed. The sender, page and local recovery tests are recorded in the [transport](../bot-ui-transport/README.md) and [local UI](../bot-ui-local/README.md) reports.
 
 The test will answer one question: can a browser click reach this T3 conversation, produce a read-only PR status result and acknowledge the same saved request? The page runs on Orbit at `http://127.0.0.1:8879`. It is opened through T3's collaborative browser, not exposed to the tailnet. A later peer-access test is still required before the full skill ships.
 

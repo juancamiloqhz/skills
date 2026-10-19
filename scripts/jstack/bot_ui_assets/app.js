@@ -13,6 +13,10 @@ function show(state) {
     statusText.textContent = 'A receiver has claimed this check. Completion is not yet recorded.';
   } else if (outcome === 'accepted' || outcome === 'duplicate') {
     statusText.textContent = 'Delivery accepted. The check is not yet confirmed complete.';
+  } else if (outcome === 'recorded') {
+    statusText.textContent = 'T3 recorded the delivery, but did not return its outcome. The check may not have started. Refresh status; do not resend.';
+  } else if (outcome === 'queued') {
+    statusText.textContent = 'T3 queued the request for delivery when the environment is available. The check is not yet confirmed started. Do not resend.';
   } else {
     statusText.textContent = `Delivery ${outcome}. The request is saved for receiver recovery. No automatic resend.`;
   }

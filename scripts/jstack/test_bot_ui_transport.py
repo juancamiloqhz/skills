@@ -163,7 +163,15 @@ class TransportTests(unittest.TestCase):
     def test_202_is_not_necessarily_accepted_or_complete(self):
         for outcome, body, expected in [
             ("prompt_too_long", b'{"deliveryId":"delivery:fixture-1"}', "rejected_prompt"),
-            (None, b'{"deliveryId":"delivery:fixture-1"}', "unknown"),
+            (None, b'{"deliveryId":"delivery:fixture-1"}', "recorded"),
+            (None, b'{"queued":true}', "queued"),
+            (None, b'{"queued":1}', "unknown"),
+            (None, b'{"queued":false}', "unknown"),
+            (None, b'{"deliveryId":"delivery:fixture-1","queued":true}', "unknown"),
+            (None, b'{"deliveryId":"invalid"}', "unknown"),
+            (None, b'{}', "unknown"),
+            ("unrecognized", b'{"deliveryId":"delivery:fixture-1"}', "unknown"),
+            ("accepted", b'{"queued":true}', "unknown"),
             ("accepted", b'{}', "unknown"),
             ("accepted", b'not-json', "unknown"),
             ("accepted", b'[]', "unknown"),
@@ -176,6 +184,13 @@ class TransportTests(unittest.TestCase):
                 self.assertEqual(result.outcome, expected)
                 self.assertEqual(result.request_id, "fixture-1")
                 self.assertEqual(len(seen), 1)
+
+    def test_relay_receipt_retains_id_without_claiming_dispatch(self):
+        delivery = "delivery:relay:ca52bd51-f0ad-4491-9dfe-cf803c8dbbe2"
+        with receiver(outcome=None, response=json.dumps({"deliveryId": delivery}).encode()) as (url, seen):
+            result = bot.send(url, self.key, PAYLOAD, allow_loopback_http=True)
+        self.assertEqual(result, bot.Receipt("fixture-1", "recorded", 202, delivery))
+        self.assertEqual(len(seen), 1)
 
     def test_ambiguous_disconnect_is_unknown_and_does_not_resend(self):
         with receiver(drop=True) as (url, seen):

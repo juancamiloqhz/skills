@@ -98,14 +98,22 @@ def classify_response(request_id, status, headers, body):
     outcome = headers.get("x-t3-hook-outcome")
     if status == 202:
         try:
-            delivery = json.loads(body).get("deliveryId")
+            payload = json.loads(body)
+            delivery = payload.get("deliveryId")
         except (ValueError, AttributeError, RecursionError):
+            payload = None
             delivery = None
         if (outcome in ("accepted", "duplicate") and isinstance(delivery, str)
                 and re.fullmatch(r"delivery:[A-Za-z0-9:_-]{1,160}", delivery)):
             return Receipt(request_id, outcome, status, delivery)
         if outcome == "prompt_too_long":
             return Receipt(request_id, "rejected_prompt", status)
+        if outcome is None and isinstance(payload, dict):
+            if (set(payload) == {"deliveryId"} and isinstance(delivery, str)
+                    and re.fullmatch(r"delivery:[A-Za-z0-9:_-]{1,160}", delivery)):
+                return Receipt(request_id, "recorded", status, delivery)
+            if set(payload) == {"queued"} and payload["queued"] is True:
+                return Receipt(request_id, "queued", status)
         return Receipt(request_id, "unknown", status)
     outcomes = {401: "rejected_signature", 404: "not_found", 409: "disabled",
                 410: "expired", 413: "too_large", 429: "rate_limited"}
