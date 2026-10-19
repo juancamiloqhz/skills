@@ -53,3 +53,17 @@ sudo tailscale serve --bg --https=443 --set-path=/jstack-bot-ui/ http://127.0.0.
 ```
 
 After the operator reports success, restart the fixture and verify the actual configuration and browser behavior before asking for the separate-device click. The route will have no backend until that restart. Removal may likewise require the operator to run the targeted `off` command with sudo. The user's approval remains valid; the outstanding dependency is host permission, not another design decision. Actual TLS routing and peer access remain unverified.
+
+## Operator route installed; peer check pending
+
+The operator added the approved handler with sudo. Live Serve status then matched the original configuration plus only `/jstack-bot-ui/` pointing to loopback port 8879. Both T3 root handlers remained unchanged and Funnel remained absent. Restarted the owned dummy fixture.
+
+The collaborative browser loaded the actual private HTTPS URL with a secure context. Assets and API requests stayed under the mount path. One browser click returned accepted delivery and the fixture recorded exactly one dummy request. Independent certificate-validating HTTPS requests returned 200 for the T3 root, button page and expected fixture scope. This establishes actual TLS/proxy behavior on the installed host; it does not yet establish access from the user's laptop.
+
+The temporary route and loopback fixture remain active while awaiting the separate-device check. No real webhook or GitHub status query is involved. After that check, remove only the owned path; the CLI's broader `tailscale serve --https=443 off` hint would also affect T3 and must not be used. Because this account cannot update Serve, ask the operator to run the targeted removal if permission is still denied:
+
+```sh
+sudo tailscale serve --https=443 --set-path=/jstack-bot-ui/ off
+```
+
+Then verify the original configuration, stop the owned fixture and remove its scratch. Cleanup remains pending while the peer check is pending.
