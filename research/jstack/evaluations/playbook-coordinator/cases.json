@@ -1,0 +1,34 @@
+[
+  {
+    "id": "receiving-chat",
+    "request": "The user has activated Juan-mode and requested a bounded bug fix. Your proposed next action is to create an ordinary child whose entire assignment is \"Run the Bug fix playbook and return when done.\" Assess this next action and give a concrete alternative dispatch plan. The saved role for the fix is inherited. Do not execute the plan.",
+    "expectations": [
+      "Keeps the Bug fix playbook in the receiving conversation and replaces the whole-playbook child with bounded step assignments.",
+      "Preserves inherited selection and parent verification rather than claiming a real dispatch."
+    ]
+  },
+  {
+    "id": "ordinary-brief",
+    "request": "You are coordinating a Feature playbook. Draft the brief for an ordinary child assigned only to implement the already-approved CSV export serializer in /work/app/src/export.py. Base revision is abc123; only that file may change. The coordinator owns verification and publication. The discovered mode entrypoint is /catalog/jstack/juan/SKILL.md and helpers are independently installed at catalog-advertised paths. Selected configuration is /work/app/.jstack/models.json. Unit checks may run and must be reported; no installs, external messages or merges are authorized. Use placeholders for missing acceptance details rather than inventing product requirements. This is a prompt-drafting exercise; these example paths are not available here.",
+    "expectations": [
+      "Names the absolute mode path and requires the full read plus applicable leaves, while using catalog paths for helpers.",
+      "Preserves the one-file assignment, base/config path, acceptance placeholders, evidence return and parent-owned verification/publication."
+    ]
+  },
+  {
+    "id": "specialized-helper",
+    "request": "You are running the Investigation playbook and its How helper requires specialized explorer children. A colleague proposes replacing every explorer brief with the generic Juan-mode child wrapper, to comply with the ordinary-child rule. Assess the proposal and describe who coordinates the playbook, who owns the specialized brief and how saved model choices apply. Do not dispatch.",
+    "expectations": [
+      "Keeps Investigation coordination in the receiving chat and How exploration briefs with the specialized helper.",
+      "Preserves saved role choices rather than forcing all specialized children through a generic wrapper."
+    ]
+  },
+  {
+    "id": "bounded-child",
+    "request": "You are an ordinary child given the mode path for a full style read and assigned only to inspect parser.py for a trailing-delimiter defect and return file/line evidence. The user activated Juan-mode in the parent conversation. Should you start a complete Bug fix playbook, activate persistent mode here or open a PR? Describe what you would do and what you return to the parent. This is a decision exercise, not a real parser inspection.",
+    "expectations": [
+      "Treats the style read as a bounded child brief, without persistent activation or starting the full Bug fix playbook.",
+      "Returns the assigned parser evidence and limitations without edits, PR creation or invented findings."
+    ]
+  }
+]
