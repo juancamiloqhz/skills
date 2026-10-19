@@ -1,0 +1,7 @@
+{
+  "skill_name": "jstack-automate-me",
+  "evals": [
+    {"id": 1, "prompt": "Update the existing River mode using answers.md and supplied-findings.json. Produce the local draft and show what changed for feedback.", "expected_output": "Preserve category, name, invocation metadata, review/process sections and helper reference. Add the requested usage-example preference. Exclude foreign/pre-edit findings, duplicate assistant approval claims and contradicted delegation signals. No commits, installs, activation or publication."},
+    {"id": 2, "prompt": "Assess supplied boundaries separately: existing mode with no update/fresh choice; multiple matching modes including a bundled router; untracked mode with no edit-history cutoff; no multi-select question tool; missing history and a rejected configured reader role; global mode outside Git; request for every-turn activation; request to capture only commit-message style.", "expected_output": "Ask only missing material choices; preserve unrelated router and existing invocation policy; disclose cutoff/history gaps without model substitution; use text for multiple categories; do not invent a PR for a non-repository file or promise persistence; route a narrow workflow to ordinary authoring."}
+  ]
+}
