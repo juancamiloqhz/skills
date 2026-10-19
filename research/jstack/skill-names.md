@@ -131,6 +131,14 @@ npx skills add juancamiloqhz/skills --skill jstack-blast-radius
 
 Keep `jstack-why` available for code history, `jstack-how` for companion investigation, `jstack-arena` and its setup dependency for wide reviews, and the intended external `unslop` skill for writing. Existing valid model settings need no setup rerun. Invoke `$jstack-blast-radius` with a diff or commit range and the allowed proof scope. Missing proof stays unproven; assessment does not itself authorize a fix or merge. It has no former jstack name to remove and no automatic Juan-mode trigger. See [evaluation and limits](evaluations/blast-radius/README.md).
 
+`jstack-teach` combines mechanics and rationale into short explanations. After merge, install it manually:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-teach
+```
+
+Keep `jstack-how`, `jstack-why`, their `jstack-setup` dependency and the intended external `unslop` available. Invoke `$jstack-teach Explain how this export works and why it uses string IDs. Start short.` Ask follow-up questions for more detail. How and Why use your existing configured roles; valid settings need no setup rerun. Teach is standalone and does not automatically activate Juan-mode. It has no former jstack name to remove. Refresh the provider catalog after installation. See [evaluation and limits](evaluations/teach/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:
