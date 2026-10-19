@@ -6,7 +6,7 @@ Use the current tool schemas and injected T3 Code instructions. Prefer native sa
 
 Supply the following in every child brief because T3 Code delegation does not copy the parent conversation:
 
-- Original goal, later constraints, relevant findings and selected procedure.
+- Original goal, later constraints, relevant findings, selected procedure and the assigned step or bounded subtask.
 - For ordinary playbook children, the discovered absolute mode path with an explicit full-read requirement and applicable principle leaves; specialized workflow children keep their own briefs.
 - Absolute checkout path, base revision, owned paths and read-only or write scope.
 - The parent's selected absolute model-config path, passed explicitly to preflight in the child.

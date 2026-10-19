@@ -12,6 +12,12 @@ All 23 playbook procedures are now available with bounded evaluations, including
 
 The [2026-10-18 principle update](../evaluations/principle-behavior-updates/README.md) adopts the Attack the Premise, Fix Root Causes and Test Behavior Not Implementation summary lines from poteto-mode at `0148b78c56c72a1b8412055913c79f767095b217`. Make Operations Idempotent already matches that source summary. The four corresponding standalone leaves are updated together. These exact-line changes leave routing, activation, delegation and every other mode instruction unchanged; they do not claim the whole mode is current.
 
+## Receiving-chat coordination, 2026-10-19
+
+The [coordinator update](../evaluations/playbook-coordinator/README.md) adopts the rule from `0148b78c56c72a1b8412055913c79f767095b217` that the chat receiving the mode runs the playbook. Ordinary children take assigned steps or bounded subtasks, rather than receiving the complete playbook as their job. The execution brief now names that assignment explicitly. Specialized routed helpers still own their child briefs.
+
+The source's new absolute-path instruction is already satisfied by the ordinary-child brief in Subagents and the execution reference. Jstack retains catalog discovery because independently installed skills need not be siblings. Source naming/metadata changes remain covered by the portable name and until-opt-out adaptations. Its three changed principle summaries were adopted earlier. The adaptive effort/speed rule remains deferred under the existing exact-configuration policy. The linked evaluation accounts for the complete entrypoint delta; it does not update the other mode paths or establish full runtime parity.
+
 ## File accounting
 
 | Source | Local disposition |
