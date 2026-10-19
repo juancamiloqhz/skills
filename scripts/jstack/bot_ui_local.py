@@ -4,6 +4,7 @@
 import argparse
 from contextlib import contextmanager
 from dataclasses import asdict
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import os
@@ -53,6 +54,10 @@ class Journal:
                 owner TEXT, acknowledgement TEXT,
                 created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
             )""")
+            db.execute("""CREATE TABLE IF NOT EXISTS results (
+                request_id TEXT PRIMARY KEY, body TEXT NOT NULL,
+                saved_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+            )""")
 
     @contextmanager
     def connection(self):
@@ -83,11 +88,16 @@ class Journal:
 
     def status(self, request_id):
         with self.connection() as db:
-            row = db.execute("SELECT * FROM requests WHERE id=?", (request_id,)).fetchone()
+            row = db.execute("""SELECT requests.*, results.request_id AS result_id FROM requests
+                                LEFT JOIN results ON results.request_id=requests.id WHERE id=?""",
+                             (request_id,)).fetchone()
         if row is None:
             return None
-        return {"requestId": row["id"], "delivery": json.loads(row["delivery"]),
-                "processing": "completed" if row["acknowledgement"] else "claimed" if row["owner"] else "pending"}
+        if row["acknowledgement"]:
+            processing = "completed" if row["result_id"] else "acknowledged_without_result"
+        else:
+            processing = "result_saved" if row["result_id"] else "claimed" if row["owner"] else "pending"
+        return {"requestId": row["id"], "delivery": json.loads(row["delivery"]), "processing": processing}
 
     def pending(self):
         with self.connection() as db:
@@ -113,7 +123,56 @@ class Journal:
                 raise JournalError("Only the recorded claim owner can acknowledge a request.")
             if row["acknowledgement"] is not None and row["acknowledgement"] != evidence:
                 raise JournalError("Preserve the existing acknowledgement.")
+            if row["acknowledgement"] is None and db.execute(
+                    "SELECT 1 FROM results WHERE request_id=?", (request_id,)).fetchone() is None:
+                raise JournalError("Save the PR result before reporting and acknowledging it.")
             db.execute("UPDATE requests SET acknowledgement=? WHERE id=?", (evidence, request_id))
+
+    def save_result(self, request_id, owner, result):
+        fields = {"number", "state", "mergedAt", "mergeCommit", "headRefOid", "url"}
+        if (not isinstance(result, dict) or set(result) != fields
+                or type(result["number"]) is not int or result["number"] != self.pr
+                or result["state"] not in ("OPEN", "CLOSED", "MERGED")
+                or result["url"] != f"https://github.com/{self.repository}/pull/{self.pr}"
+                or not isinstance(result["headRefOid"], str)
+                or not re.fullmatch(r"[0-9a-f]{40}", result["headRefOid"])):
+            raise JournalError("Expected the fixed PR's status fields from gh pr view.")
+        if result["state"] == "MERGED":
+            commit, merged_at = result["mergeCommit"], result["mergedAt"]
+            if (not isinstance(commit, dict) or set(commit) != {"oid"}
+                    or not isinstance(commit["oid"], str) or not re.fullmatch(r"[0-9a-f]{40}", commit["oid"])
+                    or not isinstance(merged_at, str)
+                    or not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?Z", merged_at)):
+                raise JournalError("Merged status requires a commit and UTC merge timestamp.")
+            try:
+                datetime.fromisoformat(merged_at.replace("Z", "+00:00"))
+            except ValueError:
+                raise JournalError("Invalid merge timestamp.") from None
+        elif result["mergeCommit"] is not None or result["mergedAt"] is not None:
+            raise JournalError("Unmerged status must not contain a merge commit or timestamp.")
+        body = json.dumps(result, sort_keys=True, separators=(",", ":"))
+        with self.connection() as db:
+            row = db.execute("SELECT owner, acknowledgement FROM requests WHERE id=?", (request_id,)).fetchone()
+            if row is None or not row["owner"] or row["owner"] != owner:
+                raise JournalError("Only the recorded claim owner can save a result.")
+            existing = db.execute("SELECT body FROM results WHERE request_id=?", (request_id,)).fetchone()
+            if existing:
+                if existing["body"] != body:
+                    raise JournalError("Preserve the original result; do not replace it with a new check.")
+            elif row["acknowledgement"] is not None:
+                raise JournalError("Do not backfill an acknowledged request with a new result.")
+            else:
+                db.execute("INSERT INTO results(request_id,body) VALUES (?,?)", (request_id, body))
+
+    def result(self, request_id):
+        with self.connection() as db:
+            row = db.execute("""SELECT requests.payload, requests.acknowledgement, results.body, results.saved_at
+                                FROM requests LEFT JOIN results ON results.request_id=requests.id WHERE id=?""",
+                             (request_id,)).fetchone()
+        if row is None:
+            return None
+        return {"payload": json.loads(row["payload"]), "acknowledgement": row["acknowledgement"],
+                "result": json.loads(row["body"]) if row["body"] else None, "savedAt": row["saved_at"]}
 
 
 def make_server(address, origins, journal, sender):
@@ -222,7 +281,10 @@ def main():
     commands.add_parser("pending")
     claim = commands.add_parser("claim")
     ack = commands.add_parser("ack")
-    for command in (claim, ack):
+    save = commands.add_parser("save-result", help="Read the bounded gh pr view JSON result from stdin.")
+    read = commands.add_parser("result", help="Read the saved result without rerunning the check.")
+    read.add_argument("--request-id", required=True)
+    for command in (claim, ack, save):
         command.add_argument("--request-id", required=True)
         command.add_argument("--owner", required=True)
     ack.add_argument("--evidence", required=True)
@@ -243,6 +305,14 @@ def main():
             print(json.dumps(journal.pending()))
         elif args.command == "claim":
             print(json.dumps(journal.claim(args.request_id, args.owner)))
+        elif args.command == "save-result":
+            body = sys.stdin.read(4097)
+            if len(body) > 4096:
+                raise JournalError("PR status result exceeds 4096 characters.")
+            journal.save_result(args.request_id, args.owner, json.loads(body))
+            print(json.dumps({"saved": True}))
+        elif args.command == "result":
+            print(json.dumps(journal.result(args.request_id)))
         else:
             journal.acknowledge(args.request_id, args.owner, args.evidence)
             print(json.dumps({"acknowledged": True}))
@@ -251,7 +321,7 @@ def main():
         return 0
     except (JournalError, TransportError) as exc:
         print(str(exc), file=sys.stderr)
-    except (OSError, ValueError, sqlite3.Error):
+    except (OSError, ValueError, RecursionError, sqlite3.Error):
         print("Local UI operation failed. Preserve the journal and reconcile pending requests.", file=sys.stderr)
     return 2
 

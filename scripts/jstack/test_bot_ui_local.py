@@ -18,6 +18,11 @@ from bot_ui_transport import Receipt, TransportError, send, write_secret
 from test_bot_ui_transport import receiver
 
 
+RESULT = {"number": 123, "state": "MERGED", "mergedAt": "2026-10-19T21:03:41Z",
+          "mergeCommit": {"oid": "a" * 40}, "headRefOid": "b" * 40,
+          "url": "https://github.com/example/fixture/pull/123"}
+
+
 @contextmanager
 def running(journal, sender):
     server = make_server(("127.0.0.1", 0), ["http://fixture.local"], journal, sender)
@@ -124,6 +129,7 @@ class LocalUITest(unittest.TestCase):
         self.assertEqual(sum(result["granted"] for result in claims), 1)
         owner = restarted.pending()[0]["owner"]
         self.assertFalse(restarted.claim("click-1", owner)["granted"])
+        restarted.save_result("click-1", owner, RESULT)
         restarted.acknowledge("click-1", owner, "conversation-result-1")
         restarted.acknowledge("click-1", owner, "conversation-result-1")
         with self.assertRaises(JournalError):
@@ -134,6 +140,75 @@ class LocalUITest(unittest.TestCase):
         self.assertFalse(final.claim("click-1", "later-wake")["granted"])
         with running(final, lambda _: self.fail("must not resend after restart")) as address:
             self.assertEqual(json.loads(request(address)[2])["processing"], "completed")
+
+    def test_saved_result_survives_lost_conversation_and_is_immutable(self):
+        self.journal.record("click-1")
+        self.journal.claim("click-1", "wake-1")
+        with self.assertRaises(JournalError):
+            self.journal.acknowledge("click-1", "wake-1", "thread:fixture;request:click-1")
+        self.journal.save_result("click-1", "wake-1", RESULT)
+        before = self.journal.result("click-1")
+        restarted = Journal(self.journal.path, "example/fixture", 123)
+        self.assertEqual(restarted.status("click-1")["processing"], "result_saved")
+        self.assertEqual(restarted.result("click-1"), before)
+        self.assertIsNone(before["acknowledgement"])
+        self.assertFalse(restarted.claim("click-1", "replacement")["granted"])
+        restarted.save_result("click-1", "wake-1", RESULT)
+        self.assertEqual(restarted.result("click-1")["savedAt"], before["savedAt"])
+        restarted.acknowledge("click-1", "wake-1", "thread:fixture;request:click-1")
+        # The referenced conversation result is absent; the saved observation remains readable.
+        recovered = Journal(self.journal.path, "example/fixture", 123)
+        self.assertEqual(recovered.result("click-1")["result"], RESULT)
+        self.assertEqual(recovered.result("click-1")["payload"], recovered.payload("click-1"))
+        for owner, result in [("replacement", RESULT), ("wake-1", {**RESULT, "headRefOid": "c" * 40})]:
+            with self.assertRaises(JournalError):
+                recovered.save_result("click-1", owner, result)
+        with running(recovered, lambda _: self.fail("recovery must not resend")) as address:
+            state = json.loads(request(address)[2])
+            self.assertEqual(state["processing"], "completed")
+            self.assertNotIn("result", state)
+        self.assertEqual(recovered.result("click-1")["result"], RESULT)
+
+    def test_result_requires_owner_and_fixed_pr_status(self):
+        self.journal.record("click-1")
+        with self.assertRaises(JournalError):
+            self.journal.save_result("click-1", None, RESULT)
+        self.journal.claim("click-1", "wake-1")
+        invalid = [None, [], {**RESULT, "number": True}, {**RESULT, "number": 124},
+                   {**RESULT, "url": "https://github.com/other/repo/pull/123"},
+                   {**RESULT, "state": "READY"}, {**RESULT, "token": "not-allowed"},
+                   {**RESULT, "headRefOid": "bad"}, {**RESULT, "mergeCommit": None},
+                   {**RESULT, "mergedAt": "invalidZ"}, {**RESULT, "mergedAt": "2026-10-19Z"},
+                   {**RESULT, "mergedAt": "2026-02-30T10:00:00Z"}, {**RESULT, "state": "OPEN"}]
+        for result in invalid:
+            with self.subTest(result=result), self.assertRaises(JournalError):
+                self.journal.save_result("click-1", "wake-1", result)
+        self.assertIsNone(self.journal.result("click-1")["result"])
+        self.assertIsNone(self.journal.result("unknown"))
+        for state in ("OPEN", "CLOSED"):
+            self.journal.record(state)
+            self.journal.claim(state, "wake-1")
+            self.journal.save_result(state, "wake-1", {**RESULT, "state": state, "mergedAt": None, "mergeCommit": None})
+            self.assertEqual(self.journal.result(state)["result"]["state"], state)
+
+    def test_old_acknowledgements_are_preserved_without_fabricating_results(self):
+        self.journal.record("old")
+        self.journal.claim("old", "original")
+        with self.journal.connection() as db:
+            db.execute("UPDATE requests SET acknowledgement='old-reference' WHERE id='old'")
+            db.execute("DROP TABLE results")
+        upgraded = Journal(self.journal.path, "example/fixture", 123)
+        self.assertEqual(upgraded.status("old")["processing"], "acknowledged_without_result")
+        self.assertEqual(upgraded.result("old")["acknowledgement"], "old-reference")
+        self.assertIsNone(upgraded.result("old")["result"])
+        self.assertEqual(upgraded.pending(), [])
+        self.assertFalse(upgraded.claim("old", "new")["granted"])
+        upgraded.acknowledge("old", "original", "old-reference")
+        with self.assertRaises(JournalError):
+            upgraded.save_result("old", "original", RESULT)
+        with running(upgraded, lambda _: self.fail("legacy requests must not resend")) as address:
+            self.assertEqual(json.loads(request(address, data={"requestId": "old"})[2])["processing"],
+                             "acknowledged_without_result")
 
     def test_crash_after_intent_or_claim_never_automatically_replays(self):
         self.journal.record("click-1")
@@ -206,6 +281,16 @@ class LocalUITest(unittest.TestCase):
         claim = ("claim", "--request-id", "cli-1", "--owner", "wake-1")
         self.assertTrue(json.loads(run(*claim).stdout)["granted"])
         self.assertFalse(json.loads(run(*claim).stdout)["granted"])
+        result_args = ["save-result", "--request-id", "cli-1", "--owner", "wake-1"]
+        too_large = subprocess.run(base + result_args, input=" " * 4097, capture_output=True, text=True)
+        self.assertEqual(too_large.returncode, 2)
+        too_deep = subprocess.run(base + result_args, input="[" * 1500 + "0" + "]" * 1500,
+                                  capture_output=True, text=True)
+        self.assertEqual(too_deep.returncode, 2)
+        self.assertNotIn("Traceback", too_deep.stderr)
+        saved = subprocess.run(base + result_args, input=json.dumps(RESULT), capture_output=True, text=True, check=True)
+        self.assertTrue(json.loads(saved.stdout)["saved"])
+        self.assertEqual(json.loads(run("result", "--request-id", "cli-1").stdout)["result"], RESULT)
         run("ack", "--request-id", "cli-1", "--owner", "wake-1", "--evidence", "conversation-result")
         self.assertEqual(json.loads(run("pending").stdout), [])
 
