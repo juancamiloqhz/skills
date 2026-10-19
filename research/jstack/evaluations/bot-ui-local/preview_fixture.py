@@ -10,6 +10,7 @@ import sys
 import threading
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "scripts/jstack"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "skills/jstack/jstack-make-bot-ui/scripts"))
 from bot_ui_local import Journal, make_server
 from bot_ui_transport import send, write_secret
 from test_bot_ui_transport import receiver

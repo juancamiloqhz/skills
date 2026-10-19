@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-make-bot-ui to build a private button page that requests a read-only PR status check in this conversation."
+policy:
+  allow_implicit_invocation: false

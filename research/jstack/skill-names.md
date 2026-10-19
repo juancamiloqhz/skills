@@ -167,6 +167,12 @@ After merge, install manually with `npx skills add juancamiloqhz/skills --skill 
 
 Example: `$jstack-automate-me Help me create a personal mode with short explanations and practical examples. Draft only.` It finds an existing personal mode if present, gathers scoped evidence and your answers, then shows a draft for feedback. Existing categories and uncontradicted rules stay in place. Creating the file does not activate it or change `jstack-juan-mode`. Generated personal modes keep their chosen `<handle>-mode` names. See [evaluation and limits](evaluations/automate-me/README.md).
 
+## Make bot UI addition
+
+After merge, install manually with `npx skills add juancamiloqhz/skills --skill jstack-make-bot-ui`. The package includes Python helpers, page assets and receiver/recovery instructions; it does not require this repository at runtime. No model role or configuration change is required. Installation creates no webhook, page service or network route.
+
+Example: `$jstack-make-bot-ui Build a button to check owner/repo PR #123 and report here on my existing tailnet.` Setup requests private credentials and uses only that fixed read-only action. See [verification and limits](evaluations/make-bot-ui/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:

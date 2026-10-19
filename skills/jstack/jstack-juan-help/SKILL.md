@@ -87,10 +87,10 @@ The default answer is `/jstack-juan-mode`, which runs most of the others when it
 | Turn their own working habits into a personal mode skill | [`/jstack-automate-me`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-automate-me/SKILL.md) |
 | Turn what a finished task taught into skill edits | [`/jstack-reflect`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-reflect/SKILL.md) |
 | Stop agents from repeating the same mistakes in this repo | [`/jstack-correct`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-correct/SKILL.md) |
-| Build a page whose buttons wake a Grok Bot over a webhook, pending port | [`/make-bot-ui`](https://github.com/cursor/plugins/blob/0148b78c56c72a1b8412055913c79f767095b217/pstack/skills/make-bot-ui/SKILL.md) |
+| Build a private PR-status button page that wakes this T3 conversation | [`/jstack-make-bot-ui`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-make-bot-ui/SKILL.md) |
 | Find their way around jstack | `/jstack-juan-help` |
 
-If an installed skill is missing from the table, discover it through the catalog, read its frontmatter and route by its description. The `jstack-principle-*` packages are covered under principles below. The upstream Make bot UI row is not shipped by jstack; do not turn it into an invented command.
+If an installed skill is missing from the table, discover it through the catalog, read its frontmatter and route by its description. The `jstack-principle-*` packages are covered under principles below. Make bot UI is explicit-only; its bundled action is a fixed read-only PR status check.
 
 Close calls:
 

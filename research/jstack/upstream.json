@@ -648,6 +648,17 @@
         "cursor-team-kit/skills/deslop"
       ],
       "differences": "research/jstack/adaptations/help.md"
+    },
+    {
+      "name": "jstack-make-bot-ui",
+      "localPath": "skills/jstack/jstack-make-bot-ui",
+      "upstreamPath": "pstack/skills/make-bot-ui",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/skills/poteto-help",
+        "pstack/docs/guide/09-make-it-yours.md"
+      ],
+      "differences": "research/jstack/adaptations/make-bot-ui.md"
     }
   ],
   "decisions": [
