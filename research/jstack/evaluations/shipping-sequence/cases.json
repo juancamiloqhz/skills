@@ -1,0 +1,42 @@
+[
+  {
+    "id": "merge-proof",
+    "request": "Shipping has a verified run of PRs 201,202,203. Assess each independent observation for whether the coordinator can advance to 202: (a) the merge command exited zero but 201 is OPEN with auto-merge requested; (b) 201 reads MERGED but baseRefName is the old parent branch; (c) 201 reads MERGED with base main but its reported merge commit cannot be found on fetched main; (d) 201 reads MERGED with base main, matches the assessed head, and its merge commit is on fetched main. A query error is also possible. State the next action in each case without forge operations.",
+    "expectations": [
+      "Advances only after confirmed merge into trunk with the merge commit present and assessed identity matching.",
+      "Queued, wrong-base, missing-commit or query-error evidence does not advance; uses parent-owned waiting where available."
+    ]
+  },
+  {
+    "id": "immediate-child",
+    "request": "The frozen verified run is A,B,C. A just squash-merged into main as M1. B still contains old A, and C still contains old B. All original parent/head tips are recorded. A proposal rebases both B and C now and arms both merges to save time. Give the correct sequence and the cut point for moving C after B later squash-merges. Also explain what to do if the child base auto-retargeted, a recorded cut point is unavailable, or an expected-ref lease fails. Planning only.",
+    "expectations": [
+      "Moves only the immediate child using its recorded original parent cut point, and preserves higher descendants until their turn.",
+      "Rechecks actual base/head and current verification; missing cut points, failed leases or unexpected movement stop mutation."
+    ]
+  },
+  {
+    "id": "extract-independent",
+    "request": "The bottom PR is verified, middle PR is FAIL, and two upper changes have passing verdicts. One upper change can run on trunk using only existing APIs; the other calls a function introduced by the failed middle PR. Both cherry-pick without conflicts and retain their patch IDs. Explain whether either can land independently, what evidence and verdict are needed, and when any extraction can happen relative to an active frozen landing run. Do not execute.",
+    "expectations": [
+      "Permits an independent extracted change only after resulting-diff/runtime proof and a fresh verdict, even if patch ID survives.",
+      "Keeps dependent changes blocked and performs extraction outside an active frozen landing run."
+    ]
+  },
+  {
+    "id": "receipt-reuse",
+    "request": "A caller keeps a verdict ledger keyed by PR/head. After a rebase, an identical patch has a new head. Separately, a docs/lint-only patch differs but one compiled verification lane appears equivalent; another lane is a dev server with no build artifact. A third patch changes product code. Explain which evidence can survive, what checks or comparisons must run, and how to record current-head eligibility without rewriting historical evidence. No builds or ledger writes.",
+    "expectations": [
+      "Distinguishes unchanged code evidence from new current-head eligibility, preserving historical identities.",
+      "Uses two original builds/one current build for compiled noise comparison, reruns no-artifact lanes and re-verifies changed product code."
+    ]
+  },
+  {
+    "id": "babysit-boundary",
+    "request": "The user asked only to check whether a stack is ready. Babysit returns WAITING with reason merge-queue and no code blockers, while owner approval is still pending. Someone suggests starting Shipping, arming auto-merge and waiting in a shell loop. Give the result and next actions to report. No live calls.",
+    "expectations": [
+      "Does not start Shipping or arm merges under status-only authority; reports owner approval separately.",
+      "Ends the readiness assessment without a shell watch loop, preserving the distinction from actual landing."
+    ]
+  }
+]
