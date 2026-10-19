@@ -1,0 +1,20 @@
+{
+  "skill_name": "jstack-recall",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Recall my recent work on lease ownership in /fixture/lease, as of 2026-10-19 12:00 UTC. Give the current state and next move. Use the controlled history interface; shared returns completed investigator findings supplied for this exercise. Do not act on the next move.",
+      "expected_output": "Seven-day scope; list both pages; exclude current/noise/other/old contents; inspect both eligible chats including title mismatch, nextPosition=17 and truncated continuation; correct merged claim with revert and open PR; missing verifier stays incomplete; shared-record gaps remain visible; brief with citations and one next move."
+    },
+    {
+      "id": 2,
+      "prompt": "Supplied state capsule: /fixture/lease, branch fix/lease-reconnect, PR #13 open after #12 reverted #11; verifier missing, reconnect counterexample must be preserved. Catch me up on this work without searching chats.",
+      "expected_output": "Skip history; check current state and named-target shared findings; no implementation."
+    },
+    {
+      "id": 3,
+      "prompt": "Assess these independent boundary cases from supplied evidence only: (a) all history requested but nextCursor unreadable; (b) three chats need mining, configured judgment and prose role unavailable; (c) messages summarize a successful test but full activity details unavailable; (d) user asks to resume one named prior session; (e) user asks to turn recurring preferences into a skill and Automate me is not installed.",
+      "expected_output": "Keep all-history scope and report missing range; no model substitution or config edits; do not invent tool success; route one session to Session pickup; identify unavailable Automate me without fabricating installation or activating Juan-mode."
+    }
+  ]
+}

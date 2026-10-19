@@ -155,6 +155,12 @@ npx skills add juancamiloqhz/skills --skill jstack-create-formal-verification-sk
 
 For example, ask `$jstack-create-formal-verification-skill Check that two workers cannot hold our lease at once. Leave product code unchanged.` It selects an available verifier, states bounds and assumptions, demonstrates a failing broken variant and leaves a project-local skill for reruns. Missing tools leave a draft; installation remains manual. Generated skills also receive the existing automatic Claude directory link, with conflicts preserved. This entrypoint adds no model role or automatic Juan-mode trigger. Refresh the provider catalog after installation. See [evaluation and limits](evaluations/formal-verification/README.md).
 
+## Recall addition
+
+After this change merges, install manually with `npx skills add juancamiloqhz/skills --skill jstack-recall`. Keep `jstack-setup`, `jstack-why` and the external Unslop skill available for their called phases. Recall uses the existing `judgment and prose` role for history readers and Why's existing roles for shared records; it does not change `models.json`.
+
+Example: `$jstack-recall Catch me up on my lease ownership work from the last seven days.` It checks recent conversations against current PRs and related records, then returns a short brief and one next move. It does not start that work. Missing history, tools or dependencies remain visible gaps. A request to resume one specific conversation belongs to Session pickup; Recall covers context across conversations.
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:
