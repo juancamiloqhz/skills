@@ -13,6 +13,9 @@ import threading
 import unittest
 from unittest.mock import patch
 
+PACKAGE_SCRIPTS = Path(__file__).resolve().parents[2] / "skills/jstack/jstack-make-bot-ui/scripts"
+sys.path.insert(0, str(PACKAGE_SCRIPTS))
+
 import bot_ui_transport as bot
 
 

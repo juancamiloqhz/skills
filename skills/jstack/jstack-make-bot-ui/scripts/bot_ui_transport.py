@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Server-side transport foundation for the proposed T3 bot UI; no scheduler setup."""
+"""Server-side T3 bot UI transport; no scheduler setup."""
 
 import argparse
 from dataclasses import asdict, dataclass

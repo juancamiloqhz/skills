@@ -17,3 +17,7 @@ Preserve Help's section order, five-way need question, Now/Later setup offer, sk
 | Illustrations | Keep all six JPEGs byte-for-byte, including original command labels, with a note directing readers to the jstack text. | Preserve the original guide assets and honest alt text. These are distributed documentation, not evaluation logs. The six image bytes and license were compared with the pin. |
 
 The [evaluation](../evaluations/help/README.md) records source comparison, four read-only consumer cases and packaging checks. The manifest watches the guide and skill catalog because Help summarizes both. Existing mappings, decisions and reviewed checkpoint are unchanged. No operational skill behavior, saved models, installation or schedule was changed.
+
+## Make bot UI availability
+
+The pending upstream-only row and guide paragraph now link the shipped explicit `jstack-make-bot-ui` entrypoint. Its bundled action is fixed PR status; other buttons need implementation and verification. The guide explains where the optional page lives and that normal tasks do not require one. [Make bot UI adaptation](make-bot-ui.md) records its T3/runtime differences and evidence. No help section was removed or reordered.

@@ -13,6 +13,9 @@ import threading
 import unittest
 from unittest.mock import patch
 
+PACKAGE_SCRIPTS = Path(__file__).resolve().parents[2] / "skills/jstack/jstack-make-bot-ui/scripts"
+sys.path.insert(0, str(PACKAGE_SCRIPTS))
+
 from bot_ui_local import Journal, JournalError, make_server
 from bot_ui_transport import Receipt, TransportError, send, write_secret
 from test_bot_ui_transport import receiver
@@ -290,7 +293,7 @@ class LocalUITest(unittest.TestCase):
 
     def test_receiver_cli_drain_and_ack(self):
         self.journal.record("cli-1")
-        base = [sys.executable, "-B", str(Path(__file__).with_name("bot_ui_local.py")),
+        base = [sys.executable, "-B", str(PACKAGE_SCRIPTS / "bot_ui_local.py"),
                 "--journal", str(self.journal.path), "--repository", "example/fixture", "--pr", "123"]
         def run(*args):
             return subprocess.run(base + list(args), capture_output=True, text=True, check=True)

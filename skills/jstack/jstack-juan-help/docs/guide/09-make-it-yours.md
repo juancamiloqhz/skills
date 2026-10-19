@@ -91,9 +91,15 @@ The [Eval playbook](https://github.com/juancamiloqhz/skills/blob/main/skills/jst
 
 Read every output yourself before accepting the verdict. If you disagree with the judge, suspect the rubric before you suspect your judgment.
 
-## Build a bot UI: pending capability
+## Build a bot UI
 
-Pstack's [Make bot UI](https://github.com/cursor/plugins/blob/0148b78c56c72a1b8412055913c79f767095b217/pstack/skills/make-bot-ui/SKILL.md) targets Grok Bot webhooks and Tailscale. Jstack has not ported it. A concrete target runtime and integration design are still needed; do not advertise a jstack command or assume credentials, endpoints or deployment support.
+Use `/jstack-make-bot-ui` when a task would benefit from a page with a button you can click later. The page lives on the computer running its helper, with optional private Tailscale access. It is not a built-in T3 button and ordinary jstack tasks do not require it.
+
+```text
+/jstack-make-bot-ui Build a button to check the status of owner/repo PR #123 and report here. Make the page reachable on my existing tailnet.
+```
+
+The bundled action reports that fixed PR's state, commit and merge time. It does not review or change the PR. Setup creates a signed T3 webhook and needs private key provisioning; the key stays on the server. HTTP delivery is separate from completed agent work. Other buttons need an explicit action contract and their own implementation and checks. Host changes follow the requested scope, and the service records how to restart or retire only its own resources.
 
 **Pitfall:** don't edit a skill mid-task because it's misbehaving. Fix it in its own PR and keep the task moving. A skill edit that ships tangled into feature work is invisible to review and impossible to evaluate.
 
