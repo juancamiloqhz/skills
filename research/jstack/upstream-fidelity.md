@@ -42,7 +42,7 @@ If a review finds unnecessary drift, restore alignment within the authorized sco
 
 ## Current packaging decisions
 
-User decision, 2026-10-15: every shipped skill uses a portable `jstack-` name. `setup-jstack` becomes `jstack-setup`; every other former local name receives the prefix. Keep this naming translation in future adaptations and update all operational callers. Preserve original upstream paths and pins in the manifest. This is an identity change, not permission to redesign procedures or rename configuration role keys. See the [name mapping and migration guide](skill-names.md).
+User decision, 2026-10-15: every shipped skill uses a portable `jstack-` name. `setup-jstack` becomes `jstack-setup`; every other former local name receives the prefix. The user additionally chose `poteto-help` → `jstack-juan-help` on 2026-10-19, matching the `poteto-mode` → `jstack-juan-mode` identity. Keep this naming translation in future adaptations and update all operational callers. Preserve original upstream paths and pins in the manifest. This is an identity change, not permission to redesign procedures or rename configuration role keys. See the [name mapping and migration guide](skill-names.md).
 
 The 24 `jstack-principle-*` skills remain standalone. Juan-mode preserves poteto-mode's inline Principles groups and trigger summaries and discovers the leaf skills through the catalog. There is no separate principle index. Figure-it-out discovers its relevant standalone principles instead of duplicating their bodies. The 23 playbooks remain procedures within juan-mode, matching the upstream boundary.
 

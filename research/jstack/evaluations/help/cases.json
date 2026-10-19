@@ -1,0 +1,23 @@
+{
+  "authoringRoot": "skills/jstack",
+  "entrypoint": "skills/jstack/jstack-juan-help/SKILL.md",
+  "cases": [
+    {
+      "id": "pr-status-help",
+      "prompt": "$jstack-juan-help I want to check whether PR #123 is ready, but don't start reviewing it yet. Which prompt should I use?"
+    },
+    {
+      "id": "activation-resume",
+      "prompt": "$jstack-juan-help Will juan-mode stay on after I close and reopen this conversation?"
+    },
+    {
+      "id": "unported-overnight",
+      "prompt": "$jstack-juan-help Can I use make-bot-ui and /loop here to keep my bot working overnight?"
+    },
+    {
+      "id": "missing-config-later",
+      "facts": "New user; supplied read-only lookup confirms no effective model config. No credentials or project files are supplied. Do not inspect real configuration.",
+      "prompt": "$jstack-juan-help I'm new. How do I get started, and will a smaller budget make this cheap? I'd rather leave configuration for later."
+    }
+  ]
+}
