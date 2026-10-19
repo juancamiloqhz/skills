@@ -107,6 +107,14 @@ Both columns are intentional. The left column identifies old installations to re
 
 `jstack-tdd` ports pstack's focused bug-fix testing skill. It has no former jstack installation name to remove. Select `jstack-tdd` when manually installing this helper after merge; an unrelated installed `tdd` skill may have a different workflow and should be preserved.
 
+`jstack-bro` and `jstack-ketchup` add pstack's plain-language restatement and conversation catch-up skills. They have no former jstack names to remove. Ketchup reads Bro's voice, so install both after their PR merges:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-bro --skill jstack-ketchup
+```
+
+Invoke `$jstack-bro` after a dense answer, or `$jstack-ketchup` when returning to a long conversation. Both preserve upstream's explicit invocation intent. Ketchup checks current status and reports decisions; it does not resume work or merge PRs. No setup or model change is needed. See the [evaluation and provider limits](evaluations/recap-skills/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:

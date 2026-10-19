@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-bro to restate your last answer in plain language."
+policy:
+  allow_implicit_invocation: false

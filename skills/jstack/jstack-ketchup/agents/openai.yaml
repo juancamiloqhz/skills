@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-ketchup to catch me up on this conversation and every decision waiting on me."
+policy:
+  allow_implicit_invocation: false
