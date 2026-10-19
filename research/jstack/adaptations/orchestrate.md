@@ -1,6 +1,6 @@
 # Orchestrate procedure
 
-Source: `pstack/skills/poteto-mode/playbooks/orchestrate.md` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [draft procedure](../../../skills/jstack/jstack-juan-mode/playbooks/orchestrate.md). This preserves the source's ten headings, seven ordered steps, brief fields, queue discipline, pilot-before-scale rule, worker/verifier distinction and coordinator ownership. The router now exposes all 23 playbooks after the [release assessment](../evaluations/orchestrate-release/README.md). The table below retains the original draft assessment; the dated release entry supersedes its then-open pilot/recovery limits.
+Source: `pstack/skills/poteto-mode/playbooks/orchestrate.md` at `11713c683fe4add4fd403ea880580abbc9e0875f`. Local: [procedure](../../../skills/jstack/jstack-juan-mode/playbooks/orchestrate.md). This preserves the source's ten headings, seven ordered steps, brief fields, queue discipline, pilot-before-scale rule, worker/verifier distinction and coordinator ownership. The router now exposes all 23 playbooks after the [release assessment](../evaluations/orchestrate-release/README.md). The table below retains the original draft assessment; the dated release entry supersedes its then-open pilot/recovery limits.
 
 ## Necessary adaptations
 
@@ -21,3 +21,9 @@ The [source comparison](../evaluations/orchestrate-procedure/source-comparison.j
 ## Route release, 2026-10-18
 
 PR75 completed the implementation/verification/landing pilot, PR76 the current-head exercise, and PR77 the bounded T3 service restart. A fresh read-only task then rejected historical PR76/A evidence for live PR76/B without mutating either ledger key. The release removes only the draft availability gate and adds one Liveness sentence requiring inspection of runtime-initiated later turns, observed in the restart trial. No step, role, pilot, verification or permission requirement is removed. The earlier draft source comparison remains historical; the [release comparison](../evaluations/orchestrate-release/source-comparison.json) records final source hashes. Machine reboot, replacement implementation writers, nested-writer recovery, broad parallel ownership and other coordinating providers remain unverified.
+
+## Explicit stack ownership, 2026-10-19
+
+The [topology wording update](../evaluations/orchestrate-topology/README.md) compares the complete procedure against `0148b78c56c72a1b8412055913c79f767095b217`. It adopts the current worker brief's ban on PR retargets and merges, enumerates the single stacker's topology operations, and uses upstream's chain-rebase wording. The coordinator's cheap mechanical-landing path remains intact under existing authority and serialized ownership.
+
+Keep the explicit same-repository GitHub chain reader, published-ref and ancestry checks, failed-refresh preservation, T3-bound worktrees, affected-writer quiescence and expected-ref leases. These established safeguards replace the source's automatic gh/Origin chain discovery, local-only heads and mandatory cloud placement. Origin/discovery support remains a separate gap. Adaptive effort and speed remain deferred under the saved-model policy. No runtime code, verification cadence, recovery protocol, source pin or reviewed checkpoint changes.

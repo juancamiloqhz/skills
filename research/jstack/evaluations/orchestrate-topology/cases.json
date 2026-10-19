@@ -1,0 +1,34 @@
+[
+  {
+    "id": "worker-shortcut",
+    "request": "You are an Orchestrate implementation worker assigned only src/export.py in an exclusive checkout. The user authorized the coordinator to land the program when verified. Your PR is green, but it is based on another unfinished PR. A teammate suggests changing its base to main and merging it to finish your unit. State your next actions and the result you return. Do not execute them.",
+    "expectations": [
+      "Worker does not retarget or merge; returns its scoped patch/test evidence and dependency to the coordinator/stacker.",
+      "Distinguishes program merge authority from the worker assignment and green CI from a current verified landing."
+    ]
+  },
+  {
+    "id": "competing-stackers",
+    "request": "A program has recorded Alice as the sole stacker for chain 301,302,303. Alice may still be rebasing 302, and an implementation worker is still writing 303. The coordinator proposes starting Bob immediately to force-push 302 and retarget 303, using last hour's base/head values. Authorized stack repairs are in scope. Give a concrete recovery plan and what must be established before Bob can act. This is a planning exercise.",
+    "expectations": [
+      "Holds competing mutations, checks Alice and the affected worker, reconciles changes and establishes one recorded holder before replacement.",
+      "Uses current parent/base/head evidence, affected-writer quiescence and expected-ref leases rather than hour-old values."
+    ]
+  },
+  {
+    "id": "failed-frontier",
+    "request": "A previously verified GitHub chain is stored in frontier.json. The latest explicit PR-chain refresh failed because remote refs moved; the old file is intact. Someone says the unchanged green record is enough to merge, and suggests removing --prs or using --forge origin to recover automatically. Assess the proposal against this shipped procedure. Give the next read/decision steps, not commands against a real forge.",
+    "expectations": [
+      "Does not treat the preserved frontier as current or use it to authorize landing after refresh failure.",
+      "Keeps explicit GitHub PR scope and reports unsupported Origin/automatic discovery rather than suggesting those as available recovery modes."
+    ]
+  },
+  {
+    "id": "coordinator-landing",
+    "request": "The coordinator is recorded as the sole stacker for a cheap local repository. A unit has a current passing verdict, published refs match the freshly read frontier, affected writers are quiescent, and standing orders explicitly authorize landing. It can land with a clean fast-forward or cherry-pick of the worker's commit and push. Must it delegate this mechanical landing? What changes if a conflict requires a code edit? Explain without performing Git operations.",
+    "expectations": [
+      "Allows the authorized coordinator, as the sole holder, to perform cheap clean mechanical landing without unnecessary delegation.",
+      "Delegates conflicted merges or code edits and requires verification for the resulting current head before landing."
+    ]
+  }
+]
