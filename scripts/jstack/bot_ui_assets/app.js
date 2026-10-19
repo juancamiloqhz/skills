@@ -29,7 +29,7 @@ function show(state) {
 }
 
 async function refresh() {
-  const response = await fetch(`/requests/${requestId}`);
+  const response = await fetch(`./requests/${requestId}`);
   if (response.status === 404) {
     statusText.textContent = 'This request is not recorded. Click Check PR to submit it.';
     sendButton.disabled = false;
@@ -61,7 +61,7 @@ sendButton.addEventListener('click', async () => {
   sendButton.disabled = true;
   statusText.textContent = 'Submitting this request…';
   try {
-    const response = await fetch('/requests', {
+    const response = await fetch('./requests', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({requestId}),
     });
@@ -81,11 +81,12 @@ newButton.addEventListener('click', async () => {
 
 (async () => {
   try {
-    const response = await fetch('/scope');
+    const response = await fetch('./scope');
     if (!response.ok) throw new Error('scope unavailable');
     const scope = await response.json();
     document.getElementById('scope').textContent = `${scope.repository} · PR #${scope.pr}`;
     storageKey = `jstack-check:${scope.repository}:${scope.pr}`;
+    if (location.pathname !== '/') storageKey += `:${location.pathname}`;
     selectRequest();
     refreshButton.disabled = false;
     await refresh();

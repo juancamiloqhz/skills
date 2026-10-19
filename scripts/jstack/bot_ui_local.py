@@ -176,15 +176,15 @@ class Journal:
 
 
 def make_server(address, origins, journal, sender):
-    allowed_hosts = set()
+    allowed_origins = {}
     for origin in origins:
         parsed = urlsplit(origin)
-        if (parsed.scheme != "http" or not parsed.hostname or parsed.path or parsed.query
-                or parsed.fragment or parsed.username or parsed.password or origin != f"http://{parsed.netloc}"
+        if (parsed.scheme not in ("http", "https") or not parsed.hostname or parsed.path or parsed.query
+                or parsed.fragment or parsed.username or parsed.password or origin != f"{parsed.scheme}://{parsed.netloc}"
                 or any(ord(c) <= 32 or ord(c) == 127 for c in origin)):
-            raise ValueError("Origins must be exact HTTP origins, including the page port.")
-        allowed_hosts.add(parsed.netloc)
-    if not allowed_hosts:
+            raise ValueError("Origins must be exact HTTP or HTTPS origins, including non-default page ports.")
+        allowed_origins.setdefault(parsed.netloc, set()).add(origin)
+    if not allowed_origins:
         raise ValueError("At least one allowed page origin is required.")
 
     class Handler(BaseHTTPRequestHandler):
@@ -208,10 +208,11 @@ def make_server(address, origins, journal, sender):
 
         def boundary(self, post=False):
             hosts = self.headers.get_all("Host", [])
-            if len(hosts) != 1 or hosts[0] not in allowed_hosts:
+            if len(hosts) != 1 or hosts[0] not in allowed_origins:
                 self.respond(403, {"error": "Unrecognized page host."})
                 return False
-            if post and self.headers.get_all("Origin", []) != [f"http://{hosts[0]}"]:
+            origins = self.headers.get_all("Origin", [])
+            if post and (len(origins) != 1 or origins[0] not in allowed_origins[hosts[0]]):
                 self.respond(403, {"error": "Same-origin page request required."})
                 return False
             return True

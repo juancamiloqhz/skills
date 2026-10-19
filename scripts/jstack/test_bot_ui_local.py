@@ -24,8 +24,8 @@ RESULT = {"number": 123, "state": "MERGED", "mergedAt": "2026-10-19T21:03:41Z",
 
 
 @contextmanager
-def running(journal, sender):
-    server = make_server(("127.0.0.1", 0), ["http://fixture.local"], journal, sender)
+def running(journal, sender, origins=None):
+    server = make_server(("127.0.0.1", 0), origins or ["http://fixture.local"], journal, sender)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     try:
@@ -114,6 +114,23 @@ class LocalUITest(unittest.TestCase):
                 finish.set()
             self.assertEqual(first.result()[0], 200)
         self.assertEqual(len(calls), 1)
+
+    def test_proxy_origin_is_explicit_and_matches_the_request_host(self):
+        calls = []
+        def sender(payload):
+            calls.append(payload)
+            return Receipt(payload['requestId'], 'accepted', 202, 'delivery:fixture')
+        with running(self.journal, sender, ['https://fixture.local', 'https://other.local']) as address:
+            for fields in ({'Origin':'http://fixture.local'}, {'Origin':'https://other.local'},
+                           {'Origin':'https://fixture.local:443'},
+                           {'Origin':'http://fixture.local', 'X-Forwarded-Proto':'https'},
+                           {'Host':'127.0.0.1', 'Origin':'https://fixture.local', 'X-Forwarded-Host':'fixture.local'}):
+                self.assertEqual(request(address, headers=fields)[0], 403)
+            self.assertEqual(calls, [])
+            self.assertEqual(request(address, headers={'Origin':'https://fixture.local'})[0], 200)
+            self.assertEqual(len(calls), 1)
+        with running(self.journal, sender) as address:
+            self.assertEqual(request(address, headers={'Origin':'https://fixture.local'})[0], 403)
 
     def test_disconnect_recovery_survives_restart_and_is_claimed_once(self):
         secret = self.root / "key"
