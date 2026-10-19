@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-blast-radius to find what this change could break elsewhere and run the decisive proof."
+policy:
+  allow_implicit_invocation: false

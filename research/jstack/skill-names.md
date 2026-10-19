@@ -123,6 +123,14 @@ npx skills add juancamiloqhz/skills --skill jstack-in-your-own-words --skill jst
 
 Use `$jstack-in-your-own-words` to check the assistant's understanding before work. Use `$jstack-sharpen` with a task to improve the approach and then carry it out within your instructions, with an outside check. Both are standalone, explicitly invoked skills; Juan-mode does not automatically call them. No setup rerun or model change is needed. Refresh the provider catalog after installation. See the [examples and provider limits](evaluations/task-framing/README.md).
 
+`jstack-blast-radius` assesses effects beyond a diff and requires real-code proof for important safety claims. After merge, install it manually:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-blast-radius
+```
+
+Keep `jstack-why` available for code history, `jstack-how` for companion investigation, `jstack-arena` and its setup dependency for wide reviews, and the intended external `unslop` skill for writing. Existing valid model settings need no setup rerun. Invoke `$jstack-blast-radius` with a diff or commit range and the allowed proof scope. Missing proof stays unproven; assessment does not itself authorize a fix or merge. It has no former jstack name to remove and no automatic Juan-mode trigger. See [evaluation and limits](evaluations/blast-radius/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:
