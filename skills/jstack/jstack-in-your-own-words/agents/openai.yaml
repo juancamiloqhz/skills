@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-in-your-own-words to restate my goal and the problem I want to solve."
+policy:
+  allow_implicit_invocation: false

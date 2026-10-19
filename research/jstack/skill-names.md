@@ -115,6 +115,14 @@ npx skills add juancamiloqhz/skills --skill jstack-bro --skill jstack-ketchup
 
 Invoke `$jstack-bro` after a dense answer, or `$jstack-ketchup` when returning to a long conversation. Both preserve upstream's explicit invocation intent. Ketchup checks current status and reports decisions; it does not resume work or merge PRs. No setup or model change is needed. See the [evaluation and provider limits](evaluations/recap-skills/README.md).
 
+`jstack-in-your-own-words` and `jstack-sharpen` add goal restatement and task framing. They have no former jstack names to remove. After merge, install them manually in your usual scope:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-in-your-own-words --skill jstack-sharpen
+```
+
+Use `$jstack-in-your-own-words` to check the assistant's understanding before work. Use `$jstack-sharpen` with a task to improve the approach and then carry it out within your instructions, with an outside check. Both are standalone, explicitly invoked skills; Juan-mode does not automatically call them. No setup rerun or model change is needed. Refresh the provider catalog after installation. See the [examples and provider limits](evaluations/task-framing/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:
