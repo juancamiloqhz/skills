@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jstack PR check</title>
+<main>
+  <h1>Check my PR</h1>
+  <p id="scope">Loading the configured PR…</p>
+  <p>This button requests a read-only PR status check. The result belongs in the receiving conversation.</p>
+  <button id="send" disabled>Check PR</button>
+  <button id="refresh" disabled>Refresh status</button>
+  <button id="new" disabled>Start another check</button>
+  <p id="status" role="status" aria-live="polite">Connecting to the local server…</p>
+  <p id="request"></p>
+</main>
+<script src="/app.js" defer></script>
+</html>
