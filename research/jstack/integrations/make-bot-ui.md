@@ -1,6 +1,6 @@
 # Make bot UI: proposed T3 adaptation
 
-Status: design for review, 2026-10-19. No skill, server, webhook or live integration is implemented by this document. The recommended target is T3 Code's webhook scheduler, retaining pstack's page → local server → authenticated agent wake. Selecting that target is the next scope decision; it does not authorize provisioning a live service.
+Status: design merged in PR #107 on 2026-10-19. The user asked to continue with the recommended T3 target. The [transport foundation](../evaluations/bot-ui-transport/README.md) now implements and tests the local sender/key setup on its review branch. The full skill, UI server, webhook and live integration remain pending. This work retains pstack's page → local server → authenticated agent wake and does not provision a live service.
 
 Source: [`pstack/skills/make-bot-ui/SKILL.md`](https://github.com/cursor/plugins/blob/0148b78c56c72a1b8412055913c79f767095b217/pstack/skills/make-bot-ui/SKILL.md) at `0148b78c56c72a1b8412055913c79f767095b217`. The complete source body was compared with the live T3 tool declarations. This is the remaining unported top-level pstack skill; Unslop remains an external dependency. Benny is a separate automation pack.
 
@@ -22,7 +22,7 @@ On 2026-10-19, `orchestrator_capabilities` reported `scheduledTasks: true`. The 
 
 The `request_secret` declaration returns an opaque reference consumed once by a receiving tool. It does not return the secret value or promise a file that a local UI server can read. This is the main provisioning difference from pstack's Grok Bot connector credential file. The agent must not treat the reference as a signing key or extract the app's stored credential.
 
-T3 webhook prompts receive request values only through explicit placeholders such as `{{body.action}}` and `{{body}}`, framed as untrusted data. They do not receive Grok Bot's `[routine]` / `<webhook_event>` envelope. The tool declaration exposes signature header, encoding and prefix, but it does not fully specify the bytes to sign, HTTP acceptance codes, duplicate-delivery behavior or replay prevention. These must be checked against the actual receiving implementation and a live test before a sender contract is published.
+T3 webhook prompts receive request values only through explicit placeholders such as `{{body.action}}` and `{{body}}`, framed as untrusted data. They do not receive Grok Bot's `[routine]` / `<webhook_event>` envelope. The tool declaration exposes signature header, encoding and prefix, but it does not fully specify the bytes to sign, HTTP acceptance codes, duplicate-delivery behavior or replay prevention. The subsequent [runtime inspection and verifier probe](../evaluations/bot-ui-transport/README.md#runtime-evidence) establish the exact signing bytes and local response contract for one installed version. Live endpoint behavior remains unverified.
 
 No secret request, schedule creation, webhook POST, tunnel inspection, installation or network exposure was performed for this design. The existing weekly upstream schedule was not read or modified.
 
@@ -68,4 +68,4 @@ Unit tests can cover the sender and payload handling after the receiving protoco
 
 Recommend the T3 webhook target because jstack already targets T3 and its scheduler can bind delivery to the current conversation. A Grok-specific port would retain the original backend but require a separate supported Grok host; silently changing the original instructions to unsigned URL-only delivery would discard its authenticated-server behavior.
 
-Before implementation, select the T3 target and verify the sender/provisioning contract. Before a live pilot, make the proposed task prompt, server scope, exposure and cleanup concrete for the user. Merging this design records the plan; it does not create a webhook or claim a finished skill. If the required secret/protocol path cannot be established, retain Make bot UI as an explicit gap and continue provider verification separately.
+The approved design selects the T3 target. Continue from the tested local sender, and complete private scheduler provisioning and live delivery verification before claiming support. Before a live pilot, make the proposed task prompt, server scope, exposure and cleanup concrete for the user. Merging this design records the plan; it does not create a webhook or claim a finished skill. If the required secret/protocol path cannot be established, retain Make bot UI as an explicit gap and continue provider verification separately.
