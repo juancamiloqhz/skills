@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-correct to find repeated mistakes and prevent them at the highest effective level."
+policy:
+  allow_implicit_invocation: false

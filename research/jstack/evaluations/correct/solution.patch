@@ -1,0 +1,81 @@
+diff --git a/AGENTS.md b/AGENTS.md
+index 212450c..f21267e 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,4 +1,5 @@
+ # Export project
+
+-Keep CLI format choices and exporter handlers synchronized whenever adding a format.
+-Preserve the output of existing formats.
++| Rule | Enforcement |
++| --- | --- |
++| Preserve the output of existing formats. | `tests/test_cli.py` checks JSON content and exact CSV and TSV output through the CLI. CI runs `python3 -B -m unittest discover -s tests`. |
+diff --git a/cli.py b/cli.py
+index defeadb..97274c5 100644
+--- a/cli.py
++++ b/cli.py
+@@ -4,7 +4,7 @@ from exporter import HANDLERS
+
+ def main():
+     parser = argparse.ArgumentParser()
+-    parser.add_argument("--format", choices=["json", "csv", "tsv"], required=True)
++    parser.add_argument("--format", choices=HANDLERS, required=True)
+     args = parser.parse_args()
+     print(HANDLERS[args.format]([{"id": 7, "name": "Ada"}]))
+
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index c6d54a5..fb5815f 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -9,3 +9,14 @@ class CliTest(unittest.TestCase):
+         result = subprocess.run([sys.executable, "-B", "cli.py", "--format", "json"], capture_output=True, text=True)
+         self.assertEqual(result.returncode, 0, result.stderr)
+         self.assertEqual(json.loads(result.stdout), [{"id": 7, "name": "Ada"}])
++
++    def test_delimited_output(self):
++        expected = {"csv": "id,name\n7,Ada\n", "tsv": "id\tname\n7\tAda\n"}
++        for name, output in expected.items():
++            with self.subTest(format=name):
++                result = subprocess.run(
++                    [sys.executable, "-B", "cli.py", "--format", name],
++                    capture_output=True, text=True,
++                )
++                self.assertEqual(result.returncode, 0, result.stderr)
++                self.assertEqual(result.stdout, output)
+diff --git a/tests/test_format_registry.py b/tests/test_format_registry.py
+new file mode 100644
+index 0000000..7330d6c
+--- /dev/null
++++ b/tests/test_format_registry.py
+@@ -0,0 +1,31 @@
++import contextlib
++import io
++import subprocess
++import sys
++import unittest
++from unittest.mock import patch
++
++import cli
++from exporter import HANDLERS
++
++
++class FormatRegistryTest(unittest.TestCase):
++    def test_every_registered_format_is_accepted(self):
++        for name in HANDLERS:
++            with self.subTest(format=name):
++                result = subprocess.run(
++                    [sys.executable, "-B", "cli.py", "--format", name],
++                    capture_output=True, text=True,
++                )
++                self.assertEqual(result.returncode, 0, result.stderr)
++
++    def test_new_handler_is_available_without_cli_changes(self):
++        def render(rows):
++            return "sample: " + rows[0]["name"]
++
++        output = io.StringIO()
++        with patch.dict(HANDLERS, {"sample": render}), patch.object(
++            sys, "argv", ["cli.py", "--format", "sample"]
++        ), contextlib.redirect_stdout(output):
++            cli.main()
++        self.assertEqual(output.getvalue(), "sample: Ada\n")
