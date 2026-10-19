@@ -5,8 +5,6 @@ description: "Fan out N parallel workers, drain them, and return one report. Use
 
 # Swarm
 
-Fan out N parallel workers. They may cover separate slices, race the same brief, or mix both. The parent waits, aggregates, and returns one report.
-
 Direct invocation is task-scoped and leaves jstack-juan-mode activation unchanged. The user's task or calling playbook defines permitted writes and delivery; invoking Swarm alone does not authorize implementation, installation, publication or merge. Read [execution](references/execution.md) before dispatch.
 
 ## Start
@@ -47,8 +45,6 @@ Inspect decisive evidence and artifacts rather than relying only on the report l
 A required coverage dropout, a blocked slice whose done predicate remains unmet, or an exhausted evidence retry makes coverage incomplete; report useful findings without claiming completion. Complete coverage may still report ISSUES. Rank all cannot claim a complete ranking if required arms are missing. Best-of may select among survivors only when declared. First pass may select early, then cancel remaining owned work and reconcile outputs, or drain it when cancellation is unavailable. No owned racing child may remain active when returning a completed result. If no valid pass exists, report issues or incomplete work rather than inventing a winner.
 
 When implementation was authorized, the coordinator reviews and integrates selected changes, then runs combined acceptance checks. Individual passes do not establish integration correctness. Preserve candidate artifacts and record what was integrated. Conflicting ownership or failed integration requires a scoped repair or an explicit gap, never overwriting unrelated work.
-
-Keep a compact result table, one-line evidenced issues, and explicit gaps or dropouts.
 
 ## Phase D: Report
 
