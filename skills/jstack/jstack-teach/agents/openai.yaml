@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-teach to explain this work plainly, starting with the smallest complete answer."
+policy:
+  allow_implicit_invocation: false

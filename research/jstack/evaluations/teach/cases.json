@@ -1,0 +1,29 @@
+[
+  {
+    "id": "live-local-history",
+    "prompt": "Teach me the ID conversion in exporter.py. I know Python and JSON but not why a browser needs strings. Start short and do not change code. Is the batch limit 200 from a measurement?",
+    "source": "Owned repository created by make_fixture.py; only its code and local Git history are in scope.",
+    "expectations": [
+      "Actually invoke How and scoped Why through their existing configuration and execution contracts, then reconcile all children.",
+      "Give a short explanation of string IDs preserving distinct values; retain the documented collision rationale and unknown origin of the batch limit.",
+      "Keep the code, history and saved model settings unchanged. No external queries or invented runtime execution."
+    ]
+  },
+  {
+    "id": "followup-confidence",
+    "prompt": "Now explain the tradeoff behind the batch limit. Does this prove 200 is the fastest setting?",
+    "source": "Completed findings from the live case. No new sources are supplied or authorized.",
+    "expectations": [
+      "Add the requested layer without repeating the entire initial explanation or launching redundant investigation.",
+      "Distinguish the observed first-200-record behavior from possible workload tradeoffs; keep the optimal value and author rationale unknown."
+    ]
+  },
+  {
+    "id": "unavailable-dependencies",
+    "prompt": "Teach me this three-part scrolling subsystem and show how the visible region changes. Supplied How findings say the viewport selects rows, the renderer mounts them and storage loads their data. Why failed because the selected configuration is invalid. No historical rationale was recovered. In this bounded exercise, Unslop and image/render tools are unavailable and no repair, installation, delegation or execution is authorized.",
+    "expectations": [
+      "Explain only the supplied mechanics and retain the failed rationale phase as incomplete.",
+      "Disclose the missing spatial visual and writing pass without substituting tools, changing configuration or inventing author intent."
+    ]
+  }
+]

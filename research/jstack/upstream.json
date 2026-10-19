@@ -578,6 +578,19 @@
         "pstack/skills/setup-pstack"
       ],
       "differences": "research/jstack/adaptations/blast-radius.md"
+    },
+    {
+      "name": "jstack-teach",
+      "localPath": "skills/jstack/jstack-teach",
+      "upstreamPath": "pstack/skills/teach",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/skills/how",
+        "pstack/skills/why",
+        "pstack/skills/setup-pstack",
+        "pstack/skills/unslop"
+      ],
+      "differences": "research/jstack/adaptations/teach.md"
     }
   ],
   "decisions": [
