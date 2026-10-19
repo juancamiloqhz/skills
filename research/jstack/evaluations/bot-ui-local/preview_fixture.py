@@ -13,6 +13,7 @@ from test_bot_ui_transport import receiver
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--directory", type=Path, required=True, help="Existing private scratch directory; retained across restarts.")
 parser.add_argument("--port", type=int, default=8879)
+parser.add_argument("--receipt", choices=("direct", "recorded", "queued"), default="direct")
 args = parser.parse_args()
 journal = Journal(args.directory / "requests.sqlite", "example/fixture", 123)
 key = args.directory / "key"
@@ -22,7 +23,9 @@ if not key.exists():
 
 def deliver(payload):
     mode = args.directory / "drop"
-    with receiver(drop=mode.exists()) as (url, received):
+    outcome = "accepted" if args.receipt == "direct" else None
+    response = b'{"queued":true}' if args.receipt == "queued" else None
+    with receiver(drop=mode.exists(), outcome=outcome, response=response) as (url, received):
         receipt = send(url, key, payload, allow_loopback_http=True)
     count_file = args.directory / "received-count"
     previous = int(count_file.read_text()) if count_file.exists() else 0
