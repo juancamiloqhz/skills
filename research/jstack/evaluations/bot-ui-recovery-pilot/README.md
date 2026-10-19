@@ -1,6 +1,6 @@
 # Bot UI recovery pilot
 
-Prepared 2026-10-19 after PR #112 merged. The user asked to merge and continue with live verification. This plan uses the [durable-result helper](../bot-ui-durable-results/README.md) and the corrected public relay receipts. It does not reuse or alter the retired pilot's journal. No success is claimed by this preparation record.
+Prepared 2026-10-19 after PR #112 merged. The user asked to merge and continue with live verification. This plan uses the [durable-result helper](../bot-ui-durable-results/README.md) and the corrected public relay receipts. It does not reuse or alter the retired pilot's journal. The [execution report](results.md) records the later bounded success and cleanup; this file preserves the setup plan.
 
 ## Fixed scope
 
