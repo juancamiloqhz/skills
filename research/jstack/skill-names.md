@@ -139,6 +139,14 @@ npx skills add juancamiloqhz/skills --skill jstack-teach
 
 Keep `jstack-how`, `jstack-why`, their `jstack-setup` dependency and the intended external `unslop` available. Invoke `$jstack-teach Explain how this export works and why it uses string IDs. Start short.` Ask follow-up questions for more detail. How and Why use your existing configured roles; valid settings need no setup rerun. Teach is standalone and does not automatically activate Juan-mode. It has no former jstack name to remove. Refresh the provider catalog after installation. See [evaluation and limits](evaluations/teach/README.md).
 
+`jstack-correct` prevents mistakes that recur in a repository. After merge, install it manually:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-correct
+```
+
+For example, invoke `$jstack-correct We have twice added an export format but forgotten to expose it in the CLI. Prevent this mistake and test the fix.` It looks for structural enforcement before adding instructions, then checks past failures. State assessment-only scope when you want proposals without edits. This standalone skill adds no model role, setup rerun, automatic Juan-mode trigger or persistent monitor. There is no former jstack name to remove. Refresh the provider catalog after installation. See [evaluation and limits](evaluations/correct/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:

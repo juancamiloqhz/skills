@@ -591,6 +591,14 @@
         "pstack/skills/unslop"
       ],
       "differences": "research/jstack/adaptations/teach.md"
+    },
+    {
+      "name": "jstack-correct",
+      "localPath": "skills/jstack/jstack-correct",
+      "upstreamPath": "pstack/skills/correct",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [],
+      "differences": "research/jstack/adaptations/correct.md"
     }
   ],
   "decisions": [

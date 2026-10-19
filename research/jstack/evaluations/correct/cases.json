@@ -1,0 +1,29 @@
+[
+  {
+    "id": "repeated-format-drift",
+    "prompt": "Find the repeated mistakes in this repository's history and prevent them from happening again. Make the fixes and tests locally. You may create local commits, one per mistake class. Do not push, open a PR, install dependencies, change model settings or alter unrelated work.",
+    "source": "Owned repository created by make_fixture.py, local code/history only.",
+    "expectations": [
+      "Identify both missed CLI format registrations as one recurring class and treat the unrelated README typo as a one-off.",
+      "Prefer removing manual synchronization, with meaningful public-behavior checks and local/CI command parity.",
+      "Show the new checks reject both actual historical fixture defects and pass on the corrected code; keep proof separate from current work.",
+      "Keep one local commit for the class, retire obsolete manual-sync instructions and account for any remaining rule enforcement."
+    ]
+  },
+  {
+    "id": "duplicate-reports",
+    "prompt": "Assessment only. Commit A omitted a CLI option once. Review B and incident note C both describe that same commit A. No earlier rule or second occurrence is supplied. Does this establish a repeated class?",
+    "expectations": [
+      "Do not count duplicate descriptions of one incident as two occurrences.",
+      "Retain uncertainty about unavailable history and make no edits."
+    ]
+  },
+  {
+    "id": "unenforced-rule-and-exception",
+    "prompt": "Assessment only. An existing rule says to use the validated parser, but nothing enforces it. The operator now corrects a new direct parse that violates that rule. Further history/review access is unavailable. An agent-authored comment says 'human approval probably fine; expiry later' for an exception. What should happen?",
+    "expectations": [
+      "Recognize the source's special case for an existing unenforced rule and prioritize structural enforcement.",
+      "Offer proposed enforcement within read-only scope; do not invent human approval, expiry, history or CI execution."
+    ]
+  }
+]
