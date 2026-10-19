@@ -16,6 +16,7 @@ The [current fidelity status](fidelity-status.md) preserves earlier correction a
 
 ## Read by purpose
 
+- [Complete catalog discovery](evaluations/catalog-discovery/README.md): all current identities pass a real Skills CLI listing; the Orbit installation is stale and provider execution checks remain open.
 - [Make bot UI design](integrations/make-bot-ui.md): proposed T3 integration, source differences and required live evidence.
 - [User guide](../../skills/jstack/jstack-juan-help/docs/guide/README.md): setup, workflow examples and choosing a skill.
 - [Decisions](decisions.md): agreed names, delivery approach, and existing configuration boundaries.
