@@ -17,3 +17,7 @@ The source's six steps, ordering, disk snapshots, advisory classification, usage
 Size, commit age, merge state, dirty categories, remote branch state, PR state, chat evidence and descending size order remain available. Numeric KiB plus JSON support exact evidence handling; age and size never prove abandonment. The source's `safe` label becomes `candidate` to preserve its stated advice-not-permission rule. The shell does not replace live T3 or forge verification with a new scheduler or implicit provider invocation.
 
 See the [evaluation](../evaluations/worktree-cleanup/README.md) and [source comparison](../evaluations/worktree-cleanup/source-comparison.json). Authoring and testing this port did not activate juan-mode or its pre-review helpers. Evaluation agents came from skill-creator and inherited the parent model; no jstack role was selected for them.
+
+## Audited source delta, 2026-10-19
+
+The source at `0148b78c56c72a1b8412055913c79f767095b217` removes the opening summary, adds task-selected effort and changes the auditor interface to `-b`, origin-default selection and Origin normalization. Keep the local six-step procedure, explicit `--base-ref`, recorded base commit, configured effort and content/ownership checks. The opening safety statement describes those retained loss checks. Default-base ergonomics and Origin remain visible unsupported differences, not adopted features. The [coverage checkpoint](../coverage-audits/2026-10-18/checkpoint-2026-10-19.md) records this decision; the historical fixture results above are not new executions.

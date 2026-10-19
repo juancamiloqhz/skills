@@ -2,6 +2,8 @@
 
 Jstack contains the 23 Juan-mode procedures and 24 standalone principles, but it is not a complete or current port of pstack. This audit accounts for the whole source package, including components outside the main skill list. Recommendations are a proposed backlog, not implementation approval or evidence of runtime parity.
 
+Later implementation status is recorded in the [checkpoint after PR #97](checkpoint-2026-10-19.md). This original report retains its audit-time counts and findings.
+
 ## Scope and reproducible census
 
 Audit date: 2026-10-18. Upstream is frozen at [`0148b78c56c72a1b8412055913c79f767095b217`](https://github.com/cursor/plugins/tree/0148b78c56c72a1b8412055913c79f767095b217/pstack), version 0.15.27. Local source is merged PR #79, [`1f5a8d7184d24a0d95be9626ae63642c4163e09d`](https://github.com/juancamiloqhz/skills/tree/1f5a8d7184d24a0d95be9626ae63642c4163e09d). Unless stated otherwise, upstream paths below are relative to that frozen repository, not moving `main`.

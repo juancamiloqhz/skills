@@ -25,3 +25,7 @@ The upstream package has only `SKILL.md`; the separate upstream agent has only i
 The new manifest mapping watches the upstream agent, mode and conditional helper/principle source paths. The mode also watches the skill and agent. Existing mappings, pins, decisions and reviewed checkpoint remain unchanged except those added mode context paths. Provenance stays in research. No installed package, model file or schedule is edited.
 
 [Source comparison and evaluations](../evaluations/no-comments/README.md) record the actual test scope and limits. The no-comments gate does not implement the pending review/PR playbooks or prove every provider can run its conditional helpers.
+
+## Audited source delta, 2026-10-19
+
+Against `0148b78c56c72a1b8412055913c79f767095b217`, the source entrypoint only changes the Cursor registry name from `Comment Sicko` to `comment-sicko` and adds task-selected effort/speed. Keep the bundled full-prompt dispatch and selected configuration above. The local display name is not a registry identifier; its prompt already lives at `agents/comment-sicko.md`. No operational edit or new runtime claim follows. The [coverage checkpoint](../coverage-audits/2026-10-18/checkpoint-2026-10-19.md) records this keep disposition alongside all other audited paths.
