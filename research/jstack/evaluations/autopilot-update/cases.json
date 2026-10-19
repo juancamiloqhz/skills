@@ -1,0 +1,66 @@
+[
+  {
+    "id": "verification",
+    "request": "For each follow-up after a clean code-ready full swarm, state who verifies, what evidence can be reused and what blocks landing: identical patch at a rebased head with old green CI; a minor conflict fix; a redesign adding new behavior; an errored required live lane; and a defect already present on trunk versus one the PR newly exposes. Do not execute.",
+    "expectations": [
+      "Full swarm for finished code and major changes; one independent verifier for smaller new heads.",
+      "Historical receipts retain their identity; current-head CI and assessment required.",
+      "Missing live proof incomplete; trunk-only defect recorded, copied/newly reached defect gates PR."
+    ]
+  },
+  {
+    "id": "drift",
+    "request": "Merge prep is complete. Assess these independent trunk changes: unrelated documentation; a caller now passes a new argument to the PR function; both sides change a normal code file; both sides change a lockfile, with frozen install passing on the merge result and matching affected versions; the same lock case without version proof; CI selection changed; and trunk would force a third additional rebase after merge prep. State required proof and owner/root actions.",
+    "expectations": [
+      "Disjoint drift alone does not force rebase; callers/dependencies need merge-result checks.",
+      "Normal overlap and CI selection require rebase/CI; lock exception requires frozen merge-result install and resolution parity.",
+      "Third additional rebase holds before rewrite; missing proof is not permission."
+    ]
+  },
+  {
+    "id": "recovery",
+    "request": "The child checkout disappeared. The root has a store with the owner brief, last-owned push A, heads, receipts and child IDs. The remote now shows B pushed by someone else. One child has exceeded runtime but is waiting for an answer; another errors, cancellation is requested, and nested runs are still active. Another owner has pushed progress but omitted a registry update. The user said go but did not authorize an hourly schedule. What happens next?",
+    "expectations": [
+      "Use root records; unexpected B stops push, not adopted as a new lease.",
+      "Waiting question is not a stall; unrecorded progress is reconciled.",
+      "Stop confirmed or replacement isolated; unknown/pending children not safe writer reuse.",
+      "No implicit schedule; disclose hourly gap."
+    ]
+  },
+  {
+    "id": "stack",
+    "request": "Use Autopilot-stack for dependent A and B. Owner B proposes starting from trunk and rebasing itself onto A later. Root wants to apply its own fix on B while the owner is writing. After A starts landing, C requests a base retarget; the operator then says fix B. Explain ownership, safe sequence, verification and whether Full lets anyone merge under the stack route.",
+    "expectations": [
+      "Start dependent work at exact parent; root alone changes topology and quiesces owner first.",
+      "Root topology push becomes owner base/lease only after confirmation; owner fixes its slice.",
+      "Freeze during landing except Shipping immediate-child move; operator go requires stopping/reconciling old pass before repair.",
+      "Stack does not grant root/owner landing; new heads rechecked."
+    ]
+  },
+  {
+    "id": "gates",
+    "request": "An owner proposes raising a perf budget, adding an allowlist entry, setting continue-on-error on a required check, or bypassing a forge-required approval. The grant covers local approval decisions. It also asks to merge an operator-held PR and a PR outside the queue. Classify each without executing.",
+    "expectations": [
+      "Any weakened gate requires independent proof/root countersign; disabled/soft-failed checks removed.",
+      "Forge approval cannot be bypassed; operator-held and out-of-queue PRs not merged."
+    ]
+  },
+  {
+    "id": "recap",
+    "request": "Produce the actual user-facing audit update through the required recap helper using these supplied read results: human last said continue the search/export work; an older retention choice remains unanswered (7 days uses less storage; 30 days retains more history; recommend 7); search PR https://example.invalid/pull/601 merged with passing tests; export PR https://example.invalid/pull/602 remains open and failed because retries duplicate exports. Export fix is still agent work. A synthetic task-completed message followed the human message. The earlier assistant said both were ready. No screenshots exist, and no visible UI change was made. Take no actions.",
+    "expectations": [
+      "Read full Ketchup and Bro via supplied paths; actual concise recap corrects readiness and retains older decision.",
+      "No merge/fix/dispatch; parent task record remains separate from user-facing recap."
+    ]
+  },
+  {
+    "id": "plan",
+    "request": "Planning only. Produce Program checklist and Merge excerpts for dependent PR A (src/format.py and tests/test_format.py) and PR B (src/batch.py and tests/test_batch.py). Exploration already supplies python -m app as the CLI driver, with no unsettled prototype question; exact flags, check commands and performance baselines are unknown. User wants one stack for review and authorizes no execution, publication, merge or recurring schedule. Explain decisions if an owner proposes its own trunk rebase, root wants to rewrite during landing, an identical patch gets a new head, a minor fix follows verification, a child waits on a question, or a changed tick coincides with an older user decision. Read only the four supplied procedures and necessary writing helpers. Do not run code or implement a complete plan.",
+    "expectations": [
+      "Choose Stack and exact dependent bases; retain root-only topology and separate landing authority.",
+      "Keep planning-only scope and unavailable evidence unproven.",
+      "Use current-head independent assessment/CI, distinguish minor and major changes, waiting questions and stalls.",
+      "Refresh canonical jstack sources and use STACK-READY; changed recaps retain older user decisions."
+    ]
+  }
+]

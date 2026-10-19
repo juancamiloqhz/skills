@@ -60,7 +60,9 @@
         "pstack/skills/principle-prove-it-works",
         "pstack/skills/principle-minimize-reader-load",
         "pstack/skills/show-me-your-work",
-        "pstack/skills/principle-build-the-lever"
+        "pstack/skills/principle-build-the-lever",
+        "pstack/skills/ketchup",
+        "pstack/skills/bro"
       ],
       "differences": "research/jstack/adaptations/juan-mode.md"
     },
@@ -584,7 +586,8 @@
       "paths": [
         "pstack/skills/ketchup"
       ],
-      "reason": "Originally deferred as optional. The user approved Bro and Ketchup on 2026-10-19; port both from 0148b78c56c72a1b8412055913c79f767095b217 with T3 read-only recap and portable dependency discovery. Implementation remains pending merge; the original review range is retained."
+      "reason": "User-approved Bro and Ketchup adaptation merged in PR #96. Both packages use source 0148b78c56c72a1b8412055913c79f767095b217 with T3 read-only recap and portable dependency discovery; the original review range is retained.",
+      "appliedCommit": "14dac6ed370190910651ff8f25c644de85888539"
     },
     {
       "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
