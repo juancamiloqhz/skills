@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-recall to reconstruct my recent working context and identify the next move."
+policy:
+  allow_implicit_invocation: false

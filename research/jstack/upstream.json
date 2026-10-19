@@ -607,6 +607,20 @@
       "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
       "contextPaths": [],
       "differences": "research/jstack/adaptations/create-formal-verification-skill.md"
+    },
+    {
+      "name": "jstack-recall",
+      "localPath": "skills/jstack/jstack-recall",
+      "upstreamPath": "pstack/skills/recall",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/skills/why",
+        "pstack/skills/poteto-mode",
+        "pstack/skills/setup-pstack",
+        "pstack/skills/unslop",
+        "pstack/skills/automate-me"
+      ],
+      "differences": "research/jstack/adaptations/recall.md"
     }
   ],
   "decisions": [
