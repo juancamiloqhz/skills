@@ -621,6 +621,18 @@
         "pstack/skills/automate-me"
       ],
       "differences": "research/jstack/adaptations/recall.md"
+    },
+    {
+      "name": "jstack-automate-me",
+      "localPath": "skills/jstack/jstack-automate-me",
+      "upstreamPath": "pstack/skills/automate-me",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/skills/poteto-mode",
+        "pstack/skills/setup-pstack",
+        "pstack/skills/unslop"
+      ],
+      "differences": "research/jstack/adaptations/automate-me.md"
     }
   ],
   "decisions": [

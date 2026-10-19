@@ -161,6 +161,12 @@ After this change merges, install manually with `npx skills add juancamiloqhz/sk
 
 Example: `$jstack-recall Catch me up on my lease ownership work from the last seven days.` It checks recent conversations against current PRs and related records, then returns a short brief and one next move. It does not start that work. Missing history, tools or dependencies remain visible gaps. A request to resume one specific conversation belongs to Session pickup; Recall covers context across conversations.
 
+## Automate me addition
+
+After merge, install manually with `npx skills add juancamiloqhz/skills --skill jstack-automate-me`. Keep the host's skill-authoring helper, external Unslop and the Juan-mode shape reference available. Mining uses `jstack-setup` and the existing `judgment and prose` role; valid model settings need no rerun or change.
+
+Example: `$jstack-automate-me Help me create a personal mode with short explanations and practical examples. Draft only.` It finds an existing personal mode if present, gathers scoped evidence and your answers, then shows a draft for feedback. Existing categories and uncontradicted rules stay in place. Creating the file does not activate it or change `jstack-juan-mode`. Generated personal modes keep their chosen `<handle>-mode` names. See [evaluation and limits](evaluations/automate-me/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:

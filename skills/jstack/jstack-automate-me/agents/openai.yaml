@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-automate-me to draft or update a personal mode from my working preferences."
+policy:
+  allow_implicit_invocation: false
