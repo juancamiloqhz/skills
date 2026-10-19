@@ -1,6 +1,6 @@
 # Bot UI private-network readiness
 
-Date: 2026-10-19. PR #113 verified the live loopback workflow and retired its service. This unit prepares the page for an existing HTTPS reverse proxy and records the separate device-access test. No live network configuration was changed; peer access remains unverified.
+Date: 2026-10-19. PR #113 verified the live loopback workflow and retired its service. This unit adds optional HTTPS proxy-path support. The operator installed the approved temporary route, and host/browser checks plus the user-reported laptop click passed. Targeted route removal and final cleanup remain pending.
 
 ## Host finding and proposed adaptation
 
@@ -67,3 +67,9 @@ sudo tailscale serve --https=443 --set-path=/jstack-bot-ui/ off
 ```
 
 Then verify the original configuration, stop the owned fixture and remove its scratch. Cleanup remains pending while the peer check is pending.
+
+## Laptop check passed
+
+The user confirmed opening the private URL from their Tailscale-connected laptop and seeing `Delivery accepted` after one click. The fixture journal contains exactly two accepted dummy requests: the agent's local browser check at 22:55:20 UTC and the second request at 22:55:59 UTC, consistent with the reported laptop click. The dummy receiver count is two. No GitHub request or scheduled agent work ran; the pending-completion wording is expected for this fixture.
+
+Serve still matches exactly the original handlers plus the owned test path. Asked the operator to remove only that path with the targeted sudo command above. Route removal, helper shutdown and scratch cleanup are pending that response.
