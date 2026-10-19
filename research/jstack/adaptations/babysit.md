@@ -27,3 +27,7 @@ The [evaluation](../evaluations/babysit/README.md) and [complete source comparis
 ## Shipping caller update
 
 Shipping is now available. The introduction links its bundled procedure and retains the missing-procedure qualification for both Autopilot routes. No Babysit procedure step or watcher code changes in this update. See the [Shipping assessment](shipping.md).
+
+## Shipping prose update, 2026-10-19
+
+Compared the complete playbook with `pstack/skills/poteto-mode/playbooks/babysit.md` at `0148b78c56c72a1b8412055913c79f767095b217`. Adopt exactly two source deletions: the duplicated step 6 merge/arming warning and the final Reply paragraph. Step 9 still requires explicit merge authority and routes landing to Shipping. Preserve existing T3 waiting/linking, manual prerequisites, current-evidence and owner-approval qualifications; watcher code is unchanged. Both Autopilot procedures are now available, as recorded by their later implementation assessments. The [coordinated evaluation](../evaluations/shipping-sequence/README.md) checks the readiness-versus-landing boundary without live monitoring.

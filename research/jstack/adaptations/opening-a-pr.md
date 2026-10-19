@@ -19,3 +19,7 @@ Preserve the source heading and ten labeled paragraphs, their order, small order
 | Availability | Thirteen procedures available, ten pending. | Mode, setup and current research records reflect the files. No model role, resolver, source pin or checkpoint change. |
 
 [Evaluation and limitations](../evaluations/opening-a-pr/README.md) distinguish local preparation, helper review and actual forge publication. The [source-comparison record](../evaluations/opening-a-pr/source-comparison.json) covers the full pinned procedure, affected entrypoints and all seven changed callers. Their earlier unchanged differences remain accounted for in their linked adaptation records. The manifest's 45 mappings and existing mode subtree already cover this procedure and its shipped helper dependencies; no manifest changes are needed.
+
+## Immediate-child Shipping update, 2026-10-19
+
+Compared the complete file with `pstack/skills/poteto-mode/playbooks/opening-a-pr.md` at `0148b78c56c72a1b8412055913c79f767095b217`. Adopt its added Size and stacks sentence directing the child to Shipping step 4 after its parent merges; use a working relative Markdown link. This is the only local operational change. All other current differences retain the authority, T3 lifecycle, configured helper and preservation reasons above. Both Autopilot procedures are now available, as recorded by their later implementation assessments. See the [coordinated evaluation](../evaluations/shipping-sequence/README.md).
