@@ -1,6 +1,6 @@
 # Benny: proposed T3 integration
 
-Status: design only, 2026-10-19, after Make bot UI merged in PR #115. Benny remains an unported automation pack. This document prepares a concrete implementation sequence; it creates no skill, Slack app, tracker issue, task, child agent, service or installation. Existing model choices and the reviewed upstream checkpoint are unchanged.
+Status: inactive source pack implemented, 2026-10-19. The [pack and local setup evaluation](../evaluations/benny-dormant-pack/README.md) cover the first implementation unit's copy/discovery checks; fresh-provider dependency proof remains pending. No Slack app, tracker issue, task, child agent, service or installation was created. Existing model choices and the reviewed upstream checkpoint are unchanged.
 
 Source: all 12 files in [`pstack/automations/benny`](https://github.com/cursor/plugins/tree/0148b78c56c72a1b8412055913c79f767095b217/pstack/automations/benny) at `0148b78c56c72a1b8412055913c79f767095b217`, read in full. Preserve its dormant pack boundary and two-stage lifecycle. The weekly upstream schedule and Make bot UI do not implement Benny.
 
@@ -26,7 +26,7 @@ Paths below are relative to the pinned source directory. These are direct automa
 | `skills/reproduce-and-fix-issues/references/verify-existing-fix.md` | Isolated baseline/patched builds, twice on each, confirmed/insufficient/inconclusive outcomes, no competing edits or PR. |
 | `templates/configuration.example.yaml`, `templates/triage-automation-prompt.md`, `templates/reproduce-automation-prompt.md` | External configuration and small prompts reading exact committed operational files; preserve every source field group and marker. |
 
-Proposed repository packaging is `automations/jstack/benny/`, copied to a target's `.agents/automations/benny/`. User-owned configuration/maps live separately, for example `.agents/benny/`. These translate Cursor-owned directories while preserving the source tree, nested names and direct-read boundary. Before adopting this layout, test the actual Skills CLI's recursive discovery: dormant nested SKILL.md files must not become installable slash skills accidentally. If that cannot be excluded, resolve distribution before shipping the pack; do not silently flatten, rename away, or strip its procedures.
+Repository packaging is `automations/jstack/benny/`, copied to a target's `.agents/automations/benny/`. User-owned configuration/maps live separately, for example `.agents/benny/`. These translate Cursor-owned directories while preserving the source tree, nested names and direct-read boundary. The actual Skills CLI 1.7.2 discovery test excludes the nested procedures through `metadata.internal: true`, including full-depth and wildcard listings; explicit internal opt-in overrides this filter. Other installers still require their own discovery check. If that cannot be excluded, resolve distribution before shipping the pack; do not silently flatten, rename away, or strip its procedures.
 
 Preserve MIT notices and keep source pins/differences in research. A future installer must preserve destination-only files and review changed source-managed files; no overwrite-by-copy refresh. Existing target configuration remains user-owned.
 
@@ -68,8 +68,8 @@ Required failure cases include an inaccessible/deleted parent, reply/root confus
 
 ## Recommendation and decision boundary
 
-Recommend the dormant pack and fixture unit next, keeping all live integrations disabled. Its distribution approach must first prove the nested procedures stay outside the slash-skill catalog. The remaining runtime gaps should be visible tests and dependencies, not removed source requirements.
+The dormant pack and local copy/discovery fixtures are available. Next test the event and adapter contracts with synthetic inputs, keeping all live integrations disabled. Fresh-provider dependency resolution remains required before a live pilot. The remaining runtime gaps should be visible tests and dependencies, not removed source requirements.
 
 Before live implementation, the user must choose the target repository, source/test channel, tracker, app-control environment, four stage model selections and credential/trigger provisioning. Reuse established choices where they apply and ask only for missing scope. Existing authorizations in another workflow do not select these resources. If Slack intake or worker isolation cannot be established, leave Benny unsupported and continue the independent provider/distribution checks. No project, connector or model is selected by this design PR, and merging it does not enable automation.
 
-Validation: reconciled all 12 source paths, checked the eight setup, ten triage and fifteen reproduction step counts, inspected all templates/references, and checked local links and current documentation consistency. No operational code changed and no live integration test was run.
+Design validation: reconciled all 12 source paths, checked the eight setup, ten triage and fifteen reproduction step counts, inspected all templates/references, and checked local links and current documentation consistency. That design-only review changed no operational code and ran no live integration. The later dormant-pack evaluation records implementation validation separately.

@@ -75,6 +75,54 @@ class UpstreamCheckTests(unittest.TestCase):
         self.assertEqual(result.returncode, code, result.stdout + result.stderr)
         return json.loads(result.stdout)
 
+    def add_pack(self):
+        write(self.upstream, "pstack/automations/benny/FOR_AGENTS.md", "Original pack\n")
+        write(self.root, "automations/jstack/benny/FOR_AGENTS.md", "Adapted pack\n")
+        write(self.root, "research/jstack/adaptations/benny.md", "Differences\n")
+        self.data["automationPacks"] = [{
+            "name": "benny", "localPath": "automations/jstack/benny",
+            "upstreamPath": "pstack/automations/benny", "adaptedFrom": self.base,
+            "contextPaths": ["pstack/LICENSE"], "differences": "research/jstack/adaptations/benny.md"}]
+        self.save_manifest()
+        commit(self.root)
+
+    def test_automation_pack_maps_changes_and_license_without_catalog_skill(self):
+        self.add_pack()
+        write(self.upstream, "pstack/LICENSE", "Changed license\n")
+        commit(self.upstream)
+        receipt = self.run_check()
+        self.assertEqual(receipt["directAutomationPacks"], ["benny"])
+        report = json.loads(Path(receipt["report"]).read_text())
+        changes = {c["path"]: c for c in report["changes"]}
+        pack = changes["pstack/automations/benny/FOR_AGENTS.md"]
+        self.assertEqual(pack["directAutomationPacks"], ["benny"])
+        self.assertEqual(pack["directSkills"], [])
+        self.assertEqual(changes["pstack/LICENSE"]["contextAutomationPacks"], ["benny"])
+
+    def test_removed_automation_source_is_reported(self):
+        self.add_pack()
+        baseline = commit(self.upstream)
+        self.data["reviewedThrough"] = baseline
+        self.save_manifest()
+        git(self.upstream, "rm", "pstack/automations/benny/FOR_AGENTS.md")
+        commit(self.upstream)
+        receipt = self.run_check()
+        self.assertEqual(receipt["missingSources"], ["pstack/automations/benny"])
+        self.assertEqual(receipt["directAutomationPacks"], ["benny"])
+
+    def test_dirty_automation_pack_rejects_detection(self):
+        self.add_pack()
+        commit(self.upstream)
+        write(self.root, "automations/jstack/benny/FOR_AGENTS.md", "Pending work\n")
+        receipt = self.run_check(code=2)
+        self.assertIn("commit or isolate", receipt["error"])
+
+    def test_automation_mapping_requires_local_attribution(self):
+        self.add_pack()
+        (self.root / "research/jstack/adaptations/benny.md").unlink()
+        receipt = self.run_check(code=2)
+        self.assertIn("attribution", receipt["error"])
+
     def test_maps_supporting_context_new_and_shared_files(self):
         write(self.upstream, "pstack/skills/example/references/helper.md", "Fixed helper\n")
         write(self.upstream, "pstack/skills/context/SKILL.md", "Changed context\n")

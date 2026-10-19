@@ -730,5 +730,17 @@
       ],
       "reason": "These skills have no shipped jstack counterpart. Preserve scope and inspect fresh sources if a future adaptation is chosen."
     }
+  ],
+  "automationPacks": [
+    {
+      "name": "benny",
+      "localPath": "automations/jstack/benny",
+      "upstreamPath": "pstack/automations/benny",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/LICENSE"
+      ],
+      "differences": "research/jstack/adaptations/benny.md"
+    }
   ]
 }

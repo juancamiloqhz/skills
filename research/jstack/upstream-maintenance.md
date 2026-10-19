@@ -69,3 +69,7 @@ python3 -B -m unittest discover -s scripts/jstack -p 'test_*.py' -v
 ```
 
 `--base` and `--head` accept immutable full SHAs for historical trials; they never advance `reviewedThrough`. Detection compares final contents, not the meaning of prose. The reviewer still owns impact assessment and functional validation. A pstack check also does not establish compatibility with changed T3 Code or provider APIs.
+
+## Dormant automation mappings
+
+`upstream.json` keeps dormant packs in `automationPacks`, separate from installable `skills`. Review `directAutomationPacks` and `contextAutomationPacks` in checker evidence alongside skill impacts. Pack changes, shared license changes, missing upstream trees and dirty local pack files participate in detection; presence in the mapping does not certify live support. Benny's runtime gates are recorded in its [adaptation](adaptations/benny.md).

@@ -77,9 +77,9 @@ def load_manifest(path, root):
     for p in m["watchPaths"]:
         relative_path(p)
     names = set()
-    for skill in m["skills"]:
+    for skill in [*m["skills"], *m.get("automationPacks", [])]:
         if not isinstance(skill["name"], str) or skill["name"] in names:
-            raise CheckError("skill names must be unique strings")
+            raise CheckError("skill and automation pack names must be unique strings")
         names.add(skill["name"])
         revision(skill["adaptedFrom"])
         for key in ("localPath", "differences", "upstreamPath"):
@@ -91,7 +91,7 @@ def load_manifest(path, root):
         for key in ("localPath", "differences"):
             p = (root / skill[key]).resolve()
             if not p.is_relative_to(root) or not p.exists():
-                raise CheckError("local skill and attribution paths must exist inside the repository")
+                raise CheckError("local package and attribution paths must exist inside the repository")
     ids = set()
     for d in m["decisions"]:
         if d["id"] in ids or d["disposition"] not in ("adopt", "adapt", "keep", "defer"):
@@ -139,6 +139,11 @@ def classify(changes, manifest):
                              if any(within(p, s["upstreamPath"]) for p in paths)]
         c["contextSkills"] = [s["name"] for s in manifest["skills"]
                               if any(within(p, w) for p in paths for w in s["contextPaths"])]
+        if manifest.get("automationPacks"):
+            c["directAutomationPacks"] = [p["name"] for p in manifest["automationPacks"]
+                                           if any(within(path, p["upstreamPath"]) for path in paths)]
+            c["contextAutomationPacks"] = [p["name"] for p in manifest["automationPacks"]
+                                            if any(within(path, w) for path in paths for w in p["contextPaths"])]
         result.append(c)
     return result
 
@@ -175,7 +180,8 @@ def cache_lock(cache, root):
 def detect(args, cache):
     root = args.repo_root.resolve()
     m, manifest_hash = load_manifest(args.manifest, root)
-    local_paths = [s["localPath"] for s in m["skills"]]
+    packages = [*m["skills"], *m.get("automationPacks", [])]
+    local_paths = [s["localPath"] for s in packages]
     if git(root, "status", "--porcelain", "--", *local_paths).stdout:
         raise CheckError("commit or isolate local skill changes before reviewing upstream")
     jstack_commit = git(root, "rev-parse", "HEAD").stdout.decode().strip()
@@ -199,7 +205,7 @@ def detect(args, cache):
     raw = git(source, "diff", "--no-color", "--no-ext-diff", "--no-textconv", "--name-status", "-z",
               "--find-renames", base, head, "--").stdout
     changes = classify(changes_from(raw), m)
-    missing = [s["upstreamPath"] for s in m["skills"]
+    missing = [s["upstreamPath"] for s in packages
                if not git(source, "ls-tree", head, "--", s["upstreamPath"]).stdout]
     # Include both sides of renames across the watched boundary in the saved diff.
     diff_paths = sorted({p for c in changes for p in (c["path"], c.get("previousPath", c["path"]))})
@@ -228,6 +234,7 @@ def detect(args, cache):
     return {"status": report["status"], "reportId": report_id, "reused": reused,
             "base": base, "head": head, "changedFiles": len(changes),
             "directSkills": sorted({s for c in changes for s in c["directSkills"]}),
+            "directAutomationPacks": sorted({p for c in changes for p in c.get("directAutomationPacks", [])}),
             "pendingDecisions": len(pending), "missingSources": missing,
             "report": str(report_file), "patch": str(patch_file)}
 

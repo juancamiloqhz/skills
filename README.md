@@ -201,6 +201,10 @@ Install just the setup skill and select providers interactively:
 npx skills add juancamiloqhz/skills --skill jstack-setup
 ```
 
+## Optional automation pack
+
+[Benny](./automations/jstack/benny/README.md) is an inactive pack for Slack report triage and reproduction. Its nested procedures are read directly during setup and are outside the normal skill catalog. Start with its `FOR_AGENTS.md`; [copy/discovery checks and remaining prerequisites](./research/jstack/evaluations/benny-dormant-pack/README.md) explain what is available. Installing jstack skills does not enable Benny.
+
 ## Jstack research
 
 [Research and planning](./research/jstack/README.md) records the current status, agreed decisions, proposed roadmap, and source references. `jstack-setup` is released; `jstack-juan-mode` has a foundation implementation with [bounded evaluation evidence](./research/jstack/evaluations/mode-restoration/README.md). The complete playbook release remains in development.
