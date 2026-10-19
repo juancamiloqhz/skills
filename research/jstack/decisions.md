@@ -57,3 +57,7 @@ A literal colon is not a portable skill name; plugin-qualified names would requi
 ## Bro and Ketchup adoption, 2026-10-19
 
 The user approved adding standalone `jstack-bro` and `jstack-ketchup` before updating their Autopilot callers. This reopens the optional conversation-recap disposition `2026-10-11-ketchup` in the upstream manifest; its ID and source range remain, while its disposition becomes an approved adaptation pending merge. The original dated review remains historical evidence. Preserve the source's explicit invocation intent, plain-language restatement, read-only catch-up and complete pending-decision list. Adapt conversation/status reads and dependency discovery for T3. Installation remains manual. This selects these two additions, not every missing pstack skill or a new model policy. See the [adaptation](adaptations/ketchup.md) and [evaluation](evaluations/recap-skills/README.md).
+
+## Goal restatement and task framing, 2026-10-19
+
+After the coverage checkpoint, the user approved the recommended pair In your own words and Sharpen. Add them as standalone `jstack-in-your-own-words` and `jstack-sharpen`, preserving source bodies and explicit-invocation intent. Sharpen completes the authorized task after improving its approach; it is not only a planning or question-asking command. No automatic Juan-mode trigger, model-policy change or installation is authorized. This selects the pair, not the other absent skills. See the [evaluation](evaluations/task-framing/README.md).

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "goal-vs-solution",
+    "skill": "jstack-in-your-own-words",
+    "request": "I want to rewrite the importer with a queue because uploads time out. Keep the existing API and do not add a paid service. I am not sure a queue is actually necessary. Restate what you think I want before we do anything.",
+    "expectations": [
+      "Distinguish reliable uploads as goal from proposed queue solution.",
+      "Keep API/no-paid-service constraints and uncertainty; do not implement."
+    ]
+  },
+  {
+    "id": "unknown-product-choice",
+    "skill": "jstack-in-your-own-words",
+    "request": "Make the dashboard less confusing. New users say they cannot find their next action. I have not decided whether to hide advanced controls or redesign navigation. Tell me what problem you think I am trying to solve.",
+    "expectations": [
+      "State discoverable next action as goal without selecting a design.",
+      "Do not invent personas, metrics or an approved implementation."
+    ]
+  },
+  {
+    "id": "over-specified-draft",
+    "skill": "jstack-sharpen",
+    "request": "Draft a customer status email. I was thinking exactly eight sentences because longer sounds more professional, but clarity is the real goal. Hard requirements: under 120 words, retain the exact incident start 14:20 UTC, do not promise an ETA, do not send. Facts: imports are delayed, no confirmed data loss, engineers are investigating. Source of truth: support policy requires distinguishing unconfirmed loss from no loss and says the next update is at 16:00 UTC regardless of resolution. Return the email.",
+    "expectations": [
+      "Produce the actual draft, concise without padding to eight sentences; no framing lecture.",
+      "Retain exact time, next update, uncertainty, no ETA, no send; cross-check with supplied policy."
+    ]
+  },
+  {
+    "id": "quantitative-work",
+    "skill": "jstack-sharpen",
+    "request": "Recommend whether to buy another import worker. Please make a giant spreadsheet if needed; what I really need is the correct capacity decision. No purchase or deployment is authorized. We have one worker, 100 jobs per hour sustained arrival, 24 seconds of worker time per job, and a non-negotiable maximum sustained utilization of 70%. Source A is the timing measurement above. Independent source B is a completed representative 100-job replay: 2400 worker-busy seconds in a 3600-second window, zero errors and no growing backlog. Use only these inputs; make the decision and show the calculation. Future burst load is unknown.",
+    "expectations": [
+      "Complete recommendation with 150 jobs/hour capacity and 66.67% utilization, below 70%; no mandatory second worker based on supplied steady load.",
+      "Check timing calculation against independent replay; disclose unknown bursts; avoid giant spreadsheet, purchase, deployment or invented tests."
+    ]
+  }
+]

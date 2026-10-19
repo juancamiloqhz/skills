@@ -548,6 +548,22 @@
         "pstack/skills/bro"
       ],
       "differences": "research/jstack/adaptations/ketchup.md"
+    },
+    {
+      "name": "jstack-in-your-own-words",
+      "localPath": "skills/jstack/jstack-in-your-own-words",
+      "upstreamPath": "pstack/skills/in-your-own-words",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [],
+      "differences": "research/jstack/adaptations/in-your-own-words.md"
+    },
+    {
+      "name": "jstack-sharpen",
+      "localPath": "skills/jstack/jstack-sharpen",
+      "upstreamPath": "pstack/skills/sharpen",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [],
+      "differences": "research/jstack/adaptations/sharpen.md"
     }
   ],
   "decisions": [
