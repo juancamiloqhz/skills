@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "request": "Reviewers have corrected direct payment-gateway imports in feature modules four times. All such calls must go through payments/service. A separate recurring issue is that customer emails sound dismissive, which needs judgment. Propose concrete fixes for both. This is a design-only task.",
+    "directSkill": "jstack-principle-encode-lessons-in-structure",
+    "expectations": [
+      "Proposes an enforceable import boundary or canonical service mechanism for repeated gateway calls.",
+      "Uses a prominent instruction and concrete failure example for the judgment-only tone issue."
+    ]
+  },
+  {
+    "id": 2,
+    "request": "Design a bulk-edit interaction for an inventory app. Users select 20 to 200 items, adjust several fields and sometimes need per-item exceptions. There is no precedent in this app. Provide sketches in words and a comparison before recommending an approach. Do not implement.",
+    "directSkill": "jstack-principle-exhaust-the-design-space",
+    "expectations": [
+      "Compares two or three materially different interaction sketches before recommending one.",
+      "Considers user interaction and per-item exceptions without implementing."
+    ]
+  },
+  {
+    "id": 3,
+    "request": "Plan a failure investigation across 60 MB of logs and 180 files. The main conversation has little context left. Helpers can inspect slices independently, but this exercise permits planning only, no actual delegation. Explain how you would gather enough evidence and keep progress bounded.",
+    "directSkill": "jstack-principle-guard-the-context-window",
+    "expectations": [
+      "Routes bounded slices to hypothetical helpers and returns summaries with evidence locations.",
+      "Declares file/phase or turn limits and avoids dumping bulk into main context."
+    ]
+  },
+  {
+    "id": 4,
+    "request": "Five UI wrappers independently compute the same edit-permission decision from the same inputs. A proposal introduces a permission context framework and three new adapter layers. Sketch your preferred refactor and how you would check behavior. Do not edit code.",
+    "directSkill": "jstack-principle-laziness-protocol",
+    "expectations": [
+      "Consolidates the permission decision and passes its result simply.",
+      "Prefers a small refactor over the proposed context framework and verifies preserved behavior."
+    ]
+  },
+  {
+    "id": 5,
+    "request": "We own eight internal callers of oldLookup and can migrate them together to lookup. Public API v1 also has paying mobile clients that cannot upgrade for 90 days. Outline the change and tests for this release, including what remains and what is removed.",
+    "directSkill": "jstack-principle-migrate-callers-then-delete-legacy-apis",
+    "expectations": [
+      "Migrates internal callers and deletes the old internal API in the same release.",
+      "Updates tests for the new contract while preserving required public v1 compatibility."
+    ]
+  },
+  {
+    "id": 6,
+    "request": "Design types for an order endpoint with JSON input, UserId and OrderId strings, an authoritative OpenAPI schema, and an exported pending/paid/cancelled state union. Include how to treat malformed input and a proposed time range constructed from a start and arbitrary signed duration. Give a typed design in prose, no code files. Consult the TypeScript helper for the duration question.",
+    "directSkill": "jstack-principle-type-system-discipline",
+    "expectations": [
+      "Distinguishes semantic IDs, parses boundary input, derives schema-owned shapes and handles all variants.",
+      "Reads the TypeScript helper and rejects arbitrary negative duration for a valid range."
+    ]
+  }
+]
