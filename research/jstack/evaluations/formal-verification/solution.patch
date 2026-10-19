@@ -1,0 +1,190 @@
+diff --git a/.agents/skills/verify-lease-formal/SKILL.md b/.agents/skills/verify-lease-formal/SKILL.md
+new file mode 100644
+index 0000000..9108f4b
+--- /dev/null
++++ b/.agents/skills/verify-lease-formal/SKILL.md
+@@ -0,0 +1,33 @@
++---
++name: verify-lease-formal
++description: "Check lease exclusivity when lease.py, dispatcher atomicity, worker phases, initial state, or the proof tooling changes. Use to investigate simultaneous lease holders."
++---
++
++# Verify lease exclusivity
++
++The property is that A and B never both have phase `holding`.
++Two holders could both perform the exclusive job.
++
++1. Read `lease.py` and the dispatcher contract in `README.md`. Review any changes to `WORKERS`, `State`, `advance`, or their callers against the scope below. A changed atomicity contract or hidden mutable state makes this proof incomplete until the checker and scope are updated.
++2. From the repository root, run `python3 -B .agents/skills/verify-lease-formal/check.py`. Exit 0 proves the property in the stated finite scope. Exit 1 reports a reachable violation. Exit 2 means the procedure or scope needs repair and proves nothing.
++3. For a failure, follow the printed sequence of `advance` calls in `lease.py`. Report a real-code violation without changing the property. If it is a modeling error, document the mismatch before repairing the checker. Never weaken the property just to obtain a pass.
++4. After a relevant change, rerun the real-code negative control with `python3 -B .agents/skills/verify-lease-formal/mutation_check.py --scratch-root .agents/skills/verify-lease-formal/.scratch`. The scratch root must be an owned location within the task's write permissions; an absolute owned directory also works. This command copies the current product code, removes the acquisition recheck, requires exit 1 with two holders, restores the copy, and requires exit 0. It removes its temporary files. A mutation that no longer applies requires a new meaningful real-code mutation. A baseline finding stays a finding even if the negative control cannot complete.
++5. Rerun the main check and `python3 -B -m unittest discover -s tests` in the original repository. Inspect the product diff to confirm restoration. Report any failed or unexercised step as incomplete. When an intentional behavior change alters the scope, update this document, the checker, and the negative control together, then repeat all checks.
++
++## Scope and code correspondence
++
++This uses a small explicit-state checker implemented in Python's standard library. The exercised runtime is CPython 3.14.4. It needs no additional packages. Run `python3 --version` to record the runtime on future checks.
++
++The initial node is the actual `State()` from `lease.py`. Every edge calls the actual `advance(state, worker)` for each member of `WORKERS`. The checker imports `lease.py` relative to its own resolved location, including when invoked through the Claude link. It does not duplicate the transition rules.
++
++The domain has at most 48 states: three owner values, and four phases for each of exactly two workers. The checker validates that domain and the initial state. Breadth-first exploration visits every reachable state and calls both worker actions from each safe state, including self-loops. Revisiting a state cannot reveal new futures under the deterministic transition assumption, so exhaustion proves safety for schedules of any length in this finite machine. There is no schedule-depth cutoff.
++
++`README.md` declares an entire `advance` call atomic and serialized. `State` is immutable, and the reviewed `advance` reads only its arguments and the fixed worker tuple. Those facts justify state deduplication and the edge boundary. Review them again if the code changes. The checker does not establish Python interpreter correctness or defend against product code that changes the checker itself.
++
++The property reads `State.phases`, matching the product's definition of a holder. The `new` branch observes availability; the `ready` branch rechecks `owner` before entering `holding`; the `holding` branch releases the lease. The negative control removes the second check in `ready`. A observes an empty lease, B observes it too, A acquires it, then B acquires it while A still holds it. Both phases become `holding`.
++
++This scope excludes additional workers, repeated acquisitions, invalid initial states, crashes, restarts, retries, network behavior, external side effects, and concurrency within `advance`. It proves no fairness or eventual completion, and does not separately prove owner consistency. `display.py` is presentation only and does not trigger this proof.
++
++## Discovery
++
++The canonical directory is `.agents/skills/verify-lease-formal/`. The relative `.claude/skills/verify-lease-formal` symlink points there. Both paths must resolve to the same skill and Python files. Filesystem discovery is checked; live provider registration is unexercised.
+diff --git a/.agents/skills/verify-lease-formal/check.py b/.agents/skills/verify-lease-formal/check.py
+new file mode 100644
+index 0000000..0cc18bd
+--- /dev/null
++++ b/.agents/skills/verify-lease-formal/check.py
+@@ -0,0 +1,66 @@
++"""Exhaustively check lease exclusivity using the repository's real transitions."""
++
++from collections import deque
++import importlib.util
++from pathlib import Path
++import sys
++
++
++def main():
++    root = Path(__file__).resolve().parents[3]
++    spec = importlib.util.spec_from_file_location("lease_under_check", root / "lease.py")
++    lease = importlib.util.module_from_spec(spec)
++    sys.modules[spec.name] = lease
++    spec.loader.exec_module(lease)
++    if lease.WORKERS != ("A", "B"):
++        raise ValueError("scope requires exactly workers A and B")
++
++    def validate(state):
++        if (type(state) is not lease.State
++                or set(vars(state)) != {"owner", "phases"}
++                or state.owner not in (None, "A", "B")
++                or type(state.phases) is not tuple
++                or len(state.phases) != 2
++                or any(p not in ("new", "ready", "holding", "done") for p in state.phases)):
++            raise ValueError(f"state outside reviewed 48-state domain: {state!r}")
++
++    initial = lease.State()
++    validate(initial)
++    if initial.owner is not None or initial.phases != ("new", "new"):
++        raise ValueError("initial state changed; review the proof scope")
++    parents = {initial: None}
++    pending = deque([initial])
++    transitions = 0
++    while pending:
++        state = pending.popleft()
++        if state.phases.count("holding") > 1:
++            steps = []
++            cursor = state
++            while parents[cursor] is not None:
++                previous, worker = parents[cursor]
++                steps.append((worker, cursor))
++                cursor = previous
++            print("FAIL: A and B both holding the exclusive lease")
++            print(f"start: {initial!r}")
++            for worker, successor in reversed(steps):
++                print(f"advance({worker}): {successor!r}")
++            print(f"discovered_states={len(parents)} evaluated_transitions={transitions}")
++            return 1
++        for worker in lease.WORKERS:
++            successor = lease.advance(state, worker)
++            transitions += 1
++            validate(successor)
++            if successor not in parents:
++                parents[successor] = (state, worker)
++                pending.append(successor)
++    print(f"PASS: at most one holder; reachable_states={len(parents)} "
++          f"evaluated_transitions={transitions}; domain_bound=48")
++    return 0
++
++
++if __name__ == "__main__":
++    try:
++        sys.exit(main())
++    except Exception as error:
++        print(f"INCOMPLETE: {type(error).__name__}: {error}", file=sys.stderr)
++        sys.exit(2)
+diff --git a/.agents/skills/verify-lease-formal/mutation_check.py b/.agents/skills/verify-lease-formal/mutation_check.py
+new file mode 100644
+index 0000000..4a0b07f
+--- /dev/null
++++ b/.agents/skills/verify-lease-formal/mutation_check.py
+@@ -0,0 +1,55 @@
++"""Break the actual lease guard in an owned scratch copy, then restore it."""
++
++import argparse
++from pathlib import Path
++import shutil
++import subprocess
++import sys
++import tempfile
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--scratch-root", required=True, type=Path)
++    args = parser.parse_args()
++    args.scratch_root.mkdir(parents=True, exist_ok=True)
++    skill = Path(__file__).resolve().parent
++    root = skill.parents[2]
++    original = (root / "lease.py").read_bytes()
++    needle = b'elif phase == "ready":\n        if owner is None:'
++    if original.count(needle) != 1:
++        raise RuntimeError("mutation no longer maps to the acquisition guard; update it")
++    with tempfile.TemporaryDirectory(prefix="lease-proof-", dir=args.scratch_root) as temp:
++        checkout = Path(temp)
++        checker = checkout / ".agents/skills/verify-lease-formal/check.py"
++        checker.parent.mkdir(parents=True)
++        shutil.copyfile(skill / "check.py", checker)
++        product = checkout / "lease.py"
++
++        def run(label, expected):
++            result = subprocess.run([sys.executable, "-B", str(checker)],
++                                    text=True, capture_output=True)
++            print(f"{label}: exit={result.returncode}")
++            print(result.stdout, end="")
++            print(result.stderr, end="", file=sys.stderr)
++            if result.returncode != expected:
++                raise RuntimeError(f"{label}: expected exit {expected}")
++            return result.stdout
++
++        product.write_bytes(original)
++        run("baseline copy", 0)
++        try:
++            product.write_bytes(original.replace(needle, b'elif phase == "ready":\n        if True:'))
++            output = run("removed acquisition recheck", 1)
++            if "phases=('holding', 'holding')" not in output:
++                raise RuntimeError("missing real exclusivity counterexample")
++        finally:
++            product.write_bytes(original)
++        run("restored copy", 0)
++        if product.read_bytes() != original or (root / "lease.py").read_bytes() != original:
++            raise RuntimeError("product restoration check failed")
++    print("PASS: real-code mutation detected; scratch restored; repository product unchanged")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/.claude/skills/verify-lease-formal b/.claude/skills/verify-lease-formal
+new file mode 120000
+index 0000000..ef9a41f
+--- /dev/null
++++ b/.claude/skills/verify-lease-formal
+@@ -0,0 +1 @@
++../../.agents/skills/verify-lease-formal
+\ No newline at end of file
+diff --git a/AGENTS.md b/AGENTS.md
+index 393aef4..d4958e2 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -3,3 +3,5 @@
+ Preserve product files unless the task explicitly asks for implementation changes.
+ Project-local verification skills belong under `.agents/skills/`.
+ Proof tooling may call the actual transition function. State any bounds and assumptions.
++
++When changing `lease.py`, dispatcher atomicity, or lease proof tooling, read and run [verify-lease-formal](.agents/skills/verify-lease-formal/SKILL.md).

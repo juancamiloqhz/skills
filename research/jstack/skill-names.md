@@ -147,6 +147,14 @@ npx skills add juancamiloqhz/skills --skill jstack-correct
 
 For example, invoke `$jstack-correct We have twice added an export format but forgotten to expose it in the CLI. Prevent this mistake and test the fix.` It looks for structural enforcement before adding instructions, then checks past failures. State assessment-only scope when you want proposals without edits. This standalone skill adds no model role, setup rerun, automatic Juan-mode trigger or persistent monitor. There is no former jstack name to remove. Refresh the provider catalog after installation. See [evaluation and limits](evaluations/correct/README.md).
 
+`jstack-create-formal-verification-skill` generates a reusable checker for a consequential property. After merge, install it manually:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-create-formal-verification-skill
+```
+
+For example, ask `$jstack-create-formal-verification-skill Check that two workers cannot hold our lease at once. Leave product code unchanged.` It selects an available verifier, states bounds and assumptions, demonstrates a failing broken variant and leaves a project-local skill for reruns. Missing tools leave a draft; installation remains manual. Generated skills also receive the existing automatic Claude directory link, with conflicts preserved. This entrypoint adds no model role or automatic Juan-mode trigger. Refresh the provider catalog after installation. See [evaluation and limits](evaluations/formal-verification/README.md).
+
 ## Upstream maintenance and evidence
 
 Before testing installed workflows, or after a manual refresh, compare installed files with a clean current source checkout:
