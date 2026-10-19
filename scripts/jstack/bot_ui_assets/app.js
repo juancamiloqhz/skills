@@ -8,7 +8,11 @@ let requestId;
 function show(state) {
   const outcome = state.delivery.outcome;
   if (state.processing === 'completed') {
-    statusText.textContent = 'Check recorded as complete. Read the result in the receiving conversation.';
+    statusText.textContent = 'Check recorded as complete. If the conversation result is missing, ask to recover the saved result using this request ID.';
+  } else if (state.processing === 'acknowledged_without_result') {
+    statusText.textContent = 'An earlier receiver recorded completion without saving the result. Ask to reconcile this request; do not resend.';
+  } else if (state.processing === 'result_saved') {
+    statusText.textContent = 'PR result saved. Delivery to the conversation is not yet acknowledged.';
   } else if (state.processing === 'claimed') {
     statusText.textContent = 'A receiver has claimed this check. Completion is not yet recorded.';
   } else if (outcome === 'accepted' || outcome === 'duplicate') {
