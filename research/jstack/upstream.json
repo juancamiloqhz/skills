@@ -633,6 +633,21 @@
         "pstack/skills/unslop"
       ],
       "differences": "research/jstack/adaptations/automate-me.md"
+    },
+    {
+      "name": "jstack-help",
+      "localPath": "skills/jstack/jstack-help",
+      "upstreamPath": "pstack/skills/poteto-help",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/docs/guide",
+        "pstack/skills",
+        "pstack/automations/benny",
+        "cursor-team-kit/skills/control-cli",
+        "cursor-team-kit/skills/control-ui",
+        "cursor-team-kit/skills/deslop"
+      ],
+      "differences": "research/jstack/adaptations/help.md"
     }
   ],
   "decisions": [

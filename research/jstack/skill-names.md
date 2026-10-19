@@ -180,3 +180,9 @@ Run this from the repository root and substitute the actual installed root. The 
 `upstream.json` maps each new local identity to its original upstream path and unchanged revision pin. The shared reviewed checkpoint does not move. Preserve pstack's boundaries, headings, procedures and role labels; translate only package identities and their callers. Future adaptations must apply this mapping rather than restoring unprefixed names.
 
 Old reports, audit outputs, task transcripts and reproduction scripts retain the paths and hashes they actually tested. Run those scripts at their recorded commits. For the last pre-migration tree, use commit `3c2e32c17ea6a08900af822fe205703e47be0072`. They are historical evidence, not current installation instructions. The [migration evaluation](evaluations/skill-names/README.md) records current checks and pinned-source comparisons.
+
+## Help addition
+
+After merge, install manually with `npx skills add juancamiloqhz/skills --skill jstack-help`. The package includes all guide pages and their illustrations; other jstack skills remain separate installations. Help can explain setup without changing your models or activating Juan-mode.
+
+Example: `$jstack-help Which skill should I use to check whether PR #123 is ready?` It reads the relevant source, gives a short answer and one prompt to send, and links the explanation. It does not start reviewing the PR. See the [guide](../../skills/jstack/jstack-help/docs/guide/README.md) and [evaluation limits](evaluations/help/README.md).

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const SKILLS = join(ROOT, "skills/jstack");
-const GUIDE = "research/jstack/guide";
+const GUIDE = "skills/jstack/jstack-help/docs/guide";
 const MODE = "skills/jstack/jstack-juan-mode/SKILL.md";
 
 const SMALL = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(" ");

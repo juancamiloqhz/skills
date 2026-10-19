@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-help to choose the right workflow and give me one prompt to use."
+policy:
+  allow_implicit_invocation: false
