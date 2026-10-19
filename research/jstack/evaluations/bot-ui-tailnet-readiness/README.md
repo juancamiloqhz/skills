@@ -1,24 +1,24 @@
 # Bot UI private-network readiness
 
-Date: 2026-10-19. PR #113 verified the live loopback workflow and retired its service. This unit adds optional HTTPS proxy-path support. The operator installed the approved temporary route, and host/browser checks plus the user-reported laptop click passed. Targeted route removal and final cleanup remain pending.
+Date: 2026-10-19. Optional HTTPS proxy-path support passed local tests, actual proxy/browser checks and a user-confirmed laptop click. Cleanup is verified complete. PR #113 separately covers the real loopback webhook/recovery trial; this test uses dummy delivery only.
 
-## Host finding and proposed adaptation
+## Host requirement and upstream difference
 
-Read Orbit's canonical host README and inspected the existing Tailscale node and Serve configuration. The node is online. The documented device policy permits SSH and private HTTPS, while applications stay on loopback unless the user approves another exposure. The live Serve configuration uses port 443 and proxies `/` to T3 at loopback port 3773. Both the current and legacy hostnames have that root handler. Funnel is absent. UFW and the admin-console grants were not read with elevated access or independently revalidated.
+Pstack's `make-bot-ui` at `0148b78c56c72a1b8412055913c79f767095b217` prescribes wildcard binding and direct HTTP hostname/IP URLs, with HTTPS only on user request. Orbit's canonical host policy keeps applications on loopback and permits private device access on SSH and HTTPS. The existing Serve configuration uses port 443 with `/` proxying to T3 at loopback port 3773, under both current and legacy hostnames. Funnel is absent. UFW and admin-console grants were not independently revalidated with elevated access.
 
-Pstack's `make-bot-ui` at `0148b78c56c72a1b8412055913c79f767095b217` prescribes wildcard binding and direct HTTP hostname/IP URLs, with HTTPS only on user request. That would conflict with Orbit's documented policy. Propose an explicitly approved temporary HTTPS path, `/jstack-bot-ui/`, on the existing private Serve endpoint. Keep the helper bound to loopback and preserve T3's root route. This is a host-specific option, not a new default for all jstack users or an approved policy change.
+The user explicitly approved a temporary private HTTPS path, `/jstack-bot-ui/`, preserving T3's root routes and keeping the helper on loopback. This is a host-specific option, not a new default for all users. Direct HTTP remains the upstream default where permitted.
 
-The [Serve reference](https://tailscale.com/docs/reference/tailscale-cli/serve) documents adding and removing individual `--set-path` handlers. Inspected [Serve source](https://github.com/tailscale/tailscale/blob/db03d4e19da508fe29c96043e5fd49156e577f60/ipn/ipnlocal/serve.go) at `db03d4e19da508fe29c96043e5fd49156e577f60`: its HTTP proxy strips the mount prefix and preserves the incoming Host. The installed CLI is 1.102.4 and advertises the required flags. Its reported source revision was unavailable at the public source URL, so the source inspection is not a verified match to the installed binary. The live test must establish actual behavior.
+The [Serve reference](https://tailscale.com/docs/reference/tailscale-cli/serve) documents individual `--set-path` handlers. Inspected [Serve source](https://github.com/tailscale/tailscale/blob/db03d4e19da508fe29c96043e5fd49156e577f60/ipn/ipnlocal/serve.go) at `db03d4e19da508fe29c96043e5fd49156e577f60`: its HTTP proxy strips the mount prefix and preserves the incoming Host. Installed CLI 1.102.4 advertises the required flags. Its reported source revision was unavailable publicly; the actual proxy behavior was therefore established by the live test below.
 
-## Code and local verification
+## Changes and local tests
 
-The page now uses relative asset/API URLs so a proxy path does not send its requests to the existing root application. Mounted pages include their path in the request-storage key; the root page keeps its existing key. Always share the slash-terminated mounted URL. Automatic repair of a missing trailing slash is not implemented.
+The page uses relative asset/API URLs so a mounted page does not send requests to T3's root application. Mounted pages include their path in the request-storage key; the root page keeps its existing key. Share the slash-terminated URL. Automatic repair of a missing trailing slash is not implemented.
 
-The server permits explicitly configured HTTPS origins while continuing to listen on plain loopback HTTP behind a terminating proxy. Host and Origin must match one configured pair exactly. It ignores forwarding headers for authorization. HTTPS configuration does not enable TLS on the Python server or expose a port. Browser origin controls are not client authentication; the live private-network boundary remains the host policy.
+The helper accepts explicitly configured HTTPS origins while listening on loopback HTTP behind the proxy. Host and Origin must match one configured pair exactly. Forwarding headers do not authorize requests. Configuring HTTPS does not enable TLS or expose the Python server. Browser origin checks are not client authentication; private-network access still depends on host policy.
 
-All 27 Python tests passed with the installed T3 signature-verifier probe. New HTTP tests cover the configured HTTPS origin, scheme mismatch, a different allowed hostname, explicit default-port mismatch and spoofed forwarding headers. Existing direct-HTTP behavior passes too.
+All 27 Python tests passed with the installed T3 signature-verifier probe. New tests cover an exact HTTPS origin, scheme mismatch, a different allowed hostname, explicit default-port mismatch and spoofed forwarding headers. Existing direct-HTTP behavior passes. JavaScript syntax, documentation/link and diff checks pass.
 
-The collaborative browser loaded `/jstack-bot-ui/` through a local path-stripping proxy fixture. Script, scope, click and refresh requests stayed under that prefix. One click produced one dummy webhook POST; refresh/reload preserved the request and did not resend. The fixture's root application stayed accessible. This is an HTTP fixture, not real TLS or peer-access evidence.
+The collaborative browser also exercised a local HTTP path-stripping fixture. Assets/API requests stayed under `/jstack-bot-ui/`; one click produced one dummy delivery; refresh/reload preserved the request without resending. The fixture's separate root application remained accessible. That fixture was stopped and removed.
 
 ```sh
 JSTACK_TEST_T3_RUNTIME=/path/to/the/reviewed/t3 \
@@ -28,48 +28,30 @@ python3 -B research/jstack/evaluations/bot-ui-local/preview_fixture.py \
   --directory "$fixture_dir" --mount-path /jstack-bot-ui/
 ```
 
-Open `http://127.0.0.1:8879/jstack-bot-ui/`. The backend binds an ephemeral loopback port and uses public dummy credentials. Stop the fixture and remove its scratch directory afterward. Documentation/link, JavaScript syntax and diff checks also pass. No raw logs or generated databases are retained in Git.
+Open `http://127.0.0.1:8879/jstack-bot-ui/`. The backend uses an ephemeral loopback port and public dummy credentials. Stop it and remove its scratch afterward.
 
-## Concrete device-access test
+## Live private HTTPS test
 
-No new webhook or private key is needed. Use only the dummy `example/fixture` PR #123 sender, with an explicit reminder to the user that the button is a connectivity test and does not query GitHub.
-
-1. Re-read Serve status and the node identity. Require the proposed path to be unused and the expected root routes to remain unchanged. Save the current configuration in private scratch for comparison, not as permission to overwrite it later. Confirm port 8879 is free.
-2. Start the existing fixture directly on loopback port 8879 with `--origin https://orbit.tail30b070.ts.net`, without its local `--mount-path` proxy. Record its process identity and task-owned private directory.
-3. Add only the temporary handler with `tailscale serve --bg --https=443 --set-path=/jstack-bot-ui/ http://127.0.0.1:8879`. If permissions deny it, stop and report the exact command for the user; do not escalate or change operator privileges. Verify that the only configuration change is the new handler and that Funnel remains absent. Never run `serve reset` or replace the root route.
-4. Open `https://orbit.tail30b070.ts.net/jstack-bot-ui/` locally to inspect routing and TLS, then have the user open that same URL on a separate authorized Tailscale device and click once. Require the expected fixture scope, accepted dummy delivery and one recorded request. A local request alone does not prove peer access. Check that T3's existing private root page still loads. Stop on unexpected routing, origin failure or configuration drift.
-5. Remove only the matching pilot handler with `tailscale serve --https=443 --set-path=/jstack-bot-ui/ off`, first checking that it still targets this fixture. Verify the original handlers and T3 service are intact. Stop only the owned fixture, close owned test tabs and remove its path-specific storage key and scratch. If ownership has changed, preserve state and reconcile instead of resetting shared configuration.
-
-The user's explicit approval must cover the temporary private HTTPS route and the HTTPS deviation from upstream. Neither this PR nor ordinary continuation grants a shared network configuration change. A successful test would establish this host-specific proxy path, not pstack's direct HTTP/IP variant, a fresh real webhook run, or automatic rollback recovery. Record those limits before shipping the full skill.
-
-## Authorized attempt and remaining operator step
-
-The user approved the temporary private HTTPS route and its cleanup in this conversation. The loopback fixture started and returned the expected `example/fixture` PR #123 scope. Adding the route with the exact command above failed with `Access denied: serve config denied`. Serve's JSON configuration remained identical to the saved pre-test snapshot, including both T3 root routes and absent Funnel. No sudo or operator-privilege change was attempted.
-
-Stopped the owned fixture and removed its scratch directory. No test route or service remains active. An operator can add the authorized route from an Orbit terminal with:
+The first authorized route change failed with `Access denied: serve config denied`. Serve remained unchanged; the initial helper and scratch were removed. No sudo or operator-privilege change was attempted by the agent. The operator then added the approved route with:
 
 ```sh
 sudo tailscale serve --bg --https=443 --set-path=/jstack-bot-ui/ http://127.0.0.1:8879
 ```
 
-After the operator reports success, restart the fixture and verify the actual configuration and browser behavior before asking for the separate-device click. The route will have no backend until that restart. Removal may likewise require the operator to run the targeted `off` command with sudo. The user's approval remains valid; the outstanding dependency is host permission, not another design decision. Actual TLS routing and peer access remain unverified.
+Verified that this added only the owned handler, preserving both original root handlers and absent Funnel. Started the dummy fixture on loopback port 8879 with `--origin https://orbit.tail30b070.ts.net`, without its local `--mount-path` proxy.
 
-## Operator route installed; peer check pending
+The collaborative browser loaded `https://orbit.tail30b070.ts.net/jstack-bot-ui/` with a secure context. Assets/API requests stayed under the mount. A click returned accepted delivery; reload preserved that request without resending. Separate certificate-validating HTTPS requests returned 200 for the T3 root, button page and expected `example/fixture` PR #123 scope.
 
-The operator added the approved handler with sudo. Live Serve status then matched the original configuration plus only `/jstack-bot-ui/` pointing to loopback port 8879. Both T3 root handlers remained unchanged and Funnel remained absent. Restarted the owned dummy fixture.
+The user confirmed opening the URL from their Tailscale-connected laptop and seeing `Delivery accepted` after one click. The fixture journal contained exactly two accepted requests: the agent browser check at 22:55:20 UTC and the second request at 22:55:59 UTC, consistent with the user's report. The dummy receiver count was two. No GitHub query or scheduled agent work ran; pending-completion wording was expected for this fixture.
 
-The collaborative browser loaded the actual private HTTPS URL with a secure context. Assets and API requests stayed under the mount path. One browser click returned accepted delivery and the fixture recorded exactly one dummy request. Independent certificate-validating HTTPS requests returned 200 for the T3 root, button page and expected fixture scope. This establishes actual TLS/proxy behavior on the installed host; it does not yet establish access from the user's laptop.
+## Cleanup and limits
 
-The temporary route and loopback fixture remain active while awaiting the separate-device check. No real webhook or GitHub status query is involved. After that check, remove only the owned path; the CLI's broader `tailscale serve --https=443 off` hint would also affect T3 and must not be used. Because this account cannot update Serve, ask the operator to run the targeted removal if permission is still denied:
+The operator removed only the test path:
 
 ```sh
 sudo tailscale serve --https=443 --set-path=/jstack-bot-ui/ off
 ```
 
-Then verify the original configuration, stop the owned fixture and remove its scratch. Cleanup remains pending while the peer check is pending.
+The CLI's broader `tailscale serve --https=443 off` hint must not be used here because it also affects T3. After targeted removal, verified exact equality with the original Serve configuration and HTTP 200 from T3's private HTTPS root. Checked the owned helper process identity, stopped it and removed its scratch, including the dummy key, journal and logs. Closed the agent-owned browser tab and removed its path-specific storage. The user's laptop tab can be closed; any remaining browser-local dummy ID is harmless. No temporary test route or helper remains active.
 
-## Laptop check passed
-
-The user confirmed opening the private URL from their Tailscale-connected laptop and seeing `Delivery accepted` after one click. The fixture journal contains exactly two accepted dummy requests: the agent's local browser check at 22:55:20 UTC and the second request at 22:55:59 UTC, consistent with the reported laptop click. The dummy receiver count is two. No GitHub request or scheduled agent work ran; the pending-completion wording is expected for this fixture.
-
-Serve still matches exactly the original handlers plus the owned test path. Asked the operator to remove only that path with the targeted sudo command above. Route removal, helper shutdown and scratch cleanup are pending that response.
+The evidence establishes this host-specific HTTPS path, including a user-reported separate-device click corroborated by the fixture journal. It does not verify upstream's direct-HTTP/IP variant, a fresh real webhook over this path, or automatic rollback recovery. No raw logs or generated databases are committed. This assessment alone does not ship the standalone skill.
