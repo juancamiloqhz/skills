@@ -12,7 +12,7 @@ The [2026-10-18 audit](coverage-audits/2026-10-18/README.md) compares the full p
 
 ## Merged corrections
 
-The original 36 mapped components reached 37 with standalone Show me your work, 38 with benchmark-checklist, 39 with technical-writing, 40 with no-comments, 41 with TypeScript best practices, 42 with Control CLI, 43 with Deslop, 44 with TDD, and now total 45 with Control UI. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 42. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`.
+The original 36 mapped components reached 37 with standalone Show me your work, 38 with benchmark-checklist, 39 with technical-writing, 40 with no-comments, 41 with TypeScript best practices, 42 with Control CLI, 43 with Deslop, 44 with TDD, and reached 45 with Control UI. Pins remain `ccb5507cec1546dc88135c1139c811e6c59115ba` for setup and the two verification helpers, and `11713c683fe4add4fd403ea880580abbc9e0875f` for the other 42. The reviewed checkpoint remains `4bf3e083c6dec126e254f96181b84a105b6e3e70`. The approved Bro and Ketchup additions bring the current total to 47, with those two packages pinned to `0148b78c56c72a1b8412055913c79f767095b217`. Their [assessment](evaluations/recap-skills/README.md) does not establish installed-provider discovery or update Autopilot callers.
 
 | Original correction group | Merged result | Evidence and remaining limit |
 | --- | --- | --- |

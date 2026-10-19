@@ -1,0 +1,304 @@
+[
+  {
+    "id": "bro",
+    "skill": "jstack-bro",
+    "request": "$jstack-bro",
+    "previousAssistant": "The migration uses optimistic concurrency: the write succeeds only if the version still matches the one we read. A stale version fails without replacing the other writer\u2019s update. Local tests pass, but we have not tested this with two live production clients.",
+    "expectations": [
+      "plain restatement",
+      "keeps stale-write rejection and untested production caveat",
+      "does no work"
+    ]
+  },
+  {
+    "id": "stale-status",
+    "skill": "jstack-ketchup",
+    "request": "$jstack-ketchup",
+    "history": [
+      {
+        "position": 1,
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "Prepare search and export fixes. Leave merging to me."
+      },
+      {
+        "position": 2,
+        "createdBy": "agent",
+        "text": "Search retention needs your choice: 7 days costs less storage, 30 days keeps more history. I recommend 7 days. No choice yet."
+      },
+      {
+        "position": 3,
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "Continue working on the fixes."
+      },
+      {
+        "position": 4,
+        "createdBy": "agent",
+        "text": "Both PRs are ready to merge: Search speed #201 and Export retries #202."
+      },
+      {
+        "position": 5,
+        "createdBy": "user",
+        "creationSource": "server",
+        "visibility": "synthetic",
+        "text": "Delegated task export-check reached a terminal state. Read its result."
+      },
+      {
+        "position": 6,
+        "createdBy": "agent",
+        "text": "An export screenshot was not captured. The export button now shows a retry message after failure."
+      },
+      {
+        "position": 7,
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "$jstack-ketchup"
+      }
+    ],
+    "currentReads": {
+      "pr201": {
+        "name": "Search speed",
+        "url": "https://example.invalid/pull/201",
+        "state": "MERGED",
+        "checks": "passed",
+        "effect": "Search uses an index instead of scanning every record",
+        "risk": "Query behavior unchanged in local tests"
+      },
+      "pr202": {
+        "name": "Export retries",
+        "url": "https://example.invalid/pull/202",
+        "state": "OPEN",
+        "checks": "failed: duplicate export on retry",
+        "risk": "Users may receive duplicate exports"
+      },
+      "export-check": {
+        "status": "failed",
+        "workState": "result_available",
+        "summary": "Retrying after a timeout creates two exports."
+      }
+    },
+    "remainingAgentWork": "Fix the export retry bug and rerun its check.",
+    "expectations": [
+      "boundary is Continue working, not injected notification",
+      "corrects earlier both-ready claim",
+      "search merged, export failed and not ready",
+      "retention decision preserved with options",
+      "agent owns export fix",
+      "no screenshot yet; no fabricated media"
+    ]
+  },
+  {
+    "id": "nested-work",
+    "skill": "jstack-ketchup",
+    "request": "$jstack-ketchup",
+    "history": [
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "Check the import fix."
+      },
+      {
+        "createdBy": "agent",
+        "text": "Import review finished."
+      },
+      {
+        "createdBy": "user",
+        "creationSource": "server",
+        "visibility": "synthetic",
+        "text": "Delegated task import-review reached a terminal state."
+      },
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "$jstack-ketchup"
+      }
+    ],
+    "currentReads": {
+      "import-review": {
+        "status": "completed",
+        "workState": "waiting_for_children",
+        "hasPendingChildRuns": true,
+        "hasPendingQuestion": true,
+        "summary": "The turn ended; import load lane still running. A question for the parent asks which existing fixture path to use."
+      }
+    },
+    "remainingAgentWork": "The parent already has the fixture path and can answer the child; no product choice or access is needed.",
+    "expectations": [
+      "not complete while children run",
+      "question belongs to parent, not user",
+      "no actual answer or resume during recap"
+    ]
+  },
+  {
+    "id": "partial-history",
+    "skill": "jstack-ketchup",
+    "request": "$jstack-ketchup",
+    "historyCoverage": "Only the latest visible messages survived. The earlier human boundary and older decisions are unavailable; no history read tool is exposed. Bro is unavailable in this scenario.",
+    "history": [
+      {
+        "createdBy": "agent",
+        "text": "Billing update PR #301 should be ready."
+      },
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "$jstack-ketchup"
+      }
+    ],
+    "currentReads": {
+      "pr301": {
+        "error": "Authentication unavailable. No current PR or checks state can be read."
+      }
+    },
+    "knownEvidence": "No PR URL, screenshot, approval decision or test result is available.",
+    "expectations": [
+      "discloses incomplete window and pending-decision coverage",
+      "Bro gap explicit",
+      "PR status/checks unknown; no fabricated links or approval",
+      "Unavailable reads alone do not establish a user-owned access action."
+    ]
+  },
+  {
+    "id": "many-decisions",
+    "skill": "jstack-ketchup",
+    "request": "$jstack-ketchup",
+    "history": [
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "Prepare these independent text fixes for my merge decision; do not merge."
+      },
+      {
+        "createdBy": "agent",
+        "text": "All ten changes are tested and ready for the user."
+      },
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "$jstack-ketchup"
+      }
+    ],
+    "currentReads": [
+      {
+        "number": 400,
+        "url": "https://example.invalid/pull/400",
+        "name": "Login label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Names the email field clearly",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 401,
+        "url": "https://example.invalid/pull/401",
+        "name": "Reset label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Clarifies password reset",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 402,
+        "url": "https://example.invalid/pull/402",
+        "name": "Empty search",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Explains no matches",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 403,
+        "url": "https://example.invalid/pull/403",
+        "name": "Export label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Names the CSV format",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 404,
+        "url": "https://example.invalid/pull/404",
+        "name": "Profile label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Clarifies public display name",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 405,
+        "url": "https://example.invalid/pull/405",
+        "name": "Billing label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Clarifies monthly charge",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 406,
+        "url": "https://example.invalid/pull/406",
+        "name": "Invite label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Clarifies who gets an invitation",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 407,
+        "url": "https://example.invalid/pull/407",
+        "name": "Upload label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Displays allowed file types",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 408,
+        "url": "https://example.invalid/pull/408",
+        "name": "Archive label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Explains archive without deletion",
+        "risk": "Low: display text only; no behavior changes"
+      },
+      {
+        "number": 409,
+        "url": "https://example.invalid/pull/409",
+        "name": "Sign-out label",
+        "state": "OPEN",
+        "checks": "passed",
+        "effect": "Clarifies ending this session",
+        "risk": "Low: display text only; no behavior changes"
+      }
+    ],
+    "expectations": [
+      "all ten separately named and linked",
+      "each effect and risk present",
+      "shared merge recommendation; does not merge"
+    ]
+  },
+  {
+    "id": "no-change",
+    "skill": "jstack-ketchup",
+    "request": "$jstack-ketchup",
+    "history": [
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "Thanks; nothing else to do."
+      },
+      {
+        "createdBy": "user",
+        "creationSource": "web",
+        "text": "$jstack-ketchup"
+      }
+    ],
+    "currentReads": [],
+    "unresolvedDecisions": [],
+    "historyCoverage": "Complete. No work or active tasks exist.",
+    "expectations": [
+      "short no change/nothing waiting reply",
+      "no invented task or visual"
+    ]
+  }
+]

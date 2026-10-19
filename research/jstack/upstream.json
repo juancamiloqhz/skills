@@ -528,6 +528,24 @@
         "cursor-team-kit/LICENSE"
       ],
       "differences": "research/jstack/adaptations/control-ui.md"
+    },
+    {
+      "name": "jstack-bro",
+      "localPath": "skills/jstack/jstack-bro",
+      "upstreamPath": "pstack/skills/bro",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [],
+      "differences": "research/jstack/adaptations/bro.md"
+    },
+    {
+      "name": "jstack-ketchup",
+      "localPath": "skills/jstack/jstack-ketchup",
+      "upstreamPath": "pstack/skills/ketchup",
+      "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
+      "contextPaths": [
+        "pstack/skills/bro"
+      ],
+      "differences": "research/jstack/adaptations/ketchup.md"
     }
   ],
   "decisions": [
@@ -560,13 +578,13 @@
     {
       "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
-      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "report": "research/jstack/evaluations/recap-skills/README.md",
       "id": "2026-10-11-ketchup",
-      "disposition": "defer",
+      "disposition": "adapt",
       "paths": [
         "pstack/skills/ketchup"
       ],
-      "reason": "Optional new skill. Reopen if the user selects conversation recap for exploration; inspect its bro dependency then."
+      "reason": "Originally deferred as optional. The user approved Bro and Ketchup on 2026-10-19; port both from 0148b78c56c72a1b8412055913c79f767095b217 with T3 read-only recap and portable dependency discovery. Implementation remains pending merge; the original review range is retained."
     },
     {
       "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
