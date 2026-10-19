@@ -1,6 +1,6 @@
 # Benny: proposed T3 integration
 
-Status: inactive source pack implemented, 2026-10-19. The [pack and local setup evaluation](../evaluations/benny-dormant-pack/README.md) cover the first implementation unit's copy/discovery checks; fresh-provider dependency proof remains pending. No Slack app, tracker issue, task, child agent, service or installation was created. Existing model choices and the reviewed upstream checkpoint are unchanged.
+Status: inactive source pack implemented, 2026-10-19. The [pack and local setup evaluation](../evaluations/benny-dormant-pack/README.md) cover copy/discovery checks. [Synthetic event and adapter contracts](../evaluations/benny-event-contracts/README.md) now exercise authentication, durable duplicate handling and write-failure recovery boundaries; real adapters and fresh-provider dependency proof remain pending. No Slack app, tracker issue, task, child agent, service or installation was created. Existing model choices and the reviewed upstream checkpoint are unchanged.
 
 Source: all 12 files in [`pstack/automations/benny`](https://github.com/cursor/plugins/tree/0148b78c56c72a1b8412055913c79f767095b217/pstack/automations/benny) at `0148b78c56c72a1b8412055913c79f767095b217`, read in full. Preserve its dormant pack boundary and two-stage lifecycle. The weekly upstream schedule and Make bot UI do not implement Benny.
 
@@ -68,7 +68,7 @@ Required failure cases include an inaccessible/deleted parent, reply/root confus
 
 ## Recommendation and decision boundary
 
-The dormant pack and local copy/discovery fixtures are available. Next test the event and adapter contracts with synthetic inputs, keeping all live integrations disabled. Fresh-provider dependency resolution remains required before a live pilot. The remaining runtime gaps should be visible tests and dependencies, not removed source requirements.
+The dormant pack, local copy/discovery fixtures and synthetic event/adapter contracts are available. Next choose the triage pilot scope and verify its real adapters and fresh-provider dependencies before preparing live resources. The synthetic contract suite does not establish actual trigger delivery, child isolation or agent behavior. Keep all live integrations disabled. The remaining runtime gaps should be visible tests and dependencies, not removed source requirements.
 
 Before live implementation, the user must choose the target repository, source/test channel, tracker, app-control environment, four stage model selections and credential/trigger provisioning. Reuse established choices where they apply and ask only for missing scope. Existing authorizations in another workflow do not select these resources. If Slack intake or worker isolation cannot be established, leave Benny unsupported and continue the independent provider/distribution checks. No project, connector or model is selected by this design PR, and merging it does not enable automation.
 
