@@ -4,6 +4,8 @@ On 2026-10-20, Juan-mode's inactive and active states each survived a real manua
 
 The [Claude follow-up](#claude-export-follow-up) records the same state choices across two user-triggered compactions in another T3 environment. Its inactive answer has no fresh source-read evidence. The state-retention observations do not certify complete task execution.
 
+A separate [Codex manual-recovery trial](../conversation-recovery/README.md) records active routing and configured delegation after a T3 service restart. Automatic backend recovery failed before that manual recovery. Neither outcome changes the scope of these compaction checks.
+
 ## Environment and boundary
 
 The existing top-level conversation used `codex / gpt-6.1-sol`, low reasoning effort and standard service tier. The source checkout was `1c4e36103f2cdcf63afd41760249d8ca5b076d52` on Orbit/Linux. All 59 tracked Juan-mode files and all four How files matched their installed copies. Setup's installed investigation reference matched `b3b8fba`, before PR #120; the other seven setup files matched current source. Temporary workflow files were permitted, so the revised strict-write branch was not exercised. No installation or model change was made to prepare the test.
