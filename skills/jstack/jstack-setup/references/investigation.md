@@ -8,7 +8,9 @@ Resolve every required role before starting its phase. Pass concrete targets unc
 
 ## Resolve and dispatch
 
-Read this file from the catalog-discovered jstack-setup installation. Capture a fresh unwrapped `orchestrator_capabilities` payload in an owned temporary file using the integration guidance. Resolve the required role through that installation's canonical helper, from any working directory:
+Check the caller's write boundary before capturing the catalog. If temporary files are forbidden, use the canonical resolver only through an available, verified write-free transport that preserves the complete fresh catalog. If no such transport is available, stop the required phase and report: "Investigation incomplete: configuration preflight could not run within the no-file-writes restriction; the required delegated phase did not run." Preserve any independently gathered source findings as preliminary, and state the minimum prerequisite needed to resume. A blocked preflight does not authorize creating scratch files, replacing the resolver, changing models or performing the required child's role in the coordinator. How's simple path still requires one explainer; a small question does not waive it.
+
+Read this file from the catalog-discovered jstack-setup installation. When temporary files are permitted, capture a fresh unwrapped `orchestrator_capabilities` payload in an owned temporary file using the integration guidance. Resolve the required role through that installation's canonical helper, from any working directory:
 
 ```sh
 python3 /discovered/jstack-setup/scripts/models.py resolve \

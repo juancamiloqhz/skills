@@ -147,3 +147,7 @@ Availability now includes Autopilot-stack, bringing the bundle to 22 procedures 
 ## Orchestrate availability, 2026-10-18
 
 The introductory coverage sentence now includes Orchestrate. Setup steps, configuration resolution, roles, saved settings and model options are unchanged. See the [release assessment](../evaluations/orchestrate-release/README.md) and [pinned-source comparison](../evaluations/orchestrate-release/source-comparison.json).
+
+## Investigation write boundary, 2026-10-20
+
+The shared `references/investigation.md` contract now handles a caller forbidding all file writes, including temporary catalogs. Use the canonical resolver through a verified write-free transport when available; otherwise report incomplete preflight and an unrun delegated phase, preserving preliminary findings. This clarifies the existing authority and failure boundary after an observed Claude run replaced the required explainer with coordinator analysis. It adds no resolver API or guaranteed write-free transport. The normal catalog-file route, whole-configuration validation, model choices and child counts are unchanged. See the [cross-provider trial and boundary assessment](../evaluations/investigation-write-boundary/README.md).
