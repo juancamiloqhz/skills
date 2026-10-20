@@ -1,6 +1,8 @@
-# Codex conversation compaction
+# Codex and Claude conversation compaction
 
 On 2026-10-20, Juan-mode's inactive and active states each survived a real manual compaction in [Start an Investigation with Juan Help](t3-thread://v1/0fdfffb0-c122-496f-a9df-cd8a37238812). This extends the [fresh-conversation evaluation](../catalog-discovery/README.md#fresh-codex-conversation). It establishes two bounded Codex/T3 observations, not general persistence support.
+
+The [Claude follow-up](#claude-export-follow-up) records the same state choices across two user-triggered compactions in another T3 environment. Its inactive answer has no fresh source-read evidence. The state-retention observations do not certify complete task execution.
 
 ## Environment and boundary
 
@@ -32,7 +34,27 @@ Use an idle top-level conversation with the intended provider and an established
 
 Both post-compaction tasks here also asked whether Juan-mode was active. That question did not set its state, but it made state reporting explicit and may make recall easier than an unprompted task. One compaction per state gives no reliability estimate. The exposed compaction events contained no summary text or token counts, so this assessment does not establish the exact retained JSON representation, how much context was removed or whether every skill instruction survived unchanged.
 
-The active run demonstrates resumed routing, preflight and completed delegation. Its final answer claimed Unslop use without a fresh identity/load check in the observed turn, and the plan had no final completion update. Do not treat this as complete writing-phase or whole-playbook verification. Automatic compaction at a context limit, compaction with live children, provider-process restart, machine reboot, other models, Claude/Cursor/OpenCode coordinators and standalone hosts remain unverified by this test. The separate Claude export does not establish Claude compaction support.
+The active Codex run demonstrates resumed routing, preflight and completed delegation. Its final answer claimed Unslop use without a fresh identity/load check in the observed turn, and the plan had no final completion update. Do not treat this as complete writing-phase or whole-playbook verification. Automatic compaction at a context limit, compaction with live children, provider-process restart, machine reboot, other models, Cursor/OpenCode coordinators and standalone hosts remain unverified by these tests. The Claude follow-up below adds its own bounded manual-compaction evidence.
+
+## Claude export follow-up
+
+The user supplied the same Claude conversation at two later snapshots, `2026-10-20T19:38:26.370Z` and `2026-10-20T19:44:38.647Z`. Both identify thread `3035e001-85df-4036-bb91-83194012ba5e`, title *Check How Skill Changes Are Detected*, in environment `13918500-09c0-412e-83d0-416667c3d684`. These exports are evidence from the `/home/juancamiloqhz` host, not live access from Orbit. The source remained clean at `b3b8fbab33aa233b8a2b8649ccd330cf7a82f49b`. The post-compaction capability payload identifies the coordinator as `claudeAgent / claude-opus-5-5`, effort `medium`, fast mode `false`.
+
+| Run and export positions | Observation |
+| --- | --- |
+| 5, 52–54 | User sent `/compact` while the earlier activation remained in effect. Provider event `d3c72333-e480-4b92-a55f-e2852553e444` completed at `19:33:58.004Z`; T3 reported token counts of 109,604 before and 4,415 after. |
+| 6–7, 55–86 | A source question without reinvocation led to a fresh Juan-mode read at 57, Investigation/How reads, complete-catalog preflight at 71 and one configured Codex explainer at 72. The parent checked an extra-files fixture while the child ran. The first turn returned an interim waiting update; child completion at 73 and notification at 80 preceded the later final answer at 85, which reported active state. |
+| 8, 87–89 | User explicitly turned Juan-mode off. Claude acknowledged an inactive record and started no work. |
+| 9, 90–92 | User sent `/compact`. Provider event `4d5b172e-3fdf-4caa-ac16-df92c9bf3764` completed at `19:43:56.038Z`; T3 reported token counts of 85,821 before and 5,216 after. |
+| 10, 93–96 | A new question about missing/different packages received an inactive-state answer. This entire turn contains no source-read, preflight, file-change or delegation tool event. The latest opt-out survived, but the answer's claim that it read the script is not supported by a fresh read in this turn. |
+
+The active follow-up used the same source question and write boundary as the Codex active test: explain which installed files the checker compares and whether extras affect the result, preserve source/install/configuration, and allow workflow temporary files. The off-state follow-up requested examples of missing and different packages under that same boundary. Both requested state/workflow reporting without prescribing the state. There was no activation between either compaction and its following task.
+
+Parsing the fresh capability payload at 68 and the temporary catalog creation at 70 confirmed exact JSON equality. Preflight selected `/home/juancamiloqhz/.config/jstack/models.json` and resolved `how explainer` to `codex / gpt-6.1-sol`, high reasoning effort. The requested target and returned dispatch identity/options match. Its task ID is `node:delegated-task:command%3Amcp%3Ab2386b9e-2803-4be9-8cc1-840b408ac2eb%3Adelegate-task%3Ajstack-inv2-compared-files-explainer-r1`. The export contains its completed task record and returned explanation; it does not include the child's full underlying tool trace or a live status query from Orbit.
+
+An early read command failed only because an old `/tmp/jstack-inv/parent` directory was absent. The agent continued in `/tmp/jstack-inv2/`, passed preflight and completed the task. Visible parent writes were confined to the allowed catalog and scratch fixtures, including a copy of the installed root. Its checker comparison stayed at 57 matching after added extras; repository status remained clean. The child reported scratch checks and six passing existing tests. The parent removed the catalog and freshly read Unslop plus two cited principle leaves at 83. That read does not independently establish the external Unslop package's identity. No source, installation or model-configuration mutation appears in the parent activity; this is not a remote filesystem-wide audit.
+
+The inactive response correctly retained opt-out and started no workflow. Its answer is consistent with the source already present in the history, but its claim of reading the script has no fresh tool evidence. Treat fresh-source verification as incomplete. Its wording about dropping delegation refers to Juan-mode's routing; opt-out does not prohibit an independently requested or applicable standalone skill. Both state cases pass within this snapshot, with one manual compaction per state and explicit state-reporting prompts. Token counts are T3's reported fields, not an independent context measurement or proof of exact summary contents. Restart/resume, automatic compaction and broader provider support remain open. The exported conversation ends inactive.
 
 ## Fidelity and retention
 
