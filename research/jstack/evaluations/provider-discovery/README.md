@@ -2,7 +2,7 @@
 
 On 2026-10-20, a user-approved `cursor / default` child loaded installed jstack skills and completed a configured Codex explainer. The overall workflow assessment is incomplete. The probe shortened its catalog before validation and declined the Unslop writing step. Successful dispatch and a correct source answer do not close those gates.
 
-A separate [complete capture follow-up](#complete-capture-follow-up) passed later that day. It verifies the existing file-writing route, without changing the initial workflow result or closing the writing gate.
+A separate [complete capture follow-up](#complete-capture-follow-up) passed later that day. Subsequent [explicit Unslop use](#explicit-unslop-follow-up) and a [guided Investigation repeat](#guided-investigation-repeat) establish writing and core execution, with scope, loading-evidence and presentation limits still open.
 
 ## Environment and prerequisites
 
@@ -64,7 +64,32 @@ python3 -B /home/ubuntu/.agents/skills/jstack-juan-mode/scripts/preflight.py \
 
 Whole-configuration validation passed and resolved the global `how explainer` to `codex / gpt-6.1-sol / reasoningEffort: high`, with `canDispatch: true`. This capture-only test did not dispatch another explainer. Terminal task status was `completed`, with a result available and no pending child work, question or approval. Independent checks found a clean repository before reporting and unchanged hashes for the saved models, installed capture contract and installed preflight script.
 
-Cursor's file-writing tool can preserve this complete live response without a shell fallback, reconstructed schema or internal runtime-store read. No skill correction is needed for that demonstrated route. One guided capture does not establish unattended reliability, a larger catalog's behavior, native skill registration or full workflow completion. The next open check is supported Unslop invocation, followed by a fresh complete Investigation. The task-owned catalog is removed after assessment; only this report and durable task evidence are retained.
+Cursor's file-writing tool can preserve this complete live response without a shell fallback, reconstructed schema or internal runtime-store read. No skill correction is needed for that demonstrated route. One guided capture does not establish unattended reliability, a larger catalog's behavior, native skill registration or full workflow completion. The follow-ups below assess explicit Unslop use and a fresh Investigation. The task-owned catalog was removed after assessment.
+
+## Explicit Unslop follow-up
+
+At source `c663acc93424d6a005dfc180928505c91b29e149`, a fresh user-approved `cursor / default` child received an explicit request to apply installed Unslop to a supplied paragraph. The [writing conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3A43e44741-8770-4b39-baaa-3c5c3e38701e%3Adelegate-task%3Ajstack-cursor-unslop-invocation-20261020-r1) records the full skill read at position 7 and the rewrite at 9. The parent recovered that read and verified that its body equals the installed file. The rewrite preserves manifest selection, missing/changed-file detection and ignored installed extras while replacing filler and vocabulary under rules 7, 9, 23 and 31. For example, "leverages" became "uses".
+
+The agent reported no exposed native skill-invocation mechanism. The transcript contains no native invocation call or rejection, so this result establishes explicit filesystem loading and application only. [Cursor's documentation](https://cursor.com/docs/skills) describes explicit slash invocation for flagged skills; it does not establish that path inside this T3 child. The test preserves `disable-model-invocation: true`, matching the pinned dependency. Terminal status was completed with no pending work. Repository status and protected model/Unslop hashes were unchanged. No scratch output was requested or retained.
+
+## Guided Investigation repeat
+
+A fresh `cursor / default` child at the same revision received the original checker question, installed authoring paths, the two prior failure findings and an explicit Unslop request. Temporary catalog/findings writes were permitted in one assigned cache directory. This guidance differs from an ordinary unassisted request. The [repeat conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3A43e44741-8770-4b39-baaa-3c5c3e38701e%3Adelegate-task%3Ajstack-cursor-investigation-repeat-20261020-r1) establishes these results:
+
+| Check | Independently assessed evidence |
+| --- | --- |
+| Catalog | The saved file equals the complete native response at position 26, with zero parsed key/value differences across all eight providers and 71 models. This verifies content independently of the helper's claimed save method. |
+| Configuration and dispatch | Canonical preflight at 44 selected the global `how explainer` as `codex / gpt-6.1-sol / reasoningEffort: high`. The actual T3 dispatch at 47 returned that exact target. |
+| Explainer and answer | The configured child completed, wrote its explanation/citation index and had no pending work at 57. Both agents inspected the pinned source. The checked answer correctly describes expected-path selection, byte comparison, status priority and ignored extras. This was static inspection, not checker/test execution. |
+| Writing and steps | The coordinator read the full installed Unslop body at 62, then produced the final answer. Item 72 records all four Investigation steps completed before the answer at 74. |
+
+The configured explainer task is `node:delegated-task:command%3Amcp%3A142dddca-2b4d-48b6-b66b-db5794b76db6%3Adelegate-task%3Ajstack-cursor-investigation-repeat-20261020-explainer-r1`. Its backing conversation independently confirms the source reads, assigned artifact writes and terminal result. The coordinator's original task also completed with no pending work. A later queued coordinator turn was cancelled before starting, leaving the backing thread labelled cancelled; this does not change the original task's completed result.
+
+This repeat is not a clean full-workflow pass. At 29 and 34, the coordinator made unnecessary host-path and environment searches while trying to save a catalog despite working native MCP. The native helper at 42 returned a narrative summary of repeated save attempts, without separate tool receipts in this view. Exact saved content is proven; the claimed helper Write sequence and selection are not independently verified. Do not copy private runtime metadata or promote those searches into a capture method.
+
+The durable Read outputs for Help, Juan-mode and setup entrypoints at 3–5, and the explainer report at 60, contain empty body strings despite file metadata. The full entrypoint/report loads therefore remain unverified in this record. No Help recipe read is recorded. The coordinator did receive nonempty Investigation, How, shared-contract and Unslop bodies. Its final answer also rewrote the linked explainer text and dropped clickable citations, exceeding the pinned How instruction's light-edit presentation boundary even though the checked claims remain correct.
+
+The explicit writing route and core configured execution work in these bounded tests. A further clean workflow check must verify body retrieval and Help routing, use the demonstrated direct capture route within scope, and preserve the explainer output with light edits. Native slash registration, automatic dependency selection and top-level persistence remain unverified. No operational skill change is justified by these results alone. Repository status and protected model/Unslop hashes stayed unchanged. Task-owned catalogs and redundant findings are removed after assessment; keep this report and durable task references.
 
 ## Fidelity and retention
 
