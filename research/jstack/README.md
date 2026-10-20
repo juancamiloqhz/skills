@@ -19,6 +19,7 @@ The [current fidelity status](fidelity-status.md) preserves earlier correction a
 - [Investigation write boundary and Claude trial](evaluations/investigation-write-boundary/README.md): configured Claude-to-Codex execution, observed failures and explicit incomplete handling when all file writes are forbidden.
 - [Codex and Claude conversation compaction](evaluations/conversation-compaction/README.md): actual manual compaction with Juan-mode off and on, observed subsequent behavior, the Claude inactive source-read gap and remaining restart limits.
 - [Codex manual service recovery](evaluations/conversation-recovery/README.md): failed automatic backend recovery, successful active Investigation after manual T3 recovery, and restored opt-out.
+- [Investigation completion evidence](evaluations/investigation-completion/README.md): full Unslop loading in a bounded authoring trial, corrected task-list findings and terminal reread guidance.
 - [Complete catalog discovery](evaluations/catalog-discovery/README.md): all current identities pass a real Skills CLI listing; the refreshed Orbit installation matches, with bounded fresh-Codex workflow evidence and wider provider checks still open.
 - [Make bot UI design](integrations/make-bot-ui.md): proposed T3 integration, source differences and required live evidence.
 - [User guide](../../skills/jstack/jstack-juan-help/docs/guide/README.md): setup, workflow examples and choosing a skill.
