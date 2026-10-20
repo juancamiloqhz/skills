@@ -29,6 +29,8 @@ The [Cursor probe conversation](t3-thread://v1/thread:delegated-task:command%3Am
 
 The nested task ID is `node:delegated-task:command%3Amcp%3A108441eb-4c87-44de-b25a-39f1f98b5485%3Adelegate-task%3Ajstack-cursor-provider-discovery-how-explainer-20261020-r1`. Its dispatch and status responses show `completed`, `workState: result_available`, no pending child runs and no pending question. Independent reads found both backing conversations completed with no active run or pending request.
 
+During review, the parent recovered the complete original capability payload from item 44 through `t3_thread_read` and separately ran canonical preflight against that snapshot. Whole-configuration validation passed and selected the same saved Codex explainer and high effort. The assessment-only catalog was then removed. This verifies the saved selection against the actual catalog after the fact; it does not repair the probe's earlier capture failure or establish an unassisted Cursor capture route.
+
 ## Capture and scope failures
 
 The catalog builder at 63 explicitly described its input as reconstructed and compact. This violates the existing instruction to preserve the full live payload rather than shorten it. A known output schema and successful role resolution are not substitutes for faithful capture. No failure of a supported complete-capture method was demonstrated, so do not attribute this result to an inherent Cursor limitation.
