@@ -20,7 +20,7 @@ The [current fidelity status](fidelity-status.md) preserves earlier correction a
 - [Codex and Claude conversation compaction](evaluations/conversation-compaction/README.md): actual manual compaction with Juan-mode off and on, observed subsequent behavior, the Claude inactive source-read gap and remaining restart limits.
 - [Codex manual service recovery](evaluations/conversation-recovery/README.md): failed automatic backend recovery, successful active Investigation after manual T3 recovery, and restored opt-out.
 - [Investigation completion evidence](evaluations/investigation-completion/README.md): full Unslop loading in a bounded authoring trial, corrected task-list findings and terminal reread guidance.
-- [Cursor provider discovery probe](evaluations/provider-discovery/README.md): installed-file discovery, actual Codex delegation and a separate successful complete-capture test, with writing/full-workflow gates and OpenCode prerequisites still open.
+- [Cursor provider assessment](evaluations/provider-discovery/README.md): complete capture, explicit Unslop use and configured Investigation execution, with scope, body-retrieval and presentation limits preventing a clean full-workflow pass.
 - [Complete catalog discovery](evaluations/catalog-discovery/README.md): all current identities pass a real Skills CLI listing; the refreshed Orbit installation matches, with bounded fresh-Codex workflow evidence and wider provider checks still open.
 - [Make bot UI design](integrations/make-bot-ui.md): proposed T3 integration, source differences and required live evidence.
 - [User guide](../../skills/jstack/jstack-juan-help/docs/guide/README.md): setup, workflow examples and choosing a skill.
