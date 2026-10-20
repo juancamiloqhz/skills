@@ -2,6 +2,8 @@
 
 On 2026-10-20, a user-approved `cursor / default` child loaded installed jstack skills and completed a configured Codex explainer. The overall workflow assessment is incomplete. The probe shortened its catalog before validation and declined the Unslop writing step. Successful dispatch and a correct source answer do not close those gates.
 
+A separate [complete capture follow-up](#complete-capture-follow-up) passed later that day. It verifies the existing file-writing route, without changing the initial workflow result or closing the writing gate.
+
 ## Environment and prerequisites
 
 The source was clean at `83bd97f1ecba86d77dd3e4cd79a496f95f35a240` on Orbit. Cursor CLI was `2026.10.01-e373342`; OpenCode was `2.1.1`. The live T3 catalog offered Cursor child execution and models, but no OpenCode models. OpenCode execution was not attempted.
@@ -41,9 +43,28 @@ While seeking a capture method, the agent also searched older task catalogs and 
 
 The agent removed its owned temporary directory and pointer at 75. Parent checks confirmed both were absent, all selected installed/configuration hashes matched the baseline, and the full installation comparison retained the same single pre-existing difference. Repository status was clean before this report. These checks are not a filesystem-wide audit of CLI caches or provider storage writes.
 
-The next capture check must preserve the complete fresh payload through a supported file, stream or bounded-chunk route and compare the parsed result before accepting preflight. It must not rebuild a model inventory or search internal provider storage. The Unslop follow-up needs a supported invocation assessment that preserves the upstream explicit-only flag and distinguishes an actual rejected call from a decision not to invoke it. Neither correction is implemented or claimed tested by this report.
+The initial probe left two follow-ups: faithful complete capture and a supported Unslop invocation assessment. Capture must not rebuild a model inventory or search internal provider storage. Unslop assessment must preserve the upstream explicit-only flag and distinguish an actual rejected call from a decision not to invoke it. The separate capture test below addresses only the first follow-up.
 
 This single fresh child establishes bounded Cursor execution and actual Cursor-to-Codex delegation. It does not prove top-level activation, later-task persistence, compaction, restart, all 57 entrypoints, standalone Cursor support or OpenCode execution. OpenCode still needs an available live model before its execution check.
+
+## Complete capture follow-up
+
+At source `4b34a8de9bc6adb90cbed0f60bcaa7ac2ce4f8d8`, a fresh user-approved `cursor / default` child tested capture alone. The brief explicitly required every response property, prohibited reconstructed inventories and internal storage access, and left preflight to the parent after independent comparison. This was a guided test of the existing capture contract, not an unassisted Investigation run.
+
+The [capture conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3A7c5b7dfd-b026-4108-a4b5-d9278a6d9393%3Adelegate-task%3Ajstack-cursor-complete-catalog-20261020-r1) records one native `orchestrator_capabilities` call at position 8, Cursor `Write` at 16 and JSON parsing at 18. The saved file contained eight providers and 71 models. The parent recovered the complete original tool item through three paginated `t3_thread_read` reads and compared its parsed payload recursively with the saved file. All keys and values matched, including array order, labels, defaults and inherited settings. There were zero differences. Counts and successful parsing alone were not the acceptance test.
+
+The parent then ran the installed canonical preflight against that verified file:
+
+```sh
+python3 -B /home/ubuntu/.agents/skills/jstack-juan-mode/scripts/preflight.py \
+  --setup-skill /home/ubuntu/.agents/skills/jstack-setup \
+  --project-root /home/ubuntu/Dev/skills \
+  --catalog /path/to/captured-catalog.json --role 'how explainer'
+```
+
+Whole-configuration validation passed and resolved the global `how explainer` to `codex / gpt-6.1-sol / reasoningEffort: high`, with `canDispatch: true`. This capture-only test did not dispatch another explainer. Terminal task status was `completed`, with a result available and no pending child work, question or approval. Independent checks found a clean repository before reporting and unchanged hashes for the saved models, installed capture contract and installed preflight script.
+
+Cursor's file-writing tool can preserve this complete live response without a shell fallback, reconstructed schema or internal runtime-store read. No skill correction is needed for that demonstrated route. One guided capture does not establish unattended reliability, a larger catalog's behavior, native skill registration or full workflow completion. The next open check is supported Unslop invocation, followed by a fresh complete Investigation. The task-owned catalog is removed after assessment; only this report and durable task evidence are retained.
 
 ## Fidelity and retention
 
