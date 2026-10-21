@@ -258,6 +258,10 @@ The targeted presentation and initial task-copy checks pass in this guided run. 
 
 Practical example: ask `/jstack-juan-mode investigate how project model settings override global defaults. Keep the explanation under 400 words, with clickable citations and one example.` The helper must receive that same output constraint so its checked answer can be returned with light edits. This follow-up demonstrates that path with explicit reminders; ordinary unattended reliability remains unverified.
 
+## Runtime boundary assessment
+
+The subsequent [read-scope and explicit-writing assessment](../cursor-runtime-boundaries/README.md) inspects the installed T3 SDK adapter, current dispatch schema and official Cursor documentation. Broad workspace controls do not isolate this run from older response files within the same project folder. The existing explicit Unslop trial establishes filesystem application, with no native rejection. No permission, model or skill change follows from those findings; the incomplete workflow results above remain unchanged.
+
 ## Fidelity and retention
 
 The capture, integrated, acceptance, installed and guided presentation assessments change research only. All shipped files and the manifest remain byte-identical to the evaluated `035ea1bb4d077475671363ae4f86bdc18e27fc1c` tree. Direct comparison with Investigation and How at `11713c683fe4add4fd403ea880580abbc9e0875f` preserves their four-step and one-explainer/light-edit procedures. The mode's host-list rule remains aligned with that pin. The latest failures concern execution of these existing rules, not a new jstack requirement. Setup's directory at `ccb5507cec1546dc88135c1139c811e6c59115ba` contains only its entrypoint, with no T3 transport counterpart. Reading that separate setup procedure is not an added How phase.
