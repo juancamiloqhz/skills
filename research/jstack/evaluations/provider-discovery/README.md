@@ -10,6 +10,8 @@ The [2026-10-21 merged-guidance trial](#merged-guidance-trial-and-exact-recovery
 
 A [fresh self-capture follow-up](#fresh-self-capture-follow-up) verifies exact capture of the child's own current observation without a parent-supplied source identity. Its unnecessary cache searches and environment check keep the overall protocol incomplete.
 
+The [scoped repeat](#scoped-capture-and-integrated-repeat) passes capture, preflight and read-scope review. A subsequent integrated run completes configured delegation and a checked explanation with light edits. Its directory listings and missing task-list evidence leave the full protocol qualified.
+
 ## Environment and prerequisites
 
 The source was clean at `83bd97f1ecba86d77dd3e4cd79a496f95f35a240` on Orbit. Cursor CLI was `2026.10.01-e373342`; OpenCode was `2.1.1`. The live T3 catalog offered Cursor child execution and models, but no OpenCode models. OpenCode execution was not attempted.
@@ -141,11 +143,35 @@ Canonical source preflight at 31 returned exit 0 and resolved the global `how ex
 
 The overall protocol remains incomplete. Before supported history recovery, commands at 10 and 13 searched filenames under temporary/shared cache directories, listed runtime response directories, inspected an older response file's metadata and checked the ACP environment variable despite working native MCP. The brief excluded those actions. The accepted catalog came from this task's own supported history, but that correct result does not excuse the scope deviations. The final claim of no incomplete phase omits this finding.
 
-This establishes one guided self-capture mechanism without a parent-supplied source identity. A scope-compliant repeat, a clean full Investigation and broader provider verification remain open. It does not measure a reliability improvement caused by the wording. No operational change follows from this assessment. Retain the findings and task reference; remove owned catalog copies and duplicate receipts after assessment.
+This establishes one guided self-capture mechanism without a parent-supplied source identity. The scoped repeat below tests the remaining method boundary. It does not measure a reliability improvement caused by the wording. No operational change follows from this assessment. Retain the findings and task reference; remove owned catalog copies and duplicate receipts after assessment.
+
+## Scoped capture and integrated repeat
+
+Both tasks used source `7ce6e5893f312e9dc77bf6832fce7f020ac1da33`, user-approved `cursor / default` and repository authoring paths. Neither changed the installation or saved model configuration. Each obtained a new capability observation without a parent-supplied source thread/item.
+
+### Scoped capture passes
+
+The [capture conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3Ab939bcf4-efdc-4ee4-b183-8f8df9c6ca79%3Adelegate-task%3Ajstack-cursor-scoped-capture-20261021-r1) records the complete T3 reference at 5, one native capability call at 9 and supported own-thread recovery at 16, 24, 27 and 30. The task corrected partial reads through the supported item parameters, then parsed the exact named complete response file. At 33 it saved and compared the whole catalog before canonical preflight at 36 returned exit 0 and the saved Codex/high explainer target. No explainer ran in this task.
+
+The parent independently compared the saved object with the original complete capability item and its named response file. Every parsed key/value matched across eight providers and 71 models. The observation time was `2026-10-21T12:58:29.431Z`, and caller/tool/arguments/success/truncation checks passed. Inspection of all recorded commands found only the allowed revision check, named current response reads, owned writes and preflight. This narrow protocol passes, including read scope. One explicitly guided observation does not establish unattended reliability.
+
+### Integrated execution works with qualifications
+
+The [Investigation conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3Ab939bcf4-efdc-4ee4-b183-8f8df9c6ca79%3Adelegate-task%3Ajstack-cursor-investigation-scoped-20261021-r1) loaded Help's recipe/guide, the complete Investigation playbook, How/template, shared setup contracts and Unslop. The parent compared their recorded bodies with the actual files. Help's entrypoint was not read, so this establishes the supplied recipe route rather than entrypoint discovery.
+
+The new capability call at 24, observed at `2026-10-21T13:02:06.535Z`, was extracted through its own supported history. Parent comparisons with the original complete item and named response file found exact equality. At 43, canonical `models.py resolve --with-source` validated the saved map and returned the global config path and `codex / gpt-6.1-sol / reasoningEffort: high`. The dedicated `preflight.py` was not run in this integrated task; do not conflate it with the preceding capture test's executed preflight.
+
+The wait-mode dispatch at 46 timed out. A retry with the same request ID at 50 recovered one existing task, not a second explainer. Its actual receipt matches the configured provider/model/options. The [explainer conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3Aa74d354e-3dd2-498f-a4e2-338d8fd1e9f3%3Adelegate-task%3Ajstack-cursor-investigation-scoped-20261021-how-explainer-r1) confirms source reads and the two assigned findings files. Terminal status at 65 reports completed work with no pending children. Neither the installation checker nor its fixture tests ran.
+
+The coordinator checked the decisive source claims. Its final answer retains the technical explanation with light sentence edits and all main explanation links, omitting the closing activity-scope paragraph and that paragraph's auxiliary link. Unslop's full body was recorded at 9, with a later bounded read at 68. Its explicit-only flag stayed unchanged. The answer's statement that the models file was not read describes the explainer's source-reading scope; the coordinator's canonical resolver did read the saved configuration.
+
+The full protocol remains qualified. Package globs at 5–8 and directory listings at 22 and 76 violated the explicit-path method boundary. The mode read at 26 records only a 15,101-character prefix of the 28,000-character file, with no recorded continuation. No host task-list event verifies the receipt's claim that all four steps completed. The prior recording experiment prevents treating a partial durable body alone as proof that the agent lacked the text, but complete mode retrieval and the required host task list are unverified here. An interim receipt write also failed before a corrected write succeeded. Retain these gaps rather than accepting the final `phase: complete` as proof.
+
+Both tasks ended without pending work. Parent checks found a clean repository before reporting and unchanged protected configuration/installed-file hashes. These are guided authoring-path results. Native invocation, automatic dependency discovery, top-level persistence, a fully verified Investigation protocol and broader provider support remain open. The next focused check is complete mode retrieval and the supported host task-list route, rather than another catalog-only repetition.
 
 ## Fidelity and retention
 
-The fresh self-capture assessment changes research only. All shipped files and the manifest remain byte-identical to the evaluated `a45cff9eff3c624ff4b5e28cfe911efed13ff211` tree.
+The capture and integrated assessments change research only. All shipped files and the manifest remain byte-identical to the evaluated `7ce6e5893f312e9dc77bf6832fce7f020ac1da33` tree. Direct comparison with Investigation and How at `11713c683fe4add4fd403ea880580abbc9e0875f` preserves their four-step and one-explainer/light-edit procedures. Setup's directory at `ccb5507cec1546dc88135c1139c811e6c59115ba` contains only its entrypoint, with no T3 transport counterpart.
 
 Operational changes are limited to exact capture and response-file/history recovery guidance in setup's existing T3 reference. The [setup comparison](../../adaptations/setup-jstack.md#exact-capture-and-durable-recovery-2026-10-21) records their necessity against setup's own pin. The four Investigation steps and How's one-explainer/light-edit rules remain unchanged from their existing adaptations of `11713c683fe4add4fd403ea880580abbc9e0875f`. The pinned Unslop source retains its explicit-only flag. Current comparisons and invocation limits remain in the [Investigation](../../adaptations/investigation.md), [How](../../adaptations/how.md) and [Unslop dependency](../../adaptations/technical-writing.md#unslop-dependency-assessment) records. Model settings, source pins and the reviewed checkpoint remain unchanged.
 
