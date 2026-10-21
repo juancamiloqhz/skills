@@ -1,6 +1,6 @@
 # Jstack release readiness
 
-Reviewed clean main `110705c8525b365e784e58ba7fd7d3388e61a527` on Orbit, 2026-10-21, after PR #135. The assessment is complete; full release verification is **not green**. Existing evidence supports human-reviewed daily use on exercised Codex paths, with prerequisites checked per workflow. It does not certify every provider, dependency or unattended workflow.
+Reviewed clean main `110705c8525b365e784e58ba7fd7d3388e61a527` on Orbit, 2026-10-21, after PR #135. The follow-up at `7807ddea30d3350c881da1a71f47c8b755b2480d`, after PR #136, corrected runtime selection and passed all 95 root tests with the unchanged verifier probe. The assessment is complete; full release verification is **not green**. Existing evidence supports human-reviewed daily use on exercised Codex paths, with prerequisites checked per workflow. It does not certify every provider, dependency or unattended workflow.
 
 ## Current source and installation
 
@@ -16,7 +16,7 @@ Environment: Python 3.14.4, Node 24.19.0, Bun 1.4.2 and the existing Skills CLI 
 
 | Existing check | Current result | Meaning |
 | --- | --- | --- |
-| Root Python suite, including opt-in catalog/Benny discovery and pinned T3 probe | 95 tests, 94 passed, 1 failed; exit 1 | The historical T3 verifier probe cannot find its expected source section in the installed executable. Current wire compatibility is unverified. |
+| Root Python suite, including opt-in catalog/Benny discovery and pinned T3 probe | Initially 94 passed, 1 failed; exit 1. Follow-up: all 95 passed; exit 0. | The first run selected an old outer launcher. The active application has the exact reviewed verifier hash and passes the unchanged wire probe. |
 | Model helper fixtures | 19 passed; exit 0 | Lookup, validation and configuration behavior tested with fixtures. |
 | Consumer preflight fixtures | 16 passed; exit 0 | Configured role/option and dependency behavior tested with fixtures. |
 | Documentation checker fixtures | 20 passed; exit 0 | Existing checker behavior passes. |
@@ -26,7 +26,7 @@ Environment: Python 3.14.4, Node 24.19.0, Bun 1.4.2 and the existing Skills CLI 
 | Saved configuration against fresh complete live catalog | Valid, all 17 roles; exit 0 | Global map preserved. This does not check every workflow's model-diversity requirements. |
 | Canonical How preflight | Exit 0, `canDispatch: true` | Saved `codex / gpt-6.1-sol / reasoningEffort: high` selection retained. No new helper was dispatched. |
 
-The failing runtime probe stops at `Runtime verifier section not found; inspect this runtime before updating the probe.` Its expected marker and verifier function are absent from the inspected build. This does not establish a broken webhook implementation or permission to weaken the probe. The installed artifact is identified in the [runtime assessment](../cursor-runtime-boundaries/README.md#installed-t3-adapter); no older runtime was substituted to obtain a pass.
+The first runtime probe stopped at `Runtime verifier section not found; inspect this runtime before updating the probe.` Its input was the October 3 outer launcher rather than the active application. The [follow-up](../bot-ui-transport/README.md#active-runtime-follow-up-2026-10-21) identifies both through process ancestry and verifies the application at `0.1.2-nightly.20261021.3473`. No hash guard was weakened, older build substituted or verifier code changed. It also corrects the [Cursor policy mapping](../cursor-runtime-boundaries/README.md#active-application-recheck) previously attributed to the current application.
 
 ## Provider and persistence evidence
 
@@ -43,8 +43,9 @@ These rows summarize existing runtime records. This review runs no new model exp
 ## Finite remaining work
 
 1. **Prepare tooling prerequisites manually, then rerun only the blocked checks.** The declared manual command is `bun install --frozen-lockfile` in the relevant Juan-mode `scripts` directory. For this source checkout that is `skills/jstack/jstack-juan-mode/scripts`; installed workflows use their discovered installation's separate directory. Installing dependencies in the checkout does not prepare the global installed copy. Recheck Bun tests and strict typechecking after setup. No installation was performed in this review.
-2. **Re-assess the current T3 verifier before claiming current Make bot UI compatibility.** Inspect the installed implementation and compare it with the original transport contract, then update the guarded pure probe only if that assessment supports it. Preserve prior live-pilot evidence and the current guard failure. Do not enable a service or webhook as a shortcut.
-3. **Select each further runtime claim before testing it.** OpenCode needs an explicitly selected test model. Cursor's read-scope and writing limits need a supported integration path, not repeated full Investigations. Automatic compaction/restart, cancellation/watch continuation, nested writers and complete per-route external dependency checks remain release work. Passing model validation or a prior pilot does not close them.
+2. **Select each further runtime claim before testing it.** OpenCode needs an explicitly selected test model. Cursor's read-scope and writing limits need a supported integration path, not repeated full Investigations. Automatic compaction/restart, cancellation/watch continuation, nested writers and complete per-route external dependency checks remain release work. Passing model validation or a prior pilot does not close them.
+
+The current pure verifier assessment is complete in the follow-up above. It establishes fixture signing compatibility for that active build, not a new live endpoint, relay or receiving-agent result. Prior live pilots and their limits remain separate.
 
 Benny's live pilot remains **deferred by the user** because no repository, Slack channel or issue tracker is selected. Its dormant pack is not missing source. Origin, automatic chain discovery and alternative native distribution remain separate product decisions. These deferred choices do not prevent the exercised daily-use paths, and this review does not approve them.
 
@@ -52,13 +53,13 @@ The stale current-count and no-compaction-evidence claims in `fidelity-status.md
 
 ## Reproduce
 
-From the repository root, use the already-present CLI, reviewed external Unslop and the exact runtime under assessment. The root-suite command below currently fails its pinned-runtime probe as recorded above.
+From the repository root, use the already-present CLI, reviewed external Unslop and the identified application executable. The corrected command below passed all 95 root tests. The initial failed command selected `0.0.46-nightly.20261003.2610` instead.
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 \
 JSTACK_SKILLS_CLI=/home/ubuntu/.npm/_npx/ac0ed6aa23b37c1e/node_modules/skills/dist/cli.mjs \
 JSTACK_UNSLOP_SOURCE=/home/ubuntu/.agents/skills/unslop \
-JSTACK_TEST_T3_RUNTIME=/home/ubuntu/.t3/runtime/versions/0.0.46-nightly.20261003.2610/t3 \
+JSTACK_TEST_T3_RUNTIME=/home/ubuntu/.t3/runtime/versions/0.1.2-nightly.20261021.3473/t3 \
 python3 -B -m unittest discover -s scripts/jstack -p 'test_*.py'
 PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s skills/jstack/jstack-setup/scripts -p 'test_*.py'
 PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s skills/jstack/jstack-juan-mode/scripts -p 'test_*.py'

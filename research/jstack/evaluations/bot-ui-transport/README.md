@@ -25,6 +25,26 @@ Inspected the installed executable at `/home/ubuntu/.t3/runtime/versions/0.1.1-n
 
 Only the pure signature verifier was executed, extracted from the installed binary into an isolated JavaScript context with Node crypto. [probe_runtime.mjs](probe_runtime.mjs) checks the extracted section SHA-256 `f8f78ec57c6ead5396df95fa4af3eb8d6a9988da1136fbf0478e3f3dacd0be67` before evaluating it. It refuses changed source until reviewed. It does not launch T3 or copy its runtime source into this repository. Route/status and scheduling conclusions above are source inspection, not live endpoint results.
 
+## Active runtime follow-up, 2026-10-21
+
+The release-readiness run initially selected `/home/ubuntu/.t3/runtime/versions/0.0.46-nightly.20261003.2610/t3`. That executable lacks the verifier region and the guard correctly stopped. Process ancestry then showed two T3 executables: the old outer launcher and the nearer application hosting the executing Codex agent. The application is `/home/ubuntu/.t3/runtime/versions/0.1.2-nightly.20261021.3473/t3`, SHA-256 `d6748793bc23cbf4c82ab7956f5a62208b4862c876ea72c807c457c10606b608`.
+
+In that application, the 1,037-byte verifier region begins at byte 165132227. Its hash is exactly the existing `f8f78ec57c6ead5396df95fa4af3eb8d6a9988da1136fbf0478e3f3dacd0be67` pin. The complete verifier was reread. The raw-body route still passes the original bytes to the scheduled-task service, which passes those bytes to the verifier. The route retains the 1 MiB limit, outcome header and documented acceptance/rejection mappings. This is source inspection, not a new live delivery.
+
+The unchanged probe accepted the actual fixture sender bytes and rejected its five negative cases. Running the full root suite with the existing Skills CLI, external Unslop and this application executable returned **95 tests passed, exit 0**. The earlier missing-region failure remains evidence of an incorrect runtime selection, not a demonstrated current transport incompatibility. No probe hash, verifier code or sender behavior changed. No live webhook, schedule, service, secret store or runtime setting was accessed or changed.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 \
+JSTACK_SKILLS_CLI=/home/ubuntu/.npm/_npx/ac0ed6aa23b37c1e/node_modules/skills/dist/cli.mjs \
+JSTACK_UNSLOP_SOURCE=/home/ubuntu/.agents/skills/unslop \
+JSTACK_TEST_T3_RUNTIME=/home/ubuntu/.t3/runtime/versions/0.1.2-nightly.20261021.3473/t3 \
+python3 -B -m unittest discover -s scripts/jstack -p 'test_*.py'
+```
+
+For another run, identify the application hosting the agent before selecting an executable. The service's outer launcher, the oldest cached build and the newest directory name do not establish that identity. On Linux, inspect executable paths and parent IDs through `/proc`, without reading command lines, credentials or application state. Keep the explicit test path and the existing verifier hash guard. A changed verifier still requires assessment. This follow-up also [corrects the Cursor adapter attribution](../cursor-runtime-boundaries/README.md#active-application-recheck).
+
+The final local Make bot UI procedure was compared with its pstack source at `0148b78c56c72a1b8412055913c79f767095b217`. The existing six-phase structure and recorded T3 signing substitution remain unchanged. This follow-up changes research only, adds no adaptation and advances no upstream pin or reviewed checkpoint.
+
 ## Tests and observations
 
 Thirteen tests passed, including the optional installed-verifier probe. The [test suite](../../../../scripts/jstack/test_bot_ui_transport.py) uses owned temporary directories and a loopback fixture server, with public dummy key material explicitly identified as a fixture.
