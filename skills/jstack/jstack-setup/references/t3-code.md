@@ -9,6 +9,8 @@ Use the actual callable tool schemas and injected T3 Code instructions as author
 
 Save the unwrapped capabilities payload through a file-writing tool or streamed standard input. Embedding a large catalog in a shell command, including a heredoc passed as command text, can exceed the operating system's argument limit. If the transport only supports command strings, write bounded chunks. Preserve the full payload and parse the saved JSON before validation; do not shorten the catalog to make it fit.
 
+When the current tool result or runtime supplies the full response as a file, parse that exact file and copy its complete unwrapped payload programmatically into the task-owned catalog. If it is already unwrapped, copy bytes and verify equality before validation. Keep the runtime-owned source intact. Use only the current response's supplied path; an unidentified or partial file leaves capture incomplete.
+
 For ACP when MCP tools are absent and `T3_ACP_MCP_NODE` is present, the supported discovery transport is:
 
 ```sh
