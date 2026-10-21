@@ -14,6 +14,8 @@ The [scoped repeat](#scoped-capture-and-integrated-repeat) passes capture, prefl
 
 The [mode/task-list follow-up](#complete-mode-and-host-task-list-follow-up) proves complete bounded mode retrieval and actual four-step completion during another Investigation. That run preserves the explainer verbatim, but older-cache access and incomplete setup-entrypoint retrieval keep its full test protocol incomplete.
 
+The [acceptance review](#acceptance-review-and-installed-prerequisite) separates those test-specific requirements from the shipped consumer contract. Full setup-workflow reading is not an ordinary How prerequisite. Scope violations remain failures, and the installed setup references need a manual refresh before a current installed-workflow trial.
+
 ## Environment and prerequisites
 
 The source was clean at `83bd97f1ecba86d77dd3e4cd79a496f95f35a240` on Orbit. Cursor CLI was `2026.10.01-e373342`; OpenCode was `2.1.1`. The live T3 catalog offered Cursor child execution and models, but no OpenCode models. OpenCode execution was not attempted.
@@ -189,9 +191,56 @@ The full protocol remains incomplete. The coordinator listed the broader jstack 
 
 Both tasks ended without pending work. Source and protected configuration/installed-file hashes stayed unchanged before reporting. No operational correction follows from mechanisms that already work. Complete mode retrieval, real progress records, exact capture, saved-model delegation and preserved presentation now have executed evidence. A fully compliant Cursor workflow and broader release claims remain open. Further work should target the demonstrated scope/instruction-compliance limits rather than repeat catalog, Read or task-list availability probes.
 
+## Acceptance review and installed prerequisite
+
+On 2026-10-21, a source/record review at `035ea1bb4d077475671363ae4f86bdc18e27fc1c` tested the premise that the remaining failures show missing jstack mechanisms and require more operational guidance. The existing successful capture, complete reads, actual task lists and configured execution contradict that explanation. The review does not establish what caused the agent's cache excursions or that another model or prompt would prevent them.
+
+| Remaining finding | Actual requirement and assessment |
+| --- | --- |
+| Partial setup entrypoint | The final test brief required every supplied entrypoint in full. [How's dependency paragraph](../../../../skills/jstack/jstack-how/SKILL.md) instead requires setup's shared Investigation contract, whose linked configuration/T3 contracts and canonical resolver govern this consumer. [Setup's entrypoint](../../../../skills/jstack/jstack-setup/SKILL.md) configures saved choices. Its complete seven-step workflow is not an ordinary How prerequisite. The original test failure remains recorded, but does not establish a missing How dependency load. |
+| Extra capture-metadata output | The final brief allowed only two coordinator filenames. Writing a third breached that boundary. The [shared contract](../../../../skills/jstack/jstack-setup/references/investigation.md) permits assigned temporary findings, with no universal two-filename limit. Future evaluation must use the caller's actual write boundary. |
+| Broader/older-cache access | The caller restricted permitted sources, and the shared contract preserves that scope. These are genuine unresolved violations, even though the current catalog and answer were correct. No exercised tool/filesystem boundary enforced those read limits. |
+| Missing transport, full Read or task-list support | The recorded successes establish these bounded mechanisms. Repeating availability probes is not a correction for scope noncompliance. They do not establish reliable unrestricted workflow behavior. |
+
+This corrects the acceptance criteria, not the historical observations or the user's instructions. The final trial remains incomplete under its original brief. Ordinary Investigation has verified core execution, while strict scope adherence and broader provider claims remain unverified. No skill, model or permission change is justified by this review alone.
+
+The next prerequisite at this checkpoint was installed-source parity. The read-only checker against the same source returned a completed comparison with exit 1: **56 matching, 0 missing, 1 different**. Only `jstack-setup` differed, in `references/investigation.md` and `references/t3-code.md`. Direct diffs showed the installed copies lacked the merged write-boundary and exact capture/response-file/history guidance; no other differences appeared in those files.
+
+The manual refresh instructions at that checkpoint were:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-setup -g
+python3 -B scripts/jstack/check_installation.py --installed-root "$HOME/.agents/skills"
+```
+
+The named-skill/global options match locally inspected CLI help and the [Skills CLI installation reference](https://github.com/vercel-labs/skills#install-a-skill). The user performed the manual refresh. The follow-up below checks parity and an installed Investigation on a new question, with criteria fixed before dispatch. Neither assessment reruns setup or changes saved model choices.
+
+## Installed configuration Investigation
+
+After the user refreshed Orbit on 2026-10-21, the parent reran the real installation checker at `0fc2108dee83cdf29d83efc66ee76f5a3e82de39`: **57 matching, 0 missing, 0 different**, exit 0. Shipped files at that revision equal main `035ea1bb4d077475671363ae4f86bdc18e27fc1c`; its additional changes are research only.
+
+One fresh, user-approved `cursor / default` child investigated how project model settings override global defaults. Its brief supplied the question, checkout/revision and one owned scratch directory, but no installed or authoring skill paths and no catalog-capture recipe. Relevant repository navigation and installed-skill discovery were allowed. This was an explicit bounded mode invocation, not a native slash-registration or top-level persistence test.
+
+The parent inspected the [trial conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3Ab939bcf4-efdc-4ee4-b183-8f8df9c6ca79%3Adelegate-task%3Ajstack-cursor-installed-natural-20261021-r1), helper history and actual artifacts:
+
+| Check | Independent finding |
+| --- | --- |
+| Installed dependencies | Reads at 9–12, 21–27, 32 and 59 contain Investigation, shared configuration/execution contracts, How, its template and full Unslop. Discovered paths under `~/.claude/skills` resolve to `~/.agents/skills`. This proves filesystem discovery for this run, not native catalog registration. |
+| Exact catalog and selection | The complete capability item at 20 matches the saved catalog by parsed equality, with eight providers and 71 models. Installed preflight at 53 invokes the canonical resolver, validates the map and returns the global config with `codex / gpt-6.1-sol / reasoningEffort: high`. An initial wrong wrapper parse was corrected before validation. |
+| Configured helper | Dispatch at 64 hit an MCP timeout. The same request ID at 72 recovered the existing task, rather than creating another helper. Status at 83 is `completed / result_available`, with no pending children and the exact target/options. Reads at 84–87 and command 89 inspect findings and decisive source claims. |
+| Answer content | Source inspection confirms explicit file, environment, project, then global lookup; complete-map replacement; and failure on an invalid selected project file without global fallback. No configuration fixtures ran. |
+| Task list | Actual host records at 61, 76 and 90 exist and end completed, but shorten the four steps. For example, step 1 becomes `Route through the jstack-how skill`, omitting conditional Why. The verbatim requirement is not met; completion does not repair the omitted requirements. |
+| Presentation | The helper wrote an 8,361-character explanation with 30 clickable citations. The coordinator substantially rewrote it at 92 and retained no clickable citations. It kept the main result and some plain file/line references, but omitted the inspected revision and detailed qualifications. This fails How's light-edit presentation rule. |
+| Mode-read evidence | Read at 3 records empty content. Complete mode delivery is unverified, not proven absent: the earlier recording diagnostic demonstrated that the durable record can omit an agent-visible body. No new availability probe is needed. |
+| Caller scope and preservation | Writes stayed in the assigned work directory. No older/shared-cache access appears in the inspected execution. Command 28 did directly print `JSTACK_CONFIG`, contrary to this brief's environment-inspection restriction; it was empty. Ordinary resolver use of configuration environment variables remains supported. The checkout was clean, and the saved config and all 257 baseline installed files were unchanged. |
+
+The installed trial is **incomplete overall**, despite successful discovery, exact capture, configured execution and a correct central answer. Its self-report of no incomplete phases is not accepted. These are instruction-following findings, not evidence that the installed mechanism is unavailable. Preserve the existing task-list and presentation requirements; assess their execution before changing skills, models or permissions. Do not repeat catalog-only probes or call this provider certified.
+
+Practical example: `/jstack-juan-mode investigate how project model settings override global defaults. Give source citations and do not change configuration.` A complete valid project map replaces global defaults; a project file containing only one role fails validation. The expected workflow returns the checked helper explanation with its citations, rather than replacing it with a new summary.
+
 ## Fidelity and retention
 
-The capture and integrated assessments change research only. All shipped files and the manifest remain byte-identical to the evaluated `74af8e49401b455211e3670d0299544064370269` tree. Direct comparison with Investigation and How at `11713c683fe4add4fd403ea880580abbc9e0875f` preserves their four-step and one-explainer/light-edit procedures. The mode's host-list rule remains aligned with that pin. Setup's directory at `ccb5507cec1546dc88135c1139c811e6c59115ba` contains only its entrypoint, with no T3 transport counterpart.
+The capture, integrated, acceptance and installed assessments change research only. All shipped files and the manifest remain byte-identical to the evaluated `035ea1bb4d077475671363ae4f86bdc18e27fc1c` tree. Direct comparison with Investigation and How at `11713c683fe4add4fd403ea880580abbc9e0875f` preserves their four-step and one-explainer/light-edit procedures. The mode's host-list rule remains aligned with that pin. The latest failures concern execution of these existing rules, not a new jstack requirement. Setup's directory at `ccb5507cec1546dc88135c1139c811e6c59115ba` contains only its entrypoint, with no T3 transport counterpart. Reading that separate setup procedure is not an added How phase.
 
 Operational changes are limited to exact capture and response-file/history recovery guidance in setup's existing T3 reference. The [setup comparison](../../adaptations/setup-jstack.md#exact-capture-and-durable-recovery-2026-10-21) records their necessity against setup's own pin. The four Investigation steps and How's one-explainer/light-edit rules remain unchanged from their existing adaptations of `11713c683fe4add4fd403ea880580abbc9e0875f`. The pinned Unslop source retains its explicit-only flag. Current comparisons and invocation limits remain in the [Investigation](../../adaptations/investigation.md), [How](../../adaptations/how.md) and [Unslop dependency](../../adaptations/technical-writing.md#unslop-dependency-assessment) records. Model settings, source pins and the reviewed checkpoint remain unchanged.
 
