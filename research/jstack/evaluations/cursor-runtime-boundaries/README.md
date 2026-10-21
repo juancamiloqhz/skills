@@ -6,7 +6,7 @@ The exposed T3 dispatch controls do not provide a per-task path allowlist. Curso
 
 ## Installed T3 adapter
 
-The user-service executable is `/home/ubuntu/.t3/runtime/versions/0.0.46-nightly.20261003.2610/t3`, with SHA-256 `0906bd3c2dbf5eeb8e832c0e5b996a4df5825a8c75ffe1ab4002d39f415f9c71`. Its embedded `src/orchestration-v2/Adapters/CursorAdapterV2.ts` supplies the primary implementation evidence:
+The initial inspection selected `/home/ubuntu/.t3/runtime/versions/0.0.46-nightly.20261003.2610/t3`, with SHA-256 `0906bd3c2dbf5eeb8e832c0e5b996a4df5825a8c75ffe1ab4002d39f415f9c71`. The later process-ancestry check identified it as the outer launcher, not the application hosting the agent. The observations and table in this section describe that older executable. Its embedded `src/orchestration-v2/Adapters/CursorAdapterV2.ts` supplied this evidence:
 
 - `cursorRuntimeAgentPolicy`, byte offset 160606766, maps runtime policy to `autoReview` and `sandboxEnabled`.
 - `makeCursorAgentOptions`, byte offset 160608975, passes those values, the checkout, model and setting sources to the Cursor Agent SDK. It supplies no per-task read-path list. Setting sources include project, user, team, MDM and plugins.
@@ -22,6 +22,21 @@ Evaluating only the extracted pure policy function, with no approval or sandbox 
 | `full-access` | false | false |
 
 Explicit approval/sandbox policies can override those defaults. The catalog does not expose every effective override. This table verifies the adapter's pure mapping, not an operating-system sandbox or the complete policy of an earlier child. T3 uses the SDK here; CLI help is not proof of SDK behavior. Separately, `cursor-agent --version` returned `2026.10.01-e373342`, and its help advertises sandbox and broad review controls.
+
+## Active application recheck
+
+The nearer T3 ancestor of the executing Codex agent is `/home/ubuntu/.t3/runtime/versions/0.1.2-nightly.20261021.3473/t3`, SHA-256 `d6748793bc23cbf4c82ab7956f5a62208b4862c876ea72c807c457c10606b608`. See the [runtime selection correction](../bot-ui-transport/README.md#active-runtime-follow-up-2026-10-21). Its `cursorRuntimeAgentPolicy` at byte 162741682 and `makeCursorAgentOptions` at byte 162743950 were read in full. The latter still passes broad policy values to the SDK without a per-task read-path list.
+
+Evaluating only the pure policy function with platform `linux` and no approval or sandbox overrides gives the current defaults:
+
+| Input runtime mode | `autoReview` | `sandboxEnabled` |
+| --- | --- | --- |
+| `approval-required` | true | true |
+| `auto-accept-edits` | false | true |
+| `auto` | true | true |
+| `full-access` | false | false |
+
+The `auto` default differs from the older table. The function also has platform-specific Windows behavior. Explicit policies can override defaults. These are implementation observations, not a live Cursor execution or proof of any earlier child's effective policy. The correction does not close read-scope enforcement or writing-invocation limits.
 
 ## Workspace controls do not isolate one run
 
@@ -44,17 +59,17 @@ Usage example for that bounded route: "Explicitly apply the installed Unslop ski
 This reads the pinned installed executable and evaluates only its verified policy function. It does not start T3, create a Cursor agent, read credentials or change settings. The hash assertion deliberately stops on another build.
 
 ```sh
-python3 -B - /home/ubuntu/.t3/runtime/versions/0.0.46-nightly.20261003.2610/t3 <<'PY'
+python3 -B - /home/ubuntu/.t3/runtime/versions/0.1.2-nightly.20261021.3473/t3 <<'PY'
 import hashlib, json, subprocess, sys
 from pathlib import Path
 data = Path(sys.argv[1]).read_bytes()
-assert hashlib.sha256(data).hexdigest() == '0906bd3c2dbf5eeb8e832c0e5b996a4df5825a8c75ffe1ab4002d39f415f9c71'
+assert hashlib.sha256(data).hexdigest() == 'd6748793bc23cbf4c82ab7956f5a62208b4862c876ea72c807c457c10606b608'
 start = data.index(b'function cursorRuntimeAgentPolicy(')
 end = data.index(b'\n}', start) + 2
 function = data[start:end].decode()
 modes = ['approval-required', 'auto-accept-edits', 'auto', 'full-access']
 script = function + '\nconsole.log(JSON.stringify(' + json.dumps(modes)
-script += '.map(runtimeMode => ({runtimeMode, ...cursorRuntimeAgentPolicy({runtimeMode})}))));'
+script += '.map(runtimeMode => ({runtimeMode, ...cursorRuntimeAgentPolicy({runtimeMode}, "linux")}))));'
 subprocess.run(['node', '--input-type=module', '-e', script], check=True)
 PY
 ```
