@@ -4,7 +4,7 @@ Current jstack skill identities use the `jstack-` prefix. See the [name mapping 
 
 ## Current readiness, 2026-10-21
 
-The [release-readiness assessment](evaluations/release-readiness/README.md) supersedes the historical counts and runtime summaries below. Current source has 57 packages, 54 mapped pstack skill trees plus external Unslop, and all 23 playbooks. All 57 installed Orbit packages match, and the saved 17-role map validates. The follow-up identifies the active T3 application instead of its old launcher and passes all 95 root tests with the unchanged verifier probe. Full release verification remains incomplete because local tooling lacks Commander/TypeScript and provider/workflow limits remain open. Codex and Claude have bounded manual-compaction evidence; OpenCode advertises models but has no execution test.
+The [release-readiness assessment](evaluations/release-readiness/README.md) supersedes the historical counts and runtime summaries below. Current source has 57 packages, 54 mapped pstack skill trees plus external Unslop, and all 23 playbooks. All 57 installed Orbit packages match, and the saved 17-role map validates. The follow-up identifies the active T3 application instead of its old launcher and passes all 95 root tests with the unchanged verifier probe. Manual source dependency setup also yields 112 Bun tests and both strict typechecks passing. Full release verification remains incomplete because the separate installed CLI copy lacks prerequisites and provider/workflow limits remain open. Codex and Claude have bounded manual-compaction evidence; OpenCode advertises models but has no execution test.
 
 ## Historical reconciliation
 
