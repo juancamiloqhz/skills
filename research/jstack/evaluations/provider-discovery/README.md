@@ -8,6 +8,8 @@ The later [read-recording check](#read-recording-and-presentation-check) reprodu
 
 The [2026-10-21 merged-guidance trial](#merged-guidance-trial-and-exact-recovery) failed exact capture despite successful preflight. A separate guided task recovered the original observation exactly through supported T3 history. This does not turn the first task into a pass or establish self-capture during a new live workflow.
 
+A [fresh self-capture follow-up](#fresh-self-capture-follow-up) verifies exact capture of the child's own current observation without a parent-supplied source identity. Its unnecessary cache searches and environment check keep the overall protocol incomplete.
+
 ## Environment and prerequisites
 
 The source was clean at `83bd97f1ecba86d77dd3e4cd79a496f95f35a240` on Orbit. Cursor CLI was `2026.10.01-e373342`; OpenCode was `2.1.1`. The live T3 catalog offered Cursor child execution and models, but no OpenCode models. OpenCode execution was not attempted.
@@ -127,9 +129,23 @@ The parent independently compared the recovered object with both the complete or
 
 To reproduce, capture the current capability call and retain its exact source identity, then compare every parsed key/value with the saved file. If inline copying changes it, use a supported complete record of that same call. For the tested response-file route, select the named untruncated dynamic-tool item programmatically, verify tool/arguments/success/caller and decode its actual output. Stop incomplete if the full source cannot be accessed. Counts, parsing and preflight are useful checks, but do not establish capture integrity. Do not turn a recovered older observation into a current workflow input.
 
-The T3 reference now states that acceptance boundary and the conditional history-recovery route. This is a narrow response to observed corruption in a manual inline copy. The guided recovery used a fixed source identity supplied by the parent; autonomous self-capture in a new live workflow and improved compliance with the new wording remain unverified. No source-code helper, configuration migration or model replacement is added. Keep this report and durable task references; remove owned catalog copies and redundant receipts after assessment, preserving runtime-owned response files.
+The T3 reference now states that acceptance boundary and the conditional history-recovery route. This is a narrow response to observed corruption in a manual inline copy. The guided recovery used a fixed source identity supplied by the parent and did not test fresh self-capture. No source-code helper, configuration migration or model replacement is added. Keep this report and durable task references; remove owned catalog copies and redundant receipts after assessment, preserving runtime-owned response files.
+
+## Fresh self-capture follow-up
+
+At source `a45cff9eff3c624ff4b5e28cfe911efed13ff211`, a fresh user-approved `cursor / default` child received a capture/preflight brief without a source thread, item or range. The [self-capture conversation](t3-thread://v1/thread:delegated-task:command%3Amcp%3Ab939bcf4-efdc-4ee4-b183-8f8df9c6ca79%3Adelegate-task%3Ajstack-cursor-self-capture-20261021-r1) records a complete current reference read at position 5 and one native capability call at 9, observed at `2026-10-21T12:45:54.796Z`. The response was inline. Supported configuration/list tools identified its own thread, and `t3_thread_read` at 19 supplied a named response file. At 27, the task extracted the exact capability item programmatically and compared its saved object with that source. An item-specific read at 30 supplied a second response file, compared at 33.
+
+The parent independently compared the saved catalog with the complete original T3 item and both named response files. All parsed keys and values matched, including array order, across eight providers and 71 models. The source identifies the same caller, a successful capability call with empty arguments and no truncation. These are current-observation comparisons, not reuse of the earlier recovered catalog. The runtime-owned response files remain intact.
+
+Canonical source preflight at 31 returned exit 0 and resolved the global `how explainer` to `codex / gpt-6.1-sol / reasoningEffort: high`, with `canDispatch: true`. No explainer was dispatched. The task completed without pending work. Repository status was clean before reporting, and protected saved-model and installed-reference hashes matched the baseline.
+
+The overall protocol remains incomplete. Before supported history recovery, commands at 10 and 13 searched filenames under temporary/shared cache directories, listed runtime response directories, inspected an older response file's metadata and checked the ACP environment variable despite working native MCP. The brief excluded those actions. The accepted catalog came from this task's own supported history, but that correct result does not excuse the scope deviations. The final claim of no incomplete phase omits this finding.
+
+This establishes one guided self-capture mechanism without a parent-supplied source identity. A scope-compliant repeat, a clean full Investigation and broader provider verification remain open. It does not measure a reliability improvement caused by the wording. No operational change follows from this assessment. Retain the findings and task reference; remove owned catalog copies and duplicate receipts after assessment.
 
 ## Fidelity and retention
+
+The fresh self-capture assessment changes research only. All shipped files and the manifest remain byte-identical to the evaluated `a45cff9eff3c624ff4b5e28cfe911efed13ff211` tree.
 
 Operational changes are limited to exact capture and response-file/history recovery guidance in setup's existing T3 reference. The [setup comparison](../../adaptations/setup-jstack.md#exact-capture-and-durable-recovery-2026-10-21) records their necessity against setup's own pin. The four Investigation steps and How's one-explainer/light-edit rules remain unchanged from their existing adaptations of `11713c683fe4add4fd403ea880580abbc9e0875f`. The pinned Unslop source retains its explicit-only flag. Current comparisons and invocation limits remain in the [Investigation](../../adaptations/investigation.md), [How](../../adaptations/how.md) and [Unslop dependency](../../adaptations/technical-writing.md#unslop-dependency-assessment) records. Model settings, source pins and the reviewed checkpoint remain unchanged.
 
