@@ -28,13 +28,17 @@ A configuration contains all 17 roles. Do not delete role entries to reset them:
 
 Set a role to `inherit-parent` to retain the executing conversation's provider, model and effort. Provider Auto is a concrete catalog selection, not an alias for inheritance. Each panel entry launches a separate agent; new Arena, Architect and Interrogate panels start with two inherited seats. Two inherited seats do not supply model diversity. Setup also configures `swarm workers`, the default model for each worker unless an authorized race names an arm selection.
 
-## Accept the verification offer, or don't
+## Accept the verification offers, or don't
 
 At the end of setup, `/jstack-setup` looks for a way to prove app behavior in your project, either a `verify-*` skill or an existing harness. If it finds neither, it offers once to generate one with [`/jstack-create-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-verification-skill/SKILL.md).
 
 Say yes and it writes a project-local `verify-<app>` skill, normally under `.agents/skills/`, and the existing automatic `.claude/skills/verify-<app>` link. It proves the skill works before handing it over and preserves conflicting links. Say no and setup moves on. You can invoke `/jstack-create-verification-skill` later. [Verify and ship](./06-verify-and-ship.md#create-a-project-verification-skill) covers it in depth.
 
 If you're new to jstack, say yes. An agent that can check its own work keeps going until the check passes. An agent that can't hands every result back to you to check by hand. Of everything in this guide, the verification skill pays off the most.
+
+Then setup offers once to generate a formal verification skill with [`/jstack-create-formal-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-formal-verification-skill/SKILL.md), unless the project already has one. This is a separate choice even when you skip or decline app verification. Tests check the cases someone thought to write. A formal verification skill checks a key property, such as "a job never runs twice at once", in every case within a stated scope. Say yes when your code has concurrency, retries, a state machine, or a parser, where a bug is costly and tests rarely reach the case that breaks. Otherwise say no and run it later if that changes.
+
+Acceptance starts the available generator for this project and property. Missing tools leave a draft with explicit prerequisites; setup does not install them. A result states its bounds, findings and what was actually verified. The saved model configuration stays intact if you decline, the generator is unavailable, or verification is incomplete.
 
 Consumers read the effective configuration again on their next invocation. Saving it does not switch the current conversation model and does not require a new chat. Invalid choices remain errors; consumers do not silently fall back to another model.
 

@@ -1,5 +1,7 @@
 # Help and guide adaptation
 
+The [2026-10-25 setup-offer follow-up](setup-jstack.md#formal-verification-offer-2026-10-25) updates guide page 01 against `pstack/docs/guide/01-setup.md` at `99b609a72323b70204eab407c622f436e858e112`. It retains the separate, once-only formal verification offer and the queue-ownership example. Portable names and locations, actual generator discovery, manual prerequisites and honest draft status replace Cursor-specific assumptions. The original guide pin remains historical; this focused update does not complete the broader guide refresh.
+
 Source: `pstack/skills/poteto-help/` and `pstack/docs/guide/` at `0148b78c56c72a1b8412055913c79f767095b217`. Local: [jstack-juan-help](../../../skills/jstack/jstack-juan-help/SKILL.md) and its [bundled guide](../../../skills/jstack/jstack-juan-help/docs/guide/README.md).
 
 Preserve Help's section order, five-way need question, Now/Later setup offer, skill table, close calls, playbook/principle routing, troubleshooting, one-prompt reply contract and both prompt references. Preserve all 11 guide pages in order, their substantive workflow explanations, examples, 24 principle groups and six original illustrations. The license is the exact pstack MIT notice. The following changes address jstack identity, independent package installation and the actual execution contracts.

@@ -2,6 +2,8 @@
 
 The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
 
+The original seven-step restoration below is historical. The [formal-verification offer update](#formal-verification-offer-2026-10-25) adds upstream's eighth step without changing model setup.
+
 Updated on 2026-10-15 after comparing the complete setup entrypoint with its exact source pin. The [fidelity audit](../fidelity-audits/2026-10-13/foundation.md) identified the seven-step and inline-map drift corrected here. [Restoration evidence](../evaluations/setup-restoration/README.md) separates source comparison, executable checks and bounded agent exercises. This correction does not close Arena, Swarm or the broader fidelity backlog.
 
 jstack is a portable adaptation of pstack's model setup concept and 17-role registry for T3 Code, independently implemented here. It is not an official Cursor, pstack or T3 Code release.
@@ -167,3 +169,11 @@ This changes only the existing T3 support reference, which has no counterpart at
 The later [scoped repeat](../evaluations/provider-discovery/README.md#scoped-capture-and-integrated-repeat) passes exact capture, canonical preflight and read-scope review. An integrated run separately verifies current capture, canonical configuration resolution and the actual saved Codex/high explainer dispatch. Its mode-read/task-list evidence and directory listings leave the full protocol qualified. These assessments add no operational changes and do not establish a reliability improvement caused by the guidance.
 
 The [mode/task-list follow-up](../evaluations/provider-discovery/README.md#complete-mode-and-host-task-list-follow-up) verifies complete mode retrieval and actual four-step completion with another correctly configured explainer. Its capture remains exact, while old-cache access, an extra temporary output and partial setup-entrypoint reading leave the full test incomplete. No setup procedure, model setting or transport rule changes follow from this evidence.
+
+## Formal verification offer, 2026-10-25
+
+Compared the full final entrypoint with [setup-pstack at `99b609a72323b70204eab407c622f436e858e112`](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/setup-pstack/SKILL.md). Step 8 now follows the unchanged app-verification offer. It retains upstream's existing-formal-skill check, once-only question, acceptance handoff and decline behavior. The introduction and closing scope sentence now describe both optional tasks. The four budget labels, 17-role map, JSON resolver, scope precedence and steps 1-6 are unchanged.
+
+The jstack substitutions follow the existing step-7 runtime contract. Discover the actual generator from the current catalog or an explicit source path, respect host invocation restrictions and preserve the target project and requested proof scope. Missing tools or generators never authorize installation, another model or a substitute generator. A missing generator yields a manual installation command and an optional-task gap while model setup remains complete. The check is read-only and independent of the app offer, and an already requested task needs no repeated approval. Report the generator's actual result or draft separately. Existing formal support is not silently maintained or replaced.
+
+The [setup guide](../../../skills/jstack/jstack-juan-help/docs/guide/01-setup.md#accept-the-verification-offers-or-dont) includes the matching user choice. The manifest watches `pstack/skills/create-formal-verification-skill` as the new dependency. Original adoption pins and the reviewed checkpoint remain unchanged. See the [bounded offer evaluation](../evaluations/setup-formal-offer/README.md); it tests post-save routing with a generator double, not a live proof or a full setup run.

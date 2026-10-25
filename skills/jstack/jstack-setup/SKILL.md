@@ -5,7 +5,7 @@ description: Configure jstack model assignments and reasoning budgets for T3 Cod
 
 # Setup jstack
 
-Configure jstack's model routing through T3 Code's live catalog. Save global defaults or an optional project configuration. This skill does not install providers, launch agents, or change the current model. After saving, it can offer a separate project-local verification task.
+Configure jstack's model routing through T3 Code's live catalog. Save global defaults or an optional project configuration. This skill does not install providers, launch agents, or change the current model. After saving, it can offer separate project-local app and formal verification tasks.
 
 The bundle is named `jstack`. Its workflow entrypoint is `jstack-juan-mode`, the counterpart to pstack's `poteto-mode`. Juan-mode provides an execution foundation and the Investigation, Prototype, Trace forensics, Authoring or modifying a skill, Runtime forensics, Bug fix, Feature, Refactoring, Perf issue, Hillclimb, Eval, Visual parity, Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely, Worktree cleanup, Autonomous run, Autopilot-full, Autopilot-stack and Orchestrate playbooks. Their runtime prerequisites and task authority still apply.
 
@@ -100,4 +100,18 @@ npx skills add juancamiloqhz/skills --skill jstack-create-verification-skill --g
 
 Never execute installation or updates on the user's behalf. Keep the saved model configuration intact whether the offer is declined, the generator is missing, or generation fails. Report the generator's outcome separately, including draft status or untested behavior. Maintenance of existing verification support is a separate task.
 
-Model routing provides configuration validation/resolution; it does not execute the configured workflow roles. The optional verification task is handled by the separately available generator. User and repository instructions govern execution permissions; model routing grants none. No live delegation is needed to configure roles.
+### 8. Offer a formal verification skill (optional)
+
+Check whether the known target project already has a formal verification skill, a project skill that runs a model checker, a proof, or another verifier against the code. Inspect its instructions and documented commands without running verification merely to decide whether to offer generation. An app-driving harness or unit tests alone do not satisfy this check. Consider this offer independently of the app-verification offer, including when that offer was skipped or declined. If no target project is known, skip and briefly say why.
+
+If no formal verification skill exists, offer once: "want a formal verification skill, so agents can prove a key property of your code holds in every case in scope, not only the cases tests reach? I can generate one with /jstack-create-formal-verification-skill." A decline or unanswered offer leaves model setup complete; do not generate files or repeatedly ask in the same setup run. If the user already requested this task for the project, proceed without asking again.
+
+On acceptance, resolve `jstack-create-formal-verification-skill` from the current skill catalog or an explicitly supplied source path, read its `SKILL.md`, and follow it for the target repository and stated property or scope. Honor host invocation restrictions and existing user and repository permissions. Do not assume a sibling installation, substitute the app-verification generator, or install missing tools. If the generator is unavailable, report model setup complete and the optional task unavailable, then provide this command for manual installation:
+
+```sh
+npx skills add juancamiloqhz/skills --skill jstack-create-formal-verification-skill --global
+```
+
+Keep the saved model configuration intact regardless of this offer's outcome. Report generation separately, including the verified property, bounds, findings, or draft status and missing prerequisites. Accepting the offer does not authorize model changes, product fixes, publication or installation. Maintaining an existing formal verification skill is a separate task.
+
+Model routing provides configuration validation/resolution; it does not execute the configured workflow roles. The optional verification tasks are handled by separately available generators. User and repository instructions govern execution permissions; model routing grants none. No live delegation is needed to configure roles.

@@ -1,0 +1,37 @@
+{
+  "projectFiles": {
+    "README.md": "# Queue library\n\nA Python library with a job ownership invariant. It has an app verification skill. No installation is needed to inspect this fixture.\n",
+    "src/queue.py": "def can_start(owners, job):\n    return job not in owners\n",
+    ".agents/skills/verify-app/SKILL.md": "---\nname: verify-app\ndescription: Exercise the app's real user paths.\n---\n\n# Verify app\n\nDrive the UI's create-job and cancel-job flows with the existing local harness. This skill does not run a model checker or proof.\n"
+  },
+  "generatorFixture": "---\nname: jstack-create-formal-verification-skill\ndescription: Record a formal generator handoff for this fixture.\n---\n\n# Formal generator fixture\n\nThis is a routing double, not the shipped generator. On an authorized invocation, write generator-called.json in the target project with generator=jstack-create-formal-verification-skill, the absolute project path, and the user's requested property. Report draft status: this fixture records only a handoff; no property was verified. Do not run other generators, install anything, change model files or product code, or delegate.\n",
+  "scenarios": [
+    {
+      "id": "existing",
+      "request": "Finish the optional setup offers for this project. Model configuration has already been saved and confirmed. I have made no new verification request.",
+      "extraFiles": {
+        ".agents/skills/verify-queue-formal/SKILL.md": "---\nname: verify-queue-formal\ndescription: Model-check queue ownership when queue logic changes.\n---\n\n# Verify queue ownership\n\nRun python3 verification/model_check.py to exhaustively check one owner per job in the bounded queue model. Check src/queue.py against that model before claiming code coverage.\n",
+        "verification/model_check.py": "from itertools import product\nassert all(sum(state) <= 1 for state in product([0, 1], repeat=2) if state != (1, 1))\n"
+      }
+    },
+    {
+      "id": "decline",
+      "request": "Finish the optional setup offers. The saved model configuration is correct. I do not want a formal verification skill now."
+    },
+    {
+      "id": "accept",
+      "request": "Finish the optional setup offers. I decline app verification generation. I want a formal verification skill for this project checking that a job never has two simultaneous owners. Use the available formal generator from inventory.json. The saved model map is correct.",
+      "extraFiles": {"README.md": "# Queue library\n\nA Python library with a job ownership invariant. No app-driving verification skill or harness is present.\n"},
+      "removeFiles": [".agents/skills/verify-app/SKILL.md"],
+      "availableGenerator": true
+    },
+    {
+      "id": "unavailable",
+      "request": "Finish the optional setup offers. Generate a formal verification skill for this project checking that a job never has two simultaneous owners. The saved model configuration is correct."
+    },
+    {
+      "id": "unanswered",
+      "request": "Finish the optional setup offers for this project. The saved model map is correct. I have not decided about formal verification. Present any remaining offer in your response; do not wait for a live reply in this fixture."
+    }
+  ]
+}
