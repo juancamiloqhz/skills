@@ -1,0 +1,241 @@
+diff --git a/.agents/skills/verify-limits-formal/SKILL.md b/.agents/skills/verify-limits-formal/SKILL.md
+new file mode 100644
+--- /dev/null
++++ b/.agents/skills/verify-limits-formal/SKILL.md
+@@ -0,0 +1,59 @@
++---
++name: verify-limits-formal
++description: "Check limits.py:parse_limit's documented resource-limit input contract when its grammar, range, return value, or type handling changes. Uses generated-input testing, not formal proof."
++---
++
++# Verify the limit parser
++
++`parse_limit` must return the integer represented by a string of one to three ASCII decimal digits, with value 1 through 255 inclusive; leading zeroes are allowed. Every other input must raise `ValueError`. A violation can admit an invalid resource limit or reject a valid user request.
++
++This is generated-input testing of real Python code, not formal verification. No Python verifier is available in this project's supplied inventory. Python 3.14.4 and Git 2.53.0 were used. No third-party dependencies, network or installation are needed.
++
++## Coverage and synchronization
++
++- Contract: `README.md`, paragraph under “Input limit parser”.
++- Implementation: `limits.py`, `parse_limit`, including its type/length/ASCII/decimal guards, inclusive range check and returned integer.
++- Checker: `check.py` beside this skill. It loads and executes the actual source, using an independent character-by-character grammar and numeric oracle.
++- Confirmed sync commit: `06b2f20f6ec0d8c4537f0d7279c73c112ae64548`. At this commit the baseline, all five mutation checks, restored baseline and required link verification completed successfully under Python 3.14.4. The self-test JSON reports the reproducible case counts and counterexamples.
++
++Read the contract and implementation before accepting a change. Compare the covered files with the confirmed sync commit using `git diff 06b2f20f6ec0d8c4537f0d7279c73c112ae64548 -- limits.py README.md`. A source-change warning is not a behavioral failure and does not replace running the checker. Advance the sync commit only after confirming that these coverage statements and the oracle still describe the implementation at the new commit, all required commands below complete, the baseline agrees with the intended contract, and the link resolves correctly. If a check cannot run, keep the previous confirmed commit (or none for a draft) and report the missing prerequisite.
++
++## Run from the repository root
++
++```bash
++python3 .agents/skills/verify-limits-formal/check.py
++python3 .agents/skills/verify-limits-formal/check.py --self-test
++```
++
++The first command returns JSON and exits zero only when every selected input agrees with the documented contract. The second runs a baseline, mutates scratch copies of the real `limits.py`, checks that each breaks the contract, removes those copies and reruns the untouched original. It tests five independent breaks: allowing 256, allowing four characters, removing ASCII restriction, adding one to the returned value, and removing the string-type guard. Product files are never edited. Scratch is created inside this skill directory and removed on normal completion; a killed process can leave a `mutation-*` directory for inspection.
++
++The second command must exit zero with `status: pass`, five `detected: true` mutations, passing baseline and restored checks, and `product_source_unchanged: true`. Inspect each counterexample. For example, removing the ASCII guard admits the Arabic-Indic digit one (`'\u0661'`), which the input contract rejects. Other counterexamples include `256`, `0001`, a wrong result for `1`, and a `TypeError` for `None`.
++
++Verify the required provider link from the repository root:
++
++```bash
++python3 - <<'PY'
++from pathlib import Path
++root = Path.cwd().resolve()
++canonical = root / '.agents/skills/verify-limits-formal'
++link = root / '.claude/skills/verify-limits-formal'
++assert link.is_symlink() and link.resolve() == canonical.resolve()
++for name in ('SKILL.md', 'check.py'):
++    assert (link / name).resolve() == (canonical / name).resolve()
++print('Canonical skill and checker resolve through the relative Claude link')
++PY
++```
++
++## Interpret failures and maintain the check
++
++A failure reports the input, expected outcome, observed result and case group. Reproduce it against the real function and compare with `README.md`. If the current code violates the contract, retain it as a finding; do not weaken the oracle to obtain a pass. Product changes need separate authorization. If the contract intentionally changes, update the oracle, boundaries, mutation anchors and this coverage record together, then repeat both commands. An absent mutation anchor means the self-test needs review; do not claim the mutation was exercised. A checker error or an unexpected exception from setup leaves verification incomplete.
++
++The finite coverage is exhaustive for all ASCII strings of length zero through three (including control characters), all four-digit ASCII decimal strings, and all single Unicode code points including surrogates. It also substitutes every non-ASCII Unicode decimal character into every position of every valid ASCII spelling; generates 10,000 reproducible mixed strings of lengths zero through 64 with seed 20261025; and checks boundary inputs, selected non-string values, and long strings up to 10,000 characters. Exact counts appear in the command output.
++
++A pass establishes agreement on these concrete inputs in this Python runtime. It is not a proof over all Python values, arbitrary Unicode combinations or all lengths. It excludes malicious string subclasses, objects with adversarial methods, resource exhaustion, and caller-side enforcement. The fixed seed repeats one sample set; it is not independent repeated statistical evidence. The five mutations show sensitivity to those five regressions, not every possible defect.
++
++## Project-local discovery
++
++Canonical skill: `.agents/skills/verify-limits-formal/SKILL.md`.
++Relative link: `.claude/skills/verify-limits-formal` → `../../.agents/skills/verify-limits-formal`.
++Both the skill and checker must resolve through that link to their canonical files. Preserve any future conflicting link or file and report the conflict. This is a project-local link; live provider discovery has not been tested.
+diff --git a/.agents/skills/verify-limits-formal/check.py b/.agents/skills/verify-limits-formal/check.py
+new file mode 100644
+--- /dev/null
++++ b/.agents/skills/verify-limits-formal/check.py
+@@ -0,0 +1,165 @@
++#!/usr/bin/env python3
++"""Generated-input testing of the real parse_limit implementation; no proof claim."""
++import argparse
++import hashlib
++import itertools
++import json
++from pathlib import Path
++import random
++import subprocess
++import sys
++import tempfile
++
++HERE = Path(__file__).resolve().parent
++PROJECT = HERE.parents[2]
++
++
++class Failure(Exception):
++    def __init__(self, detail):
++        self.detail = detail
++
++
++def check(source):
++    namespace = {'__name__': 'limits_under_check'}
++    exec(compile(source.read_bytes(), str(source), 'exec'), namespace)
++    parse = namespace['parse_limit']
++    counts = {}
++
++    def case(value, group):
++        # Independent grammar oracle: no isascii/isdecimal/int delegation.
++        valid = isinstance(value, str) and 1 <= len(value) <= 3
++        number = 0
++        if valid:
++            for char in value:
++                digit = ord(char) - ord('0')
++                if not 0 <= digit <= 9:
++                    valid = False
++                    break
++                number = number * 10 + digit
++            valid = valid and 1 <= number <= 255
++        counts[group] = counts.get(group, 0) + 1
++        expected = {'return': number} if valid else {'exception': 'ValueError'}
++        try:
++            actual_value = parse(value)
++        except Exception as error:
++            actual = {'exception': type(error).__name__}
++            good = not valid and isinstance(error, ValueError)
++        else:
++            actual = {'return': repr(actual_value), 'type': type(actual_value).__name__}
++            good = valid and type(actual_value) is int and actual_value == number
++        if not good:
++            raise Failure({'group': group, 'input': repr(value), 'expected': expected, 'actual': actual})
++
++    class Coercible:
++        def __str__(self):
++            return '1'
++        def __int__(self):
++            return 1
++
++    for value in [None, True, False, -1, 0, 1, 255, 256, 1.0, float('nan'),
++                  float('inf'), b'1', bytearray(b'1'), memoryview(b'1'), [],
++                  ['1'], {}, {'value': '1'}, (), ('1',), {1}, range(1), Coercible(), object()]:
++        case(value, 'non_string_samples')
++    for value in ['', '0', '00', '000', '1', '01', '001', '9', '99', '255',
++                  '256', '999', '0001', '0255', '1000', '+1', '-1', ' 1', '1 ',
++                  '1\n', '1\x00', '1_0', '1.0', '\u0661', '\uff11', '\u00b2']:
++        case(value, 'boundary_samples')
++
++    accepted = []
++    for length in range(1, 4):
++        for chars in itertools.product('0123456789', repeat=length):
++            value = ''.join(chars)
++            case(value, 'decimal_strings_length_1_to_3')
++            if 1 <= int(value) <= 255:
++                accepted.append(value)
++    for chars in itertools.product('0123456789', repeat=4):
++        case(''.join(chars), 'decimal_strings_length_4')
++
++    # Every ASCII string in this finite length bound, including control bytes.
++    ascii_chars = tuple(map(chr, range(128)))
++    for length in range(4):
++        for chars in itertools.product(ascii_chars, repeat=length):
++            case(''.join(chars), 'ascii_strings_length_0_to_3')
++
++    # Includes surrogates. Inputs never need to be encoded to call parse_limit.
++    unicode_digits = []
++    for point in range(sys.maxunicode + 1):
++        char = chr(point)
++        case(char, 'all_single_unicode_codepoints')
++        if point >= 128 and char.isdecimal():
++            unicode_digits.append(char)
++    for word in accepted:
++        for position in range(len(word)):
++            for char in unicode_digits:
++                case(word[:position] + char + word[position + 1:],
++                     'non_ascii_decimal_substitutions_in_every_valid_word')
++
++    randomizer = random.Random(20261025)
++    alphabet = '0123456789+- _\t\n\x00abc\u0661\uff11\u00b2\U0001f600'
++    for _ in range(10000):
++        value = ''.join(randomizer.choice(alphabet) for _ in range(randomizer.randrange(65)))
++        case(value, 'seeded_mixed_strings_length_0_to_64')
++    for length in [5, 10, 100, 1000, 10000]:
++        for value in ['0' * (length - 1) + '1', '9' * length, '\u0661' * length]:
++            case(value, 'long_string_samples')
++    return {'status': 'pass', 'cases': sum(counts.values()), 'groups': counts,
++            'accepted_spellings': len(accepted), 'non_ascii_decimal_codepoints': len(unicode_digits),
++            'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest()}
++
++
++def run(source):
++    try:
++        return check(source)
++    except Failure as failure:
++        return {'status': 'fail', 'counterexample': failure.detail}
++
++
++def self_test():
++    source = PROJECT / 'limits.py'
++    baseline = run(source)
++    if baseline['status'] != 'pass':
++        return {'status': 'incomplete', 'baseline': baseline}, 1
++    original = source.read_text()
++    mutations = [
++        ('upper_bound', 'if not 1 <= parsed <= 255:', 'if not 1 <= parsed <= 256:', 'boundary_samples'),
++        ('length_bound', 'not 1 <= len(text) <= 3', 'not 1 <= len(text) <= 4', 'boundary_samples'),
++        ('ascii_guard', ' or not text.isascii()', '', 'boundary_samples'),
++        ('returned_value', 'return parsed', 'return parsed + 1', 'boundary_samples'),
++        ('type_guard', 'not isinstance(text, str) or ', '', 'non_string_samples'),
++    ]
++    results = []
++    with tempfile.TemporaryDirectory(prefix='mutation-', dir=HERE) as directory:
++        for name, before, after, expected_group in mutations:
++            if original.count(before) != 1:
++                raise RuntimeError(f'{name}: mutation anchor is absent or ambiguous; review changed source')
++            variant = Path(directory) / f'{name}.py'
++            variant.write_text(original.replace(before, after, 1))
++            result = run(variant)
++            detected = result['status'] == 'fail' and result['counterexample']['group'] == expected_group
++            results.append({'mutation': name, 'detected': detected, **result})
++    restored = run(source)
++    unchanged = source.read_text() == original
++    good = all(result['detected'] for result in results) and restored['status'] == 'pass' and unchanged
++    return {'status': 'pass' if good else 'incomplete', 'python': sys.version.split()[0],
++            'git': subprocess.check_output(['git', '--version'], text=True).strip(),
++            'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=PROJECT, text=True).strip(),
++            'baseline': baseline, 'mutations': results, 'restored': restored,
++            'product_source_unchanged': unchanged}, 0 if good else 1
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--source', type=Path, default=PROJECT / 'limits.py')
++    parser.add_argument('--self-test', action='store_true')
++    args = parser.parse_args()
++    if args.self_test:
++        result, status = self_test()
++    else:
++        result = run(args.source.resolve())
++        status = 0 if result['status'] == 'pass' else 1
++    print(json.dumps(result, indent=2, ensure_ascii=True))
++    return status
++
++
++if __name__ == '__main__':
++    raise SystemExit(main())
+diff --git a/.claude/skills/verify-limits-formal b/.claude/skills/verify-limits-formal
+new file mode 120000
+--- /dev/null
++++ b/.claude/skills/verify-limits-formal
+@@ -0,0 +1,1 @@
++../../.agents/skills/verify-limits-formal
+\ No newline at end of file

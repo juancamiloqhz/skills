@@ -85,6 +85,28 @@ Treat the verification skill as infrastructure, not a one-off. Commit it, so eve
 
 While you're there, make the dev setup repeatable too: seeded data, test users, and one command that brings the environment up the same way every time.
 
+## Prove a property with a formal verification skill
+
+A verification skill proves the paths you drive. Some bugs live on paths nobody drives: two retries that overlap, a lock that expires mid-write, a state change that arrives out of order. Tests rarely reach those cases. For code where such a bug is costly, run:
+
+```text
+/jstack-create-formal-verification-skill
+```
+
+[`/jstack-create-formal-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-formal-verification-skill/SKILL.md) picks the target from the code: a promise the code makes, where a break harms users and tests rarely reach the case that breaks it. It picks the strongest target, not the easiest to verify. Name an area or a bug to start there instead:
+
+```text
+/jstack-create-formal-verification-skill the job lease and retry logic. a job must never run twice at once. leave product code unchanged.
+```
+
+The question picks the tool. Whether events can happen in a bad order suits a model checker over a small model of the design, and TLA+ is the default for that in any language. Whether the code behaves for every input suits a verifier that runs on the code. If no verifier runs on your language, the agent says so and tests the real code with generated inputs, not a hand-written model of the function. Those tests are not a formal proof. An explicitly requested proof remains unmet. A property that must hold at every size can need a proof. Missing tools remain manual prerequisites, and the agent explains its choice and limits.
+
+It checks one property and shows that property failing on a broken variant of the code, because a check you've never seen fail proves nothing. When the current code already breaks the property, you get the counterexample in your code's terms. The property stays as stated, so the finding stays a finding. Product code doesn't change unless you ask.
+
+It writes a project-local skill, normally `.agents/skills/verify-<area>-formal/`, with the automatic relative `.claude/skills/` link and preserved conflicts. The skill tells the next agent which files and functions a check covers, how to run it, and how to distinguish a real bug from a modeling error. Before handoff, the generator follows it on a scratch change that breaks the property, requires the check to catch the break, then restores the original baseline. An unrun verifier or mutation leaves the result a draft.
+
+The generated skill records the commit where each check last matched its covered code. After merges or refactors, revisit the code correspondence and rerun the required checks before advancing that commit. A passing check against stale code assumptions is insufficient. The handoff states the tool, bounds, findings, run command and exclusions. A pass covers only the stated model, bound or tested inputs.
+
 ## Keep the verification skill honest
 
 Apps change, and feature maps go out of date. Run this at least once a day, ideally from a scheduled automation so nobody has to remember:
