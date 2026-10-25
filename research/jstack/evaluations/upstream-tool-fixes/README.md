@@ -64,3 +64,7 @@ node scripts/jstack/check_docs.mjs
 These are local regressions, actual command fixtures and strict compilation, not a live fork PR, new provider trial or watch/restart certification. Stack discovery still has the existing 300-open-PR cap. This is not a redesign for arbitrary malformed same-repository cycles. The plan checker remains structural rather than a full Markdown parser or proof of feasibility.
 
 Only the three selected decision reasons gain this implementation reference. They have no `appliedCommit` until an authorized merge is verified. Original adaptation pins and other decision dispositions remain unchanged. Keep the small report and executable tests; no raw test transcript, generated repository, catalog or dependency tree is committed. Installation and merge remain separate user actions.
+
+## Verified merge
+
+PR [#138](https://github.com/juancamiloqhz/skills/pull/138) merged as `8570fe9ed84f7f152e98e3e385d5f102ab5dcc52`. The next authorized maintenance update verified that commit on refreshed `origin/main` and recorded it as `appliedCommit` for these three decisions. The pre-merge statements above retain the implementation-time boundary.

@@ -20,7 +20,15 @@ Mechanics first, history second. Each skill's report tells you which sources it 
 /jstack-juan-mode read this thread. restate the underlying issue in your own words, in plain english. don't change any code yet.
 ```
 
-A misreading shows up in the restatement, where it costs one message to correct. Keep your own theory to yourself until the agent has stated its own.
+A misreading shows up in the restatement, where it costs one message to correct. Keep your own theory to yourself until the agent has stated its own. `/jstack-in-your-own-words` asks for the restatement alone, with no playbook.
+
+## Sharpen a prompt before you send it
+
+```text
+/jstack-sharpen write the onboarding doc for the new billing service.
+```
+
+The agent names what an expert would do that you didn't ask for, the raw material they'd start from, their methods and tools, and an outside check that the result is right. It hands back your prompt rewritten to ask for that and doesn't do the task. Send the rewrite when it reads right.
 
 ## Prototype before you pick
 

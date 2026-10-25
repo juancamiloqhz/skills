@@ -6,7 +6,7 @@ Swap in the real paths, skills, and done checks. Informal wording works.
 
 - `/jstack-juan-mode read <thread>. restate the underlying issue in your own words, in plain english.`
 - `/jstack-in-your-own-words <long or messy ask>`
-- `/jstack-sharpen <your task>`
+- `/jstack-sharpen <the prompt you're about to send>`
 - `/jstack-juan-mode investigate why <symptom>. give me what we know, what data you used, and your best hypotheses. don't change any code yet.`
 - `use /jstack-how to understand <subsystem>. then use /jstack-why to find out why it broke recently.`
 - `/jstack-recall my work on <topic> from last week, then read <issue>.`

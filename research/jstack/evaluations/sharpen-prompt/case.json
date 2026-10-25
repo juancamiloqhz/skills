@@ -1,0 +1,13 @@
+{
+  "request": "Rewrite onboarding.md for engineers using the importer, based on facts.md. Keep the guide under 350 words and preserve the exact CLI command. I was considering a long tutorial, but a useful first-run guide is the goal. I have not decided whether advanced tuning belongs here or in a linked appendix; leave that choice open.",
+  "files": {
+    "onboarding.md": "# Importer onboarding\n\nOld onboarding placeholder.\n",
+    "facts.md": "# Fixture facts\n\nThe first-run command is `importer run sample.csv --dry-run`.\nDry-run validates rows and writes no imported records.\nA successful validation prints `rows_validated=3` for sample.csv.\nCSV headers are id,email and all three fixture rows have unique ids.\nAdvanced tuning has not been approved for this first-run guide.\nThere is no real importer executable in this fixture. Do not invent a successful run.\n"
+  },
+  "checks": [
+    "The new skill returns four framing points and a rewritten prompt instead of rewriting the document.",
+    "The new skill leaves both fixture files unchanged.",
+    "The rewrite preserves the command, word limit and open tuning-placement choice.",
+    "The response distinguishes supplied expected output from an executed importer check."
+  ]
+}

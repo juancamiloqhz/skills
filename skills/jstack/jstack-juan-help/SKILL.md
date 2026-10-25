@@ -60,7 +60,7 @@ The default answer is `/jstack-juan-mode`, which runs most of the others when it
 |---|---|
 | Do any non-trivial task with rigor | [`/jstack-juan-mode`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-juan-mode/SKILL.md) |
 | Check that the agent understood their goal and the problem before it starts | [`/jstack-in-your-own-words`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-in-your-own-words/SKILL.md) |
-| Aim a task higher before starting: more expert, more outcome-focused, not overspecified | [`/jstack-sharpen`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-sharpen/SKILL.md) |
+| Get a prompt rewritten deeper, not bigger, before sending it: what a top professional would add, their raw material and methods, and an outside check. It returns the prompt and doesn't do the task | [`/jstack-sharpen`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-sharpen/SKILL.md) |
 | Know how code works now, or where new code should live | [`/jstack-how`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-how/SKILL.md) |
 | Know why code is shaped this way, or where a number came from | [`/jstack-why`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-why/SKILL.md) |
 | Understand a change or subsystem, explained plainly | [`/jstack-teach`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-teach/SKILL.md) |
