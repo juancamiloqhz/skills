@@ -75,7 +75,8 @@
         "pstack/skills/poteto-mode",
         "pstack/skills/how",
         "pstack/skills/why",
-        "pstack/skills/create-verification-skill"
+        "pstack/skills/create-verification-skill",
+        "pstack/skills/create-formal-verification-skill"
       ],
       "differences": "research/jstack/adaptations/setup-jstack.md"
     },
@@ -779,7 +780,8 @@
       "paths": [
         "pstack/skills/reflect/SKILL.md"
       ],
-      "reason": "Protect plugin caches and show a durable authorized edit destination. Retain jstack actual user authority and assessment-only behavior; no publication or installed overwrite follows from reflection alone. Verify copies and conflicts in owned fixtures. User selected this follow-up after Sharpen merged. Application evidence is research/jstack/evaluations/reflect-destination/README.md; its own merge remains pending."
+      "reason": "Protect plugin caches and show a durable authorized edit destination. Retain jstack actual user authority and assessment-only behavior; no publication or installed overwrite follows from reflection alone. Verify copies and conflicts in owned fixtures. User selected this follow-up after Sharpen merged. Application evidence is research/jstack/evaluations/reflect-destination/README.md; verified merged in https://github.com/juancamiloqhz/skills/pull/140 on refreshed origin/main.",
+      "appliedCommit": "8f16b9be0a40bce3e6d785872acd80b73300c6fb"
     },
     {
       "id": "2026-10-25-sharpen-prompt",
@@ -802,7 +804,7 @@
       "paths": [
         "pstack/skills/setup-pstack/SKILL.md"
       ],
-      "reason": "Offer the already shipped formal-verification generator once, separately from app verification, with actual dependency discovery and acceptance. Preserve all 17 roles, settings and manual setup; test existing-skill, decline, acceptance and unavailable cases."
+      "reason": "Offer the already shipped formal-verification generator once, separately from app verification, with actual dependency discovery and acceptance. Preserve all 17 roles, settings and manual setup; test existing-skill, decline, acceptance and unavailable cases. User selected this follow-up after Reflect merged. Evidence is research/jstack/evaluations/setup-formal-offer/README.md; its own merge remains pending."
     },
     {
       "id": "2026-10-25-formal-generator",
