@@ -2,6 +2,8 @@
 
 Date: 2026-10-19. Local base: merged PR [#98](https://github.com/juancamiloqhz/skills/pull/98), `8bbe90bc274c686047f6294cdcb079d8f740dc68`. Source: `cursor/plugins` at `0148b78c56c72a1b8412055913c79f767095b217`, `pstack/skills/{in-your-own-words,sharpen}/SKILL.md` and `pstack/LICENSE`.
 
+This is the historical adoption record. Sharpen's later [prompt-only update](../sharpen-prompt/README.md) supersedes its execution behavior and examples below. The original cases and outcomes remain evidence for the earlier version. In your own words is unchanged.
+
 ## Scope and source comparison
 
 The user selected this pair after the coverage checkpoint. In your own words restates the user's goal and underlying problem. Sharpen improves the approach and then does the authorized task, retaining an outside check. It is not a mandatory questionnaire or merely a prompt-writing helper.

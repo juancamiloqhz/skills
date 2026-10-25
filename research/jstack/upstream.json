@@ -741,7 +741,8 @@
         "pstack/skills/poteto-mode/scripts/watch-pr/github.ts",
         "pstack/skills/poteto-mode/scripts/watch-pr/types.ts"
       ],
-      "reason": "Validate fork identity and prevent fork branch-name collisions in existing stack discovery. Preserve T3 one-shot execution and configured authority; verify bounded cycle, fork-isolation and malformed-input cases before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
+      "reason": "Validate fork identity and prevent fork branch-name collisions in existing stack discovery. Preserve T3 one-shot execution and configured authority; verify bounded cycle, fork-isolation and malformed-input cases before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit. Verified merged in https://github.com/juancamiloqhz/skills/pull/138 on refreshed origin/main.",
+      "appliedCommit": "8570fe9ed84f7f152e98e3e385d5f102ab5dcc52"
     },
     {
       "id": "2026-10-25-watcher-deadline",
@@ -753,7 +754,8 @@
         "pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts",
         "pstack/skills/poteto-mode/scripts/watch-pr/policy.ts"
       ],
-      "reason": "Cap internal polling and retry sleeps at the remaining timeout. Preserve disabled-deadline cadence and sleep-free one-shot T3 behavior; source examples were assessed but not executed by this review. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
+      "reason": "Cap internal polling and retry sleeps at the remaining timeout. Preserve disabled-deadline cadence and sleep-free one-shot T3 behavior; source examples were assessed but not executed by this review. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit. Verified merged in https://github.com/juancamiloqhz/skills/pull/138 on refreshed origin/main.",
+      "appliedCommit": "8570fe9ed84f7f152e98e3e385d5f102ab5dcc52"
     },
     {
       "id": "2026-10-25-plan-inline-code",
@@ -765,7 +767,8 @@
         "pstack/skills/poteto-mode/scripts/check-plan.mjs",
         "pstack/skills/poteto-mode/scripts/check-plan.test.ts"
       ],
-      "reason": "Recognize matching multi-backtick inline code spans while preserving current fence parsing and prose checks. Test literal punctuation, outside punctuation and unmatched delimiters before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
+      "reason": "Recognize matching multi-backtick inline code spans while preserving current fence parsing and prose checks. Test literal punctuation, outside punctuation and unmatched delimiters before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit. Verified merged in https://github.com/juancamiloqhz/skills/pull/138 on refreshed origin/main.",
+      "appliedCommit": "8570fe9ed84f7f152e98e3e385d5f102ab5dcc52"
     },
     {
       "id": "2026-10-25-reflect-destination",
@@ -787,7 +790,7 @@
       "paths": [
         "pstack/skills/sharpen/SKILL.md"
       ],
-      "reason": "Adopt the new four-part framing and prompt-only output instead of executing the task. Coordinate explicit invocation metadata, Help and guide changes, preserve user choices and prove no requested task execution occurs."
+      "reason": "Adopt the new four-part framing and prompt-only output instead of executing the task. Coordinate explicit invocation metadata, Help and guide changes, preserve user choices and prove no requested task execution occurs. User selected the prompt-only skill and matching Help update; implementation evidence is research/jstack/evaluations/sharpen-prompt/README.md. Its own merge remains pending."
     },
     {
       "id": "2026-10-25-setup-formal-offer",
@@ -843,7 +846,7 @@
         "pstack/skills/poteto-help/SKILL.md",
         "pstack/skills/poteto-help/references/recipes.md"
       ],
-      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported."
+      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported. The selected Sharpen table/recipe and guide paragraphs are updated with its implementation. Formal-verification/setup/recap and other guide changes remain pending; this entire decision is not marked applied."
     },
     {
       "id": "2026-10-25-formal-maintenance",
