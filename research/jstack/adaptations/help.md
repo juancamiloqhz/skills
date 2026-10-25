@@ -1,5 +1,7 @@
 # Help and guide adaptation
 
+The [formal-generator follow-up](create-formal-verification-skill.md#tool-selection-and-sync-records-2026-10-25) adds guide page 06's formal-property section from `pstack/docs/guide/06-verify-and-ship.md` at `99b609a72323b70204eab407c622f436e858e112`. It preserves the tool question, real-code mutation/restoration and coverage/sync rationale. Portable output paths, explicit test-versus-proof limits and manual prerequisites follow the approved jstack contract. Unshipped Statechart and formal-maintenance commands remain deferred; this does not complete the broader guide refresh.
+
 The [2026-10-25 setup-offer follow-up](setup-jstack.md#formal-verification-offer-2026-10-25) updates guide page 01 against `pstack/docs/guide/01-setup.md` at `99b609a72323b70204eab407c622f436e858e112`. It retains the separate, once-only formal verification offer and the queue-ownership example. Portable names and locations, actual generator discovery, manual prerequisites and honest draft status replace Cursor-specific assumptions. The original guide pin remains historical; this focused update does not complete the broader guide refresh.
 
 Source: `pstack/skills/poteto-help/` and `pstack/docs/guide/` at `0148b78c56c72a1b8412055913c79f767095b217`. Local: [jstack-juan-help](../../../skills/jstack/jstack-juan-help/SKILL.md) and its [bundled guide](../../../skills/jstack/jstack-juan-help/docs/guide/README.md).

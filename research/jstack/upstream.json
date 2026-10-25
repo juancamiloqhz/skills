@@ -804,7 +804,8 @@
       "paths": [
         "pstack/skills/setup-pstack/SKILL.md"
       ],
-      "reason": "Offer the already shipped formal-verification generator once, separately from app verification, with actual dependency discovery and acceptance. Preserve all 17 roles, settings and manual setup; test existing-skill, decline, acceptance and unavailable cases. User selected this follow-up after Reflect merged. Evidence is research/jstack/evaluations/setup-formal-offer/README.md; its own merge remains pending."
+      "reason": "Offer the already shipped formal-verification generator once, separately from app verification, with actual dependency discovery and acceptance. Preserve all 17 roles, settings and manual setup; test existing-skill, decline, acceptance and unavailable cases. User selected this follow-up after Reflect merged. Evidence is research/jstack/evaluations/setup-formal-offer/README.md; verified merged in https://github.com/juancamiloqhz/skills/pull/141 on refreshed origin/main.",
+      "appliedCommit": "b31eace75e25ee9314fad7086b801f450ff448a8"
     },
     {
       "id": "2026-10-25-formal-generator",
@@ -815,7 +816,7 @@
       "paths": [
         "pstack/skills/create-formal-verification-skill/SKILL.md"
       ],
-      "reason": "Update tool selection and code-coverage/sync-commit records with honest generated-input test limits. Preserve local destinations, automatic Claude links, findings and mutation proof. Defer new Statechart and maintenance calls until their separate packages are selected and verified."
+      "reason": "Update tool selection and code-coverage/sync-commit records with honest generated-input test limits. Preserve local destinations, automatic Claude links, findings and mutation proof. Defer new Statechart and maintenance calls until their separate packages are selected and verified. User selected this follow-up after setup merged. Evidence is research/jstack/evaluations/formal-coverage-sync/README.md; its own merge remains pending."
     },
     {
       "id": "2026-10-25-swarm-report-wording",
