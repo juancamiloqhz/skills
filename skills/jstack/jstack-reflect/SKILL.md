@@ -43,6 +43,10 @@ Present the synthesizer's full Accepted / Rejected / Backlog output. Accepted me
 
 Backlog means proposed work, not an issue already filed. File items only when explicitly authorized; otherwise retain the concrete proposals in the response or an authorized local report.
 
+Never edit a skill under `plugins/cache/`, including through a symlink. Identify the editable source and show the actual destination with each proposed edit, before any required approval. Use an already authorized source-repository path or user-owned skill. For a cached or installer-managed copy without an authorized source, propose a project- or user-owned destination appropriate to the host. After authorization, copy the complete skill folder there, including support files, and edit the copy. If the destination already exists, inspect it and resolve conflicts before copying; preserve unrelated files.
+
+Reflection alone authorizes neither an installed-package overwrite nor a push or PR. Explicitly authorized source-repository edits and publication follow that authorization.
+
 Follow each approved row's Routing exactly:
 
 - Trivial existing-skill edit (a one-line bullet, a tightened sentence, a stale fact corrected): the parent does it directly.
