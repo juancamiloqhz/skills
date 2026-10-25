@@ -48,6 +48,6 @@ When implementation was authorized, the coordinator reviews and integrates selec
 
 ## Phase D: Report
 
-Return one consolidated in-chat report with the table, issue one-liners, gaps or dropouts, and the race rule when used.
+Return one consolidated in-chat report with a result table, issue one-liners, gaps or dropouts, and the race rule when used.
 
 Include pinned inputs, evidence, retained artifacts and actual checks. Distinguish source inspection, executed behavior and measurements, and overall coverage from whether defects were found. Return at the user's or caller's boundary. Identify retained pending work; clean only owned disposable catalogs and clean temporary resources, preserving useful results and user work.
