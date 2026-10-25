@@ -16,6 +16,12 @@ if args[:2] == ["pr", "view"]:
                   mergeStateStatus="BLOCKED" if case == "hidden" else "CLEAN",
                   reviewDecision="", headRefOid="head", headRefName="feature",
                   baseRefName="main", state="OPEN", mergedAt=None, isDraft=False)
+elif args[:2] == ["pr", "list"]:
+    assert "number,headRefName,baseRefName,isCrossRepository" in args
+    result = [dict(number=99, headRefName="main", baseRefName="main", isCrossRepository=True),
+              dict(number=1, headRefName="feature", baseRefName="main", isCrossRepository=False)]
+    if case == "fork-invalid":
+        del result[1]["isCrossRepository"]
 elif args[:2] == ["pr", "checks"]:
     result = [] if case == "empty" else [dict(name="ci", state="PENDING" if case == "pending" else "SUCCESS",
                   bucket="pending" if case == "pending" else "pass", description="", link="", workflow="")]
@@ -79,6 +85,8 @@ def main():
         ("owner-gate-rollup", [], 0, "READY"),
         ("other-action", [], 4, "BLOCKER"),
         ("failed-gate", [], 4, "BLOCKER"),
+        ("fork-main", ["--stack"], 0, "READY"),
+        ("fork-invalid", ["--stack"], 7, "BLOCKER"),
     ]
     with tempfile.TemporaryDirectory(prefix="jstack-babysit-cli-") as directory:
         gh = Path(directory) / "gh"
@@ -92,8 +100,8 @@ def main():
             )
             assert result.returncode == exit_code, (case, result.returncode, result.stderr, result.stdout)
             events = [json.loads(line) for line in result.stdout.splitlines()]
-            assert len(events) == 1, (case, events)
-            assert events[0]["kind"] == kind, (case, events)
+            assert len(events) == (2 if case == "fork-main" else 1), (case, events)
+            assert events[-1]["kind"] == kind, (case, events)
             if case == "pending":
                 assert events[0]["terminal"] is False
                 assert events[0]["reason"]["kind"] == "pending-checks"
@@ -101,9 +109,13 @@ def main():
                 blocker = events[0]["blocker"]
                 assert blocker["kind"] == "review-threads", blocker
                 assert [(t["id"], t["bugbotReviewPasses"]) for t in blocker["threads"]] == [("thread-110", 3)], blocker
-            if case in ("page-error", "missing-cursor", "repeated-cursor"):
+            if case in ("page-error", "missing-cursor", "repeated-cursor", "fork-invalid"):
                 blocker = events[0]["blocker"]
                 assert blocker["kind"] == "status-query" and blocker["failures"] == 1, blocker
+            if case == "fork-main":
+                assert events[0]["kind"] == "STATUS" and events[0]["mode"] == "stack", events
+                assert [row["context"]["number"] for row in events[0]["rows"]] == [1], events
+                assert [pr["context"]["number"] for pr in events[1]["scope"]["prs"]] == [1], events
             if case in ("other-action", "failed-gate"):
                 assert events[0]["blocker"]["kind"] == "failing-checks", events
             print(f"PASS {case} {' '.join(extra)}: exit {exit_code}, {kind}")

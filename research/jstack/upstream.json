@@ -741,7 +741,7 @@
         "pstack/skills/poteto-mode/scripts/watch-pr/github.ts",
         "pstack/skills/poteto-mode/scripts/watch-pr/types.ts"
       ],
-      "reason": "Validate fork identity and prevent fork branch-name collisions in existing stack discovery. Preserve T3 one-shot execution and configured authority; verify bounded cycle, fork-isolation and malformed-input cases before adoption."
+      "reason": "Validate fork identity and prevent fork branch-name collisions in existing stack discovery. Preserve T3 one-shot execution and configured authority; verify bounded cycle, fork-isolation and malformed-input cases before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
     },
     {
       "id": "2026-10-25-watcher-deadline",
@@ -753,7 +753,7 @@
         "pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts",
         "pstack/skills/poteto-mode/scripts/watch-pr/policy.ts"
       ],
-      "reason": "Cap internal polling and retry sleeps at the remaining timeout. Preserve disabled-deadline cadence and sleep-free one-shot T3 behavior; source examples were assessed but not executed by this review."
+      "reason": "Cap internal polling and retry sleeps at the remaining timeout. Preserve disabled-deadline cadence and sleep-free one-shot T3 behavior; source examples were assessed but not executed by this review. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
     },
     {
       "id": "2026-10-25-plan-inline-code",
@@ -765,7 +765,7 @@
         "pstack/skills/poteto-mode/scripts/check-plan.mjs",
         "pstack/skills/poteto-mode/scripts/check-plan.test.ts"
       ],
-      "reason": "Recognize matching multi-backtick inline code spans while preserving current fence parsing and prose checks. Test literal punctuation, outside punctuation and unmatched delimiters before adoption."
+      "reason": "Recognize matching multi-backtick inline code spans while preserving current fence parsing and prose checks. Test literal punctuation, outside punctuation and unmatched delimiters before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
     },
     {
       "id": "2026-10-25-reflect-destination",

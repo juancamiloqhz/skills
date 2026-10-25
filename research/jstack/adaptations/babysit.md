@@ -31,3 +31,7 @@ Shipping is now available. The introduction links its bundled procedure and reta
 ## Shipping prose update, 2026-10-19
 
 Compared the complete playbook with `pstack/skills/poteto-mode/playbooks/babysit.md` at `0148b78c56c72a1b8412055913c79f767095b217`. Adopt exactly two source deletions: the duplicated step 6 merge/arming warning and the final Reply paragraph. Step 9 still requires explicit merge authority and routes landing to Shipping. Preserve existing T3 waiting/linking, manual prerequisites, current-evidence and owner-approval qualifications; watcher code is unchanged. Both Autopilot procedures are now available, as recorded by their later implementation assessments. The [coordinated evaluation](../evaluations/shipping-sequence/README.md) checks the readiness-versus-landing boundary without live monitoring.
+
+## Fork identity and polling deadlines, 2026-10-25
+
+The [selected upstream tool update](../evaluations/upstream-tool-fixes/README.md) adopts fork identity and the remaining-deadline sleep cap from `99b609a72323b70204eab407c622f436e858e112`. Preserve the existing one-shot executable, immediate incomplete-query result, cursor guards and host-owned watches. Its source comparison and failing-before/passing-after tests account for all changed watcher files. No playbook step, model choice, dependency or merge authority changes.
