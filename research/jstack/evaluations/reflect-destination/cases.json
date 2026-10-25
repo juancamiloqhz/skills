@@ -1,0 +1,47 @@
+{
+  "lesson": {
+    "Accepted": [{"target": "story/SKILL.md", "edit": "Replace `Check the generated output.` with `Read the generated output and verify its cited facts.`", "Routing": "Trivial existing-skill edit"}],
+    "Rejected": [],
+    "Backlog": []
+  },
+  "package": {
+    "SKILL.md": "---\nname: story\ndescription: Write a short story.\n---\n\n# Story\n\nCheck the generated output.\n",
+    "references/facts.md": "# Facts\n\nFixture reference facts.\n",
+    "scripts/check.py": "print('fixture only')\n",
+    "LICENSE": "Fixture notice.\n"
+  },
+  "scenarios": [
+    {
+      "id": "assessment",
+      "target": "plugins/cache/story",
+      "request": "Assess the supplied reflection result and propose the edit. Do not apply it. The target was discovered under plugins/cache/story. No editable source repository has been identified."
+    },
+    {
+      "id": "copy",
+      "target": "plugins/cache/story",
+      "destination": "project/.agents/skills/story",
+      "request": "Apply the supplied Accepted edit. I approve a project-owned copy at project/.agents/skills/story of the discovered target plugins/cache/story. This is the approved destination; proceed without another approval."
+    },
+    {
+      "id": "conflict",
+      "target": "plugins/cache/story",
+      "destination": "project/.agents/skills/story",
+      "existing": {
+        "SKILL.md": "---\nname: story\ndescription: Our customized story skill.\n---\n\n# Our story\n\nPreserve our custom tone.\n",
+        "notes.txt": "Existing user notes.\n"
+      },
+      "request": "Apply the supplied Accepted edit using a project-owned copy at project/.agents/skills/story of the discovered plugins/cache/story package. I approve that destination and edit. I have not approved replacing existing customizations."
+    },
+    {
+      "id": "symlink",
+      "target": "project/.agents/skills/story",
+      "symlinkTo": "plugins/cache/story",
+      "request": "Apply the supplied Accepted edit to the discovered project skill at project/.agents/skills/story. No alternative destination has been selected."
+    },
+    {
+      "id": "source",
+      "target": "source/skills/story",
+      "request": "Apply the supplied Accepted edit to our editable source package at source/skills/story and prepare a PR description for that source change. This source location and edit are authorized. In this fixture, return the PR text locally; do not push or create a live PR."
+    }
+  ]
+}

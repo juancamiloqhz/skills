@@ -779,7 +779,7 @@
       "paths": [
         "pstack/skills/reflect/SKILL.md"
       ],
-      "reason": "Protect plugin caches and show a durable authorized edit destination. Retain jstack actual user authority and assessment-only behavior; no publication or installed overwrite follows from reflection alone. Verify copies and conflicts in owned fixtures."
+      "reason": "Protect plugin caches and show a durable authorized edit destination. Retain jstack actual user authority and assessment-only behavior; no publication or installed overwrite follows from reflection alone. Verify copies and conflicts in owned fixtures. User selected this follow-up after Sharpen merged. Application evidence is research/jstack/evaluations/reflect-destination/README.md; its own merge remains pending."
     },
     {
       "id": "2026-10-25-sharpen-prompt",
@@ -790,7 +790,8 @@
       "paths": [
         "pstack/skills/sharpen/SKILL.md"
       ],
-      "reason": "Adopt the new four-part framing and prompt-only output instead of executing the task. Coordinate explicit invocation metadata, Help and guide changes, preserve user choices and prove no requested task execution occurs. User selected the prompt-only skill and matching Help update; implementation evidence is research/jstack/evaluations/sharpen-prompt/README.md. Its own merge remains pending."
+      "reason": "Adopt the new four-part framing and prompt-only output instead of executing the task. Coordinate explicit invocation metadata, Help and guide changes, preserve user choices and prove no requested task execution occurs. User selected the prompt-only skill and matching Help update; implementation evidence is research/jstack/evaluations/sharpen-prompt/README.md. Verified merged in https://github.com/juancamiloqhz/skills/pull/139 on refreshed origin/main.",
+      "appliedCommit": "23890b3d408fb83b2edaa054ad1491d1baf4f3c7"
     },
     {
       "id": "2026-10-25-setup-formal-offer",

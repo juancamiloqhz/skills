@@ -22,3 +22,13 @@ This correction restores the six-step entrypoint and all four source templates. 
 | `SKILL.md` structural principle | Use `principle-encode-lessons-in-structure`. | Shipped standalone catalog name; context watch added to manifest. |
 
 The existing jstack-only [execution contract](../../../skills/jstack/jstack-reflect/references/execution.md) remains unchanged. It owns config lookup, role resolution, actual capacity and checked lifecycle. Source examples in the synthesizer remain examples, not new universal package-manager or description-ratio policy. Pins, checkpoint, configuration and historical evaluations remain unchanged.
+
+## Cache destination update, 2026-10-25
+
+Compared the final entrypoint with [pstack Reflect at `99b609a72323b70204eab407c622f436e858e112`](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/reflect/SKILL.md). Its new cache guard stays in Apply, between Backlog filing and approved routing. The six-step procedure and four templates retain the differences documented above. The original adoption pin remains historical.
+
+The guard preserves the ban on editing `plugins/cache/`, including access through a symlink. It shows the actual destination before any required approval and copies the complete package only after authorization. Existing destination conflicts require resolution before copying, preserving customizations and unrelated files.
+
+Two substitutions follow the approved upstream review. T3 supports several providers, so the destination is an authorized source repository or user/project-owned skill instead of always `.cursor/skills/` or `~/.cursor/skills/`. An installer-managed copy is not assumed to be its editable source. Pstack's blanket ban on pushes and PRs becomes a restriction on authority from reflection alone. Explicit user authorization for a source-repository change and publication remains valid. Existing approval checkpoints and assessment-only requests still govern application.
+
+See the [destination evaluation](../evaluations/reflect-destination/README.md) for application fixtures and limitations. This update changes no model routing, invocation metadata, installation, template, or shared execution contract.
