@@ -26,6 +26,7 @@ Check the state that changes the answer, and mention it only when it does:
 
 - Use the discovered `jstack-setup` helper's read-only configuration lookup for the current project, respecting explicit, environment, project and global precedence. A missing effective file means configured delegation needs setup; it does not activate default models. If lookup is unavailable, report unknown configuration rather than assuming it is missing. Do not read or expose credentials.
 - No `verify-*` skill or other app harness in the project means agents have no scripted way to drive the app. Mention `/jstack-create-verification-skill` when the question is about proving a change works.
+- No formal verification skill in the project means no property is checked beyond the available tests. Mention `/jstack-create-formal-verification-skill` for races, invariants or cases tests rarely reach. When covered code changed after the skill's recorded sync commit, point to its correspondence-review and rerun instructions. Generated-input tests remain tests, and missing tools leave a draft.
 
 When the effective model configuration is missing and it matters, ask whether the user wants to pick a model for each role and a reasoning budget now. It matters when the user is new, the question is about setup or cost, or the answer depends on which models run. Reuse an explicit Now/Later choice already given; otherwise ask at most once per chat. If the need is also unclear, ask both questions together. Offer two choices:
 
@@ -35,7 +36,7 @@ When the effective model configuration is missing and it matters, ask whether th
 ## Get set up
 
 1. Install manually with `npx skills add juancamiloqhz/skills`, select the required packages, and refresh the provider catalog.
-2. Run [`/jstack-setup`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-setup/SKILL.md). It asks for global or project scope, reasoning budget and all 17 roles, then writes the selected `models.json`. Consumers read it on their next invocation; saving does not switch the current chat model.
+2. Run [`/jstack-setup`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-setup/SKILL.md). It asks for global or project scope, reasoning budget and all 17 roles, then writes the selected `models.json`. Consumers read it on their next invocation; saving does not switch the current chat model. Then it offers once each to generate app and formal verification skills for the project, unless existing support covers the respective need. The choices are separate, and missing generators remain manual prerequisites.
 3. Start a real task with `/jstack-juan-mode`, a goal, and a check that can pass or fail.
 
 Installation makes skills available to the host catalog; invocation behavior depends on their metadata and the provider. Help is explicit-only. The [guide index](docs/guide/README.md) and [guide page 1](docs/guide/01-setup.md) have the details. Offer to word their first prompt with them, per [`references/prompting.md`](references/prompting.md).
@@ -106,6 +107,7 @@ External helpers and host integrations:
 - `/jstack-deslop`, `/jstack-control-cli`, and `/jstack-control-ui` ship as independent jstack packages. `/unslop` is an external dependency; discover it before use.
 - Cursor's `/loop` and `/create-skill` are not jstack commands. Use the discovered host authoring helper and explicitly authorized, supported wake mechanisms; never invent a scheduler.
 - jstack has no `/orchestrate` skill. Orchestrate is a `/jstack-juan-mode` playbook. If the slash menu shows `/orchestrate`, another plugin provides it.
+- Upstream Statechart, formal-verification maintenance and video catch-up remain deferred. They are not shipped jstack commands. For formal checks after a code change, follow the generated skill's coverage, sync and rerun instructions; for a read-only chat recap, use `/jstack-ketchup`.
 
 ## Playbooks and principles
 

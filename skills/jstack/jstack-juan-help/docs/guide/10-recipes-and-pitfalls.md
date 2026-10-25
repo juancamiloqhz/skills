@@ -86,6 +86,14 @@ The qualifiers do real work. "don't change anything yet" keeps it read-only, and
 
 "if it repros on main" lets the run stop early when the bug is already gone. The video lets you check the fix before you read the diff.
 
+## Prove a property tests rarely reach
+
+```text
+/jstack-create-formal-verification-skill the retry queue. a message must never be delivered twice. leave product code unchanged.
+```
+
+You get a property checked within a stated scope, findings in your code's terms if the code breaks it, and a project skill for later changes. Missing proof tools leave a draft, and generated-input testing is not formal proof.
+
 ## Vet a number before you post it
 
 ```text
@@ -143,6 +151,14 @@ You rarely need more words. You need the right name, and [the principles page](.
 ```
 
 That's the whole prompt. [`/jstack-bro`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-bro/SKILL.md) restates the last message like one human talking to another, no jargon, shorter. Use it when a reply is technically thorough and you still don't know what it said.
+
+## Catch up on a chat you left running
+
+```text
+/jstack-ketchup
+```
+
+[`/jstack-ketchup`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-ketchup/SKILL.md) tells you in plain words what changed since your last message, then lists each call waiting on you with its pick, evidence and risk. It changes nothing while it reports. Video catch-up is a deferred upstream capability, not a shipped jstack command.
 
 ## The pitfalls
 
