@@ -3,7 +3,7 @@
   "repository": "https://github.com/cursor/plugins.git",
   "branch": "main",
   "initialRevision": "ccb5507cec1546dc88135c1139c811e6c59115ba",
-  "reviewedThrough": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+  "reviewedThrough": "99b609a72323b70204eab407c622f436e858e112",
   "watchPaths": [
     "pstack",
     "harness/pstack",
@@ -680,13 +680,13 @@
     {
       "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
-      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
       "id": "2026-10-11-poteto-mode",
-      "disposition": "defer",
+      "disposition": "keep",
       "paths": [
         "pstack/skills/poteto-mode"
       ],
-      "reason": "Review the revised context when the user requests the juan-mode investigation; no shipped workflow consumer exists."
+      "reason": "The original no-shipped-consumer deferral is superseded by the shipped Juan-mode procedures and current completed review. Original rationale remains in 2026-10-11.md; current deltas and retained differences are assigned to the 2026-10-25 decisions, without duplicate pending work."
     },
     {
       "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
@@ -703,7 +703,7 @@
     {
       "from": "ccb5507cec1546dc88135c1139c811e6c59115ba",
       "to": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
-      "report": "research/jstack/upstream-reviews/2026-10-11.md",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
       "id": "2026-10-11-unported-prompts",
       "disposition": "keep",
       "paths": [
@@ -728,7 +728,277 @@
         "pstack/skills/principle-test-behavior-not-implementation",
         "pstack/skills/principle-type-system-discipline"
       ],
-      "reason": "These skills have no shipped jstack counterpart. Preserve scope and inspect fresh sources if a future adaptation is chosen."
+      "reason": "Historical no-counterpart scope was superseded by subsequent shipped ports and source-restoration records. Reassessed in the 2026-10-25 completed review: preserve recorded model/runtime differences and external Unslop; current updates have their own decisions. The original report retains its rationale."
+    },
+    {
+      "id": "2026-10-25-watcher-fork-identity",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/poteto-mode/scripts/watch-pr/github.test.ts",
+        "pstack/skills/poteto-mode/scripts/watch-pr/github.ts",
+        "pstack/skills/poteto-mode/scripts/watch-pr/types.ts"
+      ],
+      "reason": "Validate fork identity and prevent fork branch-name collisions in existing stack discovery. Preserve T3 one-shot execution and configured authority; verify bounded cycle, fork-isolation and malformed-input cases before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
+    },
+    {
+      "id": "2026-10-25-watcher-deadline",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adopt",
+      "paths": [
+        "pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts",
+        "pstack/skills/poteto-mode/scripts/watch-pr/policy.ts"
+      ],
+      "reason": "Cap internal polling and retry sleeps at the remaining timeout. Preserve disabled-deadline cadence and sleep-free one-shot T3 behavior; source examples were assessed but not executed by this review. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
+    },
+    {
+      "id": "2026-10-25-plan-inline-code",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adopt",
+      "paths": [
+        "pstack/skills/poteto-mode/scripts/check-plan.mjs",
+        "pstack/skills/poteto-mode/scripts/check-plan.test.ts"
+      ],
+      "reason": "Recognize matching multi-backtick inline code spans while preserving current fence parsing and prose checks. Test literal punctuation, outside punctuation and unmatched delimiters before adoption. User selected implementation after the scheduled report; prepared and tested in research/jstack/evaluations/upstream-tool-fixes/README.md. Merge verification is still required before appliedCommit."
+    },
+    {
+      "id": "2026-10-25-reflect-destination",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/reflect/SKILL.md"
+      ],
+      "reason": "Protect plugin caches and show a durable authorized edit destination. Retain jstack actual user authority and assessment-only behavior; no publication or installed overwrite follows from reflection alone. Verify copies and conflicts in owned fixtures."
+    },
+    {
+      "id": "2026-10-25-sharpen-prompt",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adopt",
+      "paths": [
+        "pstack/skills/sharpen/SKILL.md"
+      ],
+      "reason": "Adopt the new four-part framing and prompt-only output instead of executing the task. Coordinate explicit invocation metadata, Help and guide changes, preserve user choices and prove no requested task execution occurs."
+    },
+    {
+      "id": "2026-10-25-setup-formal-offer",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/setup-pstack/SKILL.md"
+      ],
+      "reason": "Offer the already shipped formal-verification generator once, separately from app verification, with actual dependency discovery and acceptance. Preserve all 17 roles, settings and manual setup; test existing-skill, decline, acceptance and unavailable cases."
+    },
+    {
+      "id": "2026-10-25-formal-generator",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/create-formal-verification-skill/SKILL.md"
+      ],
+      "reason": "Update tool selection and code-coverage/sync-commit records with honest generated-input test limits. Preserve local destinations, automatic Claude links, findings and mutation proof. Defer new Statechart and maintenance calls until their separate packages are selected and verified."
+    },
+    {
+      "id": "2026-10-25-swarm-report-wording",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adopt",
+      "paths": [
+        "pstack/skills/swarm/SKILL.md"
+      ],
+      "reason": "Clarify the output as a result table. Keep the already consecutive local Phase A steps, explicit worker count and model resolution rather than deleting the jstack N step to match upstream numbering."
+    },
+    {
+      "id": "2026-10-25-guide-refresh",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/docs/guide/01-setup.md",
+        "pstack/docs/guide/02-poteto-mode.md",
+        "pstack/docs/guide/03-understand.md",
+        "pstack/docs/guide/04-design.md",
+        "pstack/docs/guide/05-build-and-clean.md",
+        "pstack/docs/guide/06-verify-and-ship.md",
+        "pstack/docs/guide/07-overnight.md",
+        "pstack/docs/guide/08-principles.md",
+        "pstack/docs/guide/09-make-it-yours.md",
+        "pstack/docs/guide/10-recipes-and-pitfalls.md",
+        "pstack/docs/guide/README.md",
+        "pstack/skills/poteto-help/SKILL.md",
+        "pstack/skills/poteto-help/references/recipes.md"
+      ],
+      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported."
+    },
+    {
+      "id": "2026-10-25-formal-maintenance",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/maintain-formal-verification-skill/SKILL.md"
+      ],
+      "reason": "Reopen when formal-verification upkeep is selected. Preserve six-step drift-versus-bug assessment, mutation proof and per-check sync rules; require standalone packaging and a real stale-proof/current-code/blocked-verifier fixture before support."
+    },
+    {
+      "id": "2026-10-25-statechart",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/statechart"
+      ],
+      "reason": "Reopen when visual formal verification and its manual runtime setup are selected. Assess all 27 files as one candidate, including TLC/Java via mise and renderer npm auto-install behavior; require explicit prerequisite adaptation, chart/model checks, rendered PNG inspection and real-code replay."
+    },
+    {
+      "id": "2026-10-25-ketchup-video",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/ketchup-video/SKILL.md"
+      ],
+      "reason": "Reopen when video recap and a supported render/playback path are selected. Preserve scoped Ketchup evidence and pending decisions, only owned video writes, actual-frame timing checks and render-failure fallback; no implementation starts during a recap."
+    },
+    {
+      "id": "2026-10-25-local-tool-differences",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "keep",
+      "paths": [
+        "pstack/skills/poteto-mode/scripts/orch/orch.test.ts",
+        "pstack/skills/poteto-mode/scripts/orch/store.ts",
+        "pstack/skills/poteto-mode/scripts/worktree-audit.sh"
+      ],
+      "reason": "The new automatic branch-history selector does not exist in the explicit GitHub frontier adapter. GNU/BSD transcript-mtime flags do not apply to the local Python auditor and identified usage records. Preserve explicit topology, recoverable inbox and conservative content/ownership safety."
+    },
+    {
+      "id": "2026-10-25-agents",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "keep",
+      "paths": [
+        "pstack/agents/comment-sicko.md",
+        "pstack/agents/poteto-agent.md"
+      ],
+      "reason": "Keep existing Comment Sicko prompt discovery and receiving-chat-owned playbooks with scoped child full-mode paths. Source agent metadata changes do not require native registrations or global plugin-cache scanning."
+    },
+    {
+      "id": "2026-10-25-distribution",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "keep",
+      "paths": [
+        ".claude-plugin/marketplace.json",
+        ".cursor-plugin/marketplace.json",
+        ".github/workflows/validate-plugins.yml",
+        "README.md",
+        "pstack/.cursor-plugin/plugin.json",
+        "pstack/README.md",
+        "pstack/docs/harness/claude-code.md",
+        "pstack/plugin.json",
+        "scripts/check-pstack-docs.mjs",
+        "scripts/generate-pstack-harness-trees.mjs",
+        "scripts/validate-plugins.mjs"
+      ],
+      "reason": "Retain portable distribution and existing tested docs/package checks. Assess native Claude marketplace/version/adapter, generator and CI additions without adopting fallback/skip semantics. Cursor marketplace pstack entry is unchanged; other integration catalog and root README edits need no jstack change."
+    },
+    {
+      "id": "2026-10-25-generated-harness",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "keep",
+      "paths": [
+        "harness/pstack"
+      ],
+      "reason": "Keep portable distribution. All 187 changed generated paths are source copies, documented adapter/link transforms or the generator README, with no unmatched payload. Source behavior is assessed in the owning groups; generated files are not additional adopted capabilities or runtime proof."
+    },
+    {
+      "id": "2026-10-25-covered-history",
+      "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
+      "to": "99b609a72323b70204eab407c622f436e858e112",
+      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "disposition": "keep",
+      "paths": [
+        "pstack/skills/arena/SKILL.md",
+        "pstack/skills/automate-me/SKILL.md",
+        "pstack/skills/correct/SKILL.md",
+        "pstack/skills/create-verification-skill/SKILL.md",
+        "pstack/skills/figure-it-out/SKILL.md",
+        "pstack/skills/how/SKILL.md",
+        "pstack/skills/how/references/explorer-prompt.md",
+        "pstack/skills/in-your-own-words/SKILL.md",
+        "pstack/skills/interrogate/SKILL.md",
+        "pstack/skills/interrogate/references/lead-judgment.md",
+        "pstack/skills/ketchup/SKILL.md",
+        "pstack/skills/make-bot-ui/SKILL.md",
+        "pstack/skills/no-comments/SKILL.md",
+        "pstack/skills/poteto-mode/SKILL.md",
+        "pstack/skills/poteto-mode/playbooks/autonomous-run.md",
+        "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+        "pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+        "pstack/skills/poteto-mode/playbooks/babysit.md",
+        "pstack/skills/poteto-mode/playbooks/bug-fix.md",
+        "pstack/skills/poteto-mode/playbooks/eval.md",
+        "pstack/skills/poteto-mode/playbooks/feature.md",
+        "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+        "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+        "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+        "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+        "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+        "pstack/skills/poteto-mode/playbooks/refactoring.md",
+        "pstack/skills/poteto-mode/playbooks/runtime-forensics.md",
+        "pstack/skills/poteto-mode/playbooks/session-pickup.md",
+        "pstack/skills/poteto-mode/playbooks/shipping.md",
+        "pstack/skills/poteto-mode/playbooks/trace-forensics.md",
+        "pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+        "pstack/skills/poteto-mode/scripts/orch/orch.ts",
+        "pstack/skills/poteto-mode/scripts/package.json",
+        "pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts",
+        "pstack/skills/principle-attack-the-premise/SKILL.md",
+        "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+        "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+        "pstack/skills/principle-fix-root-causes/SKILL.md",
+        "pstack/skills/principle-guard-the-context-window/SKILL.md",
+        "pstack/skills/principle-laziness-protocol/SKILL.md",
+        "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+        "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+        "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+        "pstack/skills/principle-type-system-discipline/SKILL.md",
+        "pstack/skills/recall/SKILL.md",
+        "pstack/skills/show-me-your-work/SKILL.md",
+        "pstack/skills/typescript-best-practices/SKILL.md",
+        "pstack/skills/typescript-best-practices/references/patterns.md",
+        "pstack/skills/unslop/SKILL.md",
+        "pstack/skills/why/SKILL.md",
+        "pstack/skills/why/references/sources/code-archaeology.md",
+        "pstack/skills/why/references/sources/incident-postmortem.md",
+        "pstack/skills/why/references/sources/sentry.md",
+        "pstack/skills/why/references/sources/slack.md"
+      ],
+      "reason": "These 55 paths have no new delta after frozen source 0148b78. Current mapped source, merged coverage checkpoint and later port reports already account for 22 mode and 33 other skill paths. Preserve documented configured-model/runtime differences and external Unslop; do not count old adaptedFrom pins as missing updates."
     }
   ],
   "automationPacks": [

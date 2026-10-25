@@ -3,11 +3,15 @@
 import json
 from pathlib import Path
 import re
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILLS = ROOT / "skills/jstack"
 MANIFEST = json.loads((ROOT / "research/jstack/upstream.json").read_text())
+TRACKED = [ROOT / name.decode() for name in subprocess.check_output(
+    ["git", "-C", str(ROOT), "ls-files", "-z", "--", "skills/jstack"]
+).split(b"\0") if name]
 
 
 class SkillPackagingTest(unittest.TestCase):
@@ -26,7 +30,7 @@ class SkillPackagingTest(unittest.TestCase):
         names = {s["name"] for s in MANIFEST["skills"]}
         former = {n.removeprefix("jstack-") for n in names} - {"setup"}
         former.add("setup-jstack")
-        for entry in SKILLS.rglob("*"):
+        for entry in TRACKED:
             if entry.suffix not in (".md", ".yaml"):
                 continue
             text = entry.read_text()
@@ -38,7 +42,9 @@ class SkillPackagingTest(unittest.TestCase):
             self.assertNotRegex(text, r"(?<![a-z-])principle-\*", str(entry))
 
     def test_package_markdown_links_resolve_within_the_package(self):
-        for entry in SKILLS.rglob("*.md"):
+        for entry in TRACKED:
+            if entry.suffix != ".md":
+                continue
             package = SKILLS / entry.relative_to(SKILLS).parts[0]
             for target in re.findall(r"\]\(([^)]+)\)", entry.read_text()):
                 if "://" in target or target.startswith("#") or target == "url":
