@@ -26,3 +26,9 @@ No new subagents or live Swarm execution were used for this wording-only update.
 ## Normal use
 
 After merge and a manual skill update, ask `jstack-swarm`: "Use three workers to review authentication, billing and exports; report findings only." It declares three required slices, runs within available capacity and returns one report. If the billing worker cannot finish, its gap stays visible and the review is incomplete. This usage is unchanged by the wording cleanup.
+
+## Result table clarification, 2026-10-25
+
+Compared the complete final entrypoint with `pstack/skills/swarm/SKILL.md` at `99b609a72323b70204eab407c622f436e858e112`. Adopt Report's "a result table" wording. Reversing that phrase replacement reproduces the previous local entrypoint exactly. The full source comparison leaves only the existing documented T3 differences, including declared N and consecutive five-step Frame numbering. Local execution/model resolution, authority, race rules, worker outcomes and complete-versus-incomplete coverage semantics are unchanged. The license still matches `pstack/LICENSE` at the comparison revision. Original adoption pins and the reviewed checkpoint do not advance.
+
+The parent inspected all four phases and their numbering, compared source/license bytes, and ran the four packaging tests, current documentation checker, skill validator, manifest ancestry validation and whitespace check. All passed. This wording-only update launches no workers and adds no new runtime, model-selection or installed-discovery claim. No fixture or routine log is needed.

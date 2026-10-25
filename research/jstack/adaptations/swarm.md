@@ -1,5 +1,7 @@
 # Upstream attribution
 
+The 2026-10-25 follow-up compares the full entrypoint with `pstack/skills/swarm/SKILL.md` at `99b609a72323b70204eab407c622f436e858e112`. Adopt only Report's clarification from "the table" to "a result table". All existing runtime differences below remain, including the explicit N step and consecutive local Frame numbering. The execution reference, resolver, model choices, license and original source pin are unchanged. See the [wording verification](../evaluations/swarm-wording-update/README.md#result-table-clarification-2026-10-25).
+
 The [2026-10-15 naming decision](../skill-names.md) additionally changes this package's local identity and callers. Its upstream identity, procedure and revision pin remain as recorded below.
 
 The 2026-10-15 correction restores the source description, Start list, four named phases and numbered Frame procedure. It restores task-local model assignments for explicit race arms instead of treating the saved scalar default as a prohibition. [Source comparison and bounded evaluation](../evaluations/swarm-restoration/README.md) retain the full difference record. The [original fidelity audit](../fidelity-audits/2026-10-13/helpers.md#swarm) remains historical evidence.
