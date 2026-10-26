@@ -852,7 +852,8 @@
         "pstack/skills/poteto-help/SKILL.md",
         "pstack/skills/poteto-help/references/recipes.md"
       ],
-      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported. Sharpen merged in #139, setup in #141 and formal-generator guidance in #142. User selected the remaining coordinated guide refresh after #143. Complete assessment and help-only evidence: research/jstack/evaluations/guide-refresh/README.md. All 13 paths are accounted for, including dormant Benny source versus deferred live setup; its own merge remains pending."
+      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported. Sharpen merged in #139, setup in #141 and formal-generator guidance in #142. User selected the remaining coordinated guide refresh after #143. Complete assessment and help-only evidence: research/jstack/evaluations/guide-refresh/README.md. All 13 paths are accounted for, including dormant Benny source versus deferred live setup; verified merged in https://github.com/juancamiloqhz/skills/pull/144 on refreshed origin/main.",
+      "appliedCommit": "c4bf32bac63359f2dd5fd75c426def11efd05b64"
     },
     {
       "id": "2026-10-25-formal-maintenance",
