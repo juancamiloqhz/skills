@@ -56,3 +56,15 @@ These are six bounded authoring cases in three contexts, not a reliability rate,
 ## Normal use
 
 After merge and manual installation, ask `$jstack-maintain-formal-verification-skill Recheck our lease verification after the dispatcher refactor. Leave product code unchanged.` A stale check can pass before maintenance and expose a real bug after its model catches up. The handoff distinguishes that result from a modeling mistake or missing tool, and gives each check its own confirmed sync status.
+
+## Post-merge checkpoint
+
+On 2026-10-26, PR [#146](https://github.com/juancamiloqhz/skills/pull/146) merged at `8f80e27a5b60d335df4f84daf92f0b367a5a7717`, verified in refreshed `origin/main`. The formal-maintenance decision now records that merge. All ten selected adopt/adapt decisions are applied; Statechart and video catch-up remain deferred. Original source pins and the reviewed checkpoint are unchanged.
+
+The installation checker against `/home/ubuntu/.agents/skills` on Orbit completed with exit 1: **55 matching, 1 missing, 2 different**. Formal maintenance is missing. The formal generator's `SKILL.md` differs, as do Help's entrypoint, recipe and two guide pages changed in PR #146. These differences match the merged package changes. No installation or repair ran. The earlier user-reported 57-package match on omarchy-mac remains historical; no new laptop check ran.
+
+After manual refresh on each host, run `python3 -B ~/Dev/skills/scripts/jstack/check_installation.py --installed-root "$HOME/.agents/skills"`. Against this source checkpoint, the expected result is **58 matching, 0 missing, 0 different**. This checks expected bytes, not live registration or workflow behavior.
+
+After merge acceptance, the six task-owned trial projects, frozen skill copy and duplicate baseline records were removed from the formal-maintenance cache. A compact completion receipt remains outside Git. The committed fixture generator, replay and this report retain the reproducible cases, blocked outcomes and test limitations. Other caches and review worktrees were preserved.
+
+The documentation check reports 0 problems and all 20 documentation fixtures pass. The canonical manifest validator accepts the recorded merge ancestry. This follow-up changes five research files; shipped skill files and their source comparison remain unchanged from PR #146.
