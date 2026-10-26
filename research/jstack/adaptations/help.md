@@ -1,5 +1,17 @@
 # Help and guide adaptation
 
+## Reviewed guide refresh, 2026-10-25
+
+The complete Help entrypoint, recipe reference and all 11 guide pages were compared with `pstack/skills/poteto-help/` and `pstack/docs/guide/` at `99b609a72323b70204eab407c622f436e858e112`. The original source pin below remains historical. This finishes the selected guide-refresh assessment, with original names translated and the runtime/authority differences below retained. The [page-by-page assessment and help-only trials](../evaluations/guide-refresh/README.md) account for all 13 reviewed paths.
+
+New text covers the two setup offers, formal-property routing and post-change correspondence review, Helpers and evidence survival in generated app skills, opening-PR availability, formal and recap recipes, the custom-generator distinction and guide index. Restore upstream page 06's order of app maintenance before formal verification. Guide prose already aligned on pages 03, 04, 05 and 08 stays unchanged. The original six illustrations and license still match upstream bytes.
+
+Preserve portable manual installation, the complete 17-role configuration, active-mode boundaries, saved-model choices and T3 isolation/wake limits. Native pstack Claude marketplace/namespaced commands and auto-update behavior do not describe jstack's distribution. Statechart, formal maintenance and video catch-up remain deferred, without invented jstack commands. Existing generated formal skills retain their self-contained correspondence/rerun instructions. Generated-input tests remain tests, and missing prerequisites remain incomplete.
+
+The older table's Benny availability statement is superseded by the shipped dormant pack at `automations/jstack/benny/`. Page 07 now distinguishes source availability from enabled Slack intake, tracker integration and live tasks, using the actual pack README and `FOR_AGENTS.md`. The user-deferred live pilot stays inactive with no targets selected. Make bot UI retains its later shipped availability and fixed PR-status scope, described below.
+
+## Original guide port
+
 The [formal-generator follow-up](create-formal-verification-skill.md#tool-selection-and-sync-records-2026-10-25) adds guide page 06's formal-property section from `pstack/docs/guide/06-verify-and-ship.md` at `99b609a72323b70204eab407c622f436e858e112`. It preserves the tool question, real-code mutation/restoration and coverage/sync rationale. Portable output paths, explicit test-versus-proof limits and manual prerequisites follow the approved jstack contract. Unshipped Statechart and formal-maintenance commands remain deferred; this does not complete the broader guide refresh.
 
 The [2026-10-25 setup-offer follow-up](setup-jstack.md#formal-verification-offer-2026-10-25) updates guide page 01 against `pstack/docs/guide/01-setup.md` at `99b609a72323b70204eab407c622f436e858e112`. It retains the separate, once-only formal verification offer and the queue-ownership example. Portable names and locations, actual generator discovery, manual prerequisites and honest draft status replace Cursor-specific assumptions. The original guide pin remains historical; this focused update does not complete the broader guide refresh.

@@ -69,6 +69,8 @@ When you're back, ask for the run in review form:
 
 Before handing back, the skill dispatches the configured `judgment and prose` reviewer to check the trail and available transcript or bounded digest. It reports the actual reviewer and reduced independence for inherited/same-family selections; it does not silently choose another model. Its Attention section names the remaining flags or unavailable review. Read that section first, then the referenced log rows.
 
+For a quick status instead of an audit, run [`/jstack-ketchup`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-ketchup/SKILL.md) in the chat that ran the work. It reads only and tells you in plain words what changed since your last message, with the screenshots and small diagrams the work produced. Then it lists each call waiting on you, such as a merge, an approval, or a choice between options, with its pick, evidence and risk, so you can decide from the reply alone.
+
 ## When the night holds a queue, not a task
 
 The contract above drives one task to one finish condition. Some nights hold more, a queue of independent changes or a whole program. Three playbooks scale the same trust up.
@@ -115,7 +117,7 @@ Every loop above still waits for you to start it. A scheduled or event-driven au
 - Every stage can stop the line. Triage can decide the report is expected behavior, repro can fail to reproduce it, and the fixer can judge the change too risky. Each of those outcomes is useful, because it keeps bad work from reaching the next stage, where it costs more to undo.
 - Every stage hands over evidence. Repro attaches screenshots and video of the broken state, and the fix attaches before-and-after proof. A human can then check that the agent fixed the right thing before reading a line of code.
 
-Pstack's [Benny automation pack](https://github.com/cursor/plugins/tree/0148b78c56c72a1b8412055913c79f767095b217/pstack/automations/benny) is not ported to jstack. Do not present its Slack triage/repro pipeline as installed. T3 supports explicitly requested schedules when the live tools expose them; that is separate from implementing this pack, and needs its own scope, evidence handoff and completion checks.
+Jstack includes a dormant [Benny automation pack](https://github.com/juancamiloqhz/skills/tree/main/automations/jstack/benny) for Slack issue reports. Its source defines triage and reproduction workflows; no Slack intake, tracker adapter or live task is installed by having these files. The [setup entry](https://github.com/juancamiloqhz/skills/blob/main/automations/jstack/benny/FOR_AGENTS.md) is a direct-read procedure, not a catalog slash skill. Setup requires selected repository, Slack and tracker targets, project-scoped dependencies, reviewed drafts and separate live authorization. The live pilot remains deferred while those targets are unselected. Reading this guide does not enable it or create a schedule.
 
 **Pitfall:** a duration is not a finish condition. "work on this for 4 hours" gives the agent nothing to check, and you'll wake up to four hours of motion instead of a result. Give the run a predicate that can pass or fail.
 

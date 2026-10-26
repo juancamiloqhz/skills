@@ -1,6 +1,6 @@
 # Verify the result and open a PR
 
-"It compiles" is not evidence. The [Prove It Works principle](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-principle-prove-it-works/SKILL.md) makes the agent check the real artifact before it reports success, and your job is to make "the real artifact" checkable. This page covers stating a finish condition, vetting a measured number, generating a verification skill for your app, opening the PR, and driving it to merged.
+"It compiles" is not evidence. The [Prove It Works principle](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-principle-prove-it-works/SKILL.md) makes the agent check the real artifact before it reports success, and your job is to make "the real artifact" checkable. This page covers stating a finish condition, vetting a measured number, generating a verification skill for your app, formally verifying a property tests rarely reach, opening the PR, and driving it to merged.
 
 Verification is the slowest step in most agent work, because it's the step that usually waits on a human. Make the agent able to do it, and you stop being the bottleneck. Skip it, and running more agents only gets you more unchecked work to review.
 
@@ -60,7 +60,7 @@ The UI bullet above hides a real requirement. The agent needs a scripted way to 
 
 [`/jstack-create-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-verification-skill/SKILL.md) interviews the repository, not you. It works out what a user touches, how the app launches locally, what can drive it (an existing harness first, otherwise browser and CDP, a PTY, or plain HTTP), what evidence proves behavior, and whether two instances can run side by side. It asks you only what the code can't answer.
 
-It writes `.agents/skills/verify-<app>/` by default, plus an automatic project-local `.claude/skills/verify-<app>` link with conflicts preserved, agent-facing instructions with exact Launch, Doctor, Drive, Evidence, and Cleanup sections, plus a feature map under `features/` that indexes what the app does and what result proves each feature works. The skill ships a [worked feature-map example](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-verification-skill/references/feature-map-example/) with a README index and one file per feature using the four required H2s. Before handing it over, the generator proves the skill once end to end: launch, doctor check, drive one feature, capture evidence, clean up. If that proof fails, don't use the output.
+It writes `.agents/skills/verify-<app>/` by default, plus an automatic project-local `.claude/skills/verify-<app>` link with conflicts preserved, agent-facing instructions with exact Launch, Doctor, Drive, Evidence, and Cleanup sections, a Helpers section for any script it ships, plus a feature map under `features/` that indexes what the app does and what result proves each feature works. The skill ships a [worked feature-map example](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-verification-skill/references/feature-map-example/) with a README index and one file per feature using the four required H2s. Before handing it over, the generator proves the skill once end to end: launch, doctor check, drive one feature, capture evidence, clean up, then confirm the evidence survived the cleanup. If that proof fails, don't use the output.
 
 From then on, "verify it in the app" is a step any agent can execute, in this repo, with no setup conversation. Name it in the prompt when you want the proof in a specific form:
 
@@ -85,6 +85,16 @@ Treat the verification skill as infrastructure, not a one-off. Commit it, so eve
 
 While you're there, make the dev setup repeatable too: seeded data, test users, and one command that brings the environment up the same way every time.
 
+## Keep the verification skill honest
+
+Apps change, and feature maps go out of date. Run this at least once a day, ideally from a scheduled automation so nobody has to remember:
+
+```text
+/jstack-maintain-verification-skill
+```
+
+[`/jstack-maintain-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-maintain-verification-skill/SKILL.md) audits the generated skill: one read-only source reader per feature in parallel, then one live pass that drives every mapped feature. It ends in exactly one of three outcomes. `clean` means full coverage and nothing to ship. `changed` means one PR of proven corrections, confined to the verification skill's own directory. `blocked` names the blocker. It never edits product code. If the live pass catches a product regression, it reports the regression instead of hiding it with a doc edit.
+
 ## Prove a property with a formal verification skill
 
 A verification skill proves the paths you drive. Some bugs live on paths nobody drives: two retries that overlap, a lock that expires mid-write, a state change that arrives out of order. Tests rarely reach those cases. For code where such a bug is costly, run:
@@ -106,16 +116,6 @@ It checks one property and shows that property failing on a broken variant of th
 It writes a project-local skill, normally `.agents/skills/verify-<area>-formal/`, with the automatic relative `.claude/skills/` link and preserved conflicts. The skill tells the next agent which files and functions a check covers, how to run it, and how to distinguish a real bug from a modeling error. Before handoff, the generator follows it on a scratch change that breaks the property, requires the check to catch the break, then restores the original baseline. An unrun verifier or mutation leaves the result a draft.
 
 The generated skill records the commit where each check last matched its covered code. After merges or refactors, revisit the code correspondence and rerun the required checks before advancing that commit. A passing check against stale code assumptions is insufficient. The handoff states the tool, bounds, findings, run command and exclusions. A pass covers only the stated model, bound or tested inputs.
-
-## Keep the verification skill honest
-
-Apps change, and feature maps go out of date. Run this at least once a day, ideally from a scheduled automation so nobody has to remember:
-
-```text
-/jstack-maintain-verification-skill
-```
-
-[`/jstack-maintain-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-maintain-verification-skill/SKILL.md) audits the generated skill: one read-only source reader per feature in parallel, then one live pass that drives every mapped feature. It ends in exactly one of three outcomes. `clean` means full coverage and nothing to ship. `changed` means one PR of proven corrections, confined to the verification skill's own directory. `blocked` names the blocker. It never edits product code. If the live pass catches a product regression, it reports the regression instead of hiding it with a doc edit.
 
 ## Open the PR
 

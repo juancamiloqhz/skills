@@ -828,7 +828,8 @@
       "paths": [
         "pstack/skills/swarm/SKILL.md"
       ],
-      "reason": "Clarify the output as a result table. Keep the already consecutive local Phase A steps, explicit worker count and model resolution rather than deleting the jstack N step to match upstream numbering. User selected this wording-only follow-up. Verification is research/jstack/evaluations/swarm-wording-update/README.md#result-table-clarification-2026-10-25; its own merge remains pending."
+      "reason": "Clarify the output as a result table. Keep the already consecutive local Phase A steps, explicit worker count and model resolution rather than deleting the jstack N step to match upstream numbering. User selected this wording-only follow-up. Verification is research/jstack/evaluations/swarm-wording-update/README.md#result-table-clarification-2026-10-25; verified merged in https://github.com/juancamiloqhz/skills/pull/143 on refreshed origin/main.",
+      "appliedCommit": "24e618646b041f4a68a1daa9bf78c37db12fc5a0"
     },
     {
       "id": "2026-10-25-guide-refresh",
@@ -851,7 +852,7 @@
         "pstack/skills/poteto-help/SKILL.md",
         "pstack/skills/poteto-help/references/recipes.md"
       ],
-      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported. Sharpen text merged in #139, the setup offer in #141 and formal-generator guidance in #142. Remaining guide-index, custom-generator and recap recipes plus the full Help/guide comparison remain pending; this entire decision is not marked applied."
+      "reason": "Refresh Help and all changed guide pages with selected Sharpen, formal-verification, setup and recap behavior. Keep jstack names, T3 limits and portable installation; do not advertise deferred new commands or native plugin auto-updates as supported. Sharpen merged in #139, setup in #141 and formal-generator guidance in #142. User selected the remaining coordinated guide refresh after #143. Complete assessment and help-only evidence: research/jstack/evaluations/guide-refresh/README.md. All 13 paths are accounted for, including dormant Benny source versus deferred live setup; its own merge remains pending."
     },
     {
       "id": "2026-10-25-formal-maintenance",

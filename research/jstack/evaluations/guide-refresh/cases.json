@@ -1,0 +1,6 @@
+[
+  {"id": "a", "request": "Help only: what does Sharpen do? If I ask it to write our migration guide, will it write the guide? Give me a prompt I can send, without doing the work."},
+  {"id": "b", "request": "Help only: I need to check an invariant in our Python parser. Which skill should I use, and are generated-input tests a formal proof if that is all the available tooling can run? Do not start verification or change files."},
+  {"id": "c", "request": "Help only: after changing code covered by a formal check, should I run formal maintenance or Statechart? Can I get a video catch-up too? Explain which of these jstack currently ships and what I can use now. Do not install or run anything."},
+  {"id": "d", "request": "Help only: I left this chat running and want a quick recap of what changed and every decision waiting on me. Which command should I send? I do not need a decision-log audit or a search across other chats. Do not produce the recap yet."}
+]
