@@ -117,6 +117,8 @@ It writes a project-local skill, normally `.agents/skills/verify-<area>-formal/`
 
 The generated skill records the commit where each check last matched its covered code. After merges or refactors, revisit the code correspondence and rerun the required checks before advancing that commit. A passing check against stale code assumptions is insufficient. The handoff states the tool, bounds, findings, run command and exclusions. A pass covers only the stated model, bound or tested inputs.
 
+After merges or refactors that skipped the check, run [`/jstack-maintain-formal-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-maintain-formal-verification-skill/SKILL.md). It reads changes since each recorded sync commit, updates the verification from current code, and reruns it. Passing updates must still detect a broken real-code variant. Failures are replayed on real code to distinguish drift from a bug. A check can be both updated and reveal a bug; blocked checks keep their previous sync commits. Product fixes remain separate.
+
 ## Open the PR
 
 ```text

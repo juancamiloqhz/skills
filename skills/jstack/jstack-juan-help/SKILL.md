@@ -26,7 +26,7 @@ Check the state that changes the answer, and mention it only when it does:
 
 - Use the discovered `jstack-setup` helper's read-only configuration lookup for the current project, respecting explicit, environment, project and global precedence. A missing effective file means configured delegation needs setup; it does not activate default models. If lookup is unavailable, report unknown configuration rather than assuming it is missing. Do not read or expose credentials.
 - No `verify-*` skill or other app harness in the project means agents have no scripted way to drive the app. Mention `/jstack-create-verification-skill` when the question is about proving a change works.
-- No formal verification skill in the project means no property is checked beyond the available tests. Mention `/jstack-create-formal-verification-skill` for races, invariants or cases tests rarely reach. When covered code changed after the skill's recorded sync commit, point to its correspondence-review and rerun instructions. Generated-input tests remain tests, and missing tools leave a draft.
+- No formal verification skill in the project means no property is checked beyond the available tests. Mention `/jstack-create-formal-verification-skill` for races, invariants or cases tests rarely reach. When covered code changed after the skill's recorded sync commit, mention `/jstack-maintain-formal-verification-skill` and read the existing skill's correspondence-review and rerun instructions. Generated-input tests remain tests, and missing tools leave a draft.
 
 When the effective model configuration is missing and it matters, ask whether the user wants to pick a model for each role and a reasoning budget now. It matters when the user is new, the question is about setup or cost, or the answer depends on which models run. Reuse an explicit Now/Later choice already given; otherwise ask at most once per chat. If the need is also unclear, ask both questions together. Offer two choices:
 
@@ -81,6 +81,7 @@ The default answer is `/jstack-juan-mode`, which runs most of the others when it
 | Give agents a scripted way to drive the app and prove behavior | [`/jstack-create-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-verification-skill/SKILL.md) |
 | Bring a verification skill and its feature map back in line with the app | [`/jstack-maintain-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-maintain-verification-skill/SKILL.md) |
 | Formally verify a race, invariant, or other property that tests rarely reach | [`/jstack-create-formal-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-create-formal-verification-skill/SKILL.md) |
+| Bring a formal verification back in line after covered-code changes and distinguish drift from bugs | [`/jstack-maintain-formal-verification-skill`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-maintain-formal-verification-skill/SKILL.md) |
 | Vet a performance number before reporting or acting on it | [`/jstack-benchmark-checklist`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-benchmark-checklist/SKILL.md) |
 | Run a large or cross-cutting change, or one to review after stepping away | [`/jstack-figure-it-out`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-figure-it-out/SKILL.md) |
 | Keep a decision log during a run, and review it afterward | [`/jstack-show-me-your-work`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-show-me-your-work/SKILL.md) |
@@ -107,7 +108,7 @@ External helpers and host integrations:
 - `/jstack-deslop`, `/jstack-control-cli`, and `/jstack-control-ui` ship as independent jstack packages. `/unslop` is an external dependency; discover it before use.
 - Cursor's `/loop` and `/create-skill` are not jstack commands. Use the discovered host authoring helper and explicitly authorized, supported wake mechanisms; never invent a scheduler.
 - jstack has no `/orchestrate` skill. Orchestrate is a `/jstack-juan-mode` playbook. If the slash menu shows `/orchestrate`, another plugin provides it.
-- Upstream Statechart, formal-verification maintenance and video catch-up remain deferred. They are not shipped jstack commands. For formal checks after a code change, follow the generated skill's coverage, sync and rerun instructions; for a read-only chat recap, use `/jstack-ketchup`.
+- Upstream Statechart and video catch-up remain deferred. They are not shipped jstack commands. For formal checks after a code change, follow the generated skill's coverage, sync and rerun instructions; for a read-only chat recap, use `/jstack-ketchup`.
 
 ## Playbooks and principles
 

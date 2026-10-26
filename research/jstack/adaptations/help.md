@@ -1,5 +1,9 @@
 # Help and guide adaptation
 
+## Formal maintenance availability, 2026-10-26
+
+The user selected the standalone [formal-maintenance port](maintain-formal-verification-skill.md). Help's state guidance, skill table, recipes and guide pages 06/09 now name the available `jstack-maintain-formal-verification-skill`, restoring that handoff from the same pinned `99b609a72323b70204eab407c622f436e858e112` Help/guide source. The procedure distinguishes stale verification from current-code bugs and preserves blocked sync records. Statechart and video catch-up remain deferred; the dated guide-refresh record below describes the earlier availability boundary. No helper invocation occurs from a help-only answer.
+
 ## Reviewed guide refresh, 2026-10-25
 
 The complete Help entrypoint, recipe reference and all 11 guide pages were compared with `pstack/skills/poteto-help/` and `pstack/docs/guide/` at `99b609a72323b70204eab407c622f436e858e112`. The original source pin below remains historical. This finishes the selected guide-refresh assessment, with original names translated and the runtime/authority differences below retained. The [page-by-page assessment and help-only trials](../evaluations/guide-refresh/README.md) account for all 13 reviewed paths.

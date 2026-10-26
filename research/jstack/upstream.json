@@ -606,8 +606,20 @@
       "localPath": "skills/jstack/jstack-create-formal-verification-skill",
       "upstreamPath": "pstack/skills/create-formal-verification-skill",
       "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
-      "contextPaths": [],
+      "contextPaths": [
+        "pstack/skills/maintain-formal-verification-skill"
+      ],
       "differences": "research/jstack/adaptations/create-formal-verification-skill.md"
+    },
+    {
+      "name": "jstack-maintain-formal-verification-skill",
+      "localPath": "skills/jstack/jstack-maintain-formal-verification-skill",
+      "upstreamPath": "pstack/skills/maintain-formal-verification-skill",
+      "adaptedFrom": "99b609a72323b70204eab407c622f436e858e112",
+      "contextPaths": [
+        "pstack/skills/create-formal-verification-skill"
+      ],
+      "differences": "research/jstack/adaptations/maintain-formal-verification-skill.md"
     },
     {
       "name": "jstack-recall",
@@ -860,11 +872,11 @@
       "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
       "to": "99b609a72323b70204eab407c622f436e858e112",
       "report": "research/jstack/upstream-reviews/2026-10-25.md",
-      "disposition": "defer",
+      "disposition": "adapt",
       "paths": [
         "pstack/skills/maintain-formal-verification-skill/SKILL.md"
       ],
-      "reason": "Reopen when formal-verification upkeep is selected. Preserve six-step drift-versus-bug assessment, mutation proof and per-check sync rules; require standalone packaging and a real stale-proof/current-code/blocked-verifier fixture before support."
+      "reason": "Reopen when formal-verification upkeep is selected. Preserve six-step drift-versus-bug assessment, mutation proof and per-check sync rules; require standalone packaging and a real stale-proof/current-code/blocked-verifier fixture before support. User selected adoption after PR #145. The six-step standalone port and real history fixtures are recorded in research/jstack/evaluations/formal-maintenance/README.md. Statechart remains deferred; this implementation is not applied until its own merge."
     },
     {
       "id": "2026-10-25-statechart",
