@@ -1,5 +1,7 @@
 # Formal verification generator adaptation
 
+The 2026-10-26 follow-up adopts the previously deferred maintenance handoff from the same `99b609a72323b70204eab407c622f436e858e112` source. It now names available `jstack-maintain-formal-verification-skill`, with actual discovery and manual-unavailability handling. Its [adaptation](maintain-formal-verification-skill.md) and [evaluation](../evaluations/formal-maintenance/README.md) cover the standalone port. Statechart remains deferred. The dated records below retain the earlier decision and evidence; the generator's original adoption pin is unchanged.
+
 Source: `pstack/skills/create-formal-verification-skill/SKILL.md` at `0148b78c56c72a1b8412055913c79f767095b217`. Local: [jstack-create-formal-verification-skill](../../../skills/jstack/jstack-create-formal-verification-skill/SKILL.md).
 
 Preserve every source heading, target/tool selection, all seven quality requirements, generated-skill frontmatter, real-code mutation proof, restoration and scoped handoff. A current-code failure remains a finding; a passing bound does not prove the whole system. Keep the exact upstream license and explicit-invocation flag. Codex metadata adds a default prompt and disables implicit invocation.

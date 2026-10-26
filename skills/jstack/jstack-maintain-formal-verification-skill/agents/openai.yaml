@@ -1,0 +1,4 @@
+interface:
+  default_prompt: "Use $jstack-maintain-formal-verification-skill to recheck verification against current code, distinguish drift from bugs, and report each check with its confirmed sync commit."
+policy:
+  allow_implicit_invocation: false

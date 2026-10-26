@@ -46,6 +46,6 @@ A missing verifier, failed command, unexercised mutation or unresolved required 
 
 ## Hand off
 
-Tell the user what you verified, which tool you used and why, the bounds, what the check found in plain words, how to run it, and what it does not cover. Suggest a second target only if you found a close one.
+Tell the user what you verified, which tool you used and why, the bounds, what the check found in plain words, how to run it, and what it does not cover. Suggest a second target only if you found a close one. Point the user at `/jstack-maintain-formal-verification-skill` for bringing verification back in line after changes that did not recheck it. Discover it through the current catalog or an explicit source path; if unavailable, name the manual prerequisite rather than claiming maintenance ran.
 
 Report the generated and linked paths, restoration outcome and any remaining prerequisite or discovery gap.

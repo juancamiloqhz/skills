@@ -34,7 +34,7 @@ Swap in the real paths, skills, and done checks. Informal wording works.
 ## Review and ship
 
 - `/jstack-interrogate the whole branch, but skeptically. don't change anything yet. no nitpicks unless it's a real bug or regression.` Read the dismissals too.
-- `/jstack-create-formal-verification-skill prove <property> holds in <module>, even when <steps> interleave or retry.` Report the scope and missing prerequisites. After merges or refactors, follow the generated skill's correspondence-review and rerun instructions before advancing its sync commit. Formal-maintenance support remains deferred.
+- `/jstack-create-formal-verification-skill prove <property> holds in <module>, even when <steps> interleave or retry.` Report the scope and missing prerequisites. After merges or refactors, use `/jstack-maintain-formal-verification-skill` to recheck correspondence and required checks before advancing its sync commit.
 - `/jstack-swarm check every package under <dir> against its check script. one worker per package. one report.`
 - `/jstack-juan-mode open the pr. small ordered commits, evidence in the description.`
 - `/jstack-juan-mode babysit this pr. get it green.` For status only: `/jstack-juan-mode check on pr <number>. anything outstanding?`
