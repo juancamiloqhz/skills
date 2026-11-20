@@ -16,3 +16,7 @@ Preserve the six steps in order: fixed exit condition, wake selection, evidence-
 | Callers | Mode/setup/current research show 20 procedures and three pending. Hillclimb can now refer to this wake mechanism while retaining its own stop rule. | Availability correction only; the previous local Hillclimb wording explicitly treated this dependency as unavailable. No role keys, configuration, upstream mappings, pins or reviewed checkpoint change. |
 
 The [evaluation](../evaluations/autonomous-run/README.md) separates CLI completion from workflow-review and continuation gaps. The [source comparison](../evaluations/autonomous-run/source-comparison.json) covers the procedure, changed Hillclimb caller and mode/setup. Earlier adaptation records still explain their other differences from the pins. Skill-creator supplied the evaluation agents; creating this port did not activate juan-mode or its pre-review helpers.
+
+## Goal-scoped discoveries, 2026-11-20
+
+Step 4 now opens "Mid-run discoveries that support the goal are yours", following the source change recorded in the [2026-11-01 review](../upstream-reviews/2026-11-01.md) and unchanged at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`. The existing authority, scope and separate-PR rules are unchanged. The [batch evaluation](../evaluations/upstream-batch-2026-11-20/README.md) checks that a related blocker is handled and an unrelated repair is preserved and left for later.

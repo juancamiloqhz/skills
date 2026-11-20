@@ -2,7 +2,7 @@
 
 Source: [pstack technical-writing](https://github.com/cursor/plugins/blob/11713c683fe4add4fd403ea880580abbc9e0875f/pstack/skills/technical-writing/SKILL.md), revision `11713c683fe4add4fd403ea880580abbc9e0875f`. Local package: [jstack-technical-writing](../../../skills/jstack/jstack-technical-writing/SKILL.md). Its [MIT license](../../../skills/jstack/jstack-technical-writing/LICENSE) matches the pinned plugin notice, including Lauren Tan's attribution.
 
-The entire source package consists of one `SKILL.md`. Keep its three top-level rules, vocabulary guidance, rhythm section, four writing layers, four document modes, PR/commit exception, voice rules and worked example inline. No model resolver, new workflow role, script, index or duplicated Unslop catalog is needed. The executing agent applies the standard to the requested prose.
+The entire source package consists of one `SKILL.md`. Keep its opening rules, rhythm section, four writing layers, four document modes, PR/commit exception and voice rules inline. The worked example was removed with the 2026-11-20 source update below. No model resolver, new workflow role, script, index or duplicated Unslop catalog is needed. The executing agent applies the standard to the requested prose.
 
 ## Complete differences
 
@@ -31,3 +31,9 @@ The mode's docs/PR/commit trigger now calls `jstack-technical-writing`. Its help
 The manifest adds one component at the consuming mode's source pin and watches its Unslop and mode context. The mode directly watches both helper source paths. Existing pins, review decisions, checkpoint, configuration schema and model files stay unchanged. This supplies a writing helper, not the Opening a PR or any other pending playbook.
 
 [Source comparison and bounded evaluation](../evaluations/technical-writing/README.md) records observed outputs and limits. Installation and merging remain separate from this implementation PR.
+
+## Shorter source update, 2026-11-20
+
+Adopt the complete body at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`. The source keeps the opening rules, rhythm guidance, all four layers, the four document modes, the Unslop routing, PR and commit rules and the tab rule, in shorter form. It removes the "apply all four layers" sentence and three-rule preamble, the Diátaxis compass, several per-mode rules, the "will", "should be done", "click here", heading-form and partial-list rules, the "both…and" disambiguators, "don't churn what didn't change", the worked example and the request to propose new Unslop rule-26 offenders. jstack follows those removals. The scope paragraph, external Unslop discovery and tab exception remain the only local differences besides naming and the omitted invocation flag.
+
+The current upstream Unslop also narrows rules 7 and 26. The installed external copy is still the previously assessed version, so the rule-26 statement above describes that installed copy. Updating it remains manual. The [batch evaluation](../evaluations/upstream-batch-2026-11-20/README.md) exercises a document revision and a PR body.

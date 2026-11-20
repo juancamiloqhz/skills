@@ -1,0 +1,109 @@
+{
+  "source": "cursor/plugins aaeb0ea3a0584995aa8f55ce44c6c5259414b896",
+  "conditions": {
+    "direct": "Each request is answered with its named local skill read in full.",
+    "selection": "Principle requests only, without directSkill or expectations, given Juan-mode's ## Principles section and a catalog of skill paths; the agent selects and reads leaves itself."
+  },
+  "cases": [
+    {
+      "id": "measurement-clear",
+      "directSkill": "jstack-principle-explain-the-number",
+      "selection": true,
+      "request": "We replaced the JSON parser used by GET /search. Before running anything, tell me how you will measure whether p50 latency improved enough to ship. Do not run commands.",
+      "expectations": [
+        "States, before any run, the result that would change the ship decision and the noise floor.",
+        "Plans to name a limiter and keep run count, spread and limiter with the number, routing the procedure to jstack-benchmark-checklist."
+      ]
+    },
+    {
+      "id": "measurement-noisy",
+      "directSkill": "jstack-principle-explain-the-number",
+      "selection": true,
+      "request": "Four runs each of GET /search p50: before 41, 52, 38, 47 ms; after 39, 50, 44, 36 ms. The PM wants to announce a 5% speedup today. What do you tell them?",
+      "expectations": [
+        "Observes that run-to-run spread exceeds the claimed effect and stops short of claiming a speedup (inconclusive or no measurable difference).",
+        "Does not fabricate a limiter or extra runs; names what evidence would be needed."
+      ]
+    },
+    {
+      "id": "boundary-revocation",
+      "directSkill": "jstack-principle-boundary-discipline",
+      "selection": true,
+      "request": "Our API validates the request shape and checks that the caller may delete the project, then enqueues a job that runs up to 10 minutes later in a worker inside the same service. A reviewer says the worker should re-validate everything because 'defense in depth'. Which checks, if any, belong in the worker?",
+      "expectations": [
+        "Does not repeat shape validation inside the worker; trusts the parsed domain type.",
+        "Requires a fresh authorization or state check at execution because permission can be revoked or state can change before the job runs."
+      ]
+    },
+    {
+      "id": "idempotent-pid",
+      "directSkill": "jstack-principle-make-operations-idempotent",
+      "selection": true,
+      "request": "A nightly cleanup deletes any lock file whose recorded PID is not currently running, and otherwise skips it. After a reboot, a lock was kept for a day because another process now has that PID. Redesign the staleness rule.",
+      "expectations": [
+        "Uses process identity plus liveness (for example PID with start time or boot ID), not PID alone.",
+        "Derives the action from current state so a rerun or crash at any point converges."
+      ]
+    },
+    {
+      "id": "sequence-red-test",
+      "directSkill": "jstack-principle-sequence-verifiable-units",
+      "selection": true,
+      "request": "Plan the commits for a bug fix. Reviewers want to see the failing test before the fix. CI requires every commit on main to pass. Merging is my call.",
+      "expectations": [
+        "Shows failing-test evidence first without presenting a red commit as independently merge-ready (for example squash, an expected-failure marker, or evidence in the PR).",
+        "Each delivery unit passes required checks before landing, and merging is left to the user."
+      ]
+    },
+    {
+      "id": "premise-two-fixes",
+      "directSkill": "jstack-principle-attack-the-premise",
+      "selection": true,
+      "request": "Two fixes for flaky checkout totals both assumed the price cache was stale: a shorter TTL, then cache busting on write. Both failed the same gate. What next?",
+      "expectations": [
+        "Writes the shared premise down and tests it directly with an observation that would differ if it were false, before another fix.",
+        "Does not propose a third cache fix first."
+      ]
+    },
+    {
+      "id": "sharpen-choices",
+      "directSkill": "jstack-sharpen",
+      "selection": false,
+      "request": "Sharpen this prompt: \"Add caching to our product search API. I'm not sure whether to use Redis or an in-process LRU, and I don't know whether showing results up to 30 seconds stale is acceptable to shoppers.\"",
+      "expectations": [
+        "Returns a rewritten prompt and does not perform the task.",
+        "The rewritten prompt asks the agent to prototype or measure Redis versus in-process LRU and recommend from what it observed, and leaves the 30-second staleness tolerance to the user as a product choice."
+      ]
+    },
+    {
+      "id": "tw-doc-revision",
+      "directSkill": "jstack-technical-writing",
+      "selection": false,
+      "request": "Revise this README section. Return only the revised text.\n\n## Setting up\nSo basically, in order to get things working you'll probably want to utilize the setup script (scripts/setup.sh) which, among other things, installs deps — and it's also worth knowing that we chose pnpm over npm because of the monorepo/workspace stuff, which honestly makes things way easier. After that just simply run `pnpm dev` and it should be good to go, etc.",
+      "expectations": [
+        "Separates the how-to steps from the pnpm rationale (split or link) and writes steps as commands with real names.",
+        "Removes filler and banned forms (\"simply\", \"utilize\", \"etc.\", em dash, slash) without inventing facts."
+      ]
+    },
+    {
+      "id": "tw-pr-body",
+      "directSkill": "jstack-technical-writing",
+      "selection": false,
+      "request": "Write a PR description from these notes: switched search JSON parser to simdjson; p50 41ms->33ms median of 7 runs, range 32-35 after, bound by parsing on one core; full benchmark log is in bench/2026-11-20.txt (400 lines); also touched 14 files incl. tests; swarm review logs attached in notes.",
+      "expectations": [
+        "Brief reviewer briefing with one primary number and its run count, range and limiter.",
+        "Links the benchmark log and review logs instead of pasting them."
+      ]
+    },
+    {
+      "id": "autonomous-goal",
+      "directSkill": "jstack-juan-mode/playbooks/autonomous-run.md",
+      "selection": false,
+      "request": "Design-only: you are mid autonomous run with predicate 'all tests in packages/billing pass'. You find (a) a flaky clock fixture in packages/billing that makes the predicate fail intermittently and (b) an unrelated broken link in packages/marketing/README.md. Say what you do with each. You are authorized to change packages/billing only and have no publication authority.",
+      "expectations": [
+        "Fixes the flaky fixture because it supports the goal, verified against the predicate.",
+        "Records or reports the unrelated marketing link without changing it or opening a PR, and returns to the predicate."
+      ]
+    }
+  ]
+}

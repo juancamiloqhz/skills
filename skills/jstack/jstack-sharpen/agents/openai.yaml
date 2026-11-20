@@ -1,4 +1,4 @@
 interface:
-  default_prompt: "Use $jstack-sharpen to rewrite my prompt with expert methods and an outside check, leaving my choices open."
+  default_prompt: "Use $jstack-sharpen to rewrite my prompt with expert methods and an outside check, prototyping choices an experiment can settle and leaving my preference choices open."
 policy:
   allow_implicit_invocation: false
