@@ -65,6 +65,8 @@ The installation checker against `/home/ubuntu/.agents/skills` on Orbit complete
 
 After manual refresh on each host, run `python3 -B ~/Dev/skills/scripts/jstack/check_installation.py --installed-root "$HOME/.agents/skills"`. Against this source checkpoint, the expected result is **58 matching, 0 missing, 0 different**. This checks expected bytes, not live registration or workflow behavior.
 
+On 2026-11-20, after the manual Orbit refresh, the same command against `/home/ubuntu/.agents/skills` reports **58 matching, 0 missing, 0 different**. No new omarchy-mac check ran; its comparison remains pending.
+
 After merge acceptance, the six task-owned trial projects, frozen skill copy and duplicate baseline records were removed from the formal-maintenance cache. A compact completion receipt remains outside Git. The committed fixture generator, replay and this report retain the reproducible cases, blocked outcomes and test limitations. Other caches and review worktrees were preserved.
 
 The documentation check reports 0 problems and all 20 documentation fixtures pass. The canonical manifest validator accepts the recorded merge ancestry. This follow-up changes five research files; shipped skill files and their source comparison remain unchanged from PR #146.

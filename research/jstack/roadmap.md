@@ -4,11 +4,11 @@ Current jstack skill identities use the `jstack-` prefix. See the [name mapping 
 
 For jstack implementation and maintenance, follow the [upstream-fidelity policy](upstream-fidelity.md). Preserve upstream structure by default and document only necessary or explicitly approved deviations.
 
-## Current priority: refresh and verify the installed skills
+## Current priority: review new upstream and select the next batch
 
 The 2026-10-26 source checkpoint includes 58 packages after [PR #146](https://github.com/juancamiloqhz/skills/pull/146) added formal-verification maintenance. All ten selected adopt/adapt decisions from the [2026-10-25 review](upstream-reviews/2026-10-25.md) are merged. All 23 playbooks remain available. Statechart and video catch-up remain deferred pending their recorded scope and runtime decisions.
 
-Next, manually refresh skills on Orbit and omarchy-mac, then compare each installation with current main. The [post-merge checkpoint](evaluations/formal-maintenance/README.md#post-merge-checkpoint) records Orbit at 55 matching, 1 missing and 2 different packages before refresh. The expected refreshed result is 58 matching, 0 missing and 0 different. Installation remains manual. File parity does not close the provider, dependency or persistence limits below, and Benny's live pilot remains deferred.
+The [post-merge checkpoint](evaluations/formal-maintenance/README.md#post-merge-checkpoint) records Orbit at 55 matching, 1 missing and 2 different packages before refresh, and 58 matching, 0 missing and 0 different after the manual refresh on 2026-11-20. Next, compare omarchy-mac with current main, then select recommendations from the pending upstream review. Installation remains manual. File parity does not close the provider, dependency or persistence limits below, and Benny's live pilot remains deferred.
 
 ## Earlier release checkpoints
 
