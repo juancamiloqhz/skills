@@ -232,12 +232,7 @@
       "localPath": "skills/jstack/jstack-principle-attack-the-premise",
       "upstreamPath": "pstack/skills/principle-attack-the-premise",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [
-        "pstack/skills/principle-build-the-lever",
-        "pstack/skills/principle-fix-root-causes",
-        "pstack/skills/principle-laziness-protocol",
-        "pstack/skills/principle-redesign-from-first-principles"
-      ],
+      "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -253,11 +248,7 @@
       "localPath": "skills/jstack/jstack-principle-build-the-lever",
       "upstreamPath": "pstack/skills/principle-build-the-lever",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [
-        "pstack/skills/principle-encode-lessons-in-structure",
-        "pstack/skills/principle-laziness-protocol",
-        "pstack/skills/principle-prove-it-works"
-      ],
+      "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -290,8 +281,7 @@
       "upstreamPath": "pstack/skills/principle-explain-the-number",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/benchmark-checklist",
-        "pstack/skills/principle-prove-it-works"
+        "pstack/skills/benchmark-checklist"
       ],
       "differences": "research/jstack/principle-adaptations.md"
     },
@@ -348,9 +338,7 @@
       "localPath": "skills/jstack/jstack-principle-minimize-reader-load",
       "upstreamPath": "pstack/skills/principle-minimize-reader-load",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [
-        "pstack/skills/principle-guard-the-context-window"
-      ],
+      "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -382,9 +370,7 @@
       "localPath": "skills/jstack/jstack-principle-prove-it-works",
       "upstreamPath": "pstack/skills/principle-prove-it-works",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [
-        "pstack/skills/show-me-your-work"
-      ],
+      "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -408,10 +394,7 @@
       "localPath": "skills/jstack/jstack-principle-sequence-verifiable-units",
       "upstreamPath": "pstack/skills/principle-sequence-verifiable-units",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [
-        "pstack/skills/principle-build-the-lever",
-        "pstack/skills/principle-prove-it-works"
-      ],
+      "contextPaths": [],
       "differences": "research/jstack/principle-adaptations.md"
     },
     {
@@ -436,8 +419,6 @@
       "upstreamPath": "pstack/skills/principle-type-system-discipline",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/principle-boundary-discipline",
-        "pstack/skills/principle-encode-lessons-in-structure",
         "pstack/skills/typescript-best-practices"
       ],
       "differences": "research/jstack/principle-adaptations.md"
@@ -448,7 +429,6 @@
       "upstreamPath": "pstack/skills/benchmark-checklist",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
         "pstack/skills/poteto-mode/playbooks/perf-issue.md",
         "pstack/skills/poteto-mode/playbooks/hillclimb.md"
       ],

@@ -11,3 +11,7 @@ No new role, configuration, script, helper dependency or automatic Juan-mode tri
 Adopt the complete body and description from `pstack/skills/sharpen/SKILL.md` at `99b609a72323b70204eab407c622f436e858e112`, with only the existing name and slash-command translation. The skill now states four framing points and returns a rewritten prompt. It does not perform the requested task. Update the Codex default prompt and current Help, guide, catalog and migration examples together. Preserve both explicit-invocation policies, the original manifest pin and exact license.
 
 The [controlled comparison](../evaluations/sharpen-prompt/README.md) exercises both versions against the same fixture request. This is a new upstream behavior, not a local redesign or proof of installed-provider invocation. The broader guide-refresh recommendation remains pending beyond its Sharpen-related text.
+
+## Experiment-first choices, 2026-11-20
+
+Adopt the changed closing instruction from `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`: the rewritten prompt asks the agent to prototype any choice an experiment can settle and recommend an option from what it observed, and leaves product or preference choices for the user. The rewritten prompt gives the agent no new authority, and the user still decides preference choices. The Codex default prompt and root catalog description now say the same. The [batch evaluation](../evaluations/upstream-batch-2026-11-20/README.md) uses one settleable choice and one preference choice.

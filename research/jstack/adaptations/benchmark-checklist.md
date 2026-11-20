@@ -29,3 +29,7 @@ Perf issue now has a Juan-mode procedure. The final availability paragraph names
 ## Hillclimb availability
 
 The final paragraph now marks Hillclimb available alongside Perf issue. Opening a PR remains unavailable. Measurement questions, thresholds and other instructions are unchanged. The [comparison](../evaluations/hillclimb/source-comparison.json) records the updated entrypoint.
+
+## Opening a PR pointer, 2026-11-20
+
+The source at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896` removes the Opening a PR reference from the PR-body rule; the one-number rule and linked evidence remain. The final availability paragraph no longer calls Opening a PR unavailable, which was stale after that playbook shipped. It still names Perf issue and Hillclimb. The manifest stops watching the Opening a PR playbook as context for this package.
