@@ -876,7 +876,8 @@
       "paths": [
         "pstack/skills/maintain-formal-verification-skill/SKILL.md"
       ],
-      "reason": "Reopen when formal-verification upkeep is selected. Preserve six-step drift-versus-bug assessment, mutation proof and per-check sync rules; require standalone packaging and a real stale-proof/current-code/blocked-verifier fixture before support. User selected adoption after PR #145. The six-step standalone port and real history fixtures are recorded in research/jstack/evaluations/formal-maintenance/README.md. Statechart remains deferred; this implementation is not applied until its own merge."
+      "reason": "Reopen when formal-verification upkeep is selected. Preserve six-step drift-versus-bug assessment, mutation proof and per-check sync rules; require standalone packaging and a real stale-proof/current-code/blocked-verifier fixture before support. User selected adoption after PR #145. The six-step standalone port and real history fixtures are recorded in research/jstack/evaluations/formal-maintenance/README.md. Verified merged in https://github.com/juancamiloqhz/skills/pull/146 on refreshed origin/main. Statechart remains deferred.",
+      "appliedCommit": "8f80e27a5b60d335df4f84daf92f0b367a5a7717"
     },
     {
       "id": "2026-10-25-statechart",
