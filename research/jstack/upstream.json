@@ -3,7 +3,7 @@
   "repository": "https://github.com/cursor/plugins.git",
   "branch": "main",
   "initialRevision": "ccb5507cec1546dc88135c1139c811e6c59115ba",
-  "reviewedThrough": "99b609a72323b70204eab407c622f436e858e112",
+  "reviewedThrough": "6b0300214a09fd6029cfb7077043125758cd1fd2",
   "watchPaths": [
     "pstack",
     "harness/pstack",
@@ -871,7 +871,7 @@
       "id": "2026-10-25-formal-maintenance",
       "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
       "to": "99b609a72323b70204eab407c622f436e858e112",
-      "report": "research/jstack/upstream-reviews/2026-10-25.md",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
       "disposition": "adapt",
       "paths": [
         "pstack/skills/maintain-formal-verification-skill/SKILL.md"
@@ -884,22 +884,22 @@
       "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
       "to": "99b609a72323b70204eab407c622f436e858e112",
       "report": "research/jstack/upstream-reviews/2026-10-25.md",
-      "disposition": "defer",
+      "disposition": "keep",
       "paths": [
         "pstack/skills/statechart"
       ],
-      "reason": "Reopen when visual formal verification and its manual runtime setup are selected. Assess all 27 files as one candidate, including TLC/Java via mise and renderer npm auto-install behavior; require explicit prerequisite adaptation, chart/model checks, rendered PNG inspection and real-code replay."
+      "reason": "Reopen when visual formal verification and its manual runtime setup are selected. Assess all 27 files as one candidate, including TLC/Java via mise and renderer npm auto-install behavior; require explicit prerequisite adaptation, chart/model checks, rendered PNG inspection and real-code replay. Superseded for the new source range by 2026-11-01-statechart; prior rationale stays in the original report."
     },
     {
       "id": "2026-10-25-ketchup-video",
       "from": "4bf3e083c6dec126e254f96181b84a105b6e3e70",
       "to": "99b609a72323b70204eab407c622f436e858e112",
       "report": "research/jstack/upstream-reviews/2026-10-25.md",
-      "disposition": "defer",
+      "disposition": "keep",
       "paths": [
         "pstack/skills/ketchup-video/SKILL.md"
       ],
-      "reason": "Reopen when video recap and a supported render/playback path are selected. Preserve scoped Ketchup evidence and pending decisions, only owned video writes, actual-frame timing checks and render-failure fallback; no implementation starts during a recap."
+      "reason": "Reopen when video recap and a supported render/playback path are selected. Preserve scoped Ketchup evidence and pending decisions, only owned video writes, actual-frame timing checks and render-failure fallback; no implementation starts during a recap. Superseded for the new source range by 2026-11-01-video; prior rationale stays in the original report."
     },
     {
       "id": "2026-10-25-local-tool-differences",
@@ -1022,6 +1022,184 @@
         "pstack/skills/why/references/sources/slack.md"
       ],
       "reason": "These 55 paths have no new delta after frozen source 0148b78. Current mapped source, merged coverage checkpoint and later port reports already account for 22 mode and 33 other skill paths. Preserve documented configured-model/runtime differences and external Unslop; do not count old adaptedFrom pins as missing updates."
+    },
+    {
+      "id": "2026-11-01-arena-judge",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/arena/SKILL.md",
+        "pstack/skills/setup-pstack/SKILL.md"
+      ],
+      "reason": "Coordinate Arena and setup: ordered configured different-family judges, explicit skipped-judge outcome when none is eligible. Preserve fixed saved seats, whole-map validation, unchanged selected options and no automatic model substitutions. Check inherited/same-family-only pools, concrete eligible judge, rejection, dropouts and Architect requirements before adoption."
+    },
+    {
+      "id": "2026-11-01-interrogate",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/interrogate"
+      ],
+      "reason": "Replace four-bucket speculative review with run-proven adversarial findings and coordinator reruns. Retire four deleted source references only with all callers and execution contract migrated. Preserve requested read-only boundaries, actual configured seats and no automatic fixes. Verify real bug, false claim, no findings, design prototype, dirty scope capture and missing runner cases in isolated fixtures."
+    },
+    {
+      "id": "2026-11-01-mode-entry",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/poteto-mode/SKILL.md"
+      ],
+      "reason": "Adopt goal restatement, premeasurement trigger and updated Autopilot-stack route with coordinated callers. Preserve T3 task lifecycle and saved-model authority instead of upstream rejected-slug fallback or automatic inheritance. Test first/final messages, child brief/PR purpose, inactive mode and rejected selection without model changes."
+    },
+    {
+      "id": "2026-11-01-autonomous-goal",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adopt",
+      "paths": [
+        "pstack/skills/poteto-mode/playbooks/autonomous-run.md"
+      ],
+      "reason": "Limit mid-run discoveries to those supporting the goal. Retain explicit scope and authority. Verify related blocker is handled while unrelated repair is parked without widening the task."
+    },
+    {
+      "id": "2026-11-01-autopilot-coordination",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+        "pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+        "pstack/skills/poteto-mode/playbooks/babysit.md",
+        "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+        "pstack/skills/poteto-mode/playbooks/opening-a-pr.md"
+      ],
+      "reason": "Coordinate dependency-only stacks, owner topology, no-merge handoff, concurrent-file drift, finished-unit pushes, demonstrated blocker rule, wording-only verification cadence and removal of unconditional Interrogate at PR opening. Preserve explicit user gates, actual tools, parent-owned watches and current-head evidence. Verify independent/dependent PRs, stopped handoff, parent restack, base-existing versus newly reached bug, changed docs, and no duplicate writers before adoption."
+    },
+    {
+      "id": "2026-11-01-orchestrate",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+        "pstack/skills/poteto-mode/scripts/orch",
+        "pstack/skills/poteto-mode/scripts/package.json"
+      ],
+      "reason": "Replace the upstream-retired orch ledger workflow with the new owner/verifier supervision procedure using supported T3 durable state and events. Migrate every live caller before deleting local helpers; preserve existing stores/history and recovery evidence. No Cursor cloud/fork assumptions, silent model switch or automatic merge. Verify current-head verdicts, stale completion, worker stop/replacement, durable pickup, one-writer topology and authority in an isolated pilot."
+    },
+    {
+      "id": "2026-11-01-measurement",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adopt",
+      "paths": [
+        "pstack/skills/principle-explain-the-number/SKILL.md"
+      ],
+      "reason": "Add the decision-changing result and noise floor before a run, and stop when spread exceeds effect. Coordinate the inline mode trigger. Preserve benchmark-checklist dependency. Verify clear and noisy measurement briefs without claiming a new measured speedup."
+    },
+    {
+      "id": "2026-11-01-help-guide",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "adapt",
+      "paths": [
+        "pstack/README.md",
+        "pstack/docs/guide",
+        "pstack/skills/poteto-help"
+      ],
+      "reason": "Coordinate Arena judge, Interrogate output, no-merge dependency-only Autopilot and simplified Orchestrate explanations after their consumers land. Keep Statechart and video explicitly unavailable/deferred. Verify Help recipes with actual skill behavior and current documentation/link checks; no new availability claim from prose alone."
+    },
+    {
+      "id": "2026-11-01-formal-statechart-caller",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "keep",
+      "paths": [
+        "pstack/skills/create-formal-verification-skill/SKILL.md"
+      ],
+      "reason": "Only removes Statechart fixed-by-change wording. Jstack already omits that unavailable deferred integration, so retain the current generator and shipped maintenance handoff. Reassess by name-based discovery when Statechart is selected, without copying its changing CLI into generated skills."
+    },
+    {
+      "id": "2026-11-01-video",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/ketchup-video"
+      ],
+      "reason": "Video now requires persistent per-slide subtitle strips and frame-matched reading holds, counting new subtitles and changed labels. Reopen only after video adoption and a supported render/playback path are selected; verify subtitle readability, hold timing excluding fades, pending calls and failure fallback. No renderer installation authorized."
+    },
+    {
+      "id": "2026-11-01-plugin-metadata",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "keep",
+      "paths": [
+        "pstack/.cursor-plugin/plugin.json",
+        "pstack/plugin.json"
+      ],
+      "reason": "Pstack version moves 0.15.32 to 0.15.36. Portable jstack distribution does not adopt plugin version metadata or become a Claude plugin by this review."
+    },
+    {
+      "id": "2026-11-01-shared-metadata",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "keep",
+      "paths": [
+        ".cursor-plugin/marketplace.json",
+        ".github/workflows/validate-plugins.yml",
+        "README.md"
+      ],
+      "reason": "Marketplace/root README add unrelated third-party integrations; shared CI changes to Node 22, TypeScript test glob and fast-check 4.5.3 for upstream Statechart. No shipped jstack behavior or mandatory dependency setup follows; defer package-specific requirements with Statechart."
+    },
+    {
+      "id": "2026-11-01-statechart",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "defer",
+      "paths": [
+        "pstack/skills/statechart"
+      ],
+      "reason": "433 paths replace the prior JavaScript implementation with a TypeScript frontend/IR/passes/backend pipeline and expanded corpus. Source entry now focuses on TLA+ checking and shortest rule-breaking paths, not chart-to-spec/code-comparison modes. Reopen only with explicit visual-verification/manual-runtime setup scope. Assess TLC/Java network installs, TypeScript, fast-check, Pele 1.9.0, bounds/unchecked rules, marking/quotient semantics and real-code replay before claiming support."
+    },
+    {
+      "id": "2026-11-01-generated-harness",
+      "from": "99b609a72323b70204eab407c622f436e858e112",
+      "to": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "keep",
+      "paths": [
+        "harness/pstack/claude-code"
+      ],
+      "reason": "All 464 generated changes pair with source changes, including deleted paths and plugin-manifest translation. Live contents are 423 byte-identical files, six adapter-prefaced entrypoints and two documentation link rewrites; 33 paths are deleted on both sides. Keep portable jstack packaging and T3 contracts; assess source changes in their own groups, not duplicate implementations. Native Claude distribution remains a separate decision."
+    },
+    {
+      "id": "2026-11-08-shared-catalog",
+      "from": "ae5650febf4320793844c12c4adaa937f417f8da",
+      "to": "6b0300214a09fd6029cfb7077043125758cd1fd2",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "keep",
+      "paths": [
+        ".cursor-plugin/marketplace.json",
+        "README.md"
+      ],
+      "reason": "Only adds Tesla and FitMetrics third-party entries in the shared marketplace and root README. No pstack skill, generated pstack distribution, watched tool, mapping or Benny content changed since the complete 2026-11-01 assessment. Preserve current jstack behavior; reassess if discovery or a shipped dependency changes."
     }
   ],
   "automationPacks": [
