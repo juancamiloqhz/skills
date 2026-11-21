@@ -50,7 +50,7 @@ class PreflightTest(unittest.TestCase):
         self.config.write_text(json.dumps(self.mapping))
         self.catalog.write_text(json.dumps(self.live))
 
-    def run_cli(self, role="how explorer", explicit=True, env=None, setup=None, cwd=None, project_root=None):
+    def run_cli(self, role="judgment and prose", explicit=True, env=None, setup=None, cwd=None, project_root=None):
         command = [sys.executable, str(SCRIPT), "--setup-skill", str(setup or self.setup),
                    "--catalog", str(self.catalog), "--role", role]
         if explicit:
@@ -95,6 +95,13 @@ class PreflightTest(unittest.TestCase):
         self.assertEqual(panel["selectionKind"], "panel")
         self.assertEqual(pool["selectionKind"], "pool")
 
+    def test_saved_retired_roles_do_not_block_current_roles(self):
+        self.mapping["roles"]["how explorer"] = dict(SEAT, model="retired")
+        self.mapping["roles"]["architect runners"] = [{"alias": "inherit-parent"}] * 2
+        self.save()
+        self.assertEqual(self.resolved()["targets"], [None])
+        self.rejected("is retired: its skills now run on the inherited parent model", role="architect runners")
+
     def test_unrelated_stale_role_blocks_dispatch(self):
         self.mapping["roles"]["bug-fix"] = dict(SEAT, model="retired")
         self.save()
@@ -110,14 +117,14 @@ class PreflightTest(unittest.TestCase):
         self.rejected("effective child selection unavailable")
 
     def test_cross_provider_capability_is_separate(self):
-        self.mapping["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        self.mapping["roles"]["judgment and prose"] = copy.deepcopy(SEAT)
         self.live["providers"][1]["canRunCrossProviderChildTask"] = False
         self.save()
         self.rejected("cross-provider child execution unavailable")
 
     def test_config_reloaded_between_calls(self):
         self.assertEqual(self.resolved()["targets"], [None])
-        self.mapping["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        self.mapping["roles"]["judgment and prose"] = copy.deepcopy(SEAT)
         self.save()
         self.assertEqual(self.resolved()["targets"], [SEAT])
 
@@ -150,7 +157,7 @@ class PreflightTest(unittest.TestCase):
     def test_invalid_and_duplicate_configuration(self):
         self.config.write_text('{"schemaVersion":1,"schemaVersion":2}')
         self.rejected("duplicate JSON key")
-        self.mapping["roles"]["how explorer"] = dict(SEAT, options={"effort": "unsupported"})
+        self.mapping["roles"]["judgment and prose"] = dict(SEAT, options={"effort": "unsupported"})
         self.save()
         self.rejected("unsupported effort value")
 
@@ -182,7 +189,7 @@ class PreflightTest(unittest.TestCase):
         project_config = project / ".jstack/models.json"
         project_config.parent.mkdir(parents=True)
         mapping = copy.deepcopy(self.mapping)
-        mapping["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        mapping["roles"]["judgment and prose"] = copy.deepcopy(SEAT)
         project_config.write_text(json.dumps(mapping))
         global_config = self.root / "xdg/jstack/models.json"
         global_config.parent.mkdir(parents=True)

@@ -13,3 +13,7 @@ Preserve the source's entire structure: introduction, distrust of prose-only evi
 | Writing pass | Discover/read the intended external Unslop and disclose missing, ambiguous or host-blocked access. | Existing external dependency decision. A failure does not authorize installation or silent replacement. The source's privacy-before-publication rule remains. |
 
 The [evaluation](../evaluations/blast-radius/README.md) separates actual cross-language fixture execution from hypothetical limits. The manifest watches direct helper sources plus setup's configuration dependency. Juan-mode gains no automatic trigger. No existing skill body, model settings or review checkpoint changes.
+
+## One-file update, 2026-11-20
+
+Source: `pstack/skills/blast-radius/SKILL.md` at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`, decision `2026-11-20-why-callers`. Step 1 now pulls the PR and its commits directly instead of calling Why's code-anchor step, which no longer exists. The local text keeps its use of local history and authorized forge reads and reports missing history or PR access. Step 4 drops "Same rules as why". This supersedes the table's Step 1 row. The companion sentence naming How and Why stays, as upstream keeps it. Verification is source comparison and repository checks only.

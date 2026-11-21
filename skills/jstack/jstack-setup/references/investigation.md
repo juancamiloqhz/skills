@@ -1,6 +1,6 @@
 # Investigation evidence
 
-Use this contract when running the standalone jstack-how or jstack-why skill. Establish the question, repository root and revision, permitted sources, source-write boundary, output destination and stop condition from the request. When called by a playbook, retain its scope and selected absolute configuration path. Read the [configuration](configuration.md) and [T3 Code integration](t3-code.md) contracts before delegation. A child result is evidence to check, not a conclusion to copy without inspection.
+Use this contract when a jstack skill delegates read-only investigation, such as transcript or source readers. Establish the question, repository root and revision, permitted sources, source-write boundary, output destination and stop condition from the request. When called by a playbook, retain its scope and selected absolute configuration path. Read the [configuration](configuration.md) and [T3 Code integration](t3-code.md) contracts before delegation. A child result is evidence to check, not a conclusion to copy without inspection.
 
 Investigations are read-only with respect to source, configuration and external systems. An explicitly assigned temporary findings file is allowed. Read-only scope does not require a provider mode that removes necessary read tools. Do not start applications, run mutating tests, install tools, edit source, send messages or create issues to answer a question unless the caller separately authorizes those actions. Preserve existing work. If a source or tool is unavailable, return the gap and completed findings rather than silently substituting a model or fabricating coverage.
 
@@ -8,17 +8,17 @@ Resolve every required role before starting its phase. Pass concrete targets unc
 
 ## Resolve and dispatch
 
-Check the caller's write boundary before capturing the catalog. If temporary files are forbidden, use the canonical resolver only through an available, verified write-free transport that preserves the complete fresh catalog. If no such transport is available, stop the required phase and report: "Investigation incomplete: configuration preflight could not run within the no-file-writes restriction; the required delegated phase did not run." Preserve any independently gathered source findings as preliminary, and state the minimum prerequisite needed to resume. A blocked preflight does not authorize creating scratch files, replacing the resolver, changing models or performing the required child's role in the coordinator. How's simple path still requires one explainer; a small question does not waive it.
+Check the caller's write boundary before capturing the catalog. If temporary files are forbidden, use the canonical resolver only through an available, verified write-free transport that preserves the complete fresh catalog. If no such transport is available, stop the required phase and report: "Investigation incomplete: configuration preflight could not run within the no-file-writes restriction; the required delegated phase did not run." Preserve any independently gathered source findings as preliminary, and state the minimum prerequisite needed to resume. A blocked preflight does not authorize creating scratch files, replacing the resolver, changing models or performing the required child's role in the coordinator.
 
 Read this file from the catalog-discovered jstack-setup installation. When temporary files are permitted, capture a fresh unwrapped `orchestrator_capabilities` payload in an owned temporary file using the integration guidance. Resolve the required role through that installation's canonical helper, from any working directory:
 
 ```sh
 python3 /discovered/jstack-setup/scripts/models.py resolve \
   --project-root /path/to/target-project --catalog /task-owned/catalog.json \
-  --role 'how explainer' --with-source
+  --role 'judgment and prose' --with-source
 ```
 
-Pass a caller-supplied configuration as the positional file after `resolve`. Otherwise the resolver owns project/global lookup. Retain its returned absolute `config` path and pass it explicitly for every later phase and child. Resolution validates all 17 roles; an invalid or missing configuration stops the investigation before dispatch. Report the error and leave repair to a user-requested setup task. A missing contract or unsupported CLI requires a manual jstack-setup update, not another resolver or fallback model.
+Pass a caller-supplied configuration as the positional file after `resolve`. Otherwise the resolver owns project/global lookup. Retain its returned absolute `config` path and pass it explicitly for every later phase and child. Resolution validates the whole role map; an invalid or missing configuration stops the investigation before dispatch. Report the error and leave repair to a user-requested setup task. A missing contract or unsupported CLI requires a manual jstack-setup update, not another resolver or fallback model.
 
 Before dispatch, check each resolved target against the same live catalog. For a concrete target, its provider must expose `canRunChildTask: true`, its model must be listed, and a provider different from the parent's must expose `canRunCrossProviderChildTask: true`. For JSON `null`, check the catalog's inherited provider/model identity and child capability, then omit `target` at dispatch to preserve parent options. Missing or unavailable effective selections stop the affected phase as incomplete. Resolution alone does not check these execution capabilities. Pass concrete targets, including options, unchanged. Refresh the catalog after a rejection that may indicate drift; never substitute a model.
 

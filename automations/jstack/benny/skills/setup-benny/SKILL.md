@@ -37,7 +37,6 @@ Provision shared dependencies through the target provider's supported project-sc
 
 Reload the target project or start a fresh agent rooted in a fresh target checkout. Verify these dependencies resolve from project scope:
 
-- `jstack-how`
 - `jstack-why`
 - `jstack-tdd`
 - `unslop`

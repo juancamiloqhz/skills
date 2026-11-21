@@ -24,9 +24,9 @@ Run:
 
 A new inherited draft uses the medium budget label. The targets are unlimited/max, large/xhigh, medium/high and small/medium where the provider supports them. Setup confirms your choices and discloses unsupported effort levels. A budget is a reasoning preference, not a spending cap; inherited roles retain the parent effort.
 
-A configuration contains all 17 roles. Do not delete role entries to reset them: incomplete or stale configurations fail whole-map validation. Rerun setup for requested changes; it preserves unrelated assignments and options. A project map replaces the global map as a whole, rather than merging individual roles. Missing configuration blocks configured delegation until setup is completed.
+A configuration contains all 10 roles. Entries for the seven retired roles (How, Why, Reflect and Architect seats) still validate, are never used, and are dropped the next time setup saves. Do not delete current role entries to reset them: incomplete or stale configurations fail whole-map validation. Rerun setup for requested changes; it preserves unrelated assignments and options. A project map replaces the global map as a whole, rather than merging individual roles. Missing configuration blocks configured delegation until setup is completed.
 
-Set a role to `inherit-parent` to retain the executing conversation's provider, model and effort. Provider Auto is a concrete catalog selection, not an alias for inheritance. Each panel entry launches a separate agent; new Arena, Architect and Interrogate panels start with two inherited seats. Two inherited seats do not supply model diversity. Setup also configures `swarm workers`, the default model for each worker unless an authorized race names an arm selection.
+Set a role to `inherit-parent` to retain the executing conversation's provider, model and effort. Provider Auto is a concrete catalog selection, not an alias for inheritance. Each panel entry launches a separate agent; new Arena and Interrogate panels start with two inherited seats. Two inherited seats do not supply model diversity. Setup also configures `swarm workers`, the default model for each worker unless an authorized race names an arm selection.
 
 ## Accept the verification offers, or don't
 

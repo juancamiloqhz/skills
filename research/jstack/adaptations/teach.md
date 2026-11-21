@@ -13,3 +13,7 @@ Preserve the introduction, all five steps, the inline writing standard and the f
 | Writing pass | Discover the intended external Unslop, disclose missing/blocked access and retain Why's confidence language during style edits. | Existing external dependency decision. A missing helper grants no installation authority; uncertainty is evidence, not filler. |
 
 The [evaluation](../evaluations/teach/README.md) records executed helper calls separately from supplied-findings presentation cases and unverified host behavior. The manifest watches How, Why, their setup dependency and Unslop. Existing operational skills, configuration and the reviewed upstream checkpoint remain unchanged. Juan-mode gains no automatic Teach trigger.
+
+## One-file update, 2026-11-20
+
+Source: `pstack/skills/teach/SKILL.md` at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`, decision `2026-11-20-why-callers`. Step 2 drops the instruction to keep Why narrow and record skipped categories, as upstream does, since Why no longer sweeps evidence categories. The introduction no longer says How and Why own configured roles and a shared setup contract: How owns its one inherited child and Why its record search. The parallel-capacity disclosure remains. This supersedes the table's Introduction and Step 2 wording on configured roles. The manifest drops the `setup-pstack` context path. Verification is source comparison and repository checks only.

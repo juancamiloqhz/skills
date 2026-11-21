@@ -29,7 +29,7 @@ i want two T3 Code automations that work together in one slack issue channel.
 - i treat utility and debug bots as evidence, not delegation or fix ownership.
 - i allow subagents to help, but they cannot post to slack or receive slack credentials.
 - i want this entire pack committed at `.agents/automations/benny/` in the target repository. its `SKILL.md` files are direct automation instructions, not registered plugin skills.
-- i want project-scoped jstack dependencies and external Unslop available from a fresh target checkout, including `jstack-how`, `jstack-why`, `jstack-tdd`, and the required principle skills.
+- i want project-scoped jstack dependencies and external Unslop available from a fresh target checkout, including `jstack-why`, `jstack-tdd`, and the required principle skills.
 - i want each live automation prompt to read its committed operational file directly. i do not want plugin cache paths, copied excerpts, or slash-skill discovery.
 - i keep user-owned configuration, feature maps, routing maps, and secrets outside `.agents/automations/benny/` so pack refreshes cannot overwrite them.
 - i want both automations to fail closed when channel coordinates, tracker access, the control adapter, or the feature map are missing or uncertain.
@@ -67,7 +67,7 @@ the human enters setup by pointing T3 Code at this file. do not look for or invo
 
 provision the shared dependencies through the target provider's supported project-scoped mechanism, preserving unrelated project settings. the copied setup file lists every dependency. do not invent a T3 plugin setting or install globally as a substitute.
 
-i want verification from a fresh agent rooted in a fresh target checkout. confirm that `jstack-how`, `jstack-why`, `jstack-tdd`, external `unslop`, and the six principle skills resolve in project scope. do not count skills loaded from the current session or a user-scoped install. if a helper can delegate, its children must also meet Benny's credential and tool isolation rules.
+i want verification from a fresh agent rooted in a fresh target checkout. confirm that `jstack-why`, `jstack-tdd`, external `unslop`, and the six principle skills resolve in project scope. do not count skills loaded from the current session or a user-scoped install. if a helper can delegate, its children must also meet Benny's credential and tool isolation rules.
 
 if project-scoped dependencies are unavailable or any dependency does not resolve, stop and explain what failed. do not register `.agents/automations/benny/skills/` in the slash-skill catalog.
 
