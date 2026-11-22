@@ -3,7 +3,7 @@
   "repository": "https://github.com/cursor/plugins.git",
   "branch": "main",
   "initialRevision": "ccb5507cec1546dc88135c1139c811e6c59115ba",
-  "reviewedThrough": "aaeb0ea3a0584995aa8f55ce44c6c5259414b896",
+  "reviewedThrough": "7a583913eb1b8d1a0ee76753d1a2cf072e7b54f9",
   "watchPaths": [
     "pstack",
     "harness/pstack",
@@ -1167,7 +1167,8 @@
       "paths": [
         "pstack/skills/why"
       ],
-      "reason": "Upstream cuts Why to one short paragraph with no children: answer from commits/PR discussion, cite authors, label inferences, state gaps. All 12 references are dropped, not folded; the MCP-category sweep, investigators, synthesizer and epistemics framework are removed. Visible capability removal needs user selection. Port with recall, blast-radius, teach, setup roles (why investigators/synthesizer), shared investigation contract, juan-mode investigation and Help guide in one change; the alternative is a recorded intentional difference. Verify the why fixture (citations, labelled inference, unanswered part), no stale reference, and setup/preflight role tests."
+      "reason": "Upstream cuts Why to one short paragraph with no children: answer from commits/PR discussion, cite authors, label inferences, state gaps. All 12 references are dropped, not folded; the MCP-category sweep, investigators, synthesizer and epistemics framework are removed. Visible capability removal needs user selection. Port with recall, blast-radius, teach, setup roles (why investigators/synthesizer), shared investigation contract, juan-mode investigation and Help guide in one change; the alternative is a recorded intentional difference. Verify the why fixture (citations, labelled inference, unanswered part), no stale reference, and setup/preflight role tests. Verified merged in https://github.com/juancamiloqhz/skills/pull/149 on refreshed origin/main.",
+      "appliedCommit": "bc0115080d649fd8290bb7e2327146b0f2692f8c"
     },
     {
       "id": "2026-11-20-how-one-file",
@@ -1178,7 +1179,8 @@
       "paths": [
         "pstack/skills/how"
       ],
-      "reason": "Upstream How runs one read-only child on the parent model and drops explorers, the simple/complex gate, explainer template and both references; poteto-mode stops routing to How. Map to an inherited target. Requires a replacement role for jstack-maintain-verification-skill readers before retiring how explorer/explainer. Verify one child with no explorers, setup/preflight tests and no stale five-section requirement."
+      "reason": "Upstream How runs one read-only child on the parent model and drops explorers, the simple/complex gate, explainer template and both references; poteto-mode stops routing to How. Map to an inherited target. Requires a replacement role for jstack-maintain-verification-skill readers before retiring how explorer/explainer. Verify one child with no explorers, setup/preflight tests and no stale five-section requirement. Verified merged in https://github.com/juancamiloqhz/skills/pull/149 on refreshed origin/main.",
+      "appliedCommit": "bc0115080d649fd8290bb7e2327146b0f2692f8c"
     },
     {
       "id": "2026-11-20-principles-trim",
@@ -1249,7 +1251,8 @@
         "pstack/skills/no-comments/SKILL.md",
         "pstack/agents/comment-sicko.md"
       ],
-      "reason": "Comment Sicko traces thin keep claims itself instead of routing to How; Why stays. Land with how-one-file. Verify one thin claim resolved by direct trace and one that needs Why."
+      "reason": "Comment Sicko traces thin keep claims itself instead of routing to How; Why stays. Land with how-one-file. Verify one thin claim resolved by direct trace and one that needs Why. Verified merged in https://github.com/juancamiloqhz/skills/pull/149 on refreshed origin/main.",
+      "appliedCommit": "bc0115080d649fd8290bb7e2327146b0f2692f8c"
     },
     {
       "id": "2026-11-20-why-callers",
@@ -1262,7 +1265,8 @@
         "pstack/skills/teach/SKILL.md",
         "pstack/skills/blast-radius/SKILL.md"
       ],
-      "reason": "Recall starts its own per-source investigators; Teach and Blast radius drop references to Why steps. Valid only with why-one-file; implement in that change, with recall investigators as configured T3 roles that keep needed MCP access."
+      "reason": "Recall starts its own per-source investigators; Teach and Blast radius drop references to Why steps. Valid only with why-one-file; implement in that change, with recall investigators as configured T3 roles that keep needed MCP access. Verified merged in https://github.com/juancamiloqhz/skills/pull/149 on refreshed origin/main.",
+      "appliedCommit": "bc0115080d649fd8290bb7e2327146b0f2692f8c"
     },
     {
       "id": "2026-11-20-sharpen",
@@ -1334,7 +1338,8 @@
       "paths": [
         "pstack/skills/reflect"
       ],
-      "reason": "Reflect reads the transcript itself with no subagents; scans and filters fold into SKILL.md, four reviewer/synthesizer templates are deleted, cache/destination guards kept. Keep T3 transcript access, task-scoped activation, authorization handling and the full PR #140 destination guard. Delete templates and execution.md with reflect role retirement. Verify synthetic transcripts per scan class, injected instruction, covered/drifting/lintable findings, reflect-destination fixtures and no child dispatch."
+      "reason": "Reflect reads the transcript itself with no subagents; scans and filters fold into SKILL.md, four reviewer/synthesizer templates are deleted, cache/destination guards kept. Keep T3 transcript access, task-scoped activation, authorization handling and the full PR #140 destination guard. Delete templates and execution.md with reflect role retirement. Verify synthetic transcripts per scan class, injected instruction, covered/drifting/lintable findings, reflect-destination fixtures and no child dispatch. Verified merged in https://github.com/juancamiloqhz/skills/pull/149 on refreshed origin/main.",
+      "appliedCommit": "bc0115080d649fd8290bb7e2327146b0f2692f8c"
     },
     {
       "id": "2026-11-20-architect-one-file",
@@ -1345,7 +1350,8 @@
       "paths": [
         "pstack/skills/architect"
       ],
-      "reason": "Architect becomes two sentences (trace, sketch two shapes, pick single-owner/least-knowledge, arena for large or contested design); runner panel, phases, checkpoint, red-flag and rationale references are dropped. Visible loss of the two-candidate panel needs user acceptance. Keep design-only boundary, checkpoint honoring and authority; land with playbook callers and architect runners retirement. Verify design-only return, checkpoint request, arena route and caller resolution."
+      "reason": "Architect becomes two sentences (trace, sketch two shapes, pick single-owner/least-knowledge, arena for large or contested design); runner panel, phases, checkpoint, red-flag and rationale references are dropped. Visible loss of the two-candidate panel needs user acceptance. Keep design-only boundary, checkpoint honoring and authority; land with playbook callers and architect runners retirement. Verify design-only return, checkpoint request, arena route and caller resolution. Verified merged in https://github.com/juancamiloqhz/skills/pull/149 on refreshed origin/main.",
+      "appliedCommit": "bc0115080d649fd8290bb7e2327146b0f2692f8c"
     },
     {
       "id": "2026-11-20-plugin-metadata",
@@ -1501,6 +1507,18 @@
         "harness/pstack"
       ],
       "reason": "All 108 generated paths pair with changed source: 66 byte-identical, 24 deleted on both sides, 16 adapter-prefaced SKILL.md files and 2 documentation link rewrites. Portable jstack packaging stays; source groups carry the assessment."
+    },
+    {
+      "id": "2026-11-22-shared-catalog",
+      "from": "aaeb0ea3a0584995aa8f55ce44c6c5259414b896",
+      "to": "7a583913eb1b8d1a0ee76753d1a2cf072e7b54f9",
+      "report": "research/jstack/upstream-reviews/2026-11-01.md",
+      "disposition": "keep",
+      "paths": [
+        ".cursor-plugin/marketplace.json",
+        "README.md"
+      ],
+      "reason": "Only adds the third-party Sabre Developer Hub entry to the shared marketplace and root README. No pstack skill, generated distribution, watched tool, mapping or Benny content changed. Preserve current jstack behavior; reassess if discovery or a shipped dependency changes."
     }
   ],
   "automationPacks": [
