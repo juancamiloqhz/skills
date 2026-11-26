@@ -32,7 +32,7 @@ Present the framing and tradeoffs before committing to a long run. Reversible wo
 Decompose into atomic, independently-landable units. Sequence riskiest-unknown-first. Scaffold and verification come before features (the **jstack-principle-foundational-thinking** principle skill).
 
 - Build the verification harness before the work, with the baseline captured from the pre-change state, so the check reads as "old value vs new value". Reuse an adequate existing harness; record an unavailable baseline rather than inventing one.
-- For one-way-door design decisions, run the **jstack-architect** skill with a design-only return (it runs **jstack-arena**). Skip it for mechanical work whose shape is already concrete. A second arena over a settled design is over-engineering (the **jstack-principle-laziness-protocol** principle skill).
+- For one-way-door design decisions, run the **jstack-architect** skill with a design-only return (it runs **jstack-arena** for a large or contested design). Skip it for mechanical work whose shape is already concrete. A second arena over a settled design is over-engineering (the **jstack-principle-laziness-protocol** principle skill).
 - Read [configured delegation](references/execution.md) before dispatch. Decide what fans out. Parallelize only across seams, and give each worker its own worktree or branch (the **jstack-principle-separate-before-serializing-shared-state** principle skill). Don't over-fan.
 - Write the designed phase list down. That list is what the human reviews.
 

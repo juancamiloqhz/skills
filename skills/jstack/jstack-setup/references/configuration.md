@@ -1,6 +1,8 @@
 # Jstack configuration contract
 
-Schema version 1 is owned by jstack, not T3 Code. The canonical role registry is `ROLES` in `scripts/models.py`; `template` generates all 17 roles with inherited selections. Grouped labels preserve pstack's role names. Missing, extra or misspelled roles are errors, so setup cannot silently discard a user's mapping.
+Schema version 1 is owned by jstack, not T3 Code. The canonical role registry is `ROLES` in `scripts/models.py`; `template` generates all 10 roles with inherited selections. Grouped labels preserve pstack's role names. Missing, extra or misspelled roles are errors, so setup cannot silently discard a user's mapping.
+
+`RETIRED_ROLES` lists the seven retired keys: `how explorer`, `how explainer`, `why investigators`, `why synthesizer`, `reflect tooling`, `reflect judgment, divergent, synthesizer` and `architect runners`. Their skills now run on the parent model, so they have no target. A saved file may still contain any of them. `validate` accepts that file, ignores those values and reports the keys as `retiredRoles`. `resolve` rejects a retired role. `write` saves the file without them and reports `droppedRetiredRoles`. Nothing rewrites a saved file automatically; the retired keys disappear only when setup saves.
 
 ```sh
 python3 scripts/models.py template --preset medium > /tmp/jstack-draft.json
@@ -8,7 +10,7 @@ python3 scripts/models.py validate /tmp/jstack-draft.json --catalog /tmp/t3-cata
 python3 scripts/models.py write /tmp/jstack-draft.json \
   --catalog /tmp/t3-catalog.json --output /tmp/jstack-test/models.json
 python3 scripts/models.py resolve /tmp/jstack-test/models.json \
-  --catalog /tmp/t3-catalog.json --role 'how explorer'
+  --catalog /tmp/t3-catalog.json --role 'judgment and prose'
 ```
 
 Locate bundled scripts relative to the installed skill directory. Relative configuration and catalog paths use the caller's working directory. The catalog file contains the unwrapped `orchestrator_capabilities` payload, not an MCP content wrapper or a permanent allowlist.
@@ -28,7 +30,7 @@ Use `--project-root` for the task's known root, including a project without Git.
 python3 /installed/jstack-setup/scripts/models.py locate --project-root /path/to/project
 python3 /installed/jstack-setup/scripts/models.py resolve \
   --project-root /path/to/project --catalog /tmp/t3-catalog.json \
-  --role 'how explorer' --with-source
+  --role 'judgment and prose' --with-source
 ```
 
 `locate` returns an absolute `path`, its `source` and whether an entry `exists`. It selects without creating files or validating their contents. `resolve --with-source` returns `config`, `configSource` and `targets` after validating the selected complete configuration. Without `--with-source`, `resolve` retains its ordered-list output. Explicit and environment selections remain selected when missing. A present project file that is malformed, partial, unreadable, a directory or a dangling symlink fails resolution; it does not fall back to global settings.
@@ -67,13 +69,13 @@ A concrete seat is:
 
 This model is illustrative; setup must verify it in the live catalog. Empty options preserve provider defaults. Model identity includes the provider instance: identical model IDs across providers are distinct seats. Extra fields and aliases such as `auto` are rejected. Provider Auto is a concrete catalog selection.
 
-Scalar roles have one seat. `arena runners`, `architect runners` and `interrogate reviewers` have nonempty ordered lists. `arena cross-judge pool` also has a nonempty list, but a consumer selects one seat rather than launching the whole pool. A new template uses two inherited seats per panel and one inherited alternative in the cross-judge pool. Two inherited panel seats launch separate agents, not different model families. Existing configurations and copied global seeds retain their list lengths; setup changes those counts only when requested. The template budget defaults to medium as a draft value, and setup asks for the actual budget before saving. `swarm workers` is a scalar default for workers, not the worker count.
+Scalar roles have one seat. `arena runners` and `interrogate reviewers` have nonempty ordered lists. `arena cross-judge pool` also has a nonempty list, but a consumer selects one seat rather than launching the whole pool. A new template uses two inherited seats per panel and one inherited alternative in the cross-judge pool. Two inherited panel seats launch separate agents, not different model families. Existing configurations and copied global seeds retain their list lengths; setup changes those counts only when requested. The template budget defaults to medium as a draft value, and setup asks for the actual budget before saving. `swarm workers` is a scalar default for workers, not the worker count.
 
 ## Consumer contract
 
 Every invocation reads and validates current configuration before dispatch. Validation covers the entire map; stale seats produce a configuration error before execution, even when they belong to another role. Setup can repair those seats. The helper's `resolve` command emits an ordered list of T3 Code delegation targets; JSON `null` means omit `target` to inherit the parent. For top-level launches, translate a concrete target into `modelSelection` using the current tool schema; omission inherits the caller's selection.
 
-The standalone jstack-how and jstack-why consumers also follow the [investigation contract](investigation.md) for capability checks, evidence and child coordination. Resolving a role does not authorize or launch it. Each consumer must declare which routes it implements, preserve permission boundaries, and pass explicit task context. Follow T3 Code's child-task lifecycle and new-thread rules in [T3 Code integration](t3-code.md). Standalone Arena and Architect supply their own comparison and design procedures. Juan-mode supplies Investigation, throwaway Prototype, captured-artifact Trace forensics, Authoring or modifying a skill, Runtime forensics, Bug fix, Feature, Refactoring, Perf issue, Hillclimb, Eval, Visual parity, Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely, Worktree cleanup, Autonomous run, Autopilot-full and Autopilot-stack. Shipping is available with independent verification and current-patch evidence; native continuation across stack merges remains unverified.
+Consumers that start investigation children also follow the [investigation contract](investigation.md) for capability checks, evidence and child coordination. jstack-how runs one inherited child and jstack-why starts none; neither resolves a configured role. Resolving a role does not authorize or launch it. Each consumer must declare which routes it implements, preserve permission boundaries, and pass explicit task context. Follow T3 Code's child-task lifecycle and new-thread rules in [T3 Code integration](t3-code.md). Standalone Arena and Architect supply their own comparison and design procedures. Juan-mode supplies Investigation, throwaway Prototype, captured-artifact Trace forensics, Authoring or modifying a skill, Runtime forensics, Bug fix, Feature, Refactoring, Perf issue, Hillclimb, Eval, Visual parity, Opening a PR, Babysit, Shipping, Multi-phase plan, Session pickup, Pause safely, Worktree cleanup, Autonomous run, Autopilot-full and Autopilot-stack. Shipping is available with independent verification and current-patch evidence; native continuation across stack merges remains unverified.
 
 Configuration is loaded by consumers, not by T3 Code itself. Re-running setup updates the selected scope; consumers see changes on their next invocation when that file is effective. Repository instructions or installation can make the skill discoverable, but do not turn the configuration into a persistent system rule.
 

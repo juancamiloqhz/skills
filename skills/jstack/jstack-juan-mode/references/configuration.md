@@ -11,10 +11,10 @@ python3 /path/to/jstack-juan-mode/scripts/preflight.py \
   --setup-skill /discovered/path/to/jstack-setup \
   --project-root /path/to/target-project \
   --catalog /task-owned/path/catalog.json \
-  --role 'how explorer'
+  --role 'judgment and prose'
 ```
 
-Setup-jstack's configuration contract owns lookup. The preflight passes `--config` and `--project-root` to its canonical `models.py resolve --with-source` command, then reports the selected absolute `config` path and `configSource`. Precedence is explicit file, `JSTACK_CONFIG`, an existing project `.jstack/models.json`, then global defaults. The selected file supplies all 17 roles; malformed or incomplete project settings produce an error. The preflight does not initialize, repair or save configuration. An error in another role still prevents execution. On error, report the file and role or dependency, and let jstack-setup handle a user-requested repair.
+Setup-jstack's configuration contract owns lookup. The preflight passes `--config` and `--project-root` to its canonical `models.py resolve --with-source` command, then reports the selected absolute `config` path and `configSource`. Precedence is explicit file, `JSTACK_CONFIG`, an existing project `.jstack/models.json`, then global defaults. The selected file supplies all 10 roles; malformed or incomplete project settings produce an error. A file that still holds retired roles remains valid; those keys never resolve, and their skills run on the parent model. The preflight does not initialize, repair or save configuration. An error in another role still prevents execution. On error, report the file and role or dependency, and let jstack-setup handle a user-requested repair.
 
 Pass the task's known project root explicitly when the current directory belongs to another checkout or the installed skill. Without `--project-root`, the canonical helper discovers the caller's Git checkout root. Before dispatch or a checkout change, retain the returned absolute `config` path and supply it as `--config` for children and later phases of that task. Re-read and validate that file; do not rediscover from a child's worktree, where an untracked project configuration may be absent. A new task repeats project lookup. An installed jstack-setup that lacks the shared lookup CLI requires a manual update; do not fall back to a second lookup implementation.
 
@@ -22,9 +22,9 @@ Each returned `targets` entry is either a concrete T3 Code target or JSON `null`
 
 ## Role and fan-out semantics
 
-Use `feature, refactoring`, `bug-fix`, `perf-issue` and `hillclimb` for their implementation routes. Use `hardest tasks` for a task whose difficulty needs that configured role. Delegated prose and judgment use `judgment and prose`. Helpers declare their existing configuration role keys, such as `how explorer` and `swarm workers`. The `jstack-` skill prefix does not rename configuration roles. For a step with no dedicated role, declare the relevant existing role or keep the work in the parent.
+Use `feature, refactoring`, `bug-fix`, `perf-issue` and `hillclimb` for their implementation routes. Use `hardest tasks` for a task whose difficulty needs that configured role. Delegated prose and judgment use `judgment and prose`. Helpers declare their existing configuration role keys, such as `interrogate reviewers` and `swarm workers`. The `jstack-` skill prefix does not rename configuration roles. For a step with no dedicated role, declare the relevant existing role or keep the work in the parent.
 
-Preserve every configured list entry in order, including repeated and inherited selections. `architect runners`, `arena runners` and `interrogate reviewers` are panels. `arena cross-judge pool` supplies alternatives; the procedure selects one eligible judge, not the entire pool. `swarm workers` supplies a model default, not a worker count. The preflight reports these three selection kinds so callers cannot confuse alternatives with fan-out.
+Preserve every configured list entry in order, including repeated and inherited selections. `arena runners` and `interrogate reviewers` are panels. `arena cross-judge pool` supplies alternatives; the procedure selects one eligible judge, not the entire pool. `swarm workers` supplies a model default, not a worker count. The preflight reports these three selection kinds so callers cannot confuse alternatives with fan-out.
 
 The `availability` array aligns with `targets` by index. A pool alternative with `canDispatch: false` remains in the output with its reason; select only executable alternatives that also meet the procedure's independence requirement. A pool with no executable alternative fails. Scalar and panel roles require every selected seat to execute. This capability handling does not relax whole-map validation of saved provider, model or option selections.
 

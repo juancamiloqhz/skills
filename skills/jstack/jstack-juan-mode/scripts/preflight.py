@@ -40,7 +40,7 @@ def preflight(setup_skill, config, catalog_path, role, project_root=None):
     parent = catalog.get("inheritedProviderInstanceId")
     providers = {p["providerInstanceId"]: p for p in catalog["providers"]}
     kind = ("pool" if role == "arena cross-judge pool" else "panel"
-            if role in {"arena runners", "architect runners", "interrogate reviewers"}
+            if role in {"arena runners", "interrogate reviewers"}
             else "scalar")
     identities, availability = [], []
     for target in targets:

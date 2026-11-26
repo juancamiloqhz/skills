@@ -107,8 +107,7 @@
       "upstreamPath": "pstack/skills/how",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/poteto-mode",
-        "pstack/skills/setup-pstack"
+        "pstack/skills/poteto-mode"
       ],
       "differences": "research/jstack/adaptations/how.md"
     },
@@ -118,8 +117,7 @@
       "upstreamPath": "pstack/skills/why",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/poteto-mode",
-        "pstack/skills/setup-pstack"
+        "pstack/skills/poteto-mode"
       ],
       "differences": "research/jstack/adaptations/why.md"
     },
@@ -129,7 +127,6 @@
       "upstreamPath": "pstack/skills/arena",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/architect",
         "pstack/skills/setup-pstack",
         "pstack/skills/principle-separate-before-serializing-shared-state",
         "pstack/skills/principle-laziness-protocol",
@@ -144,23 +141,7 @@
       "upstreamPath": "pstack/skills/architect",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
       "contextPaths": [
-        "pstack/skills/how",
-        "pstack/skills/why",
-        "pstack/skills/arena",
-        "pstack/skills/setup-pstack",
-        "pstack/skills/interrogate",
-        "pstack/skills/principle-boundary-discipline",
-        "pstack/skills/principle-encode-lessons-in-structure",
-        "pstack/skills/principle-exhaust-the-design-space",
-        "pstack/skills/principle-fix-root-causes",
-        "pstack/skills/principle-foundational-thinking",
-        "pstack/skills/principle-laziness-protocol",
-        "pstack/skills/principle-make-operations-idempotent",
-        "pstack/skills/principle-minimize-reader-load",
-        "pstack/skills/principle-outcome-oriented-execution",
-        "pstack/skills/principle-redesign-from-first-principles",
-        "pstack/skills/principle-separate-before-serializing-shared-state",
-        "pstack/skills/principle-subtract-before-you-add"
+        "pstack/skills/arena"
       ],
       "differences": "research/jstack/adaptations/architect.md"
     },
@@ -190,10 +171,7 @@
       "localPath": "skills/jstack/jstack-reflect",
       "upstreamPath": "pstack/skills/reflect",
       "adaptedFrom": "11713c683fe4add4fd403ea880580abbc9e0875f",
-      "contextPaths": [
-        "pstack/skills/setup-pstack",
-        "pstack/skills/principle-encode-lessons-in-structure"
-      ],
+      "contextPaths": [],
       "differences": "research/jstack/adaptations/reflect.md"
     },
     {
@@ -568,7 +546,6 @@
       "contextPaths": [
         "pstack/skills/how",
         "pstack/skills/why",
-        "pstack/skills/setup-pstack",
         "pstack/skills/unslop"
       ],
       "differences": "research/jstack/adaptations/teach.md"
@@ -607,7 +584,6 @@
       "upstreamPath": "pstack/skills/recall",
       "adaptedFrom": "0148b78c56c72a1b8412055913c79f767095b217",
       "contextPaths": [
-        "pstack/skills/why",
         "pstack/skills/poteto-mode",
         "pstack/skills/setup-pstack",
         "pstack/skills/unslop",
@@ -1046,7 +1022,8 @@
       "paths": [
         "pstack/skills/poteto-mode/playbooks/autonomous-run.md"
       ],
-      "reason": "Limit mid-run discoveries to those supporting the goal. Retain explicit scope and authority. Verify related blocker is handled while unrelated repair is parked without widening the task."
+      "reason": "Limit mid-run discoveries to those supporting the goal. Retain explicit scope and authority. Verify related blocker is handled while unrelated repair is parked without widening the task. Verified merged in https://github.com/juancamiloqhz/skills/pull/148 on refreshed origin/main.",
+      "appliedCommit": "b5f7e33658c2dbb6600da0e5f0e4fe84dc4be57c"
     },
     {
       "id": "2026-11-01-autopilot-coordination",
@@ -1224,7 +1201,8 @@
         "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
         "pstack/skills/principle-type-system-discipline/SKILL.md"
       ],
-      "reason": "Shorter principle texts remove real rules despite the upstream claim. Follow source text by default; reapply recorded jstack exceptions (boundary authorization/concurrency, idempotent process identity/liveness, sequence red-test versus merge-ready evidence; the no-rebase half retires). Prune dropped contextPaths. Verify leaf-by-leaf comparison, packaging/docs tests and the three exception tabletop cases."
+      "reason": "Shorter principle texts remove real rules despite the upstream claim. Follow source text by default; reapply recorded jstack exceptions (boundary authorization/concurrency, idempotent process identity/liveness, sequence red-test versus merge-ready evidence; the no-rebase half retires). Prune dropped contextPaths. Verify leaf-by-leaf comparison, packaging/docs tests and the three exception tabletop cases. Verified merged in https://github.com/juancamiloqhz/skills/pull/148 on refreshed origin/main.",
+      "appliedCommit": "b5f7e33658c2dbb6600da0e5f0e4fe84dc4be57c"
     },
     {
       "id": "2026-11-20-measurement",
@@ -1235,7 +1213,8 @@
       "paths": [
         "pstack/skills/principle-explain-the-number/SKILL.md"
       ],
-      "reason": "Supersedes 2026-11-01-measurement. Keeps the decision-changing result and noise floor before a run and stop-when-spread-exceeds-effect; drops supporting prose. Implement once against this text, with the benchmark-checklist mode trigger. Verify clear and noisy measurement briefs."
+      "reason": "Supersedes 2026-11-01-measurement. Keeps the decision-changing result and noise floor before a run and stop-when-spread-exceeds-effect; drops supporting prose. Implement once against this text, with the benchmark-checklist mode trigger. Verify clear and noisy measurement briefs. Verified merged in https://github.com/juancamiloqhz/skills/pull/148 on refreshed origin/main.",
+      "appliedCommit": "b5f7e33658c2dbb6600da0e5f0e4fe84dc4be57c"
     },
     {
       "id": "2026-11-20-technical-writing",
@@ -1246,7 +1225,8 @@
       "paths": [
         "pstack/skills/technical-writing/SKILL.md"
       ],
-      "reason": "Shorter four-layer text drops the Diataxis compass, several style rules and the worked example. Keep jstack invocation, authority, external Unslop discovery and tab differences; update fidelity-status, juan-mode-spec and adaptation claims about modes and the worked example. Verify the bounded doc-revision and PR-body exercises."
+      "reason": "Shorter four-layer text drops the Diataxis compass, several style rules and the worked example. Keep jstack invocation, authority, external Unslop discovery and tab differences; update fidelity-status, juan-mode-spec and adaptation claims about modes and the worked example. Verify the bounded doc-revision and PR-body exercises. Verified merged in https://github.com/juancamiloqhz/skills/pull/148 on refreshed origin/main.",
+      "appliedCommit": "b5f7e33658c2dbb6600da0e5f0e4fe84dc4be57c"
     },
     {
       "id": "2026-11-20-unslop",
@@ -1293,7 +1273,8 @@
       "paths": [
         "pstack/skills/sharpen/SKILL.md"
       ],
-      "reason": "Prompt now prototypes choices an experiment can settle and recommends from evidence; only product or preference choices return to the user. Keep the user gate. Update Help/guide examples. Verify one settleable and one preference choice."
+      "reason": "Prompt now prototypes choices an experiment can settle and recommends from evidence; only product or preference choices return to the user. Keep the user gate. Update Help/guide examples. Verify one settleable and one preference choice. Verified merged in https://github.com/juancamiloqhz/skills/pull/148 on refreshed origin/main.",
+      "appliedCommit": "b5f7e33658c2dbb6600da0e5f0e4fe84dc4be57c"
     },
     {
       "id": "2026-11-20-review-vendor",
@@ -1328,7 +1309,8 @@
       "paths": [
         "pstack/skills/benchmark-checklist/SKILL.md"
       ],
-      "reason": "Wording only: removes the Opening a PR pointer. Also fix the local stale statement that Opening a PR is unavailable. Verify docs check."
+      "reason": "Wording only: removes the Opening a PR pointer. Also fix the local stale statement that Opening a PR is unavailable. Verify docs check. Verified merged in https://github.com/juancamiloqhz/skills/pull/148 on refreshed origin/main.",
+      "appliedCommit": "b5f7e33658c2dbb6600da0e5f0e4fe84dc4be57c"
     },
     {
       "id": "2026-11-20-model-routing",

@@ -32,3 +32,7 @@ The source directory contains only `SKILL.md`; its full diff and the unchanged M
 Architect's one changed sentence identifies two viable candidates as its own requirement rather than Arena's universal post-dropout rule. Its source already requires two structurally distinct designs; that requirement and the rest of Architect remain intact. See the [Architect record](architect.md).
 
 The exact source pin and reviewed checkpoint are unchanged. Historical evaluations remain tied to their original versions. Swarm and the remaining fidelity backlog are separate work.
+
+## One-file update, 2026-11-20
+
+With `2026-11-20-architect-one-file` (batch 3), Architect no longer selects a panel or requires two viable candidates, and the `architect runners` role retires. Arena drops the jstack-only option to resolve `architect runners` and the Architect example from its caller-requirement sentence; the general rule that a caller requiring two viable or structurally distinct candidates stays incomplete when the requirement fails is kept. Nothing else in Arena changed; the vendor-based judge change belongs to a later batch. The manifest drops the `architect` context path. The "Frame, item 3", "Fan out, dropout" and "Supporting files and caller" notes about Architect above are now historical. Verification is source comparison and repository checks only.

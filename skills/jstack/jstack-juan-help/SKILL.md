@@ -36,7 +36,7 @@ When the effective model configuration is missing and it matters, ask whether th
 ## Get set up
 
 1. Install manually with `npx skills add juancamiloqhz/skills`, select the required packages, and refresh the provider catalog.
-2. Run [`/jstack-setup`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-setup/SKILL.md). It asks for global or project scope, reasoning budget and all 17 roles, then writes the selected `models.json`. Consumers read it on their next invocation; saving does not switch the current chat model. Then it offers once each to generate app and formal verification skills for the project, unless existing support covers the respective need. The choices are separate, and missing generators remain manual prerequisites.
+2. Run [`/jstack-setup`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-setup/SKILL.md). It asks for global or project scope, reasoning budget and all 10 roles, then writes the selected `models.json`. Consumers read it on their next invocation; saving does not switch the current chat model. Then it offers once each to generate app and formal verification skills for the project, unless existing support covers the respective need. The choices are separate, and missing generators remain manual prerequisites.
 3. Start a real task with `/jstack-juan-mode`, a goal, and a check that can pass or fail.
 
 Installation makes skills available to the host catalog; invocation behavior depends on their metadata and the provider. Help is explicit-only. The [guide index](docs/guide/README.md) and [guide page 1](docs/guide/01-setup.md) have the details. Offer to word their first prompt with them, per [`references/prompting.md`](references/prompting.md).
@@ -98,7 +98,6 @@ Close calls:
 
 - `/jstack-how` explains what the code does. `/jstack-why` explains the reasons. `/jstack-teach` runs one or both and explains the result plainly.
 - `/jstack-arena` gives every worker the same brief and merges the best parts. `/jstack-swarm` splits work into slices or a race and returns one report.
-- `/jstack-architect` implements right after it settles the design. Add "with checkpoint" to review the design before it writes code.
 - `/jstack-interrogate` reviews the diff. `/jstack-blast-radius` looks for breakage outside the diff and proves the one fact that makes the change safe.
 - `/jstack-recall` rebuilds context across recent chats. `/jstack-ketchup` covers only this chat since the user's last message. Resuming one specific chat or branch is the Session pickup playbook.
 - `/jstack-figure-it-out` designs one rigorous run. The Orchestrate playbook runs a program that spans days and many PRs. The Autonomous run playbook drives one task to a finish condition.

@@ -13,7 +13,7 @@ from copy_benny_pack import PACK, DESTINATION, copy_pack
 
 ROOT = Path(__file__).resolve().parents[2]
 NAMES = ['setup-benny', 'triage-issue-reports', 'reproduce-and-fix-issues']
-DEPENDENCIES = ['jstack-how', 'jstack-why', 'jstack-tdd',
+DEPENDENCIES = ['jstack-why', 'jstack-tdd',
                 *['jstack-principle-' + n for n in (
                     'separate-before-serializing-shared-state', 'minimize-reader-load',
                     'guard-the-context-window', 'sequence-verifiable-units',

@@ -9,7 +9,7 @@ import sys
 import tempfile
 import unittest
 
-from models import atomic_write, read_json, resolve, template, validate
+from models import RETIRED_ROLES, ROLES, atomic_write, read_json, resolve, template, validate
 
 
 CATALOG = {"providers": [
@@ -29,14 +29,24 @@ SEAT = {"providerInstanceId": "codex", "model": "code-model",
         "options": {"reasoningEffort": "high", "fastMode": True}}
 
 
+def legacy_config(preset="medium"):
+    """A saved 17-role file from before the retirement, with a stale retired seat."""
+    config = template(preset)
+    for role in RETIRED_ROLES:
+        config["roles"][role] = {"alias": "inherit-parent"}
+    config["roles"]["architect runners"] = [{"alias": "inherit-parent"}] * 2
+    config["roles"]["how explorer"] = dict(SEAT, model="removed-model")
+    return config
+
+
 class ModelsTest(unittest.TestCase):
     def test_inheritance_and_panel_count(self):
         config = template("medium")
         validate(config, CATALOG)
-        for role in ("arena runners", "architect runners", "interrogate reviewers"):
+        for role in ("arena runners", "interrogate reviewers"):
             self.assertEqual(resolve(config, role), [None, None])
         self.assertEqual(resolve(config, "arena cross-judge pool"), [None])
-        self.assertEqual(resolve(config, "how explorer"), [None])
+        self.assertEqual(resolve(config, "judgment and prose"), [None])
 
     def test_panel_seats_can_be_configured_independently(self):
         config = template("medium")
@@ -44,7 +54,7 @@ class ModelsTest(unittest.TestCase):
         config["roles"]["arena runners"][0].update(SEAT)
         validate(config, CATALOG)
         self.assertEqual(resolve(config, "arena runners"), [SEAT, None])
-        self.assertEqual(resolve(config, "architect runners"), [None, None])
+        self.assertEqual(resolve(config, "interrogate reviewers"), [None, None])
 
     def test_concrete_target_and_atomic_roundtrip(self):
         config = template("large")
@@ -95,6 +105,28 @@ class ModelsTest(unittest.TestCase):
             mutate(config)
             with self.assertRaises(ValueError):
                 validate(config, CATALOG)
+
+    def test_legacy_retired_roles_validate_but_never_resolve(self):
+        config = legacy_config()
+        self.assertEqual(len(config["roles"]), 17)
+        before = copy.deepcopy(config)
+        self.assertEqual(validate(config, CATALOG), before)
+        self.assertEqual(resolve(config, "judgment and prose"), [None])
+        for role in RETIRED_ROLES:
+            with self.subTest(role=role):
+                with self.assertRaisesRegex(ValueError, "retired.*inherited parent model"):
+                    resolve(config, role)
+
+    def test_non_retired_role_mismatch_still_fails(self):
+        for mutate in (
+            lambda c: c["roles"].update({"how explorers": {"alias": "inherit-parent"}}),
+            lambda c: c["roles"].pop("hardest tasks"),
+            lambda c: c["roles"].pop("interrogate reviewers"),
+        ):
+            for config in (template("medium"), legacy_config()):
+                mutate(config)
+                with self.assertRaisesRegex(ValueError, "role mismatch"):
+                    validate(config, CATALOG)
 
     def test_duplicate_json_keys_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -172,11 +204,11 @@ class ConfigLookupTest(unittest.TestCase):
         links.mkdir()
         (links / "current").symlink_to(actual / "subdir", target_is_directory=True)
         intended = template("large")
-        intended["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        intended["roles"]["judgment and prose"] = copy.deepcopy(SEAT)
         atomic_write(actual / "models.json", intended)
         atomic_write(links / "models.json", template("small"))
         requested = links / "current" / ".." / "models.json"
-        args = ("--catalog", self.catalog, "--role", "how explorer", "--with-source")
+        args = ("--catalog", self.catalog, "--role", "judgment and prose", "--with-source")
         self.assertEqual(self.output("resolve", requested, *args)["targets"], [SEAT])
         self.assertEqual(self.output("resolve", *args,
                                      env=dict(self.env, JSTACK_CONFIG=str(requested)))["targets"], [SEAT])
@@ -206,13 +238,13 @@ class ConfigLookupTest(unittest.TestCase):
 
     def test_selected_file_is_complete_and_invalid_project_never_falls_back(self):
         project = template("large")
-        project["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        project["roles"]["judgment and prose"] = copy.deepcopy(SEAT)
         atomic_write(self.project_config, project)
-        args = ("resolve", "--catalog", self.catalog, "--role", "how explorer", "--with-source")
+        args = ("resolve", "--catalog", self.catalog, "--role", "judgment and prose", "--with-source")
         self.assertEqual(self.output(*args), {
             "config": str(self.project_config), "configSource": "project", "targets": [SEAT]})
         self.assertEqual(self.output("resolve", self.global_config, "--catalog", self.catalog,
-                                     "--role", "how explorer"), [None])
+                                     "--role", "judgment and prose"), [None])
         for invalid in ('{"roles": {}}', '{"schemaVersion":1,"schemaVersion":2}', 'invalid JSON'):
             self.project_config.write_text(invalid)
             result = self.cli(*args)
@@ -224,7 +256,7 @@ class ConfigLookupTest(unittest.TestCase):
     def test_directory_and_dangling_symlink_are_selected_errors(self):
         self.project_config.mkdir(parents=True)
         self.assertEqual(self.output("locate")["source"], "project")
-        args = ("resolve", "--catalog", self.catalog, "--role", "how explorer")
+        args = ("resolve", "--catalog", self.catalog, "--role", "judgment and prose")
         self.assertEqual(self.cli(*args).returncode, 1)
         self.project_config.rmdir()
         self.project_config.symlink_to(self.root / "missing-target.json")
@@ -233,7 +265,7 @@ class ConfigLookupTest(unittest.TestCase):
 
     def test_project_seed_save_and_global_save_preserve_other_scope(self):
         existing = template("small")
-        for role in ("arena runners", "architect runners", "interrogate reviewers"):
+        for role in ("arena runners", "interrogate reviewers"):
             existing["roles"][role] = [{"alias": "inherit-parent"}]
         atomic_write(self.global_config, existing)
         target = self.output("locate", "--scope", "project")
@@ -246,20 +278,48 @@ class ConfigLookupTest(unittest.TestCase):
         self.output("write", draft_path, "--catalog", self.catalog, "--output", target["path"])
         self.assertEqual(read_json(self.project_config), draft)
         self.assertEqual(self.global_config.read_bytes(), original_global)
-        self.assertEqual(len(draft["roles"]), 17)
-        for role in ("arena runners", "architect runners", "interrogate reviewers"):
+        self.assertEqual(len(draft["roles"]), 10)
+        for role in ("arena runners", "interrogate reviewers"):
             self.assertEqual(resolve(read_json(self.project_config), role), [None])
         original_project = self.project_config.read_bytes()
         draft_path.write_text(json.dumps(template("unlimited")))
         self.output("write", draft_path, "--catalog", self.catalog, "--output", source["path"])
         self.assertEqual(self.project_config.read_bytes(), original_project)
 
+    def test_cli_reports_and_write_drops_retired_roles(self):
+        draft = self.root / "legacy.json"
+        draft.write_text(json.dumps(legacy_config("large")))
+        original_draft = draft.read_bytes()
+        self.assertEqual(self.output("validate", draft, "--catalog", self.catalog),
+                         {"valid": True, "roles": len(ROLES), "retiredRoles": sorted(RETIRED_ROLES)})
+        self.assertEqual(self.output("validate", self.global_config, "--catalog", self.catalog),
+                         {"valid": True, "roles": len(ROLES), "retiredRoles": []})
+        output = self.root / "saved.json"
+        result = self.output("write", draft, "--catalog", self.catalog, "--output", output)
+        self.assertEqual(result, {"written": str(output), "droppedRetiredRoles": sorted(RETIRED_ROLES)})
+        self.assertEqual(read_json(output), template("large"))
+        self.assertEqual(list(read_json(output)["roles"]), list(ROLES))
+        self.assertEqual(draft.read_bytes(), original_draft)
+        self.assertEqual(self.output("write", output, "--catalog", self.catalog, "--output", output),
+                         {"written": str(output), "droppedRetiredRoles": []})
+
+    def test_legacy_file_resolves_current_roles_and_rejects_retired(self):
+        atomic_write(self.project_config, legacy_config())
+        before = self.project_config.read_bytes()
+        self.assertEqual(self.output("resolve", "--catalog", self.catalog, "--role", "bug-fix"), [None])
+        result = self.cli("resolve", "--catalog", self.catalog, "--role", "how explorer")
+        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("retired", result.stderr)
+        self.assertIn("inherited parent model", result.stderr)
+        self.assertEqual(self.project_config.read_bytes(), before)
+
     def test_unused_stale_role_blocks_resolution_without_writing(self):
         config = template("medium")
         config["roles"]["bug-fix"] = dict(SEAT, model="retired-model")
         atomic_write(self.project_config, config)
         before = self.project_config.read_bytes()
-        result = self.cli("resolve", "--catalog", self.catalog, "--role", "how explorer")
+        result = self.cli("resolve", "--catalog", self.catalog, "--role", "judgment and prose")
         self.assertEqual(result.returncode, 1)
         self.assertEqual(result.stdout, "")
         self.assertIn("bug-fix: unavailable model", result.stderr)
@@ -296,7 +356,7 @@ class ConfigLookupTest(unittest.TestCase):
             self.assertEqual(result.stdout, "")
             self.assertEqual(self.global_config.read_bytes(), original)
         override.write_text(json.dumps(SEAT))
-        result = self.cli("resolve", "--catalog", self.catalog, "--role", "how explorer",
+        result = self.cli("resolve", "--catalog", self.catalog, "--role", "judgment and prose",
                           "--worker-override", override)
         self.assertEqual(result.returncode, 1)
         self.assertIn("requires the swarm workers role", result.stderr)
@@ -321,13 +381,13 @@ class ConfigLookupTest(unittest.TestCase):
         subprocess.run(["git", "-C", str(self.repo), "-c", "user.name=Test",
                         "-c", "user.email=test@example.invalid", "commit", "-qm", "Fixture"], check=True)
         project = template("medium")
-        project["roles"]["how explorer"] = copy.deepcopy(SEAT)
+        project["roles"]["judgment and prose"] = copy.deepcopy(SEAT)
         atomic_write(self.project_config, project)
         selected = self.output("locate")["path"]
         worktree = self.root / "child-worktree"
         subprocess.run(["git", "-C", str(self.repo), "worktree", "add", "-q", "-b", "child", str(worktree)], check=True)
         self.assertEqual(self.output("locate", cwd=worktree)["path"], str(self.global_config))
-        args = ("resolve", selected, "--catalog", self.catalog, "--role", "how explorer", "--with-source")
+        args = ("resolve", selected, "--catalog", self.catalog, "--role", "judgment and prose", "--with-source")
         pinned = self.output(*args, cwd=worktree)
         self.assertEqual(pinned["config"], selected)
         self.assertEqual(pinned["targets"], [SEAT])

@@ -28,7 +28,7 @@ Right after a task that taught you something, run:
 /jstack-reflect that took way too long. capture what we learned so the next run doesn't repeat it.
 ```
 
-[`/jstack-reflect`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-reflect/SKILL.md) sends the transcript to three parallel reviewers, then a synthesizer sorts the proposals into `Accepted`, `Rejected`, and `Backlog` and honors your existing authorization or explicit review checkpoint before applying skill changes. Approve a proposal only if it would change a future decision. One weird session is an anecdote, not a rule.
+[`/jstack-reflect`](https://github.com/juancamiloqhz/skills/blob/main/skills/jstack/jstack-reflect/SKILL.md) reads the transcript, keeps only lessons that would change a future agent's work, and sorts the proposals into `Accepted`, `Rejected`, and `Backlog`. It honors your existing authorization or explicit review checkpoint before applying skill changes. Approve a proposal only if it would change a future decision. One weird session is an anecdote, not a rule.
 
 ## Fix the environment with `/jstack-correct`
 

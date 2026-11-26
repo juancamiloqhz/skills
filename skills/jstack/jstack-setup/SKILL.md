@@ -21,7 +21,9 @@ Read the [configuration contract](references/configuration.md) for shared lookup
 
 When scope is not already specified, offer global defaults or this project. Show the effective file and suggest its current scope. Use `locate --scope global` or `locate --scope project --project-root PROJECT` to obtain the chosen write target. These explicit scope queries ignore other overrides. Read that target before proposing changes. Project setup is optional; an ordinary workflow does not create `.jstack/models.json`.
 
-For a new project configuration, seed a temporary draft from the complete global configuration when it exists. Obtain that seed with `locate --scope global`, so an environment override cannot accidentally become the global seed. Preserve all 17 roles, options, list entries and budget, then apply only the requested edits. If no global file exists, start with the inherited template. Report invalid existing or seed configuration for repair instead of silently replacing it. Keep credentials out of model configuration; provider identities still need validation on each machine.
+For a new project configuration, seed a temporary draft from the complete global configuration when it exists. Obtain that seed with `locate --scope global`, so an environment override cannot accidentally become the global seed. Preserve all 10 roles, options, list entries and budget, then apply only the requested edits. If no global file exists, start with the inherited template. Report invalid existing or seed configuration for repair instead of silently replacing it. Keep credentials out of model configuration; provider identities still need validation on each machine.
+
+A saved `how explorer`, `how explainer`, `why investigators`, `why synthesizer`, `reflect tooling`, `reflect judgment, divergent, synthesizer` or `architect runners` key is from a retired role; its skills now run on the parent model. `validate` accepts and reports these keys as `retiredRoles`; drop them only when saving, where `write` omits them and reports `droppedRetiredRoles`. Never rewrite the saved file just to drop them. Dropping them changes no other role, option or budget.
 
 ### 3. Budget, map, and confirm
 
@@ -40,7 +42,7 @@ Concrete assignments specify a provider instance, model ID and provider-specific
 
 Distinguish `inherit-parent` from provider Auto. Inheritance omits the delegation target and preserves the executing parent's selection. Auto is a concrete provider/model from the live catalog, such as Cursor's advertised Auto model; it is not a portable alias.
 
-**(c) Show the roles and confirm.** Show all 17 roles from step 5 with their proposed models and effort, mark unavailable choices, and offer the detected models or inheritance. Panel roles hold ordered seat lists, with one agent per seat, including repeated or inherited seats. The cross-judge pool holds alternatives from which a workflow selects one judge. Arena selects a judge from a different model family than the parent when possible. `swarm workers` supplies the default for every worker unless a race or comparison assigns a model per arm. Show list sizes and explain that setup itself launches none. Execution is supplied by installed consumer skills such as jstack-how, jstack-why, jstack-arena and jstack-architect. For new configurations without an existing seed, default to two inherited seats in each of `arena runners`, `architect runners` and `interrogate reviewers`. These are two separate agents using the parent model and effort, not different model families. The cross-judge pool starts with one inherited alternative; duplicating it would not supply a different-family judge. Existing configurations and global seeds retain their counts unless the user requests a change. A one-seat saved panel remains valid configuration but insufficient for Arena or Architect comparison; report that requirement instead of silently adding a seat.
+**(c) Show the roles and confirm.** Show all 10 roles from step 5 with their proposed models and effort, mark unavailable choices, and offer the detected models or inheritance. Also list each retired role step 2 found and say that saving drops it because its skills now run on the parent model. Panel roles hold ordered seat lists, with one agent per seat, including repeated or inherited seats. The cross-judge pool holds alternatives from which a workflow selects one judge. Arena selects a judge from a different model family than the parent when possible. `swarm workers` supplies the default for every worker unless a race or comparison assigns a model per arm. Show list sizes and explain that setup itself launches none. Execution is supplied by installed consumer skills such as jstack-arena, jstack-interrogate and jstack-swarm. For new configurations without an existing seed, default to two inherited seats in each of `arena runners` and `interrogate reviewers`. These are two separate agents using the parent model and effort, not different model families. The cross-judge pool starts with one inherited alternative; duplicating it would not supply a different-family judge. Existing configurations and global seeds retain their counts unless the user requests a change. A one-seat saved panel remains valid configuration but insufficient for Arena comparison; report that requirement instead of silently adding a seat.
 
 Present the chosen scope and concrete file path, reasoning budget and target effort, assignments, effort exceptions and changed roles. Resolve user choices before writing; when the request already specifies the scope and mapping, proceed without asking again.
 
@@ -52,7 +54,7 @@ Prepare the proposed JSON and a temporary JSON copy of the full capabilities pay
 
 Save with `python3 scripts/models.py write DRAFT --catalog CATALOG --output CONFIG` using the chosen target, which validates and replaces that file atomically.
 
-Write the complete file idempotently. The inherited first-run shape is below; `preset` records the selected budget and the three panels each contain two seats. Generate a draft with `python3 scripts/models.py template --preset CHOSEN_BUDGET`, then apply the confirmed selections. Do not replace an existing or seeded map with this example.
+Write the complete file idempotently. The inherited first-run shape is below; `preset` records the selected budget and the two panels each contain two seats. Generate a draft with `python3 scripts/models.py template --preset CHOSEN_BUDGET`, then apply the confirmed selections. Do not replace an existing or seeded map with this example.
 
 ```json
 {
@@ -65,16 +67,9 @@ Write the complete file idempotently. The inherited first-run shape is below; `p
     "hillclimb": {"alias": "inherit-parent"},
     "judgment and prose": {"alias": "inherit-parent"},
     "hardest tasks": {"alias": "inherit-parent"},
-    "how explorer": {"alias": "inherit-parent"},
-    "how explainer": {"alias": "inherit-parent"},
-    "why investigators": {"alias": "inherit-parent"},
-    "why synthesizer": {"alias": "inherit-parent"},
-    "reflect tooling": {"alias": "inherit-parent"},
-    "reflect judgment, divergent, synthesizer": {"alias": "inherit-parent"},
     "arena runners": [{"alias": "inherit-parent"}, {"alias": "inherit-parent"}],
     "arena cross-judge pool": [{"alias": "inherit-parent"}],
     "swarm workers": {"alias": "inherit-parent"},
-    "architect runners": [{"alias": "inherit-parent"}, {"alias": "inherit-parent"}],
     "interrogate reviewers": [{"alias": "inherit-parent"}, {"alias": "inherit-parent"}]
   }
 }

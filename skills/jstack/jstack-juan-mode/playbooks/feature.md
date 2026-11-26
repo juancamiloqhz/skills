@@ -2,8 +2,8 @@
 
 **You own the design. Plan, review, verify.** Delegate implementation. Stay in the lead.
 
-1. `jstack-how` over the affected subsystem. Discover the helper and pass its configured roles, source scope and selected absolute configuration through the mode's preflight.
-2. `jstack-architect` for parallel design exploration, returning a design before step 4. Preserve its configured panel, two structurally distinct candidate requirement and Arena judging. An undersized panel or unavailable helper leaves this step incomplete; do not add seats or proceed as if design exploration passed.
+1. Trace the affected subsystem.
+2. `jstack-architect` for the shape, returning a design before step 4.
 3. Write the throughput checkpoint as four todo items. A dimension that genuinely does not apply (single file, no fan-out) keeps its item with `n/a: <reason>` rather than being dropped:
    - **Blocking first steps.** Gates run before fan-out.
    - **Independent workstreams.** Disjoint files, services, or layers parallelize. Shared writes serialize.

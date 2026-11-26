@@ -11,13 +11,15 @@ import tempfile
 
 ROLES = (
     "feature, refactoring", "bug-fix", "perf-issue", "hillclimb",
-    "judgment and prose", "hardest tasks", "how explorer", "how explainer",
-    "why investigators", "why synthesizer", "reflect tooling",
-    "reflect judgment, divergent, synthesizer", "arena runners",
-    "arena cross-judge pool", "swarm workers", "architect runners",
-    "interrogate reviewers",
+    "judgment and prose", "hardest tasks", "arena runners",
+    "arena cross-judge pool", "swarm workers", "interrogate reviewers",
 )
-PANEL_ROLES = frozenset(("arena runners", "architect runners", "interrogate reviewers"))
+# Saved files may still hold these keys. Validation accepts and ignores them; write drops them.
+RETIRED_ROLES = (
+    "how explorer", "how explainer", "why investigators", "why synthesizer",
+    "reflect tooling", "reflect judgment, divergent, synthesizer", "architect runners",
+)
+PANEL_ROLES = frozenset(("arena runners", "interrogate reviewers"))
 LIST_ROLES = PANEL_ROLES | {"arena cross-judge pool"}
 PRESETS = {"small": "medium", "medium": "high", "large": "xhigh", "unlimited": "max"}
 
@@ -134,9 +136,12 @@ def validate(config, catalog):
     providers = {p["providerInstanceId"]: p for p in catalog["providers"]}
     roles = config["roles"]
     require(isinstance(roles, dict), "roles must be an object")
-    require(set(roles) == set(ROLES),
-            f"role mismatch: missing={sorted(set(ROLES)-set(roles))}, extra={sorted(set(roles)-set(ROLES))}")
+    missing = sorted(set(ROLES) - set(roles))
+    extra = sorted(set(roles) - set(ROLES) - set(RETIRED_ROLES))
+    require(not missing and not extra, f"role mismatch: missing={missing}, extra={extra}")
     for role, value in roles.items():
+        if role in RETIRED_ROLES:
+            continue
         if role in LIST_ROLES:
             require(isinstance(value, list) and bool(value), f"{role}: expected a nonempty seat list")
             for index, seat in enumerate(value):
@@ -146,7 +151,19 @@ def validate(config, catalog):
     return config
 
 
+def retired_roles(config):
+    return sorted(set(config["roles"]) & set(RETIRED_ROLES))
+
+
+def without_retired_roles(config):
+    return dict(config, roles={role: value for role, value in config["roles"].items()
+                               if role not in RETIRED_ROLES})
+
+
 def resolve(config, role):
+    require(role not in RETIRED_ROLES,
+            f"role {role!r} is retired: its skills now run on the inherited parent model "
+            "(omit the target); rerun jstack-setup to drop it from the saved file")
     require(role in ROLES, f"unknown role {role!r}")
     seats = config["roles"][role]
     if role not in LIST_ROLES:
@@ -200,7 +217,7 @@ def main():
         if name == "write":
             sub.add_argument("--output", required=True)
         if name == "resolve":
-            sub.add_argument("--role", required=True, choices=ROLES)
+            sub.add_argument("--role", required=True, choices=ROLES + RETIRED_ROLES)
             sub.add_argument("--project-root")
             sub.add_argument("--with-source", action="store_true")
             sub.add_argument("--worker-override", help="task-local Swarm seat JSON; never saved")
@@ -219,8 +236,9 @@ def main():
             except (ValueError, OSError, KeyError, TypeError) as error:
                 raise ValueError(f"configuration {location['path']}: {error}") from error
             if args.command == "write":
-                atomic_write(args.output, config)
-                result = {"written": str(Path(args.output).expanduser())}
+                atomic_write(args.output, without_retired_roles(config))
+                result = {"written": str(Path(args.output).expanduser()),
+                          "droppedRetiredRoles": retired_roles(config)}
             elif args.command == "resolve":
                 result = resolve(config, args.role)
                 if args.worker_override is not None:
@@ -233,7 +251,7 @@ def main():
                     result = {"config": location["path"], "configSource": location["source"],
                               "targets": result}
             else:
-                result = {"valid": True, "roles": len(ROLES)}
+                result = {"valid": True, "roles": len(ROLES), "retiredRoles": retired_roles(config)}
         print(json.dumps(result, indent=2))
     except (ValueError, OSError, KeyError, TypeError) as error:
         parser.exit(1, f"jstack: {error}\n")

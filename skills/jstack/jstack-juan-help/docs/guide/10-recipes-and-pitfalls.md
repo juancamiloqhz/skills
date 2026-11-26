@@ -162,7 +162,7 @@ That's the whole prompt. [`/jstack-bro`](https://github.com/juancamiloqhz/skills
 
 ## The pitfalls
 
-- **Enumerating skills in the prompt.** "use /jstack-how then /jstack-architect then /jstack-arena" reorders steps the playbook already sequences. State the goal and constraints. Name a skill only to override a default.
+- **Enumerating skills in the prompt.** "use /jstack-architect then /jstack-arena then /jstack-interrogate" reorders steps the playbook already sequences. State the goal and constraints. Name a skill only to override a default.
 - **A vague finish condition.** "make it better" gives the run nothing to check. Give a command or artifact that can pass or fail.
 - **Leading with your theory of the cause.** The agent searches wherever you pointed. Ask it to restate the problem first, then share your hunch.
 - **Taking the first design.** One attempt locks in the first shape the model thought of. Ask for prototypes or `/jstack-architect` and pick from evidence.
